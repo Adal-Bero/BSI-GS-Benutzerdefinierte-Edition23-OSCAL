@@ -9,7 +9,7 @@ from typing import List, Dict, Any
 from google.cloud import storage
 from google.api_core import exceptions
 import jsonschema
-
+ 
 # Define the specific Baustein Group IDs to be included in the process component.
 PROCESS_GROUP_IDS = [
     "ISMS",  # ISMS: Sicherheitsmanagement
