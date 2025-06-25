@@ -4,12 +4,12 @@ import logging
 import uuid
 import sys
 from datetime import datetime, timezone
-from typing import List, Dict, Any
+from typing import Dict, Any
 
 from google.cloud import storage
 from google.api_core import exceptions
 import jsonschema
- 
+
 # Define the specific Baustein Group IDs to be included in the process component.
 PROCESS_GROUP_IDS = [
     "ISMS",  # ISMS: Sicherheitsmanagement
@@ -96,44 +96,11 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         logging.error(f"An unexpected error occurred during GCS upload to {full_gcs_path}: {e}")
         raise
 
-def _find_and_implement_controls_recursive(
-    group: Dict[str, Any], 
-    profile_source: str, 
-    control_implementations: List[Dict[str, Any]]
-):
-    """
-    Recursively finds controls in a group and its subgroups, adding them to the implementation list.
-    """
-    group_id = group.get("id")
-    logging.debug(f"Processing group: {group_id} - {group.get('title')}")
-
-    # Process controls directly within this group
-    if "controls" in group:
-        for control in group["controls"]:
-            control_id = control.get("id")
-            if not control_id:
-                continue
-
-            impl_req = {
-                "uuid": str(uuid.uuid4()),
-                "control-id": control_id,
-                "description": f"Implementation for control {control_id} as defined in the source catalog."
-            }
-            control_implementations.append({
-                "uuid": str(uuid.uuid4()),
-                "source": profile_source,
-                "description": f"Implementation for control {control_id} from group {group_id}.",
-                "implemented-requirements": [impl_req]
-            })
-
-    # Recurse into nested subgroups
-    if "groups" in group:
-        for subgroup in group["groups"]:
-            _find_and_implement_controls_recursive(subgroup, profile_source, control_implementations)
-
 def create_process_component(catalog: dict, profile_source: str) -> dict:
     """
-    Creates an OSCAL component definition by recursively finding controls in specified groups.
+    Creates an OSCAL component definition by grouping controls by their parent "Baustein".
+    
+    This method creates one `control-implementation` per Baustein-group.
     """
     logging.info("Starting creation of process component definition.")
     component_uuid = str(uuid.uuid4())
@@ -147,7 +114,7 @@ def create_process_component(catalog: dict, profile_source: str) -> dict:
                 "last-modified": now_utc,
                 "version": "1.0.0",
                 "oscal-version": "1.1.2",
-                "remarks": "Component automatically generated from Prozess-Baustein groups."
+                "remarks": "Component automatically generated from Prozess-Baustein groups, with controls grouped by Baustein."
             },
             "components": [{
                 "uuid": str(uuid.uuid4()),
@@ -159,6 +126,7 @@ def create_process_component(catalog: dict, profile_source: str) -> dict:
         }
     }
 
+    # This is the list where we will aggregate the control-implementation objects.
     control_implementations = component_definition["component-definition"]["components"][0]["control-implementations"]
     
     catalog_groups = catalog.get("catalog", {}).get("groups", [])
@@ -166,15 +134,49 @@ def create_process_component(catalog: dict, profile_source: str) -> dict:
         logging.warning("Source catalog does not contain 'groups'. Cannot create component.")
         return component_definition
     
-    # Iterate through the top-level groups of the catalog
-    for group in catalog_groups:
-        if group.get("id") in PROCESS_GROUP_IDS:
-            logging.info(f"Found target process group: {group.get('id')}. Starting recursive search for controls.")
-            # This will find all controls in this group and all its subgroups.
-            _find_and_implement_controls_recursive(group, profile_source, control_implementations)
+    total_controls_implemented = 0
+    # Iterate through the top-level groups of the catalog (e.g., "ISMS", "ORP")
+    for main_group in catalog_groups:
+        if main_group.get("id") not in PROCESS_GROUP_IDS:
+            continue
 
-    logging.info(f"Component definition created with {len(control_implementations)} control implementations.")
+        logging.info(f"Processing main group: {main_group.get('id')}")
+
+        # Iterate through the nested "Baustein" groups within the main group
+        for baustein_group in main_group.get("groups", []):
+            group_id = baustein_group.get("id")
+            group_title = baustein_group.get("title")
+            logging.debug(f"Found Baustein-group: {group_id} - {group_title}")
+            
+            implemented_reqs_for_this_group = []
+            if "controls" in baustein_group:
+                for control in baustein_group["controls"]:
+                    control_id = control.get("id")
+                    if not control_id:
+                        continue
+                    
+                    # Create the implementation for a single control
+                    implemented_reqs_for_this_group.append({
+                        "uuid": str(uuid.uuid4()),
+                        "control-id": control_id,
+                        "description": f"Implementation for control {control_id} as defined in the source catalog."
+                    })
+            
+            # If we found any controls in this Baustein, create a parent control-implementation for them.
+            if implemented_reqs_for_this_group:
+                logging.debug(f"Creating control-implementation for group '{group_id}' with {len(implemented_reqs_for_this_group)} controls.")
+                control_implementations.append({
+                    "uuid": str(uuid.uuid4()),
+                    "source": profile_source,
+                    "description": f"Implementation for all controls in group {group_id}: {group_title}",
+                    "implemented-requirements": implemented_reqs_for_this_group
+                })
+                total_controls_implemented += len(implemented_reqs_for_this_group)
+
+    logging.info(f"Component definition created with {len(control_implementations)} control-implementation groups, "
+                 f"totaling {total_controls_implemented} implemented controls.")
     return component_definition
+
 
 def main():
     """Main execution function."""
