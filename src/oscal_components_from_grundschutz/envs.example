@@ -1,0 +1,16 @@
+# Google Cloud Platform Configuration
+GCP_PROJECT_ID="your-gcp-project-id"
+BUCKET_NAME="your-gcs-bucket-name"
+
+# --- I/O Configuration ---
+# The GCS path inside the bucket where the final component JSON will be saved.
+# Example: "output/components" will result in gs://<BUCKET_NAME>/output/components/process_component.json
+OUTPUT_PREFIX="components"
+
+# Full GCS path to the existing source catalog to read from.
+# THIS MUST BE THE FULL PATH including the gs:// prefix.
+EXISTING_JSON_GCS_PATH="gs://your-gcs-bucket-name/catalogs/BSI_IT_Grundschutz_Kompendium_2022.json"
+
+# --- Execution Mode ---
+# Set to "true" for verbose debug logging. Set to "false" for production (INFO level logging).
+TEST="true"

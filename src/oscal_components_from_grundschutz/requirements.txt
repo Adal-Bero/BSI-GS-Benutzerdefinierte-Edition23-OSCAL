@@ -1,5 +1,4 @@
-# Using a version of functions-framework that is newer and more stable
-functions-framework>=3.5.0
-google-cloud-storage>=2.16.0
-google-cloud-aiplatform>=1.49.0
+google-cloud-storage
 jsonschema
+# For local development with a .env file
+python-dotenv
