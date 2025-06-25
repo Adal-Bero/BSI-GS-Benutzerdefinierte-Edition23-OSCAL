@@ -35,6 +35,9 @@ You will be given a JSON array of BSI requirements. For EACH requirement in the 
 *   For each `level_X_assessment` field, you must formulate clear, actionable audit steps in German. 
 *   Crucially, **if possible, also describe an automated way to check the control for compliance** (e.g., a command-line check, a script to run, an API call to make).
 
+**Rule E: Never use names of commercial producs**
+*   No text you generate may use the names of products that are **not available** as Open source
+
 ---
 **5-Level Maturity Model Guide (Official Reference):**
 *   **Level 1: Partial:** Sporadic, ad-hoc, incomplete.
