@@ -4,6 +4,7 @@ import logging
 import uuid
 import sys
 from datetime import datetime, timezone
+from typing import List, Dict, Any
 
 from google.cloud import storage
 from google.api_core import exceptions
@@ -95,16 +96,44 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         logging.error(f"An unexpected error occurred during GCS upload to {full_gcs_path}: {e}")
         raise
 
+def _find_and_implement_controls_recursive(
+    group: Dict[str, Any], 
+    profile_source: str, 
+    control_implementations: List[Dict[str, Any]]
+):
+    """
+    Recursively finds controls in a group and its subgroups, adding them to the implementation list.
+    """
+    group_id = group.get("id")
+    logging.debug(f"Processing group: {group_id} - {group.get('title')}")
+
+    # Process controls directly within this group
+    if "controls" in group:
+        for control in group["controls"]:
+            control_id = control.get("id")
+            if not control_id:
+                continue
+
+            impl_req = {
+                "uuid": str(uuid.uuid4()),
+                "control-id": control_id,
+                "description": f"Implementation for control {control_id} as defined in the source catalog."
+            }
+            control_implementations.append({
+                "uuid": str(uuid.uuid4()),
+                "source": profile_source,
+                "description": f"Implementation for control {control_id} from group {group_id}.",
+                "implemented-requirements": [impl_req]
+            })
+
+    # Recurse into nested subgroups
+    if "groups" in group:
+        for subgroup in group["groups"]:
+            _find_and_implement_controls_recursive(subgroup, profile_source, control_implementations)
+
 def create_process_component(catalog: dict, profile_source: str) -> dict:
     """
-    Creates an OSCAL component definition from specified groups in a source catalog.
-
-    Args:
-        catalog: The source OSCAL catalog as a Python dictionary.
-        profile_source: The source URL or identifier of the profile being implemented.
-
-    Returns:
-        A dictionary representing the new OSCAL component definition.
+    Creates an OSCAL component definition by recursively finding controls in specified groups.
     """
     logging.info("Starting creation of process component definition.")
     component_uuid = str(uuid.uuid4())
@@ -130,41 +159,19 @@ def create_process_component(catalog: dict, profile_source: str) -> dict:
         }
     }
 
-    # This is the list where we will aggregate all implemented controls.
     control_implementations = component_definition["component-definition"]["components"][0]["control-implementations"]
-
-    if 'groups' not in catalog.get('catalog', {}):
+    
+    catalog_groups = catalog.get("catalog", {}).get("groups", [])
+    if not catalog_groups:
         logging.warning("Source catalog does not contain 'groups'. Cannot create component.")
         return component_definition
     
-    # Iterate through all groups in the source catalog
-    for group in catalog["catalog"]["groups"]:
-        group_id = group.get("id")
-        if group_id in PROCESS_GROUP_IDS:
-            logging.debug(f"Processing group: {group_id} - {group.get('title')}")
-            
-            if "controls" not in group:
-                logging.debug(f"Group {group_id} has no controls to implement. Skipping.")
-                continue
-
-            # For each control in the selected group, create an implementation entry
-            for control in group["controls"]:
-                control_id = control.get("id")
-                if not control_id:
-                    continue
-
-                impl_req = {
-                    "uuid": str(uuid.uuid4()),
-                    "control-id": control_id,
-                    "description": f"Implementation for control {control_id} as defined in the source catalog."
-                }
-
-                control_implementations.append({
-                    "uuid": str(uuid.uuid4()),
-                    "source": profile_source, # Link back to the catalog this comes from
-                    "description": f"Implementation for control {control_id} from group {group_id}.",
-                    "implemented-requirements": [impl_req]
-                })
+    # Iterate through the top-level groups of the catalog
+    for group in catalog_groups:
+        if group.get("id") in PROCESS_GROUP_IDS:
+            logging.info(f"Found target process group: {group.get('id')}. Starting recursive search for controls.")
+            # This will find all controls in this group and all its subgroups.
+            _find_and_implement_controls_recursive(group, profile_source, control_implementations)
 
     logging.info(f"Component definition created with {len(control_implementations)} control implementations.")
     return component_definition
@@ -179,13 +186,10 @@ def main():
         sys.exit(1)
 
     try:
-        # For this script, the source GCS path is mandatory.
         if not config.existing_json_gcs_path:
             raise ValueError("Configuration error: The EXISTING_JSON_GCS_PATH environment variable must be set.")
         
-        # The EXISTING_JSON_GCS_PATH is treated as the blob path relative to the bucket.
         source_blob_path = config.existing_json_gcs_path
-        
         storage_client = storage.Client(project=config.gcp_project_id)
 
         # 1. Download the source catalog
@@ -195,7 +199,6 @@ def main():
             source_blob_path
         )
         
-        # Construct the full GCS path for metadata/source linking purposes.
         full_gcs_source_path = f"gs://{config.bucket_name}/{source_blob_path}"
         catalog_source_url = source_catalog.get("catalog", {}).get("metadata", {}).get("source", full_gcs_source_path)
 
