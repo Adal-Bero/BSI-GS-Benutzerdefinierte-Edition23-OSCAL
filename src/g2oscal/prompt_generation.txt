@@ -1,0 +1,96 @@
+
+You are an expert system specialized in cybersecurity compliance with deep knowledge of the German BSI Grundschutz. Your mission is to act as a security analyst and generate the required texts for all 5 maturity levels for a BATCH of BSI requirements provided to you as a JSON list.
+
+---
+**Core Task:**
+You will be given a JSON array of BSI requirements. For EACH requirement in the input list, you must generate the German prose for all 5 maturity levels. Your output MUST be a single JSON object containing a list of these generated prose sets, matching each one by its original ID.
+
+---
+**CRUCIAL INSTRUCTIONS FOR GENERATING MATURITY LEVEL TEXTS:**
+
+**Rule A: Universal Baseline & Expansion**
+*   Your goal is to generate as many logical and technically sound maturity levels (1 through 5) as possible for *every* requirement.
+*   **Every requirement MUST have `Maturity Level 3: Defined` as its mandatory baseline.**
+*   You MUST also strive to create `Maturity Level 1: Partial` and `Maturity Level 2: Foundational` by describing *less mature* versions of the Level 3 concept.
+*   Similarly, you MUST also strive to create `Maturity Level 4: Enhanced` and `Maturity Level 5: Comprehensive` by describing *more mature* versions of the Level 3 concept.
+*   Prioritize generating a complete sequence (1-5) whenever technically and logically feasible.
+
+**Rule B: The Baseline Prose (Level 3)**
+*   The prose for the Level 3 fields (`level_3_statement`, `level_3_guidance`, `level_3_assessment`) is based on the original value of the 'prose' text in the JSON
+*   This prose MUST accurately describe a 'Defined' state of implementation (a deliberate, repeatable process that is not yet fully automated).
+*   **If the 'prose' text contains advanced concepts** (e.g., sentences with "SOLLTE"), you **MUST rewrite the prose for Level 3** to only include the core 'MUSS' requirements. Reserve the advanced concepts for Level 4 or 5.
+
+**Rule C: Creative and Logical Prose for Other Levels (Key for High Quality)**
+*   For levels 1, 2, 4, and 5, you have creative freedom to write new German prose for the `statement`, `guidance`, and `assessment` fields.
+*   **Deriving Lower Levels (1 & 2):**
+    *   **Level 2 (Foundational):** Describe basic, often manual, implementation with default settings. Think "Grundsätzlich vorhanden" or "manuell durchgeführt".
+    *   **Level 1 (Partial):** Describe sporadic, ad-hoc, or incomplete implementation. Think "Vereinzelt" or "konzentriert sich auf einzelnen Aspekt".
+*   **Deriving Higher Levels (4 & 5):**
+    *   **Level 4 (Enhanced):** Introduce improved effectiveness, proactive monitoring, or initial automation. Elaborate on any "SOLLTE" statements from the original BSI text here.
+    *   **Level 5 (Comprehensive):** Describe a best-practice, highly automated, and integrated solution (e.g., using 'Policy as Code', AI/ML analysis, continuous verification).
+*   **Only create prose for a level if a technically sound and distinct implementation can be described.**
+*   ** Stay inside of the domain of the 'prose' for these levels 
+
+**Rule D: Content of `_assessment` fields**
+*   For each `level_X_assessment` field, you must formulate clear, actionable audit steps in German. 
+*   Crucially, **if possible, also describe an automated way to check the control for compliance** (e.g., a command-line check, a script to run, an API call to make).
+
+---
+**5-Level Maturity Model Guide (Official Reference):**
+*   **Level 1: Partial:** Sporadic, ad-hoc, incomplete.
+*   **Level 2: Foundational:** Implemented, but not tailored or consistently managed.
+*   **Level 3: Defined:** A documented, repeatable process. **Use the input `prose` as the baseline.**
+*   **Level 4: Enhanced:** Adds automation, proactive monitoring, or "SOLLTE" items.
+*   **Level 5: Comprehensive:** Best-practice, highly automated, and integrated.
+
+
+**Input JSON Batch of Requirements to Process:**
+{REQUIREMENTS_JSON_BATCH}
+
+---
+**Required Output JSON Format:**
+
+Your output MUST be a single JSON object with one key, "generated_requirements". This key holds an array of objects. Each object must contain the original 'id' and the 15 generated text fields.
+
+```json
+{{
+  "generated_requirements": [
+    {{
+      "id": "CON.1.1.A1",
+      "level_1_statement": "Prose for A1 level 1 statement...",
+      "level_1_guidance": "Prose for A1 level 1 guidance...",
+      "level_1_assessment": "Prose for A1 level 1 assessment...",
+      "level_2_statement": "...",
+      "level_2_guidance": "...",
+      "level_2_assessment": "...",
+      "level_3_statement": "...",
+      "level_3_guidance": "...",
+      "level_3_assessment": "...",
+      "level_4_statement": "...",
+      "level_4_guidance": "...",
+      "level_4_assessment": "...",
+      "level_5_statement": "...",
+      "level_5_guidance": "...",
+      "level_5_assessment": "..."
+    }},
+    {{
+      "id": "CON.1.1.A2",
+      "level_1_statement": "Prose for A2 level 1 statement...",
+      "level_1_guidance": "Prose for A2 level 1 guidance...",
+      "level_1_assessment": "Prose for A2 level 1 assessment...",
+      "level_2_statement": "...",
+      "level_2_guidance": "...",
+      "level_2_assessment": "...",
+      "level_3_statement": "...",
+      "level_3_guidance": "...",
+      "level_3_assessment": "...",
+      "level_4_statement": "...",
+      "level_4_guidance": "...",
+      "level_4_assessment": "...",
+      "level_5_statement": "...",
+      "level_5_guidance": "...",
+      "level_5_assessment": "..."
+    }}
+  ]
+}}
+´´´

@@ -1,0 +1,43 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/oscal/bsi-generation-stub.schema.json",
+    "title": "BSI Generation Stub Schema (Level 3 Required)",
+    "description": "Defines the structure for the batched maturity level prose generation. It now correctly requires the 'id' and all Level 3 fields, ensuring the baseline is always present.",
+    "type": "object",
+    "required": ["generated_requirements"],
+    "properties": {
+      "generated_requirements": {
+        "type": "array",
+        "description": "An array containing the generated prose for each requirement in the input batch.",
+        "items": {
+          "type": "object",
+          "required": [
+            "id",
+            "level_3_statement",
+            "level_3_guidance",
+            "level_3_assessment"
+          ],
+          "properties": {
+            "id": { "type": "string", "description": "The original ID of the requirement, used for mapping." },
+            "level_1_statement": { "type": "string" },
+            "level_1_guidance": { "type": "string" },
+            "level_1_assessment": { "type": "string" },
+            "level_2_statement": { "type": "string" },
+            "level_2_guidance": { "type": "string" },
+            "level_2_assessment": { "type": "string" },
+            "level_3_statement": { "type": "string" },
+            "level_3_guidance": { "type": "string" },
+            "level_3_assessment": { "type": "string" },
+            "level_4_statement": { "type": "string" },
+            "level_4_guidance": { "type": "string" },
+            "level_4_assessment": { "type": "string" },
+            "level_5_statement": { "type": "string" },
+            "level_5_guidance": { "type": "string" },
+            "level_5_assessment": { "type": "string" }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BSI Grundschutz OSCAL Viewer (Complete & Fixed)</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #004494; /* BSI Blue */
+            --secondary-color: #e9ecef;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --hover-bg: #f1f3f5;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        h1, h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #003366;
+        }
+        #filter-controls {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .filter-group, .view-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        label {
+            font-weight: bold;
+            font-size: 0.9em;
+            color: #495057;
+        }
+        select {
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+            min-width: 180px;
+        }
+        .view-switch {
+            display: flex;
+            gap: 15px;
+        }
+        .view-switch label {
+            font-weight: normal;
+        }
+        .hidden { display: none !important; }
+
+        /* Tree View Styling */
+        #tree-view-container details {
+            margin-left: 20px;
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 5px;
+        }
+        #tree-view-container summary {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            position: relative;
+        }
+        #tree-view-container summary:hover { background-color: var(--hover-bg); }
+        .main-group > summary { font-size: 1.2em; font-weight: bold; }
+        .baustein-group > summary { font-size: 1.1em; font-weight: 500; }
+        .control > summary { font-size: 1.05em; background: #f8f9fa; }
+        
+        /* Contextual Part Group Styling */
+        .contextual-part-group {
+            padding: 10px;
+            margin: 15px 0;
+            border-radius: 6px;
+        }
+        .contextual-part-group > summary {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: var(--primary-color);
+        }
+        .intro-group { border: 1px solid #d1e7dd; background-color: #f8fffb; }
+        .risk-group { border: 1px solid #cce5ff; background-color: #f8fcff; }
+        
+        .contextual-part {
+             padding-left: 10px;
+             border-left: 3px solid var(--secondary-color);
+             background-color: #fdfdff;
+             margin: 10px 0;
+        }
+        .contextual-part h4 { color: #343a40; border-bottom: 1px dotted #ccc; padding-bottom: 3px; }
+
+        /* Maturity Level Part Styling */
+        .part-maturity-level {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            margin-top: 10px;
+            background-color: var(--card-bg);
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+        .part-maturity-level > summary {
+            background-color: #f1f3f5;
+            padding: 10px 15px;
+            font-weight: bold;
+        }
+        .part-maturity-level > summary:hover { background-color: #e9ecef; }
+        
+        .maturity-content { padding: 15px; }
+        .sub-part { margin-bottom: 15px; padding: 10px; border-radius: 4px; }
+        .sub-part h4 { margin: 0 0 5px 0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; color: #6c757d; }
+        .sub-part-statement { background-color: rgba(0, 68, 148, 0.05); border-left: 3px solid #004494; }
+        .sub-part-guidance { background-color: rgba(25, 135, 84, 0.05); border-left: 3px solid #198754; }
+        .sub-part-assessment-method { background-color: rgba(255, 193, 7, 0.05); border-left: 3px solid #ffc107; }
+        
+        /* Flat View Styling */
+        #flat-view-container { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
+        .flat-item { border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow); background-color: var(--card-bg); }
+        .flat-item-header { background-color: #f8f9fa; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .flat-item-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin: 0; }
+        .flat-item-path { font-size: 0.85em; color: #6c757d; margin-top: 5px; }
+        .flat-item-body { padding: 1rem 1.5rem; }
+
+        #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>BSI Grundschutz OSCAL Viewer (Complete & Fixed)</h1>
+        <p>Paste your BSI OSCAL Catalog JSON below. This viewer understands the valid structure and renders both contextual parts and requirements.</p>
+        
+        <textarea id="json-input">{
+  "catalog": {
+    "uuid": "a1b2c3d4-e5f6-4a3b-8c7d-1e2f3a4b5c6d",
+    "metadata": {
+      "title": "BSI IT-Grundschutz Catalog 2023 (Sample - Complete Schema)",
+      "last-modified": "2023-10-27T10:00:00Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2"
+    },
+    "groups": [
+      {
+        "id": "CON", "title": "CON: Konzeption und Vorgehensweise", "class": "layer",
+        "groups": [
+          {
+            "id": "CON.1", "title": "Informationssicherheitsmanagement", "class": "baustein",
+            "parts": [
+              { "name": "introduction", "title": "Einleitung", "prose": "Dieser Baustein beschreibt die grundlegenden Aspekte des Managements der Informationssicherheit..." },
+              { "name": "objective", "title": "Zielsetzung", "prose": "Ziel ist der Aufbau und die Aufrechterhaltung eines wirksamen Informationssicherheitsmanagementsystems (ISMS)..." },
+              { "name": "risk", "title": "G 0.1 Mangelhafte Organisation", "prose": "Wenn Verantwortlichkeiten nicht klar geregelt sind, werden Sicherheitsmaßnahmen oft nicht umgesetzt..." }
+            ],
+            "controls": [
+              {
+                "id": "CON.1.A1", "title": "Regelungen zur Klassifizierung", "class": "technical",
+                "props": [
+                  { "name": "level", "value": "3", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
+                  { "name": "phase", "value": "Risk Treatment", "ns": "https://www.bsi.bund.de/ns/grundschutz" }
+                ],
+                "parts": [
+                  {
+                    "id": "CON.1.A1-m3", "name": "maturity-level-description", "title": "Maturity Level 3: Defined", "class": "maturity-level-defined",
+                    "parts": [
+                      { "name": "statement", "prose": "Es MUSS ein einheitliches, nachvollziehbares und an den Schutzzielen orientiertes Schema zur Klassifizierung von Informationen festgelegt werden." },
+                      { "name": "guidance", "prose": "Das Klassifizierungsschema sollte Kategorien wie 'INTERN', 'VERTRAULICH', und 'STRENG VERTRAULICH' umfassen." },
+                      { "name": "assessment-method", "prose": "Der Prüfer sichtet die Richtlinie zur Klassifizierung. Es wird geprüft, ob die Kategorien klar definiert sind." }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}</textarea>
+        
+        <button id="render-btn">Render Catalog</button>
+        <div id="status">Paste your JSON above and click "Render Catalog" to begin.</div>
+
+        <div id="filter-controls" class="hidden">
+             <!-- Filter controls are unchanged -->
+            <div class="filter-group"><label for="maturity-filter">Filter by Maturity Level</label><select id="maturity-filter"><option value="all">All Maturity Levels</option><option value="Partial">Partial</option><option value="Foundational">Foundational</option><option value="Defined">Defined</option><option value="Enhanced">Enhanced</option><option value="Comprehensive">Comprehensive</option></select></div>
+            <div class="filter-group"><label for="level-filter">Filter by Level</label><select id="level-filter"><option value="all">All Levels</option><option value="1">1 (Basis)</option><option value="3">3 (Standard)</option><option value="5">5 (Erhöhter)</option></select></div>
+            <div class="filter-group"><label for="phase-filter">Filter by ISMS Phase</label><select id="phase-filter"><option value="all">All Phases</option><option value="Initiation">Initiation</option><option value="Risk Assessment">Risk Assessment</option><option value="Risk Treatment">Risk Treatment</option><option value="Implementation">Implementation</option><option value="Operation">Operation</option><option value="Audit">Audit</option><option value="Improvement">Improvement</option></select></div>
+            <div class="view-group"><label>View Mode</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Filtered Tree</label><label><input type="radio" name="view-mode" value="flat"> Flat List</label></div></div>
+            <button id="reset-btn">Reset Filters</button>
+        </div>
+
+        <div id="output-container">
+            <div id="tree-view-container"></div>
+            <div id="flat-view-container" class="hidden"></div>
+        </div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const renderBtn = document.getElementById('render-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const jsonInput = document.getElementById('json-input');
+    const filterControls = document.getElementById('filter-controls');
+    const statusEl = document.getElementById('status');
+    
+    const maturityFilter = document.getElementById('maturity-filter');
+    const levelFilter = document.getElementById('level-filter');
+    const phaseFilter = document.getElementById('phase-filter');
+    const viewModeRadios = document.querySelectorAll('input[name="view-mode"]');
+
+    const treeViewContainer = document.getElementById('tree-view-container');
+    const flatViewContainer = document.getElementById('flat-view-container');
+
+    let catalogData = null;
+
+    const findPropValue = (props, name) => {
+        const prop = (props || []).find(p => p.name === name);
+        return prop ? prop.value : '';
+    };
+
+    const formatIdTitle = (item) => `${item.id}: ${item.title}`;
+
+    // --- RENDER LOGIC FULLY IMPLEMENTED AND CORRECTED ---
+
+    const renderSubPart = (part) => {
+        const partDiv = document.createElement('div');
+        const safePartName = part.name.replace(/\s+/g, '-');
+        partDiv.className = `sub-part sub-part-${safePartName}`;
+        const titleMap = { 'statement': 'Requirement Text', 'guidance': 'Implementation Guidance', 'assessment-method': 'Audit Guidance' };
+        const displayTitle = titleMap[part.name] || part.name.replace(/_/g, ' ');
+        partDiv.innerHTML = `<h4>${displayTitle}</h4><div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>`;
+        return partDiv;
+    };
+
+    const renderMaturityLevelPart = (part) => {
+        const maturityValue = (part.class || '').replace('maturity-level-', '');
+        const details = document.createElement('details');
+        details.className = 'part-maturity-level';
+        details.dataset.maturityLevel = maturityValue.charAt(0).toUpperCase() + maturityValue.slice(1);
+        details.innerHTML = `<summary>${part.title || `Maturity Level: ${maturityValue}`}</summary>`;
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'maturity-content';
+        (part.parts || []).forEach(subPart => {
+            contentDiv.appendChild(renderSubPart(subPart));
+        });
+        details.appendChild(contentDiv);
+        return details;
+    };
+    
+    const renderContextualParts = (parts) => {
+        if (!parts || parts.length === 0) return document.createDocumentFragment();
+
+        const fragment = document.createDocumentFragment();
+        const introParts = parts.filter(p => ['introduction', 'objective', 'usage'].includes(p.name));
+        const riskParts = parts.filter(p => p.name === 'risk');
+
+        if (introParts.length > 0) {
+            const introGroup = document.createElement('details');
+            introGroup.className = 'contextual-part-group intro-group';
+            introGroup.innerHTML = `<summary>1. Einleitung und Zielsetzung</summary>`;
+            introParts.forEach(part => {
+                const partEl = document.createElement('div');
+                partEl.className = 'contextual-part';
+                partEl.innerHTML = `<h4>${part.title}</h4><div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>`;
+                introGroup.appendChild(partEl);
+            });
+            fragment.appendChild(introGroup);
+        }
+
+        if (riskParts.length > 0) {
+            const riskGroup = document.createElement('details');
+            riskGroup.className = 'contextual-part-group risk-group';
+            riskGroup.innerHTML = `<summary>2. Gefährdungslage</summary>`;
+            riskParts.forEach(part => {
+                const partEl = document.createElement('div');
+                partEl.className = 'contextual-part';
+                partEl.innerHTML = `<h4>${part.title}</h4><div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>`;
+                riskGroup.appendChild(partEl);
+            });
+            fragment.appendChild(riskGroup);
+        }
+        
+        return fragment;
+    };
+    
+    const renderCatalog = () => {
+        try { catalogData = JSON.parse(jsonInput.value); }
+        catch (e) { statusEl.textContent = `Error: Invalid JSON format. ${e.message}`; return; }
+        if (!catalogData?.catalog?.groups) { statusEl.textContent = 'Error: JSON does not match expected OSCAL catalog structure.'; return; }
+
+        treeViewContainer.innerHTML = '';
+        flatViewContainer.innerHTML = '';
+        let controlCount = 0;
+
+        (catalogData.catalog.groups || []).forEach(mainGroup => {
+            const mainGroupDetails = document.createElement('details');
+            mainGroupDetails.className = 'main-group';
+            mainGroupDetails.innerHTML = `<summary>${mainGroup.title || mainGroup.id}</summary>`;
+
+            (mainGroup.groups || []).forEach(bausteinGroup => {
+                const bausteinGroupDetails = document.createElement('details');
+                bausteinGroupDetails.className = 'baustein-group';
+                bausteinGroupDetails.innerHTML = `<summary>${formatIdTitle(bausteinGroup)}</summary>`;
+                
+                bausteinGroupDetails.appendChild(renderContextualParts(bausteinGroup.parts));
+
+                (bausteinGroup.controls || []).forEach(control => {
+                    controlCount++;
+                    const level = findPropValue(control.props, 'level');
+                    const phase = findPropValue(control.props, 'phase');
+                    
+                    const controlDetails = document.createElement('details');
+                    controlDetails.className = 'control';
+                    controlDetails.dataset.level = level;
+                    controlDetails.dataset.phase = phase;
+                    controlDetails.innerHTML = `<summary>${formatIdTitle(control)}</summary>`;
+                    
+                    const flatItemBody = document.createElement('div');
+                    flatItemBody.className = 'flat-item-body';
+
+                    (control.parts || []).forEach(part => {
+                        if ((part.class || '').startsWith('maturity-level-')) {
+                            const maturityElement = renderMaturityLevelPart(part); // This now works
+                            controlDetails.appendChild(maturityElement);
+                            flatItemBody.appendChild(maturityElement.cloneNode(true));
+                        }
+                    });
+
+                    bausteinGroupDetails.appendChild(controlDetails);
+                    
+                    const flatItemDiv = document.createElement('div');
+                    flatItemDiv.className = 'flat-item';
+                    flatItemDiv.dataset.level = level;
+                    flatItemDiv.dataset.phase = phase;
+                    const path = `${mainGroup.title || mainGroup.id} » ${formatIdTitle(bausteinGroup)}`;
+                    flatItemDiv.innerHTML = `<div class="flat-item-header"><h3 class="flat-item-title">${formatIdTitle(control)}</h3><div class="flat-item-path">${path}</div></div>`;
+                    flatItemDiv.appendChild(flatItemBody);
+                    flatViewContainer.appendChild(flatItemDiv);
+                });
+                mainGroupDetails.appendChild(bausteinGroupDetails);
+            });
+            treeViewContainer.appendChild(mainGroupDetails);
+        });
+
+        filterControls.classList.remove('hidden');
+        statusEl.textContent = `Successfully rendered ${controlCount} main controls. The tree is collapsed.`;
+        applyFilters();
+    };
+
+    // --- FILTER LOGIC and EVENT LISTENERS (Unchanged) ---
+    const applyFilters = () => { if (!catalogData) return; const selectedMaturity = maturityFilter.value; const selectedLevel = levelFilter.value; const selectedPhase = phaseFilter.value; const selectedView = document.querySelector('input[name="view-mode"]:checked').value; let matchCount = 0; const filterItem = (itemElement) => { const levelMatch = selectedLevel === 'all' || itemElement.dataset.level === selectedLevel; const phaseMatch = selectedPhase === 'all' || itemElement.dataset.phase === selectedPhase; if (!levelMatch || !phaseMatch) { return false; } let hasVisibleMaturityLevel = false; const maturityParts = itemElement.querySelectorAll('.part-maturity-level'); if (maturityParts.length === 0 && selectedMaturity === 'all') { hasVisibleMaturityLevel = true; } else { maturityParts.forEach(mp => { const maturityMatch = selectedMaturity === 'all' || mp.dataset.maturityLevel === selectedMaturity; if (maturityMatch) { mp.classList.remove('hidden'); hasVisibleMaturityLevel = true; } else { mp.classList.add('hidden'); } }); } return hasVisibleMaturityLevel; }; const makeBranchVisible = (el) => { let current = el; while (current && current !== treeViewContainer) { current.classList.remove('hidden'); current = current.parentElement; } }; if (selectedView === 'tree') { treeViewContainer.classList.remove('hidden'); flatViewContainer.classList.add('hidden'); const allTreeControls = treeViewContainer.querySelectorAll('.control'); const allParentGroups = treeViewContainer.querySelectorAll('.main-group, .baustein-group'); allParentGroups.forEach(el => el.classList.add('hidden')); allTreeControls.forEach(el => el.classList.add('hidden')); allTreeControls.forEach(control => { if (filterItem(control)) { matchCount++; makeBranchVisible(control); } }); statusEl.textContent = `Showing ${matchCount} matching controls in the tree.`; } else { treeViewContainer.classList.add('hidden'); flatViewContainer.classList.remove('hidden'); const allFlatItems = flatViewContainer.querySelectorAll('.flat-item'); allFlatItems.forEach(item => { if (filterItem(item)) { item.classList.remove('hidden'); matchCount++; } else { item.classList.add('hidden'); } }); statusEl.textContent = `Showing ${matchCount} matching controls in a flat list.`; } };
+    const resetAllFilters = () => { maturityFilter.value = 'all'; levelFilter.value = 'all'; phaseFilter.value = 'all'; document.querySelector('input[name="view-mode"][value="tree"]').checked = true; applyFilters(); };
+    renderBtn.addEventListener('click', renderCatalog);
+    resetBtn.addEventListener('click', resetAllFilters);
+    maturityFilter.addEventListener('change', applyFilters);
+    levelFilter.addEventListener('change', applyFilters);
+    phaseFilter.addEventListener('change', applyFilters);
+    viewModeRadios.forEach(radio => radio.addEventListener('change', applyFilters));
+});
+</script>
+</body>
+</html>

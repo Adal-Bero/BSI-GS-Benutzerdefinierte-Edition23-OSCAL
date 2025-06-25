@@ -1,0 +1,4 @@
+# Using a version of functions-framework that is newer and more stable
+functions-framework>=3.5.0
+google-cloud-storage>=2.16.0
+jsonschema
