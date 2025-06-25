@@ -1,6 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Baustein Dependency List",
+    "description": "Schema for the output of the dependency extraction model.",
     "type": "object",
     "properties": {
       "dependencies": {

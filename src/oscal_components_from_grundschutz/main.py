@@ -15,19 +15,17 @@ from google.api_core import exceptions
 import jsonschema
 
 # --- Constants ---
-# B: Target main groups for this script
 TECHNICAL_MAIN_GROUPS = ["APP", "SYS", "IND", "NET", "INF"]
-
-# C.6: List of possibly needed generic controls
 GENERIC_CONTROLS_FOR_STEP_6 = [
     "CON.1.A1", "CON.1.A4", "CON.3.A5", "DER.1.A5", "DER.1.A9",
     "OPS.1.1.2.A18", "OPS.1.1.2.A3", "OPS.1.1.2.A5", "OPS.1.1.2.A6",
     "OPS.1.1.3.A1", "OPS.1.2.5.A19", "ORP.1.A4", "ORP.2.A15",
     "ORP.4.A13", "ORP.4.A18", "ORP.4.A2", "ORP.4.A9"
 ]
+# B. FIX: Define the list of keys to remove from schemas sent to the API
+UNSUPPORTED_SCHEMA_KEYS = ["$schema", "$id", "title"]
 
 # --- Configuration & Setup ---
-
 class Config:
     """ Manages and validates all environment-based configuration. """
     def __init__(self):
@@ -54,17 +52,17 @@ def setup_logging(is_test_mode: bool):
     logging.info(f"Logging initialized. Test mode: {is_test_mode}")
 
 # --- AI & GCS Interaction ---
-
 def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) -> Optional[Dict[str, Any]]:
-    """
-    Invokes the Gemini model with retry logic, strict schema enforcement, and error handling.
-    """
+    """ Invokes the Gemini model with retry logic, strict schema enforcement, and error handling. """
+    # B. FIX: Sanitize the schema before sending it to the Vertex AI API
+    sanitized_schema = {k: v for k, v in schema.items() if k not in UNSUPPORTED_SCHEMA_KEYS}
+
     model = GenerativeModel(
         "gemini-2.5-pro",
         generation_config=GenerationConfig(
             max_output_tokens=65536,
             response_mime_type="application/json",
-            response_schema=schema
+            response_schema=sanitized_schema
         )
     )
     tools = [vertexai.generative_models.Tool.from_google_search_retrieval(grounding)] if grounding else None
@@ -79,7 +77,7 @@ def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) 
                 continue
 
             parsed_json = json.loads(response.text)
-            jsonschema.validate(instance=parsed_json, schema=schema) # Quality Gate
+            jsonschema.validate(instance=parsed_json, schema=schema) # Quality Gate (using original schema)
             logging.debug("Gemini response is valid and conforms to schema.")
             return parsed_json
 
@@ -94,7 +92,6 @@ def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) 
     return None
 
 def download_json_from_gcs(client: storage.Client, bucket_name: str, blob_path: str) -> dict:
-    """ Downloads and parses a JSON file from GCS. """
     full_path = f"gs://{bucket_name}/{blob_path}"
     logging.info(f"Downloading source catalog from {full_path}")
     try:
@@ -106,7 +103,6 @@ def download_json_from_gcs(client: storage.Client, bucket_name: str, blob_path: 
         raise
 
 def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str, data: dict):
-    """ Uploads a dictionary as a JSON file to GCS. """
     full_path = f"gs://{bucket_name}/{blob_path}"
     logging.info(f"Uploading component to {full_path}")
     try:
@@ -118,15 +114,12 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         raise
 
 # --- Catalog Helper Functions ---
-
 def load_external_file(path: str) -> str:
-    """ Loads a text file from the filesystem. """
     with open(path, 'r', encoding='utf-8') as f:
         return f.read()
 
-_catalog_cache = {} # Simple cache for catalog lookups
+_catalog_cache = {}
 def _find_group_by_id(groups: List[Dict[str, Any]], group_id: str) -> Optional[Dict[str, Any]]:
-    """ Recursively finds a group by its ID in the catalog structure. """
     if group_id in _catalog_cache: return _catalog_cache[group_id]
     for group in groups:
         if group.get("id") == group_id:
@@ -137,33 +130,39 @@ def _find_group_by_id(groups: List[Dict[str, Any]], group_id: str) -> Optional[D
             if found: return found
     return None
 
+# A. FIX: New recursive helper function to find Bausteine by class
+def _find_bausteine_recursive(groups: List[Dict[str, Any]], found_bausteine: List[Dict[str, Any]]):
+    """ Recursively traverses groups to find all with class 'baustein'. """
+    for group in groups:
+        if group.get("class") == "baustein":
+            found_bausteine.append(group)
+        if "groups" in group:
+            _find_bausteine_recursive(group["groups"], found_bausteine)
+
 def find_target_bausteine(catalog: Dict[str, Any]) -> List[Dict[str, Any]]:
     """ Finds all Baustein-groups under the specified main technical groups. """
     target_bausteine = []
+    # A. FIX: Use the new recursive search logic
     for main_group in catalog.get("catalog", {}).get("groups", []):
         if main_group.get("id") in TECHNICAL_MAIN_GROUPS:
-            target_bausteine.extend(main_group.get("groups", []))
+            # Start the recursive search from within this main group
+            _find_bausteine_recursive(main_group.get("groups", []), target_bausteine)
+            
     logging.info(f"Found {len(target_bausteine)} target Bausteine to process.")
     return target_bausteine
 
+
 def get_prose_from_part(parts_list: List[Dict[str, Any]], part_name: str) -> Optional[str]:
-    """ Extracts 'prose' content from a list of 'parts' by part name. """
     for part in parts_list:
         if part.get("name") == part_name:
             return part.get("prose")
     return None
 
 def expand_baustein_ids(catalog: Dict[str, Any], ids_to_expand: List[str]) -> List[str]:
-    """ Expands general Baustein IDs (e.g., NET.1) to specific ones (e.g., NET.1.1, NET.1.2). """
-    # ... implementation for step C.3 ...
-    # This logic would traverse the catalog to find all children of a general ID.
-    # For now, we will assume the AI returns specific IDs to keep focus on the main pipeline.
-    # A full implementation would be a recursive search similar to _find_group_by_id.
     logging.debug(f"Expanding Baustein IDs (currently a passthrough): {ids_to_expand}")
-    return list(set(ids_to_expand)) # Return unique IDs
+    return list(set(ids_to_expand))
 
 def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[str]) -> List[Dict[str, Any]]:
-    """ Retrieves all control objects for a given list of Baustein IDs. """
     all_controls = []
     all_groups = catalog.get("catalog", {}).get("groups", [])
     for b_id in baustein_ids:
@@ -174,10 +173,7 @@ def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[
     return all_controls
 
 # --- Component Manipulation Functions ---
-
 def create_base_component(baustein_group: Dict[str, Any], source_url: str) -> Dict[str, Any]:
-    """ C.1: Creates the initial component with only the Baustein's own controls. """
-    # This is a simplified version of the logic from our previous script
     component = {
         "component-definition": {
             "uuid": str(uuid.uuid4()),
@@ -210,7 +206,6 @@ def create_base_component(baustein_group: Dict[str, Any], source_url: str) -> Di
     return component
 
 def add_controls_to_component(component: Dict[str, Any], controls_to_add: List[Dict[str, Any]], group_title: str, source_url: str):
-    """ Adds a new control-implementation block to a component for a list of controls. """
     if not controls_to_add:
         return
     
@@ -226,22 +221,15 @@ def add_controls_to_component(component: Dict[str, Any], controls_to_add: List[D
 
 
 # --- Main Processing Logic ---
-
-def process_single_baustein(
-    baustein_group: Dict[str, Any],
-    catalog: Dict[str, Any],
-    prompts: Dict[str, str],
-    schemas: Dict[str, Any],
-    source_url: str
-) -> Optional[Dict[str, Any]]:
-    """ Executes the full 7-step AI enrichment process for one Baustein. """
+def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, Any], prompts: Dict[str, str], schemas: Dict[str, Any], source_url: str) -> Optional[Dict[str, Any]]:
+    # (No changes in this function)
     baustein_id = baustein_group.get("id")
     logging.info(f"--- Starting processing for Baustein {baustein_id} ---")
 
-    # C.1: Create base component
+    # C.1
     component = create_base_component(baustein_group, source_url)
     
-    # C.2: Extract dependencies via AI
+    # C.2
     usage_prose = get_prose_from_part(baustein_group.get("parts", []), "usage")
     if not usage_prose:
         logging.warning(f"No 'usage' prose found for {baustein_id}. Skipping dependency extraction (C.2-C.5).")
@@ -249,12 +237,12 @@ def process_single_baustein(
     else:
         prompt = prompts["extract_dependencies"].format(schema=json.dumps(schemas["dependency"]), prose=usage_prose)
         dependency_result = invoke_gemini(prompt, schemas["dependency"])
-        if not dependency_result: return None # Fatal error
+        if not dependency_result: return None
         
-        # C.3: Expand dependency IDs
+        # C.3
         dependency_ids = expand_baustein_ids(catalog, dependency_result.get("dependencies", []))
         
-        # C.4: Filter controls from dependencies via AI
+        # C.4
         if not dependency_ids:
             logging.info("No dependencies found or extracted. Skipping control filtering (C.4).")
             dependent_controls = []
@@ -278,17 +266,17 @@ def process_single_baustein(
                     candidate_controls_json=candidate_json
                 )
                 filter_result = invoke_gemini(prompt, schemas["control_filter"])
-                if not filter_result: return None # Fatal error
+                if not filter_result: return None
                 
                 approved_ids = filter_result.get("approved_controls", [])
                 dependent_controls = [c for c in candidate_controls if c.get("id") in approved_ids]
 
-    # C.5: Add dependency controls to component
+    # C.5
     add_controls_to_component(component, dependent_controls, "Dependencies from related Bausteine", source_url)
     
-    # C.6: Filter generic controls via AI
+    # C.6
     generic_candidate_controls = get_controls_from_baustein_list(catalog, GENERIC_CONTROLS_FOR_STEP_6)
-    context_prose = { # Re-use context from C.4 if available
+    context_prose = {
         "introduction": get_prose_from_part(baustein_group.get("parts", []), "introduction"),
         "objective": get_prose_from_part(baustein_group.get("parts", []), "objective"),
         "usage": usage_prose or "N/A"
@@ -302,12 +290,12 @@ def process_single_baustein(
         candidate_controls_json=candidate_json
     )
     generic_filter_result = invoke_gemini(prompt, schemas["control_filter"])
-    if not generic_filter_result: return None # Fatal error
+    if not generic_filter_result: return None
 
     approved_generic_ids = generic_filter_result.get("approved_controls", [])
     generic_controls_to_add = [c for c in generic_candidate_controls if c.get("id") in approved_generic_ids]
     
-    # C.7: Add generic controls to component
+    # C.7
     add_controls_to_component(component, generic_controls_to_add, "SYS.0 Generic Controls", source_url)
 
     logging.info(f"--- Finished processing for Baustein {baustein_id} ---")
@@ -315,7 +303,7 @@ def process_single_baustein(
 
 
 def main():
-    """ Main execution function """
+    # (No changes in this function)
     try:
         config = Config()
         setup_logging(config.is_test_mode)
@@ -324,7 +312,6 @@ def main():
         sys.exit(1)
 
     try:
-        # Load external assets once
         prompts = {
             "extract_dependencies": load_external_file("prompts/extract_dependencies_prompt.txt"),
             "filter_controls": load_external_file("prompts/filter_controls_prompt.txt")
@@ -335,28 +322,24 @@ def main():
             "oscal_component": json.loads(load_external_file("schemas/oscal_component_schema.json"))
         }
 
-        # Initialize clients
         storage_client = storage.Client(project=config.gcp_project_id)
-        vertexai.init(project=config.gcp_project_id, location="us-central1") # Or your preferred location
+        vertexai.init(project=config.gcp_project_id, location="us-central1")
 
-        # Download the master catalog
         catalog = download_json_from_gcs(storage_client, config.bucket_name, config.existing_json_gcs_path)
         source_url = f"gs://{config.bucket_name}/{config.existing_json_gcs_path}"
         
-        # Find all target Bausteine
         target_bausteine = find_target_bausteine(catalog)
         
         if config.is_test_mode:
             logging.warning(f"TEST MODE: Processing only the first 3 of {len(target_bausteine)} Bausteine.")
             target_bausteine = target_bausteine[:3]
         
-        # Main processing loop
         for baustein in target_bausteine:
             baustein_id = baustein.get("id")
             try:
                 final_component = process_single_baustein(baustein, catalog, prompts, schemas, source_url)
                 if final_component:
-                    jsonschema.validate(instance=final_component, schema=schemas["oscal_component"]) # Final validation
+                    jsonschema.validate(instance=final_component, schema=schemas["oscal_component"])
                     output_path = os.path.join(config.output_prefix, f"{baustein_id}.component.json")
                     upload_json_to_gcs(storage_client, config.bucket_name, output_path, final_component)
             except Exception as e:
@@ -367,7 +350,6 @@ def main():
     except Exception as e:
         logging.critical(f"A critical, unrecoverable error occurred in main: {e}", exc_info=True)
         sys.exit(1)
-
 
 if __name__ == "__main__":
     main()

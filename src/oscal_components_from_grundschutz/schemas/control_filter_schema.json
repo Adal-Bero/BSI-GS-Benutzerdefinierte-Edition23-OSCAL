@@ -1,6 +1,5 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Filtered Control List",
+    "description": "Schema for the output of the control filtering model.",
     "type": "object",
     "properties": {
       "approved_controls": {
