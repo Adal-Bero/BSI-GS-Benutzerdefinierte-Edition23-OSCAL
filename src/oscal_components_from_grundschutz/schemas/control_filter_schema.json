@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Filtered Control List",
+    "type": "object",
+    "properties": {
+      "approved_controls": {
+        "type": "array",
+        "description": "A list of control IDs that have been approved for inclusion based on the criteria.",
+        "items": {
+          "type": "string",
+          "description": "A control ID, e.g., 'SYS.1.1.A1'."
+        }
+      }
+    },
+    "required": ["approved_controls"]
+  }
