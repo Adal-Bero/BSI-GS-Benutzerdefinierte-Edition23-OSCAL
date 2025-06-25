@@ -113,21 +113,26 @@ def _find_group_by_id(groups: List[Dict[str, Any]], group_id: str) -> Optional[D
 
 def _find_bausteine_recursive(group: Dict[str, Any], found_bausteine: List[Dict[str, Any]]):
     """ A. FIX: Truly recursive function to find all groups with class 'baustein'. """
-    # Check the current group first
+    # Check if the current group is a Baustein.
     if group.get("class") == "baustein":
         found_bausteine.append(group)
     
-    # Then, recurse into any of its children
+    # ALWAYS recurse into any of its children, regardless of the parent's class.
     for subgroup in group.get("groups", []):
         _find_bausteine_recursive(subgroup, found_bausteine)
 
 def find_target_bausteine(catalog: Dict[str, Any]) -> List[Dict[str, Any]]:
     """ Finds all Baustein-groups under the specified main technical groups. """
     target_bausteine = []
-    for main_group in catalog.get("catalog", {}).get("groups", []):
-        if main_group.get("id") in TECHNICAL_MAIN_GROUPS:
-            # A. FIX: Start the recursive search from the main group itself.
-            _find_bausteine_recursive(main_group, target_bausteine)
+    all_catalog_groups = catalog.get("catalog", {}).get("groups", [])
+    
+    # First, find the main group objects
+    main_group_objects = [g for g in all_catalog_groups if g.get("id") in TECHNICAL_MAIN_GROUPS]
+    
+    # A. FIX: Start the recursive search from each main group object.
+    for main_group in main_group_objects:
+        _find_bausteine_recursive(main_group, target_bausteine)
+            
     logging.info(f"Found {len(target_bausteine)} target Bausteine to process.")
     return target_bausteine
 
@@ -138,33 +143,26 @@ def get_prose_from_part(parts_list: List[Dict[str, Any]], part_name: str) -> Opt
     return None
 
 def _collect_child_baustein_ids(group: Dict[str, Any], collected_ids: List[str]):
-    """ C. FIX: Helper to recursively collect IDs of child Bausteine. """
     if group.get("class") == "baustein":
         collected_ids.append(group.get("id"))
     for subgroup in group.get("groups", []):
         _collect_child_baustein_ids(subgroup, collected_ids)
 
 def expand_baustein_ids(catalog: Dict[str, Any], ids_to_expand: List[str]) -> List[str]:
-    """ C. FIX: Fully implements the expansion of general Baustein IDs. """
     expanded_ids = []
     all_groups = catalog.get("catalog", {}).get("groups", [])
     for an_id in ids_to_expand:
         group = _find_group_by_id(all_groups, an_id)
-        if not group:
-            continue
-        # If the group is a Baustein itself, add it.
+        if not group: continue
         if group.get("class") == "baustein":
             expanded_ids.append(an_id)
-        # If it has sub-groups, collect all Bausteine under it.
         if "groups" in group:
             _collect_child_baustein_ids(group, expanded_ids)
-    
     unique_ids = sorted(list(set(expanded_ids)))
     logging.debug(f"Expanded {ids_to_expand} to {unique_ids}")
     return unique_ids
 
 def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[str]) -> List[Dict[str, Any]]:
-    # ... (no changes needed here)
     all_controls = []
     all_groups = catalog.get("catalog", {}).get("groups", [])
     for b_id in baustein_ids:
@@ -176,7 +174,6 @@ def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[
 
 # --- Component Manipulation Functions ---
 def create_base_component(baustein_group: Dict[str, Any], source_url: str) -> Dict[str, Any]:
-    # ... (no changes needed here)
     component = {"component-definition": {"uuid": str(uuid.uuid4()),"metadata": {"title": f"Component for Baustein {baustein_group.get('id')}: {baustein_group.get('title')}","last-modified": datetime.now(timezone.utc).isoformat(),"version": "1.0.0","oscal-version": "1.1.2","remarks": f"AI-enriched component for {baustein_group.get('id')}."}, "components": [{"uuid": str(uuid.uuid4()),"type": "service","title": baustein_group.get('title'),"description": f"Implementation of controls for Baustein {baustein_group.get('id')}.","control-implementations": []}]}}
     controls = baustein_group.get("controls", [])
     if controls:
@@ -185,34 +182,19 @@ def create_base_component(baustein_group: Dict[str, Any], source_url: str) -> Di
     return component
 
 def add_controls_to_component(component: Dict[str, Any], controls_with_reasons: List[Dict[str, Any]], group_title: str, source_url: str):
-    """ B. FIX: Accepts controls with reasons and adds them to the component. """
-    if not controls_with_reasons:
-        return
-    
+    if not controls_with_reasons: return
     impl_reqs = []
     for item in controls_with_reasons:
         control, reason = item['control'], item['reason']
-        impl_reqs.append({
-            "uuid": str(uuid.uuid4()),
-            "control-id": control.get("id"),
-            "description": f"AI-Reason: {reason}"
-        })
-    
-    component["component-definition"]["components"][0]["control-implementations"].append({
-        "uuid": str(uuid.uuid4()),
-        "source": source_url,
-        "description": group_title,
-        "implemented-requirements": impl_reqs
-    })
+        impl_reqs.append({"uuid": str(uuid.uuid4()), "control-id": control.get("id"), "description": f"AI-Begründung: {reason}"})
+    component["component-definition"]["components"][0]["control-implementations"].append({"uuid": str(uuid.uuid4()),"source": source_url,"description": group_title,"implemented-requirements": impl_reqs})
     logging.info(f"Added new implementation group '{group_title}' with {len(controls_with_reasons)} controls.")
 
 
 # --- Main Processing Logic ---
 def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, Any], prompts: Dict[str, str], schemas: Dict[str, Any], source_url: str) -> Optional[Dict[str, Any]]:
-    # ... (This function has significant changes to handle the new data structures)
     baustein_id = baustein_group.get("id")
     logging.info(f"--- Starting processing for Baustein {baustein_id} ---")
-
     component = create_base_component(baustein_group, source_url)
     usage_prose = get_prose_from_part(baustein_group.get("parts", []), "usage")
     dependent_controls_with_reasons = []
@@ -224,15 +206,24 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
         dependency_result = invoke_gemini(prompt, schemas["dependency"])
         
         if dependency_result and dependency_result.get("dependencies"):
-            # B. FIX: Extract IDs from the new object structure
             dependency_ids_raw = [item['id'] for item in dependency_result.get("dependencies", [])]
-            dependency_ids = expand_baustein_ids(catalog, dependency_ids_raw) # C. FIX uses this now
+            dependency_ids = expand_baustein_ids(catalog, dependency_ids_raw)
             
             if dependency_ids:
                 candidate_controls = get_controls_from_baustein_list(catalog, dependency_ids)
                 if candidate_controls:
+                    # B. FIX: Provide full context for each candidate control
+                    enriched_candidates = []
+                    for c in candidate_controls:
+                        statement_prose = get_prose_from_part(c.get("parts", []), "statement")
+                        enriched_candidates.append({
+                            "id": c.get("id"),
+                            "title": c.get("title"),
+                            "statement": statement_prose or "Keine Anforderung vorhanden."
+                        })
+                    
                     context_prose = {"introduction": get_prose_from_part(baustein_group.get("parts", []), "introduction"),"objective": get_prose_from_part(baustein_group.get("parts", []), "objective"), "usage": usage_prose}
-                    candidate_json = json.dumps([{"id": c.get("id"), "title": c.get("title")} for c in candidate_controls])
+                    candidate_json = json.dumps(enriched_candidates, indent=2)
                     prompt = prompts["filter_controls"].format(schema=json.dumps(schemas["control_filter"]), introduction_prose=context_prose["introduction"], objective_prose=context_prose["objective"], usage_prose=context_prose["usage"], candidate_controls_json=candidate_json)
                     filter_result = invoke_gemini(prompt, schemas["control_filter"])
                     
@@ -242,13 +233,21 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
                             if c.get("id") in approved_items:
                                 dependent_controls_with_reasons.append({"control": c, "reason": approved_items[c.get("id")]})
     
-    # C.5: Add dependency controls
-    add_controls_to_component(component, dependent_controls_with_reasons, "Dependencies from related Bausteine", source_url)
+    add_controls_to_component(component, dependent_controls_with_reasons, "Abhängigkeiten von verwandten Bausteinen", source_url)
     
-    # C.6: Filter generic controls
     generic_candidate_controls = get_controls_from_baustein_list(catalog, GENERIC_CONTROLS_FOR_STEP_6)
+    # B. FIX: Provide full context for generic controls as well
+    enriched_generic_candidates = []
+    for c in generic_candidate_controls:
+        statement_prose = get_prose_from_part(c.get("parts", []), "statement")
+        enriched_generic_candidates.append({
+            "id": c.get("id"),
+            "title": c.get("title"),
+            "statement": statement_prose or "Keine Anforderung vorhanden."
+        })
+
     context_prose = {"introduction": get_prose_from_part(baustein_group.get("parts", []), "introduction"), "objective": get_prose_from_part(baustein_group.get("parts", []), "objective"), "usage": usage_prose or "N/A"}
-    candidate_json = json.dumps([{"id": c.get("id"), "title": c.get("title")} for c in generic_candidate_controls])
+    candidate_json = json.dumps(enriched_generic_candidates, indent=2)
     prompt = prompts["filter_controls"].format(schema=json.dumps(schemas["control_filter"]), introduction_prose=context_prose["introduction"], objective_prose=context_prose["objective"], usage_prose=context_prose["usage"], candidate_controls_json=candidate_json)
     generic_filter_result = invoke_gemini(prompt, schemas["control_filter"])
     
@@ -259,14 +258,12 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
             if c.get("id") in approved_items:
                 generic_controls_with_reasons.append({"control": c, "reason": approved_items[c.get("id")]})
 
-    # C.7: Add generic controls
-    add_controls_to_component(component, generic_controls_with_reasons, "SYS.0 Generic Controls", source_url)
+    add_controls_to_component(component, generic_controls_with_reasons, "SYS.0 Generische Kontrollen", source_url)
 
     logging.info(f"--- Finished processing for Baustein {baustein_id} ---")
     return component
 
 def main():
-    # ... (no changes needed in main)
     try:
         config = Config()
         setup_logging(config.is_test_mode)

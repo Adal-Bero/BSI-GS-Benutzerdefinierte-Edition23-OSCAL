@@ -3,7 +3,7 @@ You are an expert cybersecurity analyst specializing in the German BSI IT-Grunds
 **CRITICAL INSTRUCTIONS:**
 1.  Identify only Bausteine that are presented as necessary or directly complementary. Phrases like "ist zu berücksichtigen", "ergänzt die Aspekte", "gelten die Anforderungen" indicate a strong dependency.
 2.  EXCLUDE Bausteine that are mentioned only as examples of further application, in conditional "if/then" scenarios, or for specific product choices. Phrases like "wie z. B.", "Sollte ... sein, ist ... zu modellieren", "sind zusätzlich anzuwenden" often indicate these optional or conditional links.
-3.  For each dependency you identify, you MUST provide a concise reason explaining WHY it is a dependency, quoting or referencing the text that led to your decision.
+3.  For each dependency you identify, you MUST provide a concise `reason` explaining WHY it is a dependency. **This reason must be in German.**
 4.  Your output MUST be a JSON object that strictly adheres to the provided schema. The output should be an object containing a "dependencies" array.
 5.  The output list should contain Baustein IDs (e.g., "SYS.1.1", "NET.1"). If a general layer is mentioned (e.g., "die Bausteine der Teilschichten NET.1"), use the most general ID possible (e.g., "NET.1").
 
