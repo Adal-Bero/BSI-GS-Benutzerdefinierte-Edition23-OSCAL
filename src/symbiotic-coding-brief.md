@@ -8,6 +8,10 @@ I am developing a Python application that runs as a batch job on **Google Cloud 
 
 Please adhere to the following architectural and coding preferences throughout our development:
 
+**0. Our Communication Protocol**
+*   **Add Commit message to your answer** The start of your answer must be in this format: "Case: (summary of my prompt, long enough to understand the gist) \n---\nDixie: (summary of your answer, long enough to understand the gist and include important details)
+*   **Brief Explanation** of the whys and why nots of the code you generated or changed
+
 **1. Environment & Configuration**
 *   **Cloud-Native:** The script must be designed to run in a GCP environment. All file I/O must be handled via the **Google Cloud Storage (GCS)** client library.
 *   **Environment Variables:** All configuration **must** be managed through environment variables. There should be no hardcoded configuration values. The script must validate their presence on startup. Our standard variables are:
@@ -16,6 +20,7 @@ Please adhere to the following architectural and coding preferences throughout o
     | `GCP_PROJECT_ID`         |    Yes    | Your Google Cloud Project ID.                                                  |
     | `BUCKET_NAME`            |    Yes    | The name of the GCS bucket for all I/O.                                        |
     | `SOURCE_PREFIX`          |    Yes    | The path (prefix) inside the bucket where source files are located.            |
+    | `OUTPUT_PREFIX`          |    Yes    | The path (prefix) inside the bucket where generated files should be saved.            |
     | `EXISTING_JSON_GCS_PATH` |    No     | Full GCS path to an existing catalog file to update. If omitted, create new.   |
     | `TEST`                   |    No     | Set to `"true"` to enable test mode. Defaults to `false`.                      |
 
