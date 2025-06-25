@@ -3,6 +3,7 @@ import json
 import logging
 import uuid
 import sys
+import re
 from datetime import datetime, timezone
 
 from google.cloud import storage
@@ -36,7 +37,6 @@ class Config:
         required_vars = {
             "GCP_PROJECT_ID": self.gcp_project_id,
             "BUCKET_NAME": self.bucket_name,
-            "EXISTING_JSON_GCS_PATH": self.existing_json_gcs_path
         }
         missing_vars = [k for k, v in required_vars.items() if not v]
         if missing_vars:
@@ -58,6 +58,26 @@ def setup_logging(is_test_mode: bool):
         logging.getLogger("urllib3.connectionpool").setLevel(logging.WARNING)
     
     logging.info(f"Logging initialized. Test mode: {is_test_mode}")
+
+def parse_gcs_path(gcs_path: str) -> tuple[str, str]:
+    """
+    Parses a GCS path into bucket name and blob path.
+
+    Args:
+        gcs_path: The full GCS path (e.g., "gs://bucket-name/path/to/file.json").
+
+    Returns:
+        A tuple containing the bucket name and the blob path.
+    
+    Raises:
+        ValueError: If the GCS path format is invalid.
+    """
+    match = re.match(r"gs://([^/]+)/(.+)", gcs_path)
+    if not match:
+        raise ValueError(f"Invalid GCS path format: '{gcs_path}'. Must be in the format 'gs://bucket-name/blob-path'.")
+    bucket_name = match.group(1)
+    blob_path = match.group(2)
+    return bucket_name, blob_path
 
 
 def download_json_from_gcs(client: storage.Client, bucket_name: str, blob_path: str) -> dict:
@@ -180,11 +200,18 @@ def main():
     try:
         storage_client = storage.Client(project=config.gcp_project_id)
 
-        # Parse the full GCS path to get the blob path
-        if not config.existing_json_gcs_path.startswith(f"gs://{config.bucket_name}/"):
-            raise ValueError(f"EXISTING_JSON_GCS_PATH must be a full GCS path starting with 'gs://{config.bucket_name}/'")
-        source_blob_path = config.existing_json_gcs_path.replace(f"gs://{config.bucket_name}/", "", 1)
+        # For this script, the source GCS path is mandatory.
+        if not config.existing_json_gcs_path:
+            raise ValueError("Configuration error: The EXISTING_JSON_GCS_PATH environment variable must be set.")
         
+        # Parse the GCS path and validate the bucket against our configuration.
+        source_bucket, source_blob_path = parse_gcs_path(config.existing_json_gcs_path)
+        if source_bucket != config.bucket_name:
+            raise ValueError(
+                f"Bucket name mismatch: The bucket in EXISTING_JSON_GCS_PATH ('{source_bucket}') "
+                f"does not match the configured BUCKET_NAME ('{config.bucket_name}')."
+            )
+
         # 1. Download the source catalog
         source_catalog = download_json_from_gcs(
             storage_client,
