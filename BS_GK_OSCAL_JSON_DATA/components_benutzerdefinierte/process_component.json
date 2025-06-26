@@ -1,0 +1,2885 @@
+{
+  "component-definition": {
+    "uuid": "494fb266-8c2e-41d8-ac92-595aab8cb068",
+    "metadata": {
+      "title": "Prozess-Bausteine Component Definition",
+      "last-modified": "2025-06-25T20:18:38.887616+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "Component automatically generated from Prozess-Baustein groups, with controls grouped by Baustein."
+    },
+    "components": [
+      {
+        "uuid": "899e3747-03b7-41db-9197-b4fd42c1f6f4",
+        "type": "service",
+        "title": "Prozess-Komponente",
+        "description": "This component represents the implementation of all controls from the IT-Grundschutz Prozess-Bausteine.",
+        "control-implementations": [
+          {
+            "uuid": "82f78aac-f35b-4a08-bef7-af3a9ef07a1f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ISMS.1: Sicherheitsmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "bd5a17d4-e3d7-4bd9-a72b-cc3f442c362d",
+                "control-id": "ISMS.1.A1",
+                "description": "Implementation for control ISMS.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "3510cb8b-a90f-40c9-8354-c9f21cce8c6a",
+                "control-id": "ISMS.1.A2",
+                "description": "Implementation for control ISMS.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "3da1ed75-47a4-4452-90fa-7a88949ea891",
+                "control-id": "ISMS.1.A3",
+                "description": "Implementation for control ISMS.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "ed74bf23-8a6e-42e1-b1df-1aa8d1886571",
+                "control-id": "ISMS.1.A4",
+                "description": "Implementation for control ISMS.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "e3673bec-1ce6-4023-bd91-473c25af1914",
+                "control-id": "ISMS.1.A5",
+                "description": "Implementation for control ISMS.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "02ab12bc-6dc0-4aaa-8cc9-48ff39ddf4a2",
+                "control-id": "ISMS.1.A6",
+                "description": "Implementation for control ISMS.1.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "37464788-3aa2-49a3-9d3a-8f6ddbcecb31",
+                "control-id": "ISMS.1.A7",
+                "description": "Implementation for control ISMS.1.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "8ca8f32d-2d0d-428d-8322-1c4c55c8428c",
+                "control-id": "ISMS.1.A8",
+                "description": "Implementation for control ISMS.1.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "617a01e9-bf90-4c3c-9dbb-bf0f9fab06df",
+                "control-id": "ISMS.1.A9",
+                "description": "Implementation for control ISMS.1.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "ef0bbcd4-a397-4812-b69f-2ae10bcdfb1e",
+                "control-id": "ISMS.1.A10",
+                "description": "Implementation for control ISMS.1.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "fbf33f6f-400e-4c2e-aaff-44397b2e337a",
+                "control-id": "ISMS.1.A11",
+                "description": "Implementation for control ISMS.1.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "d07c1101-7aa7-4aea-92b4-00971880774f",
+                "control-id": "ISMS.1.A12",
+                "description": "Implementation for control ISMS.1.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "6f6cac57-8295-48b9-bfdd-c13a0a74276a",
+                "control-id": "ISMS.1.A13",
+                "description": "Implementation for control ISMS.1.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d895d8b-830e-4579-8d22-c7022a7101af",
+                "control-id": "ISMS.1.A15",
+                "description": "Implementation for control ISMS.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "cf4508ce-4b9d-4584-b528-be4f2e6e9588",
+                "control-id": "ISMS.1.A16",
+                "description": "Implementation for control ISMS.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "4735bb22-9f23-4b0b-9b2f-4c27dda192ea",
+                "control-id": "ISMS.1.A17",
+                "description": "Implementation for control ISMS.1.A17 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "f7d71672-cf40-4d4a-b88a-b1dd2061c798",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.1: Organisation",
+            "implemented-requirements": [
+              {
+                "uuid": "78d4ab85-4442-4093-b96f-97779ff9ad28",
+                "control-id": "ORP.1.A1",
+                "description": "Implementation for control ORP.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "3dfec53c-f765-4665-acd9-70e53b6cc835",
+                "control-id": "ORP.1.A2",
+                "description": "Implementation for control ORP.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "a8bdb721-9a3a-4bb8-8665-d3a6ab7b8d4d",
+                "control-id": "ORP.1.A3",
+                "description": "Implementation for control ORP.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "71fb45e9-8c10-49e8-bcbe-1a861a9a2e23",
+                "control-id": "ORP.1.A4",
+                "description": "Implementation for control ORP.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "da03b978-8444-4a4c-b878-9f0c7dbac9c8",
+                "control-id": "ORP.1.A15",
+                "description": "Implementation for control ORP.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "e8a6f610-d5bd-4e63-93f8-d4857c4473d0",
+                "control-id": "ORP.1.A8",
+                "description": "Implementation for control ORP.1.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "04025869-be8c-4d8f-9654-02cbb02a272a",
+                "control-id": "ORP.1.A13",
+                "description": "Implementation for control ORP.1.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "453cd5af-5e5d-4bfc-995c-a1b5badcd9f8",
+                "control-id": "ORP.1.A16",
+                "description": "Implementation for control ORP.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "10c12cf8-f667-4d07-ad12-448c207d4f1c",
+                "control-id": "ORP.1.A17",
+                "description": "Implementation for control ORP.1.A17 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "3e1efe2a-6e2d-4909-a68b-597455e88264",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.2: ORP.2 Personal",
+            "implemented-requirements": [
+              {
+                "uuid": "7ee2240c-c0a2-4326-820c-437ee52ce9fb",
+                "control-id": "ORP.2.A1",
+                "description": "Implementation for control ORP.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "0efb313c-a2ae-4171-bba4-94825d228432",
+                "control-id": "ORP.2.A2",
+                "description": "Implementation for control ORP.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "93fc5d90-24b3-4730-b5d5-d7765296ed59",
+                "control-id": "ORP.2.A3",
+                "description": "Implementation for control ORP.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "c037a147-bbfe-4187-b11f-b99d2362bbb6",
+                "control-id": "ORP.2.A4",
+                "description": "Implementation for control ORP.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "c0e9a81b-8f29-42e9-b8ac-cc03ffd79543",
+                "control-id": "ORP.2.A5",
+                "description": "Implementation for control ORP.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "6aece568-131c-4d27-ac6e-492521b57bfe",
+                "control-id": "ORP.2.A14",
+                "description": "Implementation for control ORP.2.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "fee5cafd-a8ab-4b0a-9608-9ab0a99aebf6",
+                "control-id": "ORP.2.A15",
+                "description": "Implementation for control ORP.2.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "058943e0-3d41-45e9-87f8-9514ab4b4f60",
+                "control-id": "ORP.2.A7",
+                "description": "Implementation for control ORP.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "f47606c1-1db6-4125-9ad2-a4532f16e51e",
+                "control-id": "ORP.2.A13",
+                "description": "Implementation for control ORP.2.A13 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "f51807db-f4f2-4a50-9c30-b8d24c90dc53",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.3: Sensibilisierung und Schulung zur Informationssicherheit",
+            "implemented-requirements": [
+              {
+                "uuid": "b85b2336-a69d-4d51-be15-4860f59514bf",
+                "control-id": "ORP.3.A1",
+                "description": "Implementation for control ORP.3.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "5c02e954-fb8e-4dcc-8472-c4e31c639302",
+                "control-id": "ORP.3.A3",
+                "description": "Implementation for control ORP.3.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "52e9a3b5-d0e5-4779-ba6d-45c2563b55d8",
+                "control-id": "ORP.3.A4",
+                "description": "Implementation for control ORP.3.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "1b7fb5b9-d148-450f-9745-5056f473503b",
+                "control-id": "ORP.3.A6",
+                "description": "Implementation for control ORP.3.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "2cc0a525-3cd6-4b3f-a12d-1ea0ce786e45",
+                "control-id": "ORP.3.A7",
+                "description": "Implementation for control ORP.3.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "a99532bc-d74b-465a-b4e3-4a2b33d1addc",
+                "control-id": "ORP.3.A8",
+                "description": "Implementation for control ORP.3.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "4eb712f9-8f72-4124-a0aa-5947956b3552",
+                "control-id": "ORP.3.A9",
+                "description": "Implementation for control ORP.3.A9 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "18e829fd-2694-4124-89c0-c568832f0c7b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.4: Identit\u00e4ts- und Berechtigungsmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "52aef604-968f-49ac-823a-18ef14660209",
+                "control-id": "ORP.4.A1",
+                "description": "Implementation for control ORP.4.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "0f3832b3-9394-4552-a742-506c79de34ba",
+                "control-id": "ORP.4.A2",
+                "description": "Implementation for control ORP.4.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "b3c37623-b8ca-4435-8b9e-0424672392e6",
+                "control-id": "ORP.4.A3",
+                "description": "Implementation for control ORP.4.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "e0b5de20-bc5a-4832-9f8b-581598eb9ff2",
+                "control-id": "ORP.4.A4",
+                "description": "Implementation for control ORP.4.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "aada5f73-a9a2-4898-bbd5-697f8ed09e7c",
+                "control-id": "ORP.4.A5",
+                "description": "Implementation for control ORP.4.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "4831cdad-364e-4b8d-946e-55899f93307a",
+                "control-id": "ORP.4.A6",
+                "description": "Implementation for control ORP.4.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "0849d34c-e504-462a-9c9f-b7fbe6eb88a1",
+                "control-id": "ORP.4.A7",
+                "description": "Implementation for control ORP.4.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "a4a48a8c-df51-43f8-b8c4-6499d9009819",
+                "control-id": "ORP.4.A8",
+                "description": "Implementation for control ORP.4.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "5c0ef223-8036-4cbc-82b8-ae574e7ff70b",
+                "control-id": "ORP.4.A9",
+                "description": "Implementation for control ORP.4.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "57d4c63b-f5d4-477b-b27c-74b7c7377697",
+                "control-id": "ORP.4.A10",
+                "description": "Implementation for control ORP.4.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "aea3025d-610d-44b8-8160-7df9f89f2145",
+                "control-id": "ORP.4.A11",
+                "description": "Implementation for control ORP.4.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "2d33b237-06f0-4b5f-b69a-bdca2ba24db5",
+                "control-id": "ORP.4.A12",
+                "description": "Implementation for control ORP.4.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "74d56d96-5229-44d7-a0f7-b7ab5c6ca868",
+                "control-id": "ORP.4.A13",
+                "description": "Implementation for control ORP.4.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "30b102c2-441e-4ae6-b31c-ba9edf76c791",
+                "control-id": "ORP.4.A20",
+                "description": "Implementation for control ORP.4.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "c4f99db4-b2a5-4f4c-86cb-a54321f16742",
+                "control-id": "ORP.4.A21",
+                "description": "Implementation for control ORP.4.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "f27f4e8e-cfec-4d70-88ac-6f268b414378",
+                "control-id": "ORP.4.A24",
+                "description": "Implementation for control ORP.4.A24 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "2092478b-1517-4288-8401-1e2a851cdc96",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.5: ORP.5 Compliance Management (Anforderungsmanagement)",
+            "implemented-requirements": [
+              {
+                "uuid": "065fae33-1094-4c22-adb0-33a705fd45da",
+                "control-id": "ORP.5.A1",
+                "description": "Implementation for control ORP.5.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "f44c4a6f-f136-49ed-8bf8-8777d483c89d",
+                "control-id": "ORP.5.A2",
+                "description": "Implementation for control ORP.5.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "632f8e3f-5caf-47d6-9d5c-3dc9bbac7afa",
+                "control-id": "ORP.5.A4",
+                "description": "Implementation for control ORP.5.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "e49f1f52-f0f9-45a0-bd89-cf81e42c04d1",
+                "control-id": "ORP.5.A5",
+                "description": "Implementation for control ORP.5.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "3c918ed0-f114-4db6-aab8-c48d16c7a9fd",
+                "control-id": "ORP.5.A8",
+                "description": "Implementation for control ORP.5.A8 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "45c6a1f7-57f9-4cef-b2f4-e670f409204d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group ORP.6: Benutzerdefiniert: Cloud-Identit\u00e4ts- und Zugriffsmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "721f33b6-182e-4c1b-8507-6e5f8bba7f1d",
+                "control-id": "ORP.6.A1",
+                "description": "Implementation for control ORP.6.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "2f230629-06ea-4a8b-921c-9ddc49faae32",
+                "control-id": "ORP.6.A2",
+                "description": "Implementation for control ORP.6.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "13b86e55-8667-463a-8e8c-53bbec5ea857",
+                "control-id": "ORP.6.A3",
+                "description": "Implementation for control ORP.6.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "b0038627-a83d-4fc0-9e4f-c64d2feb040b",
+                "control-id": "ORP.6.A4",
+                "description": "Implementation for control ORP.6.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "9605bf11-7ff1-48b9-8db8-31680e0bee2c",
+                "control-id": "ORP.6.A5",
+                "description": "Implementation for control ORP.6.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "649873d2-65c4-48fe-ab41-0040162315c6",
+                "control-id": "ORP.6.A6",
+                "description": "Implementation for control ORP.6.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "8bd0a359-24a7-4763-8e50-5f1bc6fc270f",
+                "control-id": "ORP.6.A7",
+                "description": "Implementation for control ORP.6.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "3019448c-8972-4f9e-be2f-935b93953f9a",
+                "control-id": "ORP.6.A8",
+                "description": "Implementation for control ORP.6.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "f7f2c17b-ceeb-47ed-8add-646428b0ac3e",
+                "control-id": "ORP.6.A9",
+                "description": "Implementation for control ORP.6.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "29b32606-d326-4a39-8062-ae74db96c1cf",
+                "control-id": "ORP.6.A10",
+                "description": "Implementation for control ORP.6.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "ce73ed49-eec6-48dd-bbcf-6fb865efcbc7",
+                "control-id": "ORP.6.A11",
+                "description": "Implementation for control ORP.6.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "167cd310-50ad-4fe1-86e9-bf3413bd6fe0",
+                "control-id": "ORP.6.A12",
+                "description": "Implementation for control ORP.6.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "86395e67-c045-4e0e-ab6b-4a9a24da67fd",
+                "control-id": "ORP.6.A13",
+                "description": "Implementation for control ORP.6.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "303f875c-fd9b-4ce8-acf2-d6f713027834",
+                "control-id": "ORP.6.A14",
+                "description": "Implementation for control ORP.6.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "9a6082b2-4419-4764-b15a-cca02208a7d3",
+                "control-id": "ORP.6.A15",
+                "description": "Implementation for control ORP.6.A15 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "05104f6d-3bab-4b10-bd40-3854c7a336de",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.1: Kryptokonzept",
+            "implemented-requirements": [
+              {
+                "uuid": "4048f2b4-609b-4b95-9e5c-77e7a75ec8c3",
+                "control-id": "CON.1.A1",
+                "description": "Implementation for control CON.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "81632fdc-4455-4f64-923a-34892783582e",
+                "control-id": "CON.1.A2",
+                "description": "Implementation for control CON.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "8d3de057-0b95-4ba7-98c0-c4525bdd2074",
+                "control-id": "CON.1.A4",
+                "description": "Implementation for control CON.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "f7c1ee8b-3b97-4096-8c18-92c03672b2aa",
+                "control-id": "CON.1.A5",
+                "description": "Implementation for control CON.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "f4e83808-92c6-41f5-a35f-8157f331f1fb",
+                "control-id": "CON.1.A9",
+                "description": "Implementation for control CON.1.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "a7ac3a06-9a1f-4aad-976f-71c5dc3fbd89",
+                "control-id": "CON.1.A10",
+                "description": "Implementation for control CON.1.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "f7ad6e52-db93-4058-9857-1a61760487d1",
+                "control-id": "CON.1.A15",
+                "description": "Implementation for control CON.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "ad8409f1-67a4-46df-afb0-07dcfa625c32",
+                "control-id": "CON.1.A19",
+                "description": "Implementation for control CON.1.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "d0eb23fb-23b6-4cf5-bf61-8fd64bd0185e",
+                "control-id": "CON.1.A11",
+                "description": "Implementation for control CON.1.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "2b22f86d-009b-4757-8771-a5681deb1a11",
+                "control-id": "CON.1.A16",
+                "description": "Implementation for control CON.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "7b488fbc-78c6-4a5a-8de3-0c39772a7cb7",
+                "control-id": "CON.1.A17",
+                "description": "Implementation for control CON.1.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "2e521f1a-0b42-4134-ae2b-82aa93480e1b",
+                "control-id": "CON.1.A18",
+                "description": "Implementation for control CON.1.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "abb573da-2324-4e04-a538-59c2925f2e1e",
+                "control-id": "CON.1.A20",
+                "description": "Implementation for control CON.1.A20 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "4699bd8c-b5fc-4c7a-be07-93e82db8679b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.10: Entwicklung von Webanwendungen",
+            "implemented-requirements": [
+              {
+                "uuid": "9d1f8fed-e56e-4b20-b3d9-ed56f507d56b",
+                "control-id": "CON.10.A1",
+                "description": "Implementation for control CON.10.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "51855207-c9d3-4b36-a3bc-f9a5e093e10d",
+                "control-id": "CON.10.A2",
+                "description": "Implementation for control CON.10.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "e328324c-4807-4cc2-a28c-3d94eccfbe01",
+                "control-id": "CON.10.A3",
+                "description": "Implementation for control CON.10.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "b574f723-d2f8-48e9-89d5-77ca42ea8cef",
+                "control-id": "CON.10.A4",
+                "description": "Implementation for control CON.10.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "ece48c34-8932-4b0b-bd34-1ebade6c99c9",
+                "control-id": "CON.10.A5",
+                "description": "Implementation for control CON.10.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "498ef142-b93d-4101-9e2f-b7c4f3a4cbd3",
+                "control-id": "CON.10.A6",
+                "description": "Implementation for control CON.10.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "3f8ca94e-6d43-41fd-8b13-85eaf1c18ae5",
+                "control-id": "CON.10.A7",
+                "description": "Implementation for control CON.10.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "acf95975-7519-46bd-9881-ddbf853c4f67",
+                "control-id": "CON.10.A8",
+                "description": "Implementation for control CON.10.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "f0788d2e-d58d-4e48-95fb-8443ddf54c59",
+                "control-id": "CON.10.A9",
+                "description": "Implementation for control CON.10.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "d5395567-7870-4e0a-ab61-fea2efb68846",
+                "control-id": "CON.10.A10",
+                "description": "Implementation for control CON.10.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "d51735c7-783e-4cec-bfe0-7e7f1a6cf7b4",
+                "control-id": "CON.10.A11",
+                "description": "Implementation for control CON.10.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "00062371-edd2-4304-b838-6e90058b72c0",
+                "control-id": "CON.10.A12",
+                "description": "Implementation for control CON.10.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "fc697281-c4ac-4c27-92d6-24ea2a3fb15f",
+                "control-id": "CON.10.A13",
+                "description": "Implementation for control CON.10.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "02de9ec3-8119-4dd1-8359-1d7cf3a89b07",
+                "control-id": "CON.10.A14",
+                "description": "Implementation for control CON.10.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "9c7149ee-8fa8-467b-8ddb-41cf2aeead82",
+                "control-id": "CON.10.A15",
+                "description": "Implementation for control CON.10.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "cf5f1566-ecd8-4892-abb1-65a6160c7c52",
+                "control-id": "CON.10.A16",
+                "description": "Implementation for control CON.10.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "e54db472-858e-45f1-bb2b-55d346a32334",
+                "control-id": "CON.10.A17",
+                "description": "Implementation for control CON.10.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "dd79e1ba-eda0-4f61-b625-e04c79db5f3b",
+                "control-id": "CON.10.A18",
+                "description": "Implementation for control CON.10.A18 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "eafcd5f2-2248-47c4-b5d1-89889b1d85d3",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.11.1: Geheimschutz VS-NUR F\u00dcR DEN DIENSTGEBRAUCH (VS-NfD)",
+            "implemented-requirements": [
+              {
+                "uuid": "3acbc658-1dfc-47b2-8641-15f2137a65a3",
+                "control-id": "CON.11.1.A1",
+                "description": "Implementation for control CON.11.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "54d88a14-608b-4f78-b645-75c1063f7632",
+                "control-id": "CON.11.1.A2",
+                "description": "Implementation for control CON.11.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "bb6bd675-b860-4af7-8f2e-f6e40efe36f6",
+                "control-id": "CON.11.1.A3",
+                "description": "Implementation for control CON.11.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "b13f924f-1714-4423-a20e-de0a83e19367",
+                "control-id": "CON.11.1.A4",
+                "description": "Implementation for control CON.11.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "b3507e7f-4ff3-447b-8d5d-10e8ad1f3841",
+                "control-id": "CON.11.1.A5",
+                "description": "Implementation for control CON.11.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "6e04c025-fb49-4cb8-8462-9570687f14a5",
+                "control-id": "CON.11.1.A6",
+                "description": "Implementation for control CON.11.1.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "5febbd49-35d3-4a8e-9ef4-dd407e3491f4",
+                "control-id": "CON.11.1.A7",
+                "description": "Implementation for control CON.11.1.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "094b2883-6617-43aa-b64a-5a5831049216",
+                "control-id": "CON.11.1.A8",
+                "description": "Implementation for control CON.11.1.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "b81f1258-48a0-414c-ae96-c294a6dc9783",
+                "control-id": "CON.11.1.A9",
+                "description": "Implementation for control CON.11.1.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "51bfa922-1628-4057-98b4-868fef3a199b",
+                "control-id": "CON.11.1.A10",
+                "description": "Implementation for control CON.11.1.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "dd001bed-3e4c-49d1-8d57-f5a5f2eeab4c",
+                "control-id": "CON.11.1.A11",
+                "description": "Implementation for control CON.11.1.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "fd58fb7b-ad50-4b30-a8d1-3a75efaffb7d",
+                "control-id": "CON.11.1.A12",
+                "description": "Implementation for control CON.11.1.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "3cf9d812-c364-45da-84af-184cc2bcf4fe",
+                "control-id": "CON.11.1.A13",
+                "description": "Implementation for control CON.11.1.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "2c90f836-a2c1-4bac-a597-942d68c1ec73",
+                "control-id": "CON.11.1.A14",
+                "description": "Implementation for control CON.11.1.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "a2618f27-06cb-47e3-9aeb-29c694fe9603",
+                "control-id": "CON.11.1.A15",
+                "description": "Implementation for control CON.11.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "440d66ca-aa27-4907-93dc-02947aa7f88d",
+                "control-id": "CON.11.1.A16",
+                "description": "Implementation for control CON.11.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "f387fa73-3dc7-40c8-be12-647f1df41673",
+                "control-id": "CON.11.1.A17",
+                "description": "Implementation for control CON.11.1.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "2cfb3977-5576-429c-b61e-b26430917ddb",
+                "control-id": "CON.11.1.A18",
+                "description": "Implementation for control CON.11.1.A18 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "a1a95754-71ce-409c-9e7a-9fd81e151880",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.2: Datenschutz",
+            "implemented-requirements": [
+              {
+                "uuid": "1d6f0171-e035-46dd-b0f0-41bfe1582404",
+                "control-id": "CON.2.A1",
+                "description": "Implementation for control CON.2.A1 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "22edac81-4ddf-44b0-b75a-42520f8f3ae9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.3: CON.3 Datensicherungskonzept",
+            "implemented-requirements": [
+              {
+                "uuid": "9e0b6ad7-9760-4711-9be8-ee062ab8c2c5",
+                "control-id": "CON.3.A1",
+                "description": "Implementation for control CON.3.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "8e7f596b-a011-4264-9507-d34a8fa14767",
+                "control-id": "CON.3.A2",
+                "description": "Implementation for control CON.3.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "1b7b2975-0bd6-4c4c-be32-f4e05085f297",
+                "control-id": "CON.3.A4",
+                "description": "Implementation for control CON.3.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "72508843-ecca-44eb-a35d-b1adbceddcd9",
+                "control-id": "CON.3.A5",
+                "description": "Implementation for control CON.3.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "ec1d58b6-8979-4701-9e53-3d10d0f8faa1",
+                "control-id": "CON.3.A12",
+                "description": "Implementation for control CON.3.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "732fb030-e033-4e65-a43f-d7dea2646f61",
+                "control-id": "CON.3.A14",
+                "description": "Implementation for control CON.3.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "7ae4ff75-c768-4aad-b7e6-ad1d5b7b4daf",
+                "control-id": "CON.3.A15",
+                "description": "Implementation for control CON.3.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "a8cf1366-80bc-4ea0-86ba-cfd0702bb52c",
+                "control-id": "CON.3.A6",
+                "description": "Implementation for control CON.3.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "6a7d5c07-4e8b-47ba-9604-562987948e60",
+                "control-id": "CON.3.A7",
+                "description": "Implementation for control CON.3.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "93439162-1720-4105-9cce-c5f1363208da",
+                "control-id": "CON.3.A9",
+                "description": "Implementation for control CON.3.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "ea380aa4-3631-4ef6-907f-e10988f3c2d2",
+                "control-id": "CON.3.A13",
+                "description": "Implementation for control CON.3.A13 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "c335c938-58cf-4c9b-8caf-5c15d4b313db",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.6: L\u00f6schen und Vernichten",
+            "implemented-requirements": [
+              {
+                "uuid": "f0530599-32c2-4a0a-a58e-f4b107114f4c",
+                "control-id": "CON.6.A1",
+                "description": "Implementation for control CON.6.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "bc2eefbc-6dd3-4d88-9445-eb0ed7c12435",
+                "control-id": "CON.6.A2",
+                "description": "Implementation for control CON.6.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "deb3171b-fbb8-4db9-b2e2-ea1c7c63c12a",
+                "control-id": "CON.6.A4",
+                "description": "Implementation for control CON.6.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "8466a9b2-e75e-4b97-8a1e-6032a9453921",
+                "control-id": "CON.6.A8",
+                "description": "Implementation for control CON.6.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "927f9a05-85f8-4f76-9483-19de8b1c4905",
+                "control-id": "CON.6.A11",
+                "description": "Implementation for control CON.6.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "93f36c1d-a8ab-4d75-8dab-a9a0b2672a1d",
+                "control-id": "CON.6.A12",
+                "description": "Implementation for control CON.6.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "17f5a275-e126-4f5f-beb9-05046bf50883",
+                "control-id": "CON.6.A13",
+                "description": "Implementation for control CON.6.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "26492131-a1cc-434d-af2e-057162231214",
+                "control-id": "CON.6.A14",
+                "description": "Implementation for control CON.6.A14 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "0af6a41e-63ff-4091-a88b-a5f3230db26e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.7: CON.7 Informationssicherheit auf Auslandsreisen",
+            "implemented-requirements": [
+              {
+                "uuid": "8705c7a7-6795-4671-af20-6695f6cb77c6",
+                "control-id": "CON.7.A1",
+                "description": "Implementation for control CON.7.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "fb0a9c3b-554d-4b99-8f89-29979cf4ab72",
+                "control-id": "CON.7.A2",
+                "description": "Implementation for control CON.7.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "3cd9cebb-4bc9-4b36-8377-bc9d35e2707d",
+                "control-id": "CON.7.A3",
+                "description": "Implementation for control CON.7.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d1f73ae-6bde-4ea4-acf2-4fee1c94e9db",
+                "control-id": "CON.7.A4",
+                "description": "Implementation for control CON.7.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "23049810-e25c-4870-8a60-0eddb99711ff",
+                "control-id": "CON.7.A5",
+                "description": "Implementation for control CON.7.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "d93dc963-e50c-4038-8580-9f85781c77ae",
+                "control-id": "CON.7.A6",
+                "description": "Implementation for control CON.7.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "65b0e7a7-b2e6-49cf-b26e-69a61b8f3661",
+                "control-id": "CON.7.A7",
+                "description": "Implementation for control CON.7.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "358482e4-b5a3-48ee-9d66-dece2a72203a",
+                "control-id": "CON.7.A8",
+                "description": "Implementation for control CON.7.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "251249b0-be9a-4811-9d29-6667168e7662",
+                "control-id": "CON.7.A9",
+                "description": "Implementation for control CON.7.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "b0bd1497-12be-40a8-b5e3-6c32a9f74090",
+                "control-id": "CON.7.A10",
+                "description": "Implementation for control CON.7.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "4b545a6c-c480-4f6b-bc4c-d83415f8003c",
+                "control-id": "CON.7.A11",
+                "description": "Implementation for control CON.7.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "f1e6db25-963d-493c-bc6f-9878cf1e898a",
+                "control-id": "CON.7.A12",
+                "description": "Implementation for control CON.7.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "e3578da9-1aca-4a2a-8c86-fb83aac21cfa",
+                "control-id": "CON.7.A13",
+                "description": "Implementation for control CON.7.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "24f3a294-c96f-4770-8e24-251d0b91f1be",
+                "control-id": "CON.7.A14",
+                "description": "Implementation for control CON.7.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "4945c21e-8ad1-492c-99b2-11d2a6f08621",
+                "control-id": "CON.7.A15",
+                "description": "Implementation for control CON.7.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "86fc039d-acbb-4688-a4ea-7ac31236a1c2",
+                "control-id": "CON.7.A16",
+                "description": "Implementation for control CON.7.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "b5190898-af0c-438e-a70e-fa0568f0cd82",
+                "control-id": "CON.7.A17",
+                "description": "Implementation for control CON.7.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "b3acd22d-dee0-43a8-b5b8-c0e8a6af8784",
+                "control-id": "CON.7.A18",
+                "description": "Implementation for control CON.7.A18 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "a925726e-f460-4a0c-9324-c4b2a86b4d73",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.8: Software-Entwicklung",
+            "implemented-requirements": [
+              {
+                "uuid": "b2272fdc-eb1d-4734-a6d8-744d746141b8",
+                "control-id": "CON.8.A1",
+                "description": "Implementation for control CON.8.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "e0e4b0ee-f8a7-4130-a405-2671b7a9b339",
+                "control-id": "CON.8.A2",
+                "description": "Implementation for control CON.8.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "8737a9f2-d104-4588-a2f3-0affd95afb56",
+                "control-id": "CON.8.A3",
+                "description": "Implementation for control CON.8.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "6e3d6c12-0b96-40a5-ba79-45f790651a0a",
+                "control-id": "CON.8.A5",
+                "description": "Implementation for control CON.8.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "b57f848a-d52b-4801-bdec-b6760aad7ff9",
+                "control-id": "CON.8.A6",
+                "description": "Implementation for control CON.8.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "05af93b3-63bf-4ed6-bc5d-14f7f1efe907",
+                "control-id": "CON.8.A7",
+                "description": "Implementation for control CON.8.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "ee3f4c4d-1b04-4953-a472-5d7599800b27",
+                "control-id": "CON.8.A8",
+                "description": "Implementation for control CON.8.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "aff42108-6c1d-458b-805a-b338ba867273",
+                "control-id": "CON.8.A10",
+                "description": "Implementation for control CON.8.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "9937035e-e908-4612-a953-b3233b9b7196",
+                "control-id": "CON.8.A11",
+                "description": "Implementation for control CON.8.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "d1fa8bb8-32f9-4a24-b3b2-d0a8109552f7",
+                "control-id": "CON.8.A12",
+                "description": "Implementation for control CON.8.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "72f4f30b-ae8e-49df-8818-31e73ae0d760",
+                "control-id": "CON.8.A14",
+                "description": "Implementation for control CON.8.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "24e42eb1-d6b6-4036-b7bd-8e4793cc2ae8",
+                "control-id": "CON.8.A16",
+                "description": "Implementation for control CON.8.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "45c09a91-0d91-41d6-b554-91c730dd7fb7",
+                "control-id": "CON.8.A17",
+                "description": "Implementation for control CON.8.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "c963fe8d-d8c7-42a4-8eb6-3a3df8e704a7",
+                "control-id": "CON.8.A18",
+                "description": "Implementation for control CON.8.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "4b916da1-694f-4666-b8a6-e18d92f176ee",
+                "control-id": "CON.8.A19",
+                "description": "Implementation for control CON.8.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "99cf5cda-6ff1-4e06-a60d-496dd3971d8d",
+                "control-id": "CON.8.A20",
+                "description": "Implementation for control CON.8.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "3825a2a1-f437-4e65-8851-44d848daf6ec",
+                "control-id": "CON.8.A21",
+                "description": "Implementation for control CON.8.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "54e4aa84-596f-46d8-82b2-ee618f8d9ae0",
+                "control-id": "CON.8.A22",
+                "description": "Implementation for control CON.8.A22 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "0b3727df-9506-466a-a65a-a9e0dbd86f66",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group CON.9: Informationsaustausch",
+            "implemented-requirements": [
+              {
+                "uuid": "cad594ae-afd7-4c7a-98e5-cd6e19184dc3",
+                "control-id": "CON.9.A1",
+                "description": "Implementation for control CON.9.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "af54e818-2839-4ca5-8350-6873f8255f57",
+                "control-id": "CON.9.A2",
+                "description": "Implementation for control CON.9.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "5dd32840-7f9f-41fe-a74d-614b9a81272f",
+                "control-id": "CON.9.A3",
+                "description": "Implementation for control CON.9.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "ebfeda0a-0ab6-43b2-8f00-a8d7c59ef591",
+                "control-id": "CON.9.A4",
+                "description": "Implementation for control CON.9.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "08edf859-2be3-4879-8576-4eebdac3859f",
+                "control-id": "CON.9.A5",
+                "description": "Implementation for control CON.9.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "3334b86b-ebb3-4c3d-997e-4bbc31f23af3",
+                "control-id": "CON.9.A6",
+                "description": "Implementation for control CON.9.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "fc415488-b3f8-4aca-8800-eefeb30ff765",
+                "control-id": "CON.9.A7",
+                "description": "Implementation for control CON.9.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "d23cb591-f107-4680-b072-3bed76c1aa68",
+                "control-id": "CON.9.A8",
+                "description": "Implementation for control CON.9.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "62b18868-600c-4cb7-b189-be0c0faf89fd",
+                "control-id": "CON.9.A9",
+                "description": "Implementation for control CON.9.A9 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "60c791af-af84-4895-a965-88047947434d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.1: Allgemeiner IT-Betrieb",
+            "implemented-requirements": [
+              {
+                "uuid": "b23a6ab4-fc45-47cc-a627-af64cb097335",
+                "control-id": "OPS.1.1.1.A1",
+                "description": "Implementation for control OPS.1.1.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "75fc2d23-c8f7-4468-97a8-7d039e5e324e",
+                "control-id": "OPS.1.1.1.A2",
+                "description": "Implementation for control OPS.1.1.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "2c9b6bb6-32bc-427c-ae45-c83b6ed40172",
+                "control-id": "OPS.1.1.1.A3",
+                "description": "Implementation for control OPS.1.1.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "59955a1e-8572-4f8a-ba7b-8d432480bb36",
+                "control-id": "OPS.1.1.1.A4",
+                "description": "Implementation for control OPS.1.1.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "94636859-6f0a-451d-93b1-868e0b4cd8f0",
+                "control-id": "OPS.1.1.1.A5",
+                "description": "Implementation for control OPS.1.1.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "a18308af-c120-45a3-b56b-98dd1af7235c",
+                "control-id": "OPS.1.1.1.A6",
+                "description": "Implementation for control OPS.1.1.1.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "e0f616e2-d949-4216-8a1c-7456a9915704",
+                "control-id": "OPS.1.1.1.A7",
+                "description": "Implementation for control OPS.1.1.1.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "e653b94c-32d8-47fc-8cf2-52189e77e1f3",
+                "control-id": "OPS.1.1.1.A8",
+                "description": "Implementation for control OPS.1.1.1.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "94873106-a6eb-4c26-9ac7-f249a90d9bff",
+                "control-id": "OPS.1.1.1.A9",
+                "description": "Implementation for control OPS.1.1.1.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "b704e7ce-cfd0-429e-aa4d-d84f4e79de50",
+                "control-id": "OPS.1.1.1.A10",
+                "description": "Implementation for control OPS.1.1.1.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "cdec63a2-dc41-4dbb-ad04-5633def422b5",
+                "control-id": "OPS.1.1.1.A11",
+                "description": "Implementation for control OPS.1.1.1.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "c03ad116-c949-4477-880d-c421fcc40751",
+                "control-id": "OPS.1.1.1.A12",
+                "description": "Implementation for control OPS.1.1.1.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "b59e3c85-29fa-489d-bc67-eeaacd7ea22c",
+                "control-id": "OPS.1.1.1.A13",
+                "description": "Implementation for control OPS.1.1.1.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "c2fb35a2-8916-42c7-828a-3d848ef979da",
+                "control-id": "OPS.1.1.1.A14",
+                "description": "Implementation for control OPS.1.1.1.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "b0f3b5ca-b490-4386-947f-206541eb89be",
+                "control-id": "OPS.1.1.1.A15",
+                "description": "Implementation for control OPS.1.1.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "baffe3e5-a16f-40a4-bb99-17f0ef625bcf",
+                "control-id": "OPS.1.1.1.A16",
+                "description": "Implementation for control OPS.1.1.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "95ca3a3c-fb02-4860-b8bc-c842a8e21fa8",
+                "control-id": "OPS.1.1.1.A17",
+                "description": "Implementation for control OPS.1.1.1.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "eb3ed189-7681-4d24-8c76-db8365a5a1c9",
+                "control-id": "OPS.1.1.1.A18",
+                "description": "Implementation for control OPS.1.1.1.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "bf1161f7-50c0-4324-8547-b087bc34dde8",
+                "control-id": "OPS.1.1.1.A19",
+                "description": "Implementation for control OPS.1.1.1.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "bd5af7fb-60d3-4730-bcb0-4dec12329d06",
+                "control-id": "OPS.1.1.1.A20",
+                "description": "Implementation for control OPS.1.1.1.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d63d9c2-23fe-4754-ace4-b614336edeb6",
+                "control-id": "OPS.1.1.1.A21",
+                "description": "Implementation for control OPS.1.1.1.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "588caeb8-c8b7-416a-a63e-9270a6a6ea7f",
+                "control-id": "OPS.1.1.1.A22",
+                "description": "Implementation for control OPS.1.1.1.A22 as defined in the source catalog."
+              },
+              {
+                "uuid": "db942683-1ff8-4a98-a5c0-6c543fd12d23",
+                "control-id": "OPS.1.1.1.A23",
+                "description": "Implementation for control OPS.1.1.1.A23 as defined in the source catalog."
+              },
+              {
+                "uuid": "eecb8404-0aff-475b-ada9-2c671fa7e6ba",
+                "control-id": "OPS.1.1.1.A24",
+                "description": "Implementation for control OPS.1.1.1.A24 as defined in the source catalog."
+              },
+              {
+                "uuid": "bc28ba4e-ecd2-490e-9e69-d41d85fa6dca",
+                "control-id": "OPS.1.1.1.A25",
+                "description": "Implementation for control OPS.1.1.1.A25 as defined in the source catalog."
+              },
+              {
+                "uuid": "48fc4b85-efa6-4e6a-bcce-58b88419e5bb",
+                "control-id": "OPS.1.1.1.A26",
+                "description": "Implementation for control OPS.1.1.1.A26 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "f45f6136-0c1e-422d-b7b0-6fc39e697a7b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.2: Ordnungsgem\u00e4\u00dfe IT-Administration",
+            "implemented-requirements": [
+              {
+                "uuid": "7b89f5c4-03e1-4f85-af45-d53f341fc385",
+                "control-id": "OPS.1.1.2.A2",
+                "description": "Implementation for control OPS.1.1.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "bb4fa524-f4b6-4e38-beaa-7f7cc2d1fcbf",
+                "control-id": "OPS.1.1.2.A4",
+                "description": "Implementation for control OPS.1.1.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "ee9c993d-7c59-486b-bae7-848652b11542",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "Implementation for control OPS.1.1.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "043eca68-3e16-4a36-9d30-61c6ed4ae748",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "Implementation for control OPS.1.1.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "67aa5330-810c-4f82-b04f-5bc19ef01754",
+                "control-id": "OPS.1.1.2.A21",
+                "description": "Implementation for control OPS.1.1.2.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "147b0bd9-05b0-454e-8e44-b8d0a2e5fe7c",
+                "control-id": "OPS.1.1.2.A22",
+                "description": "Implementation for control OPS.1.1.2.A22 as defined in the source catalog."
+              },
+              {
+                "uuid": "cd34eefd-ec69-48f3-8b5f-1c6c3d7f6829",
+                "control-id": "OPS.1.1.2.A7",
+                "description": "Implementation for control OPS.1.1.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "dcf16bb0-db4b-4f7a-abc8-322719079969",
+                "control-id": "OPS.1.1.2.A8",
+                "description": "Implementation for control OPS.1.1.2.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "6a224e79-3163-47eb-a1fb-536ebdf48937",
+                "control-id": "OPS.1.1.2.A11",
+                "description": "Implementation for control OPS.1.1.2.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "2cc77143-1b85-4cda-b88c-80b406f46028",
+                "control-id": "OPS.1.1.2.A16",
+                "description": "Implementation for control OPS.1.1.2.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "f939da06-a5fe-4506-87ce-157ddb81e1cd",
+                "control-id": "OPS.1.1.2.A23",
+                "description": "Implementation for control OPS.1.1.2.A23 as defined in the source catalog."
+              },
+              {
+                "uuid": "97f72be1-675e-4425-a6b0-4514b814c83c",
+                "control-id": "OPS.1.1.2.A24",
+                "description": "Implementation for control OPS.1.1.2.A24 as defined in the source catalog."
+              },
+              {
+                "uuid": "065d13a7-b489-41ee-bf1e-c25d033528c0",
+                "control-id": "OPS.1.1.2.A25",
+                "description": "Implementation for control OPS.1.1.2.A25 as defined in the source catalog."
+              },
+              {
+                "uuid": "52295f17-b0b4-44aa-91e4-9f7dc802c8f7",
+                "control-id": "OPS.1.1.2.A26",
+                "description": "Implementation for control OPS.1.1.2.A26 as defined in the source catalog."
+              },
+              {
+                "uuid": "1e03d066-b536-4914-a829-987d6f1fd818",
+                "control-id": "OPS.1.1.2.A27",
+                "description": "Implementation for control OPS.1.1.2.A27 as defined in the source catalog."
+              },
+              {
+                "uuid": "7943292f-4dc6-4553-89e3-5248c932ef6e",
+                "control-id": "OPS.1.1.2.A28",
+                "description": "Implementation for control OPS.1.1.2.A28 as defined in the source catalog."
+              },
+              {
+                "uuid": "b3c99122-ba64-4702-a6e6-c688ebbe09da",
+                "control-id": "OPS.1.1.2.A17",
+                "description": "Implementation for control OPS.1.1.2.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "a335e7d3-1ee7-4388-a0b1-fc6a04e572bf",
+                "control-id": "OPS.1.1.2.A18",
+                "description": "Implementation for control OPS.1.1.2.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "9f166666-3b87-4b1d-b71d-d143e1b8ef2d",
+                "control-id": "OPS.1.1.2.A19",
+                "description": "Implementation for control OPS.1.1.2.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "497176f7-d776-4fdc-af0a-3c2e791ab3d4",
+                "control-id": "OPS.1.1.2.A29",
+                "description": "Implementation for control OPS.1.1.2.A29 as defined in the source catalog."
+              },
+              {
+                "uuid": "b8640437-f905-469f-9052-f1b0f9a2e697",
+                "control-id": "OPS.1.1.2.A30",
+                "description": "Implementation for control OPS.1.1.2.A30 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "ba1fa52f-7a16-4255-b11c-a6e6a2800f8f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.3: Patch- und \u00c4nderungsmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "4def354e-9508-46c0-ad5c-178563c04875",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "Implementation for control OPS.1.1.3.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "4519eddc-b1ee-41ff-908b-98390ead3f0d",
+                "control-id": "OPS.1.1.3.A2",
+                "description": "Implementation for control OPS.1.1.3.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "ade69fc0-1cf0-4885-b79e-04f416ff2fd2",
+                "control-id": "OPS.1.1.3.A3",
+                "description": "Implementation for control OPS.1.1.3.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "289c6780-d9c7-4e25-a5e8-6aa7cab3079f",
+                "control-id": "OPS.1.1.3.A15",
+                "description": "Implementation for control OPS.1.1.3.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "e1918424-68cf-4308-a17b-02c3a5f9659e",
+                "control-id": "OPS.1.1.3.A5",
+                "description": "Implementation for control OPS.1.1.3.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "4912023f-15c6-4f86-97d2-ed6e128e1951",
+                "control-id": "OPS.1.1.3.A6",
+                "description": "Implementation for control OPS.1.1.3.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "6ae49a04-7df5-4656-81d8-bea27c1d98f7",
+                "control-id": "OPS.1.1.3.A7",
+                "description": "Implementation for control OPS.1.1.3.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "1a875af8-b58f-4a23-832f-83a25deed3e3",
+                "control-id": "OPS.1.1.3.A8",
+                "description": "Implementation for control OPS.1.1.3.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "7cd64f12-608e-403f-9570-16a93f8ed3b9",
+                "control-id": "OPS.1.1.3.A9",
+                "description": "Implementation for control OPS.1.1.3.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "96254bfc-7eb2-4dbd-ae6c-95a39fb6c51e",
+                "control-id": "OPS.1.1.3.A10",
+                "description": "Implementation for control OPS.1.1.3.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "4ac2db4a-3c15-45ce-975f-a0ba9546e79e",
+                "control-id": "OPS.1.1.3.A11",
+                "description": "Implementation for control OPS.1.1.3.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "f7a8f486-42b1-4f14-8cb5-fc3298c498cc",
+                "control-id": "OPS.1.1.3.A12",
+                "description": "Implementation for control OPS.1.1.3.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "f94ba8ac-f2d6-4716-b08f-130c20994eb6",
+                "control-id": "OPS.1.1.3.A13",
+                "description": "Implementation for control OPS.1.1.3.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "79a4c9ad-838f-412e-a2fd-2a4d6098b2e1",
+                "control-id": "OPS.1.1.3.A14",
+                "description": "Implementation for control OPS.1.1.3.A14 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "487ba830-20b8-48ba-bcfe-f60dd9d830f2",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.4: Schutz vor Schadprogrammen",
+            "implemented-requirements": [
+              {
+                "uuid": "5a28ee59-5271-4c7e-a526-5ba17c952cb3",
+                "control-id": "OPS.1.1.4.A1",
+                "description": "Implementation for control OPS.1.1.4.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "590732d7-23a3-4f03-98c8-7dfba6799629",
+                "control-id": "OPS.1.1.4.A2",
+                "description": "Implementation for control OPS.1.1.4.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "053ab31d-64fa-42f8-bf05-7495d331285b",
+                "control-id": "OPS.1.1.4.A3",
+                "description": "Implementation for control OPS.1.1.4.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "5e40a76d-9a87-4085-bfd0-16de3452c0b4",
+                "control-id": "OPS.1.1.4.A5",
+                "description": "Implementation for control OPS.1.1.4.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "cf5338e4-3afc-4eb8-83ac-c603ed3eaf10",
+                "control-id": "OPS.1.1.4.A6",
+                "description": "Implementation for control OPS.1.1.4.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "1e4201ee-04c2-4a15-bdd2-cd974324307b",
+                "control-id": "OPS.1.1.4.A7",
+                "description": "Implementation for control OPS.1.1.4.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "16088c34-3ca3-43e6-b284-e9bb24c37e65",
+                "control-id": "OPS.1.1.4.A9",
+                "description": "Implementation for control OPS.1.1.4.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "70265e84-b544-4e93-8b27-50350d5a56bd",
+                "control-id": "OPS.1.1.4.A10",
+                "description": "Implementation for control OPS.1.1.4.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "0c8ec83c-215d-453e-924d-874b63a53921",
+                "control-id": "OPS.1.1.4.A11",
+                "description": "Implementation for control OPS.1.1.4.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "2ecffc88-4d68-4e76-95ce-34b7a3cf4aec",
+                "control-id": "OPS.1.1.4.A12",
+                "description": "Implementation for control OPS.1.1.4.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "150fda40-c16c-4928-bc3b-367a728afb26",
+                "control-id": "OPS.1.1.4.A13",
+                "description": "Implementation for control OPS.1.1.4.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "a3fe1c02-fbb4-4162-8afd-cf3499df8e86",
+                "control-id": "OPS.1.1.4.A14",
+                "description": "Implementation for control OPS.1.1.4.A14 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "5abad09f-52cf-488d-873f-822a63141afa",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.5: Protokollierung",
+            "implemented-requirements": [
+              {
+                "uuid": "953fe468-d97a-459e-b818-b059f4341a75",
+                "control-id": "OPS.1.1.5.A1",
+                "description": "Implementation for control OPS.1.1.5.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "ee81c788-05e8-4a35-970d-448e68aa2cc1",
+                "control-id": "OPS.1.1.5.A3",
+                "description": "Implementation for control OPS.1.1.5.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "20f4aa42-5f3d-446c-a9db-c1a8f12f2641",
+                "control-id": "OPS.1.1.5.A4",
+                "description": "Implementation for control OPS.1.1.5.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "d86bc3f8-6e5c-4d8b-a309-1f5fd6c44a47",
+                "control-id": "OPS.1.1.5.A5",
+                "description": "Implementation for control OPS.1.1.5.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "a6367aab-9542-40c0-8c69-4571ebd7d04f",
+                "control-id": "OPS.1.1.5.A6",
+                "description": "Implementation for control OPS.1.1.5.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "4e03902d-8298-49ad-863b-fb7a14cc303d",
+                "control-id": "OPS.1.1.5.A8",
+                "description": "Implementation for control OPS.1.1.5.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "a0195a9a-1f82-4290-a5f4-c04d23161106",
+                "control-id": "OPS.1.1.5.A9",
+                "description": "Implementation for control OPS.1.1.5.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "05e0b5ee-a3df-49f3-992a-5adbef8662fd",
+                "control-id": "OPS.1.1.5.A10",
+                "description": "Implementation for control OPS.1.1.5.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "2f2367ae-6e36-42dc-9c83-87f59a2619a6",
+                "control-id": "OPS.1.1.5.A11",
+                "description": "Implementation for control OPS.1.1.5.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "11b2f176-e281-4a91-845c-2c4e49487bda",
+                "control-id": "OPS.1.1.5.A12",
+                "description": "Implementation for control OPS.1.1.5.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "21c98d1b-d135-4dd7-9d23-eb076c187d06",
+                "control-id": "OPS.1.1.5.A13",
+                "description": "Implementation for control OPS.1.1.5.A13 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "06cdcafa-6fb1-4d4c-b6d7-4afd9031eb28",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.6: Software-Tests und -Freigaben",
+            "implemented-requirements": [
+              {
+                "uuid": "390897ea-d799-473b-b100-ec9bf9ac46fb",
+                "control-id": "OPS.1.1.6.A1",
+                "description": "Implementation for control OPS.1.1.6.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "caee1e92-3e63-4db4-aebd-cf25856ea106",
+                "control-id": "OPS.1.1.6.A2",
+                "description": "Implementation for control OPS.1.1.6.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "27aef781-b46a-46a4-99a7-cbb07eac2477",
+                "control-id": "OPS.1.1.6.A3",
+                "description": "Implementation for control OPS.1.1.6.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "aa25beda-6b51-4d05-a41a-2366c380a320",
+                "control-id": "OPS.1.1.6.A4",
+                "description": "Implementation for control OPS.1.1.6.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "541c8461-51f2-4e92-bf75-cbb4a4e5562a",
+                "control-id": "OPS.1.1.6.A5",
+                "description": "Implementation for control OPS.1.1.6.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "e900802c-f1da-4d48-ac05-4660a3fe03e2",
+                "control-id": "OPS.1.1.6.A11",
+                "description": "Implementation for control OPS.1.1.6.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d0aad12-58a5-4113-bea1-56f50013ee1b",
+                "control-id": "OPS.1.1.6.A6",
+                "description": "Implementation for control OPS.1.1.6.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "2daadbfc-900c-4801-836a-bb97db31c93e",
+                "control-id": "OPS.1.1.6.A7",
+                "description": "Implementation for control OPS.1.1.6.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "e383d394-b5ce-41ff-b226-e75b8740b209",
+                "control-id": "OPS.1.1.6.A10",
+                "description": "Implementation for control OPS.1.1.6.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "a43ef7d1-8f36-4a59-bf65-3a9f424e2f69",
+                "control-id": "OPS.1.1.6.A12",
+                "description": "Implementation for control OPS.1.1.6.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "ddd346b1-6da4-4b80-bbda-44d5781b6c0c",
+                "control-id": "OPS.1.1.6.A13",
+                "description": "Implementation for control OPS.1.1.6.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "4baf70ac-21d9-4c00-9b79-e7aab6394779",
+                "control-id": "OPS.1.1.6.A15",
+                "description": "Implementation for control OPS.1.1.6.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "771e8420-58d8-4c14-8419-d878ddccd817",
+                "control-id": "OPS.1.1.6.A14",
+                "description": "Implementation for control OPS.1.1.6.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "c5b569ed-5c74-4d43-8ccd-a890ce467125",
+                "control-id": "OPS.1.1.6.A16",
+                "description": "Implementation for control OPS.1.1.6.A16 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "9b8068a6-6b15-4be9-81b4-4a3c92dd72c0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.7: Systemmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "34f3087c-ddc1-4f6f-8c08-847c9f1aa06b",
+                "control-id": "OPS.1.1.7.A1",
+                "description": "Implementation for control OPS.1.1.7.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "4c345b80-287d-4348-8b46-46ddfb29c6af",
+                "control-id": "OPS.1.1.7.A2",
+                "description": "Implementation for control OPS.1.1.7.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "46beedfe-6e84-485f-906b-3ef2dd1e89bb",
+                "control-id": "OPS.1.1.7.A3",
+                "description": "Implementation for control OPS.1.1.7.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "8cf3d2cd-5a74-4d4e-acfb-b10b96fd10ad",
+                "control-id": "OPS.1.1.7.A4",
+                "description": "Implementation for control OPS.1.1.7.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "0892fcd2-eeaa-44b5-8e6d-de0e8af2b2ed",
+                "control-id": "OPS.1.1.7.A5",
+                "description": "Implementation for control OPS.1.1.7.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d230aad-7917-4c5b-bb44-7f691f6ea0a7",
+                "control-id": "OPS.1.1.7.A6",
+                "description": "Implementation for control OPS.1.1.7.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "58731a89-2f1e-4f7c-aa82-b35cf209c288",
+                "control-id": "OPS.1.1.7.A7",
+                "description": "Implementation for control OPS.1.1.7.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "65639969-f588-426b-b8a4-e655c60bd743",
+                "control-id": "OPS.1.1.7.A8",
+                "description": "Implementation for control OPS.1.1.7.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "90796caf-2729-43c2-849d-35569a51bfc8",
+                "control-id": "OPS.1.1.7.A9",
+                "description": "Implementation for control OPS.1.1.7.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "5132b73d-04f6-4e28-a41c-80b3244ac173",
+                "control-id": "OPS.1.1.7.A10",
+                "description": "Implementation for control OPS.1.1.7.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "c2ef8bbe-ee5c-4fca-ba17-32708c17a808",
+                "control-id": "OPS.1.1.7.A11",
+                "description": "Implementation for control OPS.1.1.7.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "702dfc55-9c15-48ef-95ef-33df097088b0",
+                "control-id": "OPS.1.1.7.A12",
+                "description": "Implementation for control OPS.1.1.7.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "86d0f2c3-66b6-41fb-a479-ddeb8e93a9ec",
+                "control-id": "OPS.1.1.7.A13",
+                "description": "Implementation for control OPS.1.1.7.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "d284b314-e4d7-4d7c-8c9e-bf48eba463fa",
+                "control-id": "OPS.1.1.7.A14",
+                "description": "Implementation for control OPS.1.1.7.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "820ac13f-faf7-480d-bef6-0984782792a7",
+                "control-id": "OPS.1.1.7.A15",
+                "description": "Implementation for control OPS.1.1.7.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "ce61057d-fcd5-4aaf-a6d8-5d8b93d41ff7",
+                "control-id": "OPS.1.1.7.A16",
+                "description": "Implementation for control OPS.1.1.7.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "9b1507d9-5aec-45c1-971a-081e61b389cb",
+                "control-id": "OPS.1.1.7.A17",
+                "description": "Implementation for control OPS.1.1.7.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "4a84ca6e-41da-4e0f-8ac3-f65f8a21bf36",
+                "control-id": "OPS.1.1.7.A18",
+                "description": "Implementation for control OPS.1.1.7.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "2a1abac9-0b61-4500-892f-48de11d60385",
+                "control-id": "OPS.1.1.7.A19",
+                "description": "Implementation for control OPS.1.1.7.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "5604daff-4e39-4ec7-8f5a-2d3c460c5527",
+                "control-id": "OPS.1.1.7.A20",
+                "description": "Implementation for control OPS.1.1.7.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "eb9b3be3-c6b8-4d99-9c4d-82ad339dd5cd",
+                "control-id": "OPS.1.1.7.A21",
+                "description": "Implementation for control OPS.1.1.7.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "b95ae137-25b2-4b91-9358-83a075f829b9",
+                "control-id": "OPS.1.1.7.A22",
+                "description": "Implementation for control OPS.1.1.7.A22 as defined in the source catalog."
+              },
+              {
+                "uuid": "6b47ee46-c1ac-41e2-b6b4-54ae4abff8c4",
+                "control-id": "OPS.1.1.7.A23",
+                "description": "Implementation for control OPS.1.1.7.A23 as defined in the source catalog."
+              },
+              {
+                "uuid": "4ad0991f-e375-4c80-b5b1-ba2959a99cdf",
+                "control-id": "OPS.1.1.7.A24",
+                "description": "Implementation for control OPS.1.1.7.A24 as defined in the source catalog."
+              },
+              {
+                "uuid": "61f73d1e-12f4-47c2-8ae3-b3a0a2939632",
+                "control-id": "OPS.1.1.7.A25",
+                "description": "Implementation for control OPS.1.1.7.A25 as defined in the source catalog."
+              },
+              {
+                "uuid": "28f1d2cd-c654-45c2-9541-8956f174d3f5",
+                "control-id": "OPS.1.1.7.A26",
+                "description": "Implementation for control OPS.1.1.7.A26 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "6b0a9b8e-1173-4703-b7da-2d29dde313dc",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.1.8: Benutzerdefiniert: Infrastructure as Code, Pipelines und DevOps-Prozesse",
+            "implemented-requirements": [
+              {
+                "uuid": "4bb10446-d1bb-4423-ac1a-00072aeb9ea7",
+                "control-id": "OPS.1.1.8.A1",
+                "description": "Implementation for control OPS.1.1.8.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "07ac5df1-6d40-403d-9f91-971fba5ea2f5",
+                "control-id": "OPS.1.1.8.A2",
+                "description": "Implementation for control OPS.1.1.8.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "448e9fa8-a22e-4174-bd20-f5cf1ca5afe1",
+                "control-id": "OPS.1.1.8.A3",
+                "description": "Implementation for control OPS.1.1.8.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "37430890-c2ac-4166-92a3-d3f9c01a0981",
+                "control-id": "OPS.1.1.8.A4",
+                "description": "Implementation for control OPS.1.1.8.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "6e7870aa-61dc-474c-9be6-28d1336294ae",
+                "control-id": "OPS.1.1.8.A5",
+                "description": "Implementation for control OPS.1.1.8.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "62dc2bc1-73ca-441f-849d-02cb4df1cbc9",
+                "control-id": "OPS.1.1.8.A6",
+                "description": "Implementation for control OPS.1.1.8.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "a2237055-ef01-42d4-b995-126324afa25e",
+                "control-id": "OPS.1.1.8.A7",
+                "description": "Implementation for control OPS.1.1.8.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "b6f18a69-6572-4ce4-ab2d-867b4bb8cc33",
+                "control-id": "OPS.1.1.8.A8",
+                "description": "Implementation for control OPS.1.1.8.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "77e2afc6-29a7-4a0c-bfbc-133dcd8a8bd5",
+                "control-id": "OPS.1.1.8.A9",
+                "description": "Implementation for control OPS.1.1.8.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "8aac5931-8ceb-4963-8719-70a2adbe1e98",
+                "control-id": "OPS.1.1.8.A10",
+                "description": "Implementation for control OPS.1.1.8.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "8f3f92c7-f4b0-405a-9150-63b107f52f1b",
+                "control-id": "OPS.1.1.8.A11",
+                "description": "Implementation for control OPS.1.1.8.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "b11cb960-accc-4fe3-8069-510ae2206210",
+                "control-id": "OPS.1.1.8.A12",
+                "description": "Implementation for control OPS.1.1.8.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "27950b40-a709-421a-b559-be1cb90dc9f2",
+                "control-id": "OPS.1.1.8.A13",
+                "description": "Implementation for control OPS.1.1.8.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "1746e3c0-fc29-489a-b42e-8104656616f6",
+                "control-id": "OPS.1.1.8.A14",
+                "description": "Implementation for control OPS.1.1.8.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "beaf35a9-c0cb-4389-87f2-1b9634e14e31",
+                "control-id": "OPS.1.1.8.A15",
+                "description": "Implementation for control OPS.1.1.8.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "51182b6b-b235-4729-bb73-712fbf7e5adc",
+                "control-id": "OPS.1.1.8.A16",
+                "description": "Implementation for control OPS.1.1.8.A16 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "5f8edf3d-8572-465f-a1c2-5c6b70aa1d91",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.2.2: Archivierung",
+            "implemented-requirements": [
+              {
+                "uuid": "0c495087-6dc3-4a5e-86a5-4b85c9e825d3",
+                "control-id": "OPS.1.2.2.A1",
+                "description": "Implementation for control OPS.1.2.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "15dc1bdb-29dd-4000-9da3-c614042301aa",
+                "control-id": "OPS.1.2.2.A2",
+                "description": "Implementation for control OPS.1.2.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "2c7b10c9-9cd6-428e-951e-0f424d582033",
+                "control-id": "OPS.1.2.2.A3",
+                "description": "Implementation for control OPS.1.2.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "298233b3-12f1-4a55-b39a-734f588afcc4",
+                "control-id": "OPS.1.2.2.A4",
+                "description": "Implementation for control OPS.1.2.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "80e30f98-9ff0-4910-932a-998cb2be7b62",
+                "control-id": "OPS.1.2.2.A5",
+                "description": "Implementation for control OPS.1.2.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "307fe8d2-e49c-47e3-8d68-5f77f107839c",
+                "control-id": "OPS.1.2.2.A6",
+                "description": "Implementation for control OPS.1.2.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "35559dbb-37c5-4792-9bf4-93fd08ecd1cb",
+                "control-id": "OPS.1.2.2.A7",
+                "description": "Implementation for control OPS.1.2.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "377b0c58-2576-4118-9e86-b5a1234b2a96",
+                "control-id": "OPS.1.2.2.A8",
+                "description": "Implementation for control OPS.1.2.2.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "0f2dfecc-0eb7-4cf9-adcc-28b9f9603176",
+                "control-id": "OPS.1.2.2.A9",
+                "description": "Implementation for control OPS.1.2.2.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "2c670cf8-b76d-4ee9-9458-74cb21c51d3c",
+                "control-id": "OPS.1.2.2.A10",
+                "description": "Implementation for control OPS.1.2.2.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "884bdb65-c36d-4de8-927d-305dd74b79a2",
+                "control-id": "OPS.1.2.2.A11",
+                "description": "Implementation for control OPS.1.2.2.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "7b0179dd-ba98-489c-bb61-9db815de5eff",
+                "control-id": "OPS.1.2.2.A12",
+                "description": "Implementation for control OPS.1.2.2.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "2eb846b8-d551-463b-a824-049b45e97dd4",
+                "control-id": "OPS.1.2.2.A13",
+                "description": "Implementation for control OPS.1.2.2.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "6397482f-5ab6-4707-8fc9-55291d3cbe44",
+                "control-id": "OPS.1.2.2.A14",
+                "description": "Implementation for control OPS.1.2.2.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "f589f1c1-9a18-4694-b749-63f5793a8949",
+                "control-id": "OPS.1.2.2.A15",
+                "description": "Implementation for control OPS.1.2.2.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "c03774af-0c44-4f48-a4a7-90bbad739886",
+                "control-id": "OPS.1.2.2.A16",
+                "description": "Implementation for control OPS.1.2.2.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "d8e71385-6af9-406a-8846-d678f2e051b9",
+                "control-id": "OPS.1.2.2.A17",
+                "description": "Implementation for control OPS.1.2.2.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "6e69632b-3960-4461-9faf-4acc9a6f4378",
+                "control-id": "OPS.1.2.2.A18",
+                "description": "Implementation for control OPS.1.2.2.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "3845b887-a32a-47f6-971c-80e6367a6839",
+                "control-id": "OPS.1.2.2.A19",
+                "description": "Implementation for control OPS.1.2.2.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "06236376-1d22-4d4a-8168-f5b9d21aae60",
+                "control-id": "OPS.1.2.2.A20",
+                "description": "Implementation for control OPS.1.2.2.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "64ea9621-4e7f-49db-9128-17d50a68634c",
+                "control-id": "OPS.1.2.2.A21",
+                "description": "Implementation for control OPS.1.2.2.A21 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "fc530ae6-a196-4332-835d-310c97700f6e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.2.4: Telearbeit",
+            "implemented-requirements": [
+              {
+                "uuid": "482069bd-1c37-4bbc-9c13-6e864191b988",
+                "control-id": "OPS.1.2.4.A1",
+                "description": "Implementation for control OPS.1.2.4.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "1d1e39d3-3519-46a3-90e5-ee1973b1a940",
+                "control-id": "OPS.1.2.4.A2",
+                "description": "Implementation for control OPS.1.2.4.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "921ff66e-eef5-478c-84c4-6f9ca7e7796c",
+                "control-id": "OPS.1.2.4.A5",
+                "description": "Implementation for control OPS.1.2.4.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "0b3ee233-1109-436e-a788-12af104178b0",
+                "control-id": "OPS.1.2.4.A6",
+                "description": "Implementation for control OPS.1.2.4.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "1def0cf3-992a-4445-b259-789f6a2ea1c0",
+                "control-id": "OPS.1.2.4.A7",
+                "description": "Implementation for control OPS.1.2.4.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "1ed5db28-ba78-40dc-b5bc-c4ddc7f28d65",
+                "control-id": "OPS.1.2.4.A8",
+                "description": "Implementation for control OPS.1.2.4.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "9ac08127-9633-4264-b811-36139cfccfee",
+                "control-id": "OPS.1.2.4.A9",
+                "description": "Implementation for control OPS.1.2.4.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "373ce571-2e1a-4128-a63f-9d496dda797f",
+                "control-id": "OPS.1.2.4.A10",
+                "description": "Implementation for control OPS.1.2.4.A10 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "12c66ffd-4178-45d4-8af9-ed7d564bd3b8",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.2.5: Fernwartung",
+            "implemented-requirements": [
+              {
+                "uuid": "2ff04e37-2d25-4fd4-9126-30834b00f39f",
+                "control-id": "OPS.1.2.5.A1",
+                "description": "Implementation for control OPS.1.2.5.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "3f52bb04-bdb7-41d1-9235-c686d60937d4",
+                "control-id": "OPS.1.2.5.A2",
+                "description": "Implementation for control OPS.1.2.5.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "3580019a-ba0f-4729-b0ee-95e7ef990960",
+                "control-id": "OPS.1.2.5.A3",
+                "description": "Implementation for control OPS.1.2.5.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "327451dc-879e-4b26-9464-27514cb7c279",
+                "control-id": "OPS.1.2.5.A5",
+                "description": "Implementation for control OPS.1.2.5.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "c707c884-29ff-4ea2-9116-339981b62d89",
+                "control-id": "OPS.1.2.5.A6",
+                "description": "Implementation for control OPS.1.2.5.A6 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "ee7eccd7-2b14-413e-ab61-1358dba11ce9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.1.2.6: NTP-Zeitsynchronisation",
+            "implemented-requirements": [
+              {
+                "uuid": "274839aa-8cd6-4f38-93d3-53b303ef64b0",
+                "control-id": "OPS.1.2.6.A1",
+                "description": "Implementation for control OPS.1.2.6.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "dfb1afbe-443f-4d59-86da-936f77fd3a1b",
+                "control-id": "OPS.1.2.6.A2",
+                "description": "Implementation for control OPS.1.2.6.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "624b5f7a-8e79-4444-9da0-7f3dba357163",
+                "control-id": "OPS.1.2.6.A3",
+                "description": "Implementation for control OPS.1.2.6.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "88ada254-8d1a-4bf4-968b-6ad3a2e97334",
+                "control-id": "OPS.1.2.6.A4",
+                "description": "Implementation for control OPS.1.2.6.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "efca6423-190a-4c91-aeef-9b0a7c2e8d85",
+                "control-id": "OPS.1.2.6.A5",
+                "description": "Implementation for control OPS.1.2.6.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "2091590e-534f-4cb1-a28c-2bf1e6e4319d",
+                "control-id": "OPS.1.2.6.A6",
+                "description": "Implementation for control OPS.1.2.6.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "977995e5-414a-45cc-9342-623bf27c88cc",
+                "control-id": "OPS.1.2.6.A7",
+                "description": "Implementation for control OPS.1.2.6.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "c2d4e21c-09a6-4b87-9c85-885f3aafd36c",
+                "control-id": "OPS.1.2.6.A8",
+                "description": "Implementation for control OPS.1.2.6.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "0c00fe84-7f27-4e32-85a1-35c435c50dcb",
+                "control-id": "OPS.1.2.6.A9",
+                "description": "Implementation for control OPS.1.2.6.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "9b7f8c80-2f45-4dd3-b6a6-ca6e778c56e3",
+                "control-id": "OPS.1.2.6.A10",
+                "description": "Implementation for control OPS.1.2.6.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "e0ed167a-e86a-4993-9a82-a60ee995000d",
+                "control-id": "OPS.1.2.6.A11",
+                "description": "Implementation for control OPS.1.2.6.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "f54661e4-2c51-41ca-a4eb-e5a1aa50de6d",
+                "control-id": "OPS.1.2.6.A12",
+                "description": "Implementation for control OPS.1.2.6.A12 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "024dfd2a-5277-4892-a9c1-40c613087fde",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.2.2: Cloud-Nutzung",
+            "implemented-requirements": [
+              {
+                "uuid": "1a5dff7c-8ec0-49c6-989c-f41e407e8b4f",
+                "control-id": "OPS.2.2.A1",
+                "description": "Implementation for control OPS.2.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "0102a5c5-3b6e-4a20-86b3-34a7f7e4c6a3",
+                "control-id": "OPS.2.2.A2",
+                "description": "Implementation for control OPS.2.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "0233490f-0e5a-438b-954e-01b5d3550373",
+                "control-id": "OPS.2.2.A3",
+                "description": "Implementation for control OPS.2.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "67543a4a-7a76-4e8a-af91-ce3c5766af58",
+                "control-id": "OPS.2.2.A4",
+                "description": "Implementation for control OPS.2.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "cb302bfa-318f-4418-b8a3-3a173a59ac4a",
+                "control-id": "OPS.2.2.A5",
+                "description": "Implementation for control OPS.2.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "812d08d8-1dd6-4253-9a26-0d278ce318d6",
+                "control-id": "OPS.2.2.A6",
+                "description": "Implementation for control OPS.2.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "3cef6065-30a3-4256-a58e-fd15b56f817b",
+                "control-id": "OPS.2.2.A7",
+                "description": "Implementation for control OPS.2.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "77d5a3af-69b8-4d67-a051-413fb9f4d53c",
+                "control-id": "OPS.2.2.A8",
+                "description": "Implementation for control OPS.2.2.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "843f5669-1912-4499-8257-8ab6e0d71838",
+                "control-id": "OPS.2.2.A9",
+                "description": "Implementation for control OPS.2.2.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "4c01ba71-4796-4dc2-b2c5-c655e8bf5625",
+                "control-id": "OPS.2.2.A10",
+                "description": "Implementation for control OPS.2.2.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "85097d29-1504-4ca3-aacb-a11b22b44b60",
+                "control-id": "OPS.2.2.A11",
+                "description": "Implementation for control OPS.2.2.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "4ff88dff-95ce-48e6-a4fb-678e66bb2596",
+                "control-id": "OPS.2.2.A12",
+                "description": "Implementation for control OPS.2.2.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "0867c591-7d09-4abb-8ffb-6ae40c749c44",
+                "control-id": "OPS.2.2.A13",
+                "description": "Implementation for control OPS.2.2.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "63e07a23-a041-47bc-93a0-201ec53cd03b",
+                "control-id": "OPS.2.2.A14",
+                "description": "Implementation for control OPS.2.2.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "126bcd69-28f7-4c44-b426-612c55976bc6",
+                "control-id": "OPS.2.2.A15",
+                "description": "Implementation for control OPS.2.2.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "9eef0c39-e542-4545-9eca-3c8bb9f80e4f",
+                "control-id": "OPS.2.2.A16",
+                "description": "Implementation for control OPS.2.2.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "6c99dc13-571c-41b8-b7e1-2166f0aa4a80",
+                "control-id": "OPS.2.2.A17",
+                "description": "Implementation for control OPS.2.2.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "ab79b81e-af81-4c13-852b-d7150de1237b",
+                "control-id": "OPS.2.2.A18",
+                "description": "Implementation for control OPS.2.2.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "bd606863-0baa-4c7e-b003-e7c9c1ad03f3",
+                "control-id": "OPS.2.2.A19",
+                "description": "Implementation for control OPS.2.2.A19 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "5a08feae-8109-4dd9-97ee-741663b5a797",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.2.3: Nutzung von Outsourcing",
+            "implemented-requirements": [
+              {
+                "uuid": "f0f9b78d-736f-4df7-876b-c1b65535a3f5",
+                "control-id": "OPS.2.3.A1",
+                "description": "Implementation for control OPS.2.3.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "c5e598bf-43c9-43c5-9a55-8d09092cd308",
+                "control-id": "OPS.2.3.A2",
+                "description": "Implementation for control OPS.2.3.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "7472f7a4-b89c-47cd-a297-8883428792a9",
+                "control-id": "OPS.2.3.A3",
+                "description": "Implementation for control OPS.2.3.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "a39b09c2-63aa-4dde-a001-ab8f9c2f7528",
+                "control-id": "OPS.2.3.A4",
+                "description": "Implementation for control OPS.2.3.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "8770ffe3-c1ba-4cf7-b9de-b9049aef78c0",
+                "control-id": "OPS.2.3.A5",
+                "description": "Implementation for control OPS.2.3.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "ead455e0-7b3e-4db4-a5cb-b9b6d07d08c2",
+                "control-id": "OPS.2.3.A6",
+                "description": "Implementation for control OPS.2.3.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "2399d9d6-3d63-4280-a628-d1cdb74796b8",
+                "control-id": "OPS.2.3.A7",
+                "description": "Implementation for control OPS.2.3.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "74eb2e09-0fa0-4156-8b93-dfad9dc78da7",
+                "control-id": "OPS.2.3.A8",
+                "description": "Implementation for control OPS.2.3.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "6ce7e27f-f4b3-430f-8f18-e2da5a9cf71e",
+                "control-id": "OPS.2.3.A9",
+                "description": "Implementation for control OPS.2.3.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "730a57a1-4455-4cf8-8ff0-93d0a1b37fad",
+                "control-id": "OPS.2.3.A10",
+                "description": "Implementation for control OPS.2.3.A10 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "cac69a05-aefd-400c-b14f-ae0be483965f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group OPS.3.2: Anbieten von Outsourcing",
+            "implemented-requirements": [
+              {
+                "uuid": "71e18fd2-0de2-45af-bca3-db81ee1a2b89",
+                "control-id": "OPS.3.2.A1",
+                "description": "Implementation for control OPS.3.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "5079c5d7-9f3a-4f29-8667-cc03f6689af2",
+                "control-id": "OPS.3.2.A2",
+                "description": "Implementation for control OPS.3.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "d10f5bf4-3f1b-4547-8559-8fcd786e803f",
+                "control-id": "OPS.3.2.A3",
+                "description": "Implementation for control OPS.3.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "047f0fa3-bfb0-4701-a192-bf67a559d6c6",
+                "control-id": "OPS.3.2.A4",
+                "description": "Implementation for control OPS.3.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "2c6943f5-4781-49cf-9f53-f345919128f1",
+                "control-id": "OPS.3.2.A5",
+                "description": "Implementation for control OPS.3.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "8c5708a9-b0ba-48fe-8e3f-700e08dd4595",
+                "control-id": "OPS.3.2.A6",
+                "description": "Implementation for control OPS.3.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "9f8d948e-aeff-45a0-937a-21e9ba6697a7",
+                "control-id": "OPS.3.2.A7",
+                "description": "Implementation for control OPS.3.2.A7 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "d85c53ea-360f-447a-a3c3-9adbb606f4c0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.1: Detektion von sicherheitsrelevanten Ereignissen",
+            "implemented-requirements": [
+              {
+                "uuid": "220e7ee7-2815-4220-8ab1-2d558533d8ce",
+                "control-id": "DER.1.A1",
+                "description": "Implementation for control DER.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "c6714f54-d953-4e67-a848-05ff6fe58bec",
+                "control-id": "DER.1.A2",
+                "description": "Implementation for control DER.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "81b6fbb9-7730-419e-b2fd-22635b9fbb7e",
+                "control-id": "DER.1.A3",
+                "description": "Implementation for control DER.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "7e6a2f4a-8cc2-499f-984e-de1163723435",
+                "control-id": "DER.1.A4",
+                "description": "Implementation for control DER.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "705455ad-0f7f-4336-9d00-0cfa536e0742",
+                "control-id": "DER.1.A5",
+                "description": "Implementation for control DER.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "10e67a73-bb4f-4603-8694-065777860de5",
+                "control-id": "DER.1.A6",
+                "description": "Implementation for control DER.1.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "c2232210-cdb2-43e3-a147-72bb22ea1810",
+                "control-id": "DER.1.A7",
+                "description": "Implementation for control DER.1.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "a15290de-fb29-49c9-8515-6f9aa505d5eb",
+                "control-id": "DER.1.A9",
+                "description": "Implementation for control DER.1.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "f0d9b7e5-508c-4192-9201-b710e12a044f",
+                "control-id": "DER.1.A10",
+                "description": "Implementation for control DER.1.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "f795a5e7-bdad-463f-af73-d5a2f4fabcf9",
+                "control-id": "DER.1.A11",
+                "description": "Implementation for control DER.1.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "c91769ae-917c-477a-a7e0-adfdbf4adad2",
+                "control-id": "DER.1.A12",
+                "description": "Implementation for control DER.1.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "ade73531-fb9d-4bfe-a591-41020ced7451",
+                "control-id": "DER.1.A13",
+                "description": "Implementation for control DER.1.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "c993ae96-d7a1-4ab2-a216-d2d45aa4c937",
+                "control-id": "DER.1.A14",
+                "description": "Implementation for control DER.1.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "5c67cd7a-2e84-4291-9f15-cdffb4a642c0",
+                "control-id": "DER.1.A15",
+                "description": "Implementation for control DER.1.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "2435b75f-720c-4a85-963b-4467378fe1dc",
+                "control-id": "DER.1.A16",
+                "description": "Implementation for control DER.1.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "17b5f964-889c-4390-adc9-88832a7f4871",
+                "control-id": "DER.1.A17",
+                "description": "Implementation for control DER.1.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "7bed25e6-e60b-4d7f-8eeb-814c0d038ff3",
+                "control-id": "DER.1.A18",
+                "description": "Implementation for control DER.1.A18 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "5bfb7993-47fe-4bf8-93cf-c53a22486aac",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.2.1: Behandlung von Sicherheitsvorf\u00e4llen",
+            "implemented-requirements": [
+              {
+                "uuid": "d287c849-7567-4080-abff-0b1e655d40d9",
+                "control-id": "DER.2.1.A1",
+                "description": "Implementation for control DER.2.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "e3551c3c-9c6e-4c25-b7ff-02d7db19c7b6",
+                "control-id": "DER.2.1.A2",
+                "description": "Implementation for control DER.2.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "d4ac4270-c3f7-4255-85af-e0cd58082b5f",
+                "control-id": "DER.2.1.A3",
+                "description": "Implementation for control DER.2.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "527872a4-6cd4-4835-b5f1-493a5671d19f",
+                "control-id": "DER.2.1.A4",
+                "description": "Implementation for control DER.2.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "43d37e43-1447-49fb-b012-42bc0854572d",
+                "control-id": "DER.2.1.A5",
+                "description": "Implementation for control DER.2.1.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "e872f2da-337d-4faf-800f-0f3d105282c0",
+                "control-id": "DER.2.1.A6",
+                "description": "Implementation for control DER.2.1.A6 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "23e5f55f-805a-4f6d-9156-34867d74578b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.2.2: Vorsorge f\u00fcr die IT-Forensik",
+            "implemented-requirements": [
+              {
+                "uuid": "b7e23a17-3d41-4506-a00b-73ef04df6af9",
+                "control-id": "DER.2.2.A1",
+                "description": "Implementation for control DER.2.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "df5eb176-c55e-4813-a4e1-ec4b64371412",
+                "control-id": "DER.2.2.A2",
+                "description": "Implementation for control DER.2.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "fb8b8fe6-2a2f-442e-b38a-f6fe206e04c4",
+                "control-id": "DER.2.2.A3",
+                "description": "Implementation for control DER.2.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "9ceadce8-4f56-4e90-b2cf-5db9e8d10bed",
+                "control-id": "DER.2.2.A4",
+                "description": "Implementation for control DER.2.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "a79898e9-f23a-48f3-86c2-2453e44c0756",
+                "control-id": "DER.2.2.A5",
+                "description": "Implementation for control DER.2.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "25492421-0e94-44c2-af4e-d8a26abc48a0",
+                "control-id": "DER.2.2.A6",
+                "description": "Implementation for control DER.2.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "dd021f6d-11e5-470f-a70f-06686f0aa678",
+                "control-id": "DER.2.2.A7",
+                "description": "Implementation for control DER.2.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "49f519e6-cc2b-4c61-952a-261b4e430dcc",
+                "control-id": "DER.2.2.A8",
+                "description": "Implementation for control DER.2.2.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "24fb5195-3b05-43a0-b1fe-2bd40bc67f4e",
+                "control-id": "DER.2.2.A9",
+                "description": "Implementation for control DER.2.2.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "8d5ff530-c77d-42e2-b4af-ddf00cd49460",
+                "control-id": "DER.2.2.A10",
+                "description": "Implementation for control DER.2.2.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "5ae3f6f1-3e30-4b3f-82b8-654fcee43c1a",
+                "control-id": "DER.2.2.A11",
+                "description": "Implementation for control DER.2.2.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "a01d3fb4-a09d-499e-878a-115e32d96cba",
+                "control-id": "DER.2.2.A12",
+                "description": "Implementation for control DER.2.2.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "b75b279b-23b9-4738-9c01-37385aa8b2c2",
+                "control-id": "DER.2.2.A13",
+                "description": "Implementation for control DER.2.2.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "b312db06-2029-4139-8308-4c2b01d846d3",
+                "control-id": "DER.2.2.A14",
+                "description": "Implementation for control DER.2.2.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "70e63afe-b9fc-435c-ad38-ab0338e31422",
+                "control-id": "DER.2.2.A15",
+                "description": "Implementation for control DER.2.2.A15 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "e7fc85ca-ec33-41dd-80b8-cbfc70c449ff",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.2.3: Bereinigung weitreichender Sicherheitsvorf\u00e4lle",
+            "implemented-requirements": [
+              {
+                "uuid": "422864e5-45e1-4798-9f07-ad092b688000",
+                "control-id": "DER.2.3.A1",
+                "description": "Implementation for control DER.2.3.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "8d7467de-5d58-4602-824f-55e7bf2084b8",
+                "control-id": "DER.2.3.A2",
+                "description": "Implementation for control DER.2.3.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "032cf1a6-1f09-4bb2-b1b8-b45cfaae97d8",
+                "control-id": "DER.2.3.A3",
+                "description": "Implementation for control DER.2.3.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "dab358f3-9b85-4b12-8332-18aab98bc191",
+                "control-id": "DER.2.3.A4",
+                "description": "Implementation for control DER.2.3.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "2e270302-16c3-420c-8ea7-9caa3200b04c",
+                "control-id": "DER.2.3.A5",
+                "description": "Implementation for control DER.2.3.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "33e272e9-d66a-4ce0-af47-f5b2e50599d4",
+                "control-id": "DER.2.3.A6",
+                "description": "Implementation for control DER.2.3.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "f123752f-7252-49e3-9484-82927ed07e7c",
+                "control-id": "DER.2.3.A7",
+                "description": "Implementation for control DER.2.3.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "2e645c38-0907-43d3-9ccc-5504e91d6d51",
+                "control-id": "DER.2.3.A8",
+                "description": "Implementation for control DER.2.3.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "f79131b1-a21c-4af5-a920-0176bb47060f",
+                "control-id": "DER.2.3.A9",
+                "description": "Implementation for control DER.2.3.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "14f619de-968c-433f-803d-9883e29b4c80",
+                "control-id": "DER.2.3.A10",
+                "description": "Implementation for control DER.2.3.A10 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "ef02ec88-ec6e-40ee-b1b7-2d510f55231b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.3.1: Audits und Revisionen",
+            "implemented-requirements": [
+              {
+                "uuid": "7ea0238d-152f-4080-b31e-a5ce828ce2cc",
+                "control-id": "DER.3.1.A1",
+                "description": "Implementation for control DER.3.1.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "9ccc8542-a3cb-4321-b0f3-76496ff7765c",
+                "control-id": "DER.3.1.A2",
+                "description": "Implementation for control DER.3.1.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "24b143a7-975d-42f9-8198-c1c1837c87b7",
+                "control-id": "DER.3.1.A3",
+                "description": "Implementation for control DER.3.1.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "06b152b2-5c74-4794-b32a-bdedb0a04ce0",
+                "control-id": "DER.3.1.A4",
+                "description": "Implementation for control DER.3.1.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "7e66518a-ee4f-4083-88b5-d82b9e6cd4f0",
+                "control-id": "DER.3.1.A5",
+                "description": "Implementation for control DER.3.1.A5 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "bea9628f-14c4-4e48-85b0-1988bf039cb9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.3.2: Revisionen auf Basis des Leitfadens IS-Revision",
+            "implemented-requirements": [
+              {
+                "uuid": "66ed64d2-1c09-48ec-a122-501c333aac6b",
+                "control-id": "DER.3.2.A1",
+                "description": "Implementation for control DER.3.2.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "26e297cf-79ff-42c7-81e6-d4a2e2cfcd85",
+                "control-id": "DER.3.2.A2",
+                "description": "Implementation for control DER.3.2.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "b29da73f-4af7-4859-b485-8309bc2ad65c",
+                "control-id": "DER.3.2.A3",
+                "description": "Implementation for control DER.3.2.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "4652cf5a-b004-4585-b112-73989413c3ee",
+                "control-id": "DER.3.2.A4",
+                "description": "Implementation for control DER.3.2.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "03640699-3d27-434a-aa48-f66ab087c29f",
+                "control-id": "DER.3.2.A5",
+                "description": "Implementation for control DER.3.2.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "4a4fd250-a331-43bd-9bc6-e33aab730e12",
+                "control-id": "DER.3.2.A6",
+                "description": "Implementation for control DER.3.2.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "71652e03-d7cf-4a5e-b603-a9dbddc904a5",
+                "control-id": "DER.3.2.A7",
+                "description": "Implementation for control DER.3.2.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "576782bb-92e7-4b97-92eb-23acec53dcb9",
+                "control-id": "DER.3.2.A8",
+                "description": "Implementation for control DER.3.2.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "c3cafbb7-e3f1-4975-a773-03dc6012fd84",
+                "control-id": "DER.3.2.A9",
+                "description": "Implementation for control DER.3.2.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "81ff8247-79f5-4b81-b4e0-5479effd3173",
+                "control-id": "DER.3.2.A10",
+                "description": "Implementation for control DER.3.2.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "73fe7c30-4de9-4cfc-ac34-cfeb954c4235",
+                "control-id": "DER.3.2.A11",
+                "description": "Implementation for control DER.3.2.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "f94abeff-a525-4957-8343-4b0103f084a6",
+                "control-id": "DER.3.2.A12",
+                "description": "Implementation for control DER.3.2.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "d2929922-767e-4c2d-84dd-75dd9eb78945",
+                "control-id": "DER.3.2.A13",
+                "description": "Implementation for control DER.3.2.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "72b78689-40b9-498c-9170-89258f9104eb",
+                "control-id": "DER.3.2.A14",
+                "description": "Implementation for control DER.3.2.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "43e70bd1-940c-4cb2-a1b1-fa896b12f5d3",
+                "control-id": "DER.3.2.A15",
+                "description": "Implementation for control DER.3.2.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "0a6be8be-50d5-4cc2-878b-d85b388d2317",
+                "control-id": "DER.3.2.A16",
+                "description": "Implementation for control DER.3.2.A16 as defined in the source catalog."
+              },
+              {
+                "uuid": "bea0ead8-4d79-4f90-bc8e-48faae342409",
+                "control-id": "DER.3.2.A17",
+                "description": "Implementation for control DER.3.2.A17 as defined in the source catalog."
+              },
+              {
+                "uuid": "bd48e679-3f07-4cc0-b8ef-a26c2d829318",
+                "control-id": "DER.3.2.A18",
+                "description": "Implementation for control DER.3.2.A18 as defined in the source catalog."
+              },
+              {
+                "uuid": "348bfe8d-76a6-4afb-8c2a-5c2419b31603",
+                "control-id": "DER.3.2.A19",
+                "description": "Implementation for control DER.3.2.A19 as defined in the source catalog."
+              },
+              {
+                "uuid": "ae71ab3f-782b-4533-b60a-559789c5cb86",
+                "control-id": "DER.3.2.A20",
+                "description": "Implementation for control DER.3.2.A20 as defined in the source catalog."
+              },
+              {
+                "uuid": "3d9be4ac-e6f1-4802-b476-69ac87ad5c27",
+                "control-id": "DER.3.2.A21",
+                "description": "Implementation for control DER.3.2.A21 as defined in the source catalog."
+              },
+              {
+                "uuid": "613efce0-054a-4100-9ab0-a9f323ec05ba",
+                "control-id": "DER.3.2.A22",
+                "description": "Implementation for control DER.3.2.A22 as defined in the source catalog."
+              },
+              {
+                "uuid": "832812c8-483d-4a58-acb9-63c3983c5497",
+                "control-id": "DER.3.2.A23",
+                "description": "Implementation for control DER.3.2.A23 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "87198a20-de08-4b0c-be29-454fe04ee6cb",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.4: Notfallmanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "a837a0cb-a75b-40b5-8909-9f19197bc583",
+                "control-id": "DER.4.A1",
+                "description": "Implementation for control DER.4.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "84467cb8-6115-452f-a014-bf271b8e3860",
+                "control-id": "DER.4.A2",
+                "description": "Implementation for control DER.4.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "d9b98e3b-dee4-41a2-a904-299381eb99de",
+                "control-id": "DER.4.A3",
+                "description": "Implementation for control DER.4.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "9e32723e-525a-495e-bfab-83fe1a963fa6",
+                "control-id": "DER.4.A4",
+                "description": "Implementation for control DER.4.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "0850ccec-0748-426e-8435-13585701ceeb",
+                "control-id": "DER.4.A5",
+                "description": "Implementation for control DER.4.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "db6034a6-74a0-4eb1-8257-39113199f6f9",
+                "control-id": "DER.4.A6",
+                "description": "Implementation for control DER.4.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "86d29370-2804-48ba-b604-f033a37b03e5",
+                "control-id": "DER.4.A7",
+                "description": "Implementation for control DER.4.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "453cd115-a513-4cb6-b4d6-a92bf17362ab",
+                "control-id": "DER.4.A8",
+                "description": "Implementation for control DER.4.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "8c6ddaa8-0e67-4ff1-adb2-fd2fec9b8cd3",
+                "control-id": "DER.4.A9",
+                "description": "Implementation for control DER.4.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "1f0f5bd0-d58d-4f5a-a0af-507421d55906",
+                "control-id": "DER.4.A10",
+                "description": "Implementation for control DER.4.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "f46e964c-92f8-4139-8d3f-40feef2ce74a",
+                "control-id": "DER.4.A12",
+                "description": "Implementation for control DER.4.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "453b4bf2-a2de-4f75-8ed0-8834c2561584",
+                "control-id": "DER.4.A13",
+                "description": "Implementation for control DER.4.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "d64b883b-68fc-46b8-93a5-5ed575d373e2",
+                "control-id": "DER.4.A14",
+                "description": "Implementation for control DER.4.A14 as defined in the source catalog."
+              },
+              {
+                "uuid": "902931ba-989d-4295-91f2-803cda7fa67d",
+                "control-id": "DER.4.A15",
+                "description": "Implementation for control DER.4.A15 as defined in the source catalog."
+              },
+              {
+                "uuid": "9cc51071-a365-4359-8d26-343944aab3a8",
+                "control-id": "DER.4.A16",
+                "description": "Implementation for control DER.4.A16 as defined in the source catalog."
+              }
+            ]
+          },
+          {
+            "uuid": "b4fe1bb4-8268-4de1-8f77-bcfa377575b9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group DER.7: Benutzerdefiniert: Bug-Bounty-Programme",
+            "implemented-requirements": [
+              {
+                "uuid": "7c02d35f-6ae3-4d54-89bf-be5a87d8a254",
+                "control-id": "DER.7.A1",
+                "description": "Implementation for control DER.7.A1 as defined in the source catalog."
+              },
+              {
+                "uuid": "a52ac41f-4ecd-4233-9244-66771cd28326",
+                "control-id": "DER.7.A2",
+                "description": "Implementation for control DER.7.A2 as defined in the source catalog."
+              },
+              {
+                "uuid": "3e7058da-d85b-4ab9-9712-cc07f7503cca",
+                "control-id": "DER.7.A3",
+                "description": "Implementation for control DER.7.A3 as defined in the source catalog."
+              },
+              {
+                "uuid": "46b42866-705d-47b2-bb60-09d227ce5089",
+                "control-id": "DER.7.A4",
+                "description": "Implementation for control DER.7.A4 as defined in the source catalog."
+              },
+              {
+                "uuid": "b68b972b-2e49-4a27-ba90-146c9865fdc3",
+                "control-id": "DER.7.A5",
+                "description": "Implementation for control DER.7.A5 as defined in the source catalog."
+              },
+              {
+                "uuid": "70e0bb15-4710-4108-bc20-961ba0c21a23",
+                "control-id": "DER.7.A6",
+                "description": "Implementation for control DER.7.A6 as defined in the source catalog."
+              },
+              {
+                "uuid": "d5c9d877-ad77-45f6-b8dc-afd26237d843",
+                "control-id": "DER.7.A7",
+                "description": "Implementation for control DER.7.A7 as defined in the source catalog."
+              },
+              {
+                "uuid": "74560b5f-cf7c-4804-819e-2f9c783afcf4",
+                "control-id": "DER.7.A8",
+                "description": "Implementation for control DER.7.A8 as defined in the source catalog."
+              },
+              {
+                "uuid": "5a4e63e0-380e-432f-82d4-bc5b58a0949e",
+                "control-id": "DER.7.A9",
+                "description": "Implementation for control DER.7.A9 as defined in the source catalog."
+              },
+              {
+                "uuid": "62ed4c51-359f-4555-b5ae-8cdda18491db",
+                "control-id": "DER.7.A10",
+                "description": "Implementation for control DER.7.A10 as defined in the source catalog."
+              },
+              {
+                "uuid": "ce62a7ca-cf54-4d7d-aeb2-d0992c80a137",
+                "control-id": "DER.7.A11",
+                "description": "Implementation for control DER.7.A11 as defined in the source catalog."
+              },
+              {
+                "uuid": "af94345e-cb6c-4123-a8cd-0115fd559d80",
+                "control-id": "DER.7.A12",
+                "description": "Implementation for control DER.7.A12 as defined in the source catalog."
+              },
+              {
+                "uuid": "bd5cbadf-a776-442a-b62a-d02792b11033",
+                "control-id": "DER.7.A13",
+                "description": "Implementation for control DER.7.A13 as defined in the source catalog."
+              },
+              {
+                "uuid": "2d7983a4-0c06-4ea4-8e62-e23a1e529c1a",
+                "control-id": "DER.7.A14",
+                "description": "Implementation for control DER.7.A14 as defined in the source catalog."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
