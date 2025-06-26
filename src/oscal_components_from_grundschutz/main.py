@@ -50,10 +50,13 @@ def setup_logging(is_test_mode: bool):
 
 # --- AI & GCS Interaction ---
 def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) -> Optional[Dict[str, Any]]:
-    logging.debug(f"Full prompt for Gemini:\n---\n{prompt}\n---")
+    """ A. FIX: Log the final, rendered prompt string. """
+    logging.debug(f"Final rendered prompt for Gemini:\n---\n{prompt}\n---")
+    
     sanitized_schema = {k: v for k, v in schema.items() if k not in UNSUPPORTED_SCHEMA_KEYS}
     model = GenerativeModel("gemini-2.5-pro", generation_config=GenerationConfig(response_mime_type="application/json", response_schema=sanitized_schema))
     tools = [vertexai.generative_models.Tool.from_google_search_retrieval(grounding)] if grounding else None
+    
     for attempt in range(5):
         try:
             logging.debug(f"Invoking Gemini (Attempt {attempt + 1}/5)...")
@@ -71,6 +74,7 @@ def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) 
                 sleep_time = (2 ** attempt) + random.uniform(0, 1)
                 logging.info(f"Retrying in {sleep_time:.2f} seconds...")
                 time.sleep(sleep_time)
+    
     logging.critical("Failed to get a valid response from Gemini after 5 attempts.")
     return None
 
@@ -96,7 +100,7 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         logging.error(f"Failed to upload to {full_path}: {e}")
         raise
 
-# --- Catalog Helper Functions ---
+# --- Catalog Helper Functions (No Changes) ---
 def load_external_file(path: str) -> str:
     with open(path, 'r', encoding='utf-8') as f: return f.read()
 
@@ -153,7 +157,6 @@ def expand_baustein_ids(catalog: Dict[str, Any], ids_to_expand: List[str]) -> Li
     return unique_ids
 
 def _get_all_controls_from_group_recursive(group: Dict[str, Any], controls_list: List[Dict[str, Any]]):
-    """ Helper to robustly gather all controls from a group and its subgroups. """
     controls_list.extend(group.get("controls", []))
     for subgroup in group.get("groups", []):
         _get_all_controls_from_group_recursive(subgroup, controls_list)
@@ -169,14 +172,12 @@ def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[
     return all_controls
 
 def get_direct_controls_from_baustein(catalog: Dict[str, Any], baustein_id: str) -> List[Dict[str, Any]]:
-    """ B. FIX: New non-recursive function to get only the direct controls of a Baustein. """
     all_groups = catalog.get("catalog", {}).get("groups", [])
     group = _find_group_by_id(all_groups, baustein_id)
-    if group:
-        return group.get("controls", [])
+    if group: return group.get("controls", [])
     return []
 
-# --- Component Manipulation Functions ---
+# --- Component Manipulation Functions (No Changes) ---
 def create_base_component(baustein_group: Dict[str, Any], source_url: str) -> Dict[str, Any]:
     component = {"component-definition": {"uuid": str(uuid.uuid4()),"metadata": {"title": f"Component for Baustein {baustein_group.get('id')}: {baustein_group.get('title')}","last-modified": datetime.now(timezone.utc).isoformat(),"version": "1.0.0","oscal-version": "1.1.2","remarks": f"AI-enriched component for {baustein_group.get('id')}."}, "components": [{"uuid": str(uuid.uuid4()),"type": "service","title": baustein_group.get('title'),"description": f"Implementation of controls for Baustein {baustein_group.get('id')}.","control-implementations": []}]}}
     all_base_controls = []
@@ -205,15 +206,12 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
     is_app_baustein = baustein_id.startswith("APP.")
     dependent_controls = []
 
-    # B & C FIX: Special handling for APP bausteine
     if is_app_baustein:
         logging.info(f"{baustein_id} is an APP Baustein. Deterministically adding APP.6 and skipping AI dependency analysis.")
-        # B. FIX: Use the new non-recursive function for APP.6
         app6_controls = get_direct_controls_from_baustein(catalog, "APP.6")
         app6_with_reasons = [{"control": c, "reason": "Obligatorische Basisanforderung für alle APP-Bausteine."} for c in app6_controls]
         add_controls_to_component(component, app6_with_reasons, "Basiskomponente APP.6 Allgemeine Software", source_url)
     else:
-        # Standard AI dependency analysis for non-APP bausteine
         usage_prose = get_prose_from_part(baustein_group.get("parts", []), "usage")
         if usage_prose:
             prompt = prompts["extract_dependencies"].format(schema=json.dumps(schemas["dependency"]), prose=usage_prose)
@@ -226,14 +224,24 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
                 all_dependency_controls = get_controls_from_baustein_list(catalog, dependency_ids)
                 dependent_controls = [c for c in all_dependency_controls if not c.get("id").startswith(baustein_id)]
     
+    # C. FIX: New robust logic for combining and de-duplicating control lists
     generic_controls = get_controls_from_baustein_list(catalog, GENERIC_CONTROLS_FOR_STEP_6)
-    all_candidate_controls_map = {c.get("id"): c for c in dependent_controls}
-    all_candidate_controls_map.update({c.get("id"): c for c in generic_controls})
-    all_candidate_controls = list(all_candidate_controls_map.values())
+    
+    combined_list = dependent_controls + generic_controls
+    
+    seen_ids = set()
+    all_candidate_controls = []
+    for control in combined_list:
+        control_id = control.get("id")
+        if control_id not in seen_ids:
+            all_candidate_controls.append(control)
+            seen_ids.add(control_id)
 
     if not all_candidate_controls:
         logging.info("No candidate controls to process. Finalizing component.")
         return component
+    
+    logging.info(f"Preparing {len(all_candidate_controls)} unique candidate controls for AI filtering.")
 
     candidate_payload = []
     for c in all_candidate_controls:
@@ -251,6 +259,9 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
         approved_map = {item['id']: item['reason'] for item in filter_result.get("approved_controls")}
         approved_deps_with_reasons, approved_generics_with_reasons = [], []
         generic_control_ids = {c.get("id") for c in generic_controls}
+        
+        # Build a map of all candidates for easy lookup
+        all_candidate_controls_map = {c.get("id"): c for c in all_candidate_controls}
 
         for control_id, reason in approved_map.items():
             control_obj = all_candidate_controls_map.get(control_id)
@@ -259,6 +270,7 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
             if control_id in generic_control_ids:
                 approved_generics_with_reasons.append({"control": control_obj, "reason": reason})
             else:
+                # This control must have come from a dependency
                 approved_deps_with_reasons.append({"control": control_obj, "reason": reason})
 
         add_controls_to_component(component, approved_deps_with_reasons, "Abhängigkeiten von verwandten Bausteinen", source_url)
@@ -284,14 +296,12 @@ def main():
         source_url = f"gs://{config.bucket_name}/{config.existing_json_gcs_path}"
         target_bausteine = find_target_bausteine(catalog)
         
-        # --- MODIFIED SECTION ---
         if config.is_test_mode:
             if len(target_bausteine) > 3:
                 logging.warning(f"TEST MODE: Processing a random sample of 3 out of {len(target_bausteine)} Bausteine.")
                 target_bausteine = random.sample(target_bausteine, 3)
             else:
                 logging.warning(f"TEST MODE: Processing all {len(target_bausteine)} available Bausteine (less than 3 found).")
-        # --- END MODIFIED SECTION ---
 
         for baustein in target_bausteine:
             baustein_id = baustein.get("id")
