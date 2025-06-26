@@ -1,0 +1,146 @@
+{
+  "component-definition": {
+    "uuid": "166d0ecd-95fd-45f8-b8ee-6f7f57f815f5",
+    "metadata": {
+      "title": "Component for Baustein INF.9: INF.9 Mobiler Arbeitsplatz",
+      "last-modified": "2025-06-26T11:58:51.603373+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.9."
+    },
+    "components": [
+      {
+        "uuid": "d2587c8f-1058-419c-9518-a4a9fab9d952",
+        "type": "service",
+        "title": "INF.9 Mobiler Arbeitsplatz",
+        "description": "Implementation of controls for Baustein INF.9.",
+        "control-implementations": [
+          {
+            "uuid": "b86e18e0-d510-42ef-8bc4-331e68baec28",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.9: INF.9 Mobiler Arbeitsplatz",
+            "implemented-requirements": [
+              {
+                "uuid": "9e4edf3e-d69a-4e13-b8d0-b197591ba787",
+                "control-id": "inf-9-a1",
+                "description": "Base implementation for control inf-9-a1."
+              },
+              {
+                "uuid": "80caa7f7-52d9-4833-a329-6a08146bdde7",
+                "control-id": "inf-9-a2",
+                "description": "Base implementation for control inf-9-a2."
+              },
+              {
+                "uuid": "81e4a3e6-9153-43fe-9676-6efc650874a2",
+                "control-id": "inf-9-a3",
+                "description": "Base implementation for control inf-9-a3."
+              },
+              {
+                "uuid": "9feae55b-ca3e-46bd-bd7a-f6a3f4fd1e7d",
+                "control-id": "inf-9-a4",
+                "description": "Base implementation for control inf-9-a4."
+              },
+              {
+                "uuid": "93ea9b2a-cff7-48c8-be22-6d1080321f7b",
+                "control-id": "inf-9-a5",
+                "description": "Base implementation for control inf-9-a5."
+              },
+              {
+                "uuid": "0f880182-b0e4-49ea-ae9a-64e22913815b",
+                "control-id": "inf-9-a6",
+                "description": "Base implementation for control inf-9-a6."
+              },
+              {
+                "uuid": "df5289f4-24ce-4092-9d4d-16d43d553def",
+                "control-id": "inf-9-a7",
+                "description": "Base implementation for control inf-9-a7."
+              },
+              {
+                "uuid": "e9794deb-6eb4-4a3e-a253-a91aea427d81",
+                "control-id": "inf-9-a8",
+                "description": "Base implementation for control inf-9-a8."
+              },
+              {
+                "uuid": "359a9ea9-2019-4d6d-bbf7-255639f1e382",
+                "control-id": "inf-9-a9",
+                "description": "Base implementation for control inf-9-a9."
+              },
+              {
+                "uuid": "ebd8ae68-a04e-462d-9c66-a16444d1ecd4",
+                "control-id": "inf-9-a10",
+                "description": "Base implementation for control inf-9-a10."
+              },
+              {
+                "uuid": "c63a9eec-1e04-4bcb-b914-8b293afb032e",
+                "control-id": "inf-9-a11",
+                "description": "Base implementation for control inf-9-a11."
+              },
+              {
+                "uuid": "9592fc92-e6b2-41a0-a587-16475cff0b8f",
+                "control-id": "inf-9-a12",
+                "description": "Base implementation for control inf-9-a12."
+              }
+            ]
+          },
+          {
+            "uuid": "c6463d33-2a88-43cf-819c-10de279ae311",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "6d261e90-2c28-4890-a288-4356fb6620a0",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Sensibilisierung und Schulung der Mitarbeitenden ist f\u00fcr die Sicherheit am mobilen Arbeitsplatz entscheidend, da diese oft in unkontrollierten Umgebungen agieren und spezifische Verhaltensregeln (z.B. Blickschutz, sichere WLAN-Nutzung) beachten m\u00fcssen."
+              },
+              {
+                "uuid": "715a07f5-ffb4-4e5f-9fde-f033b94d7ad9",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Rechte (Least Privilege) ist beim mobilen Arbeiten essenziell, um bei einem Diebstahl oder einer Kompromittierung des Endger\u00e4ts den potenziellen Schaden zu minimieren."
+              },
+              {
+                "uuid": "bec8dac7-71e4-40de-866e-491ad2775ceb",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine starke Identifikation und Authentisierung ist die grundlegende Voraussetzung, um den unbefugten Zugriff auf mobile Endger\u00e4te und die dar\u00fcber abgerufenen dienstlichen Daten in einer unsicheren Umgebung zu verhindern."
+              },
+              {
+                "uuid": "42021b5a-3d91-4360-a68f-e6fb68dc7161",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt ORP.4.A9 um konkrete H\u00e4rtungsma\u00dfnahmen wie MFA oder Kontensperrung, die aufgrund des erh\u00f6hten Risikos bei mobilen Arbeitspl\u00e4tzen zwingend erforderlich sind."
+              },
+              {
+                "uuid": "93be2f32-c898-4f6c-9082-f3cb56239aff",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Mobile Arbeit erfordert zwingend die Verschl\u00fcsselung von Daten bei der \u00dcbertragung (z.B. per VPN) und auf dem Datentr\u00e4ger (Festplattenverschl\u00fcsselung), wof\u00fcr sichere kryptografische Verfahren die technische Grundlage bilden."
+              },
+              {
+                "uuid": "71b0f829-53ae-4fd8-8309-671a65cf8c54",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement ist f\u00fcr die Kryptografie unerl\u00e4sslich, insbesondere um bei Verlust oder Diebstahl eines mobilen Ger\u00e4ts dessen Zertifikate und Schl\u00fcssel widerrufen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "7ecb7332-8182-48b5-a8e1-8e4cee77358a",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Da mobile Ger\u00e4te einem erh\u00f6hten Risiko von Verlust, Diebstahl oder Besch\u00e4digung ausgesetzt sind, ist eine regelm\u00e4\u00dfige Datensicherung entscheidend, um die Verf\u00fcgbarkeit der darauf gespeicherten Daten zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "71fa8d49-f396-4eb4-909a-26cb4648c08c",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Mobile Endger\u00e4te sind oft mit unsicheren Netzen verbunden. Ein konsequentes Patch-Management ist daher unerl\u00e4sslich, um bekannte Sicherheitsl\u00fccken zu schlie\u00dfen und die Angriffsfl\u00e4che zu reduzieren."
+              },
+              {
+                "uuid": "478d6fa3-2dac-467f-b564-4d4254e83953",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Aktivierung und Nutzung von Detektionsfunktionen auf dem Endger\u00e4t ist eine wichtige Ma\u00dfnahme, um eine Kompromittierung des Ger\u00e4ts in einer potenziell feindlichen Umgebung fr\u00fchzeitig zu erkennen."
+              },
+              {
+                "uuid": "c0e2e590-83d0-4e62-a7e8-8fbfd591c41a",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Der Einsatz zus\u00e4tzlicher Detektionssysteme (z.B. Endpoint Detection and Response) auf dem mobilen Endger\u00e4t ist eine sinnvolle Erg\u00e4nzung, um dem erh\u00f6hten Schutzbedarf beim mobilen Arbeiten gerecht zu werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
