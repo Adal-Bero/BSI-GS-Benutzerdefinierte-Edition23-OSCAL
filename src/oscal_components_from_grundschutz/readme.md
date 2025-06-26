@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project contains a sophisticated Python script (`main.py`) designed to automatically generate enriched OSCAL component definitions from a BSI IT-Grundschutz catalog. The script identifies individual "Bausteine" (building blocks) from the source catalog, creates a base component definition for each, and then uses the Google Vertex AI Gemini Pro model to intelligently discover and add relevant controls from other Bausteine.
+This project contains a sophisticated Python script (`main.py`) designed to automatically generate enriched OSCAL component definitions from a BSI IT-Grundschutz catalog. The script identifies individual "Bausteine" (building blocks) from the source catalog, creates a base component definition for each, and then uses the Google Vertex AI Gemini Pro model to intelligently discover and add relevant controls from other Bausteine. To generate the rather static component for the "Process Modules" / "Prozessbausteine" a smaller script exists as well: `create_prozessbausteine_component.py`. This is run once.
 
 The final output is a set of OSCAL-compliant JSON files, one for each technical Baustein, saved to a Google Cloud Storage (GCS) bucket.
 
@@ -42,7 +42,10 @@ The core logic of the script is a multi-step process that differs based on the t
     *   The `usage` prose of the Baustein is sent to the Gemini model.
     *   The model is prompted to identify and extract IDs of other Bausteine that are mentioned as direct dependencies.
 
-3.  **Dependency Expansion**: The list of IDs from the AI is processed. General IDs (e.g., `NET.1`) are expanded into a full list of their specific child Bausteine (e.g., `NET.1.1`, `NET.1.2`, etc.).
+3.  **Dependency Expansion**: 
+    *   The script programmatically parses the source catalog to locate the specific text prose of the `part` with `name: "usage"` (**Chapter 1.3** of the BSI documentation) within the current Baustein.
+    *   This text is sent to the Gemini model, which is prompted to identify and extract IDs of other Bausteine mentioned as direct dependencies.
+    *   To prevent AI "hallucinations," a programmatic quality gate verifies that each dependency ID suggested by the AI is actually present as a substring in the original `usage` text before it is used.
 
 4.  **Combined Control Filtering**:
     *   A master list of "candidate controls" is created by combining:
