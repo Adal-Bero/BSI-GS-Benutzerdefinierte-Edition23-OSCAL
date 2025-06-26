@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OSCAL Component Viewer</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --text-color: #212529;
+            --primary-color: #004494; /* BSI Blue */
+            --secondary-color: #e9ecef;
+            --border-color: #dee2e6;
+            --card-bg: #ffffff;
+            --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --hover-bg: #f1f3f5;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+        }
+        h1, h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 250px;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9em;
+            margin-bottom: 1rem;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+        button:hover {
+            background-color: #003366;
+        }
+        #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
+
+        /* --- Component View Styling --- */
+        #output-container details {
+            margin-left: 20px;
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 5px;
+        }
+        #output-container summary {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            position: relative;
+        }
+        #output-container summary:hover { background-color: var(--hover-bg); }
+
+        .component-metadata {
+            background-color: var(--secondary-color);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+        }
+        .component-metadata h2 {
+            margin-top: 0;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 5px 15px;
+        }
+        .meta-grid dt {
+            font-weight: bold;
+        }
+        
+        .component-details > summary { 
+            font-size: 1.2em; 
+            font-weight: bold; 
+            background: #e9ecef;
+        }
+        .control-implementation-details > summary { 
+            font-size: 1.1em; 
+            font-weight: 500;
+            background: #f8f9fa;
+        }
+        .requirements-list {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .implemented-requirement-item {
+            padding: 10px;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+        }
+        .control-id {
+            font-weight: bold;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.05em;
+            color: #343a40;
+        }
+        .ai-reason {
+            margin: 5px 0 0 0;
+            padding-left: 10px;
+            font-style: italic;
+            color: #495057;
+            position: relative;
+        }
+        .ai-reason::before {
+            content: "“";
+            position: absolute;
+            left: -5px;
+            top: 0px;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OSCAL Component Viewer</h1>
+        <p>Paste your AI-generated OSCAL Component Definition JSON below to visualize its structure.</p>
+        
+        <textarea id="json-input">{
+  "component-definition": {
+    "uuid": "SAMPLE-acb123-...",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.1: Allgemeiner Server",
+      "last-modified": "2023-11-01T12:00:00Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.1."
+    },
+    "components": [
+      {
+        "uuid": "SAMPLE-def456-...",
+        "type": "service",
+        "title": "Allgemeiner Server",
+        "description": "Implementation of controls for Baustein SYS.1.1.",
+        "control-implementations": [
+          {
+            "uuid": "SAMPLE-ghi789-...",
+            "source": "gs://your-bucket/path/to/catalog.json",
+            "description": "Implementation for all controls in group SYS.1.1: Allgemeiner Server",
+            "implemented-requirements": [
+              { "uuid": "...", "control-id": "SYS.1.1.A1", "description": "Base implementation for control SYS.1.1.A1." },
+              { "uuid": "...", "control-id": "SYS.1.1.A2", "description": "Base implementation for control SYS.1.1.A2." }
+            ]
+          },
+          {
+            "uuid": "SAMPLE-jkl012-...",
+            "source": "gs://your-bucket/path/to/catalog.json",
+            "description": "Abhängigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              { "uuid": "...", "control-id": "ORP.4.A2", "description": "AI-Begründung: Der Text erwähnt explizit die Notwendigkeit, das Rollen- und Berechtigungskonzept aus ORP.4 zu berücksichtigen." },
+              { "uuid": "...", "control-id": "OPS.1.1.4.A1", "description": "AI-Begründung: Die Anforderung, Server beim Schutz vor Schadprogrammen zu berücksichtigen, macht diesen Control direkt relevant." }
+            ]
+          },
+          {
+            "uuid": "SAMPLE-mno345-...",
+            "source": "gs://your-bucket/path/to/catalog.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              { "uuid": "...", "control-id": "CON.3.A5", "description": "AI-Begründung: Datensicherung ist eine fundamentale Anforderung für jeden Serverbetrieb zur Gewährleistung der Verfügbarkeit." }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}</textarea>
+        
+        <button id="render-btn">Render Component</button>
+        <div id="status">Paste your JSON above and click "Render Component" to begin.</div>
+
+        <div id="output-container"></div>
+    </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const renderBtn = document.getElementById('render-btn');
+    const jsonInput = document.getElementById('json-input');
+    const statusEl = document.getElementById('status');
+    const outputContainer = document.getElementById('output-container');
+
+    const renderComponent = () => {
+        let componentData;
+        try {
+            componentData = JSON.parse(jsonInput.value);
+        } catch (e) {
+            statusEl.textContent = `Error: Invalid JSON format. ${e.message}`;
+            return;
+        }
+
+        const compDef = componentData['component-definition'];
+        if (!compDef?.components) {
+            statusEl.textContent = 'Error: JSON does not match expected OSCAL component-definition structure.';
+            return;
+        }
+
+        outputContainer.innerHTML = ''; // Clear previous output
+        let totalImpls = 0;
+        let totalReqs = 0;
+
+        // 1. Render Metadata
+        const metadata = compDef.metadata;
+        const metaDiv = document.createElement('div');
+        metaDiv.className = 'component-metadata';
+        metaDiv.innerHTML = `
+            <h2>${metadata.title}</h2>
+            <dl class="meta-grid">
+                <dt>UUID:</dt><dd>${compDef.uuid}</dd>
+                <dt>Last Modified:</dt><dd>${new Date(metadata['last-modified']).toLocaleString()}</dd>
+                <dt>Version:</dt><dd>${metadata.version}</dd>
+            </dl>
+        `;
+        outputContainer.appendChild(metaDiv);
+
+        // 2. Render Components
+        compDef.components.forEach(component => {
+            const componentDetails = document.createElement('details');
+            componentDetails.className = 'component-details';
+            componentDetails.open = true; // Open by default
+            componentDetails.innerHTML = `<summary>${component.title} (Component)</summary>`;
+
+            // 3. Render Control Implementations
+            (component['control-implementations'] || []).forEach(impl => {
+                totalImpls++;
+                const implDetails = document.createElement('details');
+                implDetails.className = 'control-implementation-details';
+                implDetails.open = true;
+                implDetails.innerHTML = `<summary>${impl.description} (${impl['implemented-requirements'].length} controls)</summary>`;
+
+                const reqListDiv = document.createElement('div');
+                reqListDiv.className = 'requirements-list';
+
+                // 4. Render Implemented Requirements
+                (impl['implemented-requirements'] || []).forEach(req => {
+                    totalReqs++;
+                    const reqItemDiv = document.createElement('div');
+                    reqItemDiv.className = 'implemented-requirement-item';
+                    
+                    const controlId = req['control-id'] || 'N/A';
+                    const description = req.description || '';
+
+                    reqItemDiv.innerHTML = `
+                        <div class="control-id">${controlId}</div>
+                        <p class="ai-reason">${description.replace(/\n/g, '<br>')}</p>
+                    `;
+                    reqListDiv.appendChild(reqItemDiv);
+                });
+
+                implDetails.appendChild(reqListDiv);
+                componentDetails.appendChild(implDetails);
+            });
+            outputContainer.appendChild(componentDetails);
+        });
+        
+        statusEl.textContent = `Successfully rendered ${totalImpls} implementation groups with a total of ${totalReqs} controls.`;
+    };
+    
+    renderBtn.addEventListener('click', renderComponent);
+});
+</script>
+</body>
+</html>
