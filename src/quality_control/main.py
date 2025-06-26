@@ -12,8 +12,9 @@ from typing import Any, Dict, List, Optional, Tuple
 import jsonschema
 import vertexai
 from google.cloud import storage
+# MODIFIED IMPORT
 from vertexai.generative_models import (GenerationConfig, GenerativeModel,
-                                        Tool)
+                                        GoogleSearchRetrieval, Tool)
 
 # --- Configuration ---
 # ... (class unchanged) ...
@@ -91,11 +92,9 @@ def list_gcs_blobs(client: storage.Client, bucket_name: str, prefix: str) -> Lis
     blobs = client.list_blobs(bucket_name, prefix=prefix)
     return [blob for blob in blobs if blob.name.endswith('.json')]
 
-
 # --- OSCAL Catalog Utilities ---
-
+# ... (functions unchanged) ...
 def find_item_by_id_recursive(oscal_element: Any, target_id: str) -> Optional[Dict]:
-    # ... (function unchanged) ...
     if isinstance(oscal_element, dict):
         if oscal_element.get("id") == target_id:
             return oscal_element
@@ -111,7 +110,6 @@ def find_item_by_id_recursive(oscal_element: Any, target_id: str) -> Optional[Di
     return None
 
 def find_parent_baustein(element: Any, control_id: str) -> Optional[Dict]:
-    # ... (function unchanged) ...
     if isinstance(element, dict):
         if element.get("class") == "baustein" and "controls" in element:
             control_ids_in_group = {c.get("id") for c in element.get("controls", [])}
@@ -129,7 +127,6 @@ def find_parent_baustein(element: Any, control_id: str) -> Optional[Dict]:
     return None
 
 def get_prose_from_control(control: Dict) -> List[Dict[str, str]]:
-    # This function is now correct, because the data will have IDs.
     prose_parts = []
     if "parts" not in control:
         return []
@@ -143,40 +140,32 @@ def get_prose_from_control(control: Dict) -> List[Dict[str, str]]:
                     })
     return prose_parts
 
-# --- NEW FUNCTION ---
 def ensure_prose_part_ids(catalog: Dict):
-    """
-    Traverses the catalog and adds a unique, deterministic ID to any prose-containing
-    part within a maturity level that is missing one. This mutates the catalog object.
-    """
     logging.info("Starting data sanitization: Ensuring all prose parts have IDs...")
     id_added_count = 0
-    # The structure is catalog -> groups -> groups -> controls -> parts -> parts
     for top_group in catalog.get("catalog", {}).get("groups", []):
         for baustein in top_group.get("groups", []):
             if baustein.get("class") != "baustein":
                 continue
             for control in baustein.get("controls", []):
                 for ml_part in control.get("parts", []):
-                    # Check if this is a maturity level part and has an ID and nested parts
                     if ml_part.get("name") == "maturity-level-description" and "id" in ml_part and "parts" in ml_part:
                         for content_part in ml_part.get("parts", []):
-                            # Check if the content part has prose but is missing an ID
                             if "prose" in content_part and "id" not in content_part and "name" in content_part:
-                                # Generate and add the deterministic ID
                                 content_part["id"] = f"{ml_part['id']}-{content_part['name']}"
                                 id_added_count += 1
     logging.info(f"Data sanitization complete. Added {id_added_count} missing IDs to prose parts.")
 
 
 # --- Gemini API Interaction ---
-# ... (functions unchanged) ...
 def _clean_json_response(text: str) -> str:
+    # ... (function unchanged) ...
     match = re.search(r"```(json)?\s*(\{.*})\s*```", text, re.DOTALL)
     if match:
         return match.group(2)
     return text
 
+# --- MODIFIED FUNCTION ---
 async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt_template: str, output_schema: Dict) -> Optional[Dict]:
     full_prompt = textwrap.dedent(f"""
     {prompt_template}
@@ -192,7 +181,10 @@ async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt
     ```
     """)
     generation_config = GenerationConfig(max_output_tokens=65536, temperature=0.2, response_mime_type="application/json")
-    tools = [Tool.from_google_search_retrieval()]
+    
+    # MODIFIED TOOL INITIALIZATION
+    tools = [Tool.from_google_search_retrieval(GoogleSearchRetrieval())]
+
     for attempt in range(5):
         try:
             logging.debug(f"Attempt {attempt + 1}/5 to call Gemini API for control {input_stub['control_context']['id']}.")
@@ -270,10 +262,9 @@ async def process_control(control_id: str, source_catalog: Dict, model: Generati
         return []
 
 async def main():
-    """Main pipeline execution function."""
+    # ... (function unchanged) ...
     config = Config()
     setup_logging(config.test_mode)
-
     try:
         vertexai.init(project=config.gcp_project_id)
         storage_client = storage.Client(project=config.gcp_project_id)
@@ -281,7 +272,6 @@ async def main():
     except Exception as e:
         logging.error(f"Failed to initialize GCP clients: {e}")
         return
-
     logging.info("Loading prompts and schemas...")
     try:
         with open("prompts/quality_check_prompt.txt", "r") as f:
@@ -291,42 +281,32 @@ async def main():
     except FileNotFoundError as e:
         logging.error(f"Asset file not found: {e}. Exiting.")
         return
-
     logging.info(f"Loading source catalog from gs://{config.bucket_name}/{config.existing_json_gcs_path}")
     source_catalog = download_json_from_gcs(storage_client, config.bucket_name, config.existing_json_gcs_path)
     if not source_catalog:
         logging.error("Could not load source catalog. Exiting.")
         return
-
-    # --- MODIFIED: ADD PRE-PROCESSING STEP ---
     ensure_prose_part_ids(source_catalog)
-
     logging.info(f"Discovering component files in gs://{config.bucket_name}/{config.source_prefix}...")
     component_blobs = list_gcs_blobs(storage_client, config.bucket_name, config.source_prefix)
-    
     if config.test_mode:
         component_blobs = component_blobs[:3]
         logging.warning(f"TEST MODE: Processing only {len(component_blobs)} component files.")
-
     semaphore = asyncio.Semaphore(10)
     catalog_lock = asyncio.Lock()
-
     for blob in component_blobs:
         logging.info(f"--- Processing Component File: {blob.name} ---")
         component_data = download_json_from_gcs(storage_client, config.bucket_name, blob.name)
         if not component_data:
             continue
-
         component_tasks = []
         for component in component_data.get("component-definition", {}).get("components", []):
             for impl in component.get("control-implementations", []):
                 control_ids = [req["control-id"] for req in impl.get("implemented-requirements", [])]
-                
                 if config.test_mode:
                     limit = max(1, int(len(control_ids) * 0.1))
                     control_ids = control_ids[:limit]
                     logging.warning(f"TEST MODE: Limiting to {len(control_ids)} controls for this component part.")
-
                 for cid in control_ids:
                     task = asyncio.create_task(
                         process_control(
@@ -335,21 +315,17 @@ async def main():
                         )
                     )
                     component_tasks.append(task)
-
         if not component_tasks:
             logging.info(f"No controls found to process in {blob.name}. Moving to next file.")
             continue
-        
         list_of_new_controls_lists = await asyncio.gather(*component_tasks)
         aggregated_new_controls = [control for sublist in list_of_new_controls_lists for control in sublist]
-
         if aggregated_new_controls:
             logging.info(f"Found {len(aggregated_new_controls)} new controls to add to component {os.path.basename(blob.name)}.")
             try:
                 first_control_impl = component_data["component-definition"]["components"][0]["control-implementations"][0]
                 if "implemented-requirements" not in first_control_impl:
                     first_control_impl["implemented-requirements"] = []
-                
                 for new_control in aggregated_new_controls:
                     new_req = {
                         "uuid": str(uuid.uuid4()),
@@ -357,15 +333,12 @@ async def main():
                         "description": "AI-suggested control to address identified gap."
                     }
                     first_control_impl["implemented-requirements"].append(new_req)
-                
                 output_component_path = os.path.join(config.output_prefix, os.path.basename(blob.name))
                 upload_json_to_gcs(storage_client, config.bucket_name, output_component_path, component_data)
-
             except (KeyError, IndexError) as e:
                 logging.error(f"Could not add new controls to component {blob.name} due to unexpected structure: {e}")
         else:
             logging.info(f"No changes for component {blob.name}. Skipping save.")
-
     logging.info("All component processing complete. Uploading final catalog...")
     upload_json_to_gcs(storage_client, config.bucket_name, config.output_gcs_path, source_catalog)
     logging.info("--- Pipeline Finished Successfully ---")
