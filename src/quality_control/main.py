@@ -201,7 +201,7 @@ async def get_gemini_enrichment(
 
         for attempt in range(5):
             try:
-                resp = await client.models.generate_content(
+                resp = await client.aio.models.generate_content(
                     model="gemini-2.5-pro",
                     contents=full_prompt,
                     config=GenerateContentConfig(
