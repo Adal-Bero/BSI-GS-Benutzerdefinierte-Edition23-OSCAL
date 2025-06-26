@@ -283,9 +283,16 @@ def main():
         catalog = download_json_from_gcs(storage_client, config.bucket_name, config.existing_json_gcs_path)
         source_url = f"gs://{config.bucket_name}/{config.existing_json_gcs_path}"
         target_bausteine = find_target_bausteine(catalog)
+        
+        # --- MODIFIED SECTION ---
         if config.is_test_mode:
-            logging.warning(f"TEST MODE: Processing only the first 3 of {len(target_bausteine)} Bausteine.")
-            target_bausteine = target_bausteine[:3]
+            if len(target_bausteine) > 3:
+                logging.warning(f"TEST MODE: Processing a random sample of 3 out of {len(target_bausteine)} Bausteine.")
+                target_bausteine = random.sample(target_bausteine, 3)
+            else:
+                logging.warning(f"TEST MODE: Processing all {len(target_bausteine)} available Bausteine (less than 3 found).")
+        # --- END MODIFIED SECTION ---
+
         for baustein in target_bausteine:
             baustein_id = baustein.get("id")
             try:
