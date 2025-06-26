@@ -1,0 +1,45 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Gemini Input Stub for BSI Control Quality Check",
+    "description": "The minimal information required by the Gemini model to analyze a BSI control's prose and context.",
+    "type": "object",
+    "required": ["baustein_context", "control_context", "prose_to_evaluate"],
+    "properties": {
+      "baustein_context": {
+        "description": "Context of the parent Baustein (group).",
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "control_context": {
+        "description": "Context of the specific control being evaluated.",
+        "type": "object",
+        "required": ["id", "title"],
+        "properties": {
+          "id": { "type": "string" },
+          "title": { "type": "string" }
+        }
+      },
+      "prose_to_evaluate": {
+        "description": "A list of prose sections from the control's maturity levels.",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["part_id", "prose"],
+          "properties": {
+            "part_id": {
+              "type": "string",
+              "description": "The unique ID of the OSCAL 'part' containing the prose, used to map the result back."
+            },
+            "prose": {
+              "type": "string",
+              "description": "The actual text to be evaluated."
+            }
+          }
+        }
+      }
+    }
+  }
