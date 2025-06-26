@@ -50,9 +50,7 @@ def setup_logging(is_test_mode: bool):
 
 # --- AI & GCS Interaction ---
 def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) -> Optional[Dict[str, Any]]:
-    """ A. FIX: Log the final, rendered prompt string. """
-    logging.debug(f"Final rendered prompt for Gemini:\n---\n{prompt}\n---")
-    
+    # A. FIX: Logging moved to the calling function to show the rendered prompt.
     sanitized_schema = {k: v for k, v in schema.items() if k not in UNSUPPORTED_SCHEMA_KEYS}
     model = GenerativeModel("gemini-2.5-pro", generation_config=GenerationConfig(response_mime_type="application/json", response_schema=sanitized_schema))
     tools = [vertexai.generative_models.Tool.from_google_search_retrieval(grounding)] if grounding else None
@@ -100,7 +98,7 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         logging.error(f"Failed to upload to {full_path}: {e}")
         raise
 
-# --- Catalog Helper Functions (No Changes) ---
+# --- Catalog Helper Functions ---
 def load_external_file(path: str) -> str:
     with open(path, 'r', encoding='utf-8') as f: return f.read()
 
@@ -171,6 +169,23 @@ def get_controls_from_baustein_list(catalog: Dict[str, Any], baustein_ids: List[
     logging.debug(f"Fetched {len(all_controls)} controls from {len(baustein_ids)} Bausteine.")
     return all_controls
 
+def _get_controls_by_id_recursive(group: Dict[str, Any], control_ids_to_find: set, found_controls: List[Dict[str, Any]]):
+    """ C. FIX: Recursive worker to find controls by their specific IDs. """
+    for control in group.get("controls", []):
+        if control.get("id") in control_ids_to_find:
+            found_controls.append(control)
+    for subgroup in group.get("groups", []):
+        _get_controls_by_id_recursive(subgroup, control_ids_to_find, found_controls)
+
+def get_controls_by_id(catalog: Dict[str, Any], control_ids: List[str]) -> List[Dict[str, Any]]:
+    """ C. FIX: New helper function to find a list of controls by their IDs from anywhere in the catalog. """
+    found_controls = []
+    control_ids_to_find = set(control_ids)
+    for group in catalog.get("catalog", {}).get("groups", []):
+        _get_controls_by_id_recursive(group, control_ids_to_find, found_controls)
+    logging.debug(f"Searched for {len(control_ids)} control IDs, found {len(found_controls)} matching controls.")
+    return found_controls
+
 def get_direct_controls_from_baustein(catalog: Dict[str, Any], baustein_id: str) -> List[Dict[str, Any]]:
     all_groups = catalog.get("catalog", {}).get("groups", [])
     group = _find_group_by_id(all_groups, baustein_id)
@@ -215,20 +230,31 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
         usage_prose = get_prose_from_part(baustein_group.get("parts", []), "usage")
         if usage_prose:
             prompt = prompts["extract_dependencies"].format(schema=json.dumps(schemas["dependency"]), prose=usage_prose)
+            # A. FIX: Log the rendered prompt
+            logging.debug(f"Full prompt for Gemini dependency extraction:\n---\n{prompt}\n---")
             dependency_result = invoke_gemini(prompt, schemas["dependency"])
+            
             if dependency_result and dependency_result.get("dependencies"):
                 dependency_items = dependency_result.get("dependencies", [])
-                filtered_items = [item for item in dependency_items if item['id'] not in EXCLUDED_DEPENDENCY_IDS]
+                
+                # B. FIX: Programmatic quality gate to prevent hallucinations
+                validated_items = []
+                for item in dependency_items:
+                    if item['id'] in usage_prose:
+                        validated_items.append(item)
+                    else:
+                        logging.debug(f"Discarding hallucinated dependency '{item['id']}' - not found in source prose.")
+                
+                filtered_items = [item for item in validated_items if item['id'] not in EXCLUDED_DEPENDENCY_IDS]
                 dependency_ids_raw = [item['id'] for item in filtered_items]
                 dependency_ids = expand_baustein_ids(catalog, dependency_ids_raw)
                 all_dependency_controls = get_controls_from_baustein_list(catalog, dependency_ids)
                 dependent_controls = [c for c in all_dependency_controls if not c.get("id").startswith(baustein_id)]
     
-    # C. FIX: New robust logic for combining and de-duplicating control lists
-    generic_controls = get_controls_from_baustein_list(catalog, GENERIC_CONTROLS_FOR_STEP_6)
+    # C. FIX: Use the correct function to get generic controls
+    generic_controls = get_controls_by_id(catalog, GENERIC_CONTROLS_FOR_STEP_6)
     
     combined_list = dependent_controls + generic_controls
-    
     seen_ids = set()
     all_candidate_controls = []
     for control in combined_list:
@@ -253,6 +279,8 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
     logging.debug(f"Payload for Gemini filter prompt: {candidate_json}")
 
     prompt = prompts["filter_controls"].format(schema=json.dumps(schemas["control_filter"]), introduction_prose=context_prose["introduction"], objective_prose=context_prose["objective"], usage_prose=context_prose["usage"], candidate_controls_json=candidate_json)
+    # A. FIX: Log the rendered prompt
+    logging.debug(f"Full prompt for Gemini control filtering:\n---\n{prompt}\n---")
     filter_result = invoke_gemini(prompt, schemas["control_filter"])
     
     if filter_result and filter_result.get("approved_controls"):
@@ -260,7 +288,6 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
         approved_deps_with_reasons, approved_generics_with_reasons = [], []
         generic_control_ids = {c.get("id") for c in generic_controls}
         
-        # Build a map of all candidates for easy lookup
         all_candidate_controls_map = {c.get("id"): c for c in all_candidate_controls}
 
         for control_id, reason in approved_map.items():
@@ -270,7 +297,6 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
             if control_id in generic_control_ids:
                 approved_generics_with_reasons.append({"control": control_obj, "reason": reason})
             else:
-                # This control must have come from a dependency
                 approved_deps_with_reasons.append({"control": control_obj, "reason": reason})
 
         add_controls_to_component(component, approved_deps_with_reasons, "Abhängigkeiten von verwandten Bausteinen", source_url)
