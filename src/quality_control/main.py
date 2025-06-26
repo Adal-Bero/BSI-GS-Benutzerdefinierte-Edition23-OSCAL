@@ -13,8 +13,8 @@ import jsonschema
 import vertexai
 from google.cloud import storage
 # MODIFIED IMPORT
-from vertexai.generative_models import (GenerationConfig, GenerativeModel,
-                                        GoogleSearchRetrieval, Tool)
+from vertexai.generative_models import GenerationConfig, GenerativeModel, Tool
+from vertexai.preview.generative_models import grounding
 
 # --- Configuration ---
 # ... (class unchanged) ...
@@ -62,6 +62,7 @@ def setup_logging(test_mode: bool):
     root_logger.addHandler(handler)
     logging.info(f"Logging configured. Detailed logs: {'ON (INFO)' if test_mode else 'OFF (DEBUG)'}")
 
+
 # --- Cloud Storage Utilities ---
 # ... (functions unchanged) ...
 def download_json_from_gcs(client: storage.Client, bucket_name: str, gcs_path: str) -> Optional[Dict]:
@@ -91,6 +92,7 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, gcs_path: str, 
 def list_gcs_blobs(client: storage.Client, bucket_name: str, prefix: str) -> List[storage.Blob]:
     blobs = client.list_blobs(bucket_name, prefix=prefix)
     return [blob for blob in blobs if blob.name.endswith('.json')]
+
 
 # --- OSCAL Catalog Utilities ---
 # ... (functions unchanged) ...
@@ -180,10 +182,10 @@ async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt
     {json.dumps(output_schema, indent=2)}
     ```
     """)
-    generation_config = GenerationConfig(max_output_tokens=65536, temperature=0.2, response_mime_type="application/json")
+    generation_config = GenerationConfig(max_output_tokens=8192, temperature=0.2, response_mime_type="application/json")
     
     # MODIFIED TOOL INITIALIZATION
-    tools = [Tool.from_google_search_retrieval(GoogleSearchRetrieval())]
+    tools = [Tool.from_google_search_retrieval(grounding.GoogleSearchRetrieval())]
 
     for attempt in range(5):
         try:
