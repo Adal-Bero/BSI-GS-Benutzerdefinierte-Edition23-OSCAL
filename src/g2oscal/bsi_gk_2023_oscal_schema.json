@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "$id": "https://example.com/oscal/bsi-grundschutz-catalog.final.schema.json",
   "title": "Final Valid OSCAL-Compliant BSI Grundschutz Catalog Schema",
-  "description": "A corrected, valid OSCAL schema. This version correctly defines the 'parts' property within a group, making it fully compliant with OSCAL 1.1.2.",
+  "description": "A corrected, valid OSCAL schema. This version correctly defines the 'parts' property within a group, making it fully compliant with OSCAL 1.1.2. It now includes 'prose_qs' for generated questions.",
   "type": "object",
   "required": ["catalog"],
   "properties": {
@@ -82,6 +82,7 @@
           "title": { "type": "string" },
           "class": { "$ref": "#/definitions/common/token" },
           "prose": { "type": "string" },
+          "prose_qs": { "type": "string" },
           "parts": { "type": "array", "items": { "$ref": "#/definitions/oscal/part" } }
         },
         "additionalProperties": false
