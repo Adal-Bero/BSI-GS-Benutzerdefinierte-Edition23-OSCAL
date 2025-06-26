@@ -56,6 +56,7 @@ def render_prompt(template: str, context: Dict[str, Any]) -> str:
     This function takes a template string and a dictionary of context values
     and returns the final, formatted prompt string.
     """
+
     try:
         return template.format(**context)
     except KeyError as e:

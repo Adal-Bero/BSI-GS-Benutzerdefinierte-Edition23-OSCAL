@@ -9,7 +9,7 @@ You are an expert cybersecurity analyst specializing in the German BSI IT-Grunds
 6.  Your output MUST be a JSON object that strictly adheres to the provided schema.
 
 **JSON Schema for your output:**
-{{schema}}
+{schema}
 
 **"Usage" section to analyze:**
-{{prose}}
+{prose}
