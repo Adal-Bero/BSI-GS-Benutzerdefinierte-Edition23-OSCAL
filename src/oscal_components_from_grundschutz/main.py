@@ -7,7 +7,6 @@ import time
 import random
 from datetime import datetime, timezone
 from typing import Dict, List, Any, Optional
-# FIX: Import libraries for concurrency
 import concurrent.futures
 import threading
 
@@ -27,7 +26,6 @@ GENERIC_CONTROLS_FOR_STEP_6 = [
 ]
 UNSUPPORTED_SCHEMA_KEYS = ["$schema", "$id", "title"]
 EXCLUDED_DEPENDENCY_IDS = ["ISMS.1", "APP.6"]
-# FIX: Define the concurrency limit as a constant
 MAX_CONCURRENT_JOBS = 10
 
 
@@ -210,10 +208,8 @@ def add_controls_to_component(component: Dict[str, Any], controls_with_reasons: 
     logging.info(f"Added new implementation group '{group_title}' with {len(controls_with_reasons)} controls.")
 
 
-# --- Main Processing Logic ---
+# --- Main Processing Logic (No Changes) ---
 def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, Any], prompts: Dict[str, str], schemas: Dict[str, Any], source_url: str) -> Optional[Dict[str, Any]]:
-    # This function is now the core logic for a single thread/job
-    # ... (No changes to the internal logic of this function) ...
     baustein_id = baustein_group.get("id")
     logging.info(f"--- Starting processing for Baustein {baustein_id} ---")
     component = create_base_component(baustein_group, source_url)
@@ -274,15 +270,21 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
     return component
 
 def process_baustein_concurrently(semaphore: threading.Semaphore, baustein_group: Dict, **kwargs):
-    """ FIX: New wrapper function to manage concurrency with a semaphore. """
+    """ Wrapper function to manage concurrency with a semaphore. """
     baustein_id = baustein_group.get("id", "Unknown")
     try:
-        # Acquire a slot. This will block if all 10 slots are taken.
         with semaphore:
-            final_component = process_single_baustein(baustein_group=baustein_group, **kwargs)
+            # FIX: Explicitly pass only the arguments that process_single_baustein expects.
+            final_component = process_single_baustein(
+                baustein_group=baustein_group,
+                catalog=kwargs['catalog'],
+                prompts=kwargs['prompts'],
+                schemas=kwargs['schemas'],
+                source_url=kwargs['source_url']
+            )
             
             if final_component:
-                # Unpack kwargs needed for upload
+                # The rest of the kwargs are for this upload step.
                 config = kwargs['config']
                 storage_client = kwargs['storage_client']
                 schemas = kwargs['schemas']
@@ -319,11 +321,9 @@ def main():
             else:
                 logging.warning(f"TEST MODE: Processing all {len(target_bausteine)} available Bausteine (less than 3 found).")
 
-        # FIX: Implement concurrent execution with ThreadPoolExecutor and Semaphore
         semaphore = threading.Semaphore(MAX_CONCURRENT_JOBS)
         
         with concurrent.futures.ThreadPoolExecutor(max_workers=MAX_CONCURRENT_JOBS) as executor:
-            # Prepare arguments dictionary to pass to each worker
             worker_args = {
                 "catalog": catalog,
                 "prompts": prompts,
@@ -332,16 +332,12 @@ def main():
                 "config": config,
                 "storage_client": storage_client
             }
-            
-            # Submit all jobs to the executor
             futures = [executor.submit(process_baustein_concurrently, semaphore, baustein, **worker_args) for baustein in target_bausteine]
             
-            # Wait for all futures to complete
             logging.info(f"Submitted {len(futures)} jobs to the thread pool. Waiting for completion...")
             for future in concurrent.futures.as_completed(futures):
-                # This loop effectively waits. We can check for exceptions here if needed.
                 try:
-                    future.result()  # result() is None, but will re-raise exceptions from the worker
+                    future.result()
                 except Exception as exc:
                     logging.error(f"A worker thread raised an unhandled exception: {exc}", exc_info=True)
 
