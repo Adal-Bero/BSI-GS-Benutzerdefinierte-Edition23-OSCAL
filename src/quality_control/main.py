@@ -12,13 +12,12 @@ from typing import Any, Dict, List, Optional, Tuple
 import jsonschema
 import vertexai
 from google.cloud import storage
-# MODIFIED IMPORT
 from vertexai.generative_models import GenerationConfig, GenerativeModel, Tool
 from vertexai.preview.generative_models import grounding
 
 # --- Configuration ---
-# ... (class unchanged) ...
 class Config:
+    """Loads and validates all configuration from environment variables."""
     def __init__(self):
         self.gcp_project_id: str = self._get_required_env("GCP_PROJECT_ID")
         self.bucket_name: str = self._get_required_env("BUCKET_NAME")
@@ -42,29 +41,33 @@ class Config:
         return value
 
 # --- Logging Setup ---
-# ... (function unchanged) ...
 def setup_logging(test_mode: bool):
+    """Configures the root logger based on the execution mode."""
     root_logger = logging.getLogger()
     root_logger.setLevel(logging.DEBUG) 
+
     if root_logger.hasHandlers():
         root_logger.handlers.clear()
+
     handler = logging.StreamHandler(sys.stdout)
+    
     if test_mode:
         handler.setLevel(logging.INFO) 
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     else:
         handler.setLevel(logging.INFO)
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+        
         logging.getLogger("google.auth").setLevel(logging.WARNING)
         logging.getLogger("urllib3").setLevel(logging.WARNING)
         logging.getLogger("google.api_core").setLevel(logging.WARNING)
+
     handler.setFormatter(formatter)
     root_logger.addHandler(handler)
     logging.info(f"Logging configured. Detailed logs: {'ON (INFO)' if test_mode else 'OFF (DEBUG)'}")
 
 
 # --- Cloud Storage Utilities ---
-# ... (functions unchanged) ...
 def download_json_from_gcs(client: storage.Client, bucket_name: str, gcs_path: str) -> Optional[Dict]:
     try:
         bucket = client.bucket(bucket_name)
@@ -95,7 +98,6 @@ def list_gcs_blobs(client: storage.Client, bucket_name: str, prefix: str) -> Lis
 
 
 # --- OSCAL Catalog Utilities ---
-# ... (functions unchanged) ...
 def find_item_by_id_recursive(oscal_element: Any, target_id: str) -> Optional[Dict]:
     if isinstance(oscal_element, dict):
         if oscal_element.get("id") == target_id:
@@ -161,13 +163,11 @@ def ensure_prose_part_ids(catalog: Dict):
 
 # --- Gemini API Interaction ---
 def _clean_json_response(text: str) -> str:
-    # ... (function unchanged) ...
     match = re.search(r"```(json)?\s*(\{.*})\s*```", text, re.DOTALL)
     if match:
         return match.group(2)
     return text
 
-# --- MODIFIED FUNCTION ---
 async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt_template: str, output_schema: Dict) -> Optional[Dict]:
     full_prompt = textwrap.dedent(f"""
     {prompt_template}
@@ -182,9 +182,14 @@ async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt
     {json.dumps(output_schema, indent=2)}
     ```
     """)
-    generation_config = GenerationConfig(max_output_tokens=8192, temperature=0.2, response_mime_type="application/json")
     
-    # MODIFIED TOOL INITIALIZATION
+    # CORRECTED: Use required token limit
+    generation_config = GenerationConfig(
+        max_output_tokens=65536, 
+        temperature=0.2, 
+        response_mime_type="application/json"
+    )
+    
     tools = [Tool.from_google_search_retrieval(grounding.GoogleSearchRetrieval())]
 
     for attempt in range(5):
@@ -212,7 +217,6 @@ async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt
 
 # --- Main Processing Logic ---
 async def process_control(control_id: str, source_catalog: Dict, model: GenerativeModel, prompt_template: str, output_schema: Dict, semaphore: asyncio.Semaphore, catalog_lock: asyncio.Lock) -> List[Dict]:
-    # ... (function unchanged) ...
     async with semaphore:
         logging.debug(f"Starting processing for control ID: {control_id}")
         
@@ -264,38 +268,51 @@ async def process_control(control_id: str, source_catalog: Dict, model: Generati
         return []
 
 async def main():
-    # ... (function unchanged) ...
+    """Main pipeline execution function."""
     config = Config()
     setup_logging(config.test_mode)
+
     try:
         vertexai.init(project=config.gcp_project_id)
         storage_client = storage.Client(project=config.gcp_project_id)
-        model = GenerativeModel("gemini-1.5-pro-001")
+        # CORRECTED: Use the required model
+        model = GenerativeModel("gemini-2.5-pro")
     except Exception as e:
         logging.error(f"Failed to initialize GCP clients: {e}")
         return
+
     logging.info("Loading prompts and schemas...")
     try:
         with open("prompts/quality_check_prompt.txt", "r") as f:
             prompt_template = f.read()
         with open("schemas/gemini_output_stub_schema.json", "r") as f:
             output_schema = json.load(f)
+        # ADDED: Load final validation schema
+        with open("schemas/bsi_gk_2023_oscal_schema.json", "r") as f:
+            final_oscal_schema = json.load(f)
+
     except FileNotFoundError as e:
         logging.error(f"Asset file not found: {e}. Exiting.")
         return
+
     logging.info(f"Loading source catalog from gs://{config.bucket_name}/{config.existing_json_gcs_path}")
     source_catalog = download_json_from_gcs(storage_client, config.bucket_name, config.existing_json_gcs_path)
     if not source_catalog:
         logging.error("Could not load source catalog. Exiting.")
         return
+
     ensure_prose_part_ids(source_catalog)
+
     logging.info(f"Discovering component files in gs://{config.bucket_name}/{config.source_prefix}...")
     component_blobs = list_gcs_blobs(storage_client, config.bucket_name, config.source_prefix)
+    
     if config.test_mode:
         component_blobs = component_blobs[:3]
         logging.warning(f"TEST MODE: Processing only {len(component_blobs)} component files.")
+
     semaphore = asyncio.Semaphore(10)
     catalog_lock = asyncio.Lock()
+
     for blob in component_blobs:
         logging.info(f"--- Processing Component File: {blob.name} ---")
         component_data = download_json_from_gcs(storage_client, config.bucket_name, blob.name)
@@ -341,7 +358,17 @@ async def main():
                 logging.error(f"Could not add new controls to component {blob.name} due to unexpected structure: {e}")
         else:
             logging.info(f"No changes for component {blob.name}. Skipping save.")
-    logging.info("All component processing complete. Uploading final catalog...")
+
+    logging.info("All component processing complete. Starting final validation...")
+    
+    # ADDED: Final validation step before upload
+    try:
+        jsonschema.validate(instance=source_catalog, schema=final_oscal_schema)
+        logging.info("Final catalog successfully validated against OSCAL schema.")
+    except jsonschema.exceptions.ValidationError as e:
+        logging.error(f"FATAL: Final assembled catalog is invalid and will not be uploaded. Reason: {e.message}")
+        return # Stop execution if final product is invalid
+
     upload_json_to_gcs(storage_client, config.bucket_name, config.output_gcs_path, source_catalog)
     logging.info("--- Pipeline Finished Successfully ---")
 
