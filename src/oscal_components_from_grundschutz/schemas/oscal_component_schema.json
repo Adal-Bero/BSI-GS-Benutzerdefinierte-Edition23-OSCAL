@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Corrected OSCAL Component Definition Schema",
+  "type": "object",
+  "required": [
+      "component-definition"
+  ],
+  "properties": {
+      "component-definition": {
+          "type": "object",
+          "required": [
+              "uuid",
+              "metadata",
+              "components"
+          ],
+          "properties": {
+              "uuid": {
+                  "type": "string",
+                  "description": "A valid UUID for the component definition.",
+                  "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+              },
+              "metadata": {
+                  "type": "object",
+                  "required": ["title", "last-modified", "version", "oscal-version"],
+                  "properties": {
+                      "title": {"type": "string"},
+                      "last-modified": {"type": "string", "format": "date-time"},
+                      "version": {"type": "string"},
+                      "oscal-version": {"type": "string"}
+                  }
+              },
+              "components": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                      "type": "object",
+                      "required": ["uuid", "type", "title", "description", "control-implementations"],
+                      "properties": {
+                          "uuid": {
+                              "type": "string",
+                              "description": "A valid UUID for the component.",
+                              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+                          },
+                          "type": {"type": "string"},
+                          "title": {"type": "string"},
+                          "description": {"type": "string"},
+                          "control-implementations": {
+                              "type": "array",
+                              "items": {
+                                  "type": "object",
+                                  "required": ["uuid", "source", "description", "implemented-requirements"],
+                                  "properties": {
+                                      "uuid": {
+                                          "type": "string",
+                                          "description": "A valid UUID for the control implementation.",
+                                          "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+                                      },
+                                      "source": {"type": "string"},
+                                      "description": {"type": "string"},
+                                      "implemented-requirements": {
+                                          "type": "array",
+                                          "minItems": 1,
+                                          "items": {
+                                              "type": "object",
+                                              "required": ["uuid", "control-id", "description"],
+                                              "properties": {
+                                                  "uuid": {
+                                                      "type": "string",
+                                                      "description": "A valid UUID for the implemented requirement.",
+                                                      "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+                                                  },
+                                                  "control-id": {"type": "string"},
+                                                  "description": {"type": "string"}
+                                              }
+                                          }
+                                      }
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+      }
+  }
+}

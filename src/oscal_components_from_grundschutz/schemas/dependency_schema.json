@@ -1,0 +1,25 @@
+{
+    "description": "Schema for the output of the dependency extraction model.",
+    "type": "object",
+    "properties": {
+      "dependencies": {
+        "type": "array",
+        "description": "A list of Baustein IDs that are identified as direct dependencies, with reasons.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "A Baustein ID, e.g., 'SYS.1.1' or 'NET.1'."
+            },
+            "reason": {
+              "type": "string",
+              "description": "A concise justification for including this dependency."
+            }
+          },
+          "required": ["id", "reason"]
+        }
+      }
+    },
+    "required": ["dependencies"]
+  }

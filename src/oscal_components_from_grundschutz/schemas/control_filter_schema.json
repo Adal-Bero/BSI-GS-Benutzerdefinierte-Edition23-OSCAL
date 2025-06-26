@@ -1,0 +1,25 @@
+{
+    "description": "Schema for the output of the control filtering model.",
+    "type": "object",
+    "properties": {
+      "approved_controls": {
+        "type": "array",
+        "description": "A list of control IDs approved for inclusion, with reasons.",
+        "items": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string",
+              "description": "A control ID, e.g., 'SYS.1.1.A1'."
+            },
+            "reason": {
+              "type": "string",
+              "description": "A concise justification for why this control meets the criteria."
+            }
+          },
+          "required": ["id", "reason"]
+        }
+      }
+    },
+    "required": ["approved_controls"]
+  }

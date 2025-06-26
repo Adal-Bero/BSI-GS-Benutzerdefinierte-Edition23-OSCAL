@@ -170,7 +170,7 @@ async def process_baustein_pdf(blob, semaphore):
         return None, None
 
 
-# --- Main Execution and Catalog Management ---
+# --- Main Execution and Catalog Management --- 
 def load_existing_catalog(bucket, gcs_path):
     if not gcs_path: logging.info("No existing JSON path provided. Starting with a fresh catalog."); return get_empty_catalog_structure()
     blob = bucket.blob(gcs_path)
