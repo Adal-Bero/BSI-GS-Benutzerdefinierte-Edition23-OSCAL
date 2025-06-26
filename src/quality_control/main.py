@@ -6,7 +6,7 @@ import re
 import sys
 import textwrap
 import time
-import uuid  # <-- Added for generating new UUIDs
+import uuid
 from typing import Any, Dict, List, Optional, Tuple
 
 import jsonschema
@@ -19,6 +19,7 @@ from vertexai.generative_models import (GenerationConfig, GenerativeModel,
 
 class Config:
     """Loads and validates all configuration from environment variables."""
+    # ... (class unchanged) ...
     def __init__(self):
         self.gcp_project_id: str = self._get_required_env("GCP_PROJECT_ID")
         self.bucket_name: str = self._get_required_env("BUCKET_NAME")
@@ -27,7 +28,6 @@ class Config:
         self.existing_json_gcs_path: str = self._get_required_env("EXISTING_JSON_GCS_PATH")
         self.test_mode: bool = os.getenv("TEST", "false").lower() == "true"
         
-        # Derived paths
         self.output_filename = os.path.basename(self.existing_json_gcs_path)
         self.output_gcs_path = os.path.join(self.output_prefix, self.output_filename)
 
@@ -36,7 +36,6 @@ class Config:
             logging.warning("--- TEST MODE ENABLED ---")
 
     def _get_required_env(self, var_name: str) -> str:
-        """Gets a required environment variable or exits."""
         value = os.getenv(var_name)
         if not value:
             logging.error(f"FATAL: Environment variable '{var_name}' is not set.")
@@ -44,12 +43,9 @@ class Config:
         return value
 
 # --- Logging Setup ---
-
 def setup_logging(test_mode: bool):
-    """Configures the root logger based on the execution mode."""
-    log_level = logging.INFO if test_mode else logging.DEBUG
+    # ... (function unchanged) ...
     root_logger = logging.getLogger()
-    
     root_logger.setLevel(logging.DEBUG) 
 
     if root_logger.hasHandlers():
@@ -58,7 +54,7 @@ def setup_logging(test_mode: bool):
     handler = logging.StreamHandler(sys.stdout)
     
     if test_mode:
-        handler.setLevel(logging.INFO)
+        handler.setLevel(logging.INFO) 
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     else:
         handler.setLevel(logging.INFO)
@@ -74,9 +70,8 @@ def setup_logging(test_mode: bool):
 
 
 # --- Cloud Storage Utilities ---
-
+# ... (all functions unchanged) ...
 def download_json_from_gcs(client: storage.Client, bucket_name: str, gcs_path: str) -> Optional[Dict]:
-    """Downloads and parses a JSON file from GCS."""
     try:
         bucket = client.bucket(bucket_name)
         blob = bucket.blob(gcs_path)
@@ -91,7 +86,6 @@ def download_json_from_gcs(client: storage.Client, bucket_name: str, gcs_path: s
         return None
 
 def upload_json_to_gcs(client: storage.Client, bucket_name: str, gcs_path: str, data: Dict):
-    """Uploads a dictionary as a JSON file to GCS."""
     try:
         bucket = client.bucket(bucket_name)
         blob = bucket.blob(gcs_path)
@@ -102,14 +96,13 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, gcs_path: str, 
         raise
 
 def list_gcs_blobs(client: storage.Client, bucket_name: str, prefix: str) -> List[storage.Blob]:
-    """Lists all blobs in a GCS prefix."""
     blobs = client.list_blobs(bucket_name, prefix=prefix)
     return [blob for blob in blobs if blob.name.endswith('.json')]
 
 # --- OSCAL Catalog Utilities ---
 
 def find_item_by_id_recursive(oscal_element: Any, target_id: str) -> Optional[Dict]:
-    """Recursively searches for a group, control, or part by its 'id'."""
+    # ... (function unchanged) ...
     if isinstance(oscal_element, dict):
         if oscal_element.get("id") == target_id:
             return oscal_element
@@ -124,8 +117,35 @@ def find_item_by_id_recursive(oscal_element: Any, target_id: str) -> Optional[Di
                 return found
     return None
 
+# --- NEW FUNCTION ---
+def find_parent_baustein(element: Any, control_id: str) -> Optional[Dict]:
+    """
+    Recursively finds the parent 'baustein' group for a given control ID.
+    """
+    if isinstance(element, dict):
+        # Check if THIS element is the parent baustein we are looking for.
+        if element.get("class") == "baustein" and "controls" in element:
+            control_ids_in_group = {c.get("id") for c in element.get("controls", [])}
+            if control_id in control_ids_in_group:
+                return element  # This is the correct parent baustein.
+
+        # If not, recurse into its children (groups, etc.).
+        for value in element.values():
+            found = find_parent_baustein(value, control_id)
+            if found:
+                return found
+
+    elif isinstance(element, list):
+        # Recurse into list items.
+        for item in element:
+            found = find_parent_baustein(item, control_id)
+            if found:
+                return found
+    
+    return None # Return None if not found in this branch.
+
 def get_prose_from_control(control: Dict) -> List[Dict[str, str]]:
-    """Extracts all prose parts from a control's maturity levels."""
+    # ... (function unchanged) ...
     prose_parts = []
     if "parts" not in control:
         return []
@@ -139,25 +159,17 @@ def get_prose_from_control(control: Dict) -> List[Dict[str, str]]:
                     })
     return prose_parts
 
-# --- Gemini API Interaction ---
 
+# --- Gemini API Interaction ---
 def _clean_json_response(text: str) -> str:
-    """Cleans the model's response to extract the JSON object."""
+    # ... (function unchanged) ...
     match = re.search(r"```(json)?\s*(\{.*})\s*```", text, re.DOTALL)
     if match:
         return match.group(2)
     return text
 
-async def get_gemini_enrichment(
-    model: GenerativeModel,
-    input_stub: Dict,
-    prompt_template: str,
-    output_schema: Dict
-) -> Optional[Dict]:
-    """
-    Calls the Gemini API with retry logic, grounding, and JSON validation.
-    """
-    # ... (rest of the function is unchanged) ...
+async def get_gemini_enrichment(model: GenerativeModel, input_stub: Dict, prompt_template: str, output_schema: Dict) -> Optional[Dict]:
+    # ... (function unchanged) ...
     full_prompt = textwrap.dedent(f"""
     {prompt_template}
 
@@ -171,45 +183,24 @@ async def get_gemini_enrichment(
     {json.dumps(output_schema, indent=2)}
     ```
     """)
-
-    generation_config = GenerationConfig(
-        max_output_tokens=65536,
-        temperature=0.2,
-        response_mime_type="application/json"
-    )
-    
+    generation_config = GenerationConfig(max_output_tokens=65536, temperature=0.2, response_mime_type="application/json")
     tools = [Tool.from_google_search_retrieval()]
-
     for attempt in range(5):
         try:
             logging.debug(f"Attempt {attempt + 1}/5 to call Gemini API for control {input_stub['control_context']['id']}.")
-            response = await model.generate_content_async(
-                full_prompt,
-                generation_config=generation_config,
-                tools=tools,
-            )
-
+            response = await model.generate_content_async(full_prompt, generation_config=generation_config, tools=tools)
             finish_reason = response.candidates[0].finish_reason.name
             if finish_reason not in ["STOP", "NORMAL"]:
-                logging.warning(
-                    f"Gemini call for control {input_stub['control_context']['id']} "
-                    f"finished with reason: {finish_reason}. Retrying..."
-                )
+                logging.warning(f"Gemini call for control {input_stub['control_context']['id']} finished with reason: {finish_reason}. Retrying...")
                 await asyncio.sleep(2 ** attempt)
                 continue
-
             response_text = _clean_json_response(response.text)
             model_output = json.loads(response_text)
-            
             jsonschema.validate(instance=model_output, schema=output_schema)
-            
             logging.debug(f"Successfully received and validated Gemini response for {input_stub['control_context']['id']}.")
             return model_output
-
         except Exception as e:
-            logging.error(
-                f"Error on attempt {attempt + 1} for control {input_stub['control_context']['id']}: {e}"
-            )
+            logging.error(f"Error on attempt {attempt + 1} for control {input_stub['control_context']['id']}: {e}")
             if attempt < 4:
                 await asyncio.sleep(2 ** attempt)
             else:
@@ -219,9 +210,9 @@ async def get_gemini_enrichment(
 
 # --- Main Processing Logic ---
 
+# --- MODIFIED FUNCTION ---
 async def process_control(
     control_id: str,
-    baustein_id: str,
     source_catalog: Dict,
     model: GenerativeModel,
     prompt_template: str,
@@ -229,22 +220,20 @@ async def process_control(
     semaphore: asyncio.Semaphore,
     catalog_lock: asyncio.Lock
 ) -> List[Dict]:
-    """
-    Processes a single control: finds it, calls Gemini, merges results, and returns new controls.
-    
-    Returns:
-        A list of suggested new controls from Gemini, or an empty list if none.
-    """
+    """Processes a single control, finds its context, calls Gemini, merges results, and returns new controls."""
     async with semaphore:
         logging.debug(f"Starting processing for control ID: {control_id}")
         
+        # Find the control object and its parent baustein using the reliable methods
         control = find_item_by_id_recursive(source_catalog, control_id)
-        baustein = find_item_by_id_recursive(source_catalog, baustein_id)
+        baustein = find_parent_baustein(source_catalog.get("catalog"), control_id)
 
         if not control or not baustein:
-            logging.warning(f"Could not find control '{control_id}' or baustein '{baustein_id}' in catalog. Skipping.")
+            baustein_id_for_log = baustein.get('id') if baustein else "Not Found"
+            logging.warning(f"Could not find control '{control_id}' or its parent baustein in catalog. Skipping.")
             return []
 
+        baustein_id = baustein.get("id")
         prose_to_evaluate = get_prose_from_control(control)
         if not prose_to_evaluate:
             logging.info(f"No prose with IDs found in control '{control_id}'. Skipping Gemini call.")
@@ -259,8 +248,13 @@ async def process_control(
         gemini_result = await get_gemini_enrichment(model, input_stub, prompt_template, output_schema)
 
         if gemini_result:
-            # Use a lock to prevent race conditions when modifying the shared catalog
             async with catalog_lock:
+                # Re-find the baustein inside the lock to ensure we're modifying the live object
+                target_baustein = find_parent_baustein(source_catalog.get("catalog"), control_id)
+                if not target_baustein:
+                    logging.error(f"FATAL: Baustein for {control_id} disappeared during lock. Concurrency issue?")
+                    return [] # Should not happen
+
                 logging.debug(f"Acquired lock to merge results for {control_id}")
                 for item in gemini_result.get("enriched_prose", []):
                     part = find_item_by_id_recursive(source_catalog, item["part_id"])
@@ -269,16 +263,13 @@ async def process_control(
                 
                 new_controls = gemini_result.get("suggested_new_controls", [])
                 if new_controls:
-                    target_baustein = find_item_by_id_recursive(source_catalog, baustein_id)
-                    if target_baustein:
-                        if "controls" not in target_baustein:
-                            target_baustein["controls"] = []
-                        for new_control in new_controls:
-                            target_baustein["controls"].append(new_control)
-                            logging.info(f"Added new suggested control '{new_control['id']}' to baustein '{baustein_id}' in main catalog.")
+                    if "controls" not in target_baustein:
+                        target_baustein["controls"] = []
+                    for new_control in new_controls:
+                        target_baustein["controls"].append(new_control)
+                        logging.info(f"Added new suggested control '{new_control['id']}' to baustein '{baustein_id}' in main catalog.")
                 logging.debug(f"Released lock for {control_id}")
             
-            # Return the new controls to the caller for component file update
             return gemini_result.get("suggested_new_controls", [])
         
         return []
@@ -323,7 +314,7 @@ async def main():
     semaphore = asyncio.Semaphore(10)
     catalog_lock = asyncio.Lock()
 
-    # --- Process component by component ---
+    # --- MODIFIED LOOP LOGIC ---
     for blob in component_blobs:
         logging.info(f"--- Processing Component File: {blob.name} ---")
         component_data = download_json_from_gcs(storage_client, config.bucket_name, blob.name)
@@ -332,7 +323,6 @@ async def main():
 
         component_tasks = []
         for component in component_data.get("component-definition", {}).get("components", []):
-            baustein_id = component.get("title", "").split(":")[0].strip().replace(".","_")
             for impl in component.get("control-implementations", []):
                 control_ids = [req["control-id"] for req in impl.get("implemented-requirements", [])]
                 
@@ -342,8 +332,12 @@ async def main():
                     logging.warning(f"TEST MODE: Limiting to {len(control_ids)} controls for this component part.")
 
                 for cid in control_ids:
+                    # Create task with the corrected process_control call
                     task = asyncio.create_task(
-                        process_control(cid, baustein_id, source_catalog, model, prompt_template, output_schema, semaphore, catalog_lock)
+                        process_control(
+                            cid, source_catalog, model, prompt_template, 
+                            output_schema, semaphore, catalog_lock
+                        )
                     )
                     component_tasks.append(task)
 
@@ -351,18 +345,11 @@ async def main():
             logging.info(f"No controls found to process in {blob.name}. Moving to next file.")
             continue
         
-        # Run all tasks for the current component and get lists of new controls
         list_of_new_controls_lists = await asyncio.gather(*component_tasks)
-        
-        # Flatten the list of lists into a single list of new controls
         aggregated_new_controls = [control for sublist in list_of_new_controls_lists for control in sublist]
 
-        # --- If new controls were suggested, modify and save the component file ---
         if aggregated_new_controls:
             logging.info(f"Found {len(aggregated_new_controls)} new controls to add to component {os.path.basename(blob.name)}.")
-            
-            # Add new implemented-requirements to the first control-implementation block
-            # This is a simplifying assumption, but a reasonable one.
             try:
                 first_control_impl = component_data["component-definition"]["components"][0]["control-implementations"][0]
                 if "implemented-requirements" not in first_control_impl:
@@ -376,7 +363,6 @@ async def main():
                     }
                     first_control_impl["implemented-requirements"].append(new_req)
                 
-                # Save the modified component file to the output directory
                 output_component_path = os.path.join(config.output_prefix, os.path.basename(blob.name))
                 upload_json_to_gcs(storage_client, config.bucket_name, output_component_path, component_data)
 
@@ -385,11 +371,9 @@ async def main():
         else:
             logging.info(f"No changes for component {blob.name}. Skipping save.")
 
-
     logging.info("All component processing complete. Uploading final catalog...")
     upload_json_to_gcs(storage_client, config.bucket_name, config.output_gcs_path, source_catalog)
     logging.info("--- Pipeline Finished Successfully ---")
-
 
 if __name__ == "__main__":
     asyncio.run(main())
