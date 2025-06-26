@@ -49,7 +49,23 @@ def setup_logging(is_test_mode: bool):
     logging.info(f"Logging initialized. Test mode: {is_test_mode}")
 
 # --- AI & GCS Interaction ---
+
+def render_prompt(template: str, context: Dict[str, Any]) -> str:
+    """
+    B. FIX: New dedicated function to render a prompt template.
+    This function takes a template string and a dictionary of context values
+    and returns the final, formatted prompt string.
+    """
+    try:
+        return template.format(**context)
+    except KeyError as e:
+        logging.error(f"Failed to render prompt. Missing key: {e}. Context keys provided: {list(context.keys())}")
+        raise
+
 def invoke_gemini(prompt: str, schema: Dict[str, Any], grounding: bool = False) -> Optional[Dict[str, Any]]:
+    """
+    B. FIX: Simplified to only handle the API call with a fully rendered prompt.
+    """
     sanitized_schema = {k: v for k, v in schema.items() if k not in UNSUPPORTED_SCHEMA_KEYS}
     model = GenerativeModel("gemini-2.5-pro", generation_config=GenerationConfig(response_mime_type="application/json", response_schema=sanitized_schema))
     tools = [vertexai.generative_models.Tool.from_google_search_retrieval(grounding)] if grounding else None
@@ -97,7 +113,7 @@ def upload_json_to_gcs(client: storage.Client, bucket_name: str, blob_path: str,
         logging.error(f"Failed to upload to {full_path}: {e}")
         raise
 
-# --- Catalog Helper Functions ---
+# --- Catalog Helper Functions (No Changes) ---
 def load_external_file(path: str) -> str:
     with open(path, 'r', encoding='utf-8') as f: return f.read()
 
@@ -126,21 +142,18 @@ def find_target_bausteine(catalog: Dict[str, Any]) -> List[Dict[str, Any]]:
     return target_bausteine
 
 def find_prose_by_part_name_recursive(parts_list: List[Dict[str, Any]], part_name: str) -> Optional[str]:
-    """ A. FIX: New recursive function to correctly find prose in nested parts. """
     for part in parts_list:
         if part.get("name") == part_name:
             return part.get("prose")
-        # If it has sub-parts, dive deeper
         if "parts" in part and part.get("parts"):
             found_prose = find_prose_by_part_name_recursive(part["parts"], part_name)
             if found_prose:
                 return found_prose
-    return None # Return None if not found at this level or any deeper level
+    return None
 
 def get_control_statement_prose(control: Dict[str, Any]) -> Optional[str]:
     for part in control.get("parts", []):
         if part.get("class") == "maturity-level-defined":
-            # The 'statement' is within the 'parts' of the maturity level description
             return find_prose_by_part_name_recursive(part.get("parts", []), "statement")
     return None
 
@@ -224,70 +237,66 @@ def process_single_baustein(baustein_group: Dict[str, Any], catalog: Dict[str, A
     component = create_base_component(baustein_group, source_url)
     is_app_baustein = baustein_id.startswith("APP.")
     dependent_controls = []
+    generic_controls = []
     
-    # A. FIX: Use the new recursive function to get all context prose
     parts_list = baustein_group.get("parts", [])
-    usage_prose = find_prose_by_part_name_recursive(parts_list, "usage")
-
+    
     if is_app_baustein:
         logging.info(f"{baustein_id} is an APP Baustein. Deterministically adding APP.6 and skipping AI dependency analysis.")
         app6_controls = get_direct_controls_from_baustein(catalog, "APP.6")
         app6_with_reasons = [{"control": c, "reason": "Obligatorische Basisanforderung für alle APP-Bausteine."} for c in app6_controls]
         add_controls_to_component(component, app6_with_reasons, "Basiskomponente APP.6 Allgemeine Software", source_url)
+        # A. FIX: Generic controls are NOT added for APP bausteine.
+        logging.info("Skipping generic controls for APP Baustein.")
     else:
+        # This whole block is now skipped for APP bausteine
+        usage_prose = find_prose_by_part_name_recursive(parts_list, "usage")
         if usage_prose:
-            prompt = prompts["extract_dependencies"].format(schema=json.dumps(schemas["dependency"]), prose=usage_prose)
-            logging.debug(f"Full prompt for Gemini dependency extraction:\n---\n{prompt}\n---")
-            dependency_result = invoke_gemini(prompt, schemas["dependency"])
+            # B. FIX: Build context, render prompt, log, then invoke
+            dep_context = {"schema": json.dumps(schemas["dependency"]), "prose": usage_prose}
+            dep_prompt = render_prompt(prompts["extract_dependencies"], dep_context)
+            logging.debug(f"Full prompt for Gemini dependency extraction:\n---\n{dep_prompt}\n---")
+            dependency_result = invoke_gemini(dep_prompt, schemas["dependency"])
             
             if dependency_result and dependency_result.get("dependencies"):
                 dependency_items = dependency_result.get("dependencies", [])
-                validated_items = []
-                for item in dependency_items:
-                    if item['id'] in usage_prose:
-                        validated_items.append(item)
-                    else:
-                        logging.debug(f"Discarding hallucinated dependency '{item['id']}' - not found in source prose.")
+                validated_items = [item for item in dependency_items if item['id'] in usage_prose]
+                # Log discarded items for debugging
+                discarded_ids = [item['id'] for item in dependency_items if item['id'] not in usage_prose]
+                if discarded_ids:
+                    logging.debug(f"Discarding hallucinated dependencies: {discarded_ids}")
                 
                 filtered_items = [item for item in validated_items if item['id'] not in EXCLUDED_DEPENDENCY_IDS]
                 dependency_ids_raw = [item['id'] for item in filtered_items]
                 dependency_ids = expand_baustein_ids(catalog, dependency_ids_raw)
                 all_dependency_controls = get_controls_from_baustein_list(catalog, dependency_ids)
                 dependent_controls = [c for c in all_dependency_controls if not c.get("id").startswith(baustein_id)]
+        
+        # A. FIX: Only get generic controls if it's not an APP baustein
+        generic_controls = get_controls_by_id(catalog, GENERIC_CONTROLS_FOR_STEP_6)
     
-    generic_controls = get_controls_by_id(catalog, GENERIC_CONTROLS_FOR_STEP_6)
     combined_list = dependent_controls + generic_controls
-    seen_ids = set()
-    all_candidate_controls = []
-    for control in combined_list:
-        control_id = control.get("id")
-        if control_id not in seen_ids:
-            all_candidate_controls.append(control)
-            seen_ids.add(control_id)
-
-    if not all_candidate_controls:
+    if not combined_list:
         logging.info("No candidate controls to process. Finalizing component.")
         return component
-    
+
+    seen_ids = set()
+    all_candidate_controls = [control for control in combined_list if not (control_id := control.get("id")) in seen_ids and not seen_ids.add(control_id)]
+
     logging.info(f"Preparing {len(all_candidate_controls)} unique candidate controls for AI filtering.")
+    candidate_payload = [{"id": c.get("id"), "title": c.get("title"), "statement": get_control_statement_prose(c) or "Keine Angabe."} for c in all_candidate_controls]
 
-    candidate_payload = []
-    for c in all_candidate_controls:
-        statement_prose = get_control_statement_prose(c)
-        candidate_payload.append({"id": c.get("id"), "title": c.get("title"), "statement": statement_prose or "Keine Angabe."})
-
-    # A. FIX: Use the new recursive function to get all context prose
-    context_prose = {
-        "introduction": find_prose_by_part_name_recursive(parts_list, "introduction"), 
-        "objective": find_prose_by_part_name_recursive(parts_list, "objective"), 
-        "usage": usage_prose or "N/A"
+    # B. FIX: Build context, render prompt, log, then invoke for filtering
+    filter_context = {
+        "schema": json.dumps(schemas["control_filter"]),
+        "introduction_prose": find_prose_by_part_name_recursive(parts_list, "introduction") or "N/A",
+        "objective_prose": find_prose_by_part_name_recursive(parts_list, "objective") or "N/A",
+        "usage_prose": find_prose_by_part_name_recursive(parts_list, "usage") or "N/A",
+        "candidate_controls_json": json.dumps(candidate_payload, indent=2, ensure_ascii=False)
     }
-    candidate_json = json.dumps(candidate_payload, indent=2, ensure_ascii=False)
-    logging.debug(f"Payload for Gemini filter prompt: {candidate_json}")
-
-    prompt = prompts["filter_controls"].format(schema=json.dumps(schemas["control_filter"]), introduction_prose=context_prose["introduction"], objective_prose=context_prose["objective"], usage_prose=context_prose["usage"], candidate_controls_json=candidate_json)
-    logging.debug(f"Full prompt for Gemini control filtering:\n---\n{prompt}\n---")
-    filter_result = invoke_gemini(prompt, schemas["control_filter"])
+    filter_prompt = render_prompt(prompts["filter_controls"], filter_context)
+    logging.debug(f"Full prompt for Gemini control filtering:\n---\n{filter_prompt}\n---")
+    filter_result = invoke_gemini(filter_prompt, schemas["control_filter"])
     
     if filter_result and filter_result.get("approved_controls"):
         approved_map = {item['id']: item['reason'] for item in filter_result.get("approved_controls")}
