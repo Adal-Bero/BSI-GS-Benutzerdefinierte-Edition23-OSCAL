@@ -1,0 +1,303 @@
+{
+  "component-definition": {
+    "uuid": "b129c3fd-2dcd-47ce-937e-7d4ebf4fb9b4",
+    "metadata": {
+      "title": "Component for Baustein NET.4.2: VoIP",
+      "last-modified": "2025-06-26T11:39:28.267646+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.4.2."
+    },
+    "components": [
+      {
+        "uuid": "f0471b86-0e84-42f4-91c7-8b93035acc9f",
+        "type": "service",
+        "title": "VoIP",
+        "description": "Implementation of controls for Baustein NET.4.2.",
+        "control-implementations": [
+          {
+            "uuid": "a025753c-1cc6-4fa4-b85a-4a4f7f99bfdf",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.4.2: VoIP",
+            "implemented-requirements": [
+              {
+                "uuid": "6988ada2-d31e-459e-8d67-a2d467ff06a1",
+                "control-id": "NET.4.2.A1",
+                "description": "Base implementation for control NET.4.2.A1."
+              },
+              {
+                "uuid": "3ee0ffee-257a-4340-b1fe-9dcbdc9ce2e2",
+                "control-id": "NET.4.2.A3",
+                "description": "Base implementation for control NET.4.2.A3."
+              },
+              {
+                "uuid": "20b77772-dbe0-4a99-80da-6fe430f1d7de",
+                "control-id": "NET.4.2.A4",
+                "description": "Base implementation for control NET.4.2.A4."
+              },
+              {
+                "uuid": "c916728f-ccc2-4d35-861a-979ca49eee7c",
+                "control-id": "NET.4.2.A5",
+                "description": "Base implementation for control NET.4.2.A5."
+              },
+              {
+                "uuid": "648a8b87-a061-436a-9e9e-9ee46613fd73",
+                "control-id": "NET.4.2.A7",
+                "description": "Base implementation for control NET.4.2.A7."
+              },
+              {
+                "uuid": "5e6acd86-73dc-4560-babd-319de9ed5665",
+                "control-id": "NET.4.2.A8",
+                "description": "Base implementation for control NET.4.2.A8."
+              },
+              {
+                "uuid": "9382f7d7-90ae-4406-adaf-18f1aa5552bd",
+                "control-id": "NET.4.2.A9",
+                "description": "Base implementation for control NET.4.2.A9."
+              },
+              {
+                "uuid": "74091e08-11c3-4af1-b9e2-7d410e81e218",
+                "control-id": "NET.4.2.A11",
+                "description": "Base implementation for control NET.4.2.A11."
+              },
+              {
+                "uuid": "51faea75-7a44-4c4f-83e7-acdce9d0eb19",
+                "control-id": "NET.4.2.A12",
+                "description": "Base implementation for control NET.4.2.A12."
+              },
+              {
+                "uuid": "4b777e5e-7101-4db1-a754-a16cd2826187",
+                "control-id": "NET.4.2.A13",
+                "description": "Base implementation for control NET.4.2.A13."
+              },
+              {
+                "uuid": "53a6381a-81e6-4040-ba6c-63d9328e016a",
+                "control-id": "NET.4.2.A14",
+                "description": "Base implementation for control NET.4.2.A14."
+              },
+              {
+                "uuid": "4f3685ef-9a90-49ce-94a9-6f9c4c942279",
+                "control-id": "NET.4.2.A15",
+                "description": "Base implementation for control NET.4.2.A15."
+              },
+              {
+                "uuid": "662659f3-3e16-440c-91ab-0424f4ee89e4",
+                "control-id": "NET.4.2.A16",
+                "description": "Base implementation for control NET.4.2.A16."
+              }
+            ]
+          },
+          {
+            "uuid": "ca3c88cb-509f-4b8e-b357-dd389461129e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "7027c7de-ff83-4c2d-8e15-ac6b232be6b6",
+                "control-id": "NET.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Da VoIP vollst\u00e4ndig auf Datennetzen basiert, ist eine Netz-Sicherheitsrichtlinie fundamental. Sie legt die grundlegenden Schutzma\u00dfnahmen wie Segmentierung, erlaubte Protokolle und Verschl\u00fcsselungsanforderungen fest, die f\u00fcr den sicheren Betrieb von VoIP-Diensten unerl\u00e4sslich sind."
+              },
+              {
+                "uuid": "35ec66ef-7633-41ee-9378-3acbfdc7790f",
+                "control-id": "NET.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Eine vollst\u00e4ndige und aktuelle Netz-Dokumentation ist entscheidend, um die VoIP-Infrastruktur, ihre Komponenten und Datenfl\u00fcsse zu verstehen und gezielt absichern zu k\u00f6nnen."
+              },
+              {
+                "uuid": "61c32fa9-7488-420a-a5fa-c4b482bba015",
+                "control-id": "NET.1.1.A3",
+                "description": "AI-Begr\u00fcndung: Spezifische Anforderungen, z. B. bez\u00fcglich Dienstg\u00fcte (QoS), Bandbreite und Sicherheit f\u00fcr Signalisierungs- und Sprachdaten, m\u00fcssen definiert werden, um die Netzarchitektur f\u00fcr VoIP passend zu gestalten."
+              },
+              {
+                "uuid": "5865f395-14bd-423d-a8f4-0f86e83c7e16",
+                "control-id": "NET.1.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Trennung des Netzes in Zonen (z.B. DMZ f\u00fcr SIP-Server, internes Netz f\u00fcr Endger\u00e4te) ist ein Kernprinzip zur Absicherung von VoIP-Diensten gegen Angriffe aus nicht vertrauensw\u00fcrdigen Netzen."
+              },
+              {
+                "uuid": "4599b1db-4885-43ee-b9cc-918dda9b4b13",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: VoIP-Endger\u00e4te (Clients) und VoIP-Server (z. B. TK-Anlage) m\u00fcssen in getrennten Netzsegmenten platziert werden, um die Kommunikation zu kontrollieren und die Ausbreitung von Schadsoftware zu verhindern."
+              },
+              {
+                "uuid": "6b6a921a-b601-4e05-b860-3c7638fc8acd",
+                "control-id": "NET.1.1.A6",
+                "description": "AI-Begr\u00fcndung: VoIP-Telefone sollten in einem eigenen Netzsegment (VLAN) platziert werden, getrennt von anderen Endger\u00e4ten wie PCs, um spezifische Sicherheits- und QoS-Richtlinien anwenden zu k\u00f6nnen."
+              },
+              {
+                "uuid": "3bb40fd8-ac4d-4580-a78a-945df56b78f4",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: Sprach- und Signalisierungsdaten sind sch\u00fctzenswerte Informationen. Diese Anforderung stellt sicher, dass sie durch sichere Protokolle wie SIPS, SIP-TLS und SRTP vor Abh\u00f6ren und Manipulation gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "6f17211c-960a-4778-bd0a-2a964f3602ef",
+                "control-id": "NET.1.1.A8",
+                "description": "AI-Begr\u00fcndung: Da VoIP-Dienste h\u00e4ufig externe Anbindungen \u00fcber das Internet nutzen (z.B. f\u00fcr SIP-Trunking oder Home-Office-Anwender), ist die grundlegende Absicherung des Internetzugangs \u00fcber eine Firewall zwingend erforderlich."
+              },
+              {
+                "uuid": "b3c22118-56f7-4dd7-85b0-11d3da2ce379",
+                "control-id": "NET.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Netze von externen VoIP-Providern oder angebundenen Partnern m\u00fcssen als nicht vertrauensw\u00fcrdig eingestuft und entsprechend abgesichert werden, um die eigene Infrastruktur zu sch\u00fctzen."
+              },
+              {
+                "uuid": "2815802d-a774-440d-8b07-d35c3b159316",
+                "control-id": "NET.3.2.A1",
+                "description": "AI-Begr\u00fcndung: Eine Firewall ist eine zentrale Schutzkomponente f\u00fcr VoIP. Eine dedizierte Richtlinie ist notwendig, um den sicheren Umgang mit VoIP-spezifischen Protokollen und Ports zu regeln."
+              },
+              {
+                "uuid": "06e2094f-00ba-4b89-873b-610964e4ce47",
+                "control-id": "NET.3.2.A2",
+                "description": "AI-Begr\u00fcndung: F\u00fcr VoIP m\u00fcssen pr\u00e4zise Firewall-Regeln nach dem Allowlist-Prinzip definiert werden, die nur die zwingend ben\u00f6tigten Ports f\u00fcr Signalisierung (z.B. SIP) und Medien (RTP) freigeben."
+              },
+              {
+                "uuid": "4f9360fc-54b4-43f0-b00b-9e021620f3fc",
+                "control-id": "NET.3.2.A3",
+                "description": "AI-Begr\u00fcndung: Die zustandsbehaftete Filterung ist f\u00fcr VoIP-Protokolle wie SIP (oft TCP) und RTP (UDP) essenziell, um eine korrekte und sichere Kommunikation zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "bd52176b-84e2-4208-88c4-29a3880f6fb6",
+                "control-id": "NET.3.2.A4",
+                "description": "AI-Begr\u00fcndung: Die Firewall, die die VoIP-Infrastruktur sch\u00fctzt, muss selbst geh\u00e4rtet und sicher konfiguriert sein, um nicht zu einem Sicherheitsrisiko zu werden."
+              },
+              {
+                "uuid": "233b3b9e-a1b2-4065-a800-73d249eea124",
+                "control-id": "NET.3.2.A6",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf die Firewall, die den VoIP-Verkehr filtert, muss streng gesch\u00fctzt werden, um unbefugte \u00c4nderungen an den sicherheitsrelevanten Regeln zu verhindern."
+              },
+              {
+                "uuid": "75e7111c-52bc-45fd-bc44-7781f9fdedf9",
+                "control-id": "NET.3.2.A7",
+                "description": "AI-Begr\u00fcndung: Im Falle einer Fehlkonfiguration der Firewall-Regeln, die den VoIP-Dienst blockiert, muss ein Notfallzugriff gew\u00e4hrleistet sein, um den Betrieb schnell wiederherstellen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "caa0f79e-1b59-41f3-a029-75f2f3881ec6",
+                "control-id": "NET.3.2.A9",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung von abgewiesenen Verbindungsversuchen auf der Firewall ist entscheidend, um Angriffe auf VoIP-Dienste (z.B. SIP-Scanning) zu erkennen und Verbindungsprobleme zu analysieren."
+              },
+              {
+                "uuid": "444ddd3c-99dd-4255-919d-34d0256f2a97",
+                "control-id": "NET.3.2.A10",
+                "description": "AI-Begr\u00fcndung: VoIP-Komponenten sind wie alle IP-basierten Systeme anf\u00e4llig f\u00fcr Fragmentierungsangriffe. Die Firewall muss diese Angriffsart abwehren k\u00f6nnen, um die Verf\u00fcgbarkeit zu sichern."
+              },
+              {
+                "uuid": "92214b47-8d84-4ec2-a7de-290955b2d5c5",
+                "control-id": "NET.3.2.A14",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen an Firewall-Regeln, die VoIP-Dienste betreffen, m\u00fcssen nachvollziehbar dokumentiert werden, um einen sicheren und stabilen Betrieb zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "3f6fde5b-5ad5-49a5-8166-ad24a64af529",
+                "control-id": "NET.3.2.A16",
+                "description": "AI-Begr\u00fcndung: Der Einsatz eines Application-Level-Gateways (entspricht funktional oft einem Session Border Controller, SBC) ist eine Best-Practice-Architektur, um VoIP-Protokolle tiefgehend zu analysieren und abzusichern."
+              },
+              {
+                "uuid": "999cd8f4-2f3c-4685-b884-e10ff4fbb13a",
+                "control-id": "NET.3.2.A18",
+                "description": "AI-Begr\u00fcndung: Die Administration der Firewall \u00fcber ein separates Managementnetz erh\u00f6ht die Sicherheit ma\u00dfgeblich, da administrative Zugriffe vom produktiven VoIP-Datenverkehr getrennt werden."
+              },
+              {
+                "uuid": "8231661f-88fd-4e52-9ab6-ebe6c2285c56",
+                "control-id": "NET.3.2.A19",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist hochrelevant f\u00fcr VoIP, da sie direkt vor Denial-of-Service-Angriffen sch\u00fctzt, denen SIP (via TCP SYN Flooding) und RTP (via UDP Paket Storm) ausgesetzt sind."
+              },
+              {
+                "uuid": "0e166c58-777c-484a-8c35-e2cc2517c84d",
+                "control-id": "NET.3.2.A21",
+                "description": "AI-Begr\u00fcndung: Zur Erkennung von Angriffen in verschl\u00fcsseltem VoIP-Verkehr (SIPS/SRTP) kann eine tempor\u00e4re Entschl\u00fcsselung durch eine spezialisierte Komponente (z. B. Session Border Controller) sinnvoll sein."
+              },
+              {
+                "uuid": "3abcdf1f-56e4-4e90-bb4d-5121bde8a776",
+                "control-id": "NET.3.2.A22",
+                "description": "AI-Begr\u00fcndung: Eine korrekte Systemzeit auf der Firewall ist f\u00fcr die Korrelation von Log-Ereignissen unerl\u00e4sslich, was bei der Analyse von VoIP-sicherheitsrelevanten Vorf\u00e4llen oder St\u00f6rungen hilft."
+              },
+              {
+                "uuid": "0f145ede-c26f-404b-b15f-86c76ab63a4c",
+                "control-id": "NET.3.2.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung der Firewall-Auslastung und -Funktionalit\u00e4t ist wichtig, um die Verf\u00fcgbarkeit der VoIP-Dienste, die von der Firewall-Konnektivit\u00e4t abh\u00e4ngen, sicherzustellen."
+              },
+              {
+                "uuid": "5dcaa4ab-f1fe-4419-bff7-89823b3f9f8e",
+                "control-id": "NET.3.2.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Tests der Firewall-Konfiguration, idealerweise mit VoIP-spezifischen Angriffsszenarien, sind notwendig, um die Wirksamkeit der Schutzma\u00dfnahmen zu \u00fcberpr\u00fcfen."
+              },
+              {
+                "uuid": "f84de8e7-b39d-46f2-9b54-9e7d46b05fe1",
+                "control-id": "NET.3.2.A32",
+                "description": "AI-Begr\u00fcndung: Ein Ausfall der Firewall f\u00fchrt direkt zum Ausfall der VoIP-Telefonie. Daher ist eine spezifische Notfallvorsorge f\u00fcr die Firewall-Komponenten unerl\u00e4sslich."
+              }
+            ]
+          },
+          {
+            "uuid": "b78d3367-dbcf-4945-83fc-05b648cb3e29",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "0d10254f-224f-44f9-adf0-6741599ca6a0",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung ist auch bei VoIP wichtig, z.B. zwischen der Administration der TK-Anlage (operativ) und der \u00dcberpr\u00fcfung der Sicherheitskonfiguration und Protokolldaten (kontrollierend)."
+              },
+              {
+                "uuid": "a399ed2c-c390-4f30-bebb-6788a6eb9d0f",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die sichere Konfiguration und der Betrieb von VoIP-Systemen erfordern spezifisches Fachwissen \u00fcber Protokolle (SIP, RTP) und Sicherheitskomponenten (SBC). Qualifiziertes Personal ist daher eine Grundvoraussetzung."
+              },
+              {
+                "uuid": "5d7d3d14-bffe-47b4-ac36-efc3c29b10b6",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Berechtigung muss sowohl f\u00fcr administrative Zugriffe auf die VoIP-Anlage als auch f\u00fcr Benutzerberechtigungen (z.B. wer darf Ferngespr\u00e4che f\u00fchren) angewendet werden."
+              },
+              {
+                "uuid": "6a4aaf87-767d-40f2-96d6-7579d6212eeb",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der Zugriff auf VoIP-Endger\u00e4te, Benutzerkonten und administrative Schnittstellen muss durch eine angemessene Authentisierung gesch\u00fctzt werden. Standardpassw\u00f6rter m\u00fcssen zwingend ge\u00e4ndert werden."
+              },
+              {
+                "uuid": "19c5d0f2-0636-4429-855e-92c770242587",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Die St\u00e4rke der Authentisierungsmechanismen (z. B. Passwortkomplexit\u00e4t, 2FA f\u00fcr Admin-Zugang) muss dem Schutzbedarf der VoIP-Infrastruktur und der dar\u00fcber gef\u00fchrten Kommunikation entsprechen."
+              },
+              {
+                "uuid": "e6feae9f-7cbc-4f51-a767-2d25c8038be2",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Beim Einsatz von Verschl\u00fcsselung f\u00fcr VoIP (SRTP, SIPS/TLS) m\u00fcssen starke, anerkannte kryptografische Algorithmen und Schl\u00fcssell\u00e4ngen verwendet werden, um eine wirksame Absicherung zu erzielen."
+              },
+              {
+                "uuid": "564637a1-530b-46aa-ba67-ae8e27d75177",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement ist f\u00fcr verschl\u00fcsseltes VoIP essenziell, um die f\u00fcr SIPS/TLS ben\u00f6tigten Zertifikate und die f\u00fcr SRTP ausgetauschten Schl\u00fcssel sicher zu verwalten."
+              },
+              {
+                "uuid": "39bf0871-71f6-4cb9-a1b4-22c8094344f8",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration der VoIP-Anlage, Benutzerdaten, Anrufjournale und Voicemails m\u00fcssen regelm\u00e4\u00dfig gesichert werden, um die Wiederherstellbarkeit des Dienstes zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "b6eb9817-dde4-46ac-a121-326cca66a582",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Administrative \u00c4nderungen an der VoIP-Anlage (z.B. an Rufnummernpl\u00e4nen oder Benutzerberechtigungen) m\u00fcssen protokolliert und einer Person zugeordnet werden k\u00f6nnen."
+              },
+              {
+                "uuid": "69dff2ec-8579-484d-8469-66cf2ad790a6",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Die administrativen Schnittstellen der VoIP-Komponenten m\u00fcssen abgesichert und der Zugriff darauf auf berechtigte Personen und \u00fcber sichere Protokolle (z.B. HTTPS) beschr\u00e4nkt werden."
+              },
+              {
+                "uuid": "95c22804-3c13-4011-9dd2-c771d2aa9268",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: VoIP-Server und -Endger\u00e4te basieren auf Software, die Schwachstellen aufweisen kann. Ein geregelter Patch- und \u00c4nderungsmanagementprozess ist f\u00fcr die Sicherheit unerl\u00e4sslich."
+              },
+              {
+                "uuid": "da7e540f-3e24-4a3d-988b-eda6758e5c06",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: VoIP-Systeme protokollieren oft sicherheitsrelevante Ereignisse wie fehlgeschlagene Anmeldeversuche. Diese bordeigenen Detektionsfunktionen m\u00fcssen aktiviert und ausgewertet werden, um z.B. Betrugsversuche zu erkennen."
+              },
+              {
+                "uuid": "006c4300-35d6-4ea2-88a1-15bf16b8b145",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Zus\u00e4tzliche Detektionssysteme (z.B. NIDS) im Voice-VLAN k\u00f6nnen helfen, spezifische Angriffe auf VoIP-Protokolle zu erkennen, die von Endger\u00e4ten oder Firewalls m\u00f6glicherweise nicht bemerkt werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "component-definition": {
+    "uuid": "caf4f894-f82b-46d9-9efd-e17411066d21",
+    "metadata": {
+      "title": "Component for Baustein NET.4.3: Faxger\u00e4te und Faxserver",
+      "last-modified": "2025-06-26T11:41:18.813044+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.4.3."
+    },
+    "components": [
+      {
+        "uuid": "29bc336a-d9f3-4b6c-bb65-0c8f55be0478",
+        "type": "service",
+        "title": "Faxger\u00e4te und Faxserver",
+        "description": "Implementation of controls for Baustein NET.4.3.",
+        "control-implementations": [
+          {
+            "uuid": "c5fdeaf9-8d15-43c6-9ee8-be48423439cb",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.4.3: Faxger\u00e4te und Faxserver",
+            "implemented-requirements": [
+              {
+                "uuid": "bd91cdcd-443e-4d86-bb63-f741dffb9f45",
+                "control-id": "NET.4.3.A1",
+                "description": "Base implementation for control NET.4.3.A1."
+              },
+              {
+                "uuid": "e76596d9-b030-4e30-8b00-acf5770a71ec",
+                "control-id": "NET.4.3.A2",
+                "description": "Base implementation for control NET.4.3.A2."
+              },
+              {
+                "uuid": "86ce9e1c-c0e0-4294-bac2-a198a8b168cf",
+                "control-id": "NET.4.3.A3",
+                "description": "Base implementation for control NET.4.3.A3."
+              },
+              {
+                "uuid": "88319cef-ccd9-4b47-accf-f9ff1c210025",
+                "control-id": "NET.4.3.A4",
+                "description": "Base implementation for control NET.4.3.A4."
+              },
+              {
+                "uuid": "54e22f83-a4d7-4bc9-89ad-33fb1f73a90e",
+                "control-id": "NET.4.3.A6",
+                "description": "Base implementation for control NET.4.3.A6."
+              },
+              {
+                "uuid": "86341126-7e9e-4675-a8d4-e8d1d0f1c503",
+                "control-id": "NET.4.3.A7",
+                "description": "Base implementation for control NET.4.3.A7."
+              },
+              {
+                "uuid": "c82b2171-8ef5-4f28-8949-914afe210961",
+                "control-id": "NET.4.3.A8",
+                "description": "Base implementation for control NET.4.3.A8."
+              },
+              {
+                "uuid": "773629f4-bb81-49d1-81bd-65c53a9cad31",
+                "control-id": "NET.4.3.A9",
+                "description": "Base implementation for control NET.4.3.A9."
+              },
+              {
+                "uuid": "c1089f37-d2b6-4372-9573-a856dff7213b",
+                "control-id": "NET.4.3.A10",
+                "description": "Base implementation for control NET.4.3.A10."
+              },
+              {
+                "uuid": "88c4ac0c-03f2-4356-930b-f685a5cd8725",
+                "control-id": "NET.4.3.A11",
+                "description": "Base implementation for control NET.4.3.A11."
+              },
+              {
+                "uuid": "5fb04c88-1b91-46c9-a6eb-f170fef95dc2",
+                "control-id": "NET.4.3.A12",
+                "description": "Base implementation for control NET.4.3.A12."
+              },
+              {
+                "uuid": "edacb0cb-294c-4ebe-a4d9-35ac6ab7ba8d",
+                "control-id": "NET.4.3.A13",
+                "description": "Base implementation for control NET.4.3.A13."
+              },
+              {
+                "uuid": "6391730b-f702-444e-9dac-917572db33c9",
+                "control-id": "NET.4.3.A14",
+                "description": "Base implementation for control NET.4.3.A14."
+              },
+              {
+                "uuid": "eef23aad-a1dc-4ee6-aa79-7de4013b8206",
+                "control-id": "NET.4.3.A15",
+                "description": "Base implementation for control NET.4.3.A15."
+              }
+            ]
+          },
+          {
+            "uuid": "a53b2ba4-4db2-4b5e-8ba4-f17cc784d9b0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "1bccdf8f-6463-4361-9464-b4f02da8d098",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung ist f\u00fcr Faxserver relevant, um zu verhindern, dass ein Administrator sowohl operative Handlungen (z.B. Faxversand) als auch deren Kontrolle (z.B. Protokollauswertung) durchf\u00fchrt und somit Missbrauch vertuscht werden kann."
+              },
+              {
+                "uuid": "8ccd3a47-a937-4e11-bda1-45f9b9c2f7b2",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass sowohl Administratoren die Faxserver sicher konfigurieren und betreiben k\u00f6nnen, als auch Benutzer im korrekten Umgang mit (sensiblen) Faxdokumenten geschult sind."
+              },
+              {
+                "uuid": "b8dfbd47-9eec-44f5-b526-d67a29311d96",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Ein zentraler Aspekt der Absicherung von Faxservern ist die Verwaltung von Berechtigungen, um nach dem Need-to-know-Prinzip zu steuern, wer Faxe senden, empfangen und den Dienst administrieren darf."
+              },
+              {
+                "uuid": "c7be7c93-bf16-4766-ba1d-23c855af7ee2",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt Faxserver und auch moderne Faxger\u00e4te vor unbefugtem Zugriff auf administrative Schnittstellen und Benutzerfunktionen durch die Erzwingung einer sicheren Authentisierung."
+              },
+              {
+                "uuid": "5b1df203-ae3c-4797-978e-bf03d55f3da8",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Vertieft die grundlegende Anforderung der Authentisierung und fordert schutzbedarfsad\u00e4quate Verfahren sowie Mechanismen zum Schutz vor Brute-Force-Angriffen, was f\u00fcr den Schutz sensibler Fax-Inhalte essenziell ist."
+              },
+              {
+                "uuid": "4910e728-9180-4cd1-9d86-891c6106372d",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Relevant f\u00fcr die Absicherung der Kommunikation, insbesondere bei Fax over IP (FoIP) und dem administrativen Zugriff auf den Faxserver \u00fcber das Netzwerk, um Vertraulichkeit und Integrit\u00e4t zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "ce009186-76d1-42d3-8059-54526a54016c",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine notwendige Erg\u00e4nzung zur Anforderung CON.1.A1. Werden kryptografische Verfahren eingesetzt, MUSS auch der sichere Umgang mit den Schl\u00fcsseln und Zertifikaten \u00fcber deren gesamten Lebenszyklus geregelt sein."
+              },
+              {
+                "uuid": "c1011650-5f49-4cdf-a03d-636eb9106f7a",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Faxserver speichern wichtige Informationen wie ein- und ausgehende Faxe, Konfigurationen und Protokolldaten. Eine regelm\u00e4\u00dfige Datensicherung ist unerl\u00e4sslich, um die Verf\u00fcgbarkeit des Dienstes und die Nachvollziehbarkeit zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "eef68a2c-6769-44ff-92a1-b9bbc01e2ab8",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die Nachvollziehbarkeit und Rechenschaftspflicht bei administrativen \u00c4nderungen am Faxserver. Dies ist entscheidend f\u00fcr die Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen oder Fehlkonfigurationen."
+              },
+              {
+                "uuid": "c4a85374-e514-43f6-9419-281606f2370b",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass nicht nur der Zugang zu administrativen Funktionen, sondern auch die administrative Kommunikation selbst (z. B. per HTTPS) abgesichert wird, um ein Abh\u00f6ren von Passw\u00f6rtern oder eine Sitzungs\u00fcbernahme zu verhindern."
+              },
+              {
+                "uuid": "b794cccc-6b76-4dfc-a177-6190d4179917",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Faxserver sind Softwaresysteme, die wie jede andere Anwendung regelm\u00e4\u00dfig gepatcht werden m\u00fcssen, um Sicherheitsl\u00fccken zu schlie\u00dfen. Ein geregeltes \u00c4nderungsmanagement verhindert zudem Fehlkonfigurationen und Ausf\u00e4lle."
+              },
+              {
+                "uuid": "d2635884-a983-4158-9656-58615b22ac96",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Aktivierung und Nutzung von vorhandenen Protokollierungs- und Detektionsfunktionen des Faxservers und des Betriebssystems. Dies ist ein grundlegender Schritt zur Erkennung von Angriffen oder Fehlfunktionen."
+              },
+              {
+                "uuid": "b9bbedc2-86cd-4e83-9b7f-d99f8f225df3",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Als Erg\u00e4nzung zu hostbasierten Detektionsmechanismen kann eine netzwerkbasierte Angriffserkennung (NIDS) den Faxserver und die FoIP-Kommunikation vor Angriffen \u00fcber das Netz sch\u00fctzen und somit die Sicherheit ma\u00dfgeblich erh\u00f6hen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

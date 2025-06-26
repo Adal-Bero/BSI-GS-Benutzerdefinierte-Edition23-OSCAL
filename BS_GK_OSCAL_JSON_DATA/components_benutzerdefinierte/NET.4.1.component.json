@@ -1,0 +1,181 @@
+{
+  "component-definition": {
+    "uuid": "e2e85a0b-c292-436a-b528-2ebf7a39bac6",
+    "metadata": {
+      "title": "Component for Baustein NET.4.1: TK-Anlagen",
+      "last-modified": "2025-06-26T11:38:28.578443+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.4.1."
+    },
+    "components": [
+      {
+        "uuid": "29356658-1154-41ab-95ea-9fa9b69d776a",
+        "type": "service",
+        "title": "TK-Anlagen",
+        "description": "Implementation of controls for Baustein NET.4.1.",
+        "control-implementations": [
+          {
+            "uuid": "9d0de1e5-d0a3-4249-bbce-134a662d4840",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.4.1: TK-Anlagen",
+            "implemented-requirements": [
+              {
+                "uuid": "20687a50-4ca5-478d-8a53-bb94222648b8",
+                "control-id": "NET.4.1.A1",
+                "description": "Base implementation for control NET.4.1.A1."
+              },
+              {
+                "uuid": "5ae9f67b-016b-4a6f-89e8-7ed1fdba6a70",
+                "control-id": "NET.4.1.A2",
+                "description": "Base implementation for control NET.4.1.A2."
+              },
+              {
+                "uuid": "4a25337c-90b4-448c-b544-1126cb3fb07c",
+                "control-id": "NET.4.1.A5",
+                "description": "Base implementation for control NET.4.1.A5."
+              },
+              {
+                "uuid": "547a702e-2f61-4d5e-9efd-896ef71a4c14",
+                "control-id": "NET.4.1.A6",
+                "description": "Base implementation for control NET.4.1.A6."
+              },
+              {
+                "uuid": "e81b4f9d-67c8-455f-beae-5d31343ce43d",
+                "control-id": "NET.4.1.A7",
+                "description": "Base implementation for control NET.4.1.A7."
+              },
+              {
+                "uuid": "b8d1286e-32e9-4a5e-87dd-10a2bee8ffcf",
+                "control-id": "NET.4.1.A8",
+                "description": "Base implementation for control NET.4.1.A8."
+              },
+              {
+                "uuid": "59d91e9a-2a07-48a1-93cf-9b0a0d6ee538",
+                "control-id": "NET.4.1.A9",
+                "description": "Base implementation for control NET.4.1.A9."
+              },
+              {
+                "uuid": "f2e81aa8-cf2d-4d17-b531-beaa2c623f06",
+                "control-id": "NET.4.1.A10",
+                "description": "Base implementation for control NET.4.1.A10."
+              },
+              {
+                "uuid": "45d75447-5865-4386-ab07-ee774250988c",
+                "control-id": "NET.4.1.A11",
+                "description": "Base implementation for control NET.4.1.A11."
+              },
+              {
+                "uuid": "819dc4a5-441e-4f73-a130-869fdc54c39c",
+                "control-id": "NET.4.1.A12",
+                "description": "Base implementation for control NET.4.1.A12."
+              },
+              {
+                "uuid": "58b2d5a8-707b-476a-a497-98e1991eb9e7",
+                "control-id": "NET.4.1.A13",
+                "description": "Base implementation for control NET.4.1.A13."
+              },
+              {
+                "uuid": "52499ccd-4d1a-4705-b8d7-3716b4daea15",
+                "control-id": "NET.4.1.A14",
+                "description": "Base implementation for control NET.4.1.A14."
+              },
+              {
+                "uuid": "4a2f8907-c7c3-4ea7-b31e-1f2a98322a1a",
+                "control-id": "NET.4.1.A15",
+                "description": "Base implementation for control NET.4.1.A15."
+              },
+              {
+                "uuid": "43d3f736-4922-48ec-9eb2-33ef0b96cdde",
+                "control-id": "NET.4.1.A16",
+                "description": "Base implementation for control NET.4.1.A16."
+              },
+              {
+                "uuid": "e0062ba2-2432-4626-8146-efefae0a3557",
+                "control-id": "NET.4.1.A17",
+                "description": "Base implementation for control NET.4.1.A17."
+              },
+              {
+                "uuid": "f5013bca-28d9-4d68-ba28-4fca837c6821",
+                "control-id": "NET.4.1.A18",
+                "description": "Base implementation for control NET.4.1.A18."
+              },
+              {
+                "uuid": "a38aa04f-4ae1-44d3-991d-b1a36ef8bede",
+                "control-id": "NET.4.1.A19",
+                "description": "Base implementation for control NET.4.1.A19."
+              }
+            ]
+          },
+          {
+            "uuid": "5251112b-44c4-43e2-a8c6-4617b146bf60",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "091050c2-9e28-4ee3-bea6-832734221bcf",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Administration einer TK-Anlage umfasst operative und kontrollierende T\u00e4tigkeiten. Eine Funktionstrennung ist entscheidend, um Missbrauch und Manipulationen durch einzelne Administratoren zu verhindern und somit die Anlage zu sch\u00fctzen."
+              },
+              {
+                "uuid": "43eb1edf-8f01-4913-895a-426a9efa509e",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Moderne TK-Anlagen sind komplexe Systeme. Nur qualifiziertes Personal kann eine sichere Konfiguration und Administration gew\u00e4hrleisten und Fehlkonfigurationen vermeiden, die zu Sicherheitsl\u00fccken f\u00fchren k\u00f6nnten."
+              },
+              {
+                "uuid": "03fb052a-8b94-47ef-b95a-6be25f839490",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: TK-Anlagen verwalten diverse Berechtigungen f\u00fcr Benutzer und Administratoren. Die Anwendung des Prinzips der geringsten Rechte (Least Privilege) ist fundamental, um den potenziellen Schaden durch kompromittierte Konten zu minimieren und unbefugte Zugriffe zu verhindern."
+              },
+              {
+                "uuid": "2f2f248b-d97a-400b-a090-7007e8a8c0ea",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf die TK-Anlage sowie ggf. Benutzerportale m\u00fcssen wirksam durch eine sichere Authentisierung gesch\u00fctzt werden. Das \u00c4ndern von Standardpassw\u00f6rtern ist ein grundlegender erster Schritt zur Absicherung."
+              },
+              {
+                "uuid": "3b6c61e5-5771-4ec4-93c4-1301b5f25741",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung verst\u00e4rkt den Basisschutz der Authentisierung. Ma\u00dfnahmen wie Sperrmechanismen nach Fehlversuchen sind essenziell, um Brute-Force-Angriffe auf Administrations- oder Benutzerkonten der TK-Anlage abzuwehren."
+              },
+              {
+                "uuid": "2291f440-fa5d-4262-9122-0df848ed56d9",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Moderne TK-Anlagen, insbesondere bei VoIP, nutzen Kryptografie zur Absicherung der Signalisierung und der Sprachdaten. Die Verwendung starker, aktueller Verfahren ist f\u00fcr den Schutz der Vertraulichkeit der Kommunikation unerl\u00e4sslich."
+              },
+              {
+                "uuid": "08364e74-7d23-4e71-ab36-c25ceb04951e",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Wenn Kryptografie eingesetzt wird, ist ein sicheres Management der zugeh\u00f6rigen Schl\u00fcssel und Zertifikate zwingend erforderlich. Dies stellt die dauerhafte Wirksamkeit der Verschl\u00fcsselung sicher und verhindert Ausf\u00e4lle durch abgelaufene Zertifikate."
+              },
+              {
+                "uuid": "9f177119-0a8b-4695-ab40-d657ed5932bf",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration einer TK-Anlage (Rufnummernpl\u00e4ne, Benutzerdaten etc.) ist sch\u00fctzenswert. Eine regelm\u00e4\u00dfige Datensicherung ist notwendig, um die Konfiguration nach einem Ausfall oder einem Angriff wiederherstellen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "c9acbbcb-10af-45ed-861a-b654d85e4f31",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Um Manipulationen an der TK-Anlage nachvollziehen und aufkl\u00e4ren zu k\u00f6nnen, m\u00fcssen administrative T\u00e4tigkeiten l\u00fcckenlos protokolliert werden. Dies schafft Verbindlichkeit und ist f\u00fcr die forensische Analyse nach einem Sicherheitsvorfall unerl\u00e4sslich."
+              },
+              {
+                "uuid": "8565494b-35bc-421e-914f-cdabfe94d231",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen ist von h\u00f6chster Bedeutung. Der Zugriff darf nur \u00fcber gesicherte Protokolle (z. B. HTTPS, SSH) erfolgen, um das Abh\u00f6ren von Zugangsdaten und Konfigurations\u00e4nderungen zu verhindern."
+              },
+              {
+                "uuid": "cc2e85eb-d2c0-4964-b118-bf3aee2b43fb",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Die Firmware und Software einer TK-Anlage muss aktuell gehalten werden, um Sicherheitsl\u00fccken zu schlie\u00dfen. Ein geregeltes Patch- und \u00c4nderungsmanagement stellt sicher, dass dies kontrolliert geschieht und keine neuen Risiken entstehen."
+              },
+              {
+                "uuid": "aee6e95c-c106-4839-88ac-033e6e0c96b1",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Moderne TK-Anlagen verf\u00fcgen oft \u00fcber eigene Detektionsmechanismen, z. B. zur Erkennung von Betrugsversuchen. Die Aktivierung und Nutzung dieser systemeigenen Funktionen ist ein effektiver Weg, die Sicherheit der Anlage zu erh\u00f6hen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

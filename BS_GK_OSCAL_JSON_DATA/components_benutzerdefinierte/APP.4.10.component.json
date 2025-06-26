@@ -1,0 +1,171 @@
+{
+  "component-definition": {
+    "uuid": "49184ad3-a1a9-485d-bc15-380ba9c81075",
+    "metadata": {
+      "title": "Component for Baustein APP.4.10: Benutzerdefiniert: Sicherheit von KI-Systemen",
+      "last-modified": "2025-06-26T10:30:44.473742+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for APP.4.10."
+    },
+    "components": [
+      {
+        "uuid": "dec2ae00-eaa1-4f2d-9dff-9670544614d4",
+        "type": "service",
+        "title": "Benutzerdefiniert: Sicherheit von KI-Systemen",
+        "description": "Implementation of controls for Baustein APP.4.10.",
+        "control-implementations": [
+          {
+            "uuid": "0f08065d-7e08-40bd-93e2-3327c8ed408f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group APP.4.10: Benutzerdefiniert: Sicherheit von KI-Systemen",
+            "implemented-requirements": [
+              {
+                "uuid": "7bd7269f-5ceb-4960-8fd1-0d12b842a096",
+                "control-id": "APP.4.10.A1",
+                "description": "Base implementation for control APP.4.10.A1."
+              },
+              {
+                "uuid": "525e460a-106c-4926-91b2-a324c885f3aa",
+                "control-id": "APP.4.10.A2",
+                "description": "Base implementation for control APP.4.10.A2."
+              },
+              {
+                "uuid": "befa6751-619c-446d-b546-0fc84e236632",
+                "control-id": "APP.4.10.A3",
+                "description": "Base implementation for control APP.4.10.A3."
+              },
+              {
+                "uuid": "6d53aa66-b722-463b-8998-1f06b19e44f2",
+                "control-id": "APP.4.10.A4",
+                "description": "Base implementation for control APP.4.10.A4."
+              },
+              {
+                "uuid": "664aa8bb-a575-4cec-8e6b-a300fdf7cfca",
+                "control-id": "APP.4.10.A5",
+                "description": "Base implementation for control APP.4.10.A5."
+              },
+              {
+                "uuid": "1e2fac2b-e52d-466a-adb7-9373f043444e",
+                "control-id": "APP.4.10.A6",
+                "description": "Base implementation for control APP.4.10.A6."
+              },
+              {
+                "uuid": "f113ab26-5e50-4191-962f-393e0aad2b30",
+                "control-id": "APP.4.10.A7",
+                "description": "Base implementation for control APP.4.10.A7."
+              },
+              {
+                "uuid": "b5940622-b07f-4e7f-bb34-13a7911b8a52",
+                "control-id": "APP.4.10.A8",
+                "description": "Base implementation for control APP.4.10.A8."
+              },
+              {
+                "uuid": "369b8e18-bbf5-416d-9ae5-198faf740f57",
+                "control-id": "APP.4.10.A9",
+                "description": "Base implementation for control APP.4.10.A9."
+              },
+              {
+                "uuid": "a84d1259-70ce-4f7c-80a3-934ee4847d7b",
+                "control-id": "APP.4.10.A10",
+                "description": "Base implementation for control APP.4.10.A10."
+              },
+              {
+                "uuid": "5be533bb-cb74-4235-b621-b262e7b33a85",
+                "control-id": "APP.4.10.A11",
+                "description": "Base implementation for control APP.4.10.A11."
+              },
+              {
+                "uuid": "92cf3755-ee9f-462c-8faf-940db767bf94",
+                "control-id": "APP.4.10.A12",
+                "description": "Base implementation for control APP.4.10.A12."
+              },
+              {
+                "uuid": "fb8839fa-51ae-47a1-a123-82a216a6c6f6",
+                "control-id": "APP.4.10.A13",
+                "description": "Base implementation for control APP.4.10.A13."
+              }
+            ]
+          },
+          {
+            "uuid": "0ac880e1-26a2-413d-ab1c-a50c3ae50bf2",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Basiskomponente APP.6 Allgemeine Software",
+            "implemented-requirements": [
+              {
+                "uuid": "f27065aa-9c5f-4f94-a8a3-e35ad3e47066",
+                "control-id": "APP.6.A1",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "9f22dcb5-1047-476e-9290-486f8607b60a",
+                "control-id": "APP.6.A2",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "e3c48047-454b-4196-a9c4-b488e0e2447b",
+                "control-id": "APP.6.A3",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "914bc246-0aca-4f4c-b260-40d1ce004c6e",
+                "control-id": "APP.6.A4",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "bc83e10e-544e-4a8e-bbef-db00b7069ebf",
+                "control-id": "APP.6.A5",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "15e50983-3dc2-4204-abbb-0fe78e4b58c0",
+                "control-id": "APP.6.A6",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "a4d7ede5-5a48-4d96-b992-19fd23162ea2",
+                "control-id": "APP.6.A7",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "a667d5d3-9691-4241-b4b4-0db11c09ff39",
+                "control-id": "APP.6.A8",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "2dc11229-ea9d-44b9-959a-e5a1545ec4e4",
+                "control-id": "APP.6.A9",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "b47b485c-6a98-4e23-93d7-0e27abe352a8",
+                "control-id": "APP.6.A10",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "c4021b47-8490-428b-9eab-959875a888dc",
+                "control-id": "APP.6.A11",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "6135e2f7-bf2d-44f2-8da2-746d97f17519",
+                "control-id": "APP.6.A12",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "4fb125df-848a-4675-a263-8465ff250ca4",
+                "control-id": "APP.6.A13",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              },
+              {
+                "uuid": "184fdd16-8eb7-4164-b1bf-61ebe1915cc9",
+                "control-id": "APP.6.A14",
+                "description": "AI-Begr\u00fcndung: Obligatorische Basisanforderung f\u00fcr alle APP-Bausteine."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

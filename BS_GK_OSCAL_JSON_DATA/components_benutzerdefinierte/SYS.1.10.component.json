@@ -1,0 +1,418 @@
+{
+  "component-definition": {
+    "uuid": "bf1b40a8-27f3-41e1-a9ec-08f6401a02a1",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.10: Benutzerdefiniert: Server unter OpenBSD",
+      "last-modified": "2025-06-26T10:32:35.021149+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.10."
+    },
+    "components": [
+      {
+        "uuid": "4069ca91-b9cf-444d-8659-697641c293b1",
+        "type": "service",
+        "title": "Benutzerdefiniert: Server unter OpenBSD",
+        "description": "Implementation of controls for Baustein SYS.1.10.",
+        "control-implementations": [
+          {
+            "uuid": "2962f1c1-0f13-4057-902b-55193f7aef7e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.10: Benutzerdefiniert: Server unter OpenBSD",
+            "implemented-requirements": [
+              {
+                "uuid": "eef0b32b-67db-44fb-a308-043c86f03380",
+                "control-id": "SYS.1.10.A1",
+                "description": "Base implementation for control SYS.1.10.A1."
+              },
+              {
+                "uuid": "f7cabf8f-1d25-48e6-b717-6bac78302d80",
+                "control-id": "SYS.1.10.A2",
+                "description": "Base implementation for control SYS.1.10.A2."
+              },
+              {
+                "uuid": "4af89e2d-5adb-41bd-9810-460391526e78",
+                "control-id": "SYS.1.10.A3",
+                "description": "Base implementation for control SYS.1.10.A3."
+              },
+              {
+                "uuid": "8ae0a62c-4ca7-4a51-b005-a8a737219d97",
+                "control-id": "SYS.1.10.A4",
+                "description": "Base implementation for control SYS.1.10.A4."
+              },
+              {
+                "uuid": "8477d248-6942-4f41-835a-55edf7186755",
+                "control-id": "SYS.1.10.A5",
+                "description": "Base implementation for control SYS.1.10.A5."
+              },
+              {
+                "uuid": "63cba766-5fb8-4e92-a589-1982a0139698",
+                "control-id": "SYS.1.10.A6",
+                "description": "Base implementation for control SYS.1.10.A6."
+              },
+              {
+                "uuid": "8b05ee75-e296-40d0-80b8-d219ed1f053b",
+                "control-id": "SYS.1.10.A7",
+                "description": "Base implementation for control SYS.1.10.A7."
+              },
+              {
+                "uuid": "c78f497c-3381-4907-8452-0311076257e6",
+                "control-id": "SYS.1.10.A8",
+                "description": "Base implementation for control SYS.1.10.A8."
+              },
+              {
+                "uuid": "2ada8d86-592c-4d58-af25-031a809e6891",
+                "control-id": "SYS.1.10.A9",
+                "description": "Base implementation for control SYS.1.10.A9."
+              },
+              {
+                "uuid": "64434c61-4ab4-473f-9903-0f2f62cccf4f",
+                "control-id": "SYS.1.10.A10",
+                "description": "Base implementation for control SYS.1.10.A10."
+              },
+              {
+                "uuid": "1ce43c2f-e85b-44e0-844c-7e04ea658532",
+                "control-id": "SYS.1.10.A11",
+                "description": "Base implementation for control SYS.1.10.A11."
+              },
+              {
+                "uuid": "8c4debf8-1cdd-4d7d-b13f-b83da3742358",
+                "control-id": "SYS.1.10.A12",
+                "description": "Base implementation for control SYS.1.10.A12."
+              },
+              {
+                "uuid": "7b55d43e-d5fe-4009-8539-4a185040ae24",
+                "control-id": "SYS.1.10.A13",
+                "description": "Base implementation for control SYS.1.10.A13."
+              },
+              {
+                "uuid": "c358d050-d167-4431-ad05-22d4b72d7342",
+                "control-id": "SYS.1.10.A14",
+                "description": "Base implementation for control SYS.1.10.A14."
+              }
+            ]
+          },
+          {
+            "uuid": "71182168-5b44-4382-961a-58713c65d5bd",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "7a90f062-27f3-49af-a7ba-60bc9bfb7209",
+                "control-id": "NET.3.2.A1",
+                "description": "AI-Begr\u00fcndung: Da OpenBSD-Server h\u00e4ufig als Firewalls eingesetzt werden, ist eine spezifische Sicherheitsrichtlinie f\u00fcr diese Funktion unerl\u00e4sslich und stellt die Governance sicher."
+              },
+              {
+                "uuid": "5ce6c593-78bf-476c-b2b8-f3b54d17aa14",
+                "control-id": "NET.3.2.A2",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist zentral f\u00fcr den Einsatz von OpenBSDs integriertem Paketfilter 'pf' und fordert mit dem Allowlist-Ansatz eine grundlegende Best-Practice."
+              },
+              {
+                "uuid": "f691b319-0f20-4034-8de2-429c7b3882de",
+                "control-id": "NET.3.2.A3",
+                "description": "AI-Begr\u00fcndung: Adressiert spezifische, technische Konfigurationen f\u00fcr Paketfilter wie 'pf', insbesondere die zustandsbehaftete Filterung, die f\u00fcr die Sicherheit von OpenBSD als Firewall entscheidend ist."
+              },
+              {
+                "uuid": "49a2e296-c325-419b-a820-be8028d7205d",
+                "control-id": "NET.3.2.A4",
+                "description": "AI-Begr\u00fcndung: Allgemeine H\u00e4rtungsma\u00dfnahmen, die direkt auf ein OpenBSD-System in der Rolle einer Firewall anwendbar sind, wie das Deaktivieren unn\u00f6tiger Dienste, was der 'Secure by default'-Philosophie entspricht."
+              },
+              {
+                "uuid": "b6ffb9ae-bdc4-4768-befa-da63735513d5",
+                "control-id": "NET.3.2.A6",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des administrativen Zugriffs (meist via SSH) ist f\u00fcr ein sicherheitskritisches System wie einen OpenBSD-Server von h\u00f6chster Bedeutung."
+              },
+              {
+                "uuid": "761371a9-23ed-4b7c-9471-d2b3163f0d82",
+                "control-id": "NET.3.2.A7",
+                "description": "AI-Begr\u00fcndung: Stellt die Administrierbarkeit im Notfall sicher, was f\u00fcr eine kritische Netzkomponente wie eine OpenBSD-Firewall essentiell ist, um Ausf\u00e4lle beheben zu k\u00f6nnen."
+              },
+              {
+                "uuid": "debbb0d2-01cc-4020-93e1-35b1c7fb09c8",
+                "control-id": "NET.3.2.A8",
+                "description": "AI-Begr\u00fcndung: OpenBSD kann Routing-Dienste bereitstellen. Diese Anforderung zwingt zu einer bewussten Entscheidung und verhindert unsichere Konfigurationen, was die Angriffsfl\u00e4che reduziert."
+              },
+              {
+                "uuid": "a66aa335-2f1e-4b2c-982e-6049e382f8c1",
+                "control-id": "NET.3.2.A9",
+                "description": "AI-Begr\u00fcndung: Konkretisiert die Anforderungen an die Protokollierung f\u00fcr die Firewall-Funktionalit\u00e4t, die mit den Logging-Mechanismen von 'pf' (pflog) direkt umsetzbar sind."
+              },
+              {
+                "uuid": "2e088aa5-fc1d-49be-bfaa-2f11a97f5d7e",
+                "control-id": "NET.3.2.A10",
+                "description": "AI-Begr\u00fcndung: Direkt relevant f\u00fcr OpenBSD, da dessen Paketfilter 'pf' spezifische, eingebaute Schutzmechanismen gegen Fragmentierungsangriffe ('scrub') besitzt."
+              },
+              {
+                "uuid": "f9639cbf-a5c0-4b75-aac5-9e4961e5a492",
+                "control-id": "NET.3.2.A14",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation von \u00c4nderungen am Regelwerk einer OpenBSD-Firewall ist f\u00fcr die Nachvollziehbarkeit, Fehlersuche und Sicherheit unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b45ccae0-1e6f-4f27-b836-27d00439fb4f",
+                "control-id": "NET.3.2.A17",
+                "description": "AI-Begr\u00fcndung: Die Deaktivierung nicht genutzter Protokollstacks (IPv4/IPv6) ist eine grundlegende H\u00e4rtungsma\u00dfnahme zur Reduzierung der Angriffsfl\u00e4che, die auf jedem OpenBSD-Server anwendbar ist."
+              },
+              {
+                "uuid": "5f846fbc-03a2-4994-b303-5d6bbd52765f",
+                "control-id": "NET.3.2.A18",
+                "description": "AI-Begr\u00fcndung: Eine Best-Practice f\u00fcr die sichere Administration kritischer Systeme. Dies erh\u00f6ht die Sicherheit des administrativen Zugriffs auf den OpenBSD-Server erheblich."
+              },
+              {
+                "uuid": "fc0435e6-3a1f-49ad-9d08-e05bbecaa292",
+                "control-id": "NET.3.2.A19",
+                "description": "AI-Begr\u00fcndung: Sehr relevant, da OpenBSDs 'pf' explizite und effektive Mechanismen zum Schutz vor DoS-Angriffen wie SYN-Floods und zur Erh\u00f6hung der Protokollsicherheit bietet."
+              },
+              {
+                "uuid": "c624593c-fe12-45e5-90f9-439ce6f33ddf",
+                "control-id": "NET.3.2.A20",
+                "description": "AI-Begr\u00fcndung: OpenBSD kann mit Werkzeugen wie 'relayd' als Sicherheitsproxy dienen. Diese Anforderung gibt eine wertvolle Empfehlung f\u00fcr den Einsatz auf Anwendungsebene."
+              },
+              {
+                "uuid": "0b5ff171-239a-46cf-a406-0cfeea70bdde",
+                "control-id": "NET.3.2.A21",
+                "description": "AI-Begr\u00fcndung: Eine fortgeschrittene, aber relevante Funktion f\u00fcr Hochsicherheitsumgebungen. OpenBSD kann dies mit 'relayd' (TLS-Inspection) umsetzen, daher ist die Anforderung anwendbar."
+              },
+              {
+                "uuid": "8b267e5f-c126-42fa-846f-3cbb6f9248ec",
+                "control-id": "NET.3.2.A22",
+                "description": "AI-Begr\u00fcndung: Korrekte Zeit ist f\u00fcr Protokollierung und Kryptografie fundamental. OpenBSD bringt mit 'openntpd' einen eigenen Dienst mit, wodurch diese Anforderung direkt umsetzbar ist."
+              },
+              {
+                "uuid": "b08600b7-e09a-4338-b519-23ae2cf9437a",
+                "control-id": "NET.3.2.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung eines als kritisch eingestuften OpenBSD-Servers ist f\u00fcr den stabilen und sicheren Betrieb zwingend erforderlich."
+              },
+              {
+                "uuid": "0e1e33be-cb01-4f3f-b7e1-fa013f003487",
+                "control-id": "NET.3.2.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheits\u00fcberpr\u00fcfungen sind f\u00fcr ein System, das f\u00fcr sicherheitskritische Aufgaben eingesetzt wird, unerl\u00e4sslich, um die Konfiguration zu validieren."
+              },
+              {
+                "uuid": "7399deda-cd25-4c95-b1dc-94b1cf3a8aef",
+                "control-id": "NET.3.2.A32",
+                "description": "AI-Begr\u00fcndung: Die spezifische Notfallvorsorge f\u00fcr die Firewall-Funktion ist eine sinnvolle Erg\u00e4nzung zur allgemeinen Server-Notfallplanung und erh\u00f6ht die Resilienz."
+              },
+              {
+                "uuid": "547b079e-85b5-4249-9188-ceaea0aac6c3",
+                "control-id": "NET.3.2.A25",
+                "description": "AI-Begr\u00fcndung: Der Schutz der Konfigurationsdateien (z. B. 'pf.conf') ist kritisch. OpenBSD bietet hierf\u00fcr native Mittel (z. B. file flags, signify), was diese Anforderung sehr relevant macht."
+              },
+              {
+                "uuid": "eee5ea43-a404-49c4-ad9a-4e91a5915b4c",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende Anforderung f\u00fcr jeden Server, die den physischen Schutz und die Zweckbindung des Systems sicherstellt und somit auch f\u00fcr OpenBSD-Server gilt."
+              },
+              {
+                "uuid": "063ee8c4-f5d5-4fa0-ae29-298d670c8d84",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Fundamentale Sicherheitsanforderung f\u00fcr die Zugangssteuerung, die auf jedem OpenBSD-Server zur Absicherung von Benutzer- und Dienstkonten umgesetzt werden muss."
+              },
+              {
+                "uuid": "634ceb95-b88a-44a4-bb19-7443c3d2c9b3",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Deaktivierung ungenutzter physischer und logischer Schnittstellen ist eine grundlegende H\u00e4rtungsma\u00dfnahme, die die Angriffsfl\u00e4che eines OpenBSD-Servers reduziert."
+              },
+              {
+                "uuid": "c9ab7e9b-7b3f-4705-9293-5c09fbaf4878",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist das Kernprinzip der 'Secure by default'-Philosophie von OpenBSD. Sie formalisiert die Notwendigkeit, ein minimalistisches System zu betreiben."
+              },
+              {
+                "uuid": "d3013d3a-ce27-4aff-a409-50d961ffe930",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Obwohl Virenschutz auf OpenBSD un\u00fcblich ist, fordert diese Ma\u00dfnahme eine bewusste Risikoanalyse und Entscheidung, was f\u00fcr bestimmte Serverrollen (z. B. Mail-Gateway) sinnvoll ist."
+              },
+              {
+                "uuid": "99ec28f9-de25-4edf-a237-2224e6bf3a35",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Stellt die grundlegende Protokollierung von Systemereignissen sicher, die f\u00fcr Monitoring, Analyse und Forensik auf jedem Server, auch unter OpenBSD, notwendig ist."
+              },
+              {
+                "uuid": "4d3b0529-ca9f-4b3e-bf8b-381d37e94a60",
+                "control-id": "SYS.1.1.A11",
+                "description": "AI-Begr\u00fcndung: Schafft den organisatorischen Rahmen f\u00fcr den sicheren Betrieb und stellt sicher, dass die spezifischen Anforderungen f\u00fcr OpenBSD-Server verbindlich festgelegt werden."
+              },
+              {
+                "uuid": "44e747f6-25ca-4aba-9992-01a6dbcd694e",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Sorgt f\u00fcr einen durchdachten und geplanten Einsatz des Servers, was aufgrund der Besonderheiten von OpenBSD besonders wichtig ist, um Fehlkonfigurationen zu vermeiden."
+              },
+              {
+                "uuid": "2ffa1db6-8e56-4b16-98eb-4618a41d3706",
+                "control-id": "SYS.1.1.A15",
+                "description": "AI-Begr\u00fcndung: Stellt die Verf\u00fcgbarkeit des Servers sicher, was f\u00fcr die meist kritischen Aufgaben eines OpenBSD-Servers (z. B. als Firewall) eine hohe Bedeutung hat."
+              },
+              {
+                "uuid": "91916b40-ca8c-4d96-aa3f-8ec4497cffa8",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Definiert grundlegende und essenzielle Schritte f\u00fcr eine sichere Erstinstallation, die die Basis f\u00fcr ein geh\u00e4rtetes OpenBSD-System legen."
+              },
+              {
+                "uuid": "67ec030b-b011-408e-85c7-13a69310d1b8",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Absolut relevant, da die Konfiguration des lokalen Paketfilters ('pf') eine der Kernkompetenzen von OpenBSD ist und eine wesentliche Sicherheitsschicht darstellt."
+              },
+              {
+                "uuid": "ed5b2aea-4c35-46ee-9346-3837ba73f7cb",
+                "control-id": "SYS.1.1.A21",
+                "description": "AI-Begr\u00fcndung: Eine l\u00fcckenlose Betriebsdokumentation ist f\u00fcr komplexe und sicherheitskritische Systeme wie OpenBSD-Server unerl\u00e4sslich, um \u00c4nderungen nachvollziehen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "38475036-0c06-4234-afc8-0d3a619f8950",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass der kritische OpenBSD-Server in die \u00fcbergeordneten Notfallprozesse integriert ist, um im St\u00f6rungsfall die Wiederherstellung zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "80b97ed8-d0c9-40b6-90ff-0bfef3f990ca",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung von Systemzustand und Diensten ist f\u00fcr jeden Server wichtig und stellt die proaktive Erkennung von Problemen auf dem OpenBSD-System sicher."
+              },
+              {
+                "uuid": "e3c0eee7-79f8-47bd-8b90-7046bdc81407",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige \u00dcberpr\u00fcfungen der Sicherheitskonfiguration sind entscheidend, um die hohe Sicherheit eines OpenBSD-Servers dauerhaft zu gew\u00e4hrleisten und Schwachstellen zu finden."
+              },
+              {
+                "uuid": "48b5e2d2-b14f-4e89-9264-69501fbd389e",
+                "control-id": "SYS.1.1.A25",
+                "description": "AI-Begr\u00fcndung: Regelt den letzten Schritt im Lebenszyklus des Servers und stellt sicher, dass bei der Au\u00dferbetriebnahme keine sch\u00fctzenswerten Daten zur\u00fcckbleiben."
+              },
+              {
+                "uuid": "4e612072-142d-418f-ab16-6046dc5f1753",
+                "control-id": "SYS.1.1.A35",
+                "description": "AI-Begr\u00fcndung: Aufgrund der spezifischen Eigenheiten von OpenBSD ist ein dediziertes Betriebshandbuch von hohem Wert, um das notwendige Spezialwissen zu dokumentieren und zu erhalten."
+              },
+              {
+                "uuid": "3d51e4e2-6726-4905-abbe-38328ceb1520",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Extrem relevant, da diese Anforderung direkt die im Baustein-Kontext erw\u00e4hnten, innovativen OpenBSD-Sicherheitsmechanismen wie pledge(2) und unveil(2) adressiert."
+              },
+              {
+                "uuid": "667381d6-968b-4e9e-a1b5-78016ad04e20",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert den Einsatz von Konfigurationsmanagement (z.B. Ansible), was bei mehreren OpenBSD-Servern die Konsistenz, Sicherheit und Nachvollziehbarkeit der Konfigurationen erh\u00f6ht."
+              },
+              {
+                "uuid": "e01a01b2-c4f6-4299-baf6-06b6a8b4ad7c",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Die Detektion von Angriffen auf Host-Ebene, z.B. durch die in OpenBSD integrierte Datei-Integrit\u00e4tspr\u00fcfung, ist eine wichtige zus\u00e4tzliche Sicherheitsschicht."
+              },
+              {
+                "uuid": "1a341df0-574e-4b8e-a649-dc619bd94b5d",
+                "control-id": "SYS.1.1.A28",
+                "description": "AI-Begr\u00fcndung: Relevant, da OpenBSD mit CARP (Common Address Redundancy Protocol) eine native L\u00f6sung f\u00fcr Hochverf\u00fcgbarkeit von Netzwerkdiensten bietet."
+              },
+              {
+                "uuid": "f300bef5-a678-41bc-983a-27e077a42f19",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Das Prinzip 'Ein Dienst pro Server' passt hervorragend zur sicherheitsorientierten Philosophie von OpenBSD, um die Angriffsfl\u00e4che und die Auswirkungen von Kompromittierungen zu minimieren."
+              },
+              {
+                "uuid": "452ed9db-6fc5-4d2e-b899-6b8aa130d815",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist durch OpenBSD-Mechanismen wie Mount-Optionen ('noexec') und insbesondere durch 'pledge' und 'unveil' direkt und effektiv umsetzbar."
+              },
+              {
+                "uuid": "4e730611-1dab-4ed5-9e71-df38dd06ec5c",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung der Vertrauensanker (Wurzelzertifikate) ist auf jedem System eine kritische Sicherheitsaufgabe, so auch auf einem OpenBSD-Server."
+              },
+              {
+                "uuid": "28cd41cd-6fec-4e28-a8e2-997a2df423a4",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: OpenBSD bietet eine integrierte Festplattenverschl\u00fcsselung, die eine effektive Umsetzung dieser wichtigen Anforderung zum Schutz von Daten im Ruhezustand erm\u00f6glicht."
+              },
+              {
+                "uuid": "a8c03668-c4bd-4c45-8ae6-0b5ed783ee0f",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs ist eine fundamentale Ma\u00dfnahme zum Schutz der Systemintegrit\u00e4t und auch auf Hardware, die OpenBSD ausf\u00fchrt, anwendbar."
+              },
+              {
+                "uuid": "6dacdcd9-eb02-4de5-9f75-bbef424076a5",
+                "control-id": "SYS.1.1.A38",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Read-Only-Dateisystemen f\u00fcr Teile des Betriebssystems ist eine klassische und sehr effektive H\u00e4rtungstechnik, die von OpenBSD unterst\u00fctzt wird."
+              }
+            ]
+          },
+          {
+            "uuid": "ebd84b30-d9a1-42e5-a423-d1ff10468be6",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "6e287396-5a93-4b47-82d2-b428e3d97b19",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Stellt durch Funktionstrennung sicher, dass bei der Administration kritischer OpenBSD-Systeme Kontrollmechanismen greifen, was f\u00fcr ein hohes Schutzniveau angemessen ist."
+              },
+              {
+                "uuid": "359e53cf-ceb5-41e9-8b63-4294b8fac19b",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Hochgradig relevant, da der Baustein-Kontext explizit auf die Notwendigkeit spezifischer Kenntnisse f\u00fcr OpenBSD hinweist. Diese Anforderung adressiert dieses Risiko direkt."
+              },
+              {
+                "uuid": "c068c2ab-90e3-4a09-b159-6ecaeaa7ead9",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Regelt die Umsetzung des 'Least Privilege'-Prinzips f\u00fcr Benutzerberechtigungen auf dem OpenBSD-Server, was eine grundlegende Sicherheitsanforderung ist."
+              },
+              {
+                "uuid": "285ccc86-4399-45ad-9d3f-c8c211c6fe1c",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende Anforderung, die sicherstellt, dass jeder Zugriff auf den OpenBSD-Server eine Identifikation und Authentisierung erfordert."
+              },
+              {
+                "uuid": "26756001-e833-4608-a27b-aec51d34210b",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Spezifiziert qualitative Anforderungen an Authentisierungsmechanismen (z. B. Schutz vor Brute-Force), was f\u00fcr ein sicherheitskritisches System wie OpenBSD von hohem Wert ist."
+              },
+              {
+                "uuid": "166434fc-4a7a-4cad-a0b4-c23394d2efc8",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Extrem relevant, da OpenBSD f\u00fcr seine integrierte Kryptografie bekannt ist. Diese Anforderung stellt sicher, dass diese Funktionen auch nach aktuellen Standards sicher eingesetzt werden."
+              },
+              {
+                "uuid": "6461efb5-ebd0-4dfc-9d8c-41135e13e3f0",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Jede Nutzung von Kryptografie auf dem OpenBSD-Server (SSH, TLS, VPN etc.) ist nur so sicher wie das zugrundeliegende Schl\u00fcsselmanagement. Daher ist diese Anforderung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "cf8bbb07-2284-4f95-b731-6c7763b2673e",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Sicherung von Daten und Konfigurationen ist eine fundamentale Anforderung zur Gew\u00e4hrleistung der Verf\u00fcgbarkeit und Integrit\u00e4t eines jeden Servers, auch unter OpenBSD."
+              },
+              {
+                "uuid": "17a32086-75f4-471d-a66c-ef3b9050bda5",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Stellt die Rechenschaftspflicht und Nachvollziehbarkeit bei administrativen Zugriffen sicher, was f\u00fcr die Sicherheit und Auditierbarkeit eines OpenBSD-Servers von entscheidender Bedeutung ist."
+              },
+              {
+                "uuid": "296f08f2-5e1b-49b0-b513-173de41ef0ef",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Fasst die wichtigsten Anforderungen zum Schutz administrativer Zug\u00e4nge (Authentisierung, Verschl\u00fcsselung) zusammen und ist daher f\u00fcr den sicheren Betrieb unerl\u00e4sslich."
+              },
+              {
+                "uuid": "8c29a019-2dac-4b8e-a103-b67bafff1223",
+                "control-id": "OPS.1.1.2.A18",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung f\u00fcr erh\u00f6hten Schutzbedarf unterstreicht die Wichtigkeit einer l\u00fcckenlosen Protokollierung von administrativen T\u00e4tigkeiten auf einem Hochsicherheitssystem."
+              },
+              {
+                "uuid": "bb41579e-a7f6-4ef7-848d-ae5c57a1b261",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Patch-Prozess ist f\u00fcr OpenBSD mit seinem halbj\u00e4hrlichen Release-Zyklus und Sicherheitspatches von zentraler Bedeutung, um das System aktuell und sicher zu halten."
+              },
+              {
+                "uuid": "e5a4813a-a532-4711-a08e-469132fe20bc",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert die Nutzung der vielf\u00e4ltigen, in OpenBSD bereits integrierten Sicherheitsfunktionen (z. B. Logging, Integrit\u00e4tspr\u00fcfung) zur Erkennung von Anomalien und Angriffen."
+              },
+              {
+                "uuid": "7857dad1-fcde-4c5c-86d3-37914449c203",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Relevant f\u00fcr OpenBSD-Server, die als Sensoren (NIDS) oder an Netz\u00fcberg\u00e4ngen betrieben werden, um die Detektionsf\u00e4higkeiten des Netzwerks zu verbessern."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

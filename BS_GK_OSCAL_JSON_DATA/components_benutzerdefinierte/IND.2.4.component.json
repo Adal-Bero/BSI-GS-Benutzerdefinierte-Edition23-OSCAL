@@ -1,0 +1,178 @@
+{
+  "component-definition": {
+    "uuid": "e63499f1-743c-4f1e-a492-bce4168f599a",
+    "metadata": {
+      "title": "Component for Baustein IND.2.4: Maschine",
+      "last-modified": "2025-06-26T11:23:03.764609+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.2.4."
+    },
+    "components": [
+      {
+        "uuid": "11db4659-8408-4dad-a791-b312c3b49669",
+        "type": "service",
+        "title": "Maschine",
+        "description": "Implementation of controls for Baustein IND.2.4.",
+        "control-implementations": [
+          {
+            "uuid": "362e4a80-088c-4339-a39d-8ce9ac1a59e7",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.2.4: Maschine",
+            "implemented-requirements": [
+              {
+                "uuid": "9156c4b2-02c5-4f35-97f3-07796da10749",
+                "control-id": "IND.2.4.A1",
+                "description": "Base implementation for control IND.2.4.A1."
+              },
+              {
+                "uuid": "bbbd15c1-d942-4e6e-97ad-4d58a2293522",
+                "control-id": "IND.2.4.A2",
+                "description": "Base implementation for control IND.2.4.A2."
+              }
+            ]
+          },
+          {
+            "uuid": "2ab42dd5-52a0-46b6-88ea-8b5c8ab619dd",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "cf3d2088-8ab3-488a-baed-97cf307bd0a0",
+                "control-id": "IND.1.A3",
+                "description": "AI-Begr\u00fcndung: Grundlegende Anforderung zum Schutz der Maschine vor Schadsoftware, die speziell auf OT-Gegebenheiten wie Herstellerfreigaben eingeht."
+              },
+              {
+                "uuid": "bccd7898-cbac-40b3-8ad8-6461b13dbf34",
+                "control-id": "IND.1.A18",
+                "description": "AI-Begr\u00fcndung: Essentiell, um unberechtigte oder fehlerhafte \u00c4nderungen und Zugriffe auf die Maschinensteuerung nachvollziehen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "ebde0c8e-1fc2-463d-b887-51e7472251a3",
+                "control-id": "IND.1.A19",
+                "description": "AI-Begr\u00fcndung: Sichert die Wiederherstellbarkeit der Maschinenkonfiguration und -programme, was f\u00fcr die Betriebskontinuit\u00e4t entscheidend ist."
+              },
+              {
+                "uuid": "e6cecc2e-952a-4e25-a95f-f6328ec66ba1",
+                "control-id": "IND.1.A6",
+                "description": "AI-Begr\u00fcndung: Etabliert einen grundlegenden Prozess, um \u00c4nderungen an der Maschinenkonfiguration kontrolliert und sicher durchzuf\u00fchren."
+              },
+              {
+                "uuid": "a644b251-1328-4fc0-bb46-b9960886c92b",
+                "control-id": "IND.1.A8",
+                "description": "AI-Begr\u00fcndung: Adressiert direkt die im Baustein erw\u00e4hnte Fernwartung und die Notwendigkeit, administrative Zug\u00e4nge zur Maschine sicher zu gestalten."
+              },
+              {
+                "uuid": "36f2395b-9ba8-463d-8334-9f27634d7369",
+                "control-id": "IND.1.A9",
+                "description": "AI-Begr\u00fcndung: Direkt relevant, da der Baustein explizit Schnittstellen f\u00fcr Wechseldatentr\u00e4ger erw\u00e4hnt, die ein h\u00e4ufiger Angriffsvektor sind."
+              },
+              {
+                "uuid": "9f7136a6-b188-4b76-811c-a2ace3009792",
+                "control-id": "IND.1.A11",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass Sicherheitsanforderungen bereits bei der Beschaffung einer neuen Maschine ber\u00fccksichtigt werden, was fundamental ist."
+              },
+              {
+                "uuid": "ef63b230-9ca6-44ef-b069-7df581251b2b",
+                "control-id": "IND.1.A12",
+                "description": "AI-Begr\u00fcndung: Ein Schwachstellenmanagement ist unerl\u00e4sslich, um die Software der Maschinensteuerung und deren Komponenten aktuell und sicher zu halten."
+              },
+              {
+                "uuid": "c22d0ac4-1aea-4637-9e0d-640112b2ad45",
+                "control-id": "IND.1.A20",
+                "description": "AI-Begr\u00fcndung: Besonders wichtig f\u00fcr Maschinen, die als 'Black Box' betrieben werden, um deren Betrieb und Verwaltungsm\u00f6glichkeiten angemessen zu dokumentieren."
+              },
+              {
+                "uuid": "a15485cc-774f-4e0f-8cd8-c54ac44ca4c9",
+                "control-id": "IND.1.A21",
+                "description": "AI-Begr\u00fcndung: Notwendig, um die Netzwerkkommunikation der Maschine zu verstehen und gezielt abzusichern, beispielsweise durch Firewall-Regeln."
+              },
+              {
+                "uuid": "76b82507-dd14-4433-8eef-dd603f91c714",
+                "control-id": "IND.1.A22",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die lokale Protokollierung um eine zentrale, manipulationssichere Speicherung und Auswertung, was die Erkennung von Angriffen verbessert."
+              },
+              {
+                "uuid": "7ce4127b-c23f-4c98-a61c-1a7f09f1c0df",
+                "control-id": "IND.1.A23",
+                "description": "AI-Begr\u00fcndung: Deckt den letzten Schritt im Lebenszyklus einer Maschine ab und verhindert, dass sensible Konfigurations- oder Zugangsdaten auf Altsystemen verbleiben."
+              },
+              {
+                "uuid": "1d21300d-d7ae-4ee4-abaa-4b6d3ad59dbf",
+                "control-id": "IND.1.A14",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende Anforderung f\u00fcr die Zugriffskontrolle, die schwache oder Standard-Authentisierung an der Maschine verhindert."
+              },
+              {
+                "uuid": "b0bce91f-b4f6-4eea-9c70-1e6ada035c54",
+                "control-id": "IND.1.A15",
+                "description": "AI-Begr\u00fcndung: Stellt eine regelm\u00e4\u00dfige Kontrolle der m\u00e4chtigsten Benutzerkonten sicher und reduziert das Risiko durch kompromittierte Admin-Zug\u00e4nge."
+              }
+            ]
+          },
+          {
+            "uuid": "edccf361-13b5-4f43-b24f-863c43873142",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "51fac274-c289-4f93-9796-d00789bc0deb",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der Funktionstrennung ist relevant, um zu verhindern, dass eine einzelne Person kritische, unkontrollierte \u00c4nderungen an der Maschine vornehmen kann."
+              },
+              {
+                "uuid": "5125b4c0-9f5e-495a-9958-d66e0c42f7ce",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass das Personal, das die Maschine bedient und wartet, qualifiziert ist, was Fehlbedienungen und Sicherheitsprobleme vorbeugt."
+              },
+              {
+                "uuid": "5f87f717-ff1b-466f-b83d-39243b5a5659",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Definiert das grundlegende Prinzip der minimalen Rechtevergabe (Least Privilege), was f\u00fcr den Zugriff auf die Maschinensteuerung unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "74960a4e-0683-460c-b3d8-39b95ee9e0d8",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine fundamentale Sicherheitsanforderung, die sicherstellt, dass jeder Zugriff auf die Maschine authentisiert wird und Standardpassw\u00f6rter ge\u00e4ndert werden."
+              },
+              {
+                "uuid": "9fa82464-2125-4a37-9227-3b3d0ca8adde",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Konkretisiert die Anforderungen an die Authentisierung und erh\u00f6ht die Sicherheit gegen Brute-Force-Angriffe auf die Maschinen-Logins."
+              },
+              {
+                "uuid": "7e3d9dd0-9e91-4dde-83e1-48350c364cfd",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Relevant f\u00fcr die Absicherung der im Bausteinkontext genannten Netzwerkzugriffe und Fernwartungsschnittstellen durch starke Kryptografie."
+              },
+              {
+                "uuid": "9d26a4d3-ed19-40d9-9cea-ea99ce934c43",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine notwendige Folgeanforderung zu CON.1.A1, die den sicheren Umgang mit den kryptografischen Schl\u00fcsseln f\u00fcr die Maschine regelt."
+              },
+              {
+                "uuid": "be8ef8ae-0ab8-448e-a0e6-a1d40d994ac5",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Anforderung zur Datensicherung (IND.1.A19) um die Notwendigkeit eines formalen Datensicherungsplans, was die Umsetzung strukturiert."
+              },
+              {
+                "uuid": "6e84b698-d374-4664-8591-d5bcc762efbe",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Stellt die Nachvollziehbarkeit von administrativen T\u00e4tigkeiten sicher, was f\u00fcr Audits und die Untersuchung von Vorf\u00e4llen an der Maschine entscheidend ist."
+              },
+              {
+                "uuid": "d1b1fc93-acea-432c-8a3a-e889eb6efead",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Formalisiert das \u00c4nderungsmanagement durch die Forderung nach einem Konzept, was die Sicherheit bei Patches und Konfigurations\u00e4nderungen erh\u00f6ht."
+              },
+              {
+                "uuid": "c818a58b-245e-4bef-a7ab-c35c59f79e62",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die oft herstellerspezifischen, eingebauten Sicherheits- und Protokollierungsfunktionen der Maschine auch tats\u00e4chlich genutzt werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

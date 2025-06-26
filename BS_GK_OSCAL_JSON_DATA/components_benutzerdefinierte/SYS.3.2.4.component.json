@@ -1,0 +1,278 @@
+{
+  "component-definition": {
+    "uuid": "13870448-d58b-4e6a-bf25-cdbb24b2a85a",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.2.4: Android",
+      "last-modified": "2025-06-26T11:07:37.095088+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.2.4."
+    },
+    "components": [
+      {
+        "uuid": "20466c17-8472-40db-a6cf-6ecfe79f7f3c",
+        "type": "service",
+        "title": "Android",
+        "description": "Implementation of controls for Baustein SYS.3.2.4.",
+        "control-implementations": [
+          {
+            "uuid": "73439b32-5e79-4e24-9590-2fa238320d01",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.2.4: Android",
+            "implemented-requirements": [
+              {
+                "uuid": "163a7c1a-37be-46de-b03c-ac3cfacb0163",
+                "control-id": "SYS.3.2.4.A2",
+                "description": "Base implementation for control SYS.3.2.4.A2."
+              },
+              {
+                "uuid": "00d87c4a-5c69-4e4b-a978-1606028b4757",
+                "control-id": "SYS.3.2.4.A3",
+                "description": "Base implementation for control SYS.3.2.4.A3."
+              },
+              {
+                "uuid": "d11a27ae-c33d-4d9c-a5f0-5e9ae93f06d6",
+                "control-id": "SYS.3.2.4.A5",
+                "description": "Base implementation for control SYS.3.2.4.A5."
+              }
+            ]
+          },
+          {
+            "uuid": "7c8a64f2-562b-45eb-9f89-9b51a23892cc",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "5a462337-dee2-46c4-8490-df9018af694c",
+                "control-id": "SYS.3.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine allgemeine Richtlinie ist die organisatorische Grundlage f\u00fcr die spezifischen Sicherheitsanforderungen an Android-Ger\u00e4te und wird im Baustein-Kontext explizit als anzuwenden benannt."
+              },
+              {
+                "uuid": "84de25bb-30a9-4d43-942a-6505f9540931",
+                "control-id": "SYS.3.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Android-Ger\u00e4te sind eng mit Cloud-Diensten (z.B. Google-Konto) verkn\u00fcpft, daher ist eine Strategie f\u00fcr deren sichere Nutzung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "d8c43a6e-66f9-47a1-9632-20c07ad08b0b",
+                "control-id": "SYS.3.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist fundamental, da jedes Android-Ger\u00e4t eine sichere Basiskonfiguration als Ausgangspunkt f\u00fcr den Schutz von Daten und Systemen ben\u00f6tigt."
+              },
+              {
+                "uuid": "83b7c1a8-1c24-412f-a1b8-8c9911688667",
+                "control-id": "SYS.3.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein Ger\u00e4tesperrcode und die automatische Bildschirmsperre sind grundlegende und unverzichtbare Schutzma\u00dfnahmen f\u00fcr jedes mobile Endger\u00e4t, einschlie\u00dflich Android."
+              },
+              {
+                "uuid": "d819b0e9-3f3b-45e9-9333-c145a4abb164",
+                "control-id": "SYS.3.2.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Update-Versorgung ist im Android-\u00d6kosystem sehr heterogen. Diese Anforderung ist daher kritisch, um Sicherheitsl\u00fccken zeitnah zu schlie\u00dfen."
+              },
+              {
+                "uuid": "52bab93e-5233-44ad-8b45-d732daa3ec4f",
+                "control-id": "SYS.3.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Das Android-Berechtigungsmodell ist ein zentraler Sicherheitsmechanismus. Die restriktive Konfiguration ist entscheidend f\u00fcr den Datenschutz und die Systemsicherheit."
+              },
+              {
+                "uuid": "0aa1d1f4-2d8f-428c-a539-9cd49497dbc2",
+                "control-id": "SYS.3.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Da mobile Ger\u00e4te wie Android-Smartphones leicht verloren gehen k\u00f6nnen, ist ein klar definierter Meldeprozess f\u00fcr Sicherheitsvorf\u00e4lle von hoher Bedeutung."
+              },
+              {
+                "uuid": "72e55fed-f244-4c04-8db1-dbf9193d3581",
+                "control-id": "SYS.3.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Regelung der App-Installation ist f\u00fcr Android besonders relevant, da Apps aus verschiedenen Quellen (Sideloading) installiert werden k\u00f6nnen, was ein erhebliches Risiko darstellt."
+              },
+              {
+                "uuid": "0e7316ef-024b-4742-9f0f-c52c541c1c52",
+                "control-id": "SYS.3.2.1.A9",
+                "description": "AI-Begr\u00fcndung: Widgets und alternative Tastaturen sind verbreitete Funktionen unter Android. Ihre Nutzung sicher zu regeln, erh\u00f6ht das Schutzniveau."
+              },
+              {
+                "uuid": "aa8693aa-64d6-48a5-bcec-cad9cc6341fb",
+                "control-id": "SYS.3.2.1.A10",
+                "description": "AI-Begr\u00fcndung: Eine verbindliche Richtlinie f\u00fcr Mitarbeitende ist notwendig, um sicherheitsbewusstes Verhalten, wie z.B. das Verbot von Rooting, auf Android-Ger\u00e4ten durchzusetzen."
+              },
+              {
+                "uuid": "ea70e77f-cd84-4eb1-84cc-09421f5c0994",
+                "control-id": "SYS.3.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Die Verschl\u00fcsselung des Ger\u00e4tespeichers ist ein kritischer Schutz bei Ger\u00e4teverlust oder -diebstahl und eine Standardfunktion moderner Android-Versionen, deren Nutzung sichergestellt werden muss."
+              },
+              {
+                "uuid": "97719c45-9ec3-4460-a17d-5753ad69e822",
+                "control-id": "SYS.3.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt eine einfache, aber wirksame Ma\u00dfnahme dar, um durch den Ger\u00e4tenamen keine R\u00fcckschl\u00fcsse auf Institution oder Benutzer zuzulassen."
+              },
+              {
+                "uuid": "d357067e-3b64-4f0a-a85f-ac83ec36f55c",
+                "control-id": "SYS.3.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Android bietet native Funktionen zum Teilen von Bildschirminhalten (Casting). Die Regelung ihrer Nutzung ist relevant, um den Abfluss sch\u00fctzenswerter Informationen zu verhindern."
+              },
+              {
+                "uuid": "f87f2e57-d01a-4318-bf26-1aa4ac9384b5",
+                "control-id": "SYS.3.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Die bewusste Verwaltung von Schnittstellen wie Bluetooth und NFC ist eine grundlegende Sicherheitsma\u00dfnahme, um Angriffsvektoren auf Android-Ger\u00e4ten zu minimieren."
+              },
+              {
+                "uuid": "25ad1f23-7da9-40b6-b546-5c67a0497bfa",
+                "control-id": "SYS.3.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Biometrische Verfahren sind auf Android-Ger\u00e4ten weit verbreitet. Diese Anforderung stellt sicher, dass ihre Nutzung einer Schutzbedarfsanalyse unterliegt."
+              },
+              {
+                "uuid": "4813ded7-189c-4352-a1d3-009d2cf0885e",
+                "control-id": "SYS.3.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Sprachassistenten wie der Google Assistant sind tief in Android integriert. Die Anforderung regelt deren Einsatz, um Sicherheits- und Datenschutzrisiken zu minimieren."
+              },
+              {
+                "uuid": "2e5294bb-df08-486a-a25e-ebc697765f9e",
+                "control-id": "SYS.3.2.1.A22",
+                "description": "AI-Begr\u00fcndung: Die sichere Anbindung an die interne Infrastruktur mittels VPN ist eine Kernanforderung f\u00fcr den dienstlichen Einsatz von Android-Ger\u00e4ten."
+              },
+              {
+                "uuid": "40a7dac6-2027-4e93-8d5f-7eede45bed6e",
+                "control-id": "SYS.3.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Webseiten-Filterung ist eine relevante Sicherheitsma\u00dfnahme, die auch auf den Browsern von Android-Ger\u00e4ten zum Schutz vor sch\u00e4dlichen Inhalten angewendet werden sollte."
+              },
+              {
+                "uuid": "3d5323fa-f1a3-4246-bf7f-9a56aa96559a",
+                "control-id": "SYS.3.2.1.A31",
+                "description": "AI-Begr\u00fcndung: Mobile Payment (z.B. Google Pay) ist eine typische Funktion auf Android-Ger\u00e4ten. Es ist relevant zu regeln, ob und wie diese im dienstlichen Kontext genutzt werden darf."
+              },
+              {
+                "uuid": "8441e1f3-953e-4dea-b353-1ff67c081f24",
+                "control-id": "SYS.3.2.1.A32",
+                "description": "AI-Begr\u00fcndung: Die Anforderung empfiehlt die Nutzung eines MDM, was die Grundlage f\u00fcr die zentrale Verwaltung und Absicherung von Android-Ger\u00e4ten ist."
+              },
+              {
+                "uuid": "6a645da8-683b-4db8-a75f-587cd98eda3b",
+                "control-id": "SYS.3.2.1.A33",
+                "description": "AI-Begr\u00fcndung: Der Schutz vor Schadprogrammen mittels Sicherheits-Apps (Mobile Threat Defense) ist f\u00fcr das Android-\u00d6kosystem eine wichtige zus\u00e4tzliche Schutzschicht."
+              },
+              {
+                "uuid": "d1301bdb-77b6-4a84-b362-ef2f669f4c14",
+                "control-id": "SYS.3.2.1.A34",
+                "description": "AI-Begr\u00fcndung: Android erm\u00f6glicht die Konfiguration von DNS-Servern (z.B. via 'Privates DNS'). Die Nutzung vertrauensw\u00fcrdiger DNS-Server ist eine wertvolle Sicherheits- und Datenschutzma\u00dfnahme."
+              },
+              {
+                "uuid": "8f43728a-d26a-4116-9a7b-953570f99c26",
+                "control-id": "SYS.3.2.1.A25",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist f\u00fcr Android hochrelevant, da 'Android Enterprise' dedizierte Arbeitsprofile zur Trennung von dienstlichen und privaten Daten bietet."
+              },
+              {
+                "uuid": "fc74b740-9747-4470-8253-3107b18f9e8f",
+                "control-id": "SYS.3.2.1.A30",
+                "description": "AI-Begr\u00fcndung: Die Nutzung einer App-Allowlist ist eine wirksame Ma\u00dfnahme zur H\u00e4rtung von Android-Ger\u00e4ten, insbesondere in Umgebungen mit hohem Schutzbedarf."
+              },
+              {
+                "uuid": "3dc49952-3ba3-495f-b961-c3a8f2eb5aa5",
+                "control-id": "SYS.3.2.1.A35",
+                "description": "AI-Begr\u00fcndung: Die bewusste Konfiguration der integrierten Firewall-Mechanismen von Android erh\u00f6ht die Netzwerksicherheit des Ger\u00e4ts."
+              },
+              {
+                "uuid": "65be76aa-5988-4940-913f-faf8d9cb0f5c",
+                "control-id": "SYS.3.2.2.A4",
+                "description": "AI-Begr\u00fcndung: Beschreibt den fundamentalen Prozess, wie eine sichere Konfiguration mittels MDM auf Android-Ger\u00e4te ausgerollt wird, was f\u00fcr die Skalierbarkeit der Sicherheit entscheidend ist."
+              },
+              {
+                "uuid": "29d92a48-077c-4192-9cc1-2b087d34ed7a",
+                "control-id": "SYS.3.2.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Installation eines MDM-Clients ist der technische Grundstein, um ein Android-Ger\u00e4t zentral verwalten und absichern zu k\u00f6nnen."
+              },
+              {
+                "uuid": "825035c1-4dea-4c61-a6fb-33c6005adc50",
+                "control-id": "SYS.3.2.2.A20",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass die via MDM durchgesetzten Sicherheitseinstellungen f\u00fcr Android aktuell bleiben, insbesondere bei neuen Betriebssystem-Versionen."
+              },
+              {
+                "uuid": "d3f9ecfd-966d-4f03-9400-6f0583af172d",
+                "control-id": "SYS.3.2.2.A6",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung des Ger\u00e4testatus via MDM erm\u00f6glicht die \u00dcberwachung der Compliance und Konfiguration der Android-Ger\u00e4teflotte."
+              },
+              {
+                "uuid": "25761140-4bc3-46dc-90cf-0c715d8bcdfd",
+                "control-id": "SYS.3.2.2.A7",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung konkretisiert die App-Verwaltung f\u00fcr den Fall eines MDM-Einsatzes, was eine zentrale Sicherheitsfunktion f\u00fcr verwaltete Android-Ger\u00e4te darstellt."
+              },
+              {
+                "uuid": "66069779-1ef2-4ea8-85b3-34f8c929d0dd",
+                "control-id": "SYS.3.2.2.A21",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Zertifikaten via MDM ist f\u00fcr die sichere Anbindung von Android-Ger\u00e4ten an Unternehmensdienste (WLAN, VPN) unerl\u00e4sslich."
+              },
+              {
+                "uuid": "1a645e1d-b9bd-4a17-850a-b85597a3a6f0",
+                "control-id": "SYS.3.2.2.A22",
+                "description": "AI-Begr\u00fcndung: Die Fernl\u00f6schung (Remote Wipe) via MDM ist eine kritische Sicherheitsfunktion zum Schutz von Unternehmensdaten bei Verlust oder Diebstahl eines Android-Ger\u00e4ts."
+              },
+              {
+                "uuid": "280321b6-9645-4694-aeb8-84d7fab1b751",
+                "control-id": "SYS.3.2.2.A17",
+                "description": "AI-Begr\u00fcndung: Das Erkennen von Manipulationen am Betriebssystem ('Rooten') ist eine spezifische und wichtige Sicherheitsfunktion von MDM-L\u00f6sungen f\u00fcr Android."
+              },
+              {
+                "uuid": "2ecdb309-18f3-4042-aa54-c21d3ba8f59b",
+                "control-id": "SYS.3.2.2.A23",
+                "description": "AI-Begr\u00fcndung: Stellt die Kernfunktion eines MDM dar: die technische Durchsetzung von Sicherheitsrichtlinien und die Reaktion auf Verst\u00f6\u00dfe auf dem Android-Ger\u00e4t."
+              }
+            ]
+          },
+          {
+            "uuid": "09855a7d-c339-4067-82d9-ec7fd806debc",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "130a5fac-014c-4b17-b25a-a549b685974b",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Berechtigung ist fundamental und direkt auf Android anwendbar, sowohl f\u00fcr App-Berechtigungen auf dem Ger\u00e4t als auch f\u00fcr den Zugriff auf Backend-Dienste."
+              },
+              {
+                "uuid": "c4d59520-5276-4293-a9c0-be5f2dfc2be3",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Verst\u00e4rkt die Notwendigkeit einer sicheren Authentisierung nicht nur am Ger\u00e4t selbst, sondern auch f\u00fcr alle Dienste, auf die vom Android-Ger\u00e4t aus zugegriffen wird."
+              },
+              {
+                "uuid": "38d9f096-6b3c-4ec8-9a9d-27b3d8acc3f9",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die spezifischen Anforderungen an Zugriffsschutz, indem sie die schutzbedarfsabh\u00e4ngige Auswahl von Authentisierungsmechanismen (Passwort, Biometrie, MFA) f\u00fcr Android fordert."
+              },
+              {
+                "uuid": "a1697b04-0ec7-404d-81cc-693b5c617855",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die in Android und Apps genutzte Kryptografie (z.B. f\u00fcr Speicherverschl\u00fcsselung, TLS) aktuellen Sicherheitsstandards entspricht, was eine grundlegende Anforderung ist."
+              },
+              {
+                "uuid": "b4e3145e-49c6-4528-a16f-9942bc45e03f",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein ad\u00e4quates Schl\u00fcsselmanagement ist die notwendige Erg\u00e4nzung zur Kryptografie und relevant f\u00fcr Ger\u00e4teschl\u00fcssel sowie Zertifikate auf Android-Ger\u00e4ten."
+              },
+              {
+                "uuid": "5c86a213-d06c-40a6-8d68-cb0cd6be39f8",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Adressiert den wichtigen, aber oft vernachl\u00e4ssigten Aspekt der Datensicherung f\u00fcr auf dem Android-Ger\u00e4t gespeicherte dienstliche Informationen."
+              },
+              {
+                "uuid": "2dba42b5-7d6c-4f04-85ac-d03080d0e6b4",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die Nachvollziehbarkeit von Konfigurations\u00e4nderungen, die durch Administratoren via MDM auf Android-Ger\u00e4ten vorgenommen werden."
+              },
+              {
+                "uuid": "8ab67e5d-770e-41cf-9f63-33c99797491e",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sichert den administrativen Zugriff auf die Verwaltungsoberfl\u00e4che (z.B. MDM-Konsole) ab, \u00fcber die Android-Ger\u00e4te konfiguriert werden."
+              },
+              {
+                "uuid": "3f946117-a1ca-4f9b-baf3-9323181a84dc",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Formalisiert den Prozess f\u00fcr Betriebssystem- und App-Updates auf Android-Ger\u00e4ten und hebt die Wichtigkeit eines strukturierten Patch-Managements hervor."
+              },
+              {
+                "uuid": "0caca0fd-9e01-4029-b274-dde0e826c3ea",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist hochrelevant, da sie die Nutzung von Android-eigenen Sicherheitsfunktionen wie 'Google Play Protect' zur Detektion von Bedrohungen vorschreibt."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,333 @@
+{
+  "component-definition": {
+    "uuid": "d80a8fad-1a05-485d-9f04-b0566a86bb12",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.5: Virtualisierung",
+      "last-modified": "2025-06-26T10:43:36.800998+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.5."
+    },
+    "components": [
+      {
+        "uuid": "58e39d2e-2039-4f89-92c7-e52360c28ef8",
+        "type": "service",
+        "title": "Virtualisierung",
+        "description": "Implementation of controls for Baustein SYS.1.5.",
+        "control-implementations": [
+          {
+            "uuid": "32ec883e-e88d-4f1d-bb97-a6c0387e653b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.5: Virtualisierung",
+            "implemented-requirements": [
+              {
+                "uuid": "7e9eb543-d1ba-4a6a-b587-4914e2185d09",
+                "control-id": "SYS.1.5.A2",
+                "description": "Base implementation for control SYS.1.5.A2."
+              },
+              {
+                "uuid": "3ddb3037-91a4-4540-ad7c-01bedc3254af",
+                "control-id": "SYS.1.5.A3",
+                "description": "Base implementation for control SYS.1.5.A3."
+              },
+              {
+                "uuid": "aa389b4e-52e2-4e13-a5ee-dbafbbb49408",
+                "control-id": "SYS.1.5.A4",
+                "description": "Base implementation for control SYS.1.5.A4."
+              },
+              {
+                "uuid": "0340c144-c698-48f2-b2f4-fa833631473e",
+                "control-id": "SYS.1.5.A5",
+                "description": "Base implementation for control SYS.1.5.A5."
+              },
+              {
+                "uuid": "06f5e775-4cd2-4947-8f52-f6db044acacc",
+                "control-id": "SYS.1.5.A6",
+                "description": "Base implementation for control SYS.1.5.A6."
+              },
+              {
+                "uuid": "a323a312-5400-4daf-9e0f-17fb7ef92542",
+                "control-id": "SYS.1.5.A7",
+                "description": "Base implementation for control SYS.1.5.A7."
+              },
+              {
+                "uuid": "619debcd-4862-4d95-835a-4cec66049ba4",
+                "control-id": "SYS.1.5.A8",
+                "description": "Base implementation for control SYS.1.5.A8."
+              },
+              {
+                "uuid": "62b9e845-3328-4e7e-be5e-bd82bc4b30a7",
+                "control-id": "SYS.1.5.A9",
+                "description": "Base implementation for control SYS.1.5.A9."
+              },
+              {
+                "uuid": "b74a2c7e-86e3-4342-befa-a81c16399304",
+                "control-id": "SYS.1.5.A10",
+                "description": "Base implementation for control SYS.1.5.A10."
+              },
+              {
+                "uuid": "54b106dd-6895-4719-8661-e85d365f5f42",
+                "control-id": "SYS.1.5.A11",
+                "description": "Base implementation for control SYS.1.5.A11."
+              },
+              {
+                "uuid": "3a2dd70f-1caf-4b10-a4a1-9579725991f6",
+                "control-id": "SYS.1.5.A12",
+                "description": "Base implementation for control SYS.1.5.A12."
+              },
+              {
+                "uuid": "21e3ca3a-9080-43dd-8f7c-07e62400775d",
+                "control-id": "SYS.1.5.A13",
+                "description": "Base implementation for control SYS.1.5.A13."
+              },
+              {
+                "uuid": "32667694-2b7f-448f-9aa2-acd2f13abcdd",
+                "control-id": "SYS.1.5.A14",
+                "description": "Base implementation for control SYS.1.5.A14."
+              },
+              {
+                "uuid": "26a98803-127e-4c0f-89b9-3a5c8fa6dbe6",
+                "control-id": "SYS.1.5.A15",
+                "description": "Base implementation for control SYS.1.5.A15."
+              },
+              {
+                "uuid": "951ab2e0-a362-40e1-9a10-d34076dec44e",
+                "control-id": "SYS.1.5.A16",
+                "description": "Base implementation for control SYS.1.5.A16."
+              },
+              {
+                "uuid": "f709e6f6-83ea-48af-9097-dd114298f199",
+                "control-id": "SYS.1.5.A17",
+                "description": "Base implementation for control SYS.1.5.A17."
+              },
+              {
+                "uuid": "79a079ab-150b-48c3-b182-0645f3c88355",
+                "control-id": "SYS.1.5.A19",
+                "description": "Base implementation for control SYS.1.5.A19."
+              },
+              {
+                "uuid": "56398d31-b3aa-4e66-9361-719f5be68a4d",
+                "control-id": "SYS.1.5.A20",
+                "description": "Base implementation for control SYS.1.5.A20."
+              },
+              {
+                "uuid": "3293156b-7f54-4bff-a1ba-e8eba43775ba",
+                "control-id": "SYS.1.5.A21",
+                "description": "Base implementation for control SYS.1.5.A21."
+              },
+              {
+                "uuid": "f606df4d-ac54-43a3-89fe-cb52bf68ee22",
+                "control-id": "SYS.1.5.A22",
+                "description": "Base implementation for control SYS.1.5.A22."
+              },
+              {
+                "uuid": "8667dd7a-530b-430c-ae2d-235af2de775c",
+                "control-id": "SYS.1.5.A23",
+                "description": "Base implementation for control SYS.1.5.A23."
+              },
+              {
+                "uuid": "4ecb642a-b356-48be-9423-10247966f79c",
+                "control-id": "SYS.1.5.A24",
+                "description": "Base implementation for control SYS.1.5.A24."
+              },
+              {
+                "uuid": "44b6c13a-a399-4ab7-bb18-40c5d657122f",
+                "control-id": "SYS.1.5.A25",
+                "description": "Base implementation for control SYS.1.5.A25."
+              },
+              {
+                "uuid": "e9b23f25-ccba-4704-b49f-c3f358796a24",
+                "control-id": "SYS.1.5.A26",
+                "description": "Base implementation for control SYS.1.5.A26."
+              },
+              {
+                "uuid": "c7576488-4c3a-4921-a8df-33018f7f3e22",
+                "control-id": "SYS.1.5.A27",
+                "description": "Base implementation for control SYS.1.5.A27."
+              },
+              {
+                "uuid": "f796b425-7fc1-4409-ac13-e46de3a22d24",
+                "control-id": "SYS.1.5.A28",
+                "description": "Base implementation for control SYS.1.5.A28."
+              }
+            ]
+          },
+          {
+            "uuid": "4b795497-78ca-4211-b937-dc3f9f614ce0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "ea62d4a1-2634-4e7d-88cf-dc040e78cc25",
+                "control-id": "NET.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Virtualisierung erfordert spezifische Netzwerkregeln (z.B. f\u00fcr vSwitches, VM-zu-VM-Kommunikation), die in einer Richtlinie festzuhalten sind."
+              },
+              {
+                "uuid": "ab8662ed-b3a2-488d-90fd-ed1423a99b44",
+                "control-id": "NET.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation virtueller Netzkomponenten und deren Verbindungen ist f\u00fcr Sicherheit und Betrieb einer Virtualisierungsumgebung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "a928166c-f83f-483d-ac9a-6eb7b91b6d81",
+                "control-id": "NET.1.1.A4",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der Netzzonierung muss konsequent auf der virtuellen Ebene umgesetzt werden, um VMs unterschiedlicher Schutzbedarfe auf demselben Host zu trennen."
+              },
+              {
+                "uuid": "d8870f83-4a8f-4534-845c-e740ba2e57c6",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Segmentierung von VMs nach ihrer Funktion (z.B. Client- vs. Server-VMs) ist ein grundlegendes Sicherheitsprinzip, das auch in virtualisierten Umgebungen gilt."
+              },
+              {
+                "uuid": "9a840f5d-7c4b-4488-9a26-379f5032665f",
+                "control-id": "NET.1.1.A6",
+                "description": "AI-Begr\u00fcndung: VMs mit \u00e4hnlichem Schutzbedarf m\u00fcssen in dedizierten virtuellen Netzsegmenten gruppiert werden, um unkontrollierte Kommunikation zu verhindern."
+              },
+              {
+                "uuid": "a19eff51-9f52-4534-aeb9-5a5ed30f1916",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der Kommunikation (z.B. Administration des Hosts, vMotion, VM-Verkehr) ist in einer dynamischen virtuellen Umgebung von zentraler Bedeutung."
+              },
+              {
+                "uuid": "a54f0fd6-8e55-4aab-8f9d-67758cd52971",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt sowohl den physischen Virtualisierungsserver als auch den logischen Zugriff auf die Hypervisor-Ebene und die Konfiguration der VMs."
+              },
+              {
+                "uuid": "45ba6bec-0214-439a-a3b0-7f2952d2233c",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Authentisierung am Hypervisor und der Management-Konsole ist kritisch, da hier\u00fcber die gesamte virtuelle Infrastruktur kontrolliert wird."
+              },
+              {
+                "uuid": "73908b93-efa6-4e3e-8d2d-8a4bc44c3736",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der physischen Schnittstellen des Virtualisierungsservers verhindert unbefugten Zugriff auf die Hypervisor-Ebene."
+              },
+              {
+                "uuid": "ea3c5322-8297-4f57-b961-90eb49a33c4a",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Minimierung der Angriffsfl\u00e4che des Hypervisors durch Deaktivierung unn\u00f6tiger Dienste ist eine fundamentale H\u00e4rtungsma\u00dfnahme."
+              },
+              {
+                "uuid": "c3d84baa-3090-4046-9bc3-99ffc5e247a6",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Adressiert die spezifische Herausforderung des Virenscannings auf Hypervisoren und in VMs, was eine sorgf\u00e4ltige Abw\u00e4gung erfordert."
+              },
+              {
+                "uuid": "8ae5790e-07b2-42cc-99b4-229b25b7e8f7",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung von Ereignissen auf dem Hypervisor (z.B. VM-Lifecycle, Anmeldeversuche) ist entscheidend f\u00fcr die Sicherheits\u00fcberwachung."
+              },
+              {
+                "uuid": "b905671b-3984-4a65-bfd4-df3c220b19da",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Planung eines Virtualisierungsservers hat besondere Anforderungen an Hardwaredimensionierung, Schnittstellen und Administration."
+              },
+              {
+                "uuid": "cdaf7b9f-d144-4ee7-81e0-23de207ba8fb",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine sichere Grundkonfiguration des Hypervisors ist die Basis f\u00fcr die Sicherheit aller darauf betriebenen virtuellen Systeme."
+              },
+              {
+                "uuid": "bdfea2f4-0d92-44b9-8b7a-8b19b456a385",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Der Einsatz lokaler Paketfilter sch\u00fctzt die kritische Managementschnittstelle des Virtualisierungsservers vor unbefugten Zugriffen."
+              },
+              {
+                "uuid": "9ed4f730-bd44-405f-8ece-f3c1a8638566",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung eines Virtualisierungsservers muss sowohl die Host-Ressourcen als auch den Zustand und die Leistung der Gastsysteme umfassen."
+              },
+              {
+                "uuid": "ec14ac85-9144-4020-8af8-e4c039d52567",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitspr\u00fcfungen des Hypervisors und der Management-Systeme sind notwendig, um Schwachstellen in der kritischen Infrastruktur zu finden."
+              },
+              {
+                "uuid": "317a8090-25ca-435c-9c34-15575ec1223f",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Die Festplattenverschl\u00fcsselung des Host-Systems sch\u00fctzt die Daten aller darauf gespeicherten VMs bei physischem Diebstahl des Servers."
+              },
+              {
+                "uuid": "19d850cd-ff21-4984-a902-12df7dde47fa",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs des Hosts (z.B. mittels Secure Boot) stellt die Integrit\u00e4t des Hypervisors und somit der gesamten Umgebung sicher."
+              },
+              {
+                "uuid": "275bd525-418e-4371-8623-18f57568b943",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Beschreibt das Kernprinzip der Virtualisierung \u2013 die Kapselung und Isolation von Systemen \u2013 als Sicherheitsfunktion."
+              },
+              {
+                "uuid": "bc27c4ea-56e0-42a5-baa7-57e2a168c2aa",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung der Host-Konfigurationen ist essenziell, um einheitliche Sicherheitsrichtlinien in einer gr\u00f6\u00dferen virtuellen Infrastruktur durchzusetzen."
+              }
+            ]
+          },
+          {
+            "uuid": "ef1358c1-01dd-4d78-b34d-6ef4e577ab89",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5ecb7d0d-748f-4436-bfdc-3410713dadbf",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung ist bei der Verwaltung von Virtualisierungsumgebungen entscheidend, um den Missbrauch der m\u00e4chtigen Administrator-Rollen zu verhindern."
+              },
+              {
+                "uuid": "3fddfe3a-9a1d-4b90-af87-40b12e806a0d",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Virtualisierungstechnologien erfordert spezifisches Fachwissen, weshalb die Qualifikation des Personals besonders wichtig ist."
+              },
+              {
+                "uuid": "2737dcce-adfd-4afe-bbe3-9bc897727f84",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von Berechtigungen innerhalb der Virtualisierungs-Managementebene (z.B. wer VMs erstellen darf) muss streng nach dem Need-to-know-Prinzip erfolgen."
+              },
+              {
+                "uuid": "31044a45-b163-4670-8f68-1f196a380838",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass f\u00fcr alle kryptografischen Funktionen in der Virtualisierungsumgebung (z.B. Management-TLS, vMotion-Verschl\u00fcsselung) sichere Verfahren genutzt werden."
+              },
+              {
+                "uuid": "17539268-bfb7-4e75-bd2f-ad318aab768d",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die sichere Handhabung von Schl\u00fcsseln und Zertifikaten, die f\u00fcr die Absicherung der Virtualisierungs-Managementebene und -Kommunikation verwendet werden."
+              },
+              {
+                "uuid": "a6b5d775-10f0-44a6-8458-d2763c8263db",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung ist f\u00fcr virtuelle Maschinen von existenzieller Bedeutung und hat virtualisierungsspezifische Eigenheiten (z.B. Snapshot-Technologie)."
+              },
+              {
+                "uuid": "cfd25a6d-56e1-4fb2-9e78-20d2bb2bcff1",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Rechenschaftspflicht, indem administrative T\u00e4tigkeiten auf der hochprivilegierten Hypervisor-Ebene nachvollziehbar gemacht werden."
+              },
+              {
+                "uuid": "cee4619b-26a3-4c48-9e2c-0b20702afbb0",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrative Kommunikation mit dem Hypervisor und der Management-Konsole vor Abh\u00f6r- und Manipulationsangriffen."
+              },
+              {
+                "uuid": "195e04cb-1c1b-46f9-842b-0d3d08ee83f5",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Das Patchen eines Hypervisors ist ein kritischer Vorgang mit Auswirkung auf alle VMs und muss daher durch ein stringentes \u00c4nderungsmanagement gesteuert werden."
+              },
+              {
+                "uuid": "82bf8ab8-986f-4f94-9dd8-3afeb466a918",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die in Virtualisierungsplattformen integrierten Sicherheits- und Protokollierungsfunktionen zur Erkennung von Vorf\u00e4llen aktiv genutzt werden."
+              },
+              {
+                "uuid": "74358922-bba0-47fd-856c-b161a85507e8",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Unterst\u00fctzt die \u00dcberwachung des VM-zu-VM-Datenverkehrs (Ost-West-Verkehr) durch zus\u00e4tzliche netzbasierte Detektionssysteme, ein Schl\u00fcsselkonzept f\u00fcr virtualisierte Rechenzentren."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,241 @@
+{
+  "component-definition": {
+    "uuid": "f5089b1a-9297-4d07-8368-2901647ce886",
+    "metadata": {
+      "title": "Component for Baustein NET.3.2: Firewall",
+      "last-modified": "2025-06-26T11:32:59.163284+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.3.2."
+    },
+    "components": [
+      {
+        "uuid": "aa58b75c-b6c1-4f85-94ef-b8ff465b5da9",
+        "type": "service",
+        "title": "Firewall",
+        "description": "Implementation of controls for Baustein NET.3.2.",
+        "control-implementations": [
+          {
+            "uuid": "06fca0cb-67b7-4a4e-ace6-b2ed3f3357ad",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.3.2: Firewall",
+            "implemented-requirements": [
+              {
+                "uuid": "f7e73381-bb58-4c8f-b644-c83038c565f4",
+                "control-id": "NET.3.2.A1",
+                "description": "Base implementation for control NET.3.2.A1."
+              },
+              {
+                "uuid": "b9e97b4f-57f2-47f4-b419-dc02fc03456b",
+                "control-id": "NET.3.2.A2",
+                "description": "Base implementation for control NET.3.2.A2."
+              },
+              {
+                "uuid": "7d011a3f-5fca-43ed-b7ae-392343ad0328",
+                "control-id": "NET.3.2.A3",
+                "description": "Base implementation for control NET.3.2.A3."
+              },
+              {
+                "uuid": "692e848b-ce25-4b2a-af74-99237be44c29",
+                "control-id": "NET.3.2.A4",
+                "description": "Base implementation for control NET.3.2.A4."
+              },
+              {
+                "uuid": "03d7e44d-2f90-4d1f-986d-23b4b6c2ed17",
+                "control-id": "NET.3.2.A6",
+                "description": "Base implementation for control NET.3.2.A6."
+              },
+              {
+                "uuid": "68be2e02-533d-45e5-9138-c2c8863d142e",
+                "control-id": "NET.3.2.A7",
+                "description": "Base implementation for control NET.3.2.A7."
+              },
+              {
+                "uuid": "f291df3f-72a6-4095-8015-bee6a399f951",
+                "control-id": "NET.3.2.A8",
+                "description": "Base implementation for control NET.3.2.A8."
+              },
+              {
+                "uuid": "485248cb-c7b8-4249-9b77-706fce12feee",
+                "control-id": "NET.3.2.A9",
+                "description": "Base implementation for control NET.3.2.A9."
+              },
+              {
+                "uuid": "107bc021-0bb9-4017-acbf-1cbc80f25f45",
+                "control-id": "NET.3.2.A10",
+                "description": "Base implementation for control NET.3.2.A10."
+              },
+              {
+                "uuid": "d37587e9-ecef-4358-88ac-42dbad26774d",
+                "control-id": "NET.3.2.A14",
+                "description": "Base implementation for control NET.3.2.A14."
+              },
+              {
+                "uuid": "2d2f19e4-2109-4a06-8212-c04c373ad990",
+                "control-id": "NET.3.2.A15",
+                "description": "Base implementation for control NET.3.2.A15."
+              },
+              {
+                "uuid": "08299a0d-e42e-4ca2-9145-cc0acb9a721b",
+                "control-id": "NET.3.2.A16",
+                "description": "Base implementation for control NET.3.2.A16."
+              },
+              {
+                "uuid": "9beaf6fa-700d-4474-a759-982f720fd333",
+                "control-id": "NET.3.2.A17",
+                "description": "Base implementation for control NET.3.2.A17."
+              },
+              {
+                "uuid": "08ab28f8-0c62-4594-abfd-4c9f1346308c",
+                "control-id": "NET.3.2.A18",
+                "description": "Base implementation for control NET.3.2.A18."
+              },
+              {
+                "uuid": "838fd0a3-9217-4a5f-b75e-bde41f3da6e6",
+                "control-id": "NET.3.2.A19",
+                "description": "Base implementation for control NET.3.2.A19."
+              },
+              {
+                "uuid": "3b4e38a2-6203-4493-af59-63adf2ea11aa",
+                "control-id": "NET.3.2.A20",
+                "description": "Base implementation for control NET.3.2.A20."
+              },
+              {
+                "uuid": "668fd87c-e04a-461f-aef2-81f1cbce86b0",
+                "control-id": "NET.3.2.A21",
+                "description": "Base implementation for control NET.3.2.A21."
+              },
+              {
+                "uuid": "8e5dfeec-ad2b-4971-8346-5b90912ae811",
+                "control-id": "NET.3.2.A22",
+                "description": "Base implementation for control NET.3.2.A22."
+              },
+              {
+                "uuid": "83e66657-17dd-4613-aabe-1302d504adf2",
+                "control-id": "NET.3.2.A23",
+                "description": "Base implementation for control NET.3.2.A23."
+              },
+              {
+                "uuid": "6f31b9e6-d5c4-4517-8a21-e44fa1bf2955",
+                "control-id": "NET.3.2.A24",
+                "description": "Base implementation for control NET.3.2.A24."
+              },
+              {
+                "uuid": "b9a44528-72d3-4d38-9006-8545673c57e1",
+                "control-id": "NET.3.2.A32",
+                "description": "Base implementation for control NET.3.2.A32."
+              },
+              {
+                "uuid": "5d1c852c-6323-4fde-a945-b81652962613",
+                "control-id": "NET.3.2.A25",
+                "description": "Base implementation for control NET.3.2.A25."
+              },
+              {
+                "uuid": "d024f933-aef8-4658-9fe4-7b021e7e2d4f",
+                "control-id": "NET.3.2.A26",
+                "description": "Base implementation for control NET.3.2.A26."
+              },
+              {
+                "uuid": "61b16982-05f1-4219-b021-7e32e4e5dffc",
+                "control-id": "NET.3.2.A27",
+                "description": "Base implementation for control NET.3.2.A27."
+              },
+              {
+                "uuid": "929e74e1-4703-42f5-8d3e-9b37963177cd",
+                "control-id": "NET.3.2.A28",
+                "description": "Base implementation for control NET.3.2.A28."
+              },
+              {
+                "uuid": "30f21f67-a888-4d70-af29-be23b4785738",
+                "control-id": "NET.3.2.A29",
+                "description": "Base implementation for control NET.3.2.A29."
+              },
+              {
+                "uuid": "cbe076a1-bf6a-48e7-befb-acfb282b0690",
+                "control-id": "NET.3.2.A30",
+                "description": "Base implementation for control NET.3.2.A30."
+              },
+              {
+                "uuid": "533aaf65-c8fe-4bc3-a0d7-e6bdf247437d",
+                "control-id": "NET.3.2.A31",
+                "description": "Base implementation for control NET.3.2.A31."
+              }
+            ]
+          },
+          {
+            "uuid": "496e8a45-2c2f-4f14-96fd-83130d2da86e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "b8d4f1c8-27b9-4752-ae17-f01140572137",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung ist f\u00fcr die sichere Verwaltung einer kritischen Komponente wie einer Firewall unerl\u00e4sslich, um Missbrauch zu verhindern und eine wirksame Kontrolle der Konfigurations\u00e4nderungen zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "83c1584e-ff21-4bad-8a48-e3c5deb64496",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Komplexit\u00e4t von Firewalls erfordert speziell geschultes Personal, um Fehlkonfigurationen zu vermeiden, die zu schwerwiegenden Sicherheitsl\u00fccken f\u00fchren k\u00f6nnen."
+              },
+              {
+                "uuid": "3e76e9ed-6f2f-4f41-87d9-8828d30a3a0c",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Anwendung des Prinzips der geringsten Berechtigung auf die Firewall-Administration minimiert die Angriffsfl\u00e4che und den potenziellen Schaden durch kompromittierte Administratorenkonten."
+              },
+              {
+                "uuid": "9b969e91-8652-4584-b33c-dc183b7f699a",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf eine Firewall ist ein prim\u00e4res Angriffsziel und muss daher durch eine starke Identifizierung und Authentisierung grundlegend abgesichert werden."
+              },
+              {
+                "uuid": "358fcc87-50f1-4c33-ba50-86f0211ea8f5",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Da Firewalls kritische Sicherheitskomponenten sind, ist die Anforderung nach schutzbedarfsad\u00e4quaten, starken Authentisierungsmechanismen (z.B. MFA, Sperrmechanismen) eine notwendige Vertiefung der Basisanforderung."
+              },
+              {
+                "uuid": "691ce134-4bcf-46e0-824c-8a72fbe9b3c7",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Firewalls nutzen Kryptografie f\u00fcr VPNs und die Verwaltungsschnittstelle. Die Verwendung starker, aktueller Verfahren ist entscheidend f\u00fcr die Vertraulichkeit und Integrit\u00e4t der gesch\u00fctzten Kommunikation."
+              },
+              {
+                "uuid": "6365b20a-2df0-4e89-9d21-b369afd09318",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist untrennbar mit dem Einsatz von Kryptografie verbunden und stellt sicher, dass die kryptografischen Schl\u00fcssel und Zertifikate der Firewall \u00fcber ihren gesamten Lebenszyklus gesch\u00fctzt sind."
+              },
+              {
+                "uuid": "fdbdb70b-eb35-4ec1-9a88-72ffdc61b11d",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Sicherung der Firewall-Konfiguration ist essenziell, um die schnelle Wiederherstellung des sicheren Betriebs nach einem Ausfall oder einer Fehlkonfiguration zu erm\u00f6glichen und somit die Verf\u00fcgbarkeit zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "e46b4b29-dc3c-4aba-8370-8b1c59d9afbb",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachvollziehbarkeit von \u00c4nderungen an der Firewall-Konfiguration ist f\u00fcr die forensische Analyse, Fehlerbehebung und Rechenschaftspflicht unerl\u00e4sslich."
+              },
+              {
+                "uuid": "38689547-392f-4971-a045-3860e5f6201f",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen (z.B. durch Zugriffsbeschr\u00e4nkung und verschl\u00fcsselte Protokolle) ist eine direkte und grundlegende Ma\u00dfnahme zur H\u00e4rtung der Firewall selbst."
+              },
+              {
+                "uuid": "8d6118db-de58-4b5c-87c3-c9d8e9953bf8",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein kontrollierter Patch- und \u00c4nderungsprozess ist f\u00fcr Firewalls zwingend erforderlich, um Schwachstellen zeitnah zu beheben und Konfigurations\u00e4nderungen sicher und nachvollziehbar durchzuf\u00fchren."
+              },
+              {
+                "uuid": "7d34d9f5-d9a0-4a84-9b4e-0e5684dec575",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Moderne Firewalls verf\u00fcgen oft \u00fcber integrierte Erkennungsfunktionen (z. B. IDS-Signaturen). Deren Aktivierung und Nutzung erh\u00f6ht den Schutzwert der Komponente \u00fcber reines Filtern hinaus."
+              },
+              {
+                "uuid": "6ba79202-605d-4702-b0c3-beda1ad9a010",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Die Erg\u00e4nzung einer Firewall durch ein dediziertes Detektionssystem (NIDS) am Netz\u00fcbergang ist eine klassische Architektur f\u00fcr Verteidigung in der Tiefe (Defense-in-Depth) und verbessert die Erkennung von Angriffen erheblich."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

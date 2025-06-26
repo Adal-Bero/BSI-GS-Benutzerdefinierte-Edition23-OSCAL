@@ -1,0 +1,378 @@
+{
+  "component-definition": {
+    "uuid": "0a351096-90bc-4fb8-bb29-e285a76306ca",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.1: Allgemeiner Server",
+      "last-modified": "2025-06-26T10:30:45.994696+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.1."
+    },
+    "components": [
+      {
+        "uuid": "c5df86a9-5e99-46d8-bbe2-be6952ba5252",
+        "type": "service",
+        "title": "Allgemeiner Server",
+        "description": "Implementation of controls for Baustein SYS.1.1.",
+        "control-implementations": [
+          {
+            "uuid": "edd7076c-a4ae-47a8-8265-2c9fb03fc3b2",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.1: Allgemeiner Server",
+            "implemented-requirements": [
+              {
+                "uuid": "564fd59d-2dbe-4330-9b4d-c82ee05206a7",
+                "control-id": "SYS.1.1.A1",
+                "description": "Base implementation for control SYS.1.1.A1."
+              },
+              {
+                "uuid": "3a5f6b42-8174-42e7-850d-ae3a58e3c9a3",
+                "control-id": "SYS.1.1.A2",
+                "description": "Base implementation for control SYS.1.1.A2."
+              },
+              {
+                "uuid": "445efd8b-fe7b-42e6-918c-5513892dda4d",
+                "control-id": "SYS.1.1.A5",
+                "description": "Base implementation for control SYS.1.1.A5."
+              },
+              {
+                "uuid": "85fa4bdf-63ae-4529-913c-ed8c8069f194",
+                "control-id": "SYS.1.1.A6",
+                "description": "Base implementation for control SYS.1.1.A6."
+              },
+              {
+                "uuid": "57223ad6-5a60-4734-a5d3-59994beebc16",
+                "control-id": "SYS.1.1.A9",
+                "description": "Base implementation for control SYS.1.1.A9."
+              },
+              {
+                "uuid": "85ae150a-1232-4bd9-9966-04e190da17e3",
+                "control-id": "SYS.1.1.A10",
+                "description": "Base implementation for control SYS.1.1.A10."
+              },
+              {
+                "uuid": "f5172aa3-425f-476b-920b-b3061dc74a7c",
+                "control-id": "SYS.1.1.A11",
+                "description": "Base implementation for control SYS.1.1.A11."
+              },
+              {
+                "uuid": "7229d412-6bc8-487e-b1af-7b3f8531b79b",
+                "control-id": "SYS.1.1.A12",
+                "description": "Base implementation for control SYS.1.1.A12."
+              },
+              {
+                "uuid": "53fbd729-ea96-4209-a27d-c9a85683abc2",
+                "control-id": "SYS.1.1.A13",
+                "description": "Base implementation for control SYS.1.1.A13."
+              },
+              {
+                "uuid": "6cbfbd53-a841-4a53-86c5-2485eec18b84",
+                "control-id": "SYS.1.1.A15",
+                "description": "Base implementation for control SYS.1.1.A15."
+              },
+              {
+                "uuid": "6c19baa6-53d4-4a0a-86aa-60af9b7f5b11",
+                "control-id": "SYS.1.1.A16",
+                "description": "Base implementation for control SYS.1.1.A16."
+              },
+              {
+                "uuid": "463e3a3b-ad67-4360-8bcc-64da13677696",
+                "control-id": "SYS.1.1.A19",
+                "description": "Base implementation for control SYS.1.1.A19."
+              },
+              {
+                "uuid": "1f07e7b3-533b-4901-933b-48e8c216f73b",
+                "control-id": "SYS.1.1.A21",
+                "description": "Base implementation for control SYS.1.1.A21."
+              },
+              {
+                "uuid": "79d38857-a840-4898-aa6c-485f29f5fa07",
+                "control-id": "SYS.1.1.A22",
+                "description": "Base implementation for control SYS.1.1.A22."
+              },
+              {
+                "uuid": "0b010bbe-ac29-49c4-a1bd-fb8a1e9a987c",
+                "control-id": "SYS.1.1.A23",
+                "description": "Base implementation for control SYS.1.1.A23."
+              },
+              {
+                "uuid": "2a17f02f-7a1d-4c12-bc27-85d56090f5b5",
+                "control-id": "SYS.1.1.A24",
+                "description": "Base implementation for control SYS.1.1.A24."
+              },
+              {
+                "uuid": "de8bb01b-ed11-4a32-b84f-b06d82b55b03",
+                "control-id": "SYS.1.1.A25",
+                "description": "Base implementation for control SYS.1.1.A25."
+              },
+              {
+                "uuid": "08b7c32b-42e6-45d4-b152-525f76a9a403",
+                "control-id": "SYS.1.1.A35",
+                "description": "Base implementation for control SYS.1.1.A35."
+              },
+              {
+                "uuid": "33e32fc1-e9f2-4466-b6a7-b1af0edc1bb9",
+                "control-id": "SYS.1.1.A37",
+                "description": "Base implementation for control SYS.1.1.A37."
+              },
+              {
+                "uuid": "38f4012b-1c9b-4c3d-844c-6c7af3f944d7",
+                "control-id": "SYS.1.1.A39",
+                "description": "Base implementation for control SYS.1.1.A39."
+              },
+              {
+                "uuid": "d394f173-328e-4cdf-9839-b9502822533b",
+                "control-id": "SYS.1.1.A27",
+                "description": "Base implementation for control SYS.1.1.A27."
+              },
+              {
+                "uuid": "cfc7ec7b-f56d-4d37-9708-6583b5cb55b5",
+                "control-id": "SYS.1.1.A28",
+                "description": "Base implementation for control SYS.1.1.A28."
+              },
+              {
+                "uuid": "87da7c4c-3c91-4ca6-9358-8097aae98391",
+                "control-id": "SYS.1.1.A30",
+                "description": "Base implementation for control SYS.1.1.A30."
+              },
+              {
+                "uuid": "00adb650-94e1-4cb0-94a0-972da7a6908e",
+                "control-id": "SYS.1.1.A31",
+                "description": "Base implementation for control SYS.1.1.A31."
+              },
+              {
+                "uuid": "b197ed11-3948-47da-a95c-1bbf1511ccd2",
+                "control-id": "SYS.1.1.A33",
+                "description": "Base implementation for control SYS.1.1.A33."
+              },
+              {
+                "uuid": "bb917566-189e-408d-89a0-3eae6a8d68ee",
+                "control-id": "SYS.1.1.A34",
+                "description": "Base implementation for control SYS.1.1.A34."
+              },
+              {
+                "uuid": "5bb2f207-19b6-446b-b75b-516484adbd35",
+                "control-id": "SYS.1.1.A36",
+                "description": "Base implementation for control SYS.1.1.A36."
+              },
+              {
+                "uuid": "72d39145-b8aa-4b4a-af00-e36b9e09f437",
+                "control-id": "SYS.1.1.A38",
+                "description": "Base implementation for control SYS.1.1.A38."
+              }
+            ]
+          },
+          {
+            "uuid": "6cab10c7-a4f5-4dd1-b80b-3e5402d14592",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "d3b40e4e-fbf7-4fd6-b389-09df5f22f983",
+                "control-id": "DER.4.A1",
+                "description": "AI-Begr\u00fcndung: Ein Notfallhandbuch ist f\u00fcr Server essenziell, da es die konkreten Wiederanlauf- und Wiederherstellungspl\u00e4ne f\u00fcr dieses kritische IT-System enth\u00e4lt und somit dessen Verf\u00fcgbarkeit sicherstellt."
+              },
+              {
+                "uuid": "78d842a3-94c9-4a8e-bb9d-b19105bdfe43",
+                "control-id": "DER.4.A2",
+                "description": "AI-Begr\u00fcndung: Server sind h\u00e4ufig Ziel von Sicherheitsvorf\u00e4llen. Die definierte Schnittstelle zum Notfallmanagement stellt sicher, dass schwerwiegende Server-Vorf\u00e4lle korrekt eskaliert und behandelt werden."
+              },
+              {
+                "uuid": "eb4464ab-5d25-48e7-9860-5aa30ec90ed5",
+                "control-id": "DER.4.A7",
+                "description": "AI-Begr\u00fcndung: Server stellen kritische Ressourcen f\u00fcr Gesch\u00e4ftsprozesse bereit. Ein Notfallkonzept, das auf einer BIA basiert, ist notwendig, um die richtigen Kontinuit\u00e4tsstrategien f\u00fcr den Server (z. B. Backup, Failover) zu definieren."
+              },
+              {
+                "uuid": "db54b67d-e677-43cd-98e7-7ba23398a0c3",
+                "control-id": "DER.4.A10",
+                "description": "AI-Begr\u00fcndung: Wiederanlauf- und Wiederherstellungspl\u00e4ne f\u00fcr Server sind nur dann verl\u00e4sslich, wenn sie regelm\u00e4\u00dfig getestet werden. Diese Anforderung stellt die Funktionsf\u00e4higkeit der Notfallma\u00dfnahmen f\u00fcr den Server sicher."
+              },
+              {
+                "uuid": "e99bdd0f-8d17-41b9-9fea-a35317aceb37",
+                "control-id": "DER.4.A12",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation der Notfallpl\u00e4ne, die den Server betreffen, muss im Ernstfall schnell zug\u00e4nglich und aktuell sein, um eine rasche Wiederherstellung zu erm\u00f6glichen."
+              },
+              {
+                "uuid": "16999074-db25-4e54-8fc8-7bbb982fbc36",
+                "control-id": "DER.4.A14",
+                "description": "AI-Begr\u00fcndung: Server-Umgebungen \u00e4ndern sich. Diese Anforderung stellt sicher, dass die Notfallma\u00dfnahmen f\u00fcr den Server (z. B. Backup-Skripte, Wiederanlaufpl\u00e4ne) regelm\u00e4\u00dfig \u00fcberpr\u00fcft und an aktuelle Gegebenheiten angepasst werden."
+              },
+              {
+                "uuid": "9c9cb63e-655f-466d-802b-0f99959baabf",
+                "control-id": "DER.4.A16",
+                "description": "AI-Begr\u00fcndung: Da Server oft auf ausgelagerten Diensten (z.B. Cloud-Hosting, externe Authentisierung) basieren, ist die Abstimmung der Notfallplanung mit Dienstleistern f\u00fcr die Gesamtsicherheit des Servers unerl\u00e4sslich."
+              },
+              {
+                "uuid": "299f978d-fa2a-4361-a80e-87013eb9058a",
+                "control-id": "NET.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit eines Servers h\u00e4ngt ma\u00dfgeblich von seiner Einbettung ins Netz ab. Eine aktuelle Netz-Dokumentation ist die Grundlage, um Firewall-Regeln und Zugriffspfade f\u00fcr den Server korrekt zu konfigurieren und zu pr\u00fcfen."
+              },
+              {
+                "uuid": "126e36fe-3030-4c7d-9812-d2096e8f0285",
+                "control-id": "NET.1.1.A4",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist f\u00fcr Server von zentraler Bedeutung, da sie die Platzierung in sicheren Netzzonen wie einer DMZ vorschreibt und so den direkten Zugriff aus unsicheren Netzen unterbindet."
+              },
+              {
+                "uuid": "ecabbfba-2f16-4c29-9196-5842b5aa843c",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Trennung von Servern und Clients in verschiedene Netzsegmente ist eine fundamentale Sicherheitsma\u00dfnahme, um die Angriffsfl\u00e4che des Servers zu reduzieren und die Ausbreitung von Schadsoftware von kompromittierten Clients zu verhindern."
+              },
+              {
+                "uuid": "bc9bbfaf-ea09-47ae-9381-682c86d445c1",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: Server \u00fcbertragen sch\u00fctzenswerte Informationen. Diese Anforderung stellt durch die Forderung nach sicheren \u00dcbertragungsprotokollen die Vertraulichkeit und Integrit\u00e4t der vom Server verarbeiteten Daten sicher."
+              },
+              {
+                "uuid": "5a36437c-fe75-4871-a134-9703ee424c4e",
+                "control-id": "NET.1.1.A8",
+                "description": "AI-Begr\u00fcndung: Da Server h\u00e4ufig Dienste im Internet anbieten, ist die grundlegende Absicherung des Internetzugangs durch Firewalls und restriktive Regeln eine direkte Schutzma\u00dfnahme f\u00fcr den Server selbst."
+              },
+              {
+                "uuid": "b4f0e420-0742-4638-b185-5e1fb9c7808e",
+                "control-id": "NET.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass die Kommunikation eines Servers mit jeglichem nicht vertrauensw\u00fcrdigen Netz (z. B. Partnernetze) genauso streng behandelt wird wie die mit dem Internet, was f\u00fcr den Schutz des Servers entscheidend ist."
+              },
+              {
+                "uuid": "1ee43379-ca44-4979-84f3-208229510e99",
+                "control-id": "OPS.1.1.2.A2",
+                "description": "AI-Begr\u00fcndung: Die kontinuierliche und kompetente Administration eines Servers muss jederzeit gew\u00e4hrleistet sein. Vertretungsregelungen stellen den Betrieb auch bei Ausfall des prim\u00e4ren Administrators sicher."
+              },
+              {
+                "uuid": "7a85638c-0294-48a3-aec1-584987e8823a",
+                "control-id": "OPS.1.1.2.A4",
+                "description": "AI-Begr\u00fcndung: Dies ist eine kritische Sicherheitsma\u00dfnahme, um zu verhindern, dass ehemalige Administratoren weiterhin privilegierten Zugriff auf den Server haben, was ein erhebliches Sicherheitsrisiko darstellt."
+              },
+              {
+                "uuid": "c9419e98-2669-4625-a2a7-c6409a42a197",
+                "control-id": "OPS.1.1.2.A21",
+                "description": "AI-Begr\u00fcndung: Durch die Definition von dedizierten Administrationsrollen nach dem Minimalprinzip wird sichergestellt, dass Administratoren nur die Berechtigungen auf dem Server erhalten, die sie f\u00fcr ihre Aufgaben wirklich ben\u00f6tigen."
+              },
+              {
+                "uuid": "1f3b3865-3078-461d-84fc-f55702b4fc17",
+                "control-id": "OPS.1.1.2.A22",
+                "description": "AI-Begr\u00fcndung: Die Trennung administrativer und normaler T\u00e4tigkeiten reduziert das Risiko, dass ein administrativer Account auf dem Server durch allt\u00e4gliche Aktivit\u00e4ten (z.B. E-Mail lesen) kompromittiert wird."
+              },
+              {
+                "uuid": "93b733d0-2e2f-4062-be93-4484c29bfd58",
+                "control-id": "OPS.1.1.2.A26",
+                "description": "AI-Begr\u00fcndung: Die Sicherung der Konfiguration vor \u00c4nderungen ist eine grundlegende Sicherheitsvorkehrung, die eine schnelle Wiederherstellung des Servers nach einer fehlerhaften administrativen T\u00e4tigkeit erm\u00f6glicht."
+              },
+              {
+                "uuid": "8b7a0c7d-2311-4452-9267-bd079912acce",
+                "control-id": "OPS.1.1.2.A28",
+                "description": "AI-Begr\u00fcndung: Die Aktivierung der Protokollierung auf dem Server ist die Grundvoraussetzung, um administrative T\u00e4tigkeiten \u00fcberhaupt nachvollziehen und \u00fcberwachen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "e1feafa6-2812-4b96-8b26-f9aa2e514c6a",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung definiert den grundlegenden Prozess f\u00fcr die Verwaltung von Benutzerkonten auf einem Server, einschlie\u00dflich der Deaktivierung unsicherer Standardkonten."
+              },
+              {
+                "uuid": "53736b4c-6e71-45ff-8f88-bffdc4cf0cfc",
+                "control-id": "ORP.4.A3",
+                "description": "AI-Begr\u00fcndung: Eine aktuelle Dokumentation der Berechtigungen auf einem Server ist die Voraussetzung f\u00fcr regelm\u00e4\u00dfige Kontrollen (Reviews), um \u00fcberfl\u00fcssige oder \u00fcberm\u00e4chtige Rechte zu identifizieren und zu entziehen."
+              },
+              {
+                "uuid": "b6a9194b-2906-4453-b566-777a5ca7eed2",
+                "control-id": "ORP.4.A4",
+                "description": "AI-Begr\u00fcndung: Die technische Umsetzung der Funktionstrennung auf dem Server verhindert, dass eine einzelne Person unkontrolliert kritische, potenziell sch\u00e4dliche Aktionen durchf\u00fchren kann."
+              },
+              {
+                "uuid": "db5c4fc0-96d8-40cb-b3b9-7465e3580a13",
+                "control-id": "ORP.4.A8",
+                "description": "AI-Begr\u00fcndung: Starke und geheim gehaltene Passw\u00f6rter sind eine fundamentale Verteidigungslinie f\u00fcr alle Benutzer- und Dienstkonten auf einem Server."
+              },
+              {
+                "uuid": "2768e623-eb85-4012-a9ad-ab85ae0dc96d",
+                "control-id": "ORP.4.A10",
+                "description": "AI-Begr\u00fcndung: Administrative Konten sind das Hauptziel von Angreifern. Der Schutz dieser Konten auf dem Server mittels Mehr-Faktor-Authentisierung erh\u00f6ht die Sicherheit signifikant."
+              },
+              {
+                "uuid": "94309a73-3c9f-4c41-8e5c-87f4aad040cb",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: Ein durchdachtes Authentisierungskonzept stellt sicher, dass die auf dem Server betriebenen Anwendungen und Dienste durchg\u00e4ngig und nach einem einheitlichen Sicherheitsstandard gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "0352993e-0b34-4589-996c-561ede5132c9",
+                "control-id": "ORP.4.A20",
+                "description": "AI-Begr\u00fcndung: Server h\u00e4ngen oft von zentralen Authentisierungsdiensten ab. Notfallvorsorge (z.B. durch lokale Notfallkonten) stellt sicher, dass der Server auch bei Ausfall dieses Dienstes administrierbar und funktionsf\u00e4hig bleibt."
+              },
+              {
+                "uuid": "8705500d-e05b-46ac-9332-bee3f1df7a3c",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: Dies ist eine allgemeine Anforderung f\u00fcr den Einsatz von starker Mehr-Faktor-Authentisierung, die einen hohen Mehrwert f\u00fcr die Absicherung jeglichen Zugriffs auf den Server bietet."
+              }
+            ]
+          },
+          {
+            "uuid": "e566adcf-8cd5-44b6-8838-227946b4356a",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "ca937e5f-4b63-4dfe-8c08-d675d36c1749",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung und Nachweisbarkeit administrativer T\u00e4tigkeiten auf einem Server ist f\u00fcr die forensische Analyse nach einem Sicherheitsvorfall und zur Abschreckung von Missbrauch unerl\u00e4sslich."
+              },
+              {
+                "uuid": "490c8246-221c-46ac-9f64-97f8fa50a484",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung h\u00e4rtet den Server direkt, indem sie den Schutz der administrativen Schnittstellen (z.B. durch sichere Protokolle und starke Authentisierung) fordert, die ein prim\u00e4res Angriffsziel sind."
+              },
+              {
+                "uuid": "e7a3128a-b427-4748-8d8e-219d93ce4551",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Umsetzung des Prinzips der geringsten Rechte bei der Vergabe von Berechtigungen auf einem Server ist eine der effektivsten Ma\u00dfnahmen zur Schadensbegrenzung bei einer Account-Kompromittierung."
+              },
+              {
+                "uuid": "e827b0b8-f60a-425a-b5c0-3b0e69d1f89e",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Jeder Zugriff auf einen Server und seine Dienste muss sicher authentisiert werden. Diese Anforderung stellt diese Grundvoraussetzung f\u00fcr jegliche serverseitige Zugriffskontrolle sicher."
+              },
+              {
+                "uuid": "97d05e1e-1665-4286-8d44-bef20700c3f4",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung sch\u00fctzt den Server aktiv vor Brute-Force-Angriffen auf Passw\u00f6rter durch Ma\u00dfnahmen wie Anmeldeverz\u00f6gerungen und Kontensperrungen."
+              },
+              {
+                "uuid": "91d02c66-fb37-4150-ba52-b521adb92633",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit eines Servers h\u00e4ngt direkt von der Kompetenz der Administratoren ab. Die Sicherstellung der Qualifikation des Personals ist daher eine grundlegende Voraussetzung f\u00fcr den sicheren Betrieb."
+              },
+              {
+                "uuid": "f31b869d-9a30-4be6-912f-b714df76cf41",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Server nutzen Kryptografie f\u00fcr vielf\u00e4ltige Zwecke (TLS, SSH, etc.). Die Verwendung starker, anerkannter Verfahren ist essenziell, um die durch Kryptografie angestrebten Schutzziele zu erreichen."
+              },
+              {
+                "uuid": "7427207f-f3e6-4057-aa90-c71446e9b509",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit der auf einem Server eingesetzten Kryptografie steht und f\u00e4llt mit der Sicherheit der Schl\u00fcssel. Ein geregeltes Schl\u00fcsselmanagement ist daher unerl\u00e4sslich."
+              },
+              {
+                "uuid": "771fa20e-ca40-4c54-ad86-c93e89d11985",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung ist die wichtigste Ma\u00dfnahme zur Wiederherstellung von Daten und Diensten auf einem Server nach einem schwerwiegenden Vorfall wie einem Ransomware-Angriff oder Hardware-Defekt."
+              },
+              {
+                "uuid": "c7a2db44-877d-4d71-a238-02cca366a745",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Patch- und \u00c4nderungsprozess ist entscheidend, um Sicherheitsl\u00fccken auf Servern zeitnah zu schlie\u00dfen und gleichzeitig das Risiko von Betriebsst\u00f6rungen durch fehlerhafte \u00c4nderungen zu minimieren."
+              },
+              {
+                "uuid": "e3db4fff-1201-479f-af26-2d4e276742af",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Server-Betriebssysteme bieten umfangreiche Protokollierungsfunktionen. Deren Aktivierung und Auswertung ist eine grundlegende und kosteneffiziente Ma\u00dfnahme zur Erkennung von Angriffen auf den Server."
+              },
+              {
+                "uuid": "cf8f6b7c-8999-4ce0-8e01-51253d3be097",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: F\u00fcr Server mit hohem Schutzbedarf oder Internet-Exponierung reicht die systemeigene Protokollierung oft nicht aus. Zus\u00e4tzliche Detektionssysteme (NIDS/HIDS) bieten eine wichtige zus\u00e4tzliche Sicherheitsebene."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

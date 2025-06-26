@@ -1,0 +1,268 @@
+{
+  "component-definition": {
+    "uuid": "f624d6a5-05b6-4cb3-98f0-46b8589a9f6b",
+    "metadata": {
+      "title": "Component for Baustein INF.12: Verkabelung",
+      "last-modified": "2025-06-26T11:46:10.239710+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.12."
+    },
+    "components": [
+      {
+        "uuid": "15fe8ee9-940c-440f-aa1b-8866fb963944",
+        "type": "service",
+        "title": "Verkabelung",
+        "description": "Implementation of controls for Baustein INF.12.",
+        "control-implementations": [
+          {
+            "uuid": "ccf09087-50a7-4983-8797-4871253de2f1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.12: Verkabelung",
+            "implemented-requirements": [
+              {
+                "uuid": "eebb495c-57b1-4b2d-a1af-447ebbb1c111",
+                "control-id": "INF.12.A1",
+                "description": "Base implementation for control INF.12.A1."
+              },
+              {
+                "uuid": "834aaa66-b13f-4a63-b9b6-0e5867b87024",
+                "control-id": "INF.12.A2",
+                "description": "Base implementation for control INF.12.A2."
+              },
+              {
+                "uuid": "e4c70aa2-2c9e-49b1-8003-e7f0324e94a5",
+                "control-id": "INF.12.A3",
+                "description": "Base implementation for control INF.12.A3."
+              },
+              {
+                "uuid": "dfcf2788-a5b4-44f7-8544-77796133b22c",
+                "control-id": "INF.12.A4",
+                "description": "Base implementation for control INF.12.A4."
+              },
+              {
+                "uuid": "0792639c-47b7-4a26-af6f-1a9fa9780f08",
+                "control-id": "INF.12.A5",
+                "description": "Base implementation for control INF.12.A5."
+              },
+              {
+                "uuid": "1f486cbc-346a-4bc7-92dc-0e9401264b1f",
+                "control-id": "INF.12.A6",
+                "description": "Base implementation for control INF.12.A6."
+              },
+              {
+                "uuid": "32bd3f61-d545-4261-a0b5-6f80bb33139b",
+                "control-id": "INF.12.A7",
+                "description": "Base implementation for control INF.12.A7."
+              },
+              {
+                "uuid": "0d64e685-80ad-46e3-b79f-fde5cdaac5c5",
+                "control-id": "INF.12.A8",
+                "description": "Base implementation for control INF.12.A8."
+              },
+              {
+                "uuid": "65b5c0b3-9044-42ae-9c55-16b4ae5b6ba5",
+                "control-id": "INF.12.A9",
+                "description": "Base implementation for control INF.12.A9."
+              },
+              {
+                "uuid": "2d4ac122-c8bd-4b82-ba2a-6197ff2335aa",
+                "control-id": "INF.12.A10",
+                "description": "Base implementation for control INF.12.A10."
+              },
+              {
+                "uuid": "f366358b-6529-4803-8270-f2937422ace7",
+                "control-id": "INF.12.A11",
+                "description": "Base implementation for control INF.12.A11."
+              },
+              {
+                "uuid": "3be4d56f-c76a-43e8-a4a2-224d23201610",
+                "control-id": "INF.12.A12",
+                "description": "Base implementation for control INF.12.A12."
+              },
+              {
+                "uuid": "220e3fe4-8310-440a-9f70-1a722ed434a9",
+                "control-id": "INF.12.A13",
+                "description": "Base implementation for control INF.12.A13."
+              },
+              {
+                "uuid": "c76baaea-7b2f-4657-9525-e17fe394cc34",
+                "control-id": "INF.12.A14",
+                "description": "Base implementation for control INF.12.A14."
+              },
+              {
+                "uuid": "0df4b8b7-d94f-4eaf-bace-6d53e7feddcb",
+                "control-id": "INF.12.A15",
+                "description": "Base implementation for control INF.12.A15."
+              },
+              {
+                "uuid": "d6b38373-c8e0-40f0-bc47-85b67e5aff9c",
+                "control-id": "INF.12.A16",
+                "description": "Base implementation for control INF.12.A16."
+              },
+              {
+                "uuid": "4c3bfa97-ad33-4919-ba0c-6751b9d3eee1",
+                "control-id": "INF.12.A17",
+                "description": "Base implementation for control INF.12.A17."
+              }
+            ]
+          },
+          {
+            "uuid": "6ddbdf0f-dfc0-4016-8052-9a493e245cae",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "5ee77aab-dcd5-40c2-8a79-a604e9698c6f",
+                "control-id": "INF.1.A1",
+                "description": "AI-Begr\u00fcndung: Die grundlegende Planung der Geb\u00e4udeabsicherung ist essenziell, um auch die darin verlegte Verkabelung von Anfang an ad\u00e4quat zu sch\u00fctzen."
+              },
+              {
+                "uuid": "af04523d-7b9a-4816-ab25-9021b97f191a",
+                "control-id": "INF.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zielt direkt auf die Sicherheit der elektrotechnischen Verkabelung, die ein expliziter Bestandteil des Bausteins INF.12 ist."
+              },
+              {
+                "uuid": "2e3538b0-e741-4c24-8821-b459443c622f",
+                "control-id": "INF.1.A3",
+                "description": "AI-Begr\u00fcndung: Brandschutz ist eine elementare Gef\u00e4hrdung f\u00fcr die Verkabelung. Die Einhaltung von Vorschriften sch\u00fctzt Kabeltrassen und Verteiler direkt vor Br\u00e4nden."
+              },
+              {
+                "uuid": "fe4ac873-85fe-437f-b8bc-fecd4a12ced9",
+                "control-id": "INF.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine fr\u00fchzeitige Branderkennung ist entscheidend, um Sch\u00e4den an der sensiblen IT- und Elektro-Verkabelung durch Feuer zu minimieren oder zu verhindern."
+              },
+              {
+                "uuid": "56245ec7-32f5-463c-b773-5ca8aa7f2314",
+                "control-id": "INF.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Verf\u00fcgbarkeit von Feuerl\u00f6schern erm\u00f6glicht die Bek\u00e4mpfung von Entstehungsbr\u00e4nden, die die Verkabelung gef\u00e4hrden k\u00f6nnten."
+              },
+              {
+                "uuid": "7c93dad3-db54-4df1-9c00-73f0cbe2f6e8",
+                "control-id": "INF.1.A6",
+                "description": "AI-Begr\u00fcndung: Diese Ma\u00dfnahme sch\u00fctzt R\u00e4ume, in denen wichtige Komponenten der Verkabelung (z.B. Verteiler, Patchfelder) untergebracht sind, vor unbefugtem physischen Zugriff."
+              },
+              {
+                "uuid": "786fe9ea-8507-40cd-9290-68cb19030169",
+                "control-id": "INF.1.A7",
+                "description": "AI-Begr\u00fcndung: Der Schutz der Verkabelung vor Manipulation erfordert zwingend die Kontrolle des Zutritts zu R\u00e4umen und Bereichen, in denen Kabel und Verteiler zug\u00e4nglich sind."
+              },
+              {
+                "uuid": "5310393b-61c0-4388-8932-bf3fe8eb9837",
+                "control-id": "INF.1.A8",
+                "description": "AI-Begr\u00fcndung: Als pr\u00e4ventive Brandschutzma\u00dfnahme reduziert ein Rauchverbot die Brandgefahr in Bereichen mit kritischer Verkabelungsinfrastruktur, wie Technik- oder Serverr\u00e4umen."
+              },
+              {
+                "uuid": "fff3cc52-7fe1-41de-80ec-b679c86550dd",
+                "control-id": "INF.1.A10",
+                "description": "AI-Begr\u00fcndung: Die normgerechte Installation ist eine grundlegende Anforderung f\u00fcr eine sichere und zuverl\u00e4ssige Verkabelung, wie im Ziel des Bausteins INF.12 gefordert."
+              },
+              {
+                "uuid": "ccdbb7f3-6bda-4c5e-8da0-e4561984fcd6",
+                "control-id": "INF.1.A9",
+                "description": "AI-Begr\u00fcndung: Ein detailliertes Sicherheitskonzept f\u00fcr das Geb\u00e4ude, insbesondere der geforderte IT-bezogene Brandschutzaspekt, ist f\u00fcr den Schutz der Verkabelung von hohem Wert."
+              },
+              {
+                "uuid": "277b4621-6f40-4885-8e7f-4790418a5e0b",
+                "control-id": "INF.1.A12",
+                "description": "AI-Begr\u00fcndung: Eine geregelte Schl\u00fcsselverwaltung ist die operative Umsetzung der Zutrittskontrolle zu R\u00e4umen, die kritische Teile der Verkabelung beinhalten, und somit essenziell."
+              },
+              {
+                "uuid": "48025499-c34b-44c4-a231-1e61ac30245f",
+                "control-id": "INF.1.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung adressiert direkt und explizit den Schutz von Verteilern, die zentrale und kritische Knotenpunkte der Verkabelung darstellen."
+              },
+              {
+                "uuid": "03dc8792-b1a0-4c2d-995e-b3b0180e52d8",
+                "control-id": "INF.1.A14",
+                "description": "AI-Begr\u00fcndung: Blitz- und \u00dcberspannungsschutz ist eine fundamentale Ma\u00dfnahme, um die elektrotechnische und die IT-Verkabelung vor Zerst\u00f6rung durch \u00e4u\u00dfere Einwirkungen zu sch\u00fctzen."
+              },
+              {
+                "uuid": "bb201a3c-1b2d-491f-94ce-9c99e2f4657b",
+                "control-id": "INF.1.A15",
+                "description": "AI-Begr\u00fcndung: Aktuelle Lagepl\u00e4ne sind unerl\u00e4sslich f\u00fcr den sicheren Betrieb, die Wartung und die St\u00f6rungsbehebung der gesamten Verkabelungsinfrastruktur."
+              },
+              {
+                "uuid": "3ffd81d6-49e4-4d9a-9fb6-48a0fc37c921",
+                "control-id": "INF.1.A16",
+                "description": "AI-Begr\u00fcndung: Das Verbergen von Hinweisen auf sensible Bereiche wie Hauptverteiler- oder Serverr\u00e4ume erschwert unbefugten Personen die gezielte Manipulation der Verkabelung."
+              },
+              {
+                "uuid": "f119a23a-3e93-4e4a-bfc9-f0801f69bd8a",
+                "control-id": "INF.1.A17",
+                "description": "AI-Begr\u00fcndung: Der bauliche Rauchschutz, insbesondere an Kabeldurchf\u00fchrungen, verhindert die Ausbreitung von Rauch und Feuer entlang der Kabeltrassen und sch\u00fctzt so die Infrastruktur."
+              },
+              {
+                "uuid": "3bf24d9c-390c-478e-8064-531bbebd088b",
+                "control-id": "INF.1.A18",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Begehungen stellen sicher, dass Brandschutzma\u00dfnahmen, die die Verkabelung sch\u00fctzen, wie z.B. freie Kabeltrassen und intakte Brandschotts, wirksam bleiben."
+              },
+              {
+                "uuid": "08132bb5-5a57-4939-9043-57dd907405e7",
+                "control-id": "INF.1.A19",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass bei Arbeiten an Kabeltrassen die Brandschutzma\u00dfnahmen, wie z. B. Brandschotts, fachgerecht wiederhergestellt und \u00fcberpr\u00fcft werden."
+              },
+              {
+                "uuid": "fe5d98b2-66f3-4370-afa2-1be394c3ff12",
+                "control-id": "INF.1.A27",
+                "description": "AI-Begr\u00fcndung: Einbruchschutz ist eine notwendige Erg\u00e4nzung zur Zutrittskontrolle, um sensible Verkabelungspunkte physisch vor gewaltsamem Eindringen zu sch\u00fctzen."
+              },
+              {
+                "uuid": "2ae5351b-c71c-44ae-9ca4-cf0b5d4b0a6c",
+                "control-id": "INF.1.A36",
+                "description": "AI-Begr\u00fcndung: Die kontinuierliche Aktualisierung der Dokumentation, insbesondere von Verkabelungspl\u00e4nen, ist f\u00fcr einen sicheren und geordneten Betrieb und im St\u00f6rungsfall unerl\u00e4sslich."
+              },
+              {
+                "uuid": "4c09a7f4-bc3c-4bb0-a375-8cb644b04d39",
+                "control-id": "INF.1.A22",
+                "description": "AI-Begr\u00fcndung: F\u00fcr Bereiche mit besonders schutzbed\u00fcrftiger Verkabelungsinfrastruktur ist die Auswahl widerstandsf\u00e4higer T\u00fcren und Fenster eine wichtige Ma\u00dfnahme gegen Einbruch und Sabotage."
+              },
+              {
+                "uuid": "29b952db-befd-4f9a-9959-de2f40ad190d",
+                "control-id": "INF.1.A23",
+                "description": "AI-Begr\u00fcndung: Die Einteilung in Sicherheitszonen erm\u00f6glicht eine strukturierte und effiziente Absicherung von Bereichen, in denen sich kritische Verkabelungsinfrastruktur befindet."
+              },
+              {
+                "uuid": "350df28d-c4cb-482c-8a13-84dbc619ef19",
+                "control-id": "INF.1.A24",
+                "description": "AI-Begr\u00fcndung: Die Verkabelung, insbesondere in Kellerr\u00e4umen oder Technikgeschossen, muss vor Wassersch\u00e4den gesch\u00fctzt werden, weshalb eine Entw\u00e4sserung relevant ist."
+              },
+              {
+                "uuid": "fb86dfaf-b7ae-4966-be64-45bfc3ae95a3",
+                "control-id": "INF.1.A26",
+                "description": "AI-Begr\u00fcndung: Ein Sicherheitsdienst kann die Zutrittskontrolle zu Geb\u00e4uden und sensiblen Bereichen, in denen sich wichtige Verkabelung befindet, aktiv \u00fcberwachen und durchsetzen."
+              },
+              {
+                "uuid": "cc4decd7-31d9-41fe-8d43-54cd97bba464",
+                "control-id": "INF.1.A32",
+                "description": "AI-Begr\u00fcndung: Ein Brandschott-Kataster ist ein essentielles Werkzeug, um die Integrit\u00e4t des Brandschutzes entlang von Kabeltrassen systematisch zu verwalten und sicherzustellen."
+              },
+              {
+                "uuid": "1c961ab4-3cdf-4d75-822d-eab36e7ba5be",
+                "control-id": "INF.1.A34",
+                "description": "AI-Begr\u00fcndung: Eine umfassende Gefahrenmeldeanlage kann neben Br\u00e4nden auch andere Gefahren wie Wassereinbruch oder unbefugten Zutritt detektieren, die die Verkabelung bedrohen."
+              },
+              {
+                "uuid": "b95eb267-fd23-432a-ac72-8355bab896a9",
+                "control-id": "INF.1.A35",
+                "description": "AI-Begr\u00fcndung: Perimeterschutz bildet die erste Verteidigungslinie und sch\u00fctzt das Geb\u00e4ude und die darin befindliche Verkabelung vor unbefugtem Zugriff von au\u00dfen."
+              }
+            ]
+          },
+          {
+            "uuid": "13a39e05-7269-40de-b82d-81b6ff4ab658",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "e2b1fe9b-24b8-48e3-aceb-5765ca59e9b9",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die normgerechte und sichere Installation und Wartung von IT- und Elektro-Verkabelung erfordert qualifiziertes Fachpersonal, um Fehler und Schwachstellen zu vermeiden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

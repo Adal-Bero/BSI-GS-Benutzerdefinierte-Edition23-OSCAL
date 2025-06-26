@@ -1,0 +1,126 @@
+{
+  "component-definition": {
+    "uuid": "49cc68aa-10b1-40d4-a602-c839984d71d6",
+    "metadata": {
+      "title": "Component for Baustein SYS.2.5: Client-Virtualisierung",
+      "last-modified": "2025-06-26T10:57:31.766473+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.2.5."
+    },
+    "components": [
+      {
+        "uuid": "eeec37c5-8719-463d-afeb-9ca0ab017ddf",
+        "type": "service",
+        "title": "Client-Virtualisierung",
+        "description": "Implementation of controls for Baustein SYS.2.5.",
+        "control-implementations": [
+          {
+            "uuid": "5c44138b-0475-4243-9293-73e7c2c487da",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.2.5: Client-Virtualisierung",
+            "implemented-requirements": [
+              {
+                "uuid": "a1ff51ed-1902-4f45-a18d-cb89734a8731",
+                "control-id": "SYS.2.5.A1",
+                "description": "Base implementation for control SYS.2.5.A1."
+              },
+              {
+                "uuid": "9c00cb42-4bc2-4376-ba26-e99522fbbec4",
+                "control-id": "SYS.2.5.A2",
+                "description": "Base implementation for control SYS.2.5.A2."
+              },
+              {
+                "uuid": "f3583dbd-89f5-455a-8ded-5ca061c33e75",
+                "control-id": "SYS.2.5.A3",
+                "description": "Base implementation for control SYS.2.5.A3."
+              },
+              {
+                "uuid": "b0fd916c-d4e2-45ac-9c36-098a4d38bdf3",
+                "control-id": "SYS.2.5.A4",
+                "description": "Base implementation for control SYS.2.5.A4."
+              },
+              {
+                "uuid": "3f467313-eae7-43a7-8d9c-b3b55d30e0b1",
+                "control-id": "SYS.2.5.A5",
+                "description": "Base implementation for control SYS.2.5.A5."
+              }
+            ]
+          },
+          {
+            "uuid": "089366ba-50d9-4385-abf8-879a0aab2008",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "385ff22f-d271-4be7-a8f6-9e3ecbd08b4a",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: In einer Client-Virtualisierungsumgebung gibt es unterschiedliche administrative Rollen (z.B. f\u00fcr die Virtualisierungsplattform, f\u00fcr die Client-Images), deren Trennung zur Vermeidung von Missbrauch und zur Risikominimierung unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "49cb8259-89e1-4f8a-9632-90dd2346e515",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung einer zentralen Client-Virtualisierungsinfrastruktur erfordert spezifisches und aktuelles Fachwissen, um Fehlkonfigurationen und die daraus resultierenden Sicherheitsrisiken zu vermeiden."
+              },
+              {
+                "uuid": "d63a5d7e-6e3e-49ed-93fa-775dfdf82d30",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Rechte ist fundamental, um den Zugriff auf die Virtualisierungs-Hosts, die Image-Templates und die einzelnen virtuellen Clients sicher zu steuern und den potenziellen Schaden bei einer Kompromittierung zu begrenzen."
+              },
+              {
+                "uuid": "b13555f5-3f26-472f-a352-7c961aaa870b",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine sichere Authentisierung ist sowohl f\u00fcr Administratoren der Plattform als auch f\u00fcr die Benutzer, die auf ihre virtuellen Clients zugreifen, eine grundlegende und unverzichtbare Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "75045a17-6195-406a-a77c-9c650118f578",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Aufgrund der Zentralit\u00e4t und Kritikalit\u00e4t der administrativen Zug\u00e4nge sowie des Schutzes der Benutzersitzungen ist der Einsatz von dem Schutzbedarf angemessenen, starken Authentisierungsmechanismen erforderlich."
+              },
+              {
+                "uuid": "16855b91-2686-499e-8ed1-9e0499a42c62",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Verbindungen zwischen physischen und virtuellen Clients (z.B. per RDP/ICA) sowie die administrativen Zugriffe m\u00fcssen kryptografisch abgesichert werden, um die Vertraulichkeit und Integrit\u00e4t der \u00fcbertragenen Daten zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "5f7b5f7b-8db6-454b-a653-1ef1a9eb485f",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Wenn Kryptografie f\u00fcr die Absicherung von Verbindungen eingesetzt wird, ist ein begleitendes, sicheres Schl\u00fcsselmanagement f\u00fcr die verwendeten Zertifikate und Schl\u00fcssel zwingend erforderlich, um die Schutzwirkung dauerhaft aufrechtzuerhalten."
+              },
+              {
+                "uuid": "36d3d3f8-10e8-4665-89d5-2e90b71b8a46",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Sicherung der virtuellen Client-Images, der Templates und der Konfiguration der Virtualisierungsinfrastruktur ist entscheidend, um die Verf\u00fcgbarkeit und die Wiederherstellbarkeit nach St\u00f6rungen oder Angriffen sicherzustellen."
+              },
+              {
+                "uuid": "e8b0e7e0-3eb6-451f-abcb-843bc70b4bc3",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Administrative T\u00e4tigkeiten an der zentralen Virtualisierungsplattform sind kritisch. Ihre Nachweisbarkeit ist f\u00fcr Audits, die Fehlersuche und die forensische Analyse nach Sicherheitsvorf\u00e4llen essenziell."
+              },
+              {
+                "uuid": "c4db7dd2-07c2-4537-b1f8-d4b6ab70d997",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen der Virtualisierungsl\u00f6sung ist von h\u00f6chster Priorit\u00e4t, da deren Kompromittierung die Kontrolle \u00fcber die gesamte virtualisierte Client-Umgebung erm\u00f6glichen w\u00fcrde."
+              },
+              {
+                "uuid": "003b0798-d345-4365-b4eb-1287c67ae46f",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Patch- und \u00c4nderungsmanagement ist unerl\u00e4sslich, um die Virtualisierungs-Hosts und insbesondere die zentralen Client-Templates aktuell und frei von bekannten Schwachstellen zu halten."
+              },
+              {
+                "uuid": "f7c3a850-8962-4d02-a138-862a2de13a11",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Aktivierung und Nutzung systemeigener Detektionsfunktionen auf den Virtualisierungs-Hosts und innerhalb der Gast-Betriebssysteme stellt eine grundlegende F\u00e4higkeit zur Erkennung von Anomalien und Angriffen dar."
+              },
+              {
+                "uuid": "803e081a-61b6-4917-9dfd-ee19ea7e180f",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Zus\u00e4tzliche netzwerkbasierte Detektionssysteme bieten wertvolle Einblicke in den Datenverkehr zur und von der Virtualisierungsinfrastruktur und k\u00f6nnen Angriffe aufdecken, die auf den Hosts selbst unentdeckt bleiben w\u00fcrden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

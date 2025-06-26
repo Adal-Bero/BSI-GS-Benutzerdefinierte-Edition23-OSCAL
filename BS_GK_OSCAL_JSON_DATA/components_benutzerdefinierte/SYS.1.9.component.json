@@ -1,0 +1,253 @@
+{
+  "component-definition": {
+    "uuid": "05f49b6e-d42c-4cd2-bb4b-ec39c914e9e1",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.9: Terminalserver",
+      "last-modified": "2025-06-26T10:50:27.078076+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.9."
+    },
+    "components": [
+      {
+        "uuid": "a0cab0a3-cf35-4d5f-a3c1-ef60db59d7a5",
+        "type": "service",
+        "title": "Terminalserver",
+        "description": "Implementation of controls for Baustein SYS.1.9.",
+        "control-implementations": [
+          {
+            "uuid": "8a266b56-034c-4669-8dee-8b40b6387865",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.9: Terminalserver",
+            "implemented-requirements": [
+              {
+                "uuid": "4cb5bed5-6c31-4ce5-b7cb-6349c1d30654",
+                "control-id": "SYS.1.9.A1",
+                "description": "Base implementation for control SYS.1.9.A1."
+              },
+              {
+                "uuid": "26d0973a-7a5d-48dd-93b0-90c8d2ec3824",
+                "control-id": "SYS.1.9.A2",
+                "description": "Base implementation for control SYS.1.9.A2."
+              },
+              {
+                "uuid": "4336b2d3-706b-412f-9ee1-edba687de532",
+                "control-id": "SYS.1.9.A3",
+                "description": "Base implementation for control SYS.1.9.A3."
+              },
+              {
+                "uuid": "b9fd2205-1d3a-438e-a64c-63de76bb0770",
+                "control-id": "SYS.1.9.A4",
+                "description": "Base implementation for control SYS.1.9.A4."
+              },
+              {
+                "uuid": "4b3fc133-bc4d-4edf-ad8f-1f54217dda66",
+                "control-id": "SYS.1.9.A5",
+                "description": "Base implementation for control SYS.1.9.A5."
+              },
+              {
+                "uuid": "960828bc-92cb-4aed-854f-c36f9943d86b",
+                "control-id": "SYS.1.9.A6",
+                "description": "Base implementation for control SYS.1.9.A6."
+              },
+              {
+                "uuid": "2503cb84-24c3-408b-b61e-164401de35b2",
+                "control-id": "SYS.1.9.A7",
+                "description": "Base implementation for control SYS.1.9.A7."
+              },
+              {
+                "uuid": "73a639b1-c006-47cc-90ca-e1c66abcd113",
+                "control-id": "SYS.1.9.A8",
+                "description": "Base implementation for control SYS.1.9.A8."
+              },
+              {
+                "uuid": "34e7c0c6-8c1a-44d6-b197-a1187ec58cb9",
+                "control-id": "SYS.1.9.A9",
+                "description": "Base implementation for control SYS.1.9.A9."
+              },
+              {
+                "uuid": "0c646608-aaaf-443d-ad2d-13df0a85510c",
+                "control-id": "SYS.1.9.A10",
+                "description": "Base implementation for control SYS.1.9.A10."
+              },
+              {
+                "uuid": "77924ad1-f34c-4c2e-836a-e5547ff749c1",
+                "control-id": "SYS.1.9.A11",
+                "description": "Base implementation for control SYS.1.9.A11."
+              },
+              {
+                "uuid": "9885052e-7dce-4a30-8ab4-fedf5f4887ce",
+                "control-id": "SYS.1.9.A12",
+                "description": "Base implementation for control SYS.1.9.A12."
+              },
+              {
+                "uuid": "1cf1ee84-1e7d-44a6-a2c7-2f4432bc66a4",
+                "control-id": "SYS.1.9.A13",
+                "description": "Base implementation for control SYS.1.9.A13."
+              },
+              {
+                "uuid": "f708c0cd-0083-435a-bcc0-79101db4a2e3",
+                "control-id": "SYS.1.9.A14",
+                "description": "Base implementation for control SYS.1.9.A14."
+              },
+              {
+                "uuid": "276edb1e-2c23-4c37-8e4b-f8fcc1532e37",
+                "control-id": "SYS.1.9.A15",
+                "description": "Base implementation for control SYS.1.9.A15."
+              },
+              {
+                "uuid": "82898853-9fab-447f-8300-9361cec6ef5d",
+                "control-id": "SYS.1.9.A16",
+                "description": "Base implementation for control SYS.1.9.A16."
+              },
+              {
+                "uuid": "45799ce5-269a-4429-adee-6511bee14fcb",
+                "control-id": "SYS.1.9.A17",
+                "description": "Base implementation for control SYS.1.9.A17."
+              },
+              {
+                "uuid": "a9cf0d3f-4895-461f-bade-d608caa2bc49",
+                "control-id": "SYS.1.9.A18",
+                "description": "Base implementation for control SYS.1.9.A18."
+              },
+              {
+                "uuid": "3b5f9381-2058-4781-bedd-6034adc2738e",
+                "control-id": "SYS.1.9.A19",
+                "description": "Base implementation for control SYS.1.9.A19."
+              },
+              {
+                "uuid": "c2c0570c-74d1-4ccb-846d-81d9ecf1d1db",
+                "control-id": "SYS.1.9.A20",
+                "description": "Base implementation for control SYS.1.9.A20."
+              },
+              {
+                "uuid": "becfad9e-7514-48d7-bec2-626bfabe2054",
+                "control-id": "SYS.1.9.A21",
+                "description": "Base implementation for control SYS.1.9.A21."
+              },
+              {
+                "uuid": "dd06306b-8456-49a4-a35f-1b6fac0558cd",
+                "control-id": "SYS.1.9.A22",
+                "description": "Base implementation for control SYS.1.9.A22."
+              }
+            ]
+          },
+          {
+            "uuid": "4556ee30-9cac-4515-8077-26871acd9f23",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "5e894f3c-d005-41c8-afc3-cf715bed92b3",
+                "control-id": "NET.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Eine aktuelle Netz-Dokumentation ist notwendig, um die Kommunikationswege zwischen Clients und Terminalserver zu verstehen, zu verwalten und gezielt abzusichern."
+              },
+              {
+                "uuid": "704c30cf-60a2-4c36-831b-d4e63df255c2",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Trennung von Clients und dem Terminalserver in separate Netzsegmente ist ein fundamentaler Schutzmechanismus, um die Angriffsfl\u00e4che zu reduzieren und laterale Bewegungen im Netz zu erschweren."
+              },
+              {
+                "uuid": "f5b8f180-92d9-448a-b89b-ad282632008b",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die \u00fcber Terminalserver-Protokolle \u00fcbertragenen sensiblen Daten, wie Bildschirminhalte und Tastatureingaben, durch Verschl\u00fcsselung nach Stand der Technik gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "7b5e52ff-aafb-4ce2-80ad-683d5af59bbe",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt den physischen Grundschutz des Servers sicher und verbietet dessen Zweckentfremdung als Arbeitsplatz, was die Einschleusung von Schadcode in die Multi-User-Umgebung verhindern soll."
+              },
+              {
+                "uuid": "d946afb0-1635-45e9-8558-fecbc849392d",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Die sichere Authentisierung von Benutzern und Administratoren ist eine grundlegende Voraussetzung f\u00fcr den gesch\u00fctzten Betrieb eines Terminalservers und den Zugriff auf bereitgestellte Anwendungen."
+              },
+              {
+                "uuid": "9f88d63a-cdf9-4132-ab07-0dc4ad92b7a2",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Minimierung der installierten Software und aktiven Dienste (Systemh\u00e4rtung) ist entscheidend, um die Angriffsfl\u00e4che eines Multi-User-Systems wie des Terminalservers zu reduzieren."
+              },
+              {
+                "uuid": "ca8e69fb-b5db-48e4-b73f-0fe5202885b4",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Ein Terminalserver ist durch die vielf\u00e4ltige Anwendungsnutzung durch mehrere Benutzer ein potenzielles Ziel f\u00fcr Schadsoftware, weshalb ein angepasster und zentral verwalteter Virenschutz erforderlich ist."
+              },
+              {
+                "uuid": "f3a56050-a717-4cb6-b736-9369be3bfa01",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Eine umfassende Protokollierung sicherheitsrelevanter Ereignisse ist auf einem Multi-User-System wie einem Terminalserver unerl\u00e4sslich f\u00fcr die Erkennung und Analyse von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "9b6a2fec-d089-41ca-94d9-8bbceffcd666",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Definiert den Prozess f\u00fcr eine sichere Erstinstallation und H\u00e4rtung des Terminalservers, bevor er produktiv f\u00fcr Benutzer zug\u00e4nglich gemacht wird, um eine sichere Grundkonfiguration zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "cb608395-d6b3-45db-8174-b942e03cacc8",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Ein lokaler Paketfilter auf dem Terminalserver bietet eine zus\u00e4tzliche Schutzschicht (Defense-in-Depth) und schr\u00e4nkt die Kommunikation auf das unbedingt Notwendige ein, selbst innerhalb eines vertrauensw\u00fcrdigen Netzsegments."
+              },
+              {
+                "uuid": "43a0526f-4d3f-4a0f-8d1a-2f16b3aae5f0",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Die Kontrolle der ausf\u00fchrbaren Programme (Ausf\u00fchrungskontrolle/Application Whitelisting) ist auf einem Terminalserver ein sehr wirksamer Schutz, um sicherzustellen, dass Benutzer nur freigegebene Anwendungen starten k\u00f6nnen."
+              },
+              {
+                "uuid": "33463f0e-ec64-4cc5-944f-2c1cacfdc6a7",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: In einer Shared-Session-Umgebung ist die Kapselung von Anwendungen entscheidend, um zu verhindern, dass ein kompromittiertes Programm eines Benutzers das Gesamtsystem oder andere Sitzungen gef\u00e4hrdet."
+              },
+              {
+                "uuid": "2cce61eb-e499-4002-b5ae-1935c452c569",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Clients, von dem aus der Zugriff auf den Terminalserver erfolgt, ist ein notwendiger erster Schritt. Diese Anforderung stellt die grundlegende Authentisierung und Bildschirmsperre am Endger\u00e4t sicher."
+              },
+              {
+                "uuid": "178c2ca1-1632-45d3-ac8e-87a07cef576f",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt Fat-Clients vor Schadsoftware, die andernfalls die Terminal-Sitzung kompromittieren k\u00f6nnte, beispielsweise durch Keylogger oder Angriffe auf die Terminal-Client-Software."
+              }
+            ]
+          },
+          {
+            "uuid": "c7a14990-70b0-48b1-8d67-1f3c746d53e3",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "27a80844-103a-4340-88b4-1d0ff9b5c510",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Stellt die korrekte und restriktive Vergabe von Zugriffsrechten auf dem Terminalserver und den darauf bereitgestellten Anwendungen sicher und setzt das Need-to-know-Prinzip um."
+              },
+              {
+                "uuid": "73c8dce1-5a73-423f-ad6a-4c67c3985f64",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Kommunikation zwischen Client und Terminalserver muss stark verschl\u00fcsselt sein. Diese Anforderung stellt sicher, dass daf\u00fcr sichere und aktuelle kryptografische Verfahren und Schl\u00fcssell\u00e4ngen eingesetzt werden."
+              },
+              {
+                "uuid": "59a0f6d3-e3f8-4b1c-b504-e2cd051a89b7",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet, dass die f\u00fcr die Verschl\u00fcsselung der Terminal-Sitzungen verwendeten Zertifikate und Schl\u00fcssel sicher verwaltet, ausgetauscht und rechtzeitig erneuert werden."
+              },
+              {
+                "uuid": "abe18aa6-bb7e-4dd0-bd47-f521027d68e1",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Administrative \u00c4nderungen am Terminalserver k\u00f6nnen weitreichende Folgen f\u00fcr alle Benutzer haben. Daher m\u00fcssen diese T\u00e4tigkeiten zum Zweck der Nachweisbarkeit und Analyse nachvollziehbar protokolliert werden."
+              },
+              {
+                "uuid": "80de914c-3ba0-4926-b3a8-4e89b243f991",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Zug\u00e4nge zum Terminalserver, die ein prim\u00e4res Angriffsziel darstellen, durch starke Authentisierung und gesicherte Kommunikationskan\u00e4le."
+              },
+              {
+                "uuid": "f8e192ea-fb5a-479f-a5bd-2d6fdd3450d9",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein Terminalserver und die darauf laufenden Anwendungen m\u00fcssen regelm\u00e4\u00dfig aktualisiert werden. Ein geregeltes Patch- und \u00c4nderungsmanagement ist entscheidend, um Sicherheitsl\u00fccken zeitnah und kontrolliert zu schlie\u00dfen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

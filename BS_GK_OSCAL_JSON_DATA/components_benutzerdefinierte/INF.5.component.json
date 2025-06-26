@@ -1,0 +1,126 @@
+{
+  "component-definition": {
+    "uuid": "6735968b-6ea6-4a69-9ddb-b2710c7e71e8",
+    "metadata": {
+      "title": "Component for Baustein INF.5: INF.5 Raum sowie Schrank f\u00fcr technische Infrastruktur",
+      "last-modified": "2025-06-26T11:54:19.801715+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.5."
+    },
+    "components": [
+      {
+        "uuid": "d3674499-007e-4c0b-a40d-24353c35154f",
+        "type": "service",
+        "title": "INF.5 Raum sowie Schrank f\u00fcr technische Infrastruktur",
+        "description": "Implementation of controls for Baustein INF.5.",
+        "control-implementations": [
+          {
+            "uuid": "40a13fae-073b-4ec3-99d8-ba1b1c41befc",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.5: INF.5 Raum sowie Schrank f\u00fcr technische Infrastruktur",
+            "implemented-requirements": [
+              {
+                "uuid": "731376c4-d785-49da-89ad-be8cd92817b3",
+                "control-id": "inf-5-a1",
+                "description": "Base implementation for control inf-5-a1."
+              },
+              {
+                "uuid": "17da49c2-c8a6-4e39-b57c-948fd7736a21",
+                "control-id": "inf-5-a2",
+                "description": "Base implementation for control inf-5-a2."
+              },
+              {
+                "uuid": "e71fbb07-4911-466a-883d-435ffda77d87",
+                "control-id": "inf-5-a3",
+                "description": "Base implementation for control inf-5-a3."
+              },
+              {
+                "uuid": "b1bf4369-b0d5-408c-a132-a7d6903307fa",
+                "control-id": "inf-5-a4",
+                "description": "Base implementation for control inf-5-a4."
+              },
+              {
+                "uuid": "2308f40c-d77a-4e3e-9ed9-5f4967323772",
+                "control-id": "inf-5-a5",
+                "description": "Base implementation for control inf-5-a5."
+              },
+              {
+                "uuid": "534165db-035a-4e93-95a3-351bc2b97c01",
+                "control-id": "inf-5-a6",
+                "description": "Base implementation for control inf-5-a6."
+              },
+              {
+                "uuid": "1c776cac-3acb-428b-9239-1d9ad804f342",
+                "control-id": "inf-5-a7",
+                "description": "Base implementation for control inf-5-a7."
+              },
+              {
+                "uuid": "8dd3ce35-5215-4f66-9365-a6974681d603",
+                "control-id": "inf-5-a8",
+                "description": "Base implementation for control inf-5-a8."
+              },
+              {
+                "uuid": "801c6829-b247-444c-9f57-766dba84e8e3",
+                "control-id": "inf-5-a9",
+                "description": "Base implementation for control inf-5-a9."
+              }
+            ]
+          },
+          {
+            "uuid": "2e47038d-d8c2-4118-bb40-9a7ed6c4fe27",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "aece0029-b012-4752-883c-7d3134d36cca",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Prinzipien (Least Privilege, Need-to-know) sind fundamental f\u00fcr die Vergabe von physischen Zutrittsberechtigungen zum Raum oder Schrank und somit direkt relevant f\u00fcr dessen Schutz."
+              },
+              {
+                "uuid": "0933e29e-6c2a-4ce0-b848-6ed507d8ec77",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Stellt die Basisanforderung f\u00fcr elektronische Zutrittskontrollsysteme und f\u00fcr den sicheren Zugriff auf die im Raum befindlichen IT-Komponenten dar, was Teil des Schutzziels ist."
+              },
+              {
+                "uuid": "311d351c-db6d-419e-8109-84d1d84ddfa9",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Konkretisiert die Anforderungen an elektronische Zutrittskontrollsysteme, indem es Angriffe wie Brute-Force verhindert und so den elektronischen Schutz des Raumes direkt erh\u00f6ht."
+              },
+              {
+                "uuid": "31de50e7-b3b8-421a-bd5d-a5b5445f0e8b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Sichert die kryptografischen Verfahren ab, die in elektronischen Schlie\u00dfsystemen oder bei der abgesicherten Administration der Infrastrukturkomponenten im Raum verwendet werden."
+              },
+              {
+                "uuid": "0ec079db-dbf3-481c-9b69-363d15aa0004",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist unerl\u00e4sslich f\u00fcr die Verwaltung von physischen Schl\u00fcsseln, Schl\u00fcsselkarten oder kryptografischen Schl\u00fcsseln der im Raum befindlichen Ger\u00e4te."
+              },
+              {
+                "uuid": "821779ff-6426-4da8-b61f-8997d5acf396",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die Nachvollziehbarkeit, wer den Raum betreten und administrative \u00c4nderungen an der Infrastruktur vorgenommen hat, was eine wesentliche Kontrollfunktion darstellt."
+              },
+              {
+                "uuid": "a3bff6c6-d4b8-473c-a9a6-cf4ec86b354e",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Schnittstellen der im Raum untergebrachten Komponenten (z. B. Switches, Router) direkt und ist somit essenziell, um deren Funktion zu sichern."
+              },
+              {
+                "uuid": "09379df0-c4cf-4101-8cec-e5f36d1a7d41",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Sichert den stabilen und sicheren Betrieb der Infrastrukturkomponenten, indem es ungeplante Ausf\u00e4lle oder Sicherheitsprobleme durch unkontrollierte \u00c4nderungen verhindert."
+              },
+              {
+                "uuid": "69483e1f-9274-4734-b46f-c2e4987fe65a",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert die Nutzung von eingebauten Detektionsmechanismen, sowohl in physischen Sicherheitssystemen (z. B. Manipulationsschutz an Schl\u00f6ssern) als auch auf den IT-Ger\u00e4ten, um Vorf\u00e4lle fr\u00fchzeitig zu erkennen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

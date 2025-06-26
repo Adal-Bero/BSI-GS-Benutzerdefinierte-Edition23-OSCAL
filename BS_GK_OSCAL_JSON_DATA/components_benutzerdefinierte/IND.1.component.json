@@ -1,0 +1,308 @@
+{
+  "component-definition": {
+    "uuid": "1cc29441-6321-4955-85a0-7927808705f5",
+    "metadata": {
+      "title": "Component for Baustein IND.1: Prozessleit- und Automatisierungstechnik",
+      "last-modified": "2025-06-26T11:16:43.680564+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.1."
+    },
+    "components": [
+      {
+        "uuid": "cfb94d0b-b249-42bd-88d8-5f61b5fa7e99",
+        "type": "service",
+        "title": "Prozessleit- und Automatisierungstechnik",
+        "description": "Implementation of controls for Baustein IND.1.",
+        "control-implementations": [
+          {
+            "uuid": "e2c841ff-7096-4366-a2b5-9f9f2224e831",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.1: Prozessleit- und Automatisierungstechnik",
+            "implemented-requirements": [
+              {
+                "uuid": "47007657-9e17-4a62-a8d9-44d587293608",
+                "control-id": "IND.1.A1",
+                "description": "Base implementation for control IND.1.A1."
+              },
+              {
+                "uuid": "7d167772-b8a9-4327-a881-5ae1b3a2c12c",
+                "control-id": "IND.1.A3",
+                "description": "Base implementation for control IND.1.A3."
+              },
+              {
+                "uuid": "9ced0132-9406-487c-8c46-c1f263f8c831",
+                "control-id": "IND.1.A18",
+                "description": "Base implementation for control IND.1.A18."
+              },
+              {
+                "uuid": "264778ba-be78-48d7-9d16-4acd4bcc159c",
+                "control-id": "IND.1.A19",
+                "description": "Base implementation for control IND.1.A19."
+              },
+              {
+                "uuid": "19bd411a-c720-4250-a811-4844aaddbbef",
+                "control-id": "IND.1.A4",
+                "description": "Base implementation for control IND.1.A4."
+              },
+              {
+                "uuid": "21dce5be-1911-4f5b-a95e-cc9c29e09bb4",
+                "control-id": "IND.1.A5",
+                "description": "Base implementation for control IND.1.A5."
+              },
+              {
+                "uuid": "94d97cac-516d-4ff7-9165-8e36b8501804",
+                "control-id": "IND.1.A6",
+                "description": "Base implementation for control IND.1.A6."
+              },
+              {
+                "uuid": "488b11f5-6a58-48e8-8988-75edf34a86fc",
+                "control-id": "IND.1.A7",
+                "description": "Base implementation for control IND.1.A7."
+              },
+              {
+                "uuid": "89a77121-83e0-4902-87ad-c36e758bdc9e",
+                "control-id": "IND.1.A8",
+                "description": "Base implementation for control IND.1.A8."
+              },
+              {
+                "uuid": "40c64435-3482-418c-9c76-c115951573ee",
+                "control-id": "IND.1.A9",
+                "description": "Base implementation for control IND.1.A9."
+              },
+              {
+                "uuid": "e93f0b17-4395-4d46-9d89-5d7fbce50d03",
+                "control-id": "IND.1.A10",
+                "description": "Base implementation for control IND.1.A10."
+              },
+              {
+                "uuid": "5e44c076-56bf-4dc5-b91e-b40b260753e6",
+                "control-id": "IND.1.A11",
+                "description": "Base implementation for control IND.1.A11."
+              },
+              {
+                "uuid": "594221e1-7ef2-4688-946f-e0676a86db33",
+                "control-id": "IND.1.A12",
+                "description": "Base implementation for control IND.1.A12."
+              },
+              {
+                "uuid": "27d95629-cf8e-444b-972d-a5ef17c7cf92",
+                "control-id": "IND.1.A20",
+                "description": "Base implementation for control IND.1.A20."
+              },
+              {
+                "uuid": "c052389c-00f3-4f43-805b-3e45fb3352e9",
+                "control-id": "IND.1.A21",
+                "description": "Base implementation for control IND.1.A21."
+              },
+              {
+                "uuid": "d86be545-c573-40cf-974b-85ea5cc2beb3",
+                "control-id": "IND.1.A22",
+                "description": "Base implementation for control IND.1.A22."
+              },
+              {
+                "uuid": "c4bb9de4-1d38-4e17-950e-85a7c3c70e66",
+                "control-id": "IND.1.A23",
+                "description": "Base implementation for control IND.1.A23."
+              },
+              {
+                "uuid": "77ee35b8-2498-443c-b5e4-367ca1ae5753",
+                "control-id": "IND.1.A13",
+                "description": "Base implementation for control IND.1.A13."
+              },
+              {
+                "uuid": "63ec9fd0-b24a-4026-81dd-ab9706011fed",
+                "control-id": "IND.1.A14",
+                "description": "Base implementation for control IND.1.A14."
+              },
+              {
+                "uuid": "2f6070a6-cb1a-4287-8850-fd343a89d43f",
+                "control-id": "IND.1.A15",
+                "description": "Base implementation for control IND.1.A15."
+              },
+              {
+                "uuid": "a69f98d5-785b-48d2-844b-2d08ba5a264a",
+                "control-id": "IND.1.A16",
+                "description": "Base implementation for control IND.1.A16."
+              },
+              {
+                "uuid": "3c669f60-de3f-4c2a-ac44-21c88c05d22d",
+                "control-id": "IND.1.A17",
+                "description": "Base implementation for control IND.1.A17."
+              },
+              {
+                "uuid": "123c01e0-b630-405f-8862-9cf03f38a28e",
+                "control-id": "IND.1.A24",
+                "description": "Base implementation for control IND.1.A24."
+              }
+            ]
+          },
+          {
+            "uuid": "3a86c106-d76e-4b93-a516-4ac1d0ab9b79",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "99f57747-9505-4cdd-b373-ae199a8bb113",
+                "control-id": "OPS.1.1.5.A1",
+                "description": "AI-Begr\u00fcndung: Eine Protokollierungsrichtlinie ist fundamental, um systematisch und nachvollziehbar festzulegen, welche Ereignisse in OT-Systemen erfasst werden m\u00fcssen, was f\u00fcr die Analyse von Sicherheitsvorf\u00e4llen essenziell ist."
+              },
+              {
+                "uuid": "fc83baa5-662f-4166-8455-e7fd8db6946e",
+                "control-id": "OPS.1.1.5.A3",
+                "description": "AI-Begr\u00fcndung: Die tats\u00e4chliche Konfiguration der Protokollierung auf OT-Systemen ist entscheidend, um sicherheitsrelevante Vorf\u00e4lle erkennen und analysieren zu k\u00f6nnen. Die Anforderung ber\u00fccksichtigt die Besonderheit, dass nicht alle OT-Systeme \u00fcber native Protokollierungsfunktionen verf\u00fcgen."
+              },
+              {
+                "uuid": "5a45c318-ec7b-44f3-a111-6faea522e9fc",
+                "control-id": "OPS.1.1.5.A4",
+                "description": "AI-Begr\u00fcndung: In der OT ist die korrekte zeitliche Korrelation von Ereignissen \u00fcber verschiedene Systeme hinweg unerl\u00e4sslich, um Prozessabl\u00e4ufe und Sicherheitsvorf\u00e4lle korrekt nachvollziehen zu k\u00f6nnen. Eine einheitliche Zeitbasis ist daf\u00fcr die Grundvoraussetzung."
+              },
+              {
+                "uuid": "c836ca99-f5f9-4490-8440-e61a5022a632",
+                "control-id": "OPS.1.1.5.A5",
+                "description": "AI-Begr\u00fcndung: Auch in OT-Umgebungen k\u00f6nnen Protokolldaten personenbezogene Informationen enthalten. Die Einhaltung rechtlicher Rahmenbedingungen, insbesondere des Datenschutzes, ist daher zwingend erforderlich."
+              },
+              {
+                "uuid": "570a8837-0e90-4267-9c15-e32a418c9d74",
+                "control-id": "OPS.1.1.5.A6",
+                "description": "AI-Begr\u00fcndung: Eine zentrale Protokollierungsinfrastruktur sch\u00fctzt Logdaten vor Manipulation auf den oft schwer zu sichernden lokalen OT-Systemen und erm\u00f6glicht eine effiziente, \u00fcbergreifende Auswertung, was f\u00fcr die Sicherheit im OT-Netzwerk von hohem Wert ist."
+              },
+              {
+                "uuid": "78f6df05-ae4d-4b97-bcd0-36b5251719a8",
+                "control-id": "OPS.1.1.5.A8",
+                "description": "AI-Begr\u00fcndung: Angesichts der langen Lebenszyklen von OT-Anlagen und der Notwendigkeit, Vorf\u00e4lle auch langfristig forensisch untersuchen zu k\u00f6nnen, ist eine definierte Archivierung der Protokolldaten von gro\u00dfer Bedeutung."
+              },
+              {
+                "uuid": "cb841954-c874-444b-8d72-34b6c426b47d",
+                "control-id": "OPS.1.1.5.A9",
+                "description": "AI-Begr\u00fcndung: Die Aufbereitung von Protokolldaten durch Filtern, Normalisieren und Korrelieren ist die Voraussetzung, um aus der reinen Datenmenge n\u00fctzliche Informationen zu gewinnen und komplexe Angriffs- oder St\u00f6rungsmuster in der OT-Umgebung zu erkennen."
+              },
+              {
+                "uuid": "8d270098-03fb-41c4-88fb-bb33f902608f",
+                "control-id": "OPS.1.1.5.A10",
+                "description": "AI-Begr\u00fcndung: Um die Integrit\u00e4t und Beweiskraft von Protokolldaten zu gew\u00e4hrleisten, ist es entscheidend, dass selbst Administratoren der produktiven OT-Systeme diese nicht manipulieren k\u00f6nnen. Dies erfordert eine technische Funktionstrennung."
+              },
+              {
+                "uuid": "732f4dcd-d621-4a99-b6e1-d2f5791775b6",
+                "control-id": "OPS.1.1.5.A11",
+                "description": "AI-Begr\u00fcndung: Kritische OT-Systeme mit hohem Schutzbedarf erfordern eine besonders l\u00fcckenlose Nachvollziehbarkeit von Ereignissen. Eine Steigerung des Protokollierungsumfangs ist hier notwendig, um Angriffe oder St\u00f6rungen detailliert analysieren zu k\u00f6nnen."
+              },
+              {
+                "uuid": "c93a2f99-4a8f-4f7b-b0cb-10992f2dd53c",
+                "control-id": "OPS.1.1.5.A12",
+                "description": "AI-Begr\u00fcndung: Bei der \u00dcbertragung von Protokolldaten aus der OT-Umgebung in ein zentrales System m\u00fcssen deren Vertraulichkeit und Integrit\u00e4t sichergestellt werden, insbesondere wenn die \u00dcbertragung \u00fcber weniger gesch\u00fctzte Netzsegmente erfolgt. Verschl\u00fcsselung ist hierf\u00fcr eine ad\u00e4quate Ma\u00dfnahme."
+              },
+              {
+                "uuid": "a04ccbc2-4f11-4d33-9756-b30b7d152c2c",
+                "control-id": "OPS.1.1.5.A13",
+                "description": "AI-Begr\u00fcndung: Da OT-Systeme selbst h\u00f6chste Verf\u00fcgbarkeitsanforderungen haben, muss auch die unterst\u00fctzende Protokollierungsinfrastruktur hochverf\u00fcgbar ausgelegt sein, um eine kontinuierliche \u00dcberwachung sicherzustellen und Blind-Spots bei Ausf\u00e4llen zu vermeiden."
+              },
+              {
+                "uuid": "8760ff10-9cc1-4b42-8ccc-e7c0fff22f37",
+                "control-id": "ORP.3.A1",
+                "description": "AI-Begr\u00fcndung: Die Absicherung von OT-Umgebungen erfordert oft erhebliche Investitionen und organisatorische \u00c4nderungen. Die Unterst\u00fctzung der Leitungsebene ist daher unerl\u00e4sslich, um die notwendigen Ressourcen und die strategische R\u00fcckendeckung zu erhalten."
+              },
+              {
+                "uuid": "eefdedb3-84d2-4b6b-a79d-40e97aa84450",
+                "control-id": "ORP.3.A3",
+                "description": "AI-Begr\u00fcndung: Das Personal in der OT ben\u00f6tigt spezifische Einweisungen und Richtlinien f\u00fcr den sicheren Umgang mit ICS-Komponenten, da sich die Risiken und die korrekten Verhaltensweisen oft von denen in der B\u00fcro-IT unterscheiden."
+              },
+              {
+                "uuid": "bfb2fde6-af3b-40f9-878b-8fe6632f7d61",
+                "control-id": "ORP.3.A4",
+                "description": "AI-Begr\u00fcndung: Die verschiedenen Rollen im OT-Umfeld (z.B. Anlagenf\u00fchrer, Instandhalter, Prozessingenieure) haben unterschiedliche Sicherheitsverantwortlichkeiten. Ein zielgruppenorientiertes Schulungsprogramm stellt sicher, dass die Ma\u00dfnahmen relevant und wirksam sind."
+              },
+              {
+                "uuid": "c00146d8-5075-4317-825c-db4acafee687",
+                "control-id": "ORP.3.A6",
+                "description": "AI-Begr\u00fcndung: Die systematische Durchf\u00fchrung der geplanten Schulungen ist der entscheidende Schritt, um das Sicherheitsbewusstsein und die Kompetenzen der Mitarbeitenden im OT-Umfeld tats\u00e4chlich zu erh\u00f6hen."
+              },
+              {
+                "uuid": "b9d4f5d5-5d78-4d66-a288-aeda43dc2281",
+                "control-id": "ORP.3.A8",
+                "description": "AI-Begr\u00fcndung: Um die Wirksamkeit der Schulungsma\u00dfnahmen f\u00fcr das OT-Personal zu \u00fcberpr\u00fcfen und das Programm kontinuierlich zu verbessern, ist eine systematische Messung und Auswertung des Lernerfolgs unerl\u00e4sslich."
+              },
+              {
+                "uuid": "22ec432c-70f2-4f1b-80f1-6682eb970b9d",
+                "control-id": "ORP.3.A9",
+                "description": "AI-Begr\u00fcndung: Personen mit weitreichenden administrativen Zugriffen auf kritische OT-Systeme (z.B. Fernwartungstechniker) sind exponierte Ziele. Spezifische, vertiefende Schulungen f\u00fcr diese Gruppe sind notwendig, um gezielte Angriffe abzuwehren."
+              }
+            ]
+          },
+          {
+            "uuid": "699cc1a3-50c1-485d-bf88-edc9d70a74d1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "6379bf3b-db9d-488b-b498-bab29fca83e2",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung ist in der OT kritisch, um zu verhindern, dass eine einzelne Person unkontrolliert sicherheitsrelevante \u00c4nderungen an Steuerungsprozessen vornehmen kann (z.B. Trennung von Entwicklung, Test und Freigabe einer SPS-Programmierung)."
+              },
+              {
+                "uuid": "5fa501e6-b876-4a57-a482-c35bb72ae8fd",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Der sichere Betrieb von OT-Anlagen erfordert hochspezialisiertes Personal, das sowohl die prozesstechnischen als auch die cybersicherheitstechnischen Aspekte versteht. Eine sichergestellte Qualifikation ist daher fundamental."
+              },
+              {
+                "uuid": "70c124e3-2898-445a-b0d4-06089bbf6b8c",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Rechtevergabe (Least Privilege) ist im OT-Umfeld von h\u00f6chster Bedeutung, um den potenziellen Schaden durch kompromittierte Konten oder Insider-Bedrohungen zu minimieren."
+              },
+              {
+                "uuid": "53ca30cc-70b2-4947-9221-2404b119caa9",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine eindeutige Identifikation und Authentisierung ist die Grundvoraussetzung f\u00fcr jegliche Zugriffskontrolle in der OT. Insbesondere die Anforderung, Standardpassw\u00f6rter zu \u00e4ndern, adressiert eine h\u00e4ufige und kritische Schwachstelle in OT-Komponenten."
+              },
+              {
+                "uuid": "b3af6355-b3b1-4fc2-9c4f-9b4ae11fe662",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: F\u00fcr den Zugriff auf kritische OT-Systeme, insbesondere bei Fernwartung, sollten dem Schutzbedarf angemessene, starke Authentisierungsmechanismen (z.B. Mehr-Faktor-Authentisierung) eingesetzt werden, um das Risiko eines unbefugten Zugriffs zu senken."
+              },
+              {
+                "uuid": "f8bb46dc-8bbd-4e92-b746-956af81bee1b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Werden in der OT-Kommunikation oder zur Absicherung von Daten kryptografische Verfahren eingesetzt, muss sichergestellt sein, dass diese dem Stand der Technik entsprechen und wirksamen Schutz bieten, um nicht zu einer Scheinsicherheit zu f\u00fchren."
+              },
+              {
+                "uuid": "78b8ec32-0695-4a87-a517-89f9d6f7462b",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit kryptografischer Verfahren h\u00e4ngt entscheidend vom sicheren Management der Schl\u00fcssel ab. Gerade im langlebigen OT-Umfeld ist ein geplanter Prozess f\u00fcr Schl\u00fcsselerzeugung, -verteilung, -speicherung und -erneuerung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "1686080a-ed7c-4a81-bbfe-0632a7255d51",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Datensicherung ist f\u00fcr OT-Systeme essenziell, um nach einem Systemausfall oder einem Ransomware-Angriff den Betrieb schnell wiederherstellen zu k\u00f6nnen. Dies betrifft insbesondere Konfigurationen, Steuerungsprogramme und Prozessdaten."
+              },
+              {
+                "uuid": "147640d1-349d-4c61-b6a0-dc4b8af4798c",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: In der OT ist es von entscheidender Bedeutung, administrative \u00c4nderungen an kritischen Systemen (z.B. an einer SPS-Steuerung) nachvollziehen zu k\u00f6nnen. Dies ist sowohl f\u00fcr die Fehlersuche als auch f\u00fcr die forensische Analyse nach einem Sicherheitsvorfall unerl\u00e4sslich."
+              },
+              {
+                "uuid": "3004eb95-f2ac-46b2-968c-30f990098f3b",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Administrative Schnittstellen von OT-Systemen sind privilegierte und damit hochgradig sch\u00fctzenswerte Zug\u00e4nge. Ihre Absicherung durch starke Authentisierung und sichere Protokolle ist ein kritischer Baustein zur Abwehr von Angriffen."
+              },
+              {
+                "uuid": "8f796aef-d353-4c56-9549-dd38222ea3b7",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Patch- und \u00c4nderungsmanagement ist in der OT besonders heikel und komplex. Ein durchdachtes Konzept, das Planung, Tests, Freigaben und R\u00fcckfall-L\u00f6sungen umfasst, ist zwingend erforderlich, um die Stabilit\u00e4t und Sicherheit der Anlagen nicht zu gef\u00e4hrden."
+              },
+              {
+                "uuid": "b1fa552f-883d-4af8-a2f0-507ee6c886b9",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Viele moderne OT-Komponenten verf\u00fcgen \u00fcber integrierte Detektionsfunktionen. Diese zu aktivieren und zu nutzen, stellt eine grundlegende und oft kosteneffiziente Ma\u00dfnahme zur Erkennung von Anomalien und Angriffen dar."
+              },
+              {
+                "uuid": "ce15c828-cb51-4601-ad48-3b30ebc6fc7d",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Da viele OT-Systeme nicht direkt \u00fcberwacht werden k\u00f6nnen (z.B. keine Agenteninstallation), ist der Einsatz von netzwerkbasierten Detektionssystemen (NIDS), idealerweise mit Kenntnis von OT-Protokollen, ein zentrales Instrument, um Sicherheitsvorf\u00e4lle im OT-Netz zu erkennen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "component-definition": {
+    "uuid": "f5a41fed-3a69-4e4c-9091-8a16aa66f59b",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.1: Laptops",
+      "last-modified": "2025-06-26T11:00:28.505960+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.1."
+    },
+    "components": [
+      {
+        "uuid": "542539af-710a-475d-bc7b-826e027f1435",
+        "type": "service",
+        "title": "Laptops",
+        "description": "Implementation of controls for Baustein SYS.3.1.",
+        "control-implementations": [
+          {
+            "uuid": "e769f803-3581-453b-8279-e3cb65cd7cf3",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.1: Laptops",
+            "implemented-requirements": [
+              {
+                "uuid": "9100e5a1-b21a-41f3-8126-0ae0150a6ef3",
+                "control-id": "SYS.3.1.A1",
+                "description": "Base implementation for control SYS.3.1.A1."
+              },
+              {
+                "uuid": "eee36ff3-5ad3-4132-b2e0-d70a1e0d5024",
+                "control-id": "SYS.3.1.A3",
+                "description": "Base implementation for control SYS.3.1.A3."
+              },
+              {
+                "uuid": "d2bc52d7-c117-4106-b676-f73aa7157fe1",
+                "control-id": "SYS.3.1.A9",
+                "description": "Base implementation for control SYS.3.1.A9."
+              },
+              {
+                "uuid": "cf49c88d-b078-4bcd-8d0f-6993241a9856",
+                "control-id": "SYS.3.1.A6",
+                "description": "Base implementation for control SYS.3.1.A6."
+              },
+              {
+                "uuid": "f2f87720-3240-4294-b1b5-5baa31e968b6",
+                "control-id": "SYS.3.1.A7",
+                "description": "Base implementation for control SYS.3.1.A7."
+              },
+              {
+                "uuid": "c7b7f35b-a24c-4ea5-9b98-ee891d804f30",
+                "control-id": "SYS.3.1.A8",
+                "description": "Base implementation for control SYS.3.1.A8."
+              },
+              {
+                "uuid": "7aa91db6-8228-4271-bfaa-f417e6c50114",
+                "control-id": "SYS.3.1.A10",
+                "description": "Base implementation for control SYS.3.1.A10."
+              },
+              {
+                "uuid": "f20052ba-9eea-4f68-a53c-d6d074021fcb",
+                "control-id": "SYS.3.1.A11",
+                "description": "Base implementation for control SYS.3.1.A11."
+              },
+              {
+                "uuid": "5ff24026-55a3-43f6-a569-dfc6760c4f04",
+                "control-id": "SYS.3.1.A12",
+                "description": "Base implementation for control SYS.3.1.A12."
+              },
+              {
+                "uuid": "b614759e-a561-4f95-9d4d-f237f6bfba31",
+                "control-id": "SYS.3.1.A13",
+                "description": "Base implementation for control SYS.3.1.A13."
+              },
+              {
+                "uuid": "986c15aa-7f82-4921-b14d-c95514ad8986",
+                "control-id": "SYS.3.1.A14",
+                "description": "Base implementation for control SYS.3.1.A14."
+              },
+              {
+                "uuid": "346ffacc-f753-40f5-a102-8bb6ad5f52da",
+                "control-id": "SYS.3.1.A15",
+                "description": "Base implementation for control SYS.3.1.A15."
+              },
+              {
+                "uuid": "245d406b-5fcd-4694-a7f9-e783d89bee9c",
+                "control-id": "SYS.3.1.A16",
+                "description": "Base implementation for control SYS.3.1.A16."
+              },
+              {
+                "uuid": "36b992a7-b60a-4819-bad0-7457ae753a38",
+                "control-id": "SYS.3.1.A17",
+                "description": "Base implementation for control SYS.3.1.A17."
+              },
+              {
+                "uuid": "05f69d46-e917-4c0a-87fd-caa527812230",
+                "control-id": "SYS.3.1.A18",
+                "description": "Base implementation for control SYS.3.1.A18."
+              }
+            ]
+          },
+          {
+            "uuid": "bd73eb49-266a-47e0-a7dc-651819dd47f3",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "61c39086-af0e-40b2-9531-695e064a815b",
+                "control-id": "CON.3.A12",
+                "description": "AI-Begr\u00fcndung: Adressiert das spezifische und kritische Risiko f\u00fcr Laptops, dass bei einem Diebstahl sowohl das Ger\u00e4t als auch das Backup-Medium entwendet werden, wenn sie zusammen aufbewahrt werden."
+              },
+              {
+                "uuid": "ba96e3de-6462-46f4-8527-f5c0d4a71ab1",
+                "control-id": "CON.3.A14",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt Datensicherungen vor Bedrohungen wie Ransomware, die sich von einem Laptop ausbreiten kann, was bei Verbindungen mit ungesicherten Netzen besonders relevant ist."
+              },
+              {
+                "uuid": "0c294592-acd5-42ab-9752-40adc5d5e45b",
+                "control-id": "CON.3.A9",
+                "description": "AI-Begr\u00fcndung: Behandelt direkt den modernen und h\u00e4ufigen Anwendungsfall der Online- bzw. Cloud-Datensicherung f\u00fcr mobile Laptops und legt daf\u00fcr essenzielle Sicherheitsanforderungen fest."
+              },
+              {
+                "uuid": "f1f77067-d1e4-4ccf-88dd-df0cc2a8b9c5",
+                "control-id": "CON.3.A13",
+                "description": "AI-Begr\u00fcndung: Verschl\u00fcsselung ist unerl\u00e4sslich, um die Vertraulichkeit von Backup-Daten zu sch\u00fctzen, die bei mobilen Ger\u00e4ten einem hohen Risiko von Verlust oder Diebstahl ausgesetzt sind."
+              },
+              {
+                "uuid": "b043f1d4-9af9-47f9-bb1d-1f8fc9076432",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Anforderung einer Bildschirmsperre ist f\u00fcr Laptops besonders kritisch, da diese oft unbeaufsichtigt in nicht gesicherten Umgebungen zur\u00fcckgelassen werden."
+              },
+              {
+                "uuid": "6bee56bf-9ac5-4500-9554-29f96d92a910",
+                "control-id": "SYS.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Adressiert die besondere Herausforderung, unregelm\u00e4\u00dfig mit dem Unternehmensnetz verbundene Laptops aktuell zu halten, was f\u00fcr deren Sicherheit von entscheidender Bedeutung ist."
+              },
+              {
+                "uuid": "d5412e96-b77b-4c08-bc67-8854fb8f849e",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Die hohe Exposition von Laptops gegen\u00fcber unvertrauensw\u00fcrdigen Netzen erh\u00f6ht das Malware-Risiko signifikant, weshalb ein robuster und zentral verwalteter Schutz unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "18c54549-5506-4a5f-a8d7-9d21765c86c3",
+                "control-id": "SYS.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Mindert direkt die Bedrohung durch physische Angriffe, die bei einem gestohlenen oder zug\u00e4nglichen Laptop ein prim\u00e4res Risiko darstellen."
+              },
+              {
+                "uuid": "c6503e64-a9c9-497a-a86c-bc0a599d5d6e",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: Laptops werden intensiv mit Cloud-Diensten genutzt; diese Anforderung stellt sicher, dass zugeh\u00f6rige Betriebssystemfunktionen sicher konfiguriert werden, um den Datenschutz zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "e1aeb344-d438-435e-a31e-caeb2e567a77",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Basisanforderung zur Festplattenverschl\u00fcsselung um entscheidende Details zur Konzeption und Schl\u00fcsselverwaltung, was das Hauptrisiko des Datenverlusts durch Diebstahl adressiert."
+              }
+            ]
+          },
+          {
+            "uuid": "f1ee48ca-5691-49ad-8db6-f12463d34611",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "05c32736-62d0-4630-af8e-06ca72fa0489",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement, insbesondere f\u00fcr Wiederherstellungsschl\u00fcssel, ist ein kritischer Erfolgsfaktor f\u00fcr die Implementierung und Verwaltung der Festplattenverschl\u00fcsselung f\u00fcr eine Flotte von Firmenlaptops."
+              },
+              {
+                "uuid": "bafe332f-69f9-4bc4-beed-bf4a4cc1c4e0",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Verbessert die Laptopsicherheit durch die Nutzung eingebauter Detektionsfunktionen des Betriebssystems und bietet so eine zus\u00e4tzliche Verteidigungslinie, die f\u00fcr Ger\u00e4te in risikoreichen Umgebungen entscheidend ist."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

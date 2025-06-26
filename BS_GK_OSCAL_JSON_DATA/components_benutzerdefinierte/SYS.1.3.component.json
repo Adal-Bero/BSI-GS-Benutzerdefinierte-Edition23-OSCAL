@@ -1,0 +1,303 @@
+{
+  "component-definition": {
+    "uuid": "422ae098-9716-4a57-9424-c99c0950ccce",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.3: Server unter Linux und Unix",
+      "last-modified": "2025-06-26T10:41:55.369151+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.3."
+    },
+    "components": [
+      {
+        "uuid": "39d465db-66c5-40a7-95f5-2389266a32ae",
+        "type": "service",
+        "title": "Server unter Linux und Unix",
+        "description": "Implementation of controls for Baustein SYS.1.3.",
+        "control-implementations": [
+          {
+            "uuid": "45d698ba-cb1b-4b29-a315-ef0b3d55fd17",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.3: Server unter Linux und Unix",
+            "implemented-requirements": [
+              {
+                "uuid": "889e9464-0fdd-4c10-8486-c1946116f6c8",
+                "control-id": "SYS.1.3.A2",
+                "description": "Base implementation for control SYS.1.3.A2."
+              },
+              {
+                "uuid": "e8b5f7da-072e-4e7b-9250-3527d936131d",
+                "control-id": "SYS.1.3.A3",
+                "description": "Base implementation for control SYS.1.3.A3."
+              },
+              {
+                "uuid": "d737e1da-756b-4f5c-b026-4186c5e19f51",
+                "control-id": "SYS.1.3.A4",
+                "description": "Base implementation for control SYS.1.3.A4."
+              },
+              {
+                "uuid": "57843283-2691-4fe1-b339-85de944ecc28",
+                "control-id": "SYS.1.3.A5",
+                "description": "Base implementation for control SYS.1.3.A5."
+              },
+              {
+                "uuid": "6bf1a6b2-09a6-458c-b491-e0c9c2b116a4",
+                "control-id": "SYS.1.3.A6",
+                "description": "Base implementation for control SYS.1.3.A6."
+              },
+              {
+                "uuid": "347f55ce-614c-448d-a3b7-c5a9a3ae84ab",
+                "control-id": "SYS.1.3.A8",
+                "description": "Base implementation for control SYS.1.3.A8."
+              },
+              {
+                "uuid": "17905ece-57ca-403e-8092-28fece4f2885",
+                "control-id": "SYS.1.3.A10",
+                "description": "Base implementation for control SYS.1.3.A10."
+              },
+              {
+                "uuid": "6542c264-a104-4895-a4b5-44f119c27ea7",
+                "control-id": "SYS.1.3.A14",
+                "description": "Base implementation for control SYS.1.3.A14."
+              },
+              {
+                "uuid": "425b08eb-938a-44bf-8193-e67ca8dd6694",
+                "control-id": "SYS.1.3.A16",
+                "description": "Base implementation for control SYS.1.3.A16."
+              },
+              {
+                "uuid": "2bdc926d-48c1-4421-bfd5-634b1c45f695",
+                "control-id": "SYS.1.3.A17",
+                "description": "Base implementation for control SYS.1.3.A17."
+              }
+            ]
+          },
+          {
+            "uuid": "bf1a476d-003c-4f81-9e3b-5cef26a04582",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "7951d193-3cca-49ce-ae53-5a92adf3798e",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Fundamentale Anforderung, die den physischen und logischen Schutz von Linux/Unix-Servern sowie die Verhinderung von Missbrauch (z.B. Webbrowsing) sicherstellt und somit die Angriffsfl\u00e4che reduziert."
+              },
+              {
+                "uuid": "aa64f73a-3fc1-43e2-83ae-40f1cc3bb7bb",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Authentisierung ist ein Kernaspekt der Zugriffskontrolle auf Mehrbenutzersystemen wie Linux/Unix. Die Anforderung ist direkt auf Mechanismen wie PAM, LDAP oder Kerberos anwendbar."
+              },
+              {
+                "uuid": "c2a1d866-b6cc-4130-aa21-05e0612ce93d",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Das Deaktivieren ungenutzter physischer Schnittstellen ist eine grundlegende H\u00e4rtungsma\u00dfnahme, um die Angriffsfl\u00e4che eines jeden Servers, einschlie\u00dflich Linux/Unix, zu minimieren."
+              },
+              {
+                "uuid": "9e98b9c5-428c-4993-b944-a78e696e0d05",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Eine der wichtigsten H\u00e4rtungsma\u00dfnahmen f\u00fcr Linux/Unix-Server ist die Deinstallation oder Deaktivierung nicht ben\u00f6tigter Dienste und Software, um die Angriffsfl\u00e4che zu minimieren."
+              },
+              {
+                "uuid": "54c9ce1e-7bc1-4c34-9b1a-a9251303db71",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Die Pr\u00fcfung des Einsatzes von Virenschutz ist relevant, da auch f\u00fcr Linux/Unix Schadsoftware existiert, insbesondere wenn der Server Dienste wie Datei- oder Mail-Ablage bereitstellt."
+              },
+              {
+                "uuid": "07d28e3a-a96b-4eac-856f-9e047cdd5d6d",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Linux/Unix-Systeme bieten umfangreiche Protokollierungsfunktionen (syslog, journald), deren Konfiguration f\u00fcr die \u00dcberwachung und Forensik unerl\u00e4sslich ist. Diese Anforderung ist daher zentral."
+              },
+              {
+                "uuid": "3d3fd5d6-377f-478d-a6b6-7d9fc26fded0",
+                "control-id": "SYS.1.1.A11",
+                "description": "AI-Begr\u00fcndung: Eine spezifische Sicherheitsrichtlinie ist die Basis f\u00fcr eine konsistente und nachvollziehbare Konfiguration und den sicheren Betrieb von Linux/Unix-Servern."
+              },
+              {
+                "uuid": "01281cb8-2511-46d2-92ae-909390bdb4c0",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Die systematische Planung des Server-Einsatzes ist eine grundlegende Voraussetzung, um Sicherheitsanforderungen an Linux/Unix-Systeme von Anfang an zu ber\u00fccksichtigen."
+              },
+              {
+                "uuid": "2fc0a431-0dac-45d6-a054-ff1e04ca5f18",
+                "control-id": "SYS.1.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zur planvollen Beschaffung stellt sicher, dass die ausgew\u00e4hlte Server-Hard- und Software die spezifischen Sicherheits- und Kompatibilit\u00e4tsanforderungen f\u00fcr den Linux/Unix-Einsatz erf\u00fcllt."
+              },
+              {
+                "uuid": "db5c4e81-5c10-4403-9a51-4e2e2f099b33",
+                "control-id": "SYS.1.1.A15",
+                "description": "AI-Begr\u00fcndung: Die Verf\u00fcgbarkeit von Linux/Unix-Servern h\u00e4ngt direkt von einer stabilen Stromversorgung ab, weshalb diese Anforderung von grundlegender Bedeutung ist."
+              },
+              {
+                "uuid": "38aae467-3517-48eb-a8af-110e58222f7e",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung beschreibt den Kernprozess der H\u00e4rtung, der f\u00fcr Linux/Unix-Server von entscheidender Bedeutung ist, einschlie\u00dflich der sicheren Grundinstallation vor der Netzwerkanbindung."
+              },
+              {
+                "uuid": "5a98b250-a549-434a-b9a4-06b0ec0c4666",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration eines lokalen Paketfilters (z.B. iptables, nftables) ist eine essenzielle Sicherheitsma\u00dfnahme auf jedem Linux/Unix-Server zur Kontrolle des Netzwerkverkehrs."
+              },
+              {
+                "uuid": "c3fa8f48-0354-47e7-903b-d69da5a5fb5a",
+                "control-id": "SYS.1.1.A21",
+                "description": "AI-Begr\u00fcndung: Eine nachvollziehbare Dokumentation von Konfigurations\u00e4nderungen ist f\u00fcr den stabilen und sicheren Betrieb von Linux/Unix-Servern sowie f\u00fcr Audits unerl\u00e4sslich."
+              },
+              {
+                "uuid": "407dbacc-8a6c-4a5f-87e2-6bb76165b9e7",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Als oft kritische Systeme m\u00fcssen Linux/Unix-Server integraler Bestandteil der Notfallplanung sein, um im Schadensfall die Wiederherstellung zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "47f3cef7-f0d2-4c3f-9271-1a1868cc6f91",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung von Systemzustand und Diensten ist f\u00fcr Linux/Unix-Server entscheidend, um Verf\u00fcgbarkeitsprobleme und Sicherheitsanomalien proaktiv zu erkennen."
+              },
+              {
+                "uuid": "ff1b4b8d-b0ae-4724-b342-51051a277236",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitspr\u00fcfungen sind notwendig, um die Konformit\u00e4t mit den H\u00e4rtungsvorgaben zu verifizieren und neue Schwachstellen auf Linux/Unix-Servern zu finden."
+              },
+              {
+                "uuid": "793d147e-4edd-4d4c-a8cb-b509689ef77e",
+                "control-id": "SYS.1.1.A25",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Au\u00dferbetriebnahmeprozess ist entscheidend, um die sichere L\u00f6schung sensibler Daten auf den Festplatten des Linux/Unix-Servers sicherzustellen."
+              },
+              {
+                "uuid": "43624905-430c-4323-baf0-82c754e0d35a",
+                "control-id": "SYS.1.1.A35",
+                "description": "AI-Begr\u00fcndung: Ein Betriebshandbuch standardisiert administrative Prozesse f\u00fcr Linux/Unix-Server und ist entscheidend f\u00fcr einen konsistenten und sicheren Betrieb, insbesondere bei Personalwechsel."
+              },
+              {
+                "uuid": "6afbe4bc-e39c-4ec4-b16c-b1f857f077a2",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist hochrelevant f\u00fcr Linux/Unix, da sie direkt auf Sicherheitsmechanismen wie Container (Docker), chroot, AppArmor oder SELinux zur Isolation von Prozessen abzielt."
+              },
+              {
+                "uuid": "633bf10e-5c54-48d5-8f38-15a05eaddcfb",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Konfigurationen, z.B. mit Ansible, Puppet oder SaltStack, ist f\u00fcr die skalierbare und konsistente Absicherung von Linux/Unix-Serverfarmen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "9e5fad7c-8a3c-4091-a19a-a7461f2db732",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Der Einsatz hostbasierter Angriffserkennungssysteme (z.B. AIDE, Wazuh) ist eine wichtige Ma\u00dfnahme zur \u00dcberwachung der Systemintegrit\u00e4t kritischer Linux/Unix-Server."
+              },
+              {
+                "uuid": "76e51011-dab2-43f1-b938-1bd84a0a682b",
+                "control-id": "SYS.1.1.A28",
+                "description": "AI-Begr\u00fcndung: Redundante Hardwarekomponenten, wie z.B. durch Network-Bonding unter Linux, sind eine Standardmethode zur Erh\u00f6hung der Verf\u00fcgbarkeit von Servern."
+              },
+              {
+                "uuid": "a3c71db1-f33a-43ce-9eb6-04b2bacbe3a3",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Das Prinzip 'Ein Dienst pro Server' ist ein zentrales Sicherheitskonzept, das die Angriffsfl\u00e4che minimiert und oft durch Virtualisierung oder Container auf Linux-Systemen umgesetzt wird."
+              },
+              {
+                "uuid": "88f65040-7722-42d9-9e28-1e6e820c8153",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Ausf\u00fchrungskontrolle ist eine direkt anwendbare H\u00e4rtungsma\u00dfnahme f\u00fcr Linux/Unix, z.B. durch das Einh\u00e4ngen von Dateisystemen wie /tmp mit der 'noexec'-Option."
+              },
+              {
+                "uuid": "b840d84f-4d6c-4599-bf33-5fc972448766",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung des Trust Stores (Wurzelzertifikate) ist auf Linux/Unix-Servern entscheidend f\u00fcr die Sicherheit aller TLS/SSL-basierten Kommunikationsverbindungen."
+              },
+              {
+                "uuid": "92bcd991-f64c-4096-82c7-8702abf7b2d2",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Festplattenverschl\u00fcsselung, typischerweise mit LUKS unter Linux, ist ein wesentlicher Schutzmechanismus f\u00fcr ruhende Daten (Data-at-Rest) auf Servern."
+              },
+              {
+                "uuid": "da7cb333-617d-44eb-a66a-18a85c08ebdd",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs mittels UEFI Secure Boot und BIOS/UEFI-Passwort sch\u00fctzt die Integrit\u00e4t des Linux/Unix-Betriebssystems vor dem Start."
+              },
+              {
+                "uuid": "8ee128ce-ee58-4052-81f9-9ad78a775143",
+                "control-id": "SYS.1.1.A38",
+                "description": "AI-Begr\u00fcndung: Die H\u00e4rtung durch ein Read-Only-Dateisystem ist eine fortgeschrittene und sehr effektive Technik, um die Integrit\u00e4t von Linux/Unix-Systemen in Hochsicherheitsumgebungen zu gew\u00e4hrleisten."
+              }
+            ]
+          },
+          {
+            "uuid": "e2435e21-c4a1-46a9-8534-3c551dba46a0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "d86a0ea3-db92-42bf-a328-51b8c00d6694",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die organisatorische Funktionstrennung, z. B. zwischen Administration und normaler Nutzung, ist eine grundlegende Anforderung, die sich direkt auf die Gestaltung von Rollen und Rechten auf einem Linux/Unix-Server auswirkt."
+              },
+              {
+                "uuid": "ddf0cd3f-c2f5-4410-94d7-751d3001256e",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die sichere Administration von Linux/Unix-Servern erfordert spezifisches Fachwissen. Die Qualifikation des Personals ist daher eine entscheidende Voraussetzung."
+              },
+              {
+                "uuid": "5123e668-05a9-47d2-88c6-eecd58801c4c",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist zentral f\u00fcr die Verwaltung von Benutzer- und Dateisystemberechtigungen (chmod, chown, sudo) auf Linux/Unix-Systemen nach dem Least-Privilege-Prinzip."
+              },
+              {
+                "uuid": "39ec85ef-bcf9-46c7-8ccc-48164b528e9c",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die Identifikation und Authentisierung ist eine grundlegende Sicherheitsfunktion, die den Zugriff auf jeden Dienst und jede Shell eines Linux/Unix-Servers absichern muss."
+              },
+              {
+                "uuid": "c28ee3c9-eb04-4df5-b05f-619a839d843d",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung konkretisiert die Absicherung der Authentisierung, was auf Linux/Unix-Servern durch Ma\u00dfnahmen wie fail2ban (Schutz vor Brute-Force-Angriffen) umgesetzt wird."
+              },
+              {
+                "uuid": "905cb545-4939-4a79-8a56-76556a541d60",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Da Linux/Unix-Server intensiv Kryptografie nutzen (z.B. f\u00fcr SSH, TLS), ist die Auswahl sicherer Algorithmen und Schl\u00fcssell\u00e4ngen von fundamentaler Bedeutung."
+              },
+              {
+                "uuid": "3f508bdb-268d-4913-90ea-1a4b85c257ef",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Schl\u00fcsselmanagement ist f\u00fcr den sicheren Betrieb von Linux/Unix-Servern unerl\u00e4sslich, insbesondere f\u00fcr die Verwaltung von SSH-Schl\u00fcsseln und TLS-Zertifikaten."
+              },
+              {
+                "uuid": "82529c6f-5803-442f-afe0-1ef74474cf1f",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung ist eine grundlegende betriebliche Anforderung zur Gew\u00e4hrleistung der Wiederherstellbarkeit von Daten und Konfigurationen eines Linux/Unix-Servers."
+              },
+              {
+                "uuid": "d03667d2-0674-4127-9edb-ab25bcd1491c",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit administrativer T\u00e4tigkeiten ist auf Linux/Unix-Systemen durch die Protokollierung von Befehlen (z.B. \u00fcber sudo-Logs oder das auditd-Framework) direkt umsetzbar und f\u00fcr die Sicherheit essenziell."
+              },
+              {
+                "uuid": "6bbbf335-4613-4b10-ac65-92367b6116de",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist zentral f\u00fcr die Absicherung administrativer Zug\u00e4nge, wie z.B. SSH, auf Linux/Unix-Servern durch starke Authentisierung und verschl\u00fcsselte Protokolle."
+              },
+              {
+                "uuid": "26695e5f-af76-422a-8bb4-95a9b0960a35",
+                "control-id": "OPS.1.1.2.A18",
+                "description": "AI-Begr\u00fcndung: F\u00fcr hochsichere Linux/Unix-Server ist eine durchg\u00e4ngige Protokollierung administrativer T\u00e4tigkeiten, z.B. durch Session-Recording, eine wichtige Ma\u00dfnahme zur vollst\u00e4ndigen Nachvollziehbarkeit."
+              },
+              {
+                "uuid": "86ee5738-167c-4f52-bc5b-89142d264c1b",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein etabliertes Patch-Management ist f\u00fcr Linux/Unix-Server \u00fcberlebenswichtig, um bekannte Schwachstellen zeitnah durch den Einsatz von Paketmanagern (apt, yum etc.) zu schlie\u00dfen."
+              },
+              {
+                "uuid": "f49583bd-56db-4d24-9aa0-bd0c4512d054",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung f\u00f6rdert die Nutzung der vielf\u00e4ltigen, im Linux/Unix-System bereits vorhandenen Detektionsfunktionen (z.B. Logdateien, auditd) zur Erkennung von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "180e85af-6f55-40ff-b81e-f8b36b943065",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: F\u00fcr einen erh\u00f6hten Schutzbedarf erg\u00e4nzt diese Anforderung die hostbasierten Ma\u00dfnahmen um netzwerkbasierte Detektion, was die Gesamtsicherheit des Linux/Unix-Servers im Netzkontext st\u00e4rkt."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

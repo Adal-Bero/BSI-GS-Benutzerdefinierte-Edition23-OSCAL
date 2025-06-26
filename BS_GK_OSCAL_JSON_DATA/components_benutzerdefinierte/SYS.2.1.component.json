@@ -1,0 +1,151 @@
+{
+  "component-definition": {
+    "uuid": "779fec3d-a60b-437b-ba3d-8bade9bee085",
+    "metadata": {
+      "title": "Component for Baustein SYS.2.1: SYS.2.1 Allgemeiner Client",
+      "last-modified": "2025-06-26T10:52:08.218479+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.2.1."
+    },
+    "components": [
+      {
+        "uuid": "f23598a7-8c15-4f5c-8dc7-6ddbd10e722c",
+        "type": "service",
+        "title": "SYS.2.1 Allgemeiner Client",
+        "description": "Implementation of controls for Baustein SYS.2.1.",
+        "control-implementations": [
+          {
+            "uuid": "98de3708-ef14-4d1f-bc86-ff9251211590",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.2.1: SYS.2.1 Allgemeiner Client",
+            "implemented-requirements": [
+              {
+                "uuid": "bd806f7f-8eac-4ba9-8466-a8e7bf0c2d2f",
+                "control-id": "SYS.2.1.A1",
+                "description": "Base implementation for control SYS.2.1.A1."
+              },
+              {
+                "uuid": "4a0c4ea0-216c-44d6-9461-ce7318d0473a",
+                "control-id": "SYS.2.1.A3",
+                "description": "Base implementation for control SYS.2.1.A3."
+              },
+              {
+                "uuid": "c339c70d-d97e-4a5f-9d72-e6d958c08841",
+                "control-id": "SYS.2.1.A6",
+                "description": "Base implementation for control SYS.2.1.A6."
+              },
+              {
+                "uuid": "e7735122-c62b-4ce8-ade0-ca18d8fa0aa5",
+                "control-id": "SYS.2.1.A8",
+                "description": "Base implementation for control SYS.2.1.A8."
+              },
+              {
+                "uuid": "116312a3-d4b4-4301-8762-c87d6cc2aa3c",
+                "control-id": "SYS.2.1.A42",
+                "description": "Base implementation for control SYS.2.1.A42."
+              },
+              {
+                "uuid": "c45c49e0-36d7-4710-8bdc-68b99681a077",
+                "control-id": "SYS.2.1.A9",
+                "description": "Base implementation for control SYS.2.1.A9."
+              },
+              {
+                "uuid": "5867bdb5-0d98-4908-988e-cb556e237fbd",
+                "control-id": "SYS.2.1.A10",
+                "description": "Base implementation for control SYS.2.1.A10."
+              },
+              {
+                "uuid": "5f6819fc-60c4-49ad-8718-4317bbee09cc",
+                "control-id": "SYS.2.1.A11",
+                "description": "Base implementation for control SYS.2.1.A11."
+              },
+              {
+                "uuid": "cfeea7f8-5150-48e3-848b-523c07890184",
+                "control-id": "SYS.2.1.A13",
+                "description": "Base implementation for control SYS.2.1.A13."
+              },
+              {
+                "uuid": "dd3ce4ea-ec88-4bd9-b738-8ddb50aee1a1",
+                "control-id": "SYS.2.1.A15",
+                "description": "Base implementation for control SYS.2.1.A15."
+              },
+              {
+                "uuid": "d75b9178-1f76-4541-bd2b-cc6f9b121eae",
+                "control-id": "SYS.2.1.A16",
+                "description": "Base implementation for control SYS.2.1.A16."
+              },
+              {
+                "uuid": "6399818d-9365-4087-a421-45e86c472412",
+                "control-id": "SYS.2.1.A28",
+                "description": "Base implementation for control SYS.2.1.A28."
+              }
+            ]
+          },
+          {
+            "uuid": "596168fc-ff99-480e-ab94-fca7485a493d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "c1a1d022-8781-4dca-b825-4b257a3c332a",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Baustein fordert getrennte Umgebungen f\u00fcr Administration und Benutzung. Die Funktionstrennung ist eine grundlegende Anforderung, um dies organisatorisch und technisch umzusetzen und unberechtigte Rechteausweitung zu verhindern."
+              },
+              {
+                "uuid": "63db83cc-493f-4385-b229-a0eba9537ca4",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Berechtigungen nach dem Need-to-know-Prinzip ist f\u00fcr den Schutz von Informationen auf einem Client, dem Kernziel des Bausteins, unerl\u00e4sslich. Die Anforderung ist auf jedes Client-System direkt anwendbar."
+              },
+              {
+                "uuid": "1dc20068-fe40-4309-8a6d-0753197bdeb6",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die Identifikation und Authentisierung ist die grundlegendste Sicherheitsma\u00dfnahme f\u00fcr jeden Client. Ohne sie ist kein Schutz der darauf gespeicherten Informationen m\u00f6glich, was dem Baustein-Ziel direkt entspricht."
+              },
+              {
+                "uuid": "81cc598c-a488-4c2b-aebe-cf15552671cd",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung konkretisiert die sichere Ausgestaltung der Authentisierung. Ma\u00dfnahmen wie Kontensperrung und der Schutz von Authentisierungsdaten erh\u00f6hen die Sicherheit des Clients signifikant gegen unbefugte Zugriffsversuche."
+              },
+              {
+                "uuid": "c3f0c474-05ee-405f-b084-4cc902d6751e",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Clients verarbeiten und \u00fcbertragen zunehmend verschl\u00fcsselte Daten (z. B. Festplattenverschl\u00fcsselung, E-Mails, VPN). Die Auswahl starker kryptografischer Verfahren ist daher fundamental, um die Vertraulichkeit und Integrit\u00e4t dieser Daten zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "b29daed4-d507-4671-b1b8-4945dd1538b2",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Kryptografie ist nur dann sicher, wenn auch die Schl\u00fcssel sicher verwaltet werden. Diese Anforderung ist f\u00fcr den Schutz von z.B. Wiederherstellungsschl\u00fcsseln der Festplattenverschl\u00fcsselung auf Clients essenziell."
+              },
+              {
+                "uuid": "90516171-e580-40c6-b1d2-7765ad7c7249",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Der Schutz von Informationen, das Ziel des Bausteins, umfasst auch die Sicherstellung ihrer Verf\u00fcgbarkeit. Die regelm\u00e4\u00dfige Datensicherung ist eine grundlegende Ma\u00dfnahme zum Schutz vor Datenverlust auf dem Client."
+              },
+              {
+                "uuid": "f31a87c0-e015-4d5f-a93f-b2a0373a613e",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Der Baustein erw\u00e4hnt explizit administrative Umgebungen. Die Nachweisbarkeit administrativer T\u00e4tigkeiten ist entscheidend f\u00fcr die Nachvollziehbarkeit von \u00c4nderungen und die Analyse von Sicherheitsvorf\u00e4llen auf dem Client."
+              },
+              {
+                "uuid": "16a4d303-a1b8-4894-a153-6eeb412fa455",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung sch\u00fctzt die privilegierten administrativen Zug\u00e4nge, die auf einem Client existieren. Sie ist eine direkte und notwendige Konkretisierung der im Baustein geforderten Trennung von Benutzer- und Admin-Umgebungen."
+              },
+              {
+                "uuid": "0c18b231-10a1-464d-adc4-23d2441cf189",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Clients sind durch veraltete Software und Betriebssysteme stark gef\u00e4hrdet. Ein systematisches Patch-Management ist eine der wichtigsten operativen Ma\u00dfnahmen, um die Sicherheit eines Clients dauerhaft aufrechtzuerhalten."
+              },
+              {
+                "uuid": "fe6cb305-4c35-4c31-8e60-9929c86d934f",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Moderne Client-Betriebssysteme bringen eigene Sicherheitsfunktionen mit (z. B. Malware-Schutz, Firewall). Deren Aktivierung und Nutzung stellt eine grundlegende und effiziente Detektionsf\u00e4higkeit direkt auf dem Endger\u00e4t sicher."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

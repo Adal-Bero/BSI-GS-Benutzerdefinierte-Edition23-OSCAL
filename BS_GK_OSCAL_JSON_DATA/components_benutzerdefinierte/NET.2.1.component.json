@@ -1,0 +1,191 @@
+{
+  "component-definition": {
+    "uuid": "23c23f9d-2ff4-4910-8f27-8556348e1837",
+    "metadata": {
+      "title": "Component for Baustein NET.2.1: WLAN-Betrieb",
+      "last-modified": "2025-06-26T11:29:55.083754+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.2.1."
+    },
+    "components": [
+      {
+        "uuid": "6bb75bc9-90d4-4f38-865c-5241ae70b757",
+        "type": "service",
+        "title": "WLAN-Betrieb",
+        "description": "Implementation of controls for Baustein NET.2.1.",
+        "control-implementations": [
+          {
+            "uuid": "f4ffe132-e565-49a3-bc02-730cee23ac6e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.2.1: WLAN-Betrieb",
+            "implemented-requirements": [
+              {
+                "uuid": "ee6969c4-38fe-44b2-950d-1964030a3a42",
+                "control-id": "NET.2.1.A1",
+                "description": "Base implementation for control NET.2.1.A1."
+              },
+              {
+                "uuid": "4995a391-ffd7-4183-8ef0-53ac20201a01",
+                "control-id": "NET.2.1.A2",
+                "description": "Base implementation for control NET.2.1.A2."
+              },
+              {
+                "uuid": "281da3b2-e8a2-4e11-aacc-8e87d0460744",
+                "control-id": "NET.2.1.A3",
+                "description": "Base implementation for control NET.2.1.A3."
+              },
+              {
+                "uuid": "b92614dd-415a-40d0-a6d0-83978d4b740a",
+                "control-id": "NET.2.1.A4",
+                "description": "Base implementation for control NET.2.1.A4."
+              },
+              {
+                "uuid": "eb49755f-1176-477f-ab3b-75a0d5061741",
+                "control-id": "NET.2.1.A5",
+                "description": "Base implementation for control NET.2.1.A5."
+              },
+              {
+                "uuid": "b72c9b02-23fa-4667-bc2f-a7d57aff9039",
+                "control-id": "NET.2.1.A6",
+                "description": "Base implementation for control NET.2.1.A6."
+              },
+              {
+                "uuid": "853503fe-1a5e-4a38-97d0-35c66460e6d9",
+                "control-id": "NET.2.1.A7",
+                "description": "Base implementation for control NET.2.1.A7."
+              },
+              {
+                "uuid": "51f52b41-b789-4db3-a2cf-e4e994242bc4",
+                "control-id": "NET.2.1.A8",
+                "description": "Base implementation for control NET.2.1.A8."
+              },
+              {
+                "uuid": "90fd8e1b-6bef-4f1b-994d-afa3b66f2cd2",
+                "control-id": "NET.2.1.A9",
+                "description": "Base implementation for control NET.2.1.A9."
+              },
+              {
+                "uuid": "fddccd9a-8efe-4949-956d-cc74c528309d",
+                "control-id": "NET.2.1.A10",
+                "description": "Base implementation for control NET.2.1.A10."
+              },
+              {
+                "uuid": "54436f13-06a2-49e6-a242-7352f17437ac",
+                "control-id": "NET.2.1.A11",
+                "description": "Base implementation for control NET.2.1.A11."
+              },
+              {
+                "uuid": "55846469-1f36-44ae-92b9-cd7ffd5d9e76",
+                "control-id": "NET.2.1.A12",
+                "description": "Base implementation for control NET.2.1.A12."
+              },
+              {
+                "uuid": "e34340d9-2482-42d3-851a-b5cb0a74a02b",
+                "control-id": "NET.2.1.A13",
+                "description": "Base implementation for control NET.2.1.A13."
+              },
+              {
+                "uuid": "2abcf1e8-063b-48a5-ab7d-e2681174fde6",
+                "control-id": "NET.2.1.A14",
+                "description": "Base implementation for control NET.2.1.A14."
+              },
+              {
+                "uuid": "b647b8fe-b9a8-46fb-8bcc-0b6885e1278e",
+                "control-id": "NET.2.1.A15",
+                "description": "Base implementation for control NET.2.1.A15."
+              },
+              {
+                "uuid": "0c77a32c-f4c6-47dc-99e3-766e46450533",
+                "control-id": "NET.2.1.A16",
+                "description": "Base implementation for control NET.2.1.A16."
+              },
+              {
+                "uuid": "c6bf77b1-9198-40c8-a23e-ffcaac6d890e",
+                "control-id": "NET.2.1.A17",
+                "description": "Base implementation for control NET.2.1.A17."
+              },
+              {
+                "uuid": "351656f9-ba14-4f96-81f8-ab95811e5873",
+                "control-id": "NET.2.1.A18",
+                "description": "Base implementation for control NET.2.1.A18."
+              }
+            ]
+          },
+          {
+            "uuid": "715f92fc-4492-4264-a8b7-da7f7f0b3467",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "7d7dd0d0-65f5-494c-b0d3-43974ee9c58d",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Sorgt f\u00fcr eine Trennung zwischen operativen (Konfiguration des WLANs) und kontrollierenden (Pr\u00fcfung der Konfiguration) Aufgaben, was f\u00fcr den sicheren Betrieb unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "045671ce-0aee-41d4-a92d-2fed6e41f76b",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass das Personal f\u00fcr den WLAN-Betrieb \u00fcber das notwendige, aktuelle Fachwissen zu komplexen Technologien wie IEEE 802.11, WPA3 oder 802.1X verf\u00fcgt."
+              },
+              {
+                "uuid": "c7682aeb-fb68-4c97-9437-fe758b3305ed",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Regelt die Vergabe von Berechtigungen sowohl f\u00fcr den administrativen Zugriff auf WLAN-Komponenten als auch f\u00fcr den Netzzugang der Benutzer, was ein Kernaspekt des sicheren Betriebs ist."
+              },
+              {
+                "uuid": "32473072-9676-48e0-b8c1-5e134f03b7f4",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Ist fundamental, da der sichere Betrieb eines WLANs zwingend eine sichere Authentisierung von Administratoren an den Komponenten und von Benutzern am Netz erfordert."
+              },
+              {
+                "uuid": "8a31faf2-f2b9-4963-9edd-c4d916c02455",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Adressiert die kritische Entscheidung bei der WLAN-Einrichtung, ad\u00e4quate Authentisierungsmechanismen (z. B. WPA3-Enterprise) auszuw\u00e4hlen, um das Netz wirksam zu sch\u00fctzen."
+              },
+              {
+                "uuid": "f8fe6bb0-9dd8-45f0-9672-da2d0565564a",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: WLAN-Sicherheit basiert auf Kryptografie (z.B. WPA3). Diese Anforderung ist essenziell, um die Verwendung von sicheren und aktuellen Verschl\u00fcsselungsverfahren f\u00fcr das Funknetz zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "4aaea3f3-190f-44cc-ac73-d087f2460203",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der sichere Betrieb eines WLANs h\u00e4ngt direkt von einem sicheren Management der verwendeten Schl\u00fcssel ab, seien es Pre-Shared Keys oder Zertifikate f\u00fcr 802.1X."
+              },
+              {
+                "uuid": "ead8dd6d-f6f5-4fb7-97a2-f27add5d0682",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die operationelle Stabilit\u00e4t durch die Sicherung der Konfigurationsdaten von zentralen WLAN-Komponenten wie Controllern oder RADIUS-Servern."
+              },
+              {
+                "uuid": "ca30b7dc-2cf3-41f5-9699-520b7ca35860",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Stellt die Nachvollziehbarkeit von \u00c4nderungen an der WLAN-Konfiguration sicher, was f\u00fcr die Analyse von St\u00f6rungen und Sicherheitsvorf\u00e4llen kritisch ist."
+              },
+              {
+                "uuid": "2d6a6b86-83a6-4802-b3f0-7a2eb3f62051",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Ist entscheidend f\u00fcr den Schutz der WLAN-Infrastruktur, indem der administrative Zugriff auf Controller und Access Points abgesichert und nur \u00fcber sichere Protokolle erlaubt wird."
+              },
+              {
+                "uuid": "e614f117-f1bc-4398-921e-89e9b47505dd",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Der Betrieb von WLAN-Komponenten erfordert ein systematisches Management von Firmware-Updates (Patches) und Konfigurations\u00e4nderungen, um Sicherheitsl\u00fccken zu schlie\u00dfen und Fehler zu vermeiden."
+              },
+              {
+                "uuid": "71e53ca6-f22e-400b-8e75-d33d9fe7b19e",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: WLAN-Systeme bieten oft integrierte Sicherheitsfunktionen wie die Erkennung fremder Access Points (Rogue AP Detection). Diese Anforderung stellt sicher, dass solche wichtigen Funktionen auch genutzt werden."
+              },
+              {
+                "uuid": "619cb49d-16d0-401f-82c3-376c7fc59ba9",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Eigensicherung des WLANs durch die \u00dcberwachung der Netz\u00fcberg\u00e4nge mit zus\u00e4tzlichen Detektionssystemen, was eine wichtige, zus\u00e4tzliche Sicherheitsschicht darstellt."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

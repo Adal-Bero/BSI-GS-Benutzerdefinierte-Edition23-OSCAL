@@ -1,0 +1,263 @@
+{
+  "component-definition": {
+    "uuid": "b99574b6-4d34-4298-a8f8-4e183ac81167",
+    "metadata": {
+      "title": "Component for Baustein SYS.4.4: Allgemeines IoT-Ger\u00e4t",
+      "last-modified": "2025-06-26T11:14:11.614195+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.4.4."
+    },
+    "components": [
+      {
+        "uuid": "57a5fc76-87c8-4337-a9a6-102763a2d938",
+        "type": "service",
+        "title": "Allgemeines IoT-Ger\u00e4t",
+        "description": "Implementation of controls for Baustein SYS.4.4.",
+        "control-implementations": [
+          {
+            "uuid": "53da440d-961d-4efa-bea4-6840169274b0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.4.4: Allgemeines IoT-Ger\u00e4t",
+            "implemented-requirements": [
+              {
+                "uuid": "8555a6f7-6cad-4dab-b118-ecea4cbf7cec",
+                "control-id": "SYS.4.4.A1",
+                "description": "Base implementation for control SYS.4.4.A1."
+              },
+              {
+                "uuid": "bcd2d0ba-79b7-4277-8459-48e5b183870c",
+                "control-id": "SYS.4.4.A2",
+                "description": "Base implementation for control SYS.4.4.A2."
+              },
+              {
+                "uuid": "a199c0a0-5725-4d57-a409-77dd0bcc1e4e",
+                "control-id": "SYS.4.4.A5",
+                "description": "Base implementation for control SYS.4.4.A5."
+              },
+              {
+                "uuid": "3e420611-c48b-4219-9657-0232e16ca595",
+                "control-id": "SYS.4.4.A6",
+                "description": "Base implementation for control SYS.4.4.A6."
+              },
+              {
+                "uuid": "7624bad5-ede2-4153-a826-917b519a6ff9",
+                "control-id": "SYS.4.4.A7",
+                "description": "Base implementation for control SYS.4.4.A7."
+              },
+              {
+                "uuid": "8f01c96a-0693-437c-ad89-3fbdbaf4857c",
+                "control-id": "SYS.4.4.A8",
+                "description": "Base implementation for control SYS.4.4.A8."
+              },
+              {
+                "uuid": "3207e301-3115-40b8-98f8-82b4910faf75",
+                "control-id": "SYS.4.4.A9",
+                "description": "Base implementation for control SYS.4.4.A9."
+              },
+              {
+                "uuid": "0320549d-4f1b-4432-8796-cbe258672318",
+                "control-id": "SYS.4.4.A10",
+                "description": "Base implementation for control SYS.4.4.A10."
+              },
+              {
+                "uuid": "0938225c-c703-48c1-8a26-004c3bb8f4db",
+                "control-id": "SYS.4.4.A11",
+                "description": "Base implementation for control SYS.4.4.A11."
+              },
+              {
+                "uuid": "339cfb8a-457e-4103-b186-f3eb6e6f74f5",
+                "control-id": "SYS.4.4.A13",
+                "description": "Base implementation for control SYS.4.4.A13."
+              },
+              {
+                "uuid": "2fce9435-c217-499e-8a6e-d2819b98ab67",
+                "control-id": "SYS.4.4.A15",
+                "description": "Base implementation for control SYS.4.4.A15."
+              },
+              {
+                "uuid": "386dd217-b911-4be2-843d-f0a1402b804a",
+                "control-id": "SYS.4.4.A16",
+                "description": "Base implementation for control SYS.4.4.A16."
+              },
+              {
+                "uuid": "89fd2d18-711d-4ced-add8-1a9c3571c1fe",
+                "control-id": "SYS.4.4.A17",
+                "description": "Base implementation for control SYS.4.4.A17."
+              },
+              {
+                "uuid": "10532ae7-2239-46dd-b1d4-da626c4f3e80",
+                "control-id": "SYS.4.4.A18",
+                "description": "Base implementation for control SYS.4.4.A18."
+              },
+              {
+                "uuid": "92abec54-7f77-411b-996a-03f18676c0a7",
+                "control-id": "SYS.4.4.A19",
+                "description": "Base implementation for control SYS.4.4.A19."
+              },
+              {
+                "uuid": "1a997946-12f8-4ca4-9e4f-1f19092466ed",
+                "control-id": "SYS.4.4.A20",
+                "description": "Base implementation for control SYS.4.4.A20."
+              },
+              {
+                "uuid": "b0f7dc27-74c8-4f35-abc4-76a1e6e4d1dc",
+                "control-id": "SYS.4.4.A21",
+                "description": "Base implementation for control SYS.4.4.A21."
+              },
+              {
+                "uuid": "3aa54bf7-44ba-476c-a013-4d6f748adb01",
+                "control-id": "SYS.4.4.A22",
+                "description": "Base implementation for control SYS.4.4.A22."
+              },
+              {
+                "uuid": "e5eea877-95d2-47c2-8f3d-8726da14f7dc",
+                "control-id": "SYS.4.4.A23",
+                "description": "Base implementation for control SYS.4.4.A23."
+              },
+              {
+                "uuid": "bc1b5ffb-730a-419f-97bd-477542f0f430",
+                "control-id": "SYS.4.4.A24",
+                "description": "Base implementation for control SYS.4.4.A24."
+              }
+            ]
+          },
+          {
+            "uuid": "d5aa9b84-7abd-425c-a2cb-1055db442c66",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "8bfaee35-cd94-424a-8ae9-039e8901b011",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: IoT-Ger\u00e4te und deren Management-Plattformen nutzen oft Benutzerkonten. Die Anforderung steuert den Lebenszyklus dieser Konten und verhindert Risiken durch Standard- oder verwaiste Konten."
+              },
+              {
+                "uuid": "e1e843cb-072d-4456-b78a-cc56fafc9cee",
+                "control-id": "ORP.4.A3",
+                "description": "AI-Begr\u00fcndung: Eine aktuelle Dokumentation ist f\u00fcr den sicheren Betrieb einer potenziell gro\u00dfen Anzahl von IoT-Ger\u00e4ten und deren Benutzerkonten unerl\u00e4sslich, um den \u00dcberblick zu behalten."
+              },
+              {
+                "uuid": "44ae7793-9420-4bdf-b4d3-9ae7008d945b",
+                "control-id": "ORP.4.A4",
+                "description": "AI-Begr\u00fcndung: Bei der Verwaltung von IoT-Ger\u00e4ten ist eine Funktionstrennung, z. B. zwischen der Konfiguration und der \u00dcberwachung, wichtig, um Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "012f343e-9877-4383-8bb1-9f76562bc3ba",
+                "control-id": "ORP.4.A6",
+                "description": "AI-Begr\u00fcndung: Da IoT-Ger\u00e4te oft \u00fcber das Netz verwaltet werden, ist die sichere Regelung des Fernzugangs (z. B. per VPN) ein kritischer Aspekt, um die administrativen Schnittstellen zu sch\u00fctzen."
+              },
+              {
+                "uuid": "c47d6c60-0056-494e-95dc-4464ea11bb21",
+                "control-id": "ORP.4.A7",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung definiert den notwendigen Prozess zur Vergabe von Zugriffsrechten auf Daten und Anwendungen von IoT-Ger\u00e4ten und erg\u00e4nzt damit ORP.4.A2."
+              },
+              {
+                "uuid": "bf553ec0-e46f-4466-87f1-29d904850cff",
+                "control-id": "ORP.4.A8",
+                "description": "AI-Begr\u00fcndung: Schwache oder Standard-Passw\u00f6rter sind eine der gr\u00f6\u00dften Schwachstellen bei IoT-Ger\u00e4ten. Eine verbindliche Passwortregelung ist daher zur Absicherung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "ff4c2d54-0cee-4247-b9f6-2f654175c07a",
+                "control-id": "ORP.4.A10",
+                "description": "AI-Begr\u00fcndung: Administratorkonten f\u00fcr IoT-Systeme sind ein prim\u00e4res Angriffsziel. Der Schutz dieser Konten durch MFA erh\u00f6ht die Sicherheit gegen Kompromittierung signifikant."
+              },
+              {
+                "uuid": "5d13f8b8-0522-40f8-bb4c-75ac0579fdf6",
+                "control-id": "ORP.4.A11",
+                "description": "AI-Begr\u00fcndung: Ein unsicherer Passwort-R\u00fccksetzprozess kann zur \u00dcbernahme von Konten f\u00fchren. Die Anforderung stellt sicher, dass dieser Prozess f\u00fcr IoT-Systeme sicher gestaltet ist."
+              },
+              {
+                "uuid": "6fe92242-8879-4592-b32c-4f37beb7c9ce",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: Ein \u00fcbergreifendes Authentisierungskonzept stellt eine durchdachte und konsistente Absicherung aller IoT-Ger\u00e4te sicher, insbesondere bez\u00fcglich der sicheren \u00dcbertragung und Speicherung von Authentisierungsdaten."
+              },
+              {
+                "uuid": "d265b2b7-87c2-4344-9d76-a07b67b3cc77",
+                "control-id": "ORP.4.A20",
+                "description": "AI-Begr\u00fcndung: Falls ein zentrales IAM-System f\u00fcr die Verwaltung von IoT-Ger\u00e4ten genutzt wird, ist dessen Ausfallsicherheit wichtig, um die Funktionsf\u00e4higkeit der angebundenen IoT-Systeme zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "4430566a-19e5-47ad-a825-5c77b515babb",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: Bei IoT-Ger\u00e4ten mit hohem Schutzbedarf (z. B. in kritischen Umgebungen) ist eine Mehr-Faktor-Authentisierung ein angemessener und wirksamer Schutzmechanismus."
+              },
+              {
+                "uuid": "fbad29be-dc15-4dea-8783-2c99ca9c0028",
+                "control-id": "ORP.4.A24",
+                "description": "AI-Begr\u00fcndung: F\u00fcr administrative T\u00e4tigkeiten auf IoT-Systemen mit sehr hohem Schutzbedarf verhindert das Vier-Augen-Prinzip Fehler und Missbrauch durch eine einzelne Person."
+              }
+            ]
+          },
+          {
+            "uuid": "cae2dabf-d92f-427c-a3c4-bd08df636957",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "78d1c1c8-b980-4c77-801d-1f8e470ead8b",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von minimalen Berechtigungen ist ein Grundprinzip der Informationssicherheit und direkt auf die Konfiguration von Zugriffsrechten auf IoT-Ger\u00e4ten und deren Funktionen anwendbar."
+              },
+              {
+                "uuid": "6a3343a3-53ab-415a-abd8-85ec5f49b269",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Stellt die grundlegende Anforderung sicher, dass jeder Zugriff auf IoT-Ger\u00e4te und -Dienste eine angemessene Authentisierung erfordert und Standard-Anmeldedaten ge\u00e4ndert werden."
+              },
+              {
+                "uuid": "afed32db-6870-430b-83fd-907a5d8ccc7d",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung sch\u00fctzt IoT-Ger\u00e4te vor Brute-Force-Angriffen auf deren Authentisierungsmechanismen durch Ma\u00dfnahmen wie Anmeldeverz\u00f6gerungen oder Kontensperrung."
+              },
+              {
+                "uuid": "b27e9111-b0b3-4345-8152-650016cb4539",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die sichere Konfiguration und der Betrieb von IoT-Ger\u00e4ten erfordern spezifisches Wissen. Die Qualifikation des Personals ist daher eine wichtige Voraussetzung."
+              },
+              {
+                "uuid": "b6afafa7-9e1f-4afa-afcb-b335e8c8f8de",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: IoT-Ger\u00e4te kommunizieren \u00fcber Netze und m\u00fcssen Daten sch\u00fctzen. Die Verwendung von sicheren und aktuellen kryptografischen Verfahren ist daf\u00fcr eine grundlegende technische Notwendigkeit."
+              },
+              {
+                "uuid": "81c4dd43-783d-47e5-b631-b96a31a328a0",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Kryptografie ist nur so sicher wie das Schl\u00fcsselmanagement. Dies ist f\u00fcr die Skalierbarkeit und Sicherheit von IoT-Implementierungen von entscheidender Bedeutung."
+              },
+              {
+                "uuid": "64e5e13b-8452-47f1-b739-2cf686b9bab9",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfigurationsdaten von IoT-Ger\u00e4ten sind f\u00fcr den Betrieb wichtig. Eine regelm\u00e4\u00dfige Datensicherung stellt die schnelle Wiederherstellbarkeit nach einem Ausfall sicher."
+              },
+              {
+                "uuid": "cdd42ac7-79ec-48c9-8804-256d6a30ca3a",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung administrativer T\u00e4tigkeiten ist essenziell, um \u00c4nderungen an IoT-Systemen nachvollziehen zu k\u00f6nnen und die Grundlage f\u00fcr die Analyse von Sicherheitsvorf\u00e4llen zu schaffen."
+              },
+              {
+                "uuid": "f594d1ac-571c-43a9-9945-e7b419f12748",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist zentral f\u00fcr den Schutz von IoT-Ger\u00e4ten, da sie die Absicherung der administrativen Schnittstellen durch Authentisierung und verschl\u00fcsselte Protokolle fordert."
+              },
+              {
+                "uuid": "0f1e162b-93a9-4aac-b2c1-b0658a0e1ee8",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: IoT-Ger\u00e4te sind oft von Sicherheitsl\u00fccken betroffen. Ein geregeltes Patch- und \u00c4nderungsmanagement ist daher ein kritischer Prozess, um die Ger\u00e4te aktuell und sicher zu halten."
+              },
+              {
+                "uuid": "1090c098-defa-4c62-a4df-7a801762cd3f",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Da IoT-Ger\u00e4te oft 'Black Boxes' sind, ist es wichtig, deren vorhandene Protokollierungs- und Alarmierungsfunktionen zu nutzen, um sicherheitsrelevante Ereignisse zu erkennen."
+              },
+              {
+                "uuid": "51bbe579-0a92-4710-8282-8edd46e05ef5",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Da die internen Sicherheitsfunktionen von IoT-Ger\u00e4ten oft unzureichend sind, bietet die \u00dcberwachung des Netzwerkverkehrs durch zus\u00e4tzliche Detektionssysteme (z.B. NIDS) eine wichtige zus\u00e4tzliche Sicherheitsebene."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

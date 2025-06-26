@@ -1,0 +1,83 @@
+{
+  "component-definition": {
+    "uuid": "e32a0f43-2493-45ff-ba7c-bbb9d581d58b",
+    "metadata": {
+      "title": "Component for Baustein NET.2.2: WLAN-Nutzung",
+      "last-modified": "2025-06-26T11:30:54.664102+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.2.2."
+    },
+    "components": [
+      {
+        "uuid": "67f8fbcd-b195-492f-99d3-18546b2881cb",
+        "type": "service",
+        "title": "WLAN-Nutzung",
+        "description": "Implementation of controls for Baustein NET.2.2.",
+        "control-implementations": [
+          {
+            "uuid": "392d04b4-dfc6-40b9-a1cd-b872120f7076",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.2.2: WLAN-Nutzung",
+            "implemented-requirements": [
+              {
+                "uuid": "6f3582f2-a729-480f-9b8a-d12dc811a9ad",
+                "control-id": "NET.2.2.A1",
+                "description": "Base implementation for control NET.2.2.A1."
+              },
+              {
+                "uuid": "65b18693-d2c6-4f05-a903-f6006c8844a4",
+                "control-id": "NET.2.2.A2",
+                "description": "Base implementation for control NET.2.2.A2."
+              },
+              {
+                "uuid": "ced1b249-bb18-4236-a101-e216986604a4",
+                "control-id": "NET.2.2.A3",
+                "description": "Base implementation for control NET.2.2.A3."
+              },
+              {
+                "uuid": "60e2b49e-822b-4721-b0af-062fb2dbb1c9",
+                "control-id": "NET.2.2.A4",
+                "description": "Base implementation for control NET.2.2.A4."
+              }
+            ]
+          },
+          {
+            "uuid": "d58f9eb8-18a6-46dd-baff-fa544d455a2b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "feb91269-18f7-4b44-822e-edf5f2942e54",
+                "control-id": "NET.2.1.A15",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung beschreibt eine konkrete Ma\u00dfnahme (Nutzung eines VPNs), die der Benutzer auf seinem Client anwendet, um die Sicherheit bei der WLAN-Nutzung, insbesondere beim Zugriff auf sch\u00fctzenswerte Daten, zu erh\u00f6hen. Dies passt direkt zum Ziel des Bausteins \"WLAN-Nutzung\"."
+              }
+            ]
+          },
+          {
+            "uuid": "71cf2d37-73b5-4bd8-95ed-0311b85823a2",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "87e5df2f-29e3-482b-b8b9-17dd57faa6be",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die sichere Nutzung eines WLANs beginnt mit der korrekten und sicheren Identifikation und Authentisierung des Clients bzw. Benutzers am Netzwerk. Diese Anforderung stellt eine grundlegende und unverzichtbare Sicherheitsma\u00dfnahme im Kontext der WLAN-Nutzung dar."
+              },
+              {
+                "uuid": "0c66690a-4513-4d99-b422-9ab7f77616da",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit des WLAN-Clients ist entscheidend f\u00fcr die sichere WLAN-Nutzung. Ein etabliertes Patch- und \u00c4nderungsmanagement stellt sicher, dass Sicherheitsl\u00fccken im Betriebssystem, in Treibern und in der Software des Clients zeitnah geschlossen werden, was das System vor Angriffen \u00fcber das WLAN sch\u00fctzt."
+              },
+              {
+                "uuid": "c4a6ecda-9cfd-478d-aa06-e8fa59a17ea2",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass auf dem WLAN-Client vorhandene Sicherheitsfunktionen (z. B. Personal Firewall, Security Center) zur Erkennung von Anomalien und Angriffen aktiv genutzt werden. Dies ist f\u00fcr die sichere Nutzung und die Reaktion auf Sicherheitsvorf\u00e4lle, die im Baustein explizit erw\u00e4hnt wird, unerl\u00e4sslich."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

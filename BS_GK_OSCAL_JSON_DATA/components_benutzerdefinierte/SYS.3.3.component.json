@@ -1,0 +1,193 @@
+{
+  "component-definition": {
+    "uuid": "75395a9b-7a1f-452d-a971-67562d50ed52",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.3: Mobiltelefon",
+      "last-modified": "2025-06-26T11:09:07.291284+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.3."
+    },
+    "components": [
+      {
+        "uuid": "8ed7f460-44ee-42b4-9934-d5f9852ffc6c",
+        "type": "service",
+        "title": "Mobiltelefon",
+        "description": "Implementation of controls for Baustein SYS.3.3.",
+        "control-implementations": [
+          {
+            "uuid": "d04723ab-fd1c-4571-af52-668e24ff21e8",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.3: Mobiltelefon",
+            "implemented-requirements": [
+              {
+                "uuid": "ccaa0ec5-a4b4-4b6d-ac69-9c3807f71a77",
+                "control-id": "SYS.3.3.A1",
+                "description": "Base implementation for control SYS.3.3.A1."
+              },
+              {
+                "uuid": "0c94dbff-c9df-4b32-b7b0-b7c58b6b9f63",
+                "control-id": "SYS.3.3.A2",
+                "description": "Base implementation for control SYS.3.3.A2."
+              },
+              {
+                "uuid": "77b481cc-fad6-4a20-ac77-b1ba2b71d11c",
+                "control-id": "SYS.3.3.A3",
+                "description": "Base implementation for control SYS.3.3.A3."
+              },
+              {
+                "uuid": "12f817f9-924b-42ac-979e-7e9a448a10aa",
+                "control-id": "SYS.3.3.A4",
+                "description": "Base implementation for control SYS.3.3.A4."
+              },
+              {
+                "uuid": "efd65a56-c193-4798-90b5-9f2de0a17fc4",
+                "control-id": "SYS.3.3.A5",
+                "description": "Base implementation for control SYS.3.3.A5."
+              },
+              {
+                "uuid": "5d5d0a7c-800a-4657-8df8-2d3c1f776633",
+                "control-id": "SYS.3.3.A6",
+                "description": "Base implementation for control SYS.3.3.A6."
+              },
+              {
+                "uuid": "d550265e-3da7-47c0-b47b-db657b487965",
+                "control-id": "SYS.3.3.A7",
+                "description": "Base implementation for control SYS.3.3.A7."
+              },
+              {
+                "uuid": "68fe53d0-d6c4-4720-ba0b-9762dbc03566",
+                "control-id": "SYS.3.3.A8",
+                "description": "Base implementation for control SYS.3.3.A8."
+              },
+              {
+                "uuid": "0d42f2d8-477c-4dbc-8648-8befe559667b",
+                "control-id": "SYS.3.3.A10",
+                "description": "Base implementation for control SYS.3.3.A10."
+              },
+              {
+                "uuid": "c77bc15b-b0fb-4137-b808-fe756417e1b2",
+                "control-id": "SYS.3.3.A11",
+                "description": "Base implementation for control SYS.3.3.A11."
+              },
+              {
+                "uuid": "0f56b43b-d9d1-436c-9c46-7a1a5e22afb7",
+                "control-id": "SYS.3.3.A12",
+                "description": "Base implementation for control SYS.3.3.A12."
+              },
+              {
+                "uuid": "155efb2d-cd9d-4fd9-a922-7583c882eb1d",
+                "control-id": "SYS.3.3.A9",
+                "description": "Base implementation for control SYS.3.3.A9."
+              },
+              {
+                "uuid": "09dbece4-094a-4763-977f-18a361545ed3",
+                "control-id": "SYS.3.3.A13",
+                "description": "Base implementation for control SYS.3.3.A13."
+              },
+              {
+                "uuid": "7d064263-c351-49f7-941b-7d75c11bd5f8",
+                "control-id": "SYS.3.3.A14",
+                "description": "Base implementation for control SYS.3.3.A14."
+              },
+              {
+                "uuid": "f9237f2c-83f9-450a-b97c-27155743aecd",
+                "control-id": "SYS.3.3.A15",
+                "description": "Base implementation for control SYS.3.3.A15."
+              }
+            ]
+          },
+          {
+            "uuid": "7cc2a621-85e0-44b7-affc-46ae0b6ca33d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "21189ae1-1124-4c3c-8b78-30a930d02a84",
+                "control-id": "SYS.3.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine allgemeine Richtlinie f\u00fcr die Nutzung von Mobilger\u00e4ten ist fundamental und direkt auf klassische Mobiltelefone anwendbar, um den Zugriff auf Informationen zu regeln."
+              },
+              {
+                "uuid": "1cb2e8f8-e104-49c6-b011-0d62103d43fa",
+                "control-id": "SYS.3.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Die Festlegung einer sicheren Grundkonfiguration, insbesondere die Restriktion von Schnittstellen wie Bluetooth, ist f\u00fcr die Absicherung von klassischen Mobiltelefonen essenziell."
+              },
+              {
+                "uuid": "1f38efca-e551-44c4-a4a9-5599c4bbc2b3",
+                "control-id": "SYS.3.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Verwendung eines Ger\u00e4tesperrcodes und die automatische Bildschirmsperre sind grundlegende und auf jedem Mobiltelefon verf\u00fcgbare Sicherheitsfunktionen zum Schutz vor unbefugtem Zugriff."
+              },
+              {
+                "uuid": "01174b4d-1f1e-4254-a216-15e7544f7bed",
+                "control-id": "SYS.3.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Ein definierter Meldeprozess bei Verlust oder Diebstahl ist ger\u00e4teunabh\u00e4ngig und ein kritischer Bestandteil der Sicherheitsorganisation f\u00fcr mobile Endger\u00e4te."
+              },
+              {
+                "uuid": "d4e45b79-6c4f-4372-ad64-b0e0a12d5e53",
+                "control-id": "SYS.3.2.1.A10",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung legt spezifische Verhaltensregeln f\u00fcr Benutzende fest, wie z.B. Aufbewahrung und Verlustmeldung, was die allgemeine Nutzungsrichtlinie (A1) sinnvoll erg\u00e4nzt."
+              },
+              {
+                "uuid": "5e7644c5-f94c-45cd-944a-b4ed1c071b55",
+                "control-id": "SYS.3.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Obwohl nicht alle klassischen Mobiltelefone eine Speicherverschl\u00fcsselung bieten, ist die Forderung relevant, insbesondere f\u00fcr wechselbare Speichermedien (SD-Karten), um Daten bei Verlust zu sch\u00fctzen."
+              },
+              {
+                "uuid": "124bb459-5b3f-40b5-9355-823e1928b9a2",
+                "control-id": "SYS.3.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Verwendung neutraler Ger\u00e4tenamen ist eine einfache und effektive Ma\u00dfnahme, um die Preisgabe von Informationen \u00fcber Bluetooth zu verhindern und ist auf jedem Mobiltelefon umsetzbar."
+              },
+              {
+                "uuid": "3c8d149a-7712-4a86-aa74-28ac6d5c7567",
+                "control-id": "SYS.3.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Das Deaktivieren nicht genutzter Schnittstellen wie Bluetooth ist eine grundlegende H\u00e4rtungsma\u00dfnahme, die die Angriffsfl\u00e4che des Ger\u00e4tes deutlich reduziert."
+              },
+              {
+                "uuid": "7dac7103-b941-481b-b4b4-551b31b412f9",
+                "control-id": "SYS.3.2.1.A27",
+                "description": "AI-Begr\u00fcndung: F\u00fcr Anwendungsf\u00e4lle mit hohem Schutzbedarf ist die Pr\u00fcfung des Einsatzes von speziell geh\u00e4rteten Endger\u00e4ten eine relevante strategische Sicherheitsma\u00dfnahme, die auch f\u00fcr klassische Mobiltelefone gilt."
+              },
+              {
+                "uuid": "19909154-a136-429e-b08b-504dec0551c2",
+                "control-id": "SYS.3.2.1.A29",
+                "description": "AI-Begr\u00fcndung: Die Nutzung eines institutionsbezogenen APN ist eine sehr wirksame netzwerkseitige Sicherheitsma\u00dfnahme, um den Datenverkehr von Mobiltelefonen zu kontrollieren und abzusichern."
+              }
+            ]
+          },
+          {
+            "uuid": "a0331628-4f86-45cb-aef0-19d306117cb8",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "05101a66-0fbe-4fa3-b5a3-a8337be3b137",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung etabliert die Notwendigkeit der Identifikation und Authentisierung (z.B. via PIN/Sperrcode) auf organisatorischer Ebene und ist eine Grundlage f\u00fcr den sicheren Betrieb von Mobiltelefonen."
+              },
+              {
+                "uuid": "1f6006bd-0aa2-41da-898d-eaade18bb561",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt die Notwendigkeit der Authentisierung um qualitative Aspekte wie Sperrmechanismen nach Fehlversuchen, was direkt auf SIM-PIN und Ger\u00e4tesperre anwendbar ist."
+              },
+              {
+                "uuid": "77eeef37-6e4d-4d06-9fd5-21df9263a741",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Falls Verschl\u00fcsselung zum Einsatz kommt (z.B. auf SD-Karten), stellt diese Anforderung sicher, dass die verwendeten Verfahren und Schl\u00fcssell\u00e4ngen sicher sind, was f\u00fcr den Schutz der Daten unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "caef9356-23df-4b14-98db-a907d30389d2",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Sicherung von auf dem Mobiltelefon gespeicherten Daten wie Kontakten oder Nachrichten ist eine grundlegende Anforderung zur Gew\u00e4hrleistung der Verf\u00fcgbarkeit und zum Schutz vor Datenverlust."
+              },
+              {
+                "uuid": "a37a428c-b5d0-4cbb-88cc-b7ef7c309af9",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Obwohl Firmware-Updates bei klassischen Mobiltelefonen selten sind, ist ein geregelter Prozess f\u00fcr deren Einspielung (Patch-Management) wichtig, um auf Sicherheitsl\u00fccken reagieren zu k\u00f6nnen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

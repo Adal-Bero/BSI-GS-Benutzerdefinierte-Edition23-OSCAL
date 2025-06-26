@@ -1,0 +1,458 @@
+{
+  "component-definition": {
+    "uuid": "0add3441-3696-4257-b0e5-1178c174ea92",
+    "metadata": {
+      "title": "Component for Baustein NET.3.4: Network Access Control",
+      "last-modified": "2025-06-26T11:36:19.203794+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.3.4."
+    },
+    "components": [
+      {
+        "uuid": "02f2dff2-eada-4480-9d08-04c6ab8776cf",
+        "type": "service",
+        "title": "Network Access Control",
+        "description": "Implementation of controls for Baustein NET.3.4.",
+        "control-implementations": [
+          {
+            "uuid": "a9bec32e-af85-48ec-bf7f-57831dc0d27c",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.3.4: Network Access Control",
+            "implemented-requirements": [
+              {
+                "uuid": "73cdcbc8-c810-4df4-850f-b54f151c3ae6",
+                "control-id": "NET.3.4.A1",
+                "description": "Base implementation for control NET.3.4.A1."
+              },
+              {
+                "uuid": "9ffd2e47-3302-49b3-9372-6cf30c5aaeb3",
+                "control-id": "NET.3.4.A2",
+                "description": "Base implementation for control NET.3.4.A2."
+              },
+              {
+                "uuid": "bc40af8f-652e-47b3-a7eb-beea28c846cf",
+                "control-id": "NET.3.4.A3",
+                "description": "Base implementation for control NET.3.4.A3."
+              },
+              {
+                "uuid": "8b6139e7-eca6-47d5-8f7a-4f0a7338a28c",
+                "control-id": "NET.3.4.A4",
+                "description": "Base implementation for control NET.3.4.A4."
+              },
+              {
+                "uuid": "c7a19a1b-0a8e-4a3d-b16f-1304c0cc6f8a",
+                "control-id": "NET.3.4.A5",
+                "description": "Base implementation for control NET.3.4.A5."
+              },
+              {
+                "uuid": "f37f0e0e-017d-4498-ba31-9847064b94ac",
+                "control-id": "NET.3.4.A6",
+                "description": "Base implementation for control NET.3.4.A6."
+              },
+              {
+                "uuid": "1924f371-7dde-4528-85f4-d511fd90ecf8",
+                "control-id": "NET.3.4.A7",
+                "description": "Base implementation for control NET.3.4.A7."
+              },
+              {
+                "uuid": "556889f6-a5db-4a69-8730-29fbffc8d999",
+                "control-id": "NET.3.4.A8",
+                "description": "Base implementation for control NET.3.4.A8."
+              },
+              {
+                "uuid": "46530bae-aedc-4002-aa9a-aaeb97c2994c",
+                "control-id": "NET.3.4.A9",
+                "description": "Base implementation for control NET.3.4.A9."
+              },
+              {
+                "uuid": "b0d9a52b-f809-4962-8fa1-e32ba6a4fee0",
+                "control-id": "NET.3.4.A10",
+                "description": "Base implementation for control NET.3.4.A10."
+              }
+            ]
+          },
+          {
+            "uuid": "4b8ccd43-72fe-4d8b-8b18-6498f8ffe895",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "80900298-79a4-4a9f-83e7-722c5337364a",
+                "control-id": "APP.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine NAC-L\u00f6sung st\u00fctzt sich f\u00fcr die Authentisierung auf einen Verzeichnisdienst. Dessen Sicherheitsrichtlinie ist daher fundamental f\u00fcr die Sicherheit der gesamten NAC-L\u00f6sung."
+              },
+              {
+                "uuid": "3acc790c-f786-4234-8985-fcb3822f7fe5",
+                "control-id": "APP.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Planung des Verzeichnisdienstes, insbesondere das Berechtigungskonzept und die Struktur, ist entscheidend, da die NAC-Autorisierungsregeln direkt darauf aufbauen."
+              },
+              {
+                "uuid": "24bcd327-a4b0-432a-a595-ae0bcb6448df",
+                "control-id": "APP.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Die NAC-L\u00f6sung (z.B. der RADIUS-Server) ben\u00f6tigt definierte Zugriffsrechte auf den Verzeichnisdienst. Die sichere Verwaltung dieser Rechte verhindert die Kompromittierung des Authentisierungsprozesses."
+              },
+              {
+                "uuid": "3470bf33-adb1-4c01-87a2-2c7e0a7eff41",
+                "control-id": "APP.2.1.A5",
+                "description": "AI-Begr\u00fcndung: Eine sichere Konfiguration des Verzeichnisdienstes ist zwingend erforderlich, da eine Schwachstelle hier die Integrit\u00e4t der von der NAC-L\u00f6sung genutzten Identit\u00e4tsdaten untergraben w\u00fcrde."
+              },
+              {
+                "uuid": "cfd08bc4-831d-4d8d-8304-71c010597cfb",
+                "control-id": "APP.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Der kontinuierlich sichere Betrieb des Verzeichnisdienstes ist f\u00fcr die Zuverl\u00e4ssigkeit und Sicherheit der NAC-gesteuerten Authentisierungen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "8f807f4c-9437-40e8-b252-0c1be56456be",
+                "control-id": "APP.2.1.A17",
+                "description": "AI-Begr\u00fcndung: Die NAC-L\u00f6sung verl\u00e4sst sich auf Anmeldeinformationen im Verzeichnisdienst. Der Schutz dieser Informationen (z.B. Passwort-Hashes) ist f\u00fcr einen sicheren Authentisierungsvorgang von h\u00f6chster Bedeutung."
+              },
+              {
+                "uuid": "4ca05849-0aaa-4293-8f3e-c701a0f179ab",
+                "control-id": "APP.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Eine Partitionierung des Verzeichnisdienstes kann die Auswirkung von Sicherheitsvorf\u00e4llen begrenzen und ist somit auch f\u00fcr die abh\u00e4ngige NAC-L\u00f6sung von Vorteil, um den potenziellen Schaden zu reduzieren."
+              },
+              {
+                "uuid": "d95cc4f8-75dd-4614-8c41-52a79026cd86",
+                "control-id": "APP.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Regelt den Zugriff des RADIUS-Servers auf den Verzeichnisdienst. Eine sichere Konfiguration dieser Schnittstelle ist entscheidend f\u00fcr den Schutz der Authentisierungsdaten."
+              },
+              {
+                "uuid": "a8a7278d-eabb-43d7-8ffc-904d01518493",
+                "control-id": "APP.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung von \u00c4nderungen im Verzeichnisdienst ist wichtig, um unautorisierte Modifikationen an Identit\u00e4ten oder Gruppen zu erkennen, die die NAC-Richtlinien umgehen k\u00f6nnten."
+              },
+              {
+                "uuid": "af57fe8a-fef9-40d1-85d4-967769693df4",
+                "control-id": "APP.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Kommunikation zwischen dem RADIUS-Server und dem Verzeichnisdienst (z.B. \u00fcber LDAP) muss verschl\u00fcsselt sein, um die Vertraulichkeit von Anmeldeinformationen zu sch\u00fctzen."
+              },
+              {
+                "uuid": "42998bb5-0773-4c8d-831b-3f512f696b4d",
+                "control-id": "APP.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Die Replikation des Verzeichnisdienstes ist entscheidend f\u00fcr die Ausfallsicherheit der NAC-L\u00f6sung, da sie die st\u00e4ndige Verf\u00fcgbarkeit der Identit\u00e4tsdaten f\u00fcr den RADIUS-Server sicherstellt."
+              },
+              {
+                "uuid": "48cb2ee6-0759-4833-9690-356d2b143052",
+                "control-id": "APP.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Da die NAC-L\u00f6sung von einem funktionierenden Verzeichnisdienst abh\u00e4ngt, ist ein Notfallplan f\u00fcr dessen Ausfall entscheidend, um die Funktionsf\u00e4higkeit des Netzzugangs aufrechtzuerhalten."
+              },
+              {
+                "uuid": "6c705847-4f39-420c-8916-4f93c1b9c6fa",
+                "control-id": "APP.2.1.A20",
+                "description": "AI-Begr\u00fcndung: Wird der Verzeichnisdienst f\u00fcr die Hochverf\u00fcgbarkeit repliziert, muss die Replikationskommunikation selbst abgesichert werden, um die Integrit\u00e4t und Vertraulichkeit der Identit\u00e4tsdaten zu wahren."
+              },
+              {
+                "uuid": "861d5ee4-e00d-4282-8956-77584f803996",
+                "control-id": "APP.2.1.A21",
+                "description": "AI-Begr\u00fcndung: Eine hohe Verf\u00fcgbarkeit des Verzeichnisdienstes ist eine Grundvoraussetzung f\u00fcr einen unterbrechungsfreien Betrieb der NAC-L\u00f6sung und somit des gesamten Netzzugangs."
+              },
+              {
+                "uuid": "05651c41-43fc-4fc1-aa39-dbdfc7b1f0ed",
+                "control-id": "NET.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Die NAC-Richtlinien sind eine technische Umsetzung der \u00fcbergeordneten Sicherheitsrichtlinie f\u00fcr das Netz. Diese Anforderung liefert den notwendigen strategischen Rahmen."
+              },
+              {
+                "uuid": "a0e148d3-2304-464f-ad31-231eb9e7a0b5",
+                "control-id": "NET.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Eine aktuelle Netz-Dokumentation ist die Grundlage f\u00fcr die Planung und Implementierung von NAC, da hieraus die zu erstellenden Segmente und Zuweisungsregeln abgeleitet werden."
+              },
+              {
+                "uuid": "d83e6bdf-d954-433c-acb5-68f24c10ec9a",
+                "control-id": "NET.1.1.A4",
+                "description": "AI-Begr\u00fcndung: NAC ist ein wesentliches Werkzeug zur Durchsetzung der Zonierung auf der Zugriffsebene, indem es Endger\u00e4te bei der Authentisierung der korrekten Zone bzw. dem korrekten VLAN zuweist."
+              },
+              {
+                "uuid": "1f180b53-6401-497a-93ef-02c1b97923c9",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Trennung von Clients und Servern in unterschiedliche Netzsegmente ist ein prim\u00e4rer Anwendungsfall f\u00fcr NAC, das diese Zuweisung basierend auf der Ger\u00e4teidentit\u00e4t automatisiert."
+              },
+              {
+                "uuid": "9d4f35a6-867c-4310-82a5-5cb20a43a366",
+                "control-id": "NET.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Dies ist der Kernzweck von NAC: Endger\u00e4te basierend auf ihrem Sicherheitsprofil (z.B. verwaltet vs. BYOD vs. IoT) in separate Segmente zu platzieren, um Risiken zu isolieren."
+              },
+              {
+                "uuid": "15100711-ca93-4bed-8335-762f047e7925",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: NAC kontrolliert den Zugriff, sichert aber nicht zwangsl\u00e4ufig die Daten\u00fcbertragung. Diese Anforderung ist eine wichtige Erg\u00e4nzung, um die Vertraulichkeit innerhalb der erlaubten Verbindungen zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "b06acca3-7a5a-439c-abd9-9d71457bff22",
+                "control-id": "NET.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die WLAN-Strategie definiert die Anforderungen an den drahtlosen Netzzugang, welche die NAC-L\u00f6sung technisch umsetzen muss (z.B. welche Ger\u00e4tetypen sind erlaubt)."
+              },
+              {
+                "uuid": "13f25acd-9439-40f4-a31f-6a5d0f9d0cc8",
+                "control-id": "NET.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Auswahl eines sicheren WLAN-Standards wie WPA2/WPA3-Enterprise ist die Voraussetzung f\u00fcr den Einsatz von 802.1X-basiertem NAC im WLAN."
+              },
+              {
+                "uuid": "8e428761-83d0-4887-b250-e5bb2268609e",
+                "control-id": "NET.2.1.A3",
+                "description": "AI-Begr\u00fcndung: NAC via 802.1X stellt die Authentisierung sicher, w\u00e4hrend diese Anforderung die notwendige Verschl\u00fcsselung der Daten\u00fcbertragung in der Luftschnittstelle regelt. Beide sind f\u00fcr ein sicheres WLAN unerl\u00e4sslich."
+              },
+              {
+                "uuid": "5e1819a3-fefd-43c3-82d6-394ecf582d25",
+                "control-id": "NET.2.1.A5",
+                "description": "AI-Begr\u00fcndung: Der Access Point fungiert als Authenticator in der NAC-Architektur. Seine sichere Konfiguration ist entscheidend, um eine Manipulation des NAC-Durchsetzungspunktes zu verhindern."
+              },
+              {
+                "uuid": "b944b5db-cb7f-442c-a879-15551890fb54",
+                "control-id": "NET.2.1.A6",
+                "description": "AI-Begr\u00fcndung: NAC ist das zentrale Instrument, um die Kopplung von Sicherheitszonen \u00fcber das WLAN zu verhindern, indem Clients nach der Authentifizierung korrekt isoliert und segmentiert werden."
+              },
+              {
+                "uuid": "25bd3338-9c56-4114-a534-5ae2009010bc",
+                "control-id": "NET.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Bei einem Sicherheitsvorfall (z.B. gestohlener Client) m\u00fcssen Ma\u00dfnahmen im NAC-System ergriffen werden, wie das Sperren des Ger\u00e4tezertifikats, um den Netzzugang zu widerrufen."
+              },
+              {
+                "uuid": "e45dedf9-1dab-49a2-a643-fca89195edf2",
+                "control-id": "NET.2.1.A9",
+                "description": "AI-Begr\u00fcndung: NAC kontrolliert den \u00dcbergang vom WLAN ins LAN, indem es authentifizierten Ger\u00e4ten das korrekte VLAN zuweist, dessen Verkehr dann durch einen Paketfilter kontrolliert wird."
+              },
+              {
+                "uuid": "08e1f3c5-6a14-47ce-8386-c9049b65e5c9",
+                "control-id": "NET.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Eine zentrale Managementl\u00f6sung ist f\u00fcr die konsistente Konfiguration der NAC-Parameter (z.B. RADIUS-Einstellungen) auf einer gro\u00dfen Anzahl von Access Points unerl\u00e4sslich."
+              },
+              {
+                "uuid": "26b3e095-1ad4-4b4f-8e46-cb31aa92a1f7",
+                "control-id": "NET.2.1.A17",
+                "description": "AI-Begr\u00fcndung: Sichert die Kommunikation zwischen den Authenticators (APs) und dem WLAN-Controller, was f\u00fcr die Integrit\u00e4t der NAC-Konfiguration und des Managements entscheidend ist."
+              },
+              {
+                "uuid": "8aaa5ce7-72d8-4a33-acd7-daf2569dac9b",
+                "control-id": "NET.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Ein WIDS/WIPS erkennt Angriffe auf die WLAN-Infrastruktur, die darauf abzielen, die durch NAC etablierten Sicherheitsmechanismen zu umgehen (z.B. durch Rogue APs)."
+              },
+              {
+                "uuid": "d61b92e1-57f0-4b0c-af0f-c412de1d6df9",
+                "control-id": "NET.2.2.A1",
+                "description": "AI-Begr\u00fcndung: Die Nutzungsrichtlinie definiert Verhaltensregeln f\u00fcr Benutzer (z.B. Verbot privater APs), die die technischen Kontrollen von NAC organisatorisch erg\u00e4nzen und absichern."
+              },
+              {
+                "uuid": "d84fc99a-184b-4f92-b4fb-228c21c873f6",
+                "control-id": "NET.2.2.A2",
+                "description": "AI-Begr\u00fcndung: Benutzer m\u00fcssen f\u00fcr den sicheren Umgang mit ihren Zugangsdaten (die f\u00fcr die 802.1X-Authentisierung verwendet werden) sensibilisiert werden, um die Wirksamkeit von NAC nicht zu untergraben."
+              },
+              {
+                "uuid": "edcc0702-1769-4551-ab6e-7d783eb8da87",
+                "control-id": "NET.3.1.A1",
+                "description": "AI-Begr\u00fcndung: Der Switch ist der Authenticator im kabelgebundenen NAC. Ist der Switch selbst nicht sicher konfiguriert, kann ein Angreifer ihn kompromittieren und die NAC-Kontrollen umgehen."
+              },
+              {
+                "uuid": "30ebda0d-21c4-40e6-aa96-ae77c5b4ae26",
+                "control-id": "NET.3.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen des Switches (Authenticator) ist kritisch. Ein unbefugter Zugriff w\u00fcrde es einem Angreifer erlauben, 802.1X zu deaktivieren."
+              },
+              {
+                "uuid": "dd9bb518-0e89-4956-af84-e94427c0159b",
+                "control-id": "NET.3.1.A7",
+                "description": "AI-Begr\u00fcndung: Die Protokolle des Switches liefern wichtige Informationen \u00fcber NAC-Ereignisse auf Port-Ebene (z.B. Authentisierungsstatus), die f\u00fcr Monitoring und Fehleranalyse essenziell sind."
+              },
+              {
+                "uuid": "66748f9c-2aab-4793-b0e8-5bdb9c7c70a0",
+                "control-id": "NET.3.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Administration der Switches (Authenticators) \u00fcber ein separates Managementnetz sch\u00fctzt diese vor Angriffen aus dem Benutzernetz und sichert so die Integrit\u00e4t der NAC-Durchsetzung."
+              },
+              {
+                "uuid": "b500f224-3eb8-47fa-866c-26f28077d4d3",
+                "control-id": "NET.3.1.A19",
+                "description": "AI-Begr\u00fcndung: Port-Security ist eine sinnvolle, erg\u00e4nzende Ma\u00dfnahme zu 802.1X-basiertem NAC, um eine grundlegende Kontrolle auf Ports zu gew\u00e4hrleisten, an denen 802.1X nicht durchsetzbar ist."
+              },
+              {
+                "uuid": "1e961aff-f93b-4368-8ac4-35d91f228809",
+                "control-id": "NET.3.1.A21",
+                "description": "AI-Begr\u00fcndung: Sichert den administrativen Zugriff auf die Netzwerkinfrastruktur, die NAC durchsetzt. Dies ist komplement\u00e4r zum NAC selbst, das den Zugriff der Endbenutzer regelt."
+              },
+              {
+                "uuid": "dd8e19da-826d-414d-9a19-f3e8e3a361dd",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Lifecycle-Prozess f\u00fcr Benutzerkonten ist entscheidend, damit der Netzzugang \u00fcber NAC bei personellen Ver\u00e4nderungen (z.B. Austritt) zeitnah und zuverl\u00e4ssig entzogen wird."
+              },
+              {
+                "uuid": "f63666a9-775e-4197-856a-7bd7ef15289c",
+                "control-id": "ORP.4.A3",
+                "description": "AI-Begr\u00fcndung: Eine Dokumentation der erlaubten Identit\u00e4ten und der damit verbundenen Netzwerk-Rechteprofile (z.B. VLAN-Zuweisung) ist f\u00fcr den geordneten Betrieb und die Revision von NAC unerl\u00e4sslich."
+              },
+              {
+                "uuid": "50b719a7-e81b-425e-8253-43b92ba2a4fa",
+                "control-id": "ORP.4.A10",
+                "description": "AI-Begr\u00fcndung: Identit\u00e4ten, die via NAC Zugang zu besonders sch\u00fctzenswerten Netzbereichen erhalten, sollten zus\u00e4tzlich durch MFA gesch\u00fctzt werden, um das hohe Schutzlevel durchzusetzen."
+              },
+              {
+                "uuid": "6d4a4796-b01d-4b9f-9015-03199cbf6f3a",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: Eine NAC-L\u00f6sung muss Teil eines \u00fcbergreifenden Authentisierungskonzeptes sein, um eine konsistente und durchdachte Sicherheitsarchitektur zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "31b5833b-c0ef-413e-8324-08fa64876b4e",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von MFA (z.B. zertifikatsbasierte Authentisierung) erh\u00f6ht die Sicherheit des Netzzugangs via NAC signifikant gegen\u00fcber reinen Passwort- oder MAC-basierten Verfahren."
+              },
+              {
+                "uuid": "a3e8d66c-7d3c-4615-8b8a-6c060292e2b5",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Die zentralen NAC-Komponenten (z.B. RADIUS-Server) m\u00fcssen physisch und logisch gesch\u00fctzt werden, da ihre Kompromittierung die gesamte Netzzugangskontrolle aushebeln w\u00fcrde."
+              },
+              {
+                "uuid": "d9e34d7d-e28c-4c92-93a4-bc5499f87583",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Regelt die sichere administrative Authentisierung an den NAC-Server-Komponenten selbst und ist somit eine notwendige Basisma\u00dfnahme zu deren Absicherung."
+              },
+              {
+                "uuid": "73a839af-3ff0-4bc7-abe7-b83acfe54a42",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Die H\u00e4rtung des RADIUS-Servers und anderer NAC-Komponenten durch Deaktivierung unn\u00f6tiger Dienste reduziert die Angriffsfl\u00e4che und ist eine fundamentale Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "1a4b2655-76d5-45e3-b621-92bb4efcb182",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung auf dem RADIUS-Server ist die prim\u00e4re Datenquelle f\u00fcr alle Netzzugriffsversuche und entscheidend f\u00fcr Monitoring, Analyse und Forensik im NAC-Umfeld."
+              },
+              {
+                "uuid": "816699b1-c5f2-45e2-90fa-4f1dbc4c99b3",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Ein lokaler Paketfilter auf dem RADIUS-Server muss so konfiguriert werden, dass nur die explizit ben\u00f6tigte Kommunikation (z.B. von Switches/APs) erlaubt ist."
+              },
+              {
+                "uuid": "eabf05e3-7c0b-411c-a516-7f217b4791c9",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Der RADIUS-Server ist eine kritische Komponente. Sein Ausfall legt den Netzzugang lahm. Daher muss er zwingend in die Notfallplanung einbezogen werden."
+              },
+              {
+                "uuid": "67c6bd71-c681-4fa2-918b-9a8a64ac6394",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die kontinuierliche \u00dcberwachung der NAC-Server-Komponenten ist notwendig, um deren Verf\u00fcgbarkeit und damit die Funktion der Netzzugangskontrolle sicherzustellen."
+              },
+              {
+                "uuid": "854d6c19-b016-479b-8d88-c3bc310bc320",
+                "control-id": "SYS.1.1.A28",
+                "description": "AI-Begr\u00fcndung: Redundante Auslegung der NAC-Server (z.B. RADIUS-Cluster) ist eine wichtige Ma\u00dfnahme zur Erh\u00f6hung der Ausfallsicherheit des gesamten Systems."
+              },
+              {
+                "uuid": "cc1f5f45-3d2b-4d67-a94d-535f1a3a906a",
+                "control-id": "SYS.1.5.A2",
+                "description": "AI-Begr\u00fcndung: Wird eine NAC-Komponente virtualisiert, m\u00fcssen die administrativen Zugriffe auf die virtuelle Maschine und ihre Ressourcen kontrolliert werden, um deren Sicherheit zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "0fc5dd85-700c-49c9-9fae-01ca9f0ff58b",
+                "control-id": "SYS.1.5.A3",
+                "description": "AI-Begr\u00fcndung: Die sichere Konfiguration der virtuellen Maschine, die eine NAC-Komponente beherbergt, insbesondere die Isolation von Host-Schnittstellen, ist f\u00fcr deren Integrit\u00e4t entscheidend."
+              },
+              {
+                "uuid": "672f3d9c-2ed0-4583-93d1-ff099f097018",
+                "control-id": "SYS.1.5.A4",
+                "description": "AI-Begr\u00fcndung: Das virtuelle Netzwerk der NAC-Server-VM muss sicher konfiguriert sein, um zu verhindern, dass bestehende Sicherheitszonen umgangen werden."
+              },
+              {
+                "uuid": "49072ceb-b3ad-4b9e-b2f5-6dadeca603df",
+                "control-id": "SYS.1.5.A5",
+                "description": "AI-Begr\u00fcndung: Der Schutz der Administrationsschnittstellen der Virtualisierungsplattform ist kritisch, da eine Kompromittierung hier den vollst\u00e4ndigen Kontrollverlust \u00fcber die NAC-Server-VM bedeuten w\u00fcrde."
+              },
+              {
+                "uuid": "a96ffb64-0bed-47b5-bb5e-115e2e756e9e",
+                "control-id": "SYS.1.5.A6",
+                "description": "AI-Begr\u00fcndung: Ereignisse auf der Virtualisierungsebene, die die NAC-Server-VM betreffen (z.B. Konfigurations\u00e4nderungen, Migration), m\u00fcssen protokolliert und \u00fcberwacht werden."
+              },
+              {
+                "uuid": "87f2d3b0-1671-4134-b5a4-6beae7c6c399",
+                "control-id": "SYS.1.5.A7",
+                "description": "AI-Begr\u00fcndung: Eine korrekte und synchronisierte Systemzeit ist f\u00fcr die NAC-Server-VM unerl\u00e4sslich, insbesondere f\u00fcr die G\u00fcltigkeitspr\u00fcfung von Zertifikaten bei EAP-TLS und f\u00fcr die Korrelation von Logeintr\u00e4gen."
+              },
+              {
+                "uuid": "e6170968-c296-445b-8b61-41b2efd04cdc",
+                "control-id": "SYS.1.5.A11",
+                "description": "AI-Begr\u00fcndung: Die Administration der Virtualisierungsinfrastruktur, auf der die NAC-Komponenten laufen, \u00fcber ein separates Managementnetz sch\u00fctzt diese vor Angriffen aus anderen Netzen."
+              },
+              {
+                "uuid": "73350781-170a-46c4-acc5-3e168b6c28b6",
+                "control-id": "SYS.1.5.A12",
+                "description": "AI-Begr\u00fcndung: Ein Rollenkonzept stellt sicher, dass nur berechtigte Administratoren die virtuellen NAC-Komponenten verwalten k\u00f6nnen und eine Funktionstrennung eingehalten wird."
+              },
+              {
+                "uuid": "53e43a70-8689-4801-a175-38ebc8d34b69",
+                "control-id": "SYS.1.5.A20",
+                "description": "AI-Begr\u00fcndung: Hochverf\u00fcgbarkeitsfunktionen der Virtualisierungsplattform (z.B. Cluster) sind ein effektives Mittel, um die Ausfallsicherheit der kritischen NAC-Server-Komponenten zu gew\u00e4hrleisten."
+              }
+            ]
+          },
+          {
+            "uuid": "8d7e004b-e5f7-4b80-8154-ca92d2939d66",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5c61d70b-df34-48ec-a4f7-aa1c44d11fc1",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Zuweisung zu einem Netzsegment durch NAC ist eine Berechtigung. Diese Anforderung stellt sicher, dass diese Berechtigungen nach dem Need-to-know-Prinzip vergeben und verwaltet werden."
+              },
+              {
+                "uuid": "4d03ad97-0dee-474c-bb71-311b02202efd",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung formuliert das Grundprinzip, das durch eine NAC-L\u00f6sung auf der Netzwerkebene technisch umgesetzt wird: Kein Zugriff ohne vorherige, angemessene Identifikation und Authentisierung."
+              },
+              {
+                "uuid": "002b3d7b-6a15-4003-8c7c-14f55c44dd21",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Fordert die Auswahl schutzbedarfsangemessener Authentisierungsmechanismen. Dies ist direkt auf NAC anwendbar bei der Entscheidung zwischen z.B. MAC-Authentisierung und sicherem EAP-TLS."
+              },
+              {
+                "uuid": "0a9ffa50-24e0-4ec7-8c08-d7524f1fff5b",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine Funktionstrennung, z.B. zwischen der Definition von NAC-Richtlinien und deren technischer Administration, etabliert ein Kontrollprinzip und erh\u00f6ht die Prozesssicherheit."
+              },
+              {
+                "uuid": "f7e38d10-5179-4bc9-8394-0a8c9fa7e4c1",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: NAC-Technologien wie 802.1X und RADIUS sind komplex. Das f\u00fcr Planung und Betrieb zust\u00e4ndige Personal muss \u00fcber die erforderliche Qualifikation verf\u00fcgen, um Fehlkonfigurationen zu vermeiden."
+              },
+              {
+                "uuid": "960bcd92-7c48-48f2-bf87-aba3026f9874",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: NAC basiert auf kryptografischen Verfahren (z.B. in EAP-Protokollen). Die Auswahl starker und anerkannter Algorithmen ist f\u00fcr die Sicherheit der Authentisierung fundamental."
+              },
+              {
+                "uuid": "184e97af-deb2-44a6-b53c-11002ff147a5",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Bei Einsatz von zertifikatbasierter Authentisierung (EAP-TLS) ist ein geregeltes Schl\u00fcsselmanagement f\u00fcr die Client- und Server-Zertifikate ein kritischer Prozess f\u00fcr die NAC-Sicherheit."
+              },
+              {
+                "uuid": "a0122eef-2044-4422-8ed2-94a2d8443c62",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration der NAC-L\u00f6sung (z.B. RADIUS-Server, Richtlinien) ist ein sch\u00fctzenswertes Gut und muss regelm\u00e4\u00dfig gesichert werden, um eine Wiederherstellung zu erm\u00f6glichen."
+              },
+              {
+                "uuid": "e7345bf0-491f-4d0f-8dda-fd22ecc35f0d",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen an der NAC-Konfiguration und den Richtlinien m\u00fcssen nachvollziehbar sein, um jederzeit feststellen zu k\u00f6nnen, wer wann welche Zugriffsregel ge\u00e4ndert hat."
+              },
+              {
+                "uuid": "ca741ce5-9a91-4f2c-a667-1093f2b86d58",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Die administrativen Zug\u00e4nge zur Verwaltung der NAC-L\u00f6sung m\u00fcssen mit starken, sicheren Protokollen und Authentisierungsverfahren gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "571a8c59-d6ca-4c41-be87-58da806ccefd",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Alle Komponenten der NAC-L\u00f6sung (Switches, APs, Server) unterliegen einem Patch- und \u00c4nderungsmanagement, um Sicherheitsl\u00fccken zu schlie\u00dfen und den stabilen Betrieb zu sichern."
+              },
+              {
+                "uuid": "3651649e-b751-4cd7-b0f9-dbeee445eacc",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Logdaten der NAC-Komponenten (insbesondere des RADIUS-Servers) sind eine prim\u00e4re Quelle zur Detektion von Angriffen, wie z.B. massenhafte fehlgeschlagene Anmeldeversuche."
+              },
+              {
+                "uuid": "a9899983-13cd-4b62-b580-ebaed41af07f",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Zus\u00e4tzliche Detektionssysteme (z.B. NIDS) in den durch NAC erzeugten Netzsegmenten k\u00f6nnen Angriffe und Anomalien erkennen, die die Zugangskontrolle passiert haben."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

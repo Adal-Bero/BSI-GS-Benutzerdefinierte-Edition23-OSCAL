@@ -1,0 +1,258 @@
+{
+  "component-definition": {
+    "uuid": "963a0c4d-7cee-4a89-862e-05e3aa68c190",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.2.4: Benutzerdefiniert: Windows Server 2022",
+      "last-modified": "2025-06-26T10:40:07.978435+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.2.4."
+    },
+    "components": [
+      {
+        "uuid": "4d28d45b-872d-409d-a134-0f489f4f0120",
+        "type": "service",
+        "title": "Benutzerdefiniert: Windows Server 2022",
+        "description": "Implementation of controls for Baustein SYS.1.2.4.",
+        "control-implementations": [
+          {
+            "uuid": "10807d5c-8a08-4588-91ff-9397eb6b1e37",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.2.4: Benutzerdefiniert: Windows Server 2022",
+            "implemented-requirements": [
+              {
+                "uuid": "8197a497-64db-4aa3-87ae-2f616ab2021b",
+                "control-id": "SYS.1.2.4.A1",
+                "description": "Base implementation for control SYS.1.2.4.A1."
+              },
+              {
+                "uuid": "7c307c61-ef6a-4140-94b9-14225859e1ae",
+                "control-id": "SYS.1.2.4.A2",
+                "description": "Base implementation for control SYS.1.2.4.A2."
+              },
+              {
+                "uuid": "b3236caf-dbe6-4cd7-8cf0-1a99246445d6",
+                "control-id": "SYS.1.2.4.A3",
+                "description": "Base implementation for control SYS.1.2.4.A3."
+              },
+              {
+                "uuid": "e3aedbbd-92e6-4740-92ef-5029497af88f",
+                "control-id": "SYS.1.2.4.A4",
+                "description": "Base implementation for control SYS.1.2.4.A4."
+              },
+              {
+                "uuid": "e349cb20-fba0-4c7a-ad99-308860445ce0",
+                "control-id": "SYS.1.2.4.A5",
+                "description": "Base implementation for control SYS.1.2.4.A5."
+              },
+              {
+                "uuid": "31c5c7c9-2ad9-4cbd-bd78-e0c7bf1ea3af",
+                "control-id": "SYS.1.2.4.A6",
+                "description": "Base implementation for control SYS.1.2.4.A6."
+              },
+              {
+                "uuid": "bbe845ef-394b-4de9-a60a-0c3b82f0623b",
+                "control-id": "SYS.1.2.4.A7",
+                "description": "Base implementation for control SYS.1.2.4.A7."
+              },
+              {
+                "uuid": "5fbeca58-cdb6-47c7-b3e2-b7c06fd26456",
+                "control-id": "SYS.1.2.4.A8",
+                "description": "Base implementation for control SYS.1.2.4.A8."
+              },
+              {
+                "uuid": "bf696d4e-ea7c-4607-9d03-0caf75a565ef",
+                "control-id": "SYS.1.2.4.A9",
+                "description": "Base implementation for control SYS.1.2.4.A9."
+              },
+              {
+                "uuid": "d48a6c8c-c55d-487c-8148-840cadfce108",
+                "control-id": "SYS.1.2.4.A10",
+                "description": "Base implementation for control SYS.1.2.4.A10."
+              },
+              {
+                "uuid": "0af72ff6-9dec-4039-a709-6c2502327007",
+                "control-id": "SYS.1.2.4.A11",
+                "description": "Base implementation for control SYS.1.2.4.A11."
+              },
+              {
+                "uuid": "6ed0f19f-abb9-4dde-b96b-274898b4aacd",
+                "control-id": "SYS.1.2.4.A12",
+                "description": "Base implementation for control SYS.1.2.4.A12."
+              },
+              {
+                "uuid": "489d106e-2210-4144-a5e9-2a5d8062cad7",
+                "control-id": "SYS.1.2.4.A13",
+                "description": "Base implementation for control SYS.1.2.4.A13."
+              },
+              {
+                "uuid": "baff257c-2d4d-40ef-acbc-05e9430112f5",
+                "control-id": "SYS.1.2.4.A14",
+                "description": "Base implementation for control SYS.1.2.4.A14."
+              },
+              {
+                "uuid": "8b0a116e-9ed8-4611-85d0-c2fa109b6ae9",
+                "control-id": "SYS.1.2.4.A15",
+                "description": "Base implementation for control SYS.1.2.4.A15."
+              }
+            ]
+          },
+          {
+            "uuid": "de2a4376-068c-4147-8c15-2fc79b08a974",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "4d3da55b-9870-4505-989a-2e3fb3bdc51d",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Grundlegende Sicherheitsma\u00dfnahme, die den physischen Schutz und die bestimmungsgem\u00e4\u00dfe Nutzung des Servers sicherstellt und somit die Angriffsfl\u00e4che reduziert."
+              },
+              {
+                "uuid": "c7e580f3-1aac-4f11-b552-b3251e4e72f7",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Essentiell f\u00fcr die Absicherung von administrativen und sonstigen Zugriffen. Windows Server 2022 ist oft in zentrale Authentisierungsdienste wie Active Directory integriert."
+              },
+              {
+                "uuid": "d0a28633-db31-486d-a8c9-0ee84468ea26",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Wichtige H\u00e4rtungsma\u00dfnahme zur Reduzierung physischer Angriffsvektoren durch die Kontrolle und Deaktivierung von ungenutzten Schnittstellen."
+              },
+              {
+                "uuid": "b7382d0d-ae55-460b-a94e-5e3b62b9a56b",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Kernanforderung zur Minimierung der Angriffsfl\u00e4che, was ein explizites Ziel des Bausteins ist. Windows Server 2022 bietet zahlreiche Rollen und Features, deren gezielte Deaktivierung essentiell ist."
+              },
+              {
+                "uuid": "8e41bd4f-1837-4e71-99fd-db84c56bde71",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Virenschutz ist eine grundlegende Verteidigungsebene. Windows Server 2022 enth\u00e4lt mit Microsoft Defender eine integrierte L\u00f6sung, deren Einsatz und Konfiguration bewertet werden muss."
+              },
+              {
+                "uuid": "a2f9f31a-3f6c-4776-aa00-3d5db8cbd7a0",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Protokollierung ist f\u00fcr die Erkennung von Sicherheitsvorf\u00e4llen und die forensische Analyse unerl\u00e4sslich. Windows Server 2022 bietet daf\u00fcr umfassende, aber konfigurationsbed\u00fcrftige Mechanismen."
+              },
+              {
+                "uuid": "20a41eaf-27a8-4a19-b9d8-71a403855bb0",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Definiert den grundlegenden Prozess f\u00fcr eine sichere Erstinstallation und -konfiguration, was eine Kernaufgabe des Bausteins ist und die Basis f\u00fcr alle weiteren H\u00e4rtungsma\u00dfnahmen legt."
+              },
+              {
+                "uuid": "588ee2c7-30ff-4f79-9f39-abf243cd04e4",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration des Host-basierten Paketfilters (Windows Defender Firewall) ist eine zentrale Ma\u00dfnahme zur Netzwerksicherheit und zur Reduzierung der Angriffsfl\u00e4che des Servers."
+              },
+              {
+                "uuid": "f42ca279-6ce8-4d40-88d0-645a883ea9b5",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Kontinuierliche \u00dcberwachung ist entscheidend, um den sicheren und stabilen Betrieb des Servers zu gew\u00e4hrleisten und auf sicherheitsrelevante Abweichungen oder Ausf\u00e4lle zeitnah reagieren zu k\u00f6nnen."
+              },
+              {
+                "uuid": "b537de21-bd75-4cd3-a31f-6dc339f8f997",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitspr\u00fcfungen sind unerl\u00e4sslich, um die Wirksamkeit der umgesetzten H\u00e4rtungsma\u00dfnahmen zu verifizieren und die Konfiguration kontinuierlich an neue Bedrohungen anzupassen."
+              },
+              {
+                "uuid": "cdad8a87-7d4d-4c27-abf6-8f34e79a54ab",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Unterst\u00fctzt direkt moderne Sicherheitsarchitekturen wie \"Secured-core\", Virtualization-Based Security (VBS) und Containerisierung, die zentrale Sicherheitsfunktionen von Windows Server 2022 sind."
+              },
+              {
+                "uuid": "429a4dd8-0dfd-4929-98c7-1dc75b93916c",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung, typischerweise \u00fcber Gruppenrichtlinien (GPOs) im Active Directory, ist der Standard f\u00fcr eine konsistente, skalierbare und nachvollziehbare Konfiguration von Windows-Servern."
+              },
+              {
+                "uuid": "8182d4cb-43a2-4ed6-a036-09f8865ee35a",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt den Basisschutz um eine proaktive Bedrohungserkennung auf dem Host, was mit modernen Tools wie Microsoft Defender for Endpoint auf Windows Server 2022 realisiert werden kann."
+              },
+              {
+                "uuid": "8c0bcc36-c938-4172-a992-3a74228de0c3",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Wichtiges Architekturprinzip zur Risikominimierung, indem der potentielle Schaden bei einer Kompromittierung eines Dienstes auf diesen beschr\u00e4nkt wird."
+              },
+              {
+                "uuid": "e3b22a4f-ed37-4f2e-9106-00aff3e8d51c",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Eine sehr effektive H\u00e4rtungsma\u00dfnahme, die mit Bordmitteln wie AppLocker oder Windows Defender Application Control (WDAC) umgesetzt werden kann, um die Ausf\u00fchrung von Schadsoftware zu unterbinden."
+              },
+              {
+                "uuid": "9d065fd3-5ca7-4c84-8a29-e2f799b4779b",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Essentiell f\u00fcr die Sicherheit von TLS und zertifikatsbasierten Mechanismen. Stellt sicher, dass die Vertrauensanker des Systems integer und vertrauensw\u00fcrdig sind."
+              },
+              {
+                "uuid": "6bfcc251-5701-45f6-a120-2f7a3b7dd43f",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt ruhende Daten (Data-at-Rest) vor unbefugtem Zugriff bei physischem Diebstahl. BitLocker ist die daf\u00fcr vorgesehene Funktion in Windows Server."
+              },
+              {
+                "uuid": "b4cc450a-2538-404c-ac2d-361c49d5548c",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Eine Kernkomponente der im Baustein explizit erw\u00e4hnten \"Secured-core\"-Initiative. Sch\u00fctzt die Integrit\u00e4t des Boot-Prozesses vor Manipulationen und Rootkits."
+              }
+            ]
+          },
+          {
+            "uuid": "970af097-b49e-45f9-bbb4-1cf518e137b1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "89f27968-903f-4da6-a165-f49fe6201d52",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Definiert das grundlegende Prinzip der Rechtevergabe (Least Privilege), dessen technische Umsetzung in Windows Server \u00fcber Dateisystemberechtigungen und Benutzerrechte erfolgt und kritisch f\u00fcr die Sicherheit ist."
+              },
+              {
+                "uuid": "2af5cfd0-5454-48ae-9765-3c5e46717f30",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Stellt die grundlegende Anforderung an Identifikation und Authentisierung sicher, einschlie\u00dflich der kritischen Notwendigkeit, Standardpassw\u00f6rter vor der Inbetriebnahme zu \u00e4ndern."
+              },
+              {
+                "uuid": "1194507f-387a-4b76-aa3c-392665563f7c",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Konkretisiert die Anforderungen an die Authentisierung durch Ma\u00dfnahmen wie Kontosperrungsrichtlinien und den Schutz von Authentisierungsdaten, die direkt in Windows Server konfigurierbar sind."
+              },
+              {
+                "uuid": "5ec0d6bb-fa39-494c-b865-0b5c5a5ce89b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Notwendig, da der Baustein moderne kryptografische Funktionen wie TLS 1.3 hervorhebt. Stellt sicher, dass die eingesetzte Kryptografie dem Stand der Technik entspricht."
+              },
+              {
+                "uuid": "6e287b51-e0e3-466a-8578-d5b99f5402ee",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine logische Erg\u00e4nzung zur Anforderung CON.1.A1, da der sichere Einsatz von Kryptografie ein durchdachtes Management der kryptografischen Schl\u00fcssel erfordert (z.B. f\u00fcr BitLocker, TLS-Zertifikate)."
+              },
+              {
+                "uuid": "ed5671e9-7dc9-430b-83b3-668140e0feba",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Datensicherung ist eine unverzichtbare Ma\u00dfnahme zur Gew\u00e4hrleistung der Verf\u00fcgbarkeit und Wiederherstellbarkeit, insbesondere im Angriffsfall (z.B. Ransomware)."
+              },
+              {
+                "uuid": "4e75ef40-9850-448d-a8e1-d30db0079938",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Fokussiert die allgemeine Protokollierungsanforderung auf die besonders kritischen administrativen T\u00e4tigkeiten und ist f\u00fcr die Nachvollziehbarkeit entscheidend."
+              },
+              {
+                "uuid": "02cf2896-1ebe-4694-9f49-882abd771e53",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Zugriffskan\u00e4le (z.B. RDP, WinRM), die ein hochprivilegiertes Ziel f\u00fcr Angreifer darstellen, durch Zugriffsbeschr\u00e4nkungen und sichere Protokolle."
+              },
+              {
+                "uuid": "3a9fb3c3-16be-41f9-9f59-ec3dddf2f14b",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Das zeitnahe Einspielen von Sicherheitspatches ist eine der wirksamsten Ma\u00dfnahmen gegen die Ausnutzung bekannter Schwachstellen. Ein geregelter Prozess ist hierf\u00fcr unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b5668ae1-626a-405d-8afd-e4bb92c4f000",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Aktivierung und Nutzung der in Windows Server 2022 bereits integrierten Sicherheits- und Detektionsfunktionen (z.B. Microsoft Defender, Ereignisprotokollierung)."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

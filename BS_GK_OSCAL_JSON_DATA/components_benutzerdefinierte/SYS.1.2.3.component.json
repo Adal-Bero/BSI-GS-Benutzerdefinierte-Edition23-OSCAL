@@ -1,0 +1,248 @@
+{
+  "component-definition": {
+    "uuid": "168a19b8-ce3f-4671-a03c-8069b94a2d7f",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.2.3: Windows Server",
+      "last-modified": "2025-06-26T10:38:08.093906+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.2.3."
+    },
+    "components": [
+      {
+        "uuid": "01eaa804-1edf-4ed2-8349-1939d59c30c8",
+        "type": "service",
+        "title": "Windows Server",
+        "description": "Implementation of controls for Baustein SYS.1.2.3.",
+        "control-implementations": [
+          {
+            "uuid": "b45f02da-6c5e-4bc2-8609-856032826b91",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.2.3: Windows Server",
+            "implemented-requirements": [
+              {
+                "uuid": "c735d124-f631-483d-b615-c53915e97cb5",
+                "control-id": "SYS.1.2.3.A1",
+                "description": "Base implementation for control SYS.1.2.3.A1."
+              },
+              {
+                "uuid": "7dd15785-bf1b-4cc7-876d-61858edc9850",
+                "control-id": "SYS.1.2.3.A2",
+                "description": "Base implementation for control SYS.1.2.3.A2."
+              },
+              {
+                "uuid": "973bffd0-5768-4c75-8e3f-9ceb734d559d",
+                "control-id": "SYS.1.2.3.A3",
+                "description": "Base implementation for control SYS.1.2.3.A3."
+              },
+              {
+                "uuid": "bbbc6fe7-cb4f-4ef8-9155-f82fddc84a48",
+                "control-id": "SYS.1.2.3.A4",
+                "description": "Base implementation for control SYS.1.2.3.A4."
+              },
+              {
+                "uuid": "5698c847-6eb4-4ba9-a847-26763257233c",
+                "control-id": "SYS.1.2.3.A5",
+                "description": "Base implementation for control SYS.1.2.3.A5."
+              },
+              {
+                "uuid": "abbc4e8d-5c7c-41a1-84d8-792388574ae2",
+                "control-id": "SYS.1.2.3.A6",
+                "description": "Base implementation for control SYS.1.2.3.A6."
+              },
+              {
+                "uuid": "e1c7f3eb-52b2-422a-9642-a36c5c164d9e",
+                "control-id": "SYS.1.2.3.A7",
+                "description": "Base implementation for control SYS.1.2.3.A7."
+              },
+              {
+                "uuid": "5b2c0074-e1e3-4bbd-914f-4cd4f4153783",
+                "control-id": "SYS.1.2.3.A8",
+                "description": "Base implementation for control SYS.1.2.3.A8."
+              }
+            ]
+          },
+          {
+            "uuid": "1535b868-9c1c-4edc-bde2-e1d748d934e4",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "96704f69-e61a-4f5e-924d-57ed4eb3abd3",
+                "control-id": "APP.2.2.A1",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit des Dom\u00e4nenbeitritts und der Berechtigungen eines Mitgliedsservers h\u00e4ngt direkt von der grundlegenden Planung und Konfiguration des Active Directory ab."
+              },
+              {
+                "uuid": "42b36a6f-a25c-4d8f-b0ae-2dd15a7158f5",
+                "control-id": "APP.2.2.A3",
+                "description": "AI-Begr\u00fcndung: Gruppenrichtlinien sind das zentrale Werkzeug zur Konfiguration und H\u00e4rtung von Windows Servern in einer AD-Umgebung. Eine geplante Vorgehensweise ist daher unerl\u00e4sslich."
+              },
+              {
+                "uuid": "a97468ad-1b2a-4e9d-8256-69d484fb31b9",
+                "control-id": "APP.2.2.A16",
+                "description": "AI-Begr\u00fcndung: Die H\u00e4rtung von Konten, insbesondere die Verwendung von gMSAs f\u00fcr Dienstkonten auf dem Server, reduziert die Angriffsfl\u00e4che erheblich."
+              },
+              {
+                "uuid": "3db8674c-3806-4614-b117-af5368b68307",
+                "control-id": "APP.2.2.A17",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung sch\u00fctzt den Windows Server direkt, indem sie die missbr\u00e4uchliche Anmeldung hochprivilegierter AD-Konten auf ihm verhindert und so das Risiko des Diebstahls von Anmeldeinformationen reduziert."
+              },
+              {
+                "uuid": "349a3f96-716d-4edb-a49b-f2ec62bd2086",
+                "control-id": "APP.2.2.A8",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Secure Channel ist fundamental, um die Kommunikation zwischen dem Mitgliedsserver und den Dom\u00e4nencontrollern vor Kompromittierung zu sch\u00fctzen."
+              },
+              {
+                "uuid": "c9b55d11-2918-4596-a3f9-f47283e1e43b",
+                "control-id": "APP.2.2.A9",
+                "description": "AI-Begr\u00fcndung: Die Erzwingung sicherer Authentisierungsprotokolle wie Kerberos mit AES und die Deaktivierung veralteter Protokolle ist eine kritische Ma\u00dfnahme zur H\u00e4rtung des Servers gegen Angriffe auf Anmeldeinformationen."
+              },
+              {
+                "uuid": "55731ed0-3c1e-493f-8676-bce8468afd63",
+                "control-id": "APP.2.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Umsetzung eines Tiered Administration Models ist ein grundlegendes Sicherheitskonzept f\u00fcr Windows-Umgebungen, um die Administration des Servers abzusichern und Privilegien-Eskalation zu verhindern."
+              },
+              {
+                "uuid": "f144afd5-f64e-44a4-8993-0ded25a9927b",
+                "control-id": "APP.2.2.A20",
+                "description": "AI-Begr\u00fcndung: Eine saubere Trennung durch Organisationseinheiten (OUs) ist die Grundlage f\u00fcr die korrekte Zuweisung von Sicherheitsrichtlinien (GPOs) und delegierten administrativen Berechtigungen f\u00fcr den Server."
+              },
+              {
+                "uuid": "6a93df67-ae42-4b5f-ad69-c6e71a82e61a",
+                "control-id": "APP.2.2.A21",
+                "description": "AI-Begr\u00fcndung: Die Zuordnung des Servers zu einer logischen Schicht (Tier) im administrativen Schichtenmodell ist entscheidend, um die Zugriffs- und Verwaltungsregeln festzulegen und durchzusetzen."
+              },
+              {
+                "uuid": "37edff92-90d3-4b72-bc0d-8ce49dfd13ec",
+                "control-id": "APP.2.2.A22",
+                "description": "AI-Begr\u00fcndung: Die Vergabe zeitlich befristeter Berechtigungen (Just-in-Time-Administration) f\u00fcr den Server minimiert das Risiko, das von dauerhaft bestehenden hochprivilegierten Konten ausgeht."
+              },
+              {
+                "uuid": "57953f8f-ff7e-4e94-a7b1-cf65be73ee61",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Die physische Absicherung und das Verbot der zweckentfremdeten Nutzung als Arbeitsplatzrechner sind grundlegende Sicherheitsma\u00dfnahmen f\u00fcr jeden Server."
+              },
+              {
+                "uuid": "18b10ef4-c990-4de0-9a00-cf6ecb61d0c9",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Eine sichere, zentralisierte Authentisierung ist die Basis f\u00fcr jeden kontrollierten Zugriff auf den Windows Server, was durch die AD-Anbindung bereits vorgesehen ist."
+              },
+              {
+                "uuid": "7a695cda-643b-4959-bb54-7c9183537651",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Deaktivierung nicht ben\u00f6tigter physikalischer und logischer Schnittstellen ist eine grundlegende Ma\u00dfnahme zur Reduzierung der Angriffsfl\u00e4che des Servers."
+              },
+              {
+                "uuid": "321462f6-5562-4eba-82ed-a8383d865b2d",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Deinstallation nicht ben\u00f6tigter Rollen und Features ist ein zentraler Schritt bei der H\u00e4rtung eines Windows Servers, um die Komplexit\u00e4t und m\u00f6gliche Schwachstellen zu reduzieren."
+              },
+              {
+                "uuid": "2cc52e5e-fe81-46f6-8372-8e9edad35d3f",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Der Einsatz eines Virenschutz-Programms, wie des unter Windows Server verf\u00fcgbaren Microsoft Defender, ist eine wichtige Schutzschicht gegen Schadsoftware."
+              },
+              {
+                "uuid": "5732c90a-cb4a-4421-b743-61410c4afb8e",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung sicherheitsrelevanter Ereignisse \u00fcber die Windows-Ereignisanzeige ist unerl\u00e4sslich f\u00fcr die \u00dcberwachung, Analyse und Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "62200fc9-7856-466c-9ae4-446aa7429e1d",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine sichere Grundinstallation und die Trennung von Server-Rollen sind fundamentale Prinzipien, um eine sichere Basis f\u00fcr den Betrieb des Windows Servers zu schaffen."
+              },
+              {
+                "uuid": "69e360fc-00f7-4e3f-a055-6fce6d77e1c7",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Windows Defender Firewall ist ein wesentliches, bord-eigenes Mittel zur Absicherung der Netzwerkschnittstellen des Servers durch lokale Paketfilter."
+              },
+              {
+                "uuid": "79610c8e-1fb0-4d72-872a-9bd374fab5c7",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Das Prinzip 'Ein Dienst pro Server' minimiert den potenziellen Schaden bei einer Kompromittierung und ist eine wichtige architektonische Sicherheitsleitlinie."
+              },
+              {
+                "uuid": "bb4278e1-a71a-4417-9404-757ba9f664e1",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Windows Server bietet mit AppLocker oder Windows Defender Application Control (WDAC) native Funktionen zur Umsetzung von Ausf\u00fchrungskontrolle, was die Sicherheit ma\u00dfgeblich erh\u00f6ht."
+              },
+              {
+                "uuid": "8d456ac0-70be-4389-b547-844c0b4ab8c1",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Die Verschl\u00fcsselung von Datentr\u00e4gern mit BitLocker ist eine native und effektive Methode, um die auf dem Server gespeicherten Daten im Ruhezustand (at rest) zu sch\u00fctzen."
+              },
+              {
+                "uuid": "a0af55d0-6228-4f79-95ca-f8c0ee05b451",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Nutzung von UEFI Secure Boot ist eine kritische Ma\u00dfnahme, um die Integrit\u00e4t des Bootvorgangs des Windows Servers gegen Root- und Bootkits zu sch\u00fctzen."
+              },
+              {
+                "uuid": "f666bb64-1ed9-4194-924a-5d77ab7a0bc9",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Sicherheitseinstellungen \u00fcber Gruppenrichtlinien ist der Standard in Windows-Dom\u00e4nen und essenziell f\u00fcr einen konsistenten und sicheren Betrieb."
+              }
+            ]
+          },
+          {
+            "uuid": "dde903c9-b551-4dbc-b800-d4b427f0a645",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "8dd74936-510a-4398-b368-dac53c87168a",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Berechtigung (Least Privilege) ist fundamental f\u00fcr die Konfiguration von Zugriffsberechtigungen auf dem Dateisystem und f\u00fcr Benutzerrechte des Windows Servers."
+              },
+              {
+                "uuid": "b21efa65-cefd-4f78-88d0-70ab0feb6367",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zur Nutzung angemessener Identifikation und Authentisierung und die \u00c4nderung von Standardpassw\u00f6rtern sind grundlegende Sicherheitsprinzipien f\u00fcr den Serverzugriff."
+              },
+              {
+                "uuid": "a492eb4b-3a35-4ab1-bcf5-414f247e4a6f",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration starker kryptografischer Verfahren ist f\u00fcr einen Windows Server entscheidend, z. B. f\u00fcr TLS (Schannel) oder Kerberos, und muss aktiv verwaltet werden."
+              },
+              {
+                "uuid": "484b4a37-2753-479e-be5c-578638785c4c",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Windows Server verwaltet diverse Schl\u00fcssel und Zertifikate (z.B. f\u00fcr TLS oder EFS). Ein geregeltes Management dieser kryptografischen Materialien ist f\u00fcr die Sicherheit unerl\u00e4sslich."
+              },
+              {
+                "uuid": "09161607-7e18-45d1-89fd-36d8d285f218",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung des Serversystems und der darauf befindlichen Daten ist eine essenzielle Ma\u00dfnahme zur Gew\u00e4hrleistung der Verf\u00fcgbarkeit und Integrit\u00e4t."
+              },
+              {
+                "uuid": "b690f808-8388-4d0b-9fb5-11945c87a16a",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit administrativer T\u00e4tigkeiten durch Protokollierung ist entscheidend, um \u00c4nderungen am Windows Server nachvollziehen und verantwortliche Personen zuordnen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "bddd4b7a-cdaf-483e-9b47-c8c62e447191",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz administrativer Schnittstellen (z. B. RDP, WinRM) durch starke Authentisierung und verschl\u00fcsselte Protokolle ist f\u00fcr die Absicherung eines Windows Servers fundamental."
+              },
+              {
+                "uuid": "ad4d5be3-fe03-4c8b-9cfe-15f4bd43138f",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Patch-Management ist f\u00fcr die Sicherheit eines Windows Servers von herausragender Bedeutung, um bekannte Schwachstellen zeitnah zu schlie\u00dfen."
+              },
+              {
+                "uuid": "763192bf-0eb6-49fc-bb63-0019116370da",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Windows Server verf\u00fcgt \u00fcber vielf\u00e4ltige bordeigene Detektionsfunktionen (z.B. Ereignisprotokollierung, Microsoft Defender), deren Aktivierung und Nutzung die Erkennung von Angriffen erm\u00f6glicht."
+              },
+              {
+                "uuid": "127970ff-0ff4-4336-9d38-96941f277df7",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: F\u00fcr Server mit hohem Schutzbedarf ist die Erg\u00e4nzung der bordeigenen Mittel durch zus\u00e4tzliche Detektionssysteme (z.B. EDR) eine sinnvolle Ma\u00dfnahme zur Erh\u00f6hung der Sicherheit."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

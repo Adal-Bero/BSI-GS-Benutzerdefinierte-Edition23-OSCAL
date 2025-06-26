@@ -1,0 +1,88 @@
+{
+  "component-definition": {
+    "uuid": "7ff19473-ce4b-416f-a03c-bd1b57cdce5b",
+    "metadata": {
+      "title": "Component for Baustein INF.8: INF.8 H\u00e4uslicher Arbeitsplatz",
+      "last-modified": "2025-06-26T11:57:55.308090+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.8."
+    },
+    "components": [
+      {
+        "uuid": "8182a36d-4cea-4e33-a0dc-85ea48d2ebde",
+        "type": "service",
+        "title": "INF.8 H\u00e4uslicher Arbeitsplatz",
+        "description": "Implementation of controls for Baustein INF.8.",
+        "control-implementations": [
+          {
+            "uuid": "30ec7782-466b-4fb8-90f3-5c2077e091f1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.8: INF.8 H\u00e4uslicher Arbeitsplatz",
+            "implemented-requirements": [
+              {
+                "uuid": "9f1e2abc-0fd4-49c3-803c-33b150ae64ed",
+                "control-id": "INF.8.A1",
+                "description": "Base implementation for control INF.8.A1."
+              },
+              {
+                "uuid": "9ab0df32-79b3-49e2-84f1-d7ffd3a2c7a8",
+                "control-id": "INF.8.A2",
+                "description": "Base implementation for control INF.8.A2."
+              },
+              {
+                "uuid": "02251e7d-aa65-437d-9579-91d47feb4a60",
+                "control-id": "INF.8.A3",
+                "description": "Base implementation for control INF.8.A3."
+              },
+              {
+                "uuid": "1236988d-2dbb-436d-a7f0-d0a40cd4d993",
+                "control-id": "INF.8.A4",
+                "description": "Base implementation for control INF.8.A4."
+              },
+              {
+                "uuid": "62185577-96be-413c-807e-d8187a9cf853",
+                "control-id": "INF.8.A5",
+                "description": "Base implementation for control INF.8.A5."
+              },
+              {
+                "uuid": "65d55c2e-f4c6-4e06-b477-aae11157b63b",
+                "control-id": "INF.8.A6",
+                "description": "Base implementation for control INF.8.A6."
+              }
+            ]
+          },
+          {
+            "uuid": "fa11c74a-458a-4c0c-8a2f-3f8163b5d3ac",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "af4bff06-61d4-4c08-abfc-954f96551d74",
+                "control-id": "OPS.1.2.4.A5",
+                "description": "AI-Begr\u00fcndung: Die Sensibilisierung und Schulung ist entscheidend, damit der Telearbeitende die Notwendigkeit der infrastrukturellen Schutzma\u00dfnahmen versteht und diese korrekt umsetzt. Sie bildet die Grundlage f\u00fcr die Wirksamkeit aller anderen Anforderungen aus dem Baustein INF.8."
+              },
+              {
+                "uuid": "081fcc38-8ff3-4d63-80b6-30dd859dbe8f",
+                "control-id": "OPS.1.2.4.A10",
+                "description": "AI-Begr\u00fcndung: Die f\u00fcr den h\u00e4uslichen Arbeitsplatz erforderlichen infrastrukturellen Schutzma\u00dfnahmen h\u00e4ngen direkt vom Schutzbedarf der dort verarbeiteten Informationen ab. Diese Analyse ist eine grundlegende Voraussetzung, um das angemessene Sicherheitsniveau f\u00fcr die Infrastruktur festzulegen."
+              }
+            ]
+          },
+          {
+            "uuid": "627bf9cb-8947-414a-aa08-1a33a563fed6",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "ce47339e-b8e8-4f5f-a772-b573ae1430a2",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Das Kernziel von INF.8 ist der Schutz der Informationen am h\u00e4uslichen Arbeitsplatz. Die physische Sicherheit von am Arbeitsplatz erstellten oder aufbewahrten Datensicherungsmedien ist ein wichtiger infrastruktureller Aspekt, der direkt in den Geltungsbereich dieses Bausteins f\u00e4llt."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

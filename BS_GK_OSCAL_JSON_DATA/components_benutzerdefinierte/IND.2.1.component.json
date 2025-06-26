@@ -1,0 +1,188 @@
+{
+  "component-definition": {
+    "uuid": "99acee70-df4e-4cbd-a3e6-c7c1d5326321",
+    "metadata": {
+      "title": "Component for Baustein IND.2.1: Allgemeine ICS-Komponente",
+      "last-modified": "2025-06-26T11:18:32.482821+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.2.1."
+    },
+    "components": [
+      {
+        "uuid": "7e9c88d3-2edd-469a-b2cf-694d01b74e68",
+        "type": "service",
+        "title": "Allgemeine ICS-Komponente",
+        "description": "Implementation of controls for Baustein IND.2.1.",
+        "control-implementations": [
+          {
+            "uuid": "d295df32-fde5-4794-8a92-44155a1aa947",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.2.1: Allgemeine ICS-Komponente",
+            "implemented-requirements": [
+              {
+                "uuid": "51caee58-9378-4af2-9a6b-0c85b6fa7afc",
+                "control-id": "IND.2.1.A1",
+                "description": "Base implementation for control IND.2.1.A1."
+              },
+              {
+                "uuid": "3302df59-4f9c-4f67-8203-c62f847c474c",
+                "control-id": "IND.2.1.A2",
+                "description": "Base implementation for control IND.2.1.A2."
+              },
+              {
+                "uuid": "95b39256-569d-42b2-af11-0acf5c59ae07",
+                "control-id": "IND.2.1.A4",
+                "description": "Base implementation for control IND.2.1.A4."
+              },
+              {
+                "uuid": "8f332112-f220-4cce-b56c-9ec695bf3c4c",
+                "control-id": "IND.2.1.A6",
+                "description": "Base implementation for control IND.2.1.A6."
+              },
+              {
+                "uuid": "fd79fc66-bfba-40d6-83c1-997def04a540",
+                "control-id": "IND.2.1.A7",
+                "description": "Base implementation for control IND.2.1.A7."
+              },
+              {
+                "uuid": "8232887e-281d-4733-beaf-047261151eac",
+                "control-id": "IND.2.1.A8",
+                "description": "Base implementation for control IND.2.1.A8."
+              },
+              {
+                "uuid": "3fbc1de4-4260-4e2d-a25f-108a8393359d",
+                "control-id": "IND.2.1.A11",
+                "description": "Base implementation for control IND.2.1.A11."
+              },
+              {
+                "uuid": "ae6570ef-398a-46f3-a8ab-a022a553d620",
+                "control-id": "IND.2.1.A13",
+                "description": "Base implementation for control IND.2.1.A13."
+              },
+              {
+                "uuid": "0de8f5ef-1fe4-4cca-bda3-ebf36b826721",
+                "control-id": "IND.2.1.A16",
+                "description": "Base implementation for control IND.2.1.A16."
+              },
+              {
+                "uuid": "ea907fae-c0d7-4aff-962d-fa92b69707a0",
+                "control-id": "IND.2.1.A17",
+                "description": "Base implementation for control IND.2.1.A17."
+              },
+              {
+                "uuid": "2f30d652-0fe9-4880-83c0-ca54a643f53f",
+                "control-id": "IND.2.1.A18",
+                "description": "Base implementation for control IND.2.1.A18."
+              },
+              {
+                "uuid": "f6ffa1bd-97aa-4af1-a127-00121415c4b8",
+                "control-id": "IND.2.1.A19",
+                "description": "Base implementation for control IND.2.1.A19."
+              },
+              {
+                "uuid": "0760324d-d680-4b0f-9310-34339ca4e094",
+                "control-id": "IND.2.1.A20",
+                "description": "Base implementation for control IND.2.1.A20."
+              }
+            ]
+          },
+          {
+            "uuid": "8692d89e-52e6-420a-ba0f-28e819bf29b6",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "7ba8aa5e-c69c-44fd-ab3f-dabfa0b4e304",
+                "control-id": "IND.1.A3",
+                "description": "AI-Begr\u00fcndung: Die Anforderung adressiert direkt den Schutz der Komponente vor Schadsoftware, was f\u00fcr deren Integrit\u00e4t und Verf\u00fcgbarkeit essenziell ist."
+              },
+              {
+                "uuid": "0e622210-0c74-4d99-b743-0d15b0786cb7",
+                "control-id": "IND.1.A8",
+                "description": "AI-Begr\u00fcndung: Beschreibt konkrete technische Ma\u00dfnahmen zur Absicherung des administrativen Zugriffs direkt auf die ICS-Komponente, was ein prim\u00e4rer Angriffsvektor ist."
+              },
+              {
+                "uuid": "63dbd1f7-295b-4503-aa0b-81f736af5134",
+                "control-id": "IND.1.A9",
+                "description": "AI-Begr\u00fcndung: Behandelt die physische und logische Absicherung von Schnittstellen der Komponente, um unautorisierte Zugriffe und die Einschleusung von Schadcode zu verhindern."
+              },
+              {
+                "uuid": "42c9d3ef-6983-4d2e-891c-d0b1d35c2b08",
+                "control-id": "IND.1.A14",
+                "description": "AI-Begr\u00fcndung: Fordert eine starke Authentisierung direkt an der Komponente, was eine grundlegende Sicherheitsma\u00dfnahme zur Zugriffskontrolle ist."
+              },
+              {
+                "uuid": "603557b8-5693-42f0-a24f-7c7ad2e792cd",
+                "control-id": "IND.1.A15",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Zugriffskontrolle um eine wichtige \u00dcberwachungsma\u00dfnahme f\u00fcr privilegierte Konten, die f\u00fcr die Sicherheit der Komponente kritisch sind."
+              },
+              {
+                "uuid": "71a50105-5802-4669-9145-74b6f3c49518",
+                "control-id": "IND.1.A18",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende Anforderung, um \u00c4nderungen und Zugriffe auf die Komponente nachvollziehen zu k\u00f6nnen, was f\u00fcr Analyse und Forensik unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "c6f3fbab-eb9f-4cc9-b647-953071316af1",
+                "control-id": "IND.1.A19",
+                "description": "AI-Begr\u00fcndung: Sichert die Wiederherstellbarkeit der Konfiguration und der Programme der Komponente und ist damit entscheidend f\u00fcr die Aufrechterhaltung des Betriebs."
+              },
+              {
+                "uuid": "abfeaa31-87f5-4958-a497-b3f6d786278e",
+                "control-id": "IND.1.A20",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert eine detaillierte, komponentenspezifische Dokumentation, die f\u00fcr den sicheren Betrieb und die Wartung der ICS-Komponente notwendig ist."
+              },
+              {
+                "uuid": "c78f1a19-996e-4a44-a0a7-b3af1ab2fca5",
+                "control-id": "IND.1.A21",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation der Kommunikationsbeziehungen ist entscheidend, um die erlaubte Netzwerkinteraktion der Komponente zu definieren und zu \u00fcberwachen."
+              },
+              {
+                "uuid": "d232465c-8d67-43ff-9cf3-28892faf26d1",
+                "control-id": "IND.1.A22",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die von der Komponente erzeugten Protokolldaten nutzbar gemacht werden, indem sie zentral gesammelt und aktiv \u00fcberwacht werden."
+              },
+              {
+                "uuid": "95ad005f-daef-4144-9d48-f9a040210590",
+                "control-id": "IND.1.A23",
+                "description": "AI-Begr\u00fcndung: Adressiert den sicheren Umgang mit der Komponente am Ende ihres Lebenszyklus, um die Offenlegung von sch\u00fctzenswerten Informationen zu verhindern."
+              }
+            ]
+          },
+          {
+            "uuid": "c65e3d33-ed01-4150-8683-1c3f2f7df03b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "ba06838d-f205-4ace-9111-41cbe83d6548",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die \u00c4nderung von Standardpassw\u00f6rtern ist eine fundamentale und direkt auf die Komponente anwendbare Ma\u00dfnahme zur H\u00e4rtung bei der Inbetriebnahme."
+              },
+              {
+                "uuid": "f4679758-ccb5-4195-bee2-8904b3d72961",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Definiert wichtige technische Details f\u00fcr Authentisierungsmechanismen, wie z. B. die Kontosperrung, die direkt auf der Komponente implementiert werden."
+              },
+              {
+                "uuid": "97dbf4fb-4cee-452a-94c1-5138f3f901d4",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass bei Nutzung von Kryptografie auf der Komponente sichere, etablierte Verfahren eingesetzt werden, was f\u00fcr die Kommunikationssicherheit entscheidend ist."
+              },
+              {
+                "uuid": "0eca8217-b855-40d2-b0a4-f5163ac9d8cb",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement ist eine zwingende Voraussetzung f\u00fcr den sicheren Einsatz von Kryptografie auf einer ICS-Komponente."
+              },
+              {
+                "uuid": "5f792c21-badd-4ab2-adb9-73420ed9643f",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Aktivierung und Nutzung von Sicherheitsfunktionen, die direkt auf der Komponente vorhanden sind, was eine effiziente Basissicherheit gew\u00e4hrleistet."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

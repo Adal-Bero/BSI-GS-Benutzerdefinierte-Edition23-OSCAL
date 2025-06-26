@@ -1,0 +1,148 @@
+{
+  "component-definition": {
+    "uuid": "a553b6aa-7264-4b81-a4a6-ce6c2bf94435",
+    "metadata": {
+      "title": "Component for Baustein INF.6: Datentr\u00e4gerarchiv",
+      "last-modified": "2025-06-26T11:55:23.740345+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.6."
+    },
+    "components": [
+      {
+        "uuid": "61839a21-4d46-4e52-9900-4ca34314f4ac",
+        "type": "service",
+        "title": "Datentr\u00e4gerarchiv",
+        "description": "Implementation of controls for Baustein INF.6.",
+        "control-implementations": [
+          {
+            "uuid": "201c698b-bbd8-4051-accb-5b6ef4af2d2b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.6: Datentr\u00e4gerarchiv",
+            "implemented-requirements": [
+              {
+                "uuid": "cfa0f807-b0ee-4ad3-a2d0-164ed34d839b",
+                "control-id": "INF.6.A1",
+                "description": "Base implementation for control INF.6.A1."
+              },
+              {
+                "uuid": "ce672ded-2e22-4706-883d-0dbb2b697f0e",
+                "control-id": "INF.6.A2",
+                "description": "Base implementation for control INF.6.A2."
+              },
+              {
+                "uuid": "bc3ac88c-2f60-4175-b038-8f5f31553154",
+                "control-id": "INF.6.A3",
+                "description": "Base implementation for control INF.6.A3."
+              },
+              {
+                "uuid": "02d0ee29-9a63-46c7-a5f4-52b93d00ea60",
+                "control-id": "INF.6.A4",
+                "description": "Base implementation for control INF.6.A4."
+              },
+              {
+                "uuid": "b5a3512f-768d-4a0a-8494-eb7eb17fa429",
+                "control-id": "INF.6.A5",
+                "description": "Base implementation for control INF.6.A5."
+              },
+              {
+                "uuid": "9489ee66-724d-494f-b359-20c048a11a82",
+                "control-id": "INF.6.A6",
+                "description": "Base implementation for control INF.6.A6."
+              },
+              {
+                "uuid": "3416495d-2d0e-4743-9f68-ba46a3020ac6",
+                "control-id": "INF.6.A7",
+                "description": "Base implementation for control INF.6.A7."
+              },
+              {
+                "uuid": "11a3c1fe-ad85-4ec4-93bf-84a097e3c49c",
+                "control-id": "INF.6.A8",
+                "description": "Base implementation for control INF.6.A8."
+              },
+              {
+                "uuid": "c6cba349-eb39-4d22-bb84-2d29885c5251",
+                "control-id": "INF.6.A9",
+                "description": "Base implementation for control INF.6.A9."
+              }
+            ]
+          },
+          {
+            "uuid": "3103ff07-7892-4711-af81-db25224b419d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "ccf166dd-b7bd-4898-9390-623201a33a3a",
+                "control-id": "OPS.1.2.2.A3",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zur geeigneten Lagerung von Archivspeichermedien ist direkt auf das Ziel des Bausteins INF.6, den Schutz der im Archiv gelagerten Datentr\u00e4ger, anwendbar."
+              },
+              {
+                "uuid": "63caa3a8-2683-493d-a554-a3a843441ce0",
+                "control-id": "OPS.1.2.2.A18",
+                "description": "AI-Begr\u00fcndung: Die Auswahl langlebiger und robuster Medien ist eine grundlegende Voraussetzung f\u00fcr die physische Sicherheit und Integrit\u00e4t der Informationen, die im Datentr\u00e4gerarchiv gesch\u00fctzt werden sollen."
+              },
+              {
+                "uuid": "651cd2cc-f21e-4580-814a-4ede6d815e26",
+                "control-id": "OPS.1.2.2.A19",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass der Zustand der im Archiv gelagerten Medien regelm\u00e4\u00dfig \u00fcberpr\u00fcft wird, um Datenverlust durch Medienalterung oder -defekte zu verhindern, was direkt das Schutzziel unterst\u00fctzt."
+              }
+            ]
+          },
+          {
+            "uuid": "ff190909-1a2c-406b-95d6-717f545f07c1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "94649f95-9f36-4ba7-9d89-eb69c88fee68",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Trennung von operativen und kontrollierenden Aufgaben ist ein grundlegendes Sicherheitsprinzip, das auch f\u00fcr die Verwaltung eines physischen Archivs gilt, um Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "3eb6a2f7-a9f7-4947-b1be-4de07993c940",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass das Personal, das f\u00fcr das Datentr\u00e4gerarchiv zust\u00e4ndig ist, \u00fcber die notwendige Qualifikation f\u00fcr den sicheren Umgang mit den Medien und den Sicherheitsverfahren verf\u00fcgt."
+              },
+              {
+                "uuid": "bea92806-3a3e-4779-b22f-560b019a1473",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist direkt auf die Verwaltung des physischen Zutritts zum Archivraum \u00fcbertragbar und stellt sicher, dass nur berechtigte Personen nach dem Need-to-know-Prinzip Zutritt haben."
+              },
+              {
+                "uuid": "50018c9e-894d-48ff-aab6-1e93fe3b1580",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende Anforderung f\u00fcr die physische Sicherheit. Der Zugriff auf den Archivraum muss durch eine angemessene Identifikation und Authentisierung der Person gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "ef29cf9d-d174-486b-a91d-71da81907b6e",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt die Notwendigkeit der Authentisierung um die Auswahl eines dem Schutzbedarf des Archivs angemessenen Verfahrens (z. B. Schloss, Keycard, Biometrie)."
+              },
+              {
+                "uuid": "4d5449ce-cf75-49a7-a8e7-609487a711cd",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Wenn verschl\u00fcsselte Datentr\u00e4ger archiviert werden, ist ein sicheres Schl\u00fcsselmanagement essenziell, da der Verlust der Schl\u00fcssel einem Datenverlust gleichkommt. Dies ist f\u00fcr den Schutz der Information im Archiv von hoher Bedeutung."
+              },
+              {
+                "uuid": "59ee2793-db54-4386-bfd4-3eb534ee4f2f",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung kann auf die Verwaltungst\u00e4tigkeiten f\u00fcr das Archiv \u00fcbertragen werden, z. B. auf die Protokollierung der Verwaltung der Zutrittskontrollanlage oder der Inventarliste."
+              },
+              {
+                "uuid": "f5b2ce81-e469-4261-aca7-c95740cf2c03",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Schnittstellen von Systemen, die zur Sicherung des Archivs eingesetzt werden (z. B. Konfiguration der Zutrittskontrolle), vor unbefugtem Zugriff."
+              },
+              {
+                "uuid": "3a8c9b54-9335-4694-aff3-84961f0b2a63",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass Detektionsfunktionen von physischen Sicherheitssystemen, die im Kontext eines Datentr\u00e4gerarchivs relevant sind (z. B. Alarme der Zutrittskontrolle, Klimasensoren), aktiv genutzt und \u00fcberwacht werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

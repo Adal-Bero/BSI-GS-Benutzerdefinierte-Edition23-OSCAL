@@ -1,0 +1,368 @@
+{
+  "component-definition": {
+    "uuid": "327cb163-1c8d-453f-b4bf-8f7946b2a91c",
+    "metadata": {
+      "title": "Component for Baustein INF.11: Allgemeines Fahrzeug",
+      "last-modified": "2025-06-26T11:44:33.889767+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.11."
+    },
+    "components": [
+      {
+        "uuid": "14895197-0c78-4bdd-8a16-bc929ab300f6",
+        "type": "service",
+        "title": "Allgemeines Fahrzeug",
+        "description": "Implementation of controls for Baustein INF.11.",
+        "control-implementations": [
+          {
+            "uuid": "615777f5-e936-4cb1-8513-ddbc5e8022b9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.11: Allgemeines Fahrzeug",
+            "implemented-requirements": [
+              {
+                "uuid": "8a5370c7-1498-4101-a453-17ce2a15205a",
+                "control-id": "INF.11.A1",
+                "description": "Base implementation for control INF.11.A1."
+              },
+              {
+                "uuid": "40ff0dd2-d492-4c05-af28-8ddfc056224f",
+                "control-id": "INF.11.A2",
+                "description": "Base implementation for control INF.11.A2."
+              },
+              {
+                "uuid": "567e51fc-0f4e-4da1-aa90-5dce99ec639f",
+                "control-id": "INF.11.A3",
+                "description": "Base implementation for control INF.11.A3."
+              },
+              {
+                "uuid": "5001e2a8-7e31-41d4-8bb8-6884ef02924b",
+                "control-id": "INF.11.A4",
+                "description": "Base implementation for control INF.11.A4."
+              },
+              {
+                "uuid": "1b9e23bd-3ad5-4ba8-88c7-cce5407a00a6",
+                "control-id": "INF.11.A5",
+                "description": "Base implementation for control INF.11.A5."
+              },
+              {
+                "uuid": "e4b6e53b-3be9-4812-84f2-db457f280e71",
+                "control-id": "INF.11.A6",
+                "description": "Base implementation for control INF.11.A6."
+              },
+              {
+                "uuid": "c0b5f4ad-9562-42d5-afb4-e1c125fc67af",
+                "control-id": "INF.11.A7",
+                "description": "Base implementation for control INF.11.A7."
+              },
+              {
+                "uuid": "62a8a9ec-e288-4f2e-a0a3-a578c7d39f7b",
+                "control-id": "INF.11.A8",
+                "description": "Base implementation for control INF.11.A8."
+              },
+              {
+                "uuid": "d7e6fa76-d0d0-42ef-8119-6205d4a27eed",
+                "control-id": "INF.11.A9",
+                "description": "Base implementation for control INF.11.A9."
+              },
+              {
+                "uuid": "fbd90cc1-93d9-4c03-9a59-c095da785dd7",
+                "control-id": "INF.11.A10",
+                "description": "Base implementation for control INF.11.A10."
+              },
+              {
+                "uuid": "e2388115-a543-4c74-b3f1-5137d49502ba",
+                "control-id": "INF.11.A11",
+                "description": "Base implementation for control INF.11.A11."
+              },
+              {
+                "uuid": "6f65735d-c0a9-4877-a774-f3518a6f16a2",
+                "control-id": "INF.11.A12",
+                "description": "Base implementation for control INF.11.A12."
+              },
+              {
+                "uuid": "214f59bb-b43a-4444-9df3-0efc6595608d",
+                "control-id": "INF.11.A13",
+                "description": "Base implementation for control INF.11.A13."
+              },
+              {
+                "uuid": "7c8c0729-ecb8-4c2d-ab3b-4551bf3e7adf",
+                "control-id": "INF.11.A14",
+                "description": "Base implementation for control INF.11.A14."
+              },
+              {
+                "uuid": "d8908cac-938e-4da8-90e8-6593d227e540",
+                "control-id": "INF.11.A15",
+                "description": "Base implementation for control INF.11.A15."
+              },
+              {
+                "uuid": "e5c1c12e-1fae-43ea-8c49-3ff954e20769",
+                "control-id": "INF.11.A16",
+                "description": "Base implementation for control INF.11.A16."
+              },
+              {
+                "uuid": "2557c65a-73c6-4557-9dad-401283f39919",
+                "control-id": "INF.11.A17",
+                "description": "Base implementation for control INF.11.A17."
+              }
+            ]
+          },
+          {
+            "uuid": "fbbca660-1abb-4697-8f69-c387c0a7bdae",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "f6e3a14c-5d81-4de8-baa7-81842de5d8ee",
+                "control-id": "CON.6.A1",
+                "description": "AI-Begr\u00fcndung: Regelt den Umgang mit Altdaten in Fahrzeug-IT-Systemen (z. B. Infotainment, Navi) und auf mitgef\u00fchrten Ger\u00e4ten, was bei Fahrzeugwechsel oder -aussonderung essenziell ist und im Baustein explizit gefordert wird."
+              },
+              {
+                "uuid": "17ecdcc9-859c-4b78-8541-93a39b447816",
+                "control-id": "CON.6.A2",
+                "description": "AI-Begr\u00fcndung: Stellt die praktische und sichere Umsetzung der L\u00f6sch- und Vernichtungsregelungen f\u00fcr Altdaten in Fahrzeugen sicher, um den Abfluss sch\u00fctzenswerter Informationen zu verhindern."
+              },
+              {
+                "uuid": "7f519f0a-cb19-48fa-ad95-a2192e6ae46e",
+                "control-id": "CON.6.A4",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die Auswahl technisch wirksamer L\u00f6schverfahren f\u00fcr die spezifischen Datentr\u00e4ger, die in der Fahrzeugelektronik und den mobilen Endger\u00e4ten verbaut sind."
+              },
+              {
+                "uuid": "e19ea43e-cd2c-4416-9a91-df55b56cc4dd",
+                "control-id": "CON.6.A8",
+                "description": "AI-Begr\u00fcndung: Dokumentiert die Prozesse zur L\u00f6schung und Vernichtung in einer Richtlinie, was die Verbindlichkeit und das Bewusstsein bei allen beteiligten Mitarbeitenden (Fahrer, Fuhrparkmanagement) erh\u00f6ht."
+              },
+              {
+                "uuid": "f325570b-6a83-4ce7-ad5b-e6862607f070",
+                "control-id": "CON.6.A11",
+                "description": "AI-Begr\u00fcndung: Adressiert das relevante Szenario, dass Fahrzeuge oft durch externe Dienstleister (Werkst\u00e4tten, H\u00e4ndler) entsorgt oder verkauft werden, und sichert den Prozess dabei ab."
+              },
+              {
+                "uuid": "ee2907e0-600f-411b-ad99-e48f4a351ee7",
+                "control-id": "CON.6.A12",
+                "description": "AI-Begr\u00fcndung: Liefert konkrete technische Mindestanforderungen f\u00fcr das L\u00f6schen, inklusive des Zur\u00fccksetzens auf Werkseinstellungen, was f\u00fcr fahrzeugeigene IT-Systeme direkt anwendbar ist."
+              },
+              {
+                "uuid": "c1a781ab-a982-4bc8-aaa3-fd14a1d38fcc",
+                "control-id": "CON.6.A13",
+                "description": "AI-Begr\u00fcndung: Regelt den Umgang mit defekten Datentr\u00e4gern in Fahrzeug-IT-Komponenten, die nicht mehr regul\u00e4r gel\u00f6scht werden k\u00f6nnen, aber dennoch sensible Daten enthalten k\u00f6nnen."
+              },
+              {
+                "uuid": "af6dab15-005b-4405-b4db-368677cabfb1",
+                "control-id": "CON.6.A14",
+                "description": "AI-Begr\u00fcndung: Erm\u00f6glicht eine an den Schutzbedarf der im Fahrzeug verarbeiteten Informationen angepasste, erh\u00f6hte Sicherheitsstufe bei der Vernichtung der Datentr\u00e4ger."
+              },
+              {
+                "uuid": "2fdf4f94-3815-4094-92e6-f4782e247fd8",
+                "control-id": "NET.3.3.A1",
+                "description": "AI-Begr\u00fcndung: Die Nutzung eines Fahrzeugs als mobiler Arbeitsplatz erfordert oft einen Fernzugriff auf das Institutionsnetz. Diese Anforderung plant den VPN-Einsatz strukturiert."
+              },
+              {
+                "uuid": "bd3ecdf2-0437-451a-9303-507f764b34d5",
+                "control-id": "NET.3.3.A2",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass bei der Nutzung eines externen VPN-Dienstleisters f\u00fcr den mobilen Zugriff aus dem Fahrzeug die vereinbarte Sicherheit und Verf\u00fcgbarkeit gew\u00e4hrleistet ist."
+              },
+              {
+                "uuid": "dc7e255b-5a1d-43cb-b023-eaf6bb6690cb",
+                "control-id": "NET.3.3.A3",
+                "description": "AI-Begr\u00fcndung: Sichert die Client-Seite der VPN-Verbindung auf den Ger\u00e4ten, die im Fahrzeug verwendet werden (z. B. Laptops), ab."
+              },
+              {
+                "uuid": "55624b5e-26c2-44cb-9966-ecbf38242190",
+                "control-id": "NET.3.3.A4",
+                "description": "AI-Begr\u00fcndung: Eine sichere Konfiguration des VPN ist fundamental, um einen gesch\u00fctzten Kommunikationskanal aus der potenziell unsicheren Umgebung eines Fahrzeugs zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "79a77a78-8ce7-4a6f-9c72-2fcfe40cd67b",
+                "control-id": "NET.3.3.A5",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass nur aktuell berechtigte Mitarbeitende aus Fahrzeugen heraus auf das Netz zugreifen k\u00f6nnen, und entzieht veraltete Berechtigungen zeitnah."
+              },
+              {
+                "uuid": "92cfccff-e63c-4ead-84e0-73cc5fa3b399",
+                "control-id": "NET.3.3.A6",
+                "description": "AI-Begr\u00fcndung: Analysiert die spezifischen Anforderungen f\u00fcr den Fernzugriff aus dem Fahrzeug, um die VPN-L\u00f6sung passgenau und sicher zu gestalten."
+              },
+              {
+                "uuid": "909c7044-a658-4d63-aa54-7b2185d68cce",
+                "control-id": "NET.3.3.A7",
+                "description": "AI-Begr\u00fcndung: Legt die technischen Details wie Verschl\u00fcsselung und Protokolle fest, die f\u00fcr eine sichere VPN-Verbindung aus dem Fahrzeug heraus notwendig sind."
+              },
+              {
+                "uuid": "aff6897f-39e7-46c8-965d-12c9ef1afcf6",
+                "control-id": "NET.3.3.A8",
+                "description": "AI-Begr\u00fcndung: Schafft durch eine Richtlinie und Merkbl\u00e4tter Verbindlichkeit und informiert die Anwender \u00fcber die sichere Nutzung des VPNs im mobilen Einsatz."
+              },
+              {
+                "uuid": "d2f76e1d-8fcf-4768-9647-59f48faf462f",
+                "control-id": "NET.3.3.A9",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet, dass die ausgew\u00e4hlte VPN-L\u00f6sung den besonderen Anforderungen des mobilen Einsatzes in Fahrzeugen (z. B. Verbindungsabbr\u00fcche) gerecht wird."
+              },
+              {
+                "uuid": "cf1131f3-edf2-455d-9836-d28eba017e78",
+                "control-id": "NET.3.3.A10",
+                "description": "AI-Begr\u00fcndung: Sichert den laufenden Betrieb der VPN-Infrastruktur ab, die von den mobilen Arbeitspl\u00e4tzen in den Fahrzeugen genutzt wird."
+              },
+              {
+                "uuid": "18ed7435-7064-4efe-aa46-f1935832c6e7",
+                "control-id": "NET.3.3.A11",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die VPN-Verbindung vom Fahrzeug ins interne Netz nach dem Need-to-know-Prinzip nur die notwendigen Zugriffe erlaubt."
+              },
+              {
+                "uuid": "0b5ca401-c119-4396-8e90-7e79ec55495b",
+                "control-id": "NET.3.3.A12",
+                "description": "AI-Begr\u00fcndung: Fordert eine zentrale Verwaltung der VPN-Zug\u00e4nge, was bei einer Flotte von mobilen Nutzern in Fahrzeugen f\u00fcr die Sicherheit und Administration unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "0ae79a56-8b68-4209-a56a-7c7d48c8d979",
+                "control-id": "NET.3.3.A13",
+                "description": "AI-Begr\u00fcndung: Beschreibt eine bew\u00e4hrte Sicherheitsarchitektur, bei der die VPN-Funktionalit\u00e4t in die zentrale Firewall integriert ist, um den Fernzugriff aus Fahrzeugen abzusichern."
+              },
+              {
+                "uuid": "f8f2539d-66f6-474b-85b8-15f72517a152",
+                "control-id": "SYS.3.1.A1",
+                "description": "AI-Begr\u00fcndung: Definiert grundlegende Sicherheitsregeln f\u00fcr die Nutzung von Laptops im Fahrzeug, einer spezifischen Form der mobilen Nutzung mit erh\u00f6hten Risiken."
+              },
+              {
+                "uuid": "4654c099-0929-43b4-8c93-6f206cc580a8",
+                "control-id": "SYS.3.1.A3",
+                "description": "AI-Begr\u00fcndung: Der Einsatz einer Personal Firewall ist auf einem Laptop im Fahrzeug unerl\u00e4sslich, da dieser sich \u00fcber potenziell ungesicherte Netze (mobiles Internet, Hotspot) verbindet."
+              },
+              {
+                "uuid": "b25ec6b4-75e0-4d8e-9b82-9594fb622b9f",
+                "control-id": "SYS.3.1.A9",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist die logische Konsequenz der Nutzung eines Laptops im Fahrzeug als Arbeitsplatz und fordert einen sicheren Kommunikationskanal (z. B. VPN)."
+              },
+              {
+                "uuid": "8d4c877c-ffee-49d9-a7a2-f8cb50467b6a",
+                "control-id": "SYS.3.1.A6",
+                "description": "AI-Begr\u00fcndung: Sensibilisiert die Benutzer f\u00fcr die besonderen Gef\u00e4hrdungen bei der Laptop-Nutzung im Fahrzeug (Diebstahl, Sichtschutz) und schafft ein Regelwerk daf\u00fcr."
+              },
+              {
+                "uuid": "588850c8-9db0-4f4b-9d23-0741d1e9dc01",
+                "control-id": "SYS.3.1.A7",
+                "description": "AI-Begr\u00fcndung: Relevant f\u00fcr Pool-Fahrzeuge oder -Laptops, stellt diese Anforderung sicher, dass bei einem Benutzerwechsel keine sch\u00fctzenswerten Daten auf dem Ger\u00e4t verbleiben."
+              },
+              {
+                "uuid": "64a84528-e604-4291-9c0e-bea44e3c8be6",
+                "control-id": "SYS.3.1.A8",
+                "description": "AI-Begr\u00fcndung: Regelt, wie ein Laptop sicher mit dem Fahrzeug (z.B. per USB, WLAN) oder mit externen Netzen verbunden wird, um Kompromittierungen zu vermeiden."
+              },
+              {
+                "uuid": "55282e67-872a-4e4a-88e4-36eed056c482",
+                "control-id": "SYS.3.1.A10",
+                "description": "AI-Begr\u00fcndung: Adressiert die Notwendigkeit, Daten, die offline im Fahrzeug erstellt wurden, sicher und konsistent mit den zentralen Datenbest\u00e4nden abzugleichen."
+              },
+              {
+                "uuid": "e5db743e-7fc2-43d3-bf08-c82d9558a472",
+                "control-id": "SYS.3.1.A11",
+                "description": "AI-Begr\u00fcndung: Stellt die Verf\u00fcgbarkeit des mobilen Arbeitsplatzes im Fahrzeug sicher, indem die Energieversorgung des Laptops gew\u00e4hrleistet wird."
+              },
+              {
+                "uuid": "4ab8ab7b-2f19-4140-95f7-a274af134cb6",
+                "control-id": "SYS.3.1.A12",
+                "description": "AI-Begr\u00fcndung: Das Risiko von Diebstahl oder Verlust ist bei Laptops in Fahrzeugen besonders hoch. Ein klarer Meldeweg ist f\u00fcr eine schnelle Reaktion (Sperrung etc.) entscheidend."
+              },
+              {
+                "uuid": "8d806d17-b0f8-43e0-a1b7-ad83b053c873",
+                "control-id": "SYS.3.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Verschl\u00fcsselung von Laptop-Festplatten ist die wichtigste technische Ma\u00dfnahme zum Schutz der Daten bei Diebstahl, einem Hauptrisiko bei der Nutzung im Fahrzeug."
+              },
+              {
+                "uuid": "089840e7-e7a3-48e1-8a53-686ec4fa9235",
+                "control-id": "SYS.3.1.A14",
+                "description": "AI-Begr\u00fcndung: Gibt konkrete Anweisungen, wie Laptops im Fahrzeug diebstahlsicher aufzubewahren sind (z. B. nicht sichtbar im Fahrgastraum)."
+              },
+              {
+                "uuid": "ce7df1a9-a22d-476f-8e5c-cf04fffad47c",
+                "control-id": "SYS.3.1.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass bei der Beschaffung von Laptops f\u00fcr den Fahrzeugeinsatz Kriterien wie Robustheit, Akkulaufzeit und Sicherheitsfunktionen ber\u00fccksichtigt werden."
+              },
+              {
+                "uuid": "f21576fd-f581-4498-b7b2-996847b1802e",
+                "control-id": "SYS.3.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine zentrale Verwaltung ist f\u00fcr die Absicherung einer Flotte von Laptops, die mobil in Fahrzeugen genutzt werden, unerl\u00e4sslich (Patching, Konfiguration, etc.)."
+              },
+              {
+                "uuid": "3c83bfbd-499a-4ea0-aabf-fcc410c25a7e",
+                "control-id": "SYS.3.1.A17",
+                "description": "AI-Begr\u00fcndung: Regelt die sichere Lagerung von Pool-Laptops, die f\u00fcr den Einsatz in Fahrzeugen vorgesehen sind, innerhalb der Institution."
+              },
+              {
+                "uuid": "21c6d23b-ac02-4500-80e3-a43382d14fb7",
+                "control-id": "SYS.3.1.A18",
+                "description": "AI-Begr\u00fcndung: Empfiehlt zus\u00e4tzliche mechanische oder softwarebasierte Diebstahlsicherungen, die aufgrund des hohen Risikos im Fahrzeugkontext sehr sinnvoll sind."
+              }
+            ]
+          },
+          {
+            "uuid": "e92be081-852b-4284-968b-4178c66e1269",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "3b7c07fd-73f2-4ace-ac5c-97c9791dffa1",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass Fahrzeugnutzer f\u00fcr die spezifischen Sicherheitsanforderungen und Gef\u00e4hrdungen beim Umgang mit IT im Fahrzeug und dem mobilen Arbeiten geschult sind."
+              },
+              {
+                "uuid": "211de21c-7c51-4c9a-8400-8aa513622b42",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Regelt den Zugriff auf IT-Systeme im Fahrzeug sowie auf die per Fernzugriff erreichbaren Unternehmensdaten nach dem Need-to-know-Prinzip."
+              },
+              {
+                "uuid": "b0d9c799-7363-4cd1-82b0-7ecbe459f9c5",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Sichert den Zugriff auf die im Fahrzeug genutzten IT-Systeme (Laptop, Smartphone) und die Fahrzeug-IT selbst (z. B. Nutzerprofile) durch eine sichere Authentisierung ab."
+              },
+              {
+                "uuid": "0465dba0-eb8f-4d4a-910b-d2b6e9d0cef3",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die Authentisierung f\u00fcr den Zugriff aus dem Fahrzeug heraus dem erh\u00f6hten Risiko angemessen ist, z. B. durch den Einsatz von Multi-Faktor-Authentisierung."
+              },
+              {
+                "uuid": "7a127759-5dd7-42f6-bc85-67b3815c656e",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Ist eine grundlegende Anforderung f\u00fcr die sichere Umsetzung von Verschl\u00fcsselung (SYS.3.1.A13) und VPN (NET.3.3), die im Fahrzeugkontext zentral sind."
+              },
+              {
+                "uuid": "f0df77c5-650d-4ab3-a42c-2a27ad03c157",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist die Voraussetzung f\u00fcr eine wirksame Verschl\u00fcsselung von Laptops und VPN-Verbindungen, die aus dem Fahrzeug genutzt werden."
+              },
+              {
+                "uuid": "7c5ee251-653f-4506-9153-e7b3c78c66db",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Aufgrund des erh\u00f6hten Risikos von Diebstahl, Verlust oder Besch\u00e4digung von Laptops in Fahrzeugen ist eine regelm\u00e4\u00dfige Datensicherung zum Schutz vor Datenverlust unerl\u00e4sslich."
+              },
+              {
+                "uuid": "521be90b-7ea5-46c0-a14e-a1e617829a61",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Stellt die Nachvollziehbarkeit von administrativen \u00c4nderungen an Laptops oder Fahrzeug-Telematiksystemen sicher, was f\u00fcr die Sicherheit und Fehleranalyse wichtig ist."
+              },
+              {
+                "uuid": "17c8ec74-0c61-4ce6-8e84-19af92244d66",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sichert administrative Fernzugriffe (z.B. f\u00fcr Support) auf die in Fahrzeugen genutzten IT-Systeme ab, um eine Kompromittierung zu verhindern."
+              },
+              {
+                "uuid": "ff5e6e4c-b6e7-4f69-b410-978854e9c2cb",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Patch-Management ist f\u00fcr die Sicherheit von Laptops und der Fahrzeug-Software (Infotainment, etc.) essenziell, um Schwachstellen zeitnah zu schlie\u00dfen."
+              },
+              {
+                "uuid": "fd8a8b9a-bf24-4225-ac57-adba3456d7e5",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet, dass Sicherheitsfunktionen auf Laptops (Antivirus, Firewall) und in der Fahrzeug-IT aktiviert sind, um Angriffe und Vorf\u00e4lle erkennen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "226d0151-ac98-42c4-b8da-837a47921eb9",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Empfiehlt den Einsatz erweiterter Detektionssysteme (z.B. EDR) auf Laptops, was aufgrund des erh\u00f6hten Risikos im mobilen Einsatz einen erheblichen Mehrwert bietet."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

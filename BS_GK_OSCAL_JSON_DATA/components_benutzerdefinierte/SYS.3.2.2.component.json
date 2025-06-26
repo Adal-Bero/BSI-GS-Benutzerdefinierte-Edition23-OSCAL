@@ -1,0 +1,323 @@
+{
+  "component-definition": {
+    "uuid": "60771a0c-bb47-4fc0-a1ef-bf1783ab950b",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.2.2: Mobile Device Management (MDM)",
+      "last-modified": "2025-06-26T11:04:00.482152+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.2.2."
+    },
+    "components": [
+      {
+        "uuid": "4410b428-66fc-4e0e-8002-04cf44528cff",
+        "type": "service",
+        "title": "Mobile Device Management (MDM)",
+        "description": "Implementation of controls for Baustein SYS.3.2.2.",
+        "control-implementations": [
+          {
+            "uuid": "5c648657-73fc-4b93-9721-26d8c1168567",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.2.2: Mobile Device Management (MDM)",
+            "implemented-requirements": [
+              {
+                "uuid": "205e826f-ac52-423c-b907-5d673ee0e2fb",
+                "control-id": "SYS.3.2.2.A1",
+                "description": "Base implementation for control SYS.3.2.2.A1."
+              },
+              {
+                "uuid": "2967fa5c-d047-4c37-8cf0-38c00ab54fde",
+                "control-id": "SYS.3.2.2.A2",
+                "description": "Base implementation for control SYS.3.2.2.A2."
+              },
+              {
+                "uuid": "470a1219-f185-4189-93c0-12745ba38c26",
+                "control-id": "SYS.3.2.2.A3",
+                "description": "Base implementation for control SYS.3.2.2.A3."
+              },
+              {
+                "uuid": "4f52243a-0444-45a1-8aae-1a4b8e47470d",
+                "control-id": "SYS.3.2.2.A4",
+                "description": "Base implementation for control SYS.3.2.2.A4."
+              },
+              {
+                "uuid": "19737ecd-4ab4-404d-8ebd-f877beab1a5f",
+                "control-id": "SYS.3.2.2.A5",
+                "description": "Base implementation for control SYS.3.2.2.A5."
+              },
+              {
+                "uuid": "fc7ed512-cefe-4bf6-b8a9-69b1d505ce39",
+                "control-id": "SYS.3.2.2.A20",
+                "description": "Base implementation for control SYS.3.2.2.A20."
+              },
+              {
+                "uuid": "2bb2dd13-5d46-4b71-8e8f-b87dbc5b4afc",
+                "control-id": "SYS.3.2.2.A6",
+                "description": "Base implementation for control SYS.3.2.2.A6."
+              },
+              {
+                "uuid": "98ab1a06-1c44-49c7-b1e6-2a06e9af0ecf",
+                "control-id": "SYS.3.2.2.A7",
+                "description": "Base implementation for control SYS.3.2.2.A7."
+              },
+              {
+                "uuid": "4e9f88b7-03ad-4bf9-93c3-2de53561e4d3",
+                "control-id": "SYS.3.2.2.A12",
+                "description": "Base implementation for control SYS.3.2.2.A12."
+              },
+              {
+                "uuid": "4801fa30-1dd6-44b1-b728-c7b3342dc5a6",
+                "control-id": "SYS.3.2.2.A21",
+                "description": "Base implementation for control SYS.3.2.2.A21."
+              },
+              {
+                "uuid": "4e16b070-b47e-43e1-9d53-d04251dc8d92",
+                "control-id": "SYS.3.2.2.A22",
+                "description": "Base implementation for control SYS.3.2.2.A22."
+              },
+              {
+                "uuid": "d6d5a3c9-72d0-4688-a67c-015b1907c534",
+                "control-id": "SYS.3.2.2.A14",
+                "description": "Base implementation for control SYS.3.2.2.A14."
+              },
+              {
+                "uuid": "3376d551-67eb-4d7a-820c-b7518a785073",
+                "control-id": "SYS.3.2.2.A17",
+                "description": "Base implementation for control SYS.3.2.2.A17."
+              },
+              {
+                "uuid": "0fd73177-6750-4330-86da-385bb9b50ff6",
+                "control-id": "SYS.3.2.2.A19",
+                "description": "Base implementation for control SYS.3.2.2.A19."
+              },
+              {
+                "uuid": "5fb2b587-c291-40b0-8ddb-4034d4d232a7",
+                "control-id": "SYS.3.2.2.A23",
+                "description": "Base implementation for control SYS.3.2.2.A23."
+              }
+            ]
+          },
+          {
+            "uuid": "7f61b89e-92c7-43ca-8268-69dd66217062",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "3e723fe4-f171-4bc8-beda-b4396e96b5b3",
+                "control-id": "SYS.3.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Ein MDM dient der technischen Umsetzung einer Sicherheitsrichtlinie. Diese Anforderung stellt die notwendige strategische Grundlage f\u00fcr den MDM-Einsatz dar."
+              },
+              {
+                "uuid": "5ec09056-0121-4c4a-82cf-f6ad0903cd6f",
+                "control-id": "SYS.3.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Cloud-Nutzung ist auf mobilen Endger\u00e4ten inh\u00e4rent. Ein MDM ist das zentrale Werkzeug, um die festgelegte Cloud-Strategie technisch durchzusetzen und Datenabfluss zu verhindern."
+              },
+              {
+                "uuid": "df487f28-2b0b-4721-abb5-77806abd65c7",
+                "control-id": "SYS.3.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Die Definition und Verteilung einer sicheren Grundkonfiguration ist eine Kernfunktion eines MDM-Systems."
+              },
+              {
+                "uuid": "4a65b081-f13a-48e8-b79e-6db273533a09",
+                "control-id": "SYS.3.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Durchsetzung von Richtlinien f\u00fcr den Ger\u00e4tesperrcode und Sperrbildschirm ist eine fundamentale und essenzielle F\u00e4higkeit von MDM-Systemen."
+              },
+              {
+                "uuid": "eca7647a-0115-4de5-aa46-e4dd56b0a3a3",
+                "control-id": "SYS.3.2.1.A5",
+                "description": "AI-Begr\u00fcndung: Ein MDM bietet die notwendige \u00dcbersicht und Kontrollmechanismen \u00fcber die Betriebssystem- und App-Versionen und unterst\u00fctzt so das Management des Ger\u00e4telebenszyklus."
+              },
+              {
+                "uuid": "0485cb8f-9783-40ca-af6b-a1068e62bcea",
+                "control-id": "SYS.3.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Moderne MDM-Systeme erm\u00f6glichen eine granulare Steuerung von App-Berechtigungen und Datenschutzeinstellungen, was f\u00fcr den Schutz sensibler Daten unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "d31a2c79-c376-4000-afb8-eec21664cfa2",
+                "control-id": "SYS.3.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Das MDM ist das entscheidende Werkzeug, um bei einem Sicherheitsvorfall (z. B. Ger\u00e4teverlust) die notwendigen Notfallaktionen (Sperren, L\u00f6schen) auszul\u00f6sen. Der Meldeprozess ist hierf\u00fcr die Voraussetzung."
+              },
+              {
+                "uuid": "fba040f5-e735-42b2-90cf-2e8a849d94bc",
+                "control-id": "SYS.3.2.1.A8",
+                "description": "AI-Begr\u00fcndung: App-Management, inklusive der Steuerung von Installationsquellen und der Umsetzung von Freigabe- oder Sperrlisten, ist eine zentrale Aufgabe eines MDM-Systems."
+              },
+              {
+                "uuid": "7b6e8b8d-e062-442a-bac6-8be8efa374a8",
+                "control-id": "SYS.3.2.1.A9",
+                "description": "AI-Begr\u00fcndung: Ein MDM kann die Nutzung von potenziell unsicheren funktionalen Erweiterungen wie Drittanbieter-Tastaturen einschr\u00e4nken und ist somit das richtige Werkzeug zur Umsetzung dieser Anforderung."
+              },
+              {
+                "uuid": "2eff5505-44f3-415b-8c74-09d425668f20",
+                "control-id": "SYS.3.2.1.A10",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung definiert die Verhaltensregeln f\u00fcr Benutzer, deren Einhaltung ein MDM teilweise technisch erzwingen oder zumindest erkennen kann (z. B. Jailbreak-Erkennung)."
+              },
+              {
+                "uuid": "53709278-9613-4de9-a9e7-346bd61a8055",
+                "control-id": "SYS.3.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Ein MDM kann die Verschl\u00fcsselung des Ger\u00e4tespeichers erzwingen und deren Status \u00fcberwachen, was ein fundamentaler Schutzmechanismus ist."
+              },
+              {
+                "uuid": "5e5e94f6-41a3-44db-be4d-815811261e62",
+                "control-id": "SYS.3.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Einhaltung von Namenskonventionen f\u00fcr Ger\u00e4te kann durch ein MDM, oft bereits beim Einrollprozess, automatisiert und durchgesetzt werden."
+              },
+              {
+                "uuid": "acc68af4-22d1-4733-a3c9-332c0f537167",
+                "control-id": "SYS.3.2.1.A13",
+                "description": "AI-Begr\u00fcndung: MDM-Systeme bieten Konfigurationsm\u00f6glichkeiten, um Funktionen wie Screensharing oder Casting zu unterbinden oder einzuschr\u00e4nken und so Datenlecks zu verhindern."
+              },
+              {
+                "uuid": "be16bde6-2bd4-4245-88ce-1c106dfb8505",
+                "control-id": "SYS.3.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration von Kommunikationsschnittstellen (Bluetooth, NFC etc.) zur Reduzierung der Angriffsfl\u00e4che ist Teil der sicheren Grundkonfiguration, die durch ein MDM verwaltet wird."
+              },
+              {
+                "uuid": "d35c5ce6-692d-4acd-8479-e54d0fab9bda",
+                "control-id": "SYS.3.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Die Entscheidung \u00fcber die Zul\u00e4ssigkeit biometrischer Verfahren wird als Richtlinie im MDM hinterlegt und technisch durchgesetzt."
+              },
+              {
+                "uuid": "3dfe61fd-4c43-4c89-9b32-d4933cc381c8",
+                "control-id": "SYS.3.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Deaktivierung oder Einschr\u00e4nkung von Sprachassistenten ist eine sicherheitsrelevante Konfigurationseinstellung, die zentral per MDM verwaltet werden kann."
+              },
+              {
+                "uuid": "7d88e908-960d-4da5-9034-97ba27ef6dfa",
+                "control-id": "SYS.3.2.1.A22",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration von VPN-Zug\u00e4ngen, idealerweise mit Zertifikaten, ist ein prim\u00e4rer Anwendungsfall und eine Kernkompetenz von MDM-Systemen zur sicheren Anbindung an die interne Infrastruktur."
+              },
+              {
+                "uuid": "b63ce045-242a-4111-80ed-2bcaa5be8c5a",
+                "control-id": "SYS.3.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Die Durchsetzung von Web-Filtern oder die Konfiguration eines globalen Proxys sind typische MDM-Funktionen zum Schutz der Benutzer vor sch\u00e4dlichen Web-Inhalten."
+              },
+              {
+                "uuid": "ac633838-46b5-4dab-bc8a-ae0d2b8a36a6",
+                "control-id": "SYS.3.2.1.A31",
+                "description": "AI-Begr\u00fcndung: Die organisatorische Entscheidung \u00fcber Mobile Payment kann durch ein MDM technisch umgesetzt werden, indem entsprechende Funktionen auf den Ger\u00e4ten blockiert werden."
+              },
+              {
+                "uuid": "36cd2222-ee40-4595-ab34-d8cef674bafb",
+                "control-id": "SYS.3.2.1.A33",
+                "description": "AI-Begr\u00fcndung: MDM-Systeme sind entscheidend f\u00fcr die Verteilung und Verwaltung von Sicherheits-Apps (z. B. MTD) und die Reaktion auf deren Meldungen."
+              },
+              {
+                "uuid": "08a719e8-4efe-43b8-9c65-859ffa5c9848",
+                "control-id": "SYS.3.2.1.A34",
+                "description": "AI-Begr\u00fcndung: Die Vorgabe vertrauensw\u00fcrdiger DNS-Server kann \u00fcber Konfigurationsprofile eines MDM (z. B. via VPN- oder WLAN-Profil) auf den Ger\u00e4ten durchgesetzt werden."
+              },
+              {
+                "uuid": "cc22a5a5-1f94-4c19-8fc6-080b812bd79b",
+                "control-id": "SYS.3.2.1.A25",
+                "description": "AI-Begr\u00fcndung: Die Erstellung und Verwaltung getrennter Arbeitsumgebungen (Containerisierung) ist eine der wichtigsten Funktionen moderner MDM-L\u00f6sungen zur Absicherung von Unternehmensdaten, insbesondere bei BYOD."
+              },
+              {
+                "uuid": "804929b8-5b85-44d1-8781-49cef5054ba3",
+                "control-id": "SYS.3.2.1.A26",
+                "description": "AI-Begr\u00fcndung: PIM-Container sind eine konkrete Umsetzung der Datentrennung, die durch ein MDM verwaltet wird, um E-Mails, Kontakte und Kalenderdaten zu sch\u00fctzen."
+              },
+              {
+                "uuid": "161a6efe-bdc7-4f7c-9f26-46a5d400b223",
+                "control-id": "SYS.3.2.1.A27",
+                "description": "AI-Begr\u00fcndung: Die strategische Entscheidung f\u00fcr geh\u00e4rtete Endger\u00e4te erfordert angepasste, strengere Konfigurationsprofile, die \u00fcber das MDM zugewiesen und verwaltet werden."
+              },
+              {
+                "uuid": "65a1c300-1713-466e-b57e-d682c30a24c3",
+                "control-id": "SYS.3.2.1.A29",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration eines spezifischen APN kann \u00fcber das MDM auf die Ger\u00e4te verteilt werden, um den Datenverkehr \u00fcber kontrollierte Wege zu leiten."
+              },
+              {
+                "uuid": "514216d8-fac3-4231-b223-4600b50c5dc7",
+                "control-id": "SYS.3.2.1.A30",
+                "description": "AI-Begr\u00fcndung: Die Umsetzung einer strikten App-Allowlist ist eine Kernfunktion des App-Managements im MDM und f\u00fcr Umgebungen mit hohem Schutzbedarf unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b6d0973c-c5e9-4c59-ab86-9af12b49bf4f",
+                "control-id": "SYS.3.2.1.A35",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration der ger\u00e4teinternen Firewall oder die Verwaltung einer Firewall-App ist Teil der sicheren Grundkonfiguration, die durch ein MDM durchgesetzt wird."
+              }
+            ]
+          },
+          {
+            "uuid": "773c4528-6553-479e-9aad-27949632f16b",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "168b4a0a-cefb-4fd5-bc3c-9183520dcbd0",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung eines MDM erfordert administrative Rollen. Eine Funktionstrennung ist notwendig, um den Missbrauch weitreichender Berechtigungen innerhalb des MDM-Systems zu verhindern."
+              },
+              {
+                "uuid": "49c74255-caee-4293-9341-6dacb4a61765",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Der sichere Betrieb eines komplexen MDM-Systems erfordert qualifiziertes und geschultes Personal, um Fehlkonfigurationen und die daraus resultierenden Sicherheitsrisiken zu vermeiden."
+              },
+              {
+                "uuid": "cd9b4596-6a43-4522-8ed4-73fa946b7339",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Berechtigungsmanagement ist f\u00fcr MDM-Systeme auf zwei Ebenen relevant: f\u00fcr die Administration des Systems selbst und f\u00fcr die Zuweisung von Rechten an Endger\u00e4te und Benutzer."
+              },
+              {
+                "uuid": "3c8da405-236f-44a5-8935-14abc1c2e614",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf die MDM-Konsole muss durch eine sichere Identifikation und Authentisierung gesch\u00fctzt werden, da hier\u00fcber die gesamte mobile Flotte gesteuert wird."
+              },
+              {
+                "uuid": "b43aa2d5-0c8a-4425-86df-d2badb5cc700",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: F\u00fcr den hochprivilegierten Zugang zur MDM-Administrationsoberfl\u00e4che m\u00fcssen angemessene, starke Authentisierungsmechanismen (z. B. MFA) ausgew\u00e4hlt und durchgesetzt werden."
+              },
+              {
+                "uuid": "2f709f21-b2f5-4230-bc74-9275d3acaf82",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Ein MDM nutzt Kryptografie f\u00fcr die sichere Kommunikation und die Verwaltung von Zertifikaten. Die Verwendung starker, anerkannter Verfahren ist f\u00fcr die Sicherheit des Gesamtsystems fundamental."
+              },
+              {
+                "uuid": "92b118d5-be10-42aa-8b13-f1da5bdeec30",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: MDM-Systeme verteilen und verwalten Schl\u00fcssel und Zertifikate (z. B. f\u00fcr VPN/WLAN). Ein sicheres Schl\u00fcsselmanagement ist daher eine betriebsnotwendige und sicherheitskritische Aufgabe."
+              },
+              {
+                "uuid": "4aa9a49c-fd0e-4859-812a-726f6a8dd932",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration, die Richtlinien und die Protokolldaten des MDM-Systems selbst sind kritische Daten, deren regelm\u00e4\u00dfige Sicherung f\u00fcr die Aufrechterhaltung des Betriebs unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "9ca34c32-d882-4067-b959-5bb8e1c49904",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Alle administrativen Aktionen im MDM (z. B. Richtlinien\u00e4nderungen, L\u00f6schbefehle) m\u00fcssen l\u00fcckenlos protokolliert werden, um Nachweisbarkeit und Kontrolle zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "32bb57b1-0432-4c1d-8dd9-a99c74ff5484",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Die Administrationsschnittstelle des MDM ist ein prim\u00e4res Angriffsziel und muss durch Zugriffsbeschr\u00e4nkungen, starke Authentisierung und verschl\u00fcsselte Protokolle besonders gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "5ad87fa6-7263-477a-b0d3-2a2bda0382f4",
+                "control-id": "OPS.1.1.2.A18",
+                "description": "AI-Begr\u00fcndung: Bei hohem Schutzbedarf ist eine durchg\u00e4ngige und manipulationssichere Protokollierung aller administrativen T\u00e4tigkeiten im MDM-System zwingend erforderlich."
+              },
+              {
+                "uuid": "7102b275-3bd4-4ec0-9b79-829f68189152",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen am MDM-System selbst sowie an den ausgerollten Richtlinien haben weitreichende Folgen und m\u00fcssen daher einem kontrollierten Patch- und \u00c4nderungsmanagementprozess unterliegen."
+              },
+              {
+                "uuid": "a7afa238-c63e-4f77-9aa8-dc532fec3b10",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Ein MDM verf\u00fcgt \u00fcber eigene Detektionsfunktionen (z. B. Compliance-Verst\u00f6\u00dfe, Jailbreak). Diese m\u00fcssen aktiviert, \u00fcberwacht und deren Meldungen ausgewertet werden."
+              },
+              {
+                "uuid": "cbc61fc5-b429-4f30-ad3c-08a04ac71fac",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Ein MDM ist eine Schl\u00fcsselkomponente zur Umsetzung einer Endpoint-Detection-Strategie, insbesondere durch die Integration mit Mobile-Threat-Defense-L\u00f6sungen (MTD)."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

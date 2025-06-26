@@ -1,0 +1,433 @@
+{
+  "component-definition": {
+    "uuid": "38e785f5-423c-4b0a-ab69-5be57c5c20b6",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.2.1: Allgemeine Smartphones und Tablets",
+      "last-modified": "2025-06-26T11:01:46.795082+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.2.1."
+    },
+    "components": [
+      {
+        "uuid": "cbdec689-c819-4839-a0e6-9a6616daa06f",
+        "type": "service",
+        "title": "Allgemeine Smartphones und Tablets",
+        "description": "Implementation of controls for Baustein SYS.3.2.1.",
+        "control-implementations": [
+          {
+            "uuid": "08796117-7864-4c08-adbb-10b7d60dbf51",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.2.1: Allgemeine Smartphones und Tablets",
+            "implemented-requirements": [
+              {
+                "uuid": "d2e67239-e79b-43cd-ad5a-5f18bd19df5e",
+                "control-id": "SYS.3.2.1.A1",
+                "description": "Base implementation for control SYS.3.2.1.A1."
+              },
+              {
+                "uuid": "2feaa8b3-c2ff-481f-a8b8-28759d89b0ec",
+                "control-id": "SYS.3.2.1.A2",
+                "description": "Base implementation for control SYS.3.2.1.A2."
+              },
+              {
+                "uuid": "411b941b-553a-4a36-81c9-a21c8ebfec5d",
+                "control-id": "SYS.3.2.1.A3",
+                "description": "Base implementation for control SYS.3.2.1.A3."
+              },
+              {
+                "uuid": "3eb902a1-2da4-407c-aa15-980a42909c23",
+                "control-id": "SYS.3.2.1.A4",
+                "description": "Base implementation for control SYS.3.2.1.A4."
+              },
+              {
+                "uuid": "bab2af07-9cd6-4f41-b8c9-2252e92ee5b8",
+                "control-id": "SYS.3.2.1.A5",
+                "description": "Base implementation for control SYS.3.2.1.A5."
+              },
+              {
+                "uuid": "e0aa1362-9e87-4724-a264-f9e734b72add",
+                "control-id": "SYS.3.2.1.A6",
+                "description": "Base implementation for control SYS.3.2.1.A6."
+              },
+              {
+                "uuid": "507b5670-4778-407f-85ac-1afbb7014ba0",
+                "control-id": "SYS.3.2.1.A7",
+                "description": "Base implementation for control SYS.3.2.1.A7."
+              },
+              {
+                "uuid": "375d7d17-a513-4d27-8bd9-d50924c751f1",
+                "control-id": "SYS.3.2.1.A8",
+                "description": "Base implementation for control SYS.3.2.1.A8."
+              },
+              {
+                "uuid": "5cf6e38c-6f29-4381-b636-5c355700e9f3",
+                "control-id": "SYS.3.2.1.A9",
+                "description": "Base implementation for control SYS.3.2.1.A9."
+              },
+              {
+                "uuid": "ee0c4441-7d28-4346-bf39-3ed1aebf036a",
+                "control-id": "SYS.3.2.1.A10",
+                "description": "Base implementation for control SYS.3.2.1.A10."
+              },
+              {
+                "uuid": "a387f821-b710-48e1-b69f-91abfee9c855",
+                "control-id": "SYS.3.2.1.A11",
+                "description": "Base implementation for control SYS.3.2.1.A11."
+              },
+              {
+                "uuid": "6d4142bf-8fad-4d97-b21b-8430abd40f14",
+                "control-id": "SYS.3.2.1.A12",
+                "description": "Base implementation for control SYS.3.2.1.A12."
+              },
+              {
+                "uuid": "3a8a6f91-8512-4a93-8b54-b470ed97c6e2",
+                "control-id": "SYS.3.2.1.A13",
+                "description": "Base implementation for control SYS.3.2.1.A13."
+              },
+              {
+                "uuid": "dbe02b02-a94c-45ad-9db4-e7536ec14327",
+                "control-id": "SYS.3.2.1.A16",
+                "description": "Base implementation for control SYS.3.2.1.A16."
+              },
+              {
+                "uuid": "ef505490-9c6c-4e23-99c0-4b4eac5315da",
+                "control-id": "SYS.3.2.1.A18",
+                "description": "Base implementation for control SYS.3.2.1.A18."
+              },
+              {
+                "uuid": "b059bffb-227b-4718-b348-548cbc4eee2a",
+                "control-id": "SYS.3.2.1.A19",
+                "description": "Base implementation for control SYS.3.2.1.A19."
+              },
+              {
+                "uuid": "64550d3f-48be-4017-aac1-a3dbf5c9b9a4",
+                "control-id": "SYS.3.2.1.A22",
+                "description": "Base implementation for control SYS.3.2.1.A22."
+              },
+              {
+                "uuid": "416db2fe-609e-4d82-a902-2fabd85d0124",
+                "control-id": "SYS.3.2.1.A28",
+                "description": "Base implementation for control SYS.3.2.1.A28."
+              },
+              {
+                "uuid": "a7c2780e-b82c-4e34-9040-caf957790618",
+                "control-id": "SYS.3.2.1.A31",
+                "description": "Base implementation for control SYS.3.2.1.A31."
+              },
+              {
+                "uuid": "67b7e13f-45bf-4bac-b9c9-16c0ec26094b",
+                "control-id": "SYS.3.2.1.A32",
+                "description": "Base implementation for control SYS.3.2.1.A32."
+              },
+              {
+                "uuid": "d5c05989-dd2f-447c-9ea5-161cb6b172eb",
+                "control-id": "SYS.3.2.1.A33",
+                "description": "Base implementation for control SYS.3.2.1.A33."
+              },
+              {
+                "uuid": "e987f2b4-6ca8-4b63-85e1-bce55474c650",
+                "control-id": "SYS.3.2.1.A34",
+                "description": "Base implementation for control SYS.3.2.1.A34."
+              },
+              {
+                "uuid": "952eb9f5-69c7-4fa4-b9e4-60d3e6e2d911",
+                "control-id": "SYS.3.2.1.A25",
+                "description": "Base implementation for control SYS.3.2.1.A25."
+              },
+              {
+                "uuid": "b0e55ae5-e458-4bcb-a1b3-dcb3ccd3323b",
+                "control-id": "SYS.3.2.1.A26",
+                "description": "Base implementation for control SYS.3.2.1.A26."
+              },
+              {
+                "uuid": "2e8b371e-623f-4117-a9d6-a8657677b028",
+                "control-id": "SYS.3.2.1.A27",
+                "description": "Base implementation for control SYS.3.2.1.A27."
+              },
+              {
+                "uuid": "7abf5e3c-9984-49fc-ac3f-dda4c0899af3",
+                "control-id": "SYS.3.2.1.A29",
+                "description": "Base implementation for control SYS.3.2.1.A29."
+              },
+              {
+                "uuid": "ca84d8f6-a660-4479-b0a2-025b3943759e",
+                "control-id": "SYS.3.2.1.A30",
+                "description": "Base implementation for control SYS.3.2.1.A30."
+              },
+              {
+                "uuid": "4109de9d-c9d2-4df2-8f0b-3eb7cb07de16",
+                "control-id": "SYS.3.2.1.A35",
+                "description": "Base implementation for control SYS.3.2.1.A35."
+              }
+            ]
+          },
+          {
+            "uuid": "818b6af3-85ef-4470-b27c-bdf42d62ccfb",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "007abb23-7a5b-4cf7-b3c9-8b1d0364c518",
+                "control-id": "APP.1.4.A1",
+                "description": "AI-Begr\u00fcndung: Eine Anforderungsanalyse ist fundamental, um die Risiken bei der Nutzung von Apps auf dienstlichen Smartphones zu bewerten und zu steuern."
+              },
+              {
+                "uuid": "c10d02e1-ba7e-461d-b3da-e1e36578f389",
+                "control-id": "APP.1.4.A5",
+                "description": "AI-Begr\u00fcndung: Die Kontrolle von App-Berechtigungen nach dem Minimalprinzip ist ein zentraler Sicherheitsmechanismus auf Smartphones, um Datenabfluss und Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "ae4fcc31-c2a4-4bd6-a551-39727233825c",
+                "control-id": "APP.1.4.A7",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt sensible Unternehmensdaten, die von Apps lokal auf dem Ger\u00e4t gespeichert werden, durch die Nutzung sicherer Betriebssystem-APIs."
+              },
+              {
+                "uuid": "6bea89c4-966d-41a5-bbf9-588dd101b808",
+                "control-id": "APP.1.4.A8",
+                "description": "AI-Begr\u00fcndung: Adressiert direkt die hohe Gefahr des Datenabflusses durch Apps, indem eine Analyse des Kommunikationsverhaltens gefordert wird."
+              },
+              {
+                "uuid": "fdbfa812-e64f-44f7-9b55-78b754583d77",
+                "control-id": "APP.1.4.A3",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass insbesondere Apps mit Zugriff auf schutzbed\u00fcrftige Daten \u00fcber vertrauensw\u00fcrdige und kontrollierte Kan\u00e4le (z. B. MDM) verteilt werden."
+              },
+              {
+                "uuid": "38e8ac17-6723-4dec-aa42-b801477c2afd",
+                "control-id": "APP.1.4.A12",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet eine saubere Entfernung von App-Daten und -Zugriffen bei der Deinstallation und verhindert so Datenleichen und verwaiste Berechtigungen."
+              },
+              {
+                "uuid": "e35aebfe-ec64-4f32-98e8-12b0d6ec9c5c",
+                "control-id": "APP.1.4.A14",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Sicherheit beim Zugriff auf sensible Daten signifikant, indem eine Zwei-Faktor-Authentisierung f\u00fcr kritische Apps gefordert wird."
+              },
+              {
+                "uuid": "e5d2e72b-c98e-4e48-a89b-097b44a51e97",
+                "control-id": "APP.1.4.A15",
+                "description": "AI-Begr\u00fcndung: Ist eine wichtige qualit\u00e4tssichernde Ma\u00dfnahme f\u00fcr eigenentwickelte oder besonders kritische Apps, um Schwachstellen proaktiv zu finden."
+              },
+              {
+                "uuid": "b3d65959-9d63-4da2-b8c5-0f085ca92097",
+                "control-id": "APP.1.4.A16",
+                "description": "AI-Begr\u00fcndung: Erm\u00f6glicht eine zentrale und sichere Konfiguration von Unternehmens-Apps und erh\u00f6ht damit die Sicherheit und Verwaltungsfreundlichkeit."
+              },
+              {
+                "uuid": "18d057b0-2580-4aba-8c5b-64692a2f6cdc",
+                "control-id": "OPS.1.1.4.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass Smartphones als wesentliche IT-Systeme in das \u00fcbergreifende Konzept zum Schutz vor Schadprogrammen einbezogen werden."
+              },
+              {
+                "uuid": "00620b8a-5767-48a7-901d-9a957b9e2cb1",
+                "control-id": "OPS.1.1.4.A2",
+                "description": "AI-Begr\u00fcndung: Fordert die Nutzung der starken, im mobilen Betriebssystem integrierten Schutzmechanismen, die oft die effektivste Verteidigungslinie darstellen."
+              },
+              {
+                "uuid": "2faae415-fca6-48a8-81a7-2ce877ce910e",
+                "control-id": "OPS.1.1.4.A3",
+                "description": "AI-Begr\u00fcndung: Adressiert die Notwendigkeit, dedizierte Schutzprogramme (Mobile Threat Defense) f\u00fcr Smartphones zu evaluieren und auszuw\u00e4hlen."
+              },
+              {
+                "uuid": "96202227-6531-4493-a9f6-3b11f3f70396",
+                "control-id": "OPS.1.1.4.A5",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass ein Virenschutzprogramm nicht nur installiert, sondern auch korrekt und sicher f\u00fcr den mobilen Einsatz konfiguriert wird."
+              },
+              {
+                "uuid": "e71e8044-d08b-4585-9883-4f4534cc1165",
+                "control-id": "OPS.1.1.4.A6",
+                "description": "AI-Begr\u00fcndung: Die Aktualit\u00e4t von Schutzprogrammen und Signaturen ist entscheidend f\u00fcr deren Wirksamkeit und muss auf mobilen Ger\u00e4ten sichergestellt werden."
+              },
+              {
+                "uuid": "6b1b0dbe-b653-45a2-a626-320803b81b71",
+                "control-id": "OPS.1.1.4.A7",
+                "description": "AI-Begr\u00fcndung: Sensibilisiert die Benutzer, die auf mobilen Ger\u00e4ten eine wesentliche Rolle bei der Abwehr von Angriffen (z. B. Phishing) spielen."
+              },
+              {
+                "uuid": "ece0eac6-982e-4177-b1dd-a7c3cd30819f",
+                "control-id": "OPS.1.1.4.A9",
+                "description": "AI-Begr\u00fcndung: Etabliert einen Prozess f\u00fcr die Meldung und Reaktion auf Infektionen, was f\u00fcr die Begrenzung des Schadens auf mobilen Ger\u00e4ten entscheidend ist."
+              },
+              {
+                "uuid": "50e0351e-7d01-42c3-a72c-17381a729c55",
+                "control-id": "OPS.1.1.4.A13",
+                "description": "AI-Begr\u00fcndung: Definiert eine wichtige Verhaltensregel f\u00fcr Benutzer im Umgang mit potenziell sch\u00e4dlichen Dateien, was ein h\u00e4ufiger Angriffsvektor auf Smartphones ist."
+              },
+              {
+                "uuid": "d16091ea-dd36-4b06-ad34-d264f3e2fdbf",
+                "control-id": "SYS.3.2.2.A1",
+                "description": "AI-Begr\u00fcndung: Etabliert die grundlegende Strategie f\u00fcr den Einsatz mobiler Endger\u00e4te, die unabh\u00e4ngig von einer MDM-L\u00f6sung notwendig ist."
+              },
+              {
+                "uuid": "f5544cce-8b05-4196-b199-17a0b347f32a",
+                "control-id": "SYS.3.2.2.A2",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass nur gepr\u00fcfte und als sicher befundene Ger\u00e4temodelle und Betriebssystemversionen im Unternehmen eingesetzt werden."
+              },
+              {
+                "uuid": "8e68a70e-817b-482b-aedb-55c1fd88997e",
+                "control-id": "SYS.3.2.2.A4",
+                "description": "AI-Begr\u00fcndung: Fordert eine sichere Grundkonfiguration f\u00fcr jedes Ger\u00e4t vor der Inbetriebnahme, was eine essenzielle H\u00e4rtungsma\u00dfnahme darstellt."
+              },
+              {
+                "uuid": "f2203223-e509-406e-9cbc-0c0442286b48",
+                "control-id": "SYS.3.2.2.A20",
+                "description": "AI-Begr\u00fcndung: Sorgt daf\u00fcr, dass Sicherheitskonfigurationen und Berechtigungen regelm\u00e4\u00dfig \u00fcberpr\u00fcft und an neue Gegebenheiten (z. B. OS-Updates) angepasst werden."
+              },
+              {
+                "uuid": "7a975032-dcd9-4bb7-b8ce-05fbaf5e3d5b",
+                "control-id": "SYS.3.2.2.A6",
+                "description": "AI-Begr\u00fcndung: Fordert die Protokollierung und \u00dcberpr\u00fcfbarkeit des Ger\u00e4testatus, was f\u00fcr Compliance und Asset Management unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "7dfc67d3-396f-4983-9d45-8b226d371003",
+                "control-id": "SYS.3.2.2.A7",
+                "description": "AI-Begr\u00fcndung: Regelt die zentrale Steuerung der auf dem Ger\u00e4t installierten Apps, inklusive der Nutzung von Block- oder Allow-Listen, was ein Kernaspekt der Ger\u00e4tesicherheit ist."
+              },
+              {
+                "uuid": "0c1bf588-aa83-413d-945c-a47e2942b86b",
+                "control-id": "SYS.3.2.2.A21",
+                "description": "AI-Begr\u00fcndung: Adressiert das wichtige Thema der Zertifikatsverwaltung, um eine sichere Kommunikation zu gew\u00e4hrleisten und Man-in-the-Middle-Angriffe zu verhindern."
+              },
+              {
+                "uuid": "76f3e3a0-7dd3-4e01-b08d-8200d9f837a8",
+                "control-id": "SYS.3.2.2.A22",
+                "description": "AI-Begr\u00fcndung: Die M\u00f6glichkeit zur Fernl\u00f6schung (Remote Wipe) ist eine unverzichtbare Anforderung zum Schutz von Daten bei Ger\u00e4teverlust."
+              },
+              {
+                "uuid": "b73f3097-7cf1-4080-afcd-c248b27151de",
+                "control-id": "SYS.3.2.2.A14",
+                "description": "AI-Begr\u00fcndung: Bietet einen zus\u00e4tzlichen Sicherheitsmechanismus, um die Vertrauensw\u00fcrdigkeit von Apps anhand externer Datenquellen zu bewerten."
+              },
+              {
+                "uuid": "5f1a9816-a05d-4751-9af2-ff25cadd1ce9",
+                "control-id": "SYS.3.2.2.A17",
+                "description": "AI-Begr\u00fcndung: Fordert die Detektion von manipulierten Betriebssystemen (Jailbreak/Root), was grundlegende Sicherheitsmechanismen des Ger\u00e4tes aushebeln w\u00fcrde."
+              },
+              {
+                "uuid": "5fb2cdff-c3e5-451e-85df-69b0eda02793",
+                "control-id": "SYS.3.2.2.A19",
+                "description": "AI-Begr\u00fcndung: Erm\u00f6glicht den Schutz hochsensibler Daten durch Geofencing, eine spezifische, aber wertvolle Ma\u00dfnahme f\u00fcr mobile Ger\u00e4te in Hochsicherheitsumgebungen."
+              },
+              {
+                "uuid": "14a45350-e608-4607-8c88-926729cb631e",
+                "control-id": "SYS.3.2.2.A23",
+                "description": "AI-Begr\u00fcndung: Etabliert einen Mechanismus zur automatischen Durchsetzung von Sicherheitsrichtlinien und zur Reaktion auf Verst\u00f6\u00dfe, was die Sicherheit aktiv erh\u00f6ht."
+              },
+              {
+                "uuid": "0695516e-1e94-4618-8541-47c749487319",
+                "control-id": "SYS.3.3.A1",
+                "description": "AI-Begr\u00fcndung: Fordert eine an die Benutzer gerichtete Sicherheitsrichtlinie, die klare Verhaltensregeln f\u00fcr den Umgang mit dem Smartphone festlegt."
+              },
+              {
+                "uuid": "f3407d98-ab53-4a0b-86ce-76e011a99849",
+                "control-id": "SYS.3.3.A2",
+                "description": "AI-Begr\u00fcndung: Adressiert die notwendige und schnelle Sperrung der SIM-Karte bei Ger\u00e4teverlust, um Kostenmissbrauch zu verhindern."
+              },
+              {
+                "uuid": "82d3e4e7-fec9-49d3-b78d-bfb14602733a",
+                "control-id": "SYS.3.3.A3",
+                "description": "AI-Begr\u00fcndung: Unterstreicht die Notwendigkeit der Schulung von Benutzern bez\u00fcglich spezifischer mobiler Gef\u00e4hrdungen wie physische Sicherheit und Verlustprozedere."
+              },
+              {
+                "uuid": "c2afacff-e356-41fc-abb7-316464eb33dd",
+                "control-id": "SYS.3.3.A4",
+                "description": "AI-Begr\u00fcndung: Stellt die sichere L\u00f6schung von Daten bei der Aussonderung von Ger\u00e4ten sicher und verhindert so Datenlecks durch entsorgte Hardware."
+              },
+              {
+                "uuid": "598f2c6b-c83f-4efa-8cee-45279f85a04b",
+                "control-id": "SYS.3.3.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Nutzung fundamentaler Sicherheitsmechanismen wie Ger\u00e4te-Code und SIM-PIN, die die erste Verteidigungslinie bilden."
+              },
+              {
+                "uuid": "86564822-cdc6-463e-a7d2-cfa6721bdc40",
+                "control-id": "SYS.3.3.A6",
+                "description": "AI-Begr\u00fcndung: Regelt den Umgang mit Betriebssystem-Updates, was f\u00fcr das Schlie\u00dfen von Sicherheitsl\u00fccken auf Smartphones von h\u00f6chster Priorit\u00e4t ist."
+              },
+              {
+                "uuid": "9bb448d4-597e-4580-b3df-3029ac99c2d4",
+                "control-id": "SYS.3.3.A7",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Ger\u00e4teauswahl um das wichtige Kriterium der langfristigen Update-Versorgung durch den Hersteller."
+              },
+              {
+                "uuid": "6653dafa-bd8f-4eb8-823a-519cc27a6005",
+                "control-id": "SYS.3.3.A8",
+                "description": "AI-Begr\u00fcndung: Verringert die Angriffsfl\u00e4che des Ger\u00e4tes durch die grundlegende Sicherheitsempfehlung, nicht ben\u00f6tigte Funkschnittstellen zu deaktivieren."
+              },
+              {
+                "uuid": "57ce4497-1b8e-4eba-ae27-dd71678f53ad",
+                "control-id": "SYS.3.3.A10",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass Regelungen f\u00fcr die sichere \u00dcbertragung von Daten (insbesondere Verschl\u00fcsselung) existieren."
+              },
+              {
+                "uuid": "ca25ca0d-531d-493d-afbd-4254add04173",
+                "control-id": "SYS.3.3.A11",
+                "description": "AI-Begr\u00fcndung: Adressiert die Themen Datensicherung und Verf\u00fcgbarkeit (Ausfallvorsorge), die f\u00fcr die Aufrechterhaltung des Betriebs wichtig sind."
+              },
+              {
+                "uuid": "5912d0e0-136b-40f0-8246-8b2d7571648f",
+                "control-id": "SYS.3.3.A12",
+                "description": "AI-Begr\u00fcndung: Bietet eine L\u00f6sung f\u00fcr den speziellen, aber relevanten Anwendungsfall von gemeinsam genutzten Ger\u00e4te-Pools."
+              },
+              {
+                "uuid": "d065cd6d-c46e-4a31-ad69-dc5e0ba22550",
+                "control-id": "SYS.3.3.A13",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die Privatsph\u00e4re der Benutzer und verhindert die Erstellung von Bewegungsprofilen durch die Kontrolle von Ortungsdiensten."
+              },
+              {
+                "uuid": "e2b1566d-4ca3-43e3-8b2f-b82089e0b6fd",
+                "control-id": "SYS.3.3.A14",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt Benutzer und die Institution durch eine klare Regelung zum Umgang mit dienstlichen Rufnummern vor unerw\u00fcnschter Kontaktaufnahme."
+              },
+              {
+                "uuid": "e9b2d664-ca69-45ed-a703-b4d52d60349c",
+                "control-id": "SYS.3.3.A15",
+                "description": "AI-Begr\u00fcndung: Adressiert die hohe Gefahr des Abh\u00f6rens von vertraulichen Gespr\u00e4chen \u00fcber kompromittierte Ger\u00e4te und fordert entsprechende organisatorische Ma\u00dfnahmen."
+              }
+            ]
+          },
+          {
+            "uuid": "3e67f9f4-aff0-4b4c-96f1-259dae11ed45",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "eee2df43-3c3c-4193-9bd7-1992cfd17a95",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Definiert das grundlegende und universell g\u00fcltige Prinzip des 'Least Privilege' f\u00fcr alle Berechtigungen, die von einem Smartphone aus genutzt werden."
+              },
+              {
+                "uuid": "f85e85ea-7e40-4ee1-9fec-23c3e54678cf",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Stellt die fundamentale Anforderung der sicheren Identifikation und Authentisierung f\u00fcr jeglichen Zugriff von einem Smartphone auf Unternehmensdienste."
+              },
+              {
+                "uuid": "8683d957-1d04-4639-a87e-ab6aba685958",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Fordert eine dem Schutzbedarf angemessene St\u00e4rke der Authentisierung (z.B. MFA) und Schutz vor Brute-Force-Angriffen, was f\u00fcr mobile Zugriffe essenziell ist."
+              },
+              {
+                "uuid": "6430b7be-cee4-4247-b1b4-15f3093ce5d4",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Sorgt f\u00fcr die Verwendung starker, anerkannter Kryptografieverfahren, die auf Smartphones f\u00fcr Verschl\u00fcsselung und sichere Kommunikation unerl\u00e4sslich sind."
+              },
+              {
+                "uuid": "98d6cdd4-ed82-46bb-abcb-faca4db9532d",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist die Voraussetzung f\u00fcr wirksame Kryptografie und ist f\u00fcr die Verwaltung von Zertifikaten und Schl\u00fcsseln auf Smartphones entscheidend."
+              },
+              {
+                "uuid": "a00316e8-aec1-4c63-b4aa-19056aa49bfe",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Etabliert einen \u00fcbergreifenden, geplanten Prozess f\u00fcr das Patch- und \u00c4nderungsmanagement, in den Smartphones als wichtige Komponente einbezogen werden m\u00fcssen."
+              },
+              {
+                "uuid": "2ad7c852-e9ea-4bc1-b1f2-d45eb234c8b9",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Aktivierung und Nutzung der im mobilen Betriebssystem bereits vorhandenen Detektions- und Protokollierungsfunktionen zur Erkennung von Vorf\u00e4llen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

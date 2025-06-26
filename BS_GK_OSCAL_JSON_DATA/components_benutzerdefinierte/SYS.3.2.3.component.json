@@ -1,0 +1,298 @@
+{
+  "component-definition": {
+    "uuid": "b818cf28-5c70-465a-aabc-ee7923247f84",
+    "metadata": {
+      "title": "Component for Baustein SYS.3.2.3: iOS (for Enterprise)",
+      "last-modified": "2025-06-26T11:05:59.573149+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.3.2.3."
+    },
+    "components": [
+      {
+        "uuid": "b878fa56-545c-4505-a3df-5a25c1c35104",
+        "type": "service",
+        "title": "iOS (for Enterprise)",
+        "description": "Implementation of controls for Baustein SYS.3.2.3.",
+        "control-implementations": [
+          {
+            "uuid": "285beab1-6664-4d2f-b1ce-c367b6f07bef",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.3.2.3: iOS (for Enterprise)",
+            "implemented-requirements": [
+              {
+                "uuid": "cb129a9a-6176-4a64-b006-10da703d0cac",
+                "control-id": "SYS.3.2.3.A1",
+                "description": "Base implementation for control SYS.3.2.3.A1."
+              },
+              {
+                "uuid": "01938001-b577-4439-9aca-593cce6ad3e3",
+                "control-id": "SYS.3.2.3.A2",
+                "description": "Base implementation for control SYS.3.2.3.A2."
+              },
+              {
+                "uuid": "b9eed736-a37a-473c-8d40-ce54b42d1000",
+                "control-id": "SYS.3.2.3.A7",
+                "description": "Base implementation for control SYS.3.2.3.A7."
+              },
+              {
+                "uuid": "d6dc2394-48be-4ea5-b347-623d9a5226bf",
+                "control-id": "SYS.3.2.3.A12",
+                "description": "Base implementation for control SYS.3.2.3.A12."
+              },
+              {
+                "uuid": "913781ca-0da9-4576-828f-a734df9f4d00",
+                "control-id": "SYS.3.2.3.A13",
+                "description": "Base implementation for control SYS.3.2.3.A13."
+              },
+              {
+                "uuid": "b3e1d248-a011-4d4c-bbd3-45b9675f5bcc",
+                "control-id": "SYS.3.2.3.A14",
+                "description": "Base implementation for control SYS.3.2.3.A14."
+              },
+              {
+                "uuid": "f4a1f75f-4d44-4a28-a2bf-20e6e0bcd934",
+                "control-id": "SYS.3.2.3.A15",
+                "description": "Base implementation for control SYS.3.2.3.A15."
+              },
+              {
+                "uuid": "cd552087-4f2b-46f7-a96e-ed8d02a3755e",
+                "control-id": "SYS.3.2.3.A17",
+                "description": "Base implementation for control SYS.3.2.3.A17."
+              },
+              {
+                "uuid": "e0a87855-dfa0-49da-985e-b810ba83d738",
+                "control-id": "SYS.3.2.3.A18",
+                "description": "Base implementation for control SYS.3.2.3.A18."
+              },
+              {
+                "uuid": "b02265bf-1df6-4cac-a10e-901cd3f9f4ec",
+                "control-id": "SYS.3.2.3.A21",
+                "description": "Base implementation for control SYS.3.2.3.A21."
+              },
+              {
+                "uuid": "9abfbb0d-0353-4a8b-a7f6-1a0c84761cd2",
+                "control-id": "SYS.3.2.3.A23",
+                "description": "Base implementation for control SYS.3.2.3.A23."
+              },
+              {
+                "uuid": "dae9561c-8ac6-4e8d-a6c2-69c9568e145b",
+                "control-id": "SYS.3.2.3.A25",
+                "description": "Base implementation for control SYS.3.2.3.A25."
+              },
+              {
+                "uuid": "24349f98-4fac-4b30-a749-cd57fdcbf71f",
+                "control-id": "SYS.3.2.3.A26",
+                "description": "Base implementation for control SYS.3.2.3.A26."
+              }
+            ]
+          },
+          {
+            "uuid": "d38f2eed-91d9-4161-aa01-3c19a87ee22f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "d0898f76-bb19-40b5-84fa-7cc0edc51900",
+                "control-id": "SYS.3.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine allgemeine Richtlinie schafft den notwendigen organisatorischen Rahmen f\u00fcr den sicheren Einsatz von iOS-Ger\u00e4ten und ist eine grundlegende Voraussetzung f\u00fcr alle spezifischen technischen Ma\u00dfnahmen."
+              },
+              {
+                "uuid": "d3fb9b68-e2f9-4c13-962c-1181e2c1b3a5",
+                "control-id": "SYS.3.2.1.A2",
+                "description": "AI-Begr\u00fcndung: iOS-Ger\u00e4te sind eng mit Cloud-Diensten (insb. iCloud) verkn\u00fcpft. Eine Strategie hierzu ist unerl\u00e4sslich, um den Schutz von Unternehmensinformationen zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "20ef3701-506f-4cb3-815f-e2fe31169f00",
+                "control-id": "SYS.3.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung formuliert das Kernziel des Bausteins SYS.3.2.3: die Definition einer sicheren Grundkonfiguration, die spezifisch f\u00fcr iOS-Ger\u00e4te umgesetzt werden muss."
+              },
+              {
+                "uuid": "75ffe413-5661-4d7e-b1c8-494175f86f6c",
+                "control-id": "SYS.3.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Ger\u00e4tesperrcode ist der grundlegendste Schutzmechanismus f\u00fcr ein iOS-Ger\u00e4t. Die Anforderung ist direkt anwendbar und essenziell."
+              },
+              {
+                "uuid": "4106a315-9041-41be-ab3a-f697bc677c2a",
+                "control-id": "SYS.3.2.1.A5",
+                "description": "AI-Begr\u00fcndung: Die zeitnahe Installation von Updates f\u00fcr iOS und Apps ist eine der wichtigsten Ma\u00dfnahmen zur Abwehr von Angriffen und daher von h\u00f6chster Relevanz."
+              },
+              {
+                "uuid": "75f9f8d7-3a2c-42c7-b00c-1e5eff2fd464",
+                "control-id": "SYS.3.2.1.A6",
+                "description": "AI-Begr\u00fcndung: iOS bietet granulare Datenschutzeinstellungen und App-Berechtigungen. Deren korrekte und restriktive Konfiguration ist ein zentraler Aspekt der Absicherung des Ger\u00e4ts."
+              },
+              {
+                "uuid": "ab7c1dd1-fe8d-4b8c-9e37-47b9933dcb90",
+                "control-id": "SYS.3.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Ein definierter Meldeprozess bei Verlust oder Kompromittierung eines iOS-Ger\u00e4ts ist f\u00fcr eine schnelle Reaktion und Schadensbegrenzung unerl\u00e4sslich."
+              },
+              {
+                "uuid": "fd943ad1-b7ce-420e-8bd5-7dd7d5eca2ed",
+                "control-id": "SYS.3.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Kontrolle \u00fcber die Installationsquellen (z.B. App Store) und die Art der installierbaren Apps ist eine wesentliche Sicherheitsfunktion, die auf iOS-Ger\u00e4ten per MDM umgesetzt werden kann."
+              },
+              {
+                "uuid": "342ffe8e-5d44-43e8-b2cd-c86d4da210f3",
+                "control-id": "SYS.3.2.1.A9",
+                "description": "AI-Begr\u00fcndung: Widgets und Drittanbieter-Tastaturen unter iOS k\u00f6nnen ein potenzielles Risiko f\u00fcr Datenabfluss darstellen. Eine Regelung ihrer Nutzung erh\u00f6ht die Sicherheit."
+              },
+              {
+                "uuid": "a28ec5c2-2da7-4d5d-b5e6-35426e3ff6d8",
+                "control-id": "SYS.3.2.1.A10",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung adressiert das Verhalten der Benutzenden und verbietet sicherheitskritische Handlungen wie Jailbreaks, was direkt zur Sicherheit von iOS-Ger\u00e4ten beitr\u00e4gt."
+              },
+              {
+                "uuid": "6e546773-e6bb-4b0f-8771-cef42dfc85e1",
+                "control-id": "SYS.3.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Auch wenn die Verschl\u00fcsselung bei iOS standardm\u00e4\u00dfig aktiv ist (bei gesetztem Code), stellt diese Anforderung sicher, dass dieser Schutzmechanismus bewusst gefordert und aufrechterhalten wird."
+              },
+              {
+                "uuid": "5e1a4bd5-a176-49bb-b51d-ac8b78bdc8ba",
+                "control-id": "SYS.3.2.1.A12",
+                "description": "AI-Begr\u00fcndung: Nicht personalisierte Ger\u00e4tenamen sind eine einfache, aber wirksame Ma\u00dfnahme gegen Informationsabfluss und Social Engineering und auf iOS-Ger\u00e4ten leicht umsetzbar."
+              },
+              {
+                "uuid": "d422ac5a-1d77-4f00-ac09-231723311e96",
+                "control-id": "SYS.3.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Regelung von Screensharing-Funktionen wie AirPlay ist relevant, um die unbeabsichtigte oder b\u00f6swillige Offenlegung sch\u00fctzenswerter Informationen zu verhindern."
+              },
+              {
+                "uuid": "1cfd20f8-5aae-4ee4-9b41-79031691a37d",
+                "control-id": "SYS.3.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Die Deaktivierung von Schnittstellen wie Bluetooth oder NFC bei Nichtgebrauch reduziert die Angriffsfl\u00e4che des iOS-Ger\u00e4ts und ist eine klassische H\u00e4rtungsma\u00dfnahme."
+              },
+              {
+                "uuid": "fbef73c4-63d8-4de4-b846-fc9a035b9ef4",
+                "control-id": "SYS.3.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Da iOS biometrische Verfahren (Face ID, Touch ID) anbietet, ist eine Anforderung zur Bewertung und sicheren Nutzung dieser Verfahren direkt relevant und wertvoll."
+              },
+              {
+                "uuid": "fe88a0f9-07ff-43ad-85bf-cd99979655d6",
+                "control-id": "SYS.3.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Regelung des Sprachassistenten Siri, insbesondere im gesperrten Zustand, ist eine wichtige Ma\u00dfnahme zur H\u00e4rtung eines iOS-Ger\u00e4ts."
+              },
+              {
+                "uuid": "5206bcc4-a95d-43c3-8362-f7ce1fedf1be",
+                "control-id": "SYS.3.2.1.A22",
+                "description": "AI-Begr\u00fcndung: Die sichere Anbindung von iOS-Ger\u00e4ten an die interne Infrastruktur mittels VPN ist ein zentraler Anwendungsfall und eine wesentliche Sicherheitsanforderung."
+              },
+              {
+                "uuid": "4453db98-40f3-444e-9c87-4987b791103f",
+                "control-id": "SYS.3.2.1.A28",
+                "description": "AI-Begr\u00fcndung: iOS unterst\u00fctzt die Konfiguration von Web-Filtern. Deren Nutzung erh\u00f6ht den Schutz der Benutzenden vor sch\u00e4dlichen Webinhalten."
+              },
+              {
+                "uuid": "3f4ee72d-db12-4532-9cd8-9db7049e9b8d",
+                "control-id": "SYS.3.2.1.A31",
+                "description": "AI-Begr\u00fcndung: Eine Regelung zur Nutzung von Apple Pay auf dienstlichen Ger\u00e4ten ist eine notwendige organisatorische Entscheidung, um potenzielle Risiken zu steuern."
+              },
+              {
+                "uuid": "61e84e83-71f8-4dc1-983c-abed1144c137",
+                "control-id": "SYS.3.2.1.A33",
+                "description": "AI-Begr\u00fcndung: Obwohl iOS \u00fcber starke eingebaute Sicherheitsmechanismen verf\u00fcgt, kann der Einsatz von zus\u00e4tzlichen Sicherheits-Apps (Mobile Threat Defense) den Schutz weiter erh\u00f6hen und ist eine relevante \u00dcberlegung."
+              },
+              {
+                "uuid": "97a6ab56-95f8-4aa1-967e-66be1ed7f1b8",
+                "control-id": "SYS.3.2.1.A34",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration eines vertrauensw\u00fcrdigen DNS-Servers auf iOS-Ger\u00e4ten, z.B. per MDM, ist eine wirksame Ma\u00dfnahme zur Verbesserung der Sicherheit und des Datenschutzes."
+              },
+              {
+                "uuid": "f9a6b841-4fbb-4255-aca3-618ddd1cc457",
+                "control-id": "SYS.3.2.1.A25",
+                "description": "AI-Begr\u00fcndung: Auch wenn iOS kein explizites Arbeitsprofil wie Android hat, existieren Mechanismen zur Datentrennung (Managed Apps/Open In). Die Anforderung ist konzeptionell relevant f\u00fcr COPE-Szenarien."
+              },
+              {
+                "uuid": "50416133-da72-4bfa-bf42-a30526636a2d",
+                "control-id": "SYS.3.2.1.A26",
+                "description": "AI-Begr\u00fcndung: Sichere PIM-Container sind eine verbreitete Methode zur Trennung von gesch\u00e4ftlichen und privaten Daten auf iOS-Ger\u00e4ten und daher eine sehr relevante und konkrete Ma\u00dfnahme."
+              },
+              {
+                "uuid": "9dfbd8c3-e160-4dd4-aae5-ff81f69d3e27",
+                "control-id": "SYS.3.2.1.A29",
+                "description": "AI-Begr\u00fcndung: Die Nutzung eines privaten APN ist eine anwendbare, wenn auch fortgeschrittene, Sicherheitsma\u00dfnahme f\u00fcr iPhones und iPads mit Mobilfunkanbindung."
+              },
+              {
+                "uuid": "86a5adaa-43ac-4297-9990-ad57b960c78e",
+                "control-id": "SYS.3.2.1.A30",
+                "description": "AI-Begr\u00fcndung: Die Durchsetzung einer App-Allowlist ist eine Schl\u00fcsselfunktion von MDM auf iOS und eine wesentliche H\u00e4rtungsma\u00dfnahme f\u00fcr Umgebungen mit erh\u00f6htem Schutzbedarf."
+              },
+              {
+                "uuid": "e60ab111-ffef-4de8-98da-7c4b53aa1d7f",
+                "control-id": "SYS.3.2.2.A6",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung und \u00dcberpr\u00fcfbarkeit des Ger\u00e4testatus durch das MDM ist entscheidend, um die Einhaltung der Sicherheitsvorgaben f\u00fcr das iOS-Ger\u00e4t sicherzustellen."
+              },
+              {
+                "uuid": "46776c0d-a4a9-4838-a073-57eb801816b7",
+                "control-id": "SYS.3.2.2.A7",
+                "description": "AI-Begr\u00fcndung: Da der Baustein die Nutzung eines MDM voraussetzt, ist die Anforderung zur zentralen Verwaltung von Apps \u00fcber dieses MDM eine logische und notwendige Erg\u00e4nzung."
+              },
+              {
+                "uuid": "7087d65b-d3e6-48f6-9179-954506fcf749",
+                "control-id": "SYS.3.2.2.A17",
+                "description": "AI-Begr\u00fcndung: Die Erkennung von Manipulationen wie Jailbreaks ist f\u00fcr die Aufrechterhaltung der Systemintegrit\u00e4t von iOS-Ger\u00e4ten von entscheidender Bedeutung und eine Kernfunktion von MDM/MTD-L\u00f6sungen."
+              },
+              {
+                "uuid": "334be665-75d3-42b2-a8bd-d9bf8897c2d8",
+                "control-id": "SYS.3.2.2.A19",
+                "description": "AI-Begr\u00fcndung: Geofencing ist eine MDM-Funktion, die direkt auf dem iOS-Ger\u00e4t wirkt und in Hochsicherheitsumgebungen eine relevante, standortbasierte Sicherheitskontrolle darstellt."
+              },
+              {
+                "uuid": "a3a4a88e-a788-4eae-9c8a-e7db1e707667",
+                "control-id": "SYS.3.2.2.A21",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Zertifikaten \u00fcber das MDM ist eine Kernfunktion f\u00fcr die sichere Anbindung von iOS-Ger\u00e4ten an Unternehmensdienste wie WLAN, VPN oder E-Mail."
+              },
+              {
+                "uuid": "ebcf50e1-b538-44db-abe9-3af98c0bfe0d",
+                "control-id": "SYS.3.2.2.A22",
+                "description": "AI-Begr\u00fcndung: Die F\u00e4higkeit zur Fernl\u00f6schung ist eine unverzichtbare Sicherheitsma\u00dfnahme f\u00fcr den Fall, dass ein iOS-Ger\u00e4t verloren geht oder gestohlen wird."
+              },
+              {
+                "uuid": "fadece9a-7f3b-4030-8628-573611cb2f42",
+                "control-id": "SYS.3.2.2.A23",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung beschreibt den Durchsetzungsmechanismus f\u00fcr die im iOS-Baustein definierten Richtlinien und ist somit eine logische und notwendige Verkn\u00fcpfung zum MDM."
+              }
+            ]
+          },
+          {
+            "uuid": "8e096e2d-7bb6-4e36-8d14-e8380079ac0e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5608cdde-81c1-40b9-9d1d-5a052cd49da5",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Obwohl iOS die Kern-Kryptografie vorgibt, trifft die Institution bei der Konfiguration von Diensten (z.B. VPN, S/MIME) eigene Entscheidungen, f\u00fcr die eine Vorgabe f\u00fcr sichere Verfahren unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "5415b203-8dec-48f4-88d4-b489ddcab7cc",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Da Zertifikate auf iOS-Ger\u00e4te ausgerollt werden (z.B. via MDM), ist ein geregeltes Schl\u00fcssel- und Zertifikatsmanagement f\u00fcr deren sicheren Lebenszyklus erforderlich."
+              },
+              {
+                "uuid": "2f8a120f-293c-4b11-991b-89f831ce7ed9",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Auf iOS-Ger\u00e4ten k\u00f6nnen sch\u00fctzenswerte Daten gespeichert sein. Eine Anforderung zur Regelung der Datensicherung dieser Daten ist daher relevant f\u00fcr die Verf\u00fcgbarkeit."
+              },
+              {
+                "uuid": "ca654daf-b24a-41b3-9707-97707a33faba",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung liefert den notwendigen prozessualen Rahmen (Planung, Test, Freigabe) f\u00fcr die technische Anforderung zur Durchf\u00fchrung von iOS- und App-Updates (SYS.3.2.1.A5)."
+              },
+              {
+                "uuid": "83362b7a-abf5-486c-a8ae-bb95268ea7bb",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass die von iOS und Apps bereitgestellten Detektions- und Protokollfunktionen auch tats\u00e4chlich aktiviert und zur Erkennung von Vorf\u00e4llen genutzt werden."
+              },
+              {
+                "uuid": "8ec325b7-6ecf-40c3-bd71-a5afa3620c62",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzend zu den Bordmitteln ist die Pr\u00fcfung von zus\u00e4tzlichen Detektionssystemen (z.B. Mobile Threat Defense) eine relevante Ma\u00dfnahme zur Erh\u00f6hung des Schutzniveaus f\u00fcr iOS-Ger\u00e4te."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

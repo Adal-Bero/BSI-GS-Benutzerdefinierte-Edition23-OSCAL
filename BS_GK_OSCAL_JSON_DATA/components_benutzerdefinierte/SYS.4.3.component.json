@@ -1,0 +1,186 @@
+{
+  "component-definition": {
+    "uuid": "fa2186c9-af39-4fd3-9485-6e8ba935e9c5",
+    "metadata": {
+      "title": "Component for Baustein SYS.4.3: Eingebettete Systeme",
+      "last-modified": "2025-06-26T11:13:06.900926+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.4.3."
+    },
+    "components": [
+      {
+        "uuid": "bca18a4b-15ef-4909-849d-724f5858b1e3",
+        "type": "service",
+        "title": "Eingebettete Systeme",
+        "description": "Implementation of controls for Baustein SYS.4.3.",
+        "control-implementations": [
+          {
+            "uuid": "c67eb47d-8071-4a9d-82a5-c0eb93b7a772",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.4.3: Eingebettete Systeme",
+            "implemented-requirements": [
+              {
+                "uuid": "4cfdf5a4-36a7-452a-9099-2d0eba9c9be7",
+                "control-id": "SYS.4.3.A1",
+                "description": "Base implementation for control SYS.4.3.A1."
+              },
+              {
+                "uuid": "d31f9791-9075-43b4-981f-6ecc10c3d046",
+                "control-id": "SYS.4.3.A2",
+                "description": "Base implementation for control SYS.4.3.A2."
+              },
+              {
+                "uuid": "ad1ec7e6-ff99-48a5-9b61-7c80629a2549",
+                "control-id": "SYS.4.3.A3",
+                "description": "Base implementation for control SYS.4.3.A3."
+              },
+              {
+                "uuid": "d3ee215b-a320-4769-bef5-eb723d04dea2",
+                "control-id": "SYS.4.3.A4",
+                "description": "Base implementation for control SYS.4.3.A4."
+              },
+              {
+                "uuid": "b8c3d142-75d1-4504-a139-0a592bf489d3",
+                "control-id": "SYS.4.3.A5",
+                "description": "Base implementation for control SYS.4.3.A5."
+              },
+              {
+                "uuid": "ec026b79-019c-4622-9431-612965cadda2",
+                "control-id": "SYS.4.3.A6",
+                "description": "Base implementation for control SYS.4.3.A6."
+              },
+              {
+                "uuid": "7936ec0c-f195-4582-a095-6e844b720c5c",
+                "control-id": "SYS.4.3.A7",
+                "description": "Base implementation for control SYS.4.3.A7."
+              },
+              {
+                "uuid": "0f384c8d-0cea-44bd-b74a-7a631d6f540d",
+                "control-id": "SYS.4.3.A8",
+                "description": "Base implementation for control SYS.4.3.A8."
+              },
+              {
+                "uuid": "110106cb-cba3-4d42-b4ae-68bfc096851e",
+                "control-id": "SYS.4.3.A9",
+                "description": "Base implementation for control SYS.4.3.A9."
+              },
+              {
+                "uuid": "298cb34b-2d66-43a5-b668-d19068ca0da3",
+                "control-id": "SYS.4.3.A10",
+                "description": "Base implementation for control SYS.4.3.A10."
+              },
+              {
+                "uuid": "2c7a1abc-6f72-4c3e-af92-242ffa5ecbc0",
+                "control-id": "SYS.4.3.A11",
+                "description": "Base implementation for control SYS.4.3.A11."
+              },
+              {
+                "uuid": "63d5c5e3-1185-4922-abed-190de4c182af",
+                "control-id": "SYS.4.3.A12",
+                "description": "Base implementation for control SYS.4.3.A12."
+              },
+              {
+                "uuid": "304e6560-a4b3-4d8e-970a-8a4226e67da1",
+                "control-id": "SYS.4.3.A13",
+                "description": "Base implementation for control SYS.4.3.A13."
+              },
+              {
+                "uuid": "1db6ed19-f138-4fc7-90be-00d789b6f3a9",
+                "control-id": "SYS.4.3.A14",
+                "description": "Base implementation for control SYS.4.3.A14."
+              },
+              {
+                "uuid": "c512e75e-5b4f-40ca-8fa1-a9382e08fdde",
+                "control-id": "SYS.4.3.A15",
+                "description": "Base implementation for control SYS.4.3.A15."
+              },
+              {
+                "uuid": "fd2089d3-6428-4182-8c72-7b3945733221",
+                "control-id": "SYS.4.3.A16",
+                "description": "Base implementation for control SYS.4.3.A16."
+              },
+              {
+                "uuid": "dbcaeef0-2e66-4d1b-b7f6-a7ef4b5e46fc",
+                "control-id": "SYS.4.3.A17",
+                "description": "Base implementation for control SYS.4.3.A17."
+              },
+              {
+                "uuid": "d656fd85-ef9d-4147-bf83-afd770c9adc2",
+                "control-id": "SYS.4.3.A18",
+                "description": "Base implementation for control SYS.4.3.A18."
+              }
+            ]
+          },
+          {
+            "uuid": "3e033c2c-0b71-431e-8806-983120364947",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "1ef55a36-675a-4510-9a65-ba793b18fdc9",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine Funktionstrennung ist f\u00fcr die sichere Verwaltung und Entwicklung von eingebetteten Systemen relevant, um die unkontrollierte Aus\u00fcbung kritischer administrativer oder entwicklungsbezogener T\u00e4tigkeiten zu verhindern."
+              },
+              {
+                "uuid": "f58eb378-0d0c-467c-9115-05935f2817ad",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die sichere Konfiguration und Wartung von eingebetteten Systemen erfordert spezifisches Fachwissen. Qualifiziertes Personal ist daher eine Grundvoraussetzung f\u00fcr den sicheren Betrieb."
+              },
+              {
+                "uuid": "5858291d-d83a-46cb-a9de-0319f98faee8",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Viele eingebettete Systeme verf\u00fcgen \u00fcber Verwaltungsschnittstellen und Benutzerkonten. Die Vergabe von Berechtigungen nach dem Need-to-know-Prinzip ist eine grundlegende Anforderung, um unberechtigte Zugriffe zu verhindern."
+              },
+              {
+                "uuid": "4d7034ff-77f2-4298-8689-e355bc32b7f1",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die Absicherung von Zugriffen mittels Identifikation und Authentisierung, insbesondere die \u00c4nderung von Standardpassw\u00f6rtern, ist eine der wichtigsten Basisma\u00dfnahmen f\u00fcr eingebettete Systeme."
+              },
+              {
+                "uuid": "df064150-db4a-4246-ac04-60f7d77f6732",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung st\u00e4rkt die Authentisierung, indem sie Mechanismen wie Kontensperrung fordert. Dies ist relevant, um Brute-Force-Angriffe auf die oft exponierten Schnittstellen eingebetteter Systeme abzuwehren."
+              },
+              {
+                "uuid": "f4aee38c-b635-4663-9689-97178c16f96b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Eingebettete Systeme kommunizieren h\u00e4ufig \u00fcber Netzwerke und verarbeiten Daten. Der Einsatz sicherer Kryptografie ist essenziell, um die Vertraulichkeit und Integrit\u00e4t dieser Kommunikation und Daten zu sch\u00fctzen."
+              },
+              {
+                "uuid": "6c0170da-aa0d-4023-b65d-cf76b9d14196",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Bei der Verwendung von Kryptografie in eingebetteten Systemen, z. B. f\u00fcr Zertifikate oder verschl\u00fcsselte Kommunikation, ist ein sicheres Schl\u00fcsselmanagement unerl\u00e4sslich, um die Wirksamkeit der kryptografischen Ma\u00dfnahmen zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "44d4debf-9a99-4291-80be-c798da92a3c7",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Um Konfigurations\u00e4nderungen oder Firmware-Updates nachvollziehen zu k\u00f6nnen, ist eine Protokollierung der administrativen T\u00e4tigkeiten unerl\u00e4sslich. Dies dient der Rechenschaftspflicht und der Analyse von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "38477b98-6ae5-4f09-ab29-8ac56c7f4228",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen ist ein zentraler Aspekt bei der Absicherung eingebetteter Systeme, da diese ein prim\u00e4res Angriffsziel darstellen. Sichere Protokolle und Authentisierung sind hierf\u00fcr fundamental."
+              },
+              {
+                "uuid": "7c4e2b91-3a29-4ea7-af56-274a284e2e42",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Eingebettete Systeme ben\u00f6tigen regelm\u00e4\u00dfige Sicherheitsupdates (Firmware-Updates). Ein etablierter Patch- und \u00c4nderungsmanagementprozess ist entscheidend, um Schwachstellen zeitnah und kontrolliert zu beheben."
+              },
+              {
+                "uuid": "4f0dfa2c-45cb-4843-9557-28aa36a1d95c",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Aktivierung und Nutzung systemeigener Protokollierungs- und Detektionsfunktionen ist eine grundlegende Ma\u00dfnahme zur Verbesserung der Sicherheits\u00fcberwachung, auch auf ressourcenbeschr\u00e4nkten eingebetteten Systemen."
+              },
+              {
+                "uuid": "06232ad8-2077-4b7c-a497-1e1fbaa4acd0",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Da auf eingebetteten Systemen oft keine host-basierten Sicherheitsagenten installiert werden k\u00f6nnen, ist die \u00dcberwachung des Netzwerkverkehrs durch zus\u00e4tzliche Detektionssysteme eine wichtige kompensierende Ma\u00dfnahme."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

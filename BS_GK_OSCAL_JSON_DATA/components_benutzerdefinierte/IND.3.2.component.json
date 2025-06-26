@@ -1,0 +1,368 @@
+{
+  "component-definition": {
+    "uuid": "c672218b-f306-4fed-9b80-8fa86e1ce59a",
+    "metadata": {
+      "title": "Component for Baustein IND.3.2: Fernwartung im industriellen Umfeld",
+      "last-modified": "2025-06-26T11:25:48.799735+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.3.2."
+    },
+    "components": [
+      {
+        "uuid": "ad8f339e-5bd5-46c7-95b1-000b5002c6b5",
+        "type": "service",
+        "title": "Fernwartung im industriellen Umfeld",
+        "description": "Implementation of controls for Baustein IND.3.2.",
+        "control-implementations": [
+          {
+            "uuid": "998f2377-5133-4012-8ea8-e033a17be58f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.3.2: Fernwartung im industriellen Umfeld",
+            "implemented-requirements": [
+              {
+                "uuid": "e70ce087-cbbe-44ad-a592-40447cc792ea",
+                "control-id": "IND.3.2.A1",
+                "description": "Base implementation for control IND.3.2.A1."
+              },
+              {
+                "uuid": "cfb97f2b-5495-45ea-89ef-2ad245ebb334",
+                "control-id": "IND.3.2.A2",
+                "description": "Base implementation for control IND.3.2.A2."
+              },
+              {
+                "uuid": "0205a2a7-9618-4116-864e-add4192afb41",
+                "control-id": "IND.3.2.A3",
+                "description": "Base implementation for control IND.3.2.A3."
+              },
+              {
+                "uuid": "8c21b702-5d3d-4519-a923-b26de427f097",
+                "control-id": "IND.3.2.A4",
+                "description": "Base implementation for control IND.3.2.A4."
+              },
+              {
+                "uuid": "b8d7a518-dd1b-4b17-9d19-b6865a9cd5a5",
+                "control-id": "IND.3.2.A5",
+                "description": "Base implementation for control IND.3.2.A5."
+              },
+              {
+                "uuid": "b80d2f79-42ab-48fa-8201-9f04df72f2a9",
+                "control-id": "IND.3.2.A6",
+                "description": "Base implementation for control IND.3.2.A6."
+              },
+              {
+                "uuid": "2d78b98e-435a-472f-85f8-b76c907a47bd",
+                "control-id": "IND.3.2.A7",
+                "description": "Base implementation for control IND.3.2.A7."
+              },
+              {
+                "uuid": "efee05e8-874d-4f21-a83e-ab8905f94189",
+                "control-id": "IND.3.2.A8",
+                "description": "Base implementation for control IND.3.2.A8."
+              },
+              {
+                "uuid": "8204b5b7-8b24-4dee-a08e-f08af194c9b5",
+                "control-id": "IND.3.2.A9",
+                "description": "Base implementation for control IND.3.2.A9."
+              },
+              {
+                "uuid": "898ab4ba-50e8-4021-8658-525e507bcfce",
+                "control-id": "IND.3.2.A10",
+                "description": "Base implementation for control IND.3.2.A10."
+              },
+              {
+                "uuid": "01b3cd15-176d-4a00-9c1a-b2baa5bd8720",
+                "control-id": "IND.3.2.A11",
+                "description": "Base implementation for control IND.3.2.A11."
+              },
+              {
+                "uuid": "f08131ee-f7ab-4fe0-b2e8-f2947f653651",
+                "control-id": "IND.3.2.A12",
+                "description": "Base implementation for control IND.3.2.A12."
+              },
+              {
+                "uuid": "ca2e38fe-d590-4ec7-9232-d69e3b88d40a",
+                "control-id": "IND.3.2.A13",
+                "description": "Base implementation for control IND.3.2.A13."
+              },
+              {
+                "uuid": "043b5d64-2cfb-46ca-bde1-0643d3e3e6c0",
+                "control-id": "IND.3.2.A14",
+                "description": "Base implementation for control IND.3.2.A14."
+              }
+            ]
+          },
+          {
+            "uuid": "9f8eec39-e5a2-4b75-903a-a14b9fadea10",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "d61123b9-af21-46f4-b3cf-cf4618916fcc",
+                "control-id": "APP.3.1.A1",
+                "description": "AI-Begr\u00fcndung: Da Fernwartungsl\u00f6sungen h\u00e4ufig webbasiert sind, stellt diese Anforderung die grundlegende Authentisierung sicher, um unbefugten Zugriff auf die OT-Systeme zu verhindern."
+              },
+              {
+                "uuid": "d7591883-2c21-47cf-acfb-ab3b9c82682d",
+                "control-id": "APP.3.1.A4",
+                "description": "AI-Begr\u00fcndung: Fernwartung kann den Up- oder Download von Konfigurationsdateien oder Patches beinhalten. Die Kontrolle von Dateitypen und -gr\u00f6\u00dfen ist essenziell, um die Einschleusung von Schadsoftware zu verhindern."
+              },
+              {
+                "uuid": "b1a70dd9-4df4-4643-bedb-55b82cd44b18",
+                "control-id": "APP.3.1.A11",
+                "description": "AI-Begr\u00fcndung: Die Fernwartungsl\u00f6sung (Frontend) greift auf die eigentlichen OT-Komponenten (Hintergrundsysteme) zu. Die Absicherung dieser spezifischen Verbindung ist f\u00fcr die Gesamtsicherheit kritisch."
+              },
+              {
+                "uuid": "a9fc9d57-fd66-4c95-b5fb-a8b325df2c00",
+                "control-id": "APP.3.1.A12",
+                "description": "AI-Begr\u00fcndung: Webbasierte Fernwartungsportale sind ein attraktives Ziel. Eine sichere Grundkonfiguration (H\u00e4rtung) reduziert die Angriffsfl\u00e4che erheblich."
+              },
+              {
+                "uuid": "57f45bea-5595-4d63-be2c-53066a523448",
+                "control-id": "APP.3.1.A14",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die Zugangsdaten f\u00fcr die Fernwartungsl\u00f6sung selbst serverseitig sicher gespeichert werden, um eine Kompromittierung aller Zug\u00e4nge zu verhindern."
+              },
+              {
+                "uuid": "1f92e5d6-cd66-4688-a4be-9b568e961fcf",
+                "control-id": "APP.3.1.A21",
+                "description": "AI-Begr\u00fcndung: Bietet spezifische technische Schutzma\u00dfnahmen auf HTTP-Ebene, um webbasierte Fernwartungsportale gegen g\u00e4ngige Angriffe wie XSS oder Clickjacking abzusichern."
+              },
+              {
+                "uuid": "95be8065-e1b1-4541-8787-b48812cd49f8",
+                "control-id": "APP.3.1.A22",
+                "description": "AI-Begr\u00fcndung: Fernwartungszug\u00e4nge sind kritische Infrastruktur. Regelm\u00e4\u00dfige Penetrationstests und Revisionen sind unerl\u00e4sslich, um ihre fortw\u00e4hrende Sicherheit zu \u00fcberpr\u00fcfen und Schwachstellen zu finden."
+              },
+              {
+                "uuid": "4296abf5-ad6f-4851-b4fd-800acd9ea295",
+                "control-id": "APP.3.1.A20",
+                "description": "AI-Begr\u00fcndung: Eine Web Application Firewall (WAF) bietet eine wichtige zus\u00e4tzliche Schutzschicht f\u00fcr webbasierte Fernwartungsportale, um Angriffe auf Anwendungsebene zu filtern."
+              },
+              {
+                "uuid": "42687935-b166-401d-8e6d-fdeb382be5cb",
+                "control-id": "IND.1.A3",
+                "description": "AI-Begr\u00fcndung: Fernwartung ist ein potenzieller Vektor f\u00fcr Schadsoftware. Diese Anforderung adressiert die spezifischen Herausforderungen des Malware-Schutzes in OT-Umgebungen."
+              },
+              {
+                "uuid": "27dc0fcd-3ebd-426c-91e0-a522694f4578",
+                "control-id": "IND.1.A6",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen \u00fcber Fernwartung m\u00fcssen kontrolliert und genehmigt werden. Ein etablierter \u00c4nderungsprozess f\u00fcr die OT ist daf\u00fcr die notwendige organisatorische Grundlage."
+              },
+              {
+                "uuid": "77e76eaf-5695-448e-8886-5c34721b8297",
+                "control-id": "IND.1.A7",
+                "description": "AI-Begr\u00fcndung: Regelt die Vergabe von Berechtigungen f\u00fcr den Zugriff auf die OT, was besonders bei externen Fernwartungszugriffen nach dem Minimalprinzip entscheidend ist."
+              },
+              {
+                "uuid": "060c0d97-7275-43fb-b28d-14b94683116b",
+                "control-id": "IND.1.A8",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist der Kern einer sicheren Fernwartung in der OT, da sie explizit sichere Protokolle oder getrennte Administrationsnetze fordert."
+              },
+              {
+                "uuid": "e0519bf3-9f5d-43d8-9bbd-5ed2092b760c",
+                "control-id": "IND.1.A10",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass nicht nur protokolliert, sondern auch aktiv auf sicherheitsrelevante Ereignisse im Zusammenhang mit der Fernwartung reagiert wird (Detektion und Incident Response)."
+              },
+              {
+                "uuid": "489d4a85-ff15-40b1-b44c-fda38dcb4200",
+                "control-id": "IND.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Fernwartungsl\u00f6sung selbst (Hard- und Software) kann Schwachstellen aufweisen. Ein etabliertes Schwachstellen-Management ist daher f\u00fcr einen sicheren Betrieb unerl\u00e4sslich."
+              },
+              {
+                "uuid": "1a551a6a-f394-422d-ab93-9a46a26ffba6",
+                "control-id": "IND.1.A14",
+                "description": "AI-Begr\u00fcndung: Fordert explizit starke, personalisierte Authentisierung f\u00fcr den Zugriff auf OT-Komponenten, was f\u00fcr die Nachvollziehbarkeit und Sicherheit von Fernwartung von zentraler Bedeutung ist."
+              },
+              {
+                "uuid": "c8380943-96e4-4588-895b-0dcaad1166ea",
+                "control-id": "IND.1.A15",
+                "description": "AI-Begr\u00fcndung: Fernwartungszug\u00e4nge haben oft weitreichende Berechtigungen. Deren regelm\u00e4\u00dfige \u00dcberpr\u00fcfung ist eine entscheidende Kontrollma\u00dfnahme."
+              },
+              {
+                "uuid": "630511fe-8917-45e4-8649-d4aae1f6d7c7",
+                "control-id": "IND.1.A18",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung aller Zugriffe und \u00c4nderungen ist die Grundlage, um nachvollziehen zu k\u00f6nnen, wer wann welche Aktion per Fernwartung durchgef\u00fchrt hat."
+              },
+              {
+                "uuid": "b2ec5128-a511-4c77-99a8-e76ca1e4a5dd",
+                "control-id": "IND.1.A19",
+                "description": "AI-Begr\u00fcndung: Vor Wartungseingriffen per Fernwartung ist die Erstellung einer Datensicherung eine essenzielle Ma\u00dfnahme, um die Systemwiederherstellung zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "e2498ed1-837e-42da-a57b-ce4689a305c3",
+                "control-id": "IND.1.A21",
+                "description": "AI-Begr\u00fcndung: F\u00fcr eine sichere Fernwartung ist es zwingend notwendig, die erlaubten Kommunikationsbeziehungen zwischen Fernwartungsgateway und Zielsystem exakt zu definieren und zu dokumentieren."
+              },
+              {
+                "uuid": "31c523c4-796b-40b3-8ef4-9f16ea74b9da",
+                "control-id": "IND.1.A22",
+                "description": "AI-Begr\u00fcndung: Die zentrale Speicherung und \u00dcberwachung der Protokolldaten von Fernwartungszugriffen erm\u00f6glicht eine effektive und zeitnahe Erkennung von Anomalien und Angriffen."
+              },
+              {
+                "uuid": "12952b84-c42e-4891-86c2-5935624d0742",
+                "control-id": "IND.2.7.A3",
+                "description": "AI-Begr\u00fcndung: Adressiert das Hochrisikoszenario der Fernwartung von Safety Instrumented Systems (SIS) und fordert spezifische Schutzmechanismen und Autorisierungen f\u00fcr Programm\u00e4nderungen."
+              },
+              {
+                "uuid": "17d895e1-5b9b-48d0-9b59-f55c307c009d",
+                "control-id": "IND.2.7.A8",
+                "description": "AI-Begr\u00fcndung: Wenn per Fernwartung Konfigurations- oder Engineering-Daten auf ein SIS \u00fcbertragen werden, ist die Sicherstellung ihrer Integrit\u00e4t (z.B. durch Checksummen) ein kritischer Sicherheitsschritt."
+              },
+              {
+                "uuid": "c3c98925-b570-4169-9a42-c83f69bc8936",
+                "control-id": "NET.1.1.A4",
+                "description": "AI-Begr\u00fcndung: Beschreibt die grundlegende Notwendigkeit, Zonen\u00fcberg\u00e4nge (z.B. vom Internet in eine DMZ zum Fernwartungsserver) per Firewall abzusichern, was ein Kernaspekt jeder Fernwartungsarchitektur ist."
+              },
+              {
+                "uuid": "bf9eac65-c731-4cf0-8915-dfe9eb2614cc",
+                "control-id": "NET.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Segmentierung von Clients (Admin-PC), Servern (Fernwartungsgateway) und Zielsystemen (OT-Komponente) ist ein fundamentales Architekturprinzip zur Schadensbegrenzung."
+              },
+              {
+                "uuid": "fd5e8827-6bca-4aa8-9261-75df93bce269",
+                "control-id": "NET.1.1.A7",
+                "description": "AI-Begr\u00fcndung: Fernwartung findet per Definition oft \u00fcber nicht dedizierte, potenziell unsichere Netze statt. Die Verschl\u00fcsselung der \u00fcbertragenen Informationen ist daher zwingend erforderlich."
+              },
+              {
+                "uuid": "3c566346-5ff2-4c96-9d70-f1401b5fb7de",
+                "control-id": "NET.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Das Netz des externen Dienstleisters ist als nicht vertrauensw\u00fcrdig einzustufen. Diese Anforderung stellt sicher, dass die Kommunikation entsprechend abgesichert wird."
+              },
+              {
+                "uuid": "077acfe9-9d18-4928-9aff-cc2b59adbe89",
+                "control-id": "OPS.1.1.5.A3",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass alle an einer Fernwartungssitzung beteiligten Komponenten (Firewall, Gateway, Zielsystem) so konfiguriert sind, dass sie die relevanten Ereignisse protokollieren."
+              },
+              {
+                "uuid": "fbaf17f6-ac80-4b77-b551-0b2ace52297c",
+                "control-id": "OPS.1.1.5.A4",
+                "description": "AI-Begr\u00fcndung: Eine synchrone Systemzeit auf allen beteiligten Systemen ist die Voraussetzung, um Log-Eintr\u00e4ge einer Fernwartungssitzung \u00fcber Systemgrenzen hinweg korrelieren zu k\u00f6nnen."
+              },
+              {
+                "uuid": "a8199fd6-65ea-462e-a7f1-38603560c816",
+                "control-id": "OPS.1.1.5.A6",
+                "description": "AI-Begr\u00fcndung: Da OT-Systeme dezentral sind, ist die zentrale Sammlung von Protokolldaten der Fernwartungszugriffe notwendig, um ein Gesamtbild zu erhalten und effektiv \u00fcberwachen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "5b9f45dd-7db0-4db2-a07d-2e42aebec2a5",
+                "control-id": "OPS.1.1.5.A10",
+                "description": "AI-Begr\u00fcndung: Stellt durch Funktionstrennung sicher, dass Administratoren, die Fernwartungen durchf\u00fchren, die Protokolle ihrer eigenen T\u00e4tigkeiten nicht manipulieren k\u00f6nnen, was die Nachweisbarkeit erh\u00f6ht."
+              },
+              {
+                "uuid": "2ef9b081-24bd-416b-b41a-b03a6b3cf88e",
+                "control-id": "OPS.1.1.5.A12",
+                "description": "AI-Begr\u00fcndung: Protokolldaten von Fernwartungen sind hochsensibel. Ihre Verschl\u00fcsselung bei \u00dcbertragung und Speicherung sch\u00fctzt sie vor unbefugter Einsicht und Manipulation."
+              },
+              {
+                "uuid": "8243429c-7b56-4785-8b9d-2488d1034c66",
+                "control-id": "OPS.1.2.5.A1",
+                "description": "AI-Begr\u00fcndung: Jeder Einsatz von Fernwartung in der OT muss systematisch geplant werden, um technische und organisatorische Risiken von Anfang an zu ber\u00fccksichtigen."
+              },
+              {
+                "uuid": "301e1be9-9d01-4171-ba59-14319986f8db",
+                "control-id": "OPS.1.2.5.A3",
+                "description": "AI-Begr\u00fcndung: Dies ist eine grundlegende Anforderung an die H\u00e4rtung von Fernwartungszug\u00e4ngen, die das Schlie\u00dfen von Verbindungen und die Verschl\u00fcsselung \u00fcber unsichere Netze fordert."
+              },
+              {
+                "uuid": "9b340b9d-6000-4a66-bf5f-d94feb5ea6c2",
+                "control-id": "OPS.1.2.5.A5",
+                "description": "AI-Begr\u00fcndung: Viele Hersteller bieten Fernwartung \u00fcber ihre eigenen Online-Dienste an. Diese Anforderung gibt Leitplanken f\u00fcr die sichere Nutzung solcher Dienste vor."
+              },
+              {
+                "uuid": "e293a497-5778-4793-80e3-9ced62530a0c",
+                "control-id": "OPS.1.2.5.A6",
+                "description": "AI-Begr\u00fcndung: Eine dedizierte Richtlinie f\u00fcr die OT-Fernwartung ist ein zentrales Governance-Instrument, um klare und verbindliche Regeln f\u00fcr alle Beteiligten zu schaffen."
+              },
+              {
+                "uuid": "acb74faa-dbc7-4d65-a8e2-0c47df87d770",
+                "control-id": "OPS.2.2.A9",
+                "description": "AI-Begr\u00fcndung: Wenn die Fernwartung \u00fcber eine Cloud-L\u00f6sung realisiert wird, m\u00fcssen kritische Sicherheitsaspekte wie Datenstandort, L\u00f6schpflichten und Subunternehmer vertraglich geregelt werden."
+              },
+              {
+                "uuid": "c75d0f61-1a8d-496a-adfa-fcd7a67617ab",
+                "control-id": "OPS.2.2.A13",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass sich die Institution regelm\u00e4\u00dfig von Cloud-Anbietern f\u00fcr Fernwartung die Einhaltung der Sicherheitsanforderungen nachweisen l\u00e4sst (z. B. durch Zertifikate)."
+              },
+              {
+                "uuid": "d727c6ab-150a-4f31-a6f4-50094f9c634c",
+                "control-id": "OPS.2.3.A3",
+                "description": "AI-Begr\u00fcndung: Da Fernwartung oft von externen Herstellern oder Dienstleistern durchgef\u00fchrt wird, ist die Pr\u00fcfung ihrer Eignung und Vertrauensw\u00fcrdigkeit ein fundamentaler erster Schritt."
+              },
+              {
+                "uuid": "0aae7682-4faf-4e01-8850-6a23593fee58",
+                "control-id": "OPS.2.3.A4",
+                "description": "AI-Begr\u00fcndung: Definiert die Notwendigkeit, grundlegende Sicherheitsanforderungen, Audit-Rechte und Vertraulichkeit in Vertr\u00e4gen mit externen Fernwartungs-Dienstleistern festzuschreiben."
+              },
+              {
+                "uuid": "e44c75b2-b2dd-415f-af24-cd518593fefd",
+                "control-id": "OPS.2.3.A6",
+                "description": "AI-Begr\u00fcndung: Fordert ein abgestimmtes Sicherheitskonzept mit dem externen Dienstleister, um sicherzustellen, dass beide Seiten ein gemeinsames Verst\u00e4ndnis der umzusetzenden Sicherheitsma\u00dfnahmen haben."
+              },
+              {
+                "uuid": "72ec14c4-7bfb-4430-8a7a-4caae259a748",
+                "control-id": "OPS.2.3.A7",
+                "description": "AI-Begr\u00fcndung: Regelt den wichtigen Prozess der Beendigung der Zusammenarbeit, insbesondere die Deaktivierung aller Zug\u00e4nge des externen Dienstleisters, um verwaiste Konten zu verhindern."
+              }
+            ]
+          },
+          {
+            "uuid": "cd2384b4-027b-4669-898d-cf56f1a4b677",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5073eff7-66b1-4773-ae2f-c3754f357dbe",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Stellt durch Funktionstrennung sicher, dass z.B. die Genehmigung und die Durchf\u00fchrung einer kritischen Fernwartung nicht durch dieselbe Person erfolgen, um das Vier-Augen-Prinzip umzusetzen."
+              },
+              {
+                "uuid": "390726d1-5cee-41a4-9f13-9c9c555082cf",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Sowohl internes als auch externes Personal, das Fernwartungen an OT-Systemen durchf\u00fchrt, muss nachweislich f\u00fcr diese spezifischen und oft komplexen Systeme qualifiziert sein."
+              },
+              {
+                "uuid": "c8c60724-eb9f-4102-b37a-90fb54e60e8d",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Setzt die Prinzipien 'Least Privilege' und 'Need-to-know' f\u00fcr Fernwartungsberechtigungen durch, was zur Risikominimierung unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "dcfd5796-dbca-4453-a2bc-32b677ccdf68",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Bildet die absolute Grundlage f\u00fcr sichere Fernwartung: Jeder Zugriff muss \u00fcber eine eindeutige Identit\u00e4t und einen sicheren Authentisierungsmechanismus erfolgen."
+              },
+              {
+                "uuid": "a234f121-63ef-4b4a-9fbb-09e564b80b0e",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Fordert dem Schutzbedarf der OT angemessene Authentisierungsmechanismen, inklusive Schutz vor Brute-Force-Angriffen, was f\u00fcr aus dem Internet erreichbare Dienste kritisch ist."
+              },
+              {
+                "uuid": "993b8140-53c1-493b-88d7-e7be4cac8b64",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass f\u00fcr die Verschl\u00fcsselung von Fernwartungsverbindungen nur kryptografische Verfahren und Schl\u00fcssell\u00e4ngen nach aktuellem Stand der Technik verwendet werden."
+              },
+              {
+                "uuid": "25217cdf-f909-4210-b4cd-3dd4de38a71e",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Verschl\u00fcsselung ist nutzlos ohne sicheres Schl\u00fcsselmanagement. Diese Anforderung stellt die sichere Handhabung von Schl\u00fcsseln und Zertifikaten f\u00fcr die Fernwartung sicher."
+              },
+              {
+                "uuid": "0d76c5e7-45fc-4d08-b95a-c77e3bde8964",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Fernwartung ist eine administrative T\u00e4tigkeit. Die l\u00fcckenlose Nachweisbarkeit (wer hat was wann getan) ist f\u00fcr die Forensik und die Erf\u00fcllung von Compliance-Anforderungen essenziell."
+              },
+              {
+                "uuid": "0d855e45-e39b-4c6f-9457-7e0f68c9633b",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Schnittstellen, die f\u00fcr die Fernwartung genutzt werden, durch dedizierte Authentisierungsverfahren und die Nutzung sicherer Protokolle."
+              },
+              {
+                "uuid": "a6fa2e54-1dbd-4f0d-a6ba-f52bbda5570f",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Empfiehlt den Einsatz von Intrusion Detection Systemen (NIDS) an den Netz\u00fcberg\u00e4ngen, die f\u00fcr die Fernwartung genutzt werden, um Angriffsversuche aktiv zu erkennen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,251 @@
+{
+  "component-definition": {
+    "uuid": "ebf3f11c-c01a-413e-8667-abf9aa3a36fb",
+    "metadata": {
+      "title": "Component for Baustein INF.1: Allgemeines Geb\u00e4ude",
+      "last-modified": "2025-06-26T11:42:16.958227+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.1."
+    },
+    "components": [
+      {
+        "uuid": "97ba5484-4808-4912-9e9b-f8bb743fd4de",
+        "type": "service",
+        "title": "Allgemeines Geb\u00e4ude",
+        "description": "Implementation of controls for Baustein INF.1.",
+        "control-implementations": [
+          {
+            "uuid": "996ac2ab-83e8-4f06-ac17-c1ec3ddff245",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.1: Allgemeines Geb\u00e4ude",
+            "implemented-requirements": [
+              {
+                "uuid": "2849810c-8438-40e2-868e-2912910bb7ff",
+                "control-id": "INF.1.A1",
+                "description": "Base implementation for control INF.1.A1."
+              },
+              {
+                "uuid": "bf44115d-7437-463a-a06d-2829b9f94e01",
+                "control-id": "INF.1.A2",
+                "description": "Base implementation for control INF.1.A2."
+              },
+              {
+                "uuid": "fd9735d7-3b4b-4f88-84c0-9dadae659d18",
+                "control-id": "INF.1.A3",
+                "description": "Base implementation for control INF.1.A3."
+              },
+              {
+                "uuid": "83244ef3-e742-4ecd-bde7-f7c0344c10ac",
+                "control-id": "INF.1.A4",
+                "description": "Base implementation for control INF.1.A4."
+              },
+              {
+                "uuid": "7d39e8ce-aa2f-461b-aad1-06c9b406b64f",
+                "control-id": "INF.1.A5",
+                "description": "Base implementation for control INF.1.A5."
+              },
+              {
+                "uuid": "baaf0f5f-8bc8-40e1-9088-39b9ca1f17f8",
+                "control-id": "INF.1.A6",
+                "description": "Base implementation for control INF.1.A6."
+              },
+              {
+                "uuid": "e9b945ca-6563-4dda-aecb-83a63d455937",
+                "control-id": "INF.1.A7",
+                "description": "Base implementation for control INF.1.A7."
+              },
+              {
+                "uuid": "1de58806-9f14-438f-b29c-240f8a74412a",
+                "control-id": "INF.1.A8",
+                "description": "Base implementation for control INF.1.A8."
+              },
+              {
+                "uuid": "f89bd63c-4350-469a-9eaf-a83b6fef0ae7",
+                "control-id": "INF.1.A10",
+                "description": "Base implementation for control INF.1.A10."
+              },
+              {
+                "uuid": "a8940be2-d430-41dc-9025-a08bde686621",
+                "control-id": "INF.1.A9",
+                "description": "Base implementation for control INF.1.A9."
+              },
+              {
+                "uuid": "9f7f4803-a54a-4b1b-8900-ca5a2de48ad1",
+                "control-id": "INF.1.A12",
+                "description": "Base implementation for control INF.1.A12."
+              },
+              {
+                "uuid": "6d172234-cca0-4ddb-8db9-395463b81a78",
+                "control-id": "INF.1.A13",
+                "description": "Base implementation for control INF.1.A13."
+              },
+              {
+                "uuid": "1af6d8c8-5b86-4d7c-aece-f047a8546f93",
+                "control-id": "INF.1.A14",
+                "description": "Base implementation for control INF.1.A14."
+              },
+              {
+                "uuid": "723781ec-22e9-4a05-90db-e2bb38468385",
+                "control-id": "INF.1.A15",
+                "description": "Base implementation for control INF.1.A15."
+              },
+              {
+                "uuid": "f34dc987-e53d-416b-99f0-b564948fa52a",
+                "control-id": "INF.1.A16",
+                "description": "Base implementation for control INF.1.A16."
+              },
+              {
+                "uuid": "5480aca2-51b7-44ec-b591-07aba71c5d8f",
+                "control-id": "INF.1.A17",
+                "description": "Base implementation for control INF.1.A17."
+              },
+              {
+                "uuid": "c268752d-69ba-4027-8e6d-8875268cb774",
+                "control-id": "INF.1.A18",
+                "description": "Base implementation for control INF.1.A18."
+              },
+              {
+                "uuid": "4f128785-e301-4a3e-ab70-3ce8b3fb1497",
+                "control-id": "INF.1.A19",
+                "description": "Base implementation for control INF.1.A19."
+              },
+              {
+                "uuid": "28e51b4c-9480-4de6-8e16-af0e5da05607",
+                "control-id": "INF.1.A20",
+                "description": "Base implementation for control INF.1.A20."
+              },
+              {
+                "uuid": "768a9532-a8f4-4d66-9e47-7430ccdf1ace",
+                "control-id": "INF.1.A27",
+                "description": "Base implementation for control INF.1.A27."
+              },
+              {
+                "uuid": "808f4830-6e83-4486-ad46-def141935319",
+                "control-id": "INF.1.A36",
+                "description": "Base implementation for control INF.1.A36."
+              },
+              {
+                "uuid": "6cf99427-1cef-40b0-805d-5bf21c39f899",
+                "control-id": "INF.1.A22",
+                "description": "Base implementation for control INF.1.A22."
+              },
+              {
+                "uuid": "c7d0e259-dbd6-4011-9a19-d36030f39b33",
+                "control-id": "INF.1.A23",
+                "description": "Base implementation for control INF.1.A23."
+              },
+              {
+                "uuid": "a6c6a8ea-be5e-405e-a802-84323b7e8d6a",
+                "control-id": "INF.1.A24",
+                "description": "Base implementation for control INF.1.A24."
+              },
+              {
+                "uuid": "54aeeb6c-8bc7-4b7a-9acc-2cedcede260d",
+                "control-id": "INF.1.A25",
+                "description": "Base implementation for control INF.1.A25."
+              },
+              {
+                "uuid": "b095a53e-5c34-4145-a803-077a7ac79498",
+                "control-id": "INF.1.A26",
+                "description": "Base implementation for control INF.1.A26."
+              },
+              {
+                "uuid": "4157be34-6642-4392-8cb3-3b51dd6dba84",
+                "control-id": "INF.1.A30",
+                "description": "Base implementation for control INF.1.A30."
+              },
+              {
+                "uuid": "0737dcc6-a10a-41fa-9f19-cd61a12a55fc",
+                "control-id": "INF.1.A31",
+                "description": "Base implementation for control INF.1.A31."
+              },
+              {
+                "uuid": "bd151ee2-f8b9-4a67-a1e2-7301ac7f2c1f",
+                "control-id": "INF.1.A32",
+                "description": "Base implementation for control INF.1.A32."
+              },
+              {
+                "uuid": "74a4acee-2669-41dc-8400-f156d02a332b",
+                "control-id": "INF.1.A34",
+                "description": "Base implementation for control INF.1.A34."
+              },
+              {
+                "uuid": "bf470fda-3d0f-4b2b-b23b-c9407d5d3c94",
+                "control-id": "INF.1.A35",
+                "description": "Base implementation for control INF.1.A35."
+              }
+            ]
+          },
+          {
+            "uuid": "0e57bc6c-f852-47c8-adc1-94f585f8da36",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "fc1ac4b6-0514-4f71-b44b-a75d60b86545",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung ist f\u00fcr die Verwaltung eines Geb\u00e4udes relevant, um Missbrauch bei sicherheitskritischen Aufgaben wie der Zutrittsverwaltung oder der Administration von Sicherheitstechnik zu verhindern."
+              },
+              {
+                "uuid": "fd64cc10-be57-4c25-8084-a92ed4fd61a6",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Qualifikation des Personals (z. B. Sicherheits- und Empfangspersonal, Haustechniker) ist entscheidend f\u00fcr den sicheren Betrieb des Geb\u00e4udes und der darin installierten Technik."
+              },
+              {
+                "uuid": "0566c273-8be2-432b-886a-1d0f69e55ed8",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist direkt auf die Verwaltung von physischen und logischen Zutrittsberechtigungen (Schl\u00fcssel, Chipkarten, Systemkonten f\u00fcr Geb\u00e4udetechnik) anwendbar und fundamental f\u00fcr die Geb\u00e4udesicherheit."
+              },
+              {
+                "uuid": "5ec69c77-f404-4e0f-8ab2-262adb563c0a",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Die Verwaltungssysteme f\u00fcr die Geb\u00e4udeinfrastruktur (z.B. Zutrittskontrolle, Geb\u00e4udeleittechnik) m\u00fcssen vor unbefugtem Zugriff durch sichere Authentisierung gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "ddad1e10-0bb0-453c-9c16-3b85fab08b67",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Stellt eine angemessene und robuste Authentisierung f\u00fcr administrative Zugriffe auf kritische Geb\u00e4udesysteme sicher und erh\u00f6ht so den Schutz vor Manipulation."
+              },
+              {
+                "uuid": "a8cc2280-4612-41ab-a1a9-ce6b3fdd44a3",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Moderne Geb\u00e4udeinfrastruktur, wie elektronische Schlie\u00dfanlagen oder vernetzte Geb\u00e4udetechnik, nutzt Kryptografie. Deren sichere Ausgestaltung ist f\u00fcr den Schutz des Geb\u00e4udes essenziell."
+              },
+              {
+                "uuid": "1d08feae-cfd4-490a-a090-6e47aabe92c6",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement ist sowohl f\u00fcr physische Schl\u00fcssel als auch f\u00fcr die kryptografischen Schl\u00fcssel der Geb\u00e4udetechnik eine grundlegende Sicherheitsvoraussetzung."
+              },
+              {
+                "uuid": "a72250ec-6763-44c8-a4ab-52d1bb236457",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Sicherung von Konfigurationsdaten und Protokolldateien der Geb\u00e4udesysteme (z.B. Zutrittskontrolle, Einbruchmeldeanlage) ist f\u00fcr die Wiederherstellung und die Nachvollziehbarkeit von Vorf\u00e4llen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "86ccd53d-7f3a-4afd-bc9e-b23164c61964",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit von administrativen \u00c4nderungen an der Geb\u00e4udetechnik ist zur Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen und zur Etablierung von Verantwortlichkeiten zwingend erforderlich."
+              },
+              {
+                "uuid": "7f487648-2daa-494c-bb98-41f5c31db922",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sichert die administrativen Schnittstellen der Geb\u00e4udetechnik direkt ab und verhindert so die Manipulation von sicherheitsrelevanten Einstellungen und Funktionen."
+              },
+              {
+                "uuid": "a9ce007d-01c6-4e03-98f8-028282b234ca",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Geb\u00e4udetechnik basiert zunehmend auf Software, die Schwachstellen aufweisen kann. Ein geregeltes Patch- und \u00c4nderungsmanagement ist f\u00fcr die Aufrechterhaltung der Sicherheit unerl\u00e4sslich."
+              },
+              {
+                "uuid": "dd06746f-429c-4cba-8b8a-5909b8bc8ce7",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Geb\u00e4udesysteme (z.B. Zutrittskontrolle, Brandmeldeanlage) verf\u00fcgen oft \u00fcber eingebaute Detektionsfunktionen (z.B. Aufbruchalarm). Deren Aktivierung und Nutzung erh\u00f6ht die Sicherheit des Geb\u00e4udes signifikant."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "component-definition": {
+    "uuid": "3421236b-4d39-4872-979d-65f0c738fb06",
+    "metadata": {
+      "title": "Component for Baustein IND.2.2: Speicherprogrammierbare Steuerung (SPS)",
+      "last-modified": "2025-06-26T11:19:42.182175+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.2.2."
+    },
+    "components": [
+      {
+        "uuid": "a5ad7a1e-a48e-4019-99bd-06474463dc62",
+        "type": "service",
+        "title": "Speicherprogrammierbare Steuerung (SPS)",
+        "description": "Implementation of controls for Baustein IND.2.2.",
+        "control-implementations": [
+          {
+            "uuid": "0ab82736-b54c-4062-8f96-35f81fa87b78",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.2.2: Speicherprogrammierbare Steuerung (SPS)",
+            "implemented-requirements": [
+              {
+                "uuid": "de1d7dbb-f0ad-4041-a77f-2c4793d4ba7f",
+                "control-id": "IND.2.2.A1",
+                "description": "Base implementation for control IND.2.2.A1."
+              },
+              {
+                "uuid": "715dd781-b1de-4bec-916c-f31da94cf744",
+                "control-id": "IND.2.2.A3",
+                "description": "Base implementation for control IND.2.2.A3."
+              }
+            ]
+          },
+          {
+            "uuid": "3e34eb80-4e8e-4186-adfd-a772d35d1928",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "68346f06-c853-4038-ba22-86b8d0cc4f46",
+                "control-id": "IND.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Sichert grundlegende Aspekte des Zugriffs auf die SPS, wie den Wechsel von Standardpassw\u00f6rtern und die Beschr\u00e4nkung des Zugriffs auf Konfigurationsschnittstellen, was f\u00fcr jede SPS fundamental ist."
+              },
+              {
+                "uuid": "5df084ac-590e-4801-b600-63ea22752d4b",
+                "control-id": "IND.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Adressiert die Notwendigkeit sicherer Kommunikationsprotokolle f\u00fcr die Wartung und Konfiguration, was eine h\u00e4ufige Schwachstelle bei der SPS-Administration darstellt."
+              },
+              {
+                "uuid": "8a843dee-ffab-40fa-84c6-5cda4f731055",
+                "control-id": "IND.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Fordert die Deaktivierung ungenutzter Dienste und Schnittstellen, eine wesentliche H\u00e4rtungsma\u00dfnahme zur Reduzierung der Angriffsfl\u00e4che einer SPS."
+              },
+              {
+                "uuid": "ce51af16-7320-4293-a4d6-49f7ae9331d2",
+                "control-id": "IND.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Netzsegmentierung ist ein entscheidendes Architekturprinzip zum Schutz von SPS, indem sie von weniger sicheren Netzen wie der Office-IT getrennt werden."
+              },
+              {
+                "uuid": "e7883515-535d-4720-a8df-6d8123bc3823",
+                "control-id": "IND.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Die Erstellung von Datensicherungen vor System\u00e4nderungen ist entscheidend, um die Wiederherstellbarkeit von Konfiguration und Anwenderprogramm der SPS zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "71feb1cd-b488-4555-baf8-05669326a3c3",
+                "control-id": "IND.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Adressiert den Schutz vor Schadsoftware, was f\u00fcr SPS aufgrund ihrer kritischen Rolle relevant ist, und ber\u00fccksichtigt dabei praxisnah die spezifischen Einschr\u00e4nkungen von OT-Komponenten."
+              },
+              {
+                "uuid": "a4351c3b-558b-4a49-a811-2f7cc9d6f9d4",
+                "control-id": "IND.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Einspielen von Sicherheitsupdates ist f\u00fcr den sicheren Lebenszyklus einer SPS unerl\u00e4sslich, um bekannte Schwachstellen zu schlie\u00dfen."
+              },
+              {
+                "uuid": "5947b84c-2f83-4219-b2a6-196f0c2aa7b3",
+                "control-id": "IND.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass eine SPS von Anfang an nach sicheren Standards in Betrieb genommen und in bestehende Sicherheitsprozesse integriert wird."
+              },
+              {
+                "uuid": "d8132d2f-aa6d-4d81-bbff-1cc265c8a022",
+                "control-id": "IND.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Der Schutz physikalischer und logischer Schnittstellen ist eine direkte und wichtige Ma\u00dfnahme, um unbefugten Zugriff auf die SPS zu verhindern."
+              },
+              {
+                "uuid": "0132dc1a-fc43-4872-b439-fb4a7ef60b01",
+                "control-id": "IND.2.1.A17",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der \u00fcbertragenen Mess- und Steuerdaten sch\u00fctzt die Kernfunktion der SPS vor Manipulation und Aussp\u00e4hung, was f\u00fcr die Prozessintegrit\u00e4t kritisch ist."
+              },
+              {
+                "uuid": "c541dbd1-6f6d-40a5-b057-1ba9d65edb5a",
+                "control-id": "IND.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Stellt die Handlungsf\u00e4higkeit im St\u00f6rfall sicher, was f\u00fcr eine kritische Komponente wie eine SPS von hoher Bedeutung ist."
+              },
+              {
+                "uuid": "2197ec68-93c3-4776-8d39-02223f3bba06",
+                "control-id": "IND.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitstests sind eine wertvolle Ma\u00dfnahme, um die Wirksamkeit der umgesetzten Sicherheitsma\u00dfnahmen an der SPS zu \u00fcberpr\u00fcfen."
+              },
+              {
+                "uuid": "65005334-90ca-492b-b378-2572e7f3ce5d",
+                "control-id": "IND.2.1.A20",
+                "description": "AI-Begr\u00fcndung: Stellt die Integrit\u00e4t von Firmware und Steuerungsprogrammen sicher und verhindert so eine Kompromittierung der SPS durch manipulierten Code."
+              }
+            ]
+          },
+          {
+            "uuid": "340e2651-95a9-497f-9bf8-770dbe3adb49",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "4cd042be-0ae9-4146-9b33-63a31d4b6c1b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt fundamentale Anforderungen an die Auswahl kryptografischer Verfahren und ist somit eine notwendige Grundlage, falls auf der SPS Kryptografie zum Einsatz kommt."
+              },
+              {
+                "uuid": "8dc7035d-ffee-4a12-a86d-af256fdb2139",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist die zwingende Voraussetzung f\u00fcr den wirksamen Einsatz von Kryptografie auf einer SPS."
+              },
+              {
+                "uuid": "e4f87402-145b-4d30-959b-54eaa1a47596",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die anlassbezogene Datensicherung um eine regelm\u00e4\u00dfige Komponente, was die allgemeine Ausfallsicherheit und Wiederanlauff\u00e4higkeit der SPS erh\u00f6ht."
+              },
+              {
+                "uuid": "54d5de41-1c25-4c6c-b48c-d128c8f87cb0",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit von administrativen T\u00e4tigkeiten ist ein zentrales Sicherheitsprinzip f\u00fcr die Protokollierung und Analyse von Zugriffen auf die SPS."
+              },
+              {
+                "uuid": "0908b272-2e9e-43ad-b31b-87a70aee22d6",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Konkretisiert die Anforderungen an die Absicherung der Administration und stellt sicher, dass administrative Zugriffe auf die SPS authentisiert und gesch\u00fctzt erfolgen."
+              },
+              {
+                "uuid": "d8c1b68d-c4ad-4cf8-aad9-39d769e2cab3",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Formalisiert das Patch- und \u00c4nderungsmanagement, was in SPS-Umgebungen aufgrund der hohen Verf\u00fcgbarkeits- und Stabilit\u00e4tsanforderungen von entscheidender Bedeutung ist."
+              },
+              {
+                "uuid": "9fcdf76a-81ac-448f-8986-5570498163ba",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Sorgt daf\u00fcr, dass die oft vorhandenen, aber ungenutzten Detektions- und Protokollierungsfunktionen der SPS aktiviert und zur Sicherheits\u00fcberwachung herangezogen werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

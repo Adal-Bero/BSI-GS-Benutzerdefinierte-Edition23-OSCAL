@@ -1,0 +1,193 @@
+{
+  "component-definition": {
+    "uuid": "9fabb988-82bf-4db2-81b2-aa4b89742193",
+    "metadata": {
+      "title": "Component for Baustein IND.2.3: Sensoren und Aktoren",
+      "last-modified": "2025-06-26T11:21:01.089955+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.2.3."
+    },
+    "components": [
+      {
+        "uuid": "de1ecb6f-43c3-4388-ba68-a805c8d2b182",
+        "type": "service",
+        "title": "Sensoren und Aktoren",
+        "description": "Implementation of controls for Baustein IND.2.3.",
+        "control-implementations": [
+          {
+            "uuid": "b9c3c8cc-e7ba-4dd1-9173-d3b6ec2c8f9e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.2.3: Sensoren und Aktoren",
+            "implemented-requirements": [
+              {
+                "uuid": "906afe8e-2616-402c-b299-426a5850e2b0",
+                "control-id": "IND.2.3.A1",
+                "description": "Base implementation for control IND.2.3.A1."
+              },
+              {
+                "uuid": "12edab84-0468-4555-99e8-24897f87858b",
+                "control-id": "IND.2.3.A2",
+                "description": "Base implementation for control IND.2.3.A2."
+              },
+              {
+                "uuid": "6ab470a6-afb2-4fb2-892c-1a4bce4b1442",
+                "control-id": "IND.2.3.A3",
+                "description": "Base implementation for control IND.2.3.A3."
+              }
+            ]
+          },
+          {
+            "uuid": "62c07ca1-895f-4bd6-8028-2939687c86b3",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "cb9762bf-b1bb-4cf3-903f-eec6a9fad653",
+                "control-id": "IND.1.A8",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist relevant, da Sensoren oft \u00fcber Netzwerkschnittstellen administriert werden. Sie bietet eine wichtige Erg\u00e4nzung zur Nutzung sicherer Protokolle, indem sie ein abgetrenntes Administrationsnetz als Alternative oder Erg\u00e4nzung vorschl\u00e4gt, was in OT-Umgebungen eine praxisnahe und wertvolle Ma\u00dfnahme ist."
+              },
+              {
+                "uuid": "f2eb2aad-783b-46e4-8bc8-6b644dab2585",
+                "control-id": "IND.1.A9",
+                "description": "AI-Begr\u00fcndung: Intelligente Sensoren k\u00f6nnen \u00fcber physische Schnittstellen wie USB verf\u00fcgen. Die Einschr\u00e4nkung der Nutzung von Wechseldatentr\u00e4gern und die Kontrolle aktiver Schnittstellen ist eine direkt anwendbare und wertvolle Ma\u00dfnahme zur Reduzierung der Angriffsfl\u00e4che."
+              },
+              {
+                "uuid": "3b6a62a5-9135-45a5-853d-c6e6e78e41b5",
+                "control-id": "IND.1.A14",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung zur starken Authentisierung ist direkt auf konfigurierbare Sensoren anwendbar und erh\u00f6ht deren Sicherheit ma\u00dfgeblich, indem sie die Nutzung von personalisierten Konten und komplexen Passw\u00f6rtern fordert und somit unautorisierten Zugriff erschwert."
+              },
+              {
+                "uuid": "cbf3c169-9edf-4a69-bdef-19d11e38ac24",
+                "control-id": "IND.1.A18",
+                "description": "AI-Begr\u00fcndung: F\u00fcr die Nachvollziehbarkeit und Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen ist es essenziell zu protokollieren, wer wann auf einen Sensor zugegriffen oder dessen Konfiguration ge\u00e4ndert hat. Diese Anforderung ist direkt auf die im Baustein beschriebenen Sensoren anwendbar."
+              },
+              {
+                "uuid": "e8734649-c502-4105-b50c-b18d3fb89036",
+                "control-id": "IND.1.A19",
+                "description": "AI-Begr\u00fcndung: Intelligente Sensoren besitzen Konfigurationen und Firmware, die f\u00fcr ihren Betrieb kritisch sind. Eine regelm\u00e4\u00dfige und \u00e4nderungsbasierte Datensicherung ist eine grundlegende Ma\u00dfnahme zur Gew\u00e4hrleistung der Wiederherstellbarkeit und somit direkt relevant und wertvoll."
+              },
+              {
+                "uuid": "a08f6fe1-2c94-4c31-a135-56be02c67a2f",
+                "control-id": "IND.1.A20",
+                "description": "AI-Begr\u00fcndung: Die spezifischen Betriebsparameter und Konfigurationen eines Sensors m\u00fcssen f\u00fcr einen sicheren und stabilen Betrieb dokumentiert werden. Diese Anforderung unterst\u00fctzt direkt das Ziel des Bausteins, Sensoren abzusichern."
+              },
+              {
+                "uuid": "5cc27655-bc09-4738-b635-76f33ed2db39",
+                "control-id": "IND.1.A21",
+                "description": "AI-Begr\u00fcndung: Um Netzwerkverkehr effektiv zu kontrollieren und Anomalien zu erkennen, muss bekannt sein, mit welchen Systemen ein Sensor kommuniziert. Diese Dokumentation ist eine wesentliche Grundlage f\u00fcr die Netzwerksicherheit des Sensors."
+              },
+              {
+                "uuid": "96e95494-ca84-4d7c-b613-b1c7c033123f",
+                "control-id": "IND.1.A22",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung konkretisiert die Protokollierung (IND.1.A18), indem sie die zentrale Speicherung und aktive \u00dcberwachung fordert. Dies ist f\u00fcr eine effektive und zeitnahe Erkennung von Angriffen auf Sensoren unerl\u00e4sslich."
+              },
+              {
+                "uuid": "96c431c3-1700-4d08-b1b7-df36a0cff818",
+                "control-id": "IND.1.A23",
+                "description": "AI-Begr\u00fcndung: Sensoren k\u00f6nnen sensible Konfigurationsdaten wie Netzwerkschl\u00fcssel enthalten. Die sichere L\u00f6schung dieser Daten bei der Aussonderung verhindert Informationsabfl\u00fcsse und ist ein wichtiger Teil des gesamten Lebenszyklusmanagements."
+              },
+              {
+                "uuid": "7584bb47-69d0-49c7-a3a0-a93843b78b08",
+                "control-id": "IND.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Der Wechsel von Standardpassw\u00f6rtern und die Einschr\u00e4nkung des Zugriffs auf Konfigurationsschnittstellen sind fundamentale und direkt anwendbare Sicherheitsma\u00dfnahmen f\u00fcr jeden konfigurierbaren Sensor."
+              },
+              {
+                "uuid": "bdb8e3c1-11ab-4c41-b883-6f0f8b865048",
+                "control-id": "IND.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Da Sensoren oft \u00fcber unsichere Umgebungen (z.B. WLAN) konfiguriert werden, ist die Forderung nach sicheren \u00dcbertragungsprotokollen eine essenzielle und direkt anwendbare Ma\u00dfnahme zum Schutz der administrativen Zugriffe."
+              },
+              {
+                "uuid": "80bef1ae-e5a9-402e-b353-ef8e27a8f79c",
+                "control-id": "IND.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Jede nicht ben\u00f6tigte Funktion oder Schnittstelle eines Sensors stellt eine potenzielle Angriffsfl\u00e4che dar. Ihre Deaktivierung ist eine einfache, aber sehr wirksame H\u00e4rtungsma\u00dfnahme, die direkt am Sensor umgesetzt wird."
+              },
+              {
+                "uuid": "e28b4ab0-4767-4035-a4ad-27e8d8add511",
+                "control-id": "IND.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Netzsegmentierung ist ein Kernprinzip der OT-Sicherheit. Die Anforderung, Sensoren von der Office-IT zu trennen und ihre Kommunikation auf das Notwendigste zu beschr\u00e4nken, ist direkt relevant und erh\u00f6ht die Sicherheit erheblich."
+              },
+              {
+                "uuid": "8db94dab-91c5-4021-84fe-56b53617f9d8",
+                "control-id": "IND.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt andere Backup-Strategien um den wichtigen Schritt, eine Sicherung VOR einer \u00c4nderung zu erstellen. Dies ist f\u00fcr eine funktionierende R\u00fcckfall-L\u00f6sung bei fehlerhaften \u00c4nderungen an der Sensor-Konfiguration unerl\u00e4sslich."
+              },
+              {
+                "uuid": "29e3a9c5-abe1-480e-aea2-95c942a9f6ec",
+                "control-id": "IND.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Intelligente Sensoren k\u00f6nnen Ziel von Schadsoftware sein. Diese Anforderung beschreibt praxisnah, wie Sensoren gesch\u00fctzt werden k\u00f6nnen, auch wenn klassischer Virenschutz nicht m\u00f6glich ist, z. B. durch Abschottung."
+              },
+              {
+                "uuid": "c3a5864c-b3dd-41f9-a924-a7d011962be8",
+                "control-id": "IND.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Die Firmware von Sensoren kann Schwachstellen enthalten. Ein geregelter Prozess zur Einspielung von Sicherheitsupdates nach Herstellervorgabe ist f\u00fcr den langfristig sicheren Betrieb eines Sensors von entscheidender Bedeutung."
+              },
+              {
+                "uuid": "99f64860-7d7f-40e9-91bc-13425f6386ec",
+                "control-id": "IND.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass Sensoren von Beginn an auf einem sicheren Stand (Patches) in Betrieb genommen und in die Sicherheitsprozesse integriert werden, was grundlegend f\u00fcr die Gesamtsicherheit ist."
+              },
+              {
+                "uuid": "33e8e8d9-e961-49ba-808b-0d995129bda2",
+                "control-id": "IND.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Der Schutz externer Schnittstellen, sowohl physisch als auch logisch, ist eine direkt am Sensor anwendbare H\u00e4rtungsma\u00dfnahme, die den Missbrauch dieser Schnittstellen f\u00fcr Angriffe verhindert."
+              },
+              {
+                "uuid": "814e468d-238f-4588-85d4-50125efd677e",
+                "control-id": "IND.2.1.A17",
+                "description": "AI-Begr\u00fcndung: Die Integrit\u00e4t und Vertraulichkeit der von einem Sensor gelieferten Messwerte ist seine Kernfunktion. Der Schutz dieser Daten bei der \u00dcbertragung ist daher eine der wichtigsten Sicherheitsma\u00dfnahmen."
+              },
+              {
+                "uuid": "67fdd942-87da-4f12-8cc2-27f980b72118",
+                "control-id": "IND.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Security-Tests stellen sicher, dass die umgesetzten Sicherheitsma\u00dfnahmen f\u00fcr einen Sensor wirksam sind und bleiben. Dies bietet eine wertvolle, kontinuierliche \u00dcberpr\u00fcfung des Sicherheitsniveaus."
+              },
+              {
+                "uuid": "ec6a0a8a-e1cf-4de0-939f-85d5ece71a52",
+                "control-id": "IND.2.1.A20",
+                "description": "AI-Begr\u00fcndung: Die Integrit\u00e4tspr\u00fcfung von Firmware-Updates stellt sicher, dass keine manipulierte oder fehlerhafte Software auf dem Sensor installiert wird. Dies ist eine kritische Ma\u00dfnahme zum Schutz vor fortgeschrittenen Angriffen."
+              }
+            ]
+          },
+          {
+            "uuid": "e4062e21-caa9-4d9a-9e92-28ca5e59f5be",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "8999b105-0a5a-49d8-8124-91369d2fe1b0",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von Berechtigungen nach dem Minimalprinzip ist ein grundlegendes Sicherheitskonzept, das direkt auf die Verwaltung von Zugriffen auf die Konfigurationsschnittstellen von Sensoren anwendbar ist und deren Sicherheit erh\u00f6ht."
+              },
+              {
+                "uuid": "daaa696c-070c-4d4c-afe6-596abc471d2e",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt andere Authentisierungsma\u00dfnahmen um wichtige H\u00e4rtungsaspekte wie Anmeldeverz\u00f6gerungen oder Kontensperrungen. Falls ein Sensor dies unterst\u00fctzt, erh\u00f6ht es die Robustheit gegen Brute-Force-Angriffe erheblich."
+              },
+              {
+                "uuid": "88f7837b-2aea-406c-bd2a-15c4b0f6575f",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Wenn ein Sensor kryptografische Verfahren f\u00fcr die Kommunikation (z.B. WLAN, HTTPS) nutzt, stellt diese Anforderung sicher, dass dabei sichere, etablierte Algorithmen verwendet werden, was f\u00fcr eine wirksame Verschl\u00fcsselung unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "ae4eba0c-12e7-4831-b92b-8b548675cc2f",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Kryptografie ist nur so sicher wie das Management der Schl\u00fcssel. Diese Anforderung ist direkt anwendbar und essenziell, sobald ein Sensor kryptografische Schl\u00fcssel verwendet (z.B. f\u00fcr WLAN, TLS, VPN)."
+              },
+              {
+                "uuid": "b9e3d3fb-5135-4226-8411-f63956948550",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen an der Konfiguration oder Firmware von Sensoren bergen Risiken. Ein etablierter Patch- und \u00c4nderungsmanagementprozess ist eine grundlegende Anforderung, um diese \u00c4nderungen kontrolliert und sicher durchzuf\u00fchren."
+              },
+              {
+                "uuid": "cb0ebb90-a233-45fe-849c-db112745b6d0",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Intelligente Sensoren verf\u00fcgen m\u00f6glicherweise \u00fcber eigene Detektionsfunktionen (z.B. f\u00fcr fehlgeschlagene Logins). Deren Aktivierung und Nutzung ist eine einfache und effiziente Ma\u00dfnahme, um sicherheitsrelevante Ereignisse direkt am Ger\u00e4t zu erkennen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

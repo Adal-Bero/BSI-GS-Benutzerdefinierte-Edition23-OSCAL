@@ -1,0 +1,403 @@
+{
+  "component-definition": {
+    "uuid": "29d8dca8-0010-48d5-9136-2c1ee3adb31c",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.6: Containerisierung",
+      "last-modified": "2025-06-26T10:45:26.601832+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.6."
+    },
+    "components": [
+      {
+        "uuid": "6dc17be2-70e7-4493-a6b4-e4e8818dc2b2",
+        "type": "service",
+        "title": "Containerisierung",
+        "description": "Implementation of controls for Baustein SYS.1.6.",
+        "control-implementations": [
+          {
+            "uuid": "f1631c88-3550-43a0-9d80-84663bcad864",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.6: Containerisierung",
+            "implemented-requirements": [
+              {
+                "uuid": "aa9569c8-1aca-4a14-83a4-b0fac652eb37",
+                "control-id": "SYS.1.6.A1",
+                "description": "Base implementation for control SYS.1.6.A1."
+              },
+              {
+                "uuid": "b4610981-a9ba-46a8-b7e0-2f6b33694c56",
+                "control-id": "SYS.1.6.A2",
+                "description": "Base implementation for control SYS.1.6.A2."
+              },
+              {
+                "uuid": "76c1f772-5b2b-48dc-8072-e242d0341554",
+                "control-id": "SYS.1.6.A3",
+                "description": "Base implementation for control SYS.1.6.A3."
+              },
+              {
+                "uuid": "4c40f19e-97b2-42d5-b48b-82b8a00d255b",
+                "control-id": "SYS.1.6.A4",
+                "description": "Base implementation for control SYS.1.6.A4."
+              },
+              {
+                "uuid": "85a6c1d9-537f-4ec6-a37d-167df23dd73c",
+                "control-id": "SYS.1.6.A5",
+                "description": "Base implementation for control SYS.1.6.A5."
+              },
+              {
+                "uuid": "92376ebc-9ce1-4d65-95a5-930f87d2ad46",
+                "control-id": "SYS.1.6.A6",
+                "description": "Base implementation for control SYS.1.6.A6."
+              },
+              {
+                "uuid": "66ada786-0ed5-459d-ac05-39565ad377d1",
+                "control-id": "SYS.1.6.A7",
+                "description": "Base implementation for control SYS.1.6.A7."
+              },
+              {
+                "uuid": "57d4b331-5338-4b8c-a9b2-f2856a887d37",
+                "control-id": "SYS.1.6.A8",
+                "description": "Base implementation for control SYS.1.6.A8."
+              },
+              {
+                "uuid": "04766d8d-796a-4d35-b5d8-810c6f4076b7",
+                "control-id": "SYS.1.6.A9",
+                "description": "Base implementation for control SYS.1.6.A9."
+              },
+              {
+                "uuid": "f46cb318-b0c9-4e1f-b16a-b94af09deccd",
+                "control-id": "SYS.1.6.A10",
+                "description": "Base implementation for control SYS.1.6.A10."
+              },
+              {
+                "uuid": "f2df7414-dab4-4251-a5ed-6b85309549e8",
+                "control-id": "SYS.1.6.A11",
+                "description": "Base implementation for control SYS.1.6.A11."
+              },
+              {
+                "uuid": "9ce1b447-eaeb-4b14-99fd-068117cf3591",
+                "control-id": "SYS.1.6.A12",
+                "description": "Base implementation for control SYS.1.6.A12."
+              },
+              {
+                "uuid": "afdeba38-66b4-408b-9472-d8d3eec2caaf",
+                "control-id": "SYS.1.6.A13",
+                "description": "Base implementation for control SYS.1.6.A13."
+              },
+              {
+                "uuid": "6336220c-aece-4caa-8c53-2bb77b13e271",
+                "control-id": "SYS.1.6.A14",
+                "description": "Base implementation for control SYS.1.6.A14."
+              },
+              {
+                "uuid": "ea44fb00-371f-43dd-b303-da832cd1d215",
+                "control-id": "SYS.1.6.A15",
+                "description": "Base implementation for control SYS.1.6.A15."
+              },
+              {
+                "uuid": "263a922a-4145-42e6-a9cf-66e8c3c9f8dc",
+                "control-id": "SYS.1.6.A16",
+                "description": "Base implementation for control SYS.1.6.A16."
+              },
+              {
+                "uuid": "ec35fc90-ed5e-4ccc-935a-dff5761eb74c",
+                "control-id": "SYS.1.6.A17",
+                "description": "Base implementation for control SYS.1.6.A17."
+              },
+              {
+                "uuid": "e29054ab-b337-4eee-bc20-c37a7edec440",
+                "control-id": "SYS.1.6.A18",
+                "description": "Base implementation for control SYS.1.6.A18."
+              },
+              {
+                "uuid": "88da7353-8ab0-4a0a-a485-934ba12f9fb9",
+                "control-id": "SYS.1.6.A19",
+                "description": "Base implementation for control SYS.1.6.A19."
+              },
+              {
+                "uuid": "0dc276b5-14ad-464f-ac0f-f02c9c3d0a97",
+                "control-id": "SYS.1.6.A20",
+                "description": "Base implementation for control SYS.1.6.A20."
+              },
+              {
+                "uuid": "7ac41e6c-a0f0-4007-910c-7b2726cb0f21",
+                "control-id": "SYS.1.6.A21",
+                "description": "Base implementation for control SYS.1.6.A21."
+              },
+              {
+                "uuid": "c85944f0-8265-49e7-a07f-48d974ba60d5",
+                "control-id": "SYS.1.6.A22",
+                "description": "Base implementation for control SYS.1.6.A22."
+              },
+              {
+                "uuid": "b99b08fa-ed5e-4349-8a70-0ebb16991cf9",
+                "control-id": "SYS.1.6.A23",
+                "description": "Base implementation for control SYS.1.6.A23."
+              },
+              {
+                "uuid": "aae88be3-5387-4769-8299-b0b8745f2519",
+                "control-id": "SYS.1.6.A24",
+                "description": "Base implementation for control SYS.1.6.A24."
+              },
+              {
+                "uuid": "399308be-3ea7-4d5c-a72b-4f8afb4dd34b",
+                "control-id": "SYS.1.6.A25",
+                "description": "Base implementation for control SYS.1.6.A25."
+              },
+              {
+                "uuid": "ad6e6f7a-ff0a-4ae4-8c23-5f4da8ac7048",
+                "control-id": "SYS.1.6.A26",
+                "description": "Base implementation for control SYS.1.6.A26."
+              }
+            ]
+          },
+          {
+            "uuid": "627679cd-9dde-43d5-ab6e-01c23ed53f58",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "f105b8aa-0cfd-4886-acf3-649a152c7605",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Der Host, auf dem Container laufen, ist ein Server und muss als solcher physisch und logisch gesch\u00fctzt werden, um die Basis der Container-Umgebung zu sichern."
+              },
+              {
+                "uuid": "2440536a-7bb1-4aec-920b-74bc8561d617",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf den Container-Host und die Container-Management-Dienste muss sicher authentisiert werden, um unbefugte Kontrolle zu verhindern."
+              },
+              {
+                "uuid": "2f880977-6d22-41ba-b6b3-4d81e965653a",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Die H\u00e4rtung der physischen und logischen Schnittstellen des Host-Systems reduziert die Angriffsfl\u00e4che und sch\u00fctzt vor lokalen Angriffen."
+              },
+              {
+                "uuid": "102f57ea-0313-4d96-843f-8e3a3f02f72f",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Ein minimales Host-System (wenig Software, nur ben\u00f6tigte Dienste) ist eine grundlegende Anforderung f\u00fcr die Container-Sicherheit, um die Angriffsfl\u00e4che zu minimieren."
+              },
+              {
+                "uuid": "7e4190e0-7851-47d5-9750-65f04d02331d",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Schadsoftware auf dem Host-System kann die gesamte Container-Umgebung kompromittieren. Daher ist die Pr\u00fcfung zum Einsatz von Virenschutz f\u00fcr den Host relevant."
+              },
+              {
+                "uuid": "0a7ef5c3-7fd4-4695-b959-23fba00af37a",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung von Ereignissen auf dem Host und durch die Container-Engine ist entscheidend, um Sicherheitsvorf\u00e4lle nachzuvollziehen und Angriffe zu erkennen."
+              },
+              {
+                "uuid": "b055fb42-8a43-4ca5-bf66-e09e64fa2a87",
+                "control-id": "SYS.1.1.A11",
+                "description": "AI-Begr\u00fcndung: Eine spezifische Sicherheitsrichtlinie f\u00fcr Container-Hosts ist notwendig, um die komplexen Sicherheitsanforderungen von Container-Umgebungen standardisiert umzusetzen."
+              },
+              {
+                "uuid": "4bf22fd1-11ef-440c-8961-4baede3e7924",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Planung des Host-Systems ist die Grundlage f\u00fcr eine sichere und stabile Container-Plattform, da hier wesentliche Sicherheitsaspekte wie Zugriffe und Schnittstellen festgelegt werden."
+              },
+              {
+                "uuid": "ef72d9e7-eb2c-4d92-a33a-753f4a8e56af",
+                "control-id": "SYS.1.1.A13",
+                "description": "AI-Begr\u00fcndung: Die sichere Beschaffung stellt sicher, dass die Hardware-Plattform f\u00fcr den Container-Betrieb die notwendigen Sicherheitsfunktionen unterst\u00fctzt."
+              },
+              {
+                "uuid": "0dc44ecc-5019-4240-8782-e8b603858370",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine sichere Grundkonfiguration und die Trennung von Funktionen auf dem Host sind entscheidend, um die Integrit\u00e4t und Sicherheit der dar\u00fcber laufenden Container zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "54d49c72-7ff2-4b16-a745-516af2ac80bb",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Ein lokaler Paketfilter auf dem Host ist eine essentielle Schutzma\u00dfnahme, um die Kommunikation des Hosts sowie die der Container zu kontrollieren und einzuschr\u00e4nken."
+              },
+              {
+                "uuid": "8346ac20-0a93-4785-8f7f-6335e503cae9",
+                "control-id": "SYS.1.1.A21",
+                "description": "AI-Begr\u00fcndung: Angesichts der Komplexit\u00e4t von Container-Umgebungen ist eine nachvollziehbare Dokumentation von Konfigurations\u00e4nderungen f\u00fcr einen stabilen und sicheren Betrieb unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b0c9a20f-ea47-4c72-96a3-3185110ccedf",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Container-Hosts sind oft kritische Systeme. Ihre Einbindung in die Notfallplanung ist notwendig, um die Verf\u00fcgbarkeit der darauf betriebenen Dienste sicherzustellen."
+              },
+              {
+                "uuid": "c41cf842-ea97-4d7e-a4c5-ccbdfc8be147",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung des Host-Systems ist wichtig, um Ressourcen-Engp\u00e4sse (relevant f\u00fcr cgroups) und sicherheitsrelevante Anomalien fr\u00fchzeitig zu erkennen."
+              },
+              {
+                "uuid": "9f99d363-aee6-46d4-bad8-e09fe7a133fb",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitspr\u00fcfungen des Hosts und der Container-Konfiguration sind notwendig, um Schwachstellen und Fehlkonfigurationen zu identifizieren."
+              },
+              {
+                "uuid": "ec086a1d-4067-4d57-a577-d28a9991c0a2",
+                "control-id": "SYS.1.1.A25",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Prozess zur Au\u00dferbetriebnahme stellt sicher, dass bei der Stilllegung eines Container-Hosts keine sch\u00fctzenswerten Daten (z. B. aus Images oder Volumes) zur\u00fcckbleiben."
+              },
+              {
+                "uuid": "d91a41a3-7819-48b4-a4a1-86e8c82dac27",
+                "control-id": "SYS.1.1.A35",
+                "description": "AI-Begr\u00fcndung: Ein Betriebshandbuch ist aufgrund der Komplexit\u00e4t des Container-Betriebs erforderlich, um administrative Aufgaben standardisiert und sicher durchzuf\u00fchren."
+              },
+              {
+                "uuid": "0b3769f6-cdfb-4b4a-9243-0e71c6056fe9",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Konfigurationen ist bei mehreren Container-Hosts entscheidend, um eine konsistente und richtlinienkonforme Absicherung zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "49e69f32-035c-49bd-b36c-9dbaa12db9e2",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Ein hostbasiertes IDS/IPS auf dem Container-Host kann Angriffe erkennen, die auf den Kernel oder die Container-Laufzeitumgebung abzielen und somit die Container-Isolation durchbrechen k\u00f6nnten."
+              },
+              {
+                "uuid": "5853cc9d-e20f-40b1-8324-dabacb53ef9d",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Das Prinzip 'Ein Dienst pro Server' sollte auf den Container-Host angewendet werden (d.h. er ist nur Host), um die Angriffsfl\u00e4che massiv zu reduzieren."
+              },
+              {
+                "uuid": "ba9ee2d3-c843-42b1-b9b2-c0be9d7c93cd",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Die Kontrolle der Programmausf\u00fchrung auf dem Host-System ist eine zus\u00e4tzliche H\u00e4rtungsma\u00dfnahme, die die Ausf\u00fchrung von Schadcode erschwert."
+              },
+              {
+                "uuid": "d42f3f67-cbec-47a0-bef0-6b0e6f0a515c",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Wurzelzertifikaten ist f\u00fcr den Host relevant, um eine sichere Kommunikation mit externen Diensten, insbesondere Container-Registries, zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "13b93d03-a703-4611-95e4-f5cdf1760739",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Werden auf dem Host sch\u00fctzenswerte Daten in Images oder persistenten Volumes gespeichert, ist Festplattenverschl\u00fcsselung eine wichtige Ma\u00dfnahme zum Schutz vor Datendiebstahl."
+              },
+              {
+                "uuid": "937dc998-4913-476a-95c3-6d812b2faee5",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs des Hosts ist fundamental, da eine Kompromittierung auf dieser Ebene die Sicherheit aller darauf laufenden Container untergr\u00e4bt."
+              },
+              {
+                "uuid": "8086e97c-3ae1-477c-8b0f-eae215bdd59f",
+                "control-id": "SYS.1.3.A2",
+                "description": "AI-Begr\u00fcndung: Die korrekte Verwaltung von UIDs und GIDs ist bei Containern von h\u00f6chster Bedeutung, um Rechteausweitungen aus einem Container auf den Host zu verhindern, insbesondere im Zusammenhang mit User-Namespaces."
+              },
+              {
+                "uuid": "d1782395-ad53-4d6c-a4d8-4957a28eeacb",
+                "control-id": "SYS.1.3.A3",
+                "description": "AI-Begr\u00fcndung: Dies ist eine grundlegende H\u00e4rtungsma\u00dfnahme f\u00fcr das Host-Betriebssystem, die das Risiko durch kompromittierte Wechseldatentr\u00e4ger reduziert."
+              },
+              {
+                "uuid": "92931f94-f372-4738-9f45-7786f30c2a3f",
+                "control-id": "SYS.1.3.A4",
+                "description": "AI-Begr\u00fcndung: Schutzmechanismen wie ASLR und DEP/NX h\u00e4rten den Kernel und die Prozesse des Host-Systems, was die Ausnutzung von Schwachstellen sowohl im Host als auch in den Containern erschwert."
+              },
+              {
+                "uuid": "dbdcbd29-0910-4fe4-88d4-66fe8142cbff",
+                "control-id": "SYS.1.3.A6",
+                "description": "AI-Begr\u00fcndung: Eine sichere und fehlerfreie Verwaltung von Benutzern auf dem Host ist wichtig, um die korrekte Zuordnung von Rechten, auch im Kontext von Containern, sicherzustellen."
+              },
+              {
+                "uuid": "92e8592b-2f6b-4248-a928-7ed2e3140394",
+                "control-id": "SYS.1.3.A8",
+                "description": "AI-Begr\u00fcndung: SSH ist der Standard f\u00fcr den sicheren administrativen Zugriff auf den Linux/Unix-basierten Container-Host und muss sicher konfiguriert werden."
+              },
+              {
+                "uuid": "7f8c32bb-9033-4164-9c63-0b6f1a177ae2",
+                "control-id": "SYS.1.3.A10",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von MAC-Systemen wie AppArmor oder SELinux ist eine der wichtigsten Ma\u00dfnahmen zur H\u00e4rtung der Container-Isolation und zur Verhinderung von Ausbr\u00fcchen (Container Escapes)."
+              },
+              {
+                "uuid": "078908c4-4be3-4de5-8818-c6542cda9a4d",
+                "control-id": "SYS.1.3.A14",
+                "description": "AI-Begr\u00fcndung: Die Beschr\u00e4nkung von Systeminformationen f\u00fcr normale Benutzer und Prozesse (auch innerhalb von Containern) erschwert Angreifern die Informationsgewinnung f\u00fcr weitere Angriffsschritte."
+              },
+              {
+                "uuid": "f4ef0972-192d-4741-9dc2-0abca43af78c",
+                "control-id": "SYS.1.3.A16",
+                "description": "AI-Begr\u00fcndung: Die Einschr\u00e4nkung von Systemaufrufen (Syscalls) z.B. mittels seccomp-Profilen ist ein zentraler Sicherheitsmechanismus f\u00fcr Container, um die Angriffsfl\u00e4che auf den Kernel zu minimieren."
+              },
+              {
+                "uuid": "140b7955-3f15-460f-9cd8-662d1baa05e9",
+                "control-id": "SYS.1.3.A17",
+                "description": "AI-Begr\u00fcndung: Da sich alle Container einen Kernel teilen, ist der Schutz des Kernels selbst von \u00fcberragender Bedeutung f\u00fcr die Sicherheit der gesamten Container-Umgebung."
+              }
+            ]
+          },
+          {
+            "uuid": "45755b86-eed1-4677-86fb-cf3565c0863d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "a5e188fd-4068-4b48-924a-82a2b89dbb79",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung, z. B. zwischen der Erstellung von Container-Images und deren Betrieb, ist ein wichtiges organisatorisches Prinzip zur Risikominderung."
+              },
+              {
+                "uuid": "63b4cc80-8c2f-46c9-b2d6-6d3f25496407",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Da der Betrieb von Containern komplex ist, ist qualifiziertes und geschultes Personal eine Grundvoraussetzung f\u00fcr die sichere Konfiguration und Verwaltung."
+              },
+              {
+                "uuid": "3c9c0c32-4d47-42f3-b609-908ab6abeecc",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Das Prinzip der geringsten Berechtigung muss konsequent angewendet werden: f\u00fcr Administratoren des Hosts, f\u00fcr Benutzer der Container-Engine und f\u00fcr die in den Containern laufenden Prozesse."
+              },
+              {
+                "uuid": "ac055a19-6eb3-40db-99d9-5608873a2bec",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der Zugriff auf alle Komponenten der Container-Plattform, insbesondere auf administrative Schnittstellen wie die Docker-API, muss durch eine sichere Authentisierung gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "4ef567d6-7b07-45ec-8e01-5a299d8f3d68",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: F\u00fcr den Schutzbedarf von administrativen Zugriffen auf die Container-Plattform m\u00fcssen angemessene, starke Authentisierungsmechanismen ausgew\u00e4hlt werden."
+              },
+              {
+                "uuid": "2cdba3b5-212b-420f-beeb-e00ffd777fa0",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Kryptografie wird an vielen Stellen in Container-Umgebungen eingesetzt (z. B. TLS f\u00fcr Registries, SSH). Der Einsatz sicherer Verfahren ist daher obligatorisch."
+              },
+              {
+                "uuid": "b9e2acda-4aa4-4039-b3f7-280ba162fc5f",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Schl\u00fcssel und Zertifikate f\u00fcr die Absicherung der Kommunikation (TLS, SSH) m\u00fcssen sicher verwaltet werden, um die Vertraulichkeit und Integrit\u00e4t zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "48613027-fff7-47c1-895a-865bcc2aa0b7",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Wichtige Daten, wie die Konfiguration des Hosts und der Container-Engine sowie persistente Daten von Containern, m\u00fcssen regelm\u00e4\u00dfig gesichert werden."
+              },
+              {
+                "uuid": "7bd975a2-541a-4bce-8822-5c31e2237fd2",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Administrative T\u00e4tigkeiten an der Container-Plattform m\u00fcssen l\u00fcckenlos nachvollziehbar sein, um unautorisierte \u00c4nderungen oder Fehler schnell identifizieren zu k\u00f6nnen."
+              },
+              {
+                "uuid": "4a5bbf99-fdee-474b-8e31-2d77c0b444ee",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Administrative Schnittstellen (z.B. Docker-Socket, Kubernetes API) sind extrem m\u00e4chtig und m\u00fcssen besonders gegen unbefugten Zugriff gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "edbba291-9590-4025-8262-a1a705b4aaa0",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein systematisches Patch-Management ist f\u00fcr die gesamte Container-Plattform (Host-OS, Container-Engine, Images) essentiell, um Sicherheitsl\u00fccken zeitnah zu schlie\u00dfen."
+              },
+              {
+                "uuid": "6724d17f-ae14-440f-b566-807efdd63d83",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die systemeigenen Protokollierungs- und Detektionsfunktionen des Hosts und der Container-Engine m\u00fcssen genutzt werden, um sicherheitsrelevante Vorf\u00e4lle zu erkennen."
+              },
+              {
+                "uuid": "8b6f9f60-9a8b-4878-9836-671eee2de127",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Zus\u00e4tzliche Detektionssysteme, z. B. zur \u00dcberwachung des Netzwerkverkehrs zwischen Containern oder zur Laufzeitanalyse des Verhaltens in Containern, erh\u00f6hen die Sicherheit signifikant."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "component-definition": {
+    "uuid": "40591eac-f268-476a-a34f-fa32d5d44798",
+    "metadata": {
+      "title": "Component for Baustein SYS.4.5: Wechseldatentr\u00e4ger",
+      "last-modified": "2025-06-26T11:15:45.179529+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.4.5."
+    },
+    "components": [
+      {
+        "uuid": "d3281c7c-b68f-4e53-8a68-98d30a395326",
+        "type": "service",
+        "title": "Wechseldatentr\u00e4ger",
+        "description": "Implementation of controls for Baustein SYS.4.5.",
+        "control-implementations": [
+          {
+            "uuid": "e09e7778-cf2a-4d3f-8739-9a0cfd803392",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.4.5: Wechseldatentr\u00e4ger",
+            "implemented-requirements": [
+              {
+                "uuid": "01a9d306-a38c-4642-97b1-23b8fa9843b2",
+                "control-id": "SYS.4.5.A1",
+                "description": "Base implementation for control SYS.4.5.A1."
+              },
+              {
+                "uuid": "52654178-673f-4ec2-bee3-9c73541e46ca",
+                "control-id": "SYS.4.5.A2",
+                "description": "Base implementation for control SYS.4.5.A2."
+              },
+              {
+                "uuid": "adee2d86-8f32-486a-8007-a67a1434bfcf",
+                "control-id": "SYS.4.5.A10",
+                "description": "Base implementation for control SYS.4.5.A10."
+              },
+              {
+                "uuid": "3a823eaa-88fb-4fad-a12e-c109f70f860f",
+                "control-id": "SYS.4.5.A12",
+                "description": "Base implementation for control SYS.4.5.A12."
+              },
+              {
+                "uuid": "6b7a4261-edfa-4229-bb93-da330809955a",
+                "control-id": "SYS.4.5.A4",
+                "description": "Base implementation for control SYS.4.5.A4."
+              },
+              {
+                "uuid": "1d5c236b-fa39-45fb-b244-01913a097043",
+                "control-id": "SYS.4.5.A5",
+                "description": "Base implementation for control SYS.4.5.A5."
+              },
+              {
+                "uuid": "9a65bb7f-1994-4697-8efc-e692f44aa382",
+                "control-id": "SYS.4.5.A6",
+                "description": "Base implementation for control SYS.4.5.A6."
+              },
+              {
+                "uuid": "06cb6f63-7afc-44f8-a3f5-968ac2d7a826",
+                "control-id": "SYS.4.5.A7",
+                "description": "Base implementation for control SYS.4.5.A7."
+              },
+              {
+                "uuid": "b1d13256-1a01-44af-8b43-ecdaa825edaf",
+                "control-id": "SYS.4.5.A13",
+                "description": "Base implementation for control SYS.4.5.A13."
+              },
+              {
+                "uuid": "513c10a5-539b-4721-8dc4-0575b5681101",
+                "control-id": "SYS.4.5.A17",
+                "description": "Base implementation for control SYS.4.5.A17."
+              },
+              {
+                "uuid": "c6fff2c8-a436-4434-952c-4c68c6c5e8a7",
+                "control-id": "SYS.4.5.A11",
+                "description": "Base implementation for control SYS.4.5.A11."
+              },
+              {
+                "uuid": "f4e1095f-d7d2-49ae-8493-d17b43acc654",
+                "control-id": "SYS.4.5.A14",
+                "description": "Base implementation for control SYS.4.5.A14."
+              },
+              {
+                "uuid": "5a9ec241-892a-4a1f-a304-52ee4a41e704",
+                "control-id": "SYS.4.5.A15",
+                "description": "Base implementation for control SYS.4.5.A15."
+              },
+              {
+                "uuid": "e75f7b56-74a1-4f58-88bd-300a1ab5f2af",
+                "control-id": "SYS.4.5.A16",
+                "description": "Base implementation for control SYS.4.5.A16."
+              }
+            ]
+          },
+          {
+            "uuid": "209024c5-89a2-4ce0-b108-05b07ee1fb1a",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "36840e43-e77f-42cb-8d33-9fd0ed34d57c",
+                "control-id": "CON.9.A1",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist essenziell, da Wechseldatentr\u00e4ger ein prim\u00e4rer Weg f\u00fcr den Informationsaustausch sind. Sie stellt sicher, dass Daten nur an autorisierte Empf\u00e4nger weitergegeben werden."
+              },
+              {
+                "uuid": "d76b1f69-6d93-42c6-8c28-427e8a31c164",
+                "control-id": "CON.9.A2",
+                "description": "AI-Begr\u00fcndung: Regelt den Schutz der auf dem Wechseldatentr\u00e4ger gespeicherten Informationen entsprechend ihrer Schutzbed\u00fcrftigkeit, was ein Kernziel des Bausteins ist."
+              },
+              {
+                "uuid": "ea3e1171-dbf0-4d87-971c-89886cf300ae",
+                "control-id": "CON.9.A3",
+                "description": "AI-Begr\u00fcndung: Adressiert den Faktor Mensch, indem sie sicherstellt, dass Mitarbeitende die Regeln f\u00fcr den sicheren Umgang und Austausch von Daten per Wechseldatentr\u00e4ger kennen und anwenden."
+              },
+              {
+                "uuid": "17994125-496f-44e4-a10f-1b9a1423599a",
+                "control-id": "CON.9.A4",
+                "description": "AI-Begr\u00fcndung: Relevant f\u00fcr den h\u00e4ufigen Fall, dass Wechseldatentr\u00e4ger f\u00fcr den Datenaustausch mit externen Partnern genutzt werden. Schafft eine formale Grundlage f\u00fcr die Sicherheit."
+              },
+              {
+                "uuid": "0cb93c4b-8f48-4d98-b121-e441c9a8fa83",
+                "control-id": "CON.9.A5",
+                "description": "AI-Begr\u00fcndung: Verhindert die unbeabsichtigte Weitergabe von sensiblen Restinformationen oder Metadaten, die sich in den auf den Wechseldatentr\u00e4ger kopierten Dateien befinden."
+              },
+              {
+                "uuid": "c7cb5aed-f953-484f-abc1-ad530b10b6f9",
+                "control-id": "CON.9.A6",
+                "description": "AI-Begr\u00fcndung: Stellt die praktische Nutzbarkeit des Austauschs sicher, z. B. durch kompatible Dateisysteme oder Verschl\u00fcsselungsverfahren, und vermeidet unsichere Ad-hoc-L\u00f6sungen."
+              },
+              {
+                "uuid": "69c378da-04d4-4139-a9e4-aac96bf2d6fc",
+                "control-id": "CON.9.A7",
+                "description": "AI-Begr\u00fcndung: Adressiert die Gefahr des Datenverlusts durch Verlust oder Besch\u00e4digung des Wechseldatentr\u00e4gers w\u00e4hrend des Transports und sichert die Verf\u00fcgbarkeit der Information."
+              },
+              {
+                "uuid": "2a9fbcfb-37d1-49c4-b28c-6da1f2635db5",
+                "control-id": "CON.9.A8",
+                "description": "AI-Begr\u00fcndung: Die Verschl\u00fcsselung ist die wichtigste technische Schutzma\u00dfnahme f\u00fcr Daten auf Wechseldatentr\u00e4gern bei Verlust oder Diebstahl. Diese Anforderung ist daher von zentraler Bedeutung."
+              },
+              {
+                "uuid": "e8810687-4de1-4410-8a95-d15c186a8859",
+                "control-id": "CON.9.A9",
+                "description": "AI-Begr\u00fcndung: Bietet einen rechtlichen Rahmen f\u00fcr den Schutz hochvertraulicher Daten, die per Wechseldatentr\u00e4ger ausgetauscht werden, was bei der Weitergabe an Dritte unerl\u00e4sslich ist."
+              }
+            ]
+          },
+          {
+            "uuid": "da995844-c31d-484a-9b1b-01f4b8a3e264",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "32b7915b-b069-4059-bbd2-37d176f08253",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass bei der Verschl\u00fcsselung von Wechseldatentr\u00e4gern (wie in CON.9.A8 gefordert) auch tats\u00e4chlich sichere und wirksame kryptografische Verfahren eingesetzt werden."
+              },
+              {
+                "uuid": "2e406985-43c5-44d9-a392-eae079967d1b",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein geeignetes Schl\u00fcsselmanagement ist untrennbar mit der Kryptografie verbunden. Es stellt sicher, dass die Schl\u00fcssel f\u00fcr verschl\u00fcsselte Wechseldatentr\u00e4ger sicher gehandhabt werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

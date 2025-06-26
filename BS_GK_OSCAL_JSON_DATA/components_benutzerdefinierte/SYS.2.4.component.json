@@ -1,0 +1,213 @@
+{
+  "component-definition": {
+    "uuid": "7bf64446-4055-4c0b-bbc9-bc3ac9fd3dd4",
+    "metadata": {
+      "title": "Component for Baustein SYS.2.4: Clients unter macOS",
+      "last-modified": "2025-06-26T10:56:05.289491+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.2.4."
+    },
+    "components": [
+      {
+        "uuid": "72812f79-254e-4370-9de2-71822b691e12",
+        "type": "service",
+        "title": "Clients unter macOS",
+        "description": "Implementation of controls for Baustein SYS.2.4.",
+        "control-implementations": [
+          {
+            "uuid": "232d3896-ea70-4be3-9e3e-73289181e66f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.2.4: Clients unter macOS",
+            "implemented-requirements": [
+              {
+                "uuid": "176e6367-90dc-41f4-ab98-daf24008189d",
+                "control-id": "SYS.2.4.A1",
+                "description": "Base implementation for control SYS.2.4.A1."
+              },
+              {
+                "uuid": "dfcc99bc-d877-45b4-8102-42c899517fe3",
+                "control-id": "SYS.2.4.A2",
+                "description": "Base implementation for control SYS.2.4.A2."
+              },
+              {
+                "uuid": "cee00d29-b868-43f8-9e68-3ac91a848b08",
+                "control-id": "SYS.2.4.A3",
+                "description": "Base implementation for control SYS.2.4.A3."
+              },
+              {
+                "uuid": "4ee34a9a-4560-4d29-a30b-d0bb13ca7574",
+                "control-id": "SYS.2.4.A4",
+                "description": "Base implementation for control SYS.2.4.A4."
+              },
+              {
+                "uuid": "da5058f1-d447-4dd1-abc6-439cb7d8f060",
+                "control-id": "SYS.2.4.A5",
+                "description": "Base implementation for control SYS.2.4.A5."
+              },
+              {
+                "uuid": "bd06f44e-6c5a-43d0-84f0-d82d6710ef81",
+                "control-id": "SYS.2.4.A6",
+                "description": "Base implementation for control SYS.2.4.A6."
+              },
+              {
+                "uuid": "613e01b0-c178-431c-afd5-e7237b35cd00",
+                "control-id": "SYS.2.4.A7",
+                "description": "Base implementation for control SYS.2.4.A7."
+              },
+              {
+                "uuid": "4a783ad9-e8ae-45b9-a967-2a8614935732",
+                "control-id": "SYS.2.4.A8",
+                "description": "Base implementation for control SYS.2.4.A8."
+              },
+              {
+                "uuid": "5b008534-7067-4560-a3c1-7b4b21e57598",
+                "control-id": "SYS.2.4.A9",
+                "description": "Base implementation for control SYS.2.4.A9."
+              },
+              {
+                "uuid": "24cba62f-0458-4b35-879f-fdefe070900f",
+                "control-id": "SYS.2.4.A10",
+                "description": "Base implementation for control SYS.2.4.A10."
+              },
+              {
+                "uuid": "20073317-deb1-4875-99fa-72073afc6124",
+                "control-id": "SYS.2.4.A11",
+                "description": "Base implementation for control SYS.2.4.A11."
+              },
+              {
+                "uuid": "41151083-0eff-4c7a-9c11-08fb1e11ee1c",
+                "control-id": "SYS.2.4.A12",
+                "description": "Base implementation for control SYS.2.4.A12."
+              }
+            ]
+          },
+          {
+            "uuid": "c1415433-6973-4bac-a680-2aea1ab36b4a",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "411de070-200a-428d-a404-279c66f896ed",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Authentisierung von Benutzern und die Verwendung einer Bildschirmsperre sind grundlegende Sicherheitsma\u00dfnahmen f\u00fcr jeden Client, einschlie\u00dflich macOS, um unbefugten physischen Zugriff zu verhindern."
+              },
+              {
+                "uuid": "62a547fe-5c4c-460e-9be9-21efdf2bcefc",
+                "control-id": "SYS.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Die Aktualit\u00e4t des Betriebssystems und der installierten Software ist zur Abwehr von Schwachstellen essenziell. macOS bietet hierf\u00fcr native Mechanismen, deren Nutzung diese Anforderung sicherstellt."
+              },
+              {
+                "uuid": "0cc76280-35b1-4a71-9317-c5859c7b1cd5",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Auch macOS ist Ziel von Schadsoftware. Der Einsatz von Schutzprogrammen, sei es systemeigen (z.B. XProtect) oder von Drittanbietern, ist eine notwendige Schutzschicht."
+              },
+              {
+                "uuid": "56fee4c9-5028-4726-9cc4-f9a488a3672a",
+                "control-id": "SYS.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs durch systemeigene Funktionen (z.B. Secure Boot auf T2/M-Chips, Firmware-Passwort) ist entscheidend, um Manipulationen am Systemstart zu unterbinden."
+              },
+              {
+                "uuid": "da22632e-457d-4fa3-ba85-ce83cedfe8aa",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: macOS ist tief mit Cloud-Diensten (iCloud) integriert. Eine bewusste und restriktive Konfiguration dieser Funktionen ist zum Schutz von Daten und der Privatsph\u00e4re unerl\u00e4sslich."
+              },
+              {
+                "uuid": "1c605799-dd8b-4cc1-b158-911ec99471a6",
+                "control-id": "SYS.2.1.A9",
+                "description": "AI-Begr\u00fcndung: Eine spezifische Sicherheitsrichtlinie schafft eine verbindliche und nachvollziehbare Grundlage f\u00fcr die sichere Konfiguration und den Betrieb von macOS-Clients in der Institution."
+              },
+              {
+                "uuid": "f738420d-b555-4edb-b636-1fff188ed83d",
+                "control-id": "SYS.2.1.A10",
+                "description": "AI-Begr\u00fcndung: Eine sorgf\u00e4ltige Planung des Einsatzes von macOS-Clients stellt sicher, dass Sicherheitsanforderungen von Anfang an ber\u00fccksichtigt und betriebliche Aspekte integriert werden."
+              },
+              {
+                "uuid": "92199295-e8ef-4ad9-8648-4d5e092627d7",
+                "control-id": "SYS.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Obwohl die Hardwarewahl bei macOS eingeschr\u00e4nkt ist, stellt diese Anforderung sicher, dass Aspekte wie der Support-Lebenszyklus und die Patch-Versorgung durch den Hersteller bei der Beschaffung bewertet werden."
+              },
+              {
+                "uuid": "c2c044ca-5e68-45e1-a726-77dadf691152",
+                "control-id": "SYS.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Moderne Macs verf\u00fcgen \u00fcber gesch\u00fctzte Hardwarebereiche (z.B. Secure Enclave). Die Absicherung des Zugriffs auf diese Bereiche ist eine relevante, fortgeschrittene Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "b773908d-2cc2-42c5-bd34-89d65021a2f6",
+                "control-id": "SYS.2.1.A15",
+                "description": "AI-Begr\u00fcndung: Ein definierter Prozess f\u00fcr die Installation und Konfiguration stellt eine einheitliche und sichere Grundkonfiguration (Baseline) f\u00fcr alle macOS-Clients sicher."
+              },
+              {
+                "uuid": "8b19d0c5-dd0c-403f-ad9a-c6cbde52f752",
+                "control-id": "SYS.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Das Deaktivieren oder Deinstallieren nicht ben\u00f6tigter Dienste, Software und Kennungen ist ein fundamentaler Schritt zur Systemh\u00e4rtung und Reduzierung der Angriffsfl\u00e4che eines macOS-Clients."
+              },
+              {
+                "uuid": "17574be1-3f81-43f4-9498-dc0b413f95fa",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Die Verschl\u00fcsselung der Festplatte mittels nativer Funktionen wie FileVault ist ein entscheidender Schutz f\u00fcr vertrauliche Daten bei Diebstahl oder Verlust des Ger\u00e4ts."
+              }
+            ]
+          },
+          {
+            "uuid": "5de64e19-c3e3-4cde-bb70-43e4b0bcdcfe",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "8febe1e6-7f60-42c3-9d39-9aaf12defe2c",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Berechtigungen nach dem 'Least-Privilege'-Prinzip (z.B. Unterscheidung zwischen Admin- und Standardbenutzern) ist ein zentraler Aspekt der Betriebssystemsicherheit auf macOS."
+              },
+              {
+                "uuid": "47df5780-d9d4-40a4-923f-64fe0bc022e7",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt die grundlegende Notwendigkeit der Identifikation und Authentisierung am System fest und ist die Basis f\u00fcr jegliche Zugriffskontrolle auf dem macOS-Client."
+              },
+              {
+                "uuid": "af0a8f8b-9c3c-4144-9b83-f9bbc43eb5f4",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung erg\u00e4nzt die reine Authentisierung um qualitative Aspekte wie die St\u00e4rke der Mechanismen (z.B. komplexe Passw\u00f6rter, Touch ID) und Schutzma\u00dfnahmen gegen Brute-Force-Angriffe."
+              },
+              {
+                "uuid": "9123d771-6e0d-4489-aa4e-67829ac23cce",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass f\u00fcr systemeigene (z.B. FileVault) oder zus\u00e4tzlich konfigurierte kryptografische Anwendungen (z.B. VPN) nur sichere und aktuelle Algorithmen und Schl\u00fcssell\u00e4ngen verwendet werden."
+              },
+              {
+                "uuid": "1e1eed9e-4efe-4dd2-9445-ba9dc887de46",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein ad\u00e4quates Schl\u00fcsselmanagement ist f\u00fcr den sicheren Betrieb von Verschl\u00fcsselung (z.B. FileVault Recovery Keys) und den Umgang mit Zertifikaten auf einem macOS-Client unerl\u00e4sslich."
+              },
+              {
+                "uuid": "c5a4c27a-e76e-4fd0-84c7-ce40d3889795",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung, z.B. \u00fcber die macOS-Funktion Time Machine, ist eine grundlegende Ma\u00dfnahme zur Sicherstellung der Verf\u00fcgbarkeit von Informationen auf dem Client."
+              },
+              {
+                "uuid": "505683c4-3dce-4b8d-bc68-ae038f847f55",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung administrativer T\u00e4tigkeiten ist f\u00fcr die Nachvollziehbarkeit von \u00c4nderungen, die Fehlersuche und die forensische Analyse auf einem macOS-Client essenziell."
+              },
+              {
+                "uuid": "03b46bf5-43cf-4681-90cf-6806de004144",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die privilegierten administrativen Zug\u00e4nge und Schnittstellen auf einem macOS-Client (z.B. sudo, SSH, Remote-Desktop) vor unbefugtem Zugriff und Manipulation."
+              },
+              {
+                "uuid": "71715393-6c04-4281-84e7-159ec44e5dee",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Formalisiert die Notwendigkeit eines geplanten und dokumentierten Vorgehens f\u00fcr die Einspielung von Updates und die Durchf\u00fchrung von Konfigurations\u00e4nderungen, was \u00fcber eine reine Autoupdate-Funktion hinausgeht."
+              },
+              {
+                "uuid": "9ce45832-19ba-4f8e-b8be-b1f0930572ae",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Fordert die Aktivierung und Nutzung der in macOS integrierten Detektions- und Schutzfunktionen (z.B. XProtect, Gatekeeper, Logging), um Sicherheitsvorf\u00e4lle erkennen zu k\u00f6nnen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

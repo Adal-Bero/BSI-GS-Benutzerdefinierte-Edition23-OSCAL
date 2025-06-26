@@ -1,0 +1,213 @@
+{
+  "component-definition": {
+    "uuid": "03148d12-2a86-4c8c-b225-2daeb62eed35",
+    "metadata": {
+      "title": "Component for Baustein SYS.2.3: Clients unter Linux und Unix",
+      "last-modified": "2025-06-26T10:54:35.726842+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.2.3."
+    },
+    "components": [
+      {
+        "uuid": "27542d0f-fc8a-4223-9a76-62d52eb40db2",
+        "type": "service",
+        "title": "Clients unter Linux und Unix",
+        "description": "Implementation of controls for Baustein SYS.2.3.",
+        "control-implementations": [
+          {
+            "uuid": "0bcc2954-9aca-4545-9a9c-032160b3c93e",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.2.3: Clients unter Linux und Unix",
+            "implemented-requirements": [
+              {
+                "uuid": "d41e6414-6014-4ef6-a46b-05cbaef87399",
+                "control-id": "SYS.2.3.A1",
+                "description": "Base implementation for control SYS.2.3.A1."
+              },
+              {
+                "uuid": "62591871-f1a8-4011-95e3-f3ff8128fef1",
+                "control-id": "SYS.2.3.A2",
+                "description": "Base implementation for control SYS.2.3.A2."
+              },
+              {
+                "uuid": "0e6026e1-507f-42fa-b877-6526107cdf0a",
+                "control-id": "SYS.2.3.A4",
+                "description": "Base implementation for control SYS.2.3.A4."
+              },
+              {
+                "uuid": "15897159-3c45-44ce-b8ad-6f18a39a151f",
+                "control-id": "SYS.2.3.A5",
+                "description": "Base implementation for control SYS.2.3.A5."
+              },
+              {
+                "uuid": "cad80f57-cfbd-44a3-a45f-7b5a939a370a",
+                "control-id": "SYS.2.3.A6",
+                "description": "Base implementation for control SYS.2.3.A6."
+              },
+              {
+                "uuid": "b78825d0-f2c5-45a9-98a0-c951920562d0",
+                "control-id": "SYS.2.3.A7",
+                "description": "Base implementation for control SYS.2.3.A7."
+              },
+              {
+                "uuid": "fdbe7435-3539-4b83-846a-df071a3d6ea1",
+                "control-id": "SYS.2.3.A8",
+                "description": "Base implementation for control SYS.2.3.A8."
+              },
+              {
+                "uuid": "2ade31b2-3d83-42d4-af1f-cc32a039e042",
+                "control-id": "SYS.2.3.A9",
+                "description": "Base implementation for control SYS.2.3.A9."
+              },
+              {
+                "uuid": "08bad2b4-6854-433d-ad76-827b785a1b27",
+                "control-id": "SYS.2.3.A11",
+                "description": "Base implementation for control SYS.2.3.A11."
+              },
+              {
+                "uuid": "58a54ba3-9a70-4b5e-bc66-53cc108b3fc4",
+                "control-id": "SYS.2.3.A12",
+                "description": "Base implementation for control SYS.2.3.A12."
+              },
+              {
+                "uuid": "056559bf-56ad-4126-8d9d-203b97b6754e",
+                "control-id": "SYS.2.3.A14",
+                "description": "Base implementation for control SYS.2.3.A14."
+              },
+              {
+                "uuid": "494cdfdb-84c9-436e-9dc7-51d0693e7747",
+                "control-id": "SYS.2.3.A15",
+                "description": "Base implementation for control SYS.2.3.A15."
+              },
+              {
+                "uuid": "4697cd68-3930-42cc-ae71-3e0872f2424b",
+                "control-id": "SYS.2.3.A17",
+                "description": "Base implementation for control SYS.2.3.A17."
+              },
+              {
+                "uuid": "05bc3488-0138-4cd4-8153-2511e00638d5",
+                "control-id": "SYS.2.3.A18",
+                "description": "Base implementation for control SYS.2.3.A18."
+              },
+              {
+                "uuid": "7687cc75-bb7e-48f8-805d-776764a5e6aa",
+                "control-id": "SYS.2.3.A19",
+                "description": "Base implementation for control SYS.2.3.A19."
+              },
+              {
+                "uuid": "b4ee719b-7352-4af2-b6fe-5ddbe38bf971",
+                "control-id": "SYS.2.3.A20",
+                "description": "Base implementation for control SYS.2.3.A20."
+              }
+            ]
+          },
+          {
+            "uuid": "e5448442-f14b-4fc2-92a6-43ad78edf7ab",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "0beea823-ee44-44d0-b480-d90c92250be4",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Grundlegende Sicherheitsfunktion, die auf jedem Client, einschlie\u00dflich Linux/Unix, unerl\u00e4sslich ist. Die Umsetzung mit PAM und Bildschirmsperren ist ein Kernaspekt der Client-Absicherung."
+              },
+              {
+                "uuid": "91b0e934-60a7-45c1-98ee-9a4087ffda7d",
+                "control-id": "SYS.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Kritisch f\u00fcr die Sicherheit, um Schwachstellen zeitnah zu schlie\u00dfen. Linux-Distributionen bieten hierf\u00fcr etablierte Paketmanagement-Systeme (z. B. apt, yum), deren Automatisierungsfunktionen genutzt werden m\u00fcssen."
+              },
+              {
+                "uuid": "0500cc60-8a42-447a-94c9-b85c97f8e95d",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Obwohl Linux-Clients seltener direktes Ziel von Schadsoftware sind, ist ein Schutz zur Vermeidung von Infektionen und zur Verhinderung der Weiterverbreitung im Netz unerl\u00e4sslich."
+              },
+              {
+                "uuid": "87db0037-3f38-4783-8f84-f0d39f0c3a8f",
+                "control-id": "SYS.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs (z.B. mittels UEFI Secure Boot und GRUB-Passwort) ist eine grundlegende Ma\u00dfnahme, um die Integrit\u00e4t des Betriebssystems von Anfang an zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "ae770e63-c809-4423-bf43-ea7c820808ef",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: Moderne Linux-Desktops integrieren zunehmend Online-Funktionen. Deren bewusste und restriktive Konfiguration ist wichtig f\u00fcr Datenschutz und zur Reduzierung der Angriffsfl\u00e4che."
+              },
+              {
+                "uuid": "9dfd26da-9ece-4c2a-86ec-567b80f855a0",
+                "control-id": "SYS.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt vor fortgeschrittenen Angriffen auf Firmware-Ebene. Die Absicherung des Zugriffs auf BIOS/UEFI ist eine wichtige H\u00e4rtungsma\u00dfnahme f\u00fcr die physische Sicherheit des Clients."
+              },
+              {
+                "uuid": "fa81546a-b610-4b94-94b7-2f61e7948bdc",
+                "control-id": "SYS.2.1.A15",
+                "description": "AI-Begr\u00fcndung: Eine sichere und dokumentierte Installation ist die Basis f\u00fcr jeden sicheren Client-Betrieb. Dies ist bei der Vielfalt der Linux-Distributionen und Konfigurationsm\u00f6glichkeiten besonders relevant."
+              },
+              {
+                "uuid": "37cd3cd2-3dc6-44ef-b234-2fcadd13fd1c",
+                "control-id": "SYS.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Die Reduzierung der Angriffsfl\u00e4che durch Deaktivierung nicht ben\u00f6tigter Dienste und Software ist eine der effektivsten H\u00e4rtungsma\u00dfnahmen f\u00fcr jedes Linux/Unix-System."
+              },
+              {
+                "uuid": "f3809de7-a4ac-4950-ab28-63a4290b22ae",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Der Schutz von Daten auf dem Client durch Verschl\u00fcsselung (z.B. mit LUKS) ist eine essenzielle Anforderung, insbesondere bei mobilen Ger\u00e4ten oder in nicht vertrauensw\u00fcrdigen Umgebungen."
+              }
+            ]
+          },
+          {
+            "uuid": "31d376cc-2c2d-419b-92a5-f9a9a5cd556f",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "ae38f032-2e6a-4d98-86e2-cad7c261ea20",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Berechtigungen nach dem Prinzip des 'Least Privilege' ist ein Kernkonzept der Unix/Linux-Sicherheit (Dateiberechtigungen, sudo-Regeln) und muss stringent umgesetzt werden."
+              },
+              {
+                "uuid": "d452b951-4b55-4231-ab0e-15ff73922978",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die grundlegende Authentisierungsanforderung um qualitative Aspekte wie den Schutz vor Brute-Force-Angriffen, was durch Konfiguration von PAM-Modulen (z.B. faillock) auf Linux-Systemen umgesetzt wird."
+              },
+              {
+                "uuid": "bf4bd5a9-f6aa-49c2-87b0-ee3846c6257b",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass bei allen kryptografischen Operationen (z. B. Festplattenverschl\u00fcsselung, SSH) nur starke, anerkannte Verfahren verwendet werden, was f\u00fcr die Wirksamkeit des Schutzes entscheidend ist."
+              },
+              {
+                "uuid": "42ac535b-0903-4e52-bebf-46c00d488e99",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist die Voraussetzung f\u00fcr eine wirksame Verschl\u00fcsselung. Dies ist direkt anwendbar auf die Verwaltung von Schl\u00fcsseln f\u00fcr LUKS oder SSH auf dem Client."
+              },
+              {
+                "uuid": "9e6374a2-0014-4bd5-bfc3-c439cab886f0",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Datensicherung ist eine fundamentale Ma\u00dfnahme zur Gew\u00e4hrleistung der Informationsverf\u00fcgbarkeit und zum Schutz vor Datenverlust, auch auf einzelnen Clients."
+              },
+              {
+                "uuid": "e31314f9-ae8b-4da1-b20a-b33f658c8f44",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachvollziehbarkeit administrativer Aktionen (z. B. \u00fcber sudo-Logs oder auditd) ist f\u00fcr die Sicherheit und Forensik auf einem Linux/Unix-System unerl\u00e4sslich, um \u00c4nderungen nachverfolgen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "72405599-f0c6-4d0e-9bc2-89fed3b330f2",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die privilegiertesten Zug\u00e4nge zum System. Die Absicherung administrativer Schnittstellen, z. B. durch die Konfiguration von `sudo` und `sshd`, ist ein zentraler Aspekt der Systemh\u00e4rtung."
+              },
+              {
+                "uuid": "ecd279b2-6922-48fe-a243-70527af3f1a5",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Bildet den organisatorischen Rahmen f\u00fcr die technische Anforderung der Updates (SYS.2.1.A3) und stellt einen kontrollierten, sicheren und nachvollziehbaren Patch-Prozess sicher."
+              },
+              {
+                "uuid": "1559ac18-7df2-4460-b274-00481371093c",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Linux/Unix-Systeme bieten umfangreiche, systemeigene Protokollierungsfunktionen (z. B. journald, auditd), deren Aktivierung und Nutzung eine grundlegende und effiziente Methode zur Erkennung von Sicherheitsvorf\u00e4llen darstellt."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,328 @@
+{
+  "component-definition": {
+    "uuid": "86fb2585-6b33-4fb4-9142-dd1999b339e6",
+    "metadata": {
+      "title": "Component for Baustein NET.3.3: VPN",
+      "last-modified": "2025-06-26T11:33:54.053877+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.3.3."
+    },
+    "components": [
+      {
+        "uuid": "12378245-a3ea-45f6-ba50-dc8816ef5480",
+        "type": "service",
+        "title": "VPN",
+        "description": "Implementation of controls for Baustein NET.3.3.",
+        "control-implementations": [
+          {
+            "uuid": "56404130-2ca9-4c4c-93ed-c247e1c40066",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.3.3: VPN",
+            "implemented-requirements": [
+              {
+                "uuid": "59b8988e-7c7e-4390-9047-7d5b129fbe12",
+                "control-id": "NET.3.3.A1",
+                "description": "Base implementation for control NET.3.3.A1."
+              },
+              {
+                "uuid": "2be9aa5d-2c7a-4da3-b2c7-34325190f053",
+                "control-id": "NET.3.3.A2",
+                "description": "Base implementation for control NET.3.3.A2."
+              },
+              {
+                "uuid": "e295d4fb-8049-4e47-9e35-2cadd974a88b",
+                "control-id": "NET.3.3.A3",
+                "description": "Base implementation for control NET.3.3.A3."
+              },
+              {
+                "uuid": "806967f6-39e1-4c55-9a14-f615ad57c7ea",
+                "control-id": "NET.3.3.A4",
+                "description": "Base implementation for control NET.3.3.A4."
+              },
+              {
+                "uuid": "2447748e-5427-4de0-b1a0-d768ce21180b",
+                "control-id": "NET.3.3.A5",
+                "description": "Base implementation for control NET.3.3.A5."
+              },
+              {
+                "uuid": "5b6c1ac7-0114-4f0b-b6f4-d9f15994064c",
+                "control-id": "NET.3.3.A6",
+                "description": "Base implementation for control NET.3.3.A6."
+              },
+              {
+                "uuid": "fc3fb532-7368-4c07-8fb6-b72c42a58404",
+                "control-id": "NET.3.3.A7",
+                "description": "Base implementation for control NET.3.3.A7."
+              },
+              {
+                "uuid": "4b748fca-d9ed-43d1-a645-ceec3d787d2e",
+                "control-id": "NET.3.3.A8",
+                "description": "Base implementation for control NET.3.3.A8."
+              },
+              {
+                "uuid": "8d8adfd9-b464-4657-93c4-e87aa68b9c62",
+                "control-id": "NET.3.3.A9",
+                "description": "Base implementation for control NET.3.3.A9."
+              },
+              {
+                "uuid": "6f6ec5af-a648-4c61-a819-83af30e25e88",
+                "control-id": "NET.3.3.A10",
+                "description": "Base implementation for control NET.3.3.A10."
+              },
+              {
+                "uuid": "e5ad079c-3a26-42f8-89e1-d2af81a08502",
+                "control-id": "NET.3.3.A11",
+                "description": "Base implementation for control NET.3.3.A11."
+              },
+              {
+                "uuid": "be3d5eae-81d0-44f3-9851-f2d66c58507d",
+                "control-id": "NET.3.3.A12",
+                "description": "Base implementation for control NET.3.3.A12."
+              },
+              {
+                "uuid": "7f24e7bb-cd75-4fea-8cfd-6c8f32091e0d",
+                "control-id": "NET.3.3.A13",
+                "description": "Base implementation for control NET.3.3.A13."
+              }
+            ]
+          },
+          {
+            "uuid": "396bfec8-d639-41d2-816b-68035c329ecb",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "73dd1629-5feb-4cc1-bcba-31bb3dc83fa1",
+                "control-id": "CON.1.A2",
+                "description": "AI-Begr\u00fcndung: VPN-Systeme verwenden langlebige kryptografische Schl\u00fcssel (z. B. Zertifikate, PSKs), die sicher gespeichert und gesichert werden m\u00fcssen, um unbefugten Zugriff zu verhindern und die Wiederherstellbarkeit des Dienstes zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "6c4ab62e-2aff-4d63-86fc-f3b2bc328f47",
+                "control-id": "CON.1.A5",
+                "description": "AI-Begr\u00fcndung: Veraltete oder kompromittierte kryptografische Schl\u00fcssel (z.B. von widerrufenen Zertifikaten oder ehemaligen Mitarbeitenden) m\u00fcssen sicher entfernt werden, um deren Missbrauch zu verhindern und die Sicherheit des VPNs aufrechtzuerhalten."
+              },
+              {
+                "uuid": "3c4432fd-cc76-4326-8c77-58b635ad3e5f",
+                "control-id": "CON.1.A9",
+                "description": "AI-Begr\u00fcndung: Die Auswahl einer VPN-L\u00f6sung (Hard- oder Software) muss auf definierten Kriterien basieren, die insbesondere die St\u00e4rke und Korrektheit der implementierten kryptografischen Funktionen bewerten, um eine sichere Basis zu schaffen."
+              },
+              {
+                "uuid": "2e4b0d27-d252-49ca-b8fd-3e35438520df",
+                "control-id": "CON.1.A15",
+                "description": "AI-Begr\u00fcndung: Kryptografische Verfahren, die in VPNs eingesetzt werden, k\u00f6nnen im Laufe der Zeit schwach werden. Ein definierter Prozess zur Identifizierung und zum Austausch geschw\u00e4chter Verfahren ist f\u00fcr die langfristige Sicherheit des VPN unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b7d69c48-88e5-4194-8692-0f51f5d2e8f1",
+                "control-id": "CON.1.A19",
+                "description": "AI-Begr\u00fcndung: Um auf Schwachstellen reagieren zu k\u00f6nnen (siehe CON.1.A15), ist es notwendig, in einem Kataster zu dokumentieren, welche kryptografischen Verfahren, Parameter und Produkte konkret im VPN-System im Einsatz sind."
+              },
+              {
+                "uuid": "6485c354-8eaf-41c0-a914-31993f7f9bde",
+                "control-id": "CON.1.A11",
+                "description": "AI-Begr\u00fcndung: Werden Hardware-VPN-Appliances oder HSMs zur Schl\u00fcsselspeicherung eingesetzt, muss vor dem produktiven Einsatz getestet werden, ob deren kryptografische Funktionen korrekt und performant arbeiten."
+              },
+              {
+                "uuid": "aafce097-aa50-427a-9987-50805616e45b",
+                "control-id": "CON.1.A16",
+                "description": "AI-Begr\u00fcndung: Die VPN-Server oder -Appliances sind kritische Komponenten, die kryptografische Schl\u00fcssel speichern und verarbeiten. Ihr physischer Schutz ist zwingend erforderlich, um Diebstahl oder Manipulation zu verhindern."
+              },
+              {
+                "uuid": "735ef704-a6ae-4a51-89af-53ebd2908c3a",
+                "control-id": "CON.1.A18",
+                "description": "AI-Begr\u00fcndung: F\u00fcr den ausfallsicheren Betrieb eines VPN, das auf Hardware-Appliances oder Hardware-Token f\u00fcr die Authentisierung basiert, ist die Vorhaltung von Ersatzger\u00e4ten zur schnellen Wiederherstellung des Dienstes notwendig."
+              },
+              {
+                "uuid": "1295d466-e394-4fee-9a63-1f9a2558ffab",
+                "control-id": "CON.1.A20",
+                "description": "AI-Begr\u00fcndung: Die Integrit\u00e4t der VPN-Software und -Konfiguration ist entscheidend f\u00fcr die Sicherheit. Mechanismen zur Manipulationserkennung (z.B. File Integrity Monitoring, Secure Boot) sch\u00fctzen vor unbemerkten, b\u00f6sartigen \u00c4nderungen."
+              },
+              {
+                "uuid": "c4af359a-a37b-43b8-af40-5dda38d246af",
+                "control-id": "OPS.1.1.2.A2",
+                "description": "AI-Begr\u00fcndung: Der VPN-Zugang ist ein kritischer Dienst. Es muss sichergestellt sein, dass die Administration des VPN-Systems auch bei Ausfall eines Administrators durch qualifizierte Vertreter aufrechterhalten werden kann."
+              },
+              {
+                "uuid": "61f94b4c-4ca9-470c-81ca-082a21ccb86c",
+                "control-id": "OPS.1.1.2.A4",
+                "description": "AI-Begr\u00fcndung: Administrative Zug\u00e4nge zum VPN-System stellen ein hohes Risiko dar. Verl\u00e4sst ein Administrator die Organisation, m\u00fcssen dessen Berechtigungen umgehend entzogen werden, um Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "3f540886-60c5-4add-b131-f2c86230b65b",
+                "control-id": "OPS.1.1.2.A16",
+                "description": "AI-Begr\u00fcndung: Die administrativen Schnittstellen des VPN-Gateways sollten niemals aus dem Internet erreichbar sein. Die Beschr\u00e4nkung des Zugriffs auf ein dediziertes Management-Netz ist eine essentielle H\u00e4rtungsma\u00dfnahme."
+              },
+              {
+                "uuid": "2133840b-9fae-4438-984c-7763ebf896dd",
+                "control-id": "OPS.1.1.2.A21",
+                "description": "AI-Begr\u00fcndung: Durch die Definition von granularen Admin-Rollen f\u00fcr das VPN-System (z.B. f\u00fcr Benutzerverwaltung vs. Netzwerkkonfiguration) wird das Minimalprinzip umgesetzt und das Risiko durch kompromittierte Admin-Konten reduziert."
+              },
+              {
+                "uuid": "0c526c86-eaa3-4c15-a1bb-94ef5ffdf90f",
+                "control-id": "OPS.1.1.2.A22",
+                "description": "AI-Begr\u00fcndung: Um die Kompromittierung von hochprivilegierten administrativen Zug\u00e4ngen zum VPN-System zu verhindern, m\u00fcssen administrative T\u00e4tigkeiten von allt\u00e4glichen Aufgaben (z.B. E-Mail, Surfen) strikt getrennt werden."
+              },
+              {
+                "uuid": "e607acac-fbec-46dd-b511-acaf645399a6",
+                "control-id": "OPS.1.1.2.A26",
+                "description": "AI-Begr\u00fcndung: Eine regelm\u00e4\u00dfige Sicherung der VPN-Konfiguration ist f\u00fcr die schnelle Wiederherstellung des Dienstes nach einem Ausfall oder einer Fehlkonfiguration unerl\u00e4sslich."
+              },
+              {
+                "uuid": "07a4d9f0-6dfd-4eca-a96e-c09c0ee19213",
+                "control-id": "OPS.1.1.3.A10",
+                "description": "AI-Begr\u00fcndung: Um zu verhindern, dass manipulierte Updates auf das VPN-System aufgespielt werden, muss die Integrit\u00e4t und Authentizit\u00e4t von Patches und Softwarepaketen vor der Installation gepr\u00fcft werden, z.B. mittels Signaturen oder Pr\u00fcfsummen."
+              },
+              {
+                "uuid": "b7548562-3763-4527-a0a9-6599b59d8b54",
+                "control-id": "OPS.1.1.3.A15",
+                "description": "AI-Begr\u00fcndung: VPN-Systeme sind exponierte und kritische Komponenten, die h\u00e4ufig Sicherheitsl\u00fccken aufweisen. Eine zeitnahe Bewertung und Installation von Sicherheitspatches ist zur Abwehr von Angriffen zwingend erforderlich."
+              },
+              {
+                "uuid": "6e9b7663-f959-4f06-824a-e79eaaecfa6f",
+                "control-id": "OPS.1.2.5.A1",
+                "description": "AI-Begr\u00fcndung: Falls das VPN-System selbst (z. B. durch einen externen Dienstleister) ferngewartet wird, muss dieser hochprivilegierte Zugriff sorgf\u00e4ltig geplant und abgesichert werden, um die Kontrolle \u00fcber die kritische Infrastruktur nicht zu verlieren."
+              },
+              {
+                "uuid": "585ade23-9c71-4146-a310-5539eff592b2",
+                "control-id": "OPS.1.2.5.A3",
+                "description": "AI-Begr\u00fcndung: Ein Fernwartungszugang zum VPN-Gateway ist ein extrem sensibles Einfallstor. Die Kommunikationsverbindungen m\u00fcssen auf das N\u00f6tigste beschr\u00e4nkt, verschl\u00fcsselt und nach Gebrauch sofort wieder getrennt werden."
+              },
+              {
+                "uuid": "10bdc171-e4b5-4379-b773-8b24ed58d0db",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: Der Lebenszyklus von VPN-Benutzerkennungen muss klar geregelt sein, um sicherzustellen, dass nur aktuell berechtigte Personen Zugriff auf das interne Netz haben und Kennungen von ehemaligen Mitarbeitenden zeitnah gel\u00f6scht werden."
+              },
+              {
+                "uuid": "571c8ae3-43a2-4d69-ad0f-b22337f7ab68",
+                "control-id": "ORP.4.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung definiert explizit die Notwendigkeit eines formalen Prozesses f\u00fcr die Vergabe und den Entzug von VPN-Zugangsberechtigungen, was eine Kernt\u00e4tigkeit beim Betrieb eines VPNs darstellt."
+              },
+              {
+                "uuid": "b8824d74-f502-4a26-860e-69535f88e238",
+                "control-id": "ORP.4.A8",
+                "description": "AI-Begr\u00fcndung: Wenn Passw\u00f6rter Teil der VPN-Authentisierung sind, m\u00fcssen klare und verbindliche Regeln f\u00fcr deren Komplexit\u00e4t und Handhabung existieren, da ein schwaches Passwort die Sicherheit der gesamten Verbindung untergr\u00e4bt."
+              },
+              {
+                "uuid": "c78b4939-a024-4d03-930a-bb0147d7f13d",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: F\u00fcr das VPN-System muss gezielt festgelegt werden, welche Authentisierungsverfahren (z.B. Zertifikate, MFA) mit welcher St\u00e4rke zum Einsatz kommen m\u00fcssen, um den Schutzbedarf der dahinterliegenden Netze zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "e77ab918-733a-46dd-adf6-247308a4ffbd",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: Der Zugang zum internen Netz \u00fcber ein VPN ist ein kritischer \u00dcbergang. Der Einsatz von Mehr-Faktor-Authentisierung ist eine der wirksamsten Ma\u00dfnahmen, um diesen Zugang gegen die Kompromittierung von Zugangsdaten abzusichern."
+              },
+              {
+                "uuid": "09294cf2-3fa4-40c8-ade0-afaa0b373d8e",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Ein VPN-Server ist ein dediziertes Sicherheitssystem. Er muss physisch gesch\u00fctzt sein und darf nicht f\u00fcr andere Zwecke (z.B. als Arbeitsplatzrechner) missbraucht werden, um seine Kompromittierung zu vermeiden."
+              },
+              {
+                "uuid": "8ecec2f2-61fd-42bb-9bf3-cc72f3b26258",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf den VPN-Server selbst muss durch angemessene, idealerweise zentrale, Authentisierungsverfahren abgesichert werden, um eine sichere Verwaltung zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "22b031e8-ecbe-4414-92db-865f6acc34e0",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Um die lokale Angriffsfl\u00e4che des VPN-Servers zu minimieren, m\u00fcssen alle nicht ben\u00f6tigten physischen Schnittstellen (z.B. USB-Ports) deaktiviert werden."
+              },
+              {
+                "uuid": "2181f230-97eb-4ba5-951b-b5c0615a6ed6",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Ein VPN-Server sollte als \u201eSingle-Purpose\u201c-System betrieben werden. Alle nicht f\u00fcr den VPN-Betrieb notwendigen Dienste, Rollen und Softwarepakete m\u00fcssen deaktiviert oder deinstalliert werden, um die Angriffsfl\u00e4che zu minimieren."
+              },
+              {
+                "uuid": "941fc14a-6c59-4548-a79c-ed833c7b5bf0",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Die l\u00fcckenlose Protokollierung von sicherheitsrelevanten Ereignissen auf dem VPN-Server (z.B. Anmeldeversuche, Konfigurations\u00e4nderungen) ist die Grundlage f\u00fcr die \u00dcberwachung, Analyse und Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "8be110fe-e2d7-420d-b5b5-674b6331bf57",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Ein lokaler Paketfilter (Host-Firewall) auf dem VPN-Server bietet eine zus\u00e4tzliche Schutzschicht (Defense-in-Depth) und stellt sicher, dass nur die explizit erforderliche Kommunikation zum und vom Server erlaubt ist."
+              },
+              {
+                "uuid": "b48f76d7-38a1-44aa-8c8a-6e4bcef0955d",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Der VPN-Dienst ist kritisch f\u00fcr die Erreichbarkeit von Ressourcen. Eine kontinuierliche \u00dcberwachung des Systemzustands und der Funktionsf\u00e4higkeit des VPN-Servers ist notwendig, um Ausf\u00e4lle proaktiv zu erkennen und die Verf\u00fcgbarkeit sicherzustellen."
+              },
+              {
+                "uuid": "7e534b72-eb55-4163-b617-3ed4ba932928",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Da VPN-Server direkt aus dem Internet erreichbar sind, m\u00fcssen sie regelm\u00e4\u00dfigen Sicherheitspr\u00fcfungen (z.B. Schwachstellenscans) unterzogen werden, um Konfigurationsfehler und Sicherheitsl\u00fccken proaktiv zu identifizieren und zu beheben."
+              },
+              {
+                "uuid": "09898faf-35e9-4e6c-848b-316b43b6bd1f",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Der VPN-Server speichert hochsensible Daten wie kryptografische Schl\u00fcssel und Konfigurationen. Die Verschl\u00fcsselung der Festplatten sch\u00fctzt diese Daten bei einem physischen Diebstahl des Ger\u00e4ts vor unbefugtem Zugriff."
+              },
+              {
+                "uuid": "733bb5ec-eef2-4f29-a7d5-7b5d7b2b5447",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs (z.B. mittels Secure Boot und BIOS-Passwort) verhindert, dass ein Angreifer mit physischem Zugriff ein alternatives Betriebssystem laden kann, um das VPN-System zu manipulieren oder Schl\u00fcssel zu extrahieren."
+              },
+              {
+                "uuid": "720f2c1a-6eb7-4389-b164-44257e1f09b8",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Die Sicherheit der VPN-Verbindung ist wertlos, wenn der Client-Rechner, von dem sie ausgeht, kompromittiert ist. Ein aktueller und manipulationssicherer Schadsoftwareschutz auf dem Client ist daher unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b7e6fcb3-2ff7-481a-bf16-e56cf59a20ed",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: VPN-Clients sind h\u00e4ufig mobile Laptops, die ein hohes Diebstahlrisiko haben. Die Verschl\u00fcsselung der Festplatte sch\u00fctzt auf dem Client gespeicherte sensible Daten und potenziell auch zwischengespeicherte VPN-Zugangsdaten."
+              },
+              {
+                "uuid": "2327ae79-92d1-4e47-b17f-8c24cb75cb67",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: Unkontrollierte Cloud-Funktionen auf dem Client-Betriebssystem k\u00f6nnen den VPN-Tunnel umgehen und zu unbeabsichtigtem Datenabfluss f\u00fchren. Ihre Nutzung muss daher auf das Notwendige beschr\u00e4nkt werden."
+              }
+            ]
+          },
+          {
+            "uuid": "9d289b20-d36f-4e36-8069-60be61e59468",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "3dad25fd-03f3-4a62-80dc-92632670220e",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: VPNs basieren fundamental auf kryptografischen Verfahren. Die Auswahl sicherer und aktueller Algorithmen und Schl\u00fcssell\u00e4ngen ist entscheidend f\u00fcr die Vertraulichkeit und Integrit\u00e4t der VPN-Verbindung."
+              },
+              {
+                "uuid": "92852557-e7a8-4858-9dda-2d01705dc15c",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein VPN-System ist stark von einem sicheren Schl\u00fcsselmanagement abh\u00e4ngig, das den gesamten Lebenszyklus von Schl\u00fcsseln und Zertifikaten abdeckt, um die Authentizit\u00e4t der Kommunikationspartner und die Sicherheit der Verbindung zu garantieren."
+              },
+              {
+                "uuid": "e3e8b2b1-24c0-45b0-80a9-b68533a376f0",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen an der VPN-Konfiguration k\u00f6nnen weitreichende Sicherheitsauswirkungen haben. Daher m\u00fcssen alle administrativen T\u00e4tigkeiten protokolliert und nachvollziehbar sein, um unautorisierte \u00c4nderungen zu erkennen und die Verantwortlichkeit sicherzustellen."
+              },
+              {
+                "uuid": "1baf6601-b265-42e3-ae52-7d3cfbde6069",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Die administrativen Schnittstellen des VPN-Systems sind ein prim\u00e4res Angriffsziel. Ihr Schutz durch starke Authentisierung, Zugriffsbeschr\u00e4nkungen und verschl\u00fcsselte Protokolle ist f\u00fcr die Gesamtsicherheit des Systems fundamental."
+              },
+              {
+                "uuid": "b70e7fa0-a8ec-47e8-bdf8-f4c613047197",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: VPN-Benutzer sollten nur die Berechtigungen (z.B. Zugriff auf bestimmte Netzsegmente oder Anwendungen) erhalten, die sie f\u00fcr ihre Aufgaben ben\u00f6tigen (Minimalprinzip), um die Angriffsfl\u00e4che bei einer Kompromittierung eines Endger\u00e4ts zu minimieren."
+              },
+              {
+                "uuid": "11e75597-59f1-4bce-be2d-78546ff6e4d7",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Jede VPN-Verbindung muss auf einer sicheren und angemessenen Identifikation und Authentisierung des Benutzers oder Systems basieren. Dies ist die grundlegendste Sicherheitsfunktion eines VPNs."
+              },
+              {
+                "uuid": "905eacc5-33b5-42fa-9439-e9a76d4465c2",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Zum Schutz vor Brute-Force-Angriffen auf den VPN-Zugang m\u00fcssen Mechanismen wie die Begrenzung fehlgeschlagener Anmeldeversuche und die anschlie\u00dfende Sperrung von Kennungen implementiert werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

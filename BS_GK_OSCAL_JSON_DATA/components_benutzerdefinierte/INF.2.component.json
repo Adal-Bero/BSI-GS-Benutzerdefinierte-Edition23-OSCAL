@@ -1,0 +1,468 @@
+{
+  "component-definition": {
+    "uuid": "545a80b7-9634-42c8-99b2-f6004863ece0",
+    "metadata": {
+      "title": "Component for Baustein INF.2: Rechenzentrum sowie Serverraum",
+      "last-modified": "2025-06-26T11:51:54.371432+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.2."
+    },
+    "components": [
+      {
+        "uuid": "c79b046b-ca28-4cc1-a64c-add88025b10f",
+        "type": "service",
+        "title": "Rechenzentrum sowie Serverraum",
+        "description": "Implementation of controls for Baustein INF.2.",
+        "control-implementations": [
+          {
+            "uuid": "1267cd73-c196-4a43-a8fe-3bf192319ef8",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.2: Rechenzentrum sowie Serverraum",
+            "implemented-requirements": [
+              {
+                "uuid": "83a9ceb1-8418-4f8f-a85e-7c5691e95c37",
+                "control-id": "INF.2.A1",
+                "description": "Base implementation for control INF.2.A1."
+              },
+              {
+                "uuid": "2eedf20d-fe2e-4ee2-ac94-69b3e3f13d09",
+                "control-id": "INF.2.A2",
+                "description": "Base implementation for control INF.2.A2."
+              },
+              {
+                "uuid": "d21a7193-b344-42b3-ac79-b5bf77837aa9",
+                "control-id": "INF.2.A3",
+                "description": "Base implementation for control INF.2.A3."
+              },
+              {
+                "uuid": "bc1bdc7e-d846-42f1-b330-4ce33ce07572",
+                "control-id": "INF.2.A4",
+                "description": "Base implementation for control INF.2.A4."
+              },
+              {
+                "uuid": "e89bc964-265d-40fc-8ff9-e2b6720835d0",
+                "control-id": "INF.2.A5",
+                "description": "Base implementation for control INF.2.A5."
+              },
+              {
+                "uuid": "e4dc2dbd-ee9e-4409-9463-b74298313cef",
+                "control-id": "INF.2.A6",
+                "description": "Base implementation for control INF.2.A6."
+              },
+              {
+                "uuid": "0124207b-a877-4337-8cce-306401e1f519",
+                "control-id": "INF.2.A7",
+                "description": "Base implementation for control INF.2.A7."
+              },
+              {
+                "uuid": "92999af5-7c2b-44ed-8dc6-c558244ffa7c",
+                "control-id": "INF.2.A8",
+                "description": "Base implementation for control INF.2.A8."
+              },
+              {
+                "uuid": "d445a281-ff11-4818-ad60-cde97f77e621",
+                "control-id": "INF.2.A9",
+                "description": "Base implementation for control INF.2.A9."
+              },
+              {
+                "uuid": "642135b3-4f71-4202-a372-5447bdf3ae90",
+                "control-id": "INF.2.A10",
+                "description": "Base implementation for control INF.2.A10."
+              },
+              {
+                "uuid": "ebc2758f-e627-4103-bebe-0d7ab7e12194",
+                "control-id": "INF.2.A11",
+                "description": "Base implementation for control INF.2.A11."
+              },
+              {
+                "uuid": "321ba707-cea2-4883-b1cb-a856f1c47dbb",
+                "control-id": "INF.2.A17",
+                "description": "Base implementation for control INF.2.A17."
+              },
+              {
+                "uuid": "71971b80-cefd-4a17-8e9d-6145f6146e0b",
+                "control-id": "INF.2.A29",
+                "description": "Base implementation for control INF.2.A29."
+              },
+              {
+                "uuid": "b6bda34c-6244-41e9-9545-d554a17e6920",
+                "control-id": "INF.2.A12",
+                "description": "Base implementation for control INF.2.A12."
+              },
+              {
+                "uuid": "ffe1d336-165a-4eb0-b847-124ba760e08d",
+                "control-id": "INF.2.A13",
+                "description": "Base implementation for control INF.2.A13."
+              },
+              {
+                "uuid": "dc9b4884-13e5-4c9a-82a8-02f2e7ee1caf",
+                "control-id": "INF.2.A14",
+                "description": "Base implementation for control INF.2.A14."
+              },
+              {
+                "uuid": "8d8a3fb2-ff77-4620-a5bd-3f5e15639255",
+                "control-id": "INF.2.A15",
+                "description": "Base implementation for control INF.2.A15."
+              },
+              {
+                "uuid": "c7100329-755c-4097-ac20-2938b8381229",
+                "control-id": "INF.2.A16",
+                "description": "Base implementation for control INF.2.A16."
+              },
+              {
+                "uuid": "27f9d71b-db71-4b30-afbe-6ba229ed40fd",
+                "control-id": "INF.2.A19",
+                "description": "Base implementation for control INF.2.A19."
+              },
+              {
+                "uuid": "89d7fc31-e631-457f-a1eb-9bb6b0c2d98c",
+                "control-id": "INF.2.A30",
+                "description": "Base implementation for control INF.2.A30."
+              },
+              {
+                "uuid": "02989b8e-90c8-4f46-8807-1a39a07e46ac",
+                "control-id": "INF.2.A21",
+                "description": "Base implementation for control INF.2.A21."
+              },
+              {
+                "uuid": "0fffab20-2692-4da6-9506-928f856a0a21",
+                "control-id": "INF.2.A22",
+                "description": "Base implementation for control INF.2.A22."
+              },
+              {
+                "uuid": "8152bfc0-1a87-4101-9ec5-ef40272b8bd7",
+                "control-id": "INF.2.A23",
+                "description": "Base implementation for control INF.2.A23."
+              },
+              {
+                "uuid": "64ef7cea-7421-48f8-bd90-6b78ce80b78d",
+                "control-id": "INF.2.A24",
+                "description": "Base implementation for control INF.2.A24."
+              },
+              {
+                "uuid": "d034ab45-c33c-4aa6-8dce-bdec819b4f64",
+                "control-id": "INF.2.A25",
+                "description": "Base implementation for control INF.2.A25."
+              },
+              {
+                "uuid": "cb345cca-48eb-4841-b23c-de071a5d6ef3",
+                "control-id": "INF.2.A26",
+                "description": "Base implementation for control INF.2.A26."
+              },
+              {
+                "uuid": "aa726796-bb22-4e27-946c-52a01d5547d3",
+                "control-id": "INF.2.A28",
+                "description": "Base implementation for control INF.2.A28."
+              }
+            ]
+          },
+          {
+            "uuid": "00129327-451d-4710-85f3-606eecbc91c0",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "43320a20-b0de-4113-a33e-b15f0f1b2509",
+                "control-id": "INF.1.A1",
+                "description": "AI-Begr\u00fcndung: Grundlegend f\u00fcr die physische Sicherheit des RZ, das sich in einem Geb\u00e4ude befindet."
+              },
+              {
+                "uuid": "16945cfd-32c2-42c7-913a-1338832498e9",
+                "control-id": "INF.1.A2",
+                "description": "AI-Begr\u00fcndung: Essentiell f\u00fcr die Verf\u00fcgbarkeit, da Rechenzentren einen hohen und kritischen Strombedarf haben."
+              },
+              {
+                "uuid": "699a6dd1-91a1-4c66-96a0-76168c517aba",
+                "control-id": "INF.1.A3",
+                "description": "AI-Begr\u00fcndung: Brandschutz ist eine der h\u00f6chsten Priorit\u00e4ten zur Sicherung von IT-Infrastruktur im RZ."
+              },
+              {
+                "uuid": "796c8d79-ae49-42c2-99d9-8fd4825723c5",
+                "control-id": "INF.1.A4",
+                "description": "AI-Begr\u00fcndung: Fr\u00fcherkennung von Br\u00e4nden ist in einem RZ entscheidend, um Sch\u00e4den an teurer und sensibler Technik zu minimieren."
+              },
+              {
+                "uuid": "1b6ff0fa-0c6f-42ea-aee7-93e5d7175219",
+                "control-id": "INF.1.A5",
+                "description": "AI-Begr\u00fcndung: Stellt eine grundlegende Erstma\u00dfnahme bei der Brandbek\u00e4mpfung im RZ-Umfeld sicher."
+              },
+              {
+                "uuid": "9a77ca55-ef9f-4578-8eaa-b6c93b1220d0",
+                "control-id": "INF.1.A6",
+                "description": "AI-Begr\u00fcndung: Basis-Ma\u00dfnahme der physischen Sicherheit zur Verhinderung von unbefugtem Zutritt und Umwelteinfl\u00fcssen."
+              },
+              {
+                "uuid": "fa7b7adf-6b1d-4520-82d4-90b788c58560",
+                "control-id": "INF.1.A7",
+                "description": "AI-Begr\u00fcndung: Eine der wichtigsten Ma\u00dfnahmen zur Sicherung eines RZ, da sie den direkten physischen Zugriff auf die IT regelt."
+              },
+              {
+                "uuid": "be512482-3ac5-4e50-9c3b-610e5ea101bf",
+                "control-id": "INF.1.A8",
+                "description": "AI-Begr\u00fcndung: Reduziert Brandrisiken und sch\u00fctzt sensible Ger\u00e4te vor Verschmutzung, was in einem RZ besonders wichtig ist."
+              },
+              {
+                "uuid": "84352e05-c7dc-488a-ab51-c54db245597a",
+                "control-id": "INF.1.A10",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass der Bau und Betrieb des RZ anerkannten Standards (z.B. DIN EN 50600) und Vorschriften entspricht."
+              },
+              {
+                "uuid": "14373ec4-2ee6-4d3b-8927-df1d8a74cb6a",
+                "control-id": "INF.1.A9",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet einen dokumentierten, ganzheitlichen Sicherheitsansatz, der das RZ in das Geb\u00e4udekonzept integriert, insbesondere beim Brandschutz."
+              },
+              {
+                "uuid": "06f4b2e4-1d5f-43eb-9d6d-a215d1e15045",
+                "control-id": "INF.1.A12",
+                "description": "AI-Begr\u00fcndung: Kritische Erg\u00e4nzung zur Zutrittskontrolle, um die Vergabe und den Verbleib von physischen und elektronischen Schl\u00fcsseln zu kontrollieren."
+              },
+              {
+                "uuid": "c096bd14-9a8b-44ab-90b3-76ed9b2ce1df",
+                "control-id": "INF.1.A13",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die kritischen Versorgungsleitungen (Strom, K\u00fchlung, Netzwerk), von denen der Betrieb des RZ abh\u00e4ngt."
+              },
+              {
+                "uuid": "07479721-4630-4e19-97ba-e5f6904b8fb8",
+                "control-id": "INF.1.A14",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die hochsensible Elektronik im RZ vor massiven Sch\u00e4den durch Blitzeinschl\u00e4ge und \u00dcberspannungen."
+              },
+              {
+                "uuid": "7d626069-8f4d-458d-ae68-6f9fbf9a3bf0",
+                "control-id": "INF.1.A15",
+                "description": "AI-Begr\u00fcndung: Unverzichtbar f\u00fcr den Notfallbetrieb und Wartungsarbeiten, um Versorgungsleitungen schnell und sicher zu handhaben."
+              },
+              {
+                "uuid": "6047d68b-c7bb-45f9-84df-9a110bb2649f",
+                "control-id": "INF.1.A16",
+                "description": "AI-Begr\u00fcndung: Verringert die Sichtbarkeit des RZ als hochwertiges Angriffsziel und unterst\u00fctzt so die physische Sicherheit."
+              },
+              {
+                "uuid": "84076d94-737b-4369-bd92-4d15331de945",
+                "control-id": "INF.1.A17",
+                "description": "AI-Begr\u00fcndung: Begrenzt die Ausbreitung von Rauch, der f\u00fcr IT-Ger\u00e4te ebenso sch\u00e4dlich sein kann wie Feuer."
+              },
+              {
+                "uuid": "240abd3d-b366-4e12-84a5-8b3b75b56a5a",
+                "control-id": "INF.1.A18",
+                "description": "AI-Begr\u00fcndung: Stellt proaktiv sicher, dass Brandschutzma\u00dfnahmen im RZ-Umfeld wirksam bleiben und M\u00e4ngel behoben werden."
+              },
+              {
+                "uuid": "50ef96b4-c8ab-4030-b861-cf2a429e2f71",
+                "control-id": "INF.1.A19",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet, dass bei Bauarbeiten die Integrit\u00e4t der Brandschutzma\u00dfnahmen im RZ nicht beeintr\u00e4chtigt wird."
+              },
+              {
+                "uuid": "2d96d674-690f-4c4a-9b7f-b8b550f8af64",
+                "control-id": "INF.1.A20",
+                "description": "AI-Begr\u00fcndung: Verbessert die Reaktionsf\u00e4higkeit des Personals im Brandfall, einem kritischen Szenario f\u00fcr jedes RZ."
+              },
+              {
+                "uuid": "96b9d459-db5a-4730-bd09-aeee9517defd",
+                "control-id": "INF.1.A27",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht den Schutz des RZ vor gewaltsamem Eindringen und ist eine notwendige Erg\u00e4nzung zur Zutrittskontrolle."
+              },
+              {
+                "uuid": "c10d36dc-5462-4540-895d-ea98c88b2444",
+                "control-id": "INF.1.A36",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass alle f\u00fcr Betrieb, Wartung und Notf\u00e4lle im RZ relevanten Pl\u00e4ne (Bau, Strom, Klima, Netzwerk) aktuell sind."
+              },
+              {
+                "uuid": "cfcb6b3f-47fc-4ebb-820e-6daf53c9bc5f",
+                "control-id": "INF.1.A22",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht den Einbruchschutz f\u00fcr das RZ durch die Auswahl widerstandsf\u00e4higer T\u00fcren und Fenster."
+              },
+              {
+                "uuid": "73feea87-fc35-4992-8f1c-9dada1f65378",
+                "control-id": "INF.1.A23",
+                "description": "AI-Begr\u00fcndung: Ein Kernprinzip des RZ-Designs zur Schaffung von gestaffelter Sicherheit (Defense-in-Depth) und zur effizienten Absicherung."
+              },
+              {
+                "uuid": "7728a1fc-c8cb-4aa6-a5b9-f96b60763f84",
+                "control-id": "INF.1.A24",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt das RZ vor Wassersch\u00e4den, die eine erhebliche Bedrohung f\u00fcr die IT-Ausr\u00fcstung darstellen."
+              },
+              {
+                "uuid": "4c90ed9e-506e-4d87-98aa-a112648cc928",
+                "control-id": "INF.1.A25",
+                "description": "AI-Begr\u00fcndung: Eine fundamentale Anforderung, um das RZ vor gro\u00dffl\u00e4chigen Umgebungsgef\u00e4hrdungen (z.B. Hochwasser, Erdbeben) zu sch\u00fctzen."
+              },
+              {
+                "uuid": "551c6cbf-740b-4525-b168-a54e4e2620cd",
+                "control-id": "INF.1.A26",
+                "description": "AI-Begr\u00fcndung: Bietet eine aktive \u00dcberwachung und Durchsetzung der Zutrittskontrolle, was f\u00fcr Hochsicherheitsbereiche wie RZ notwendig ist."
+              },
+              {
+                "uuid": "b75b6915-ff84-4130-941a-7921103904a0",
+                "control-id": "INF.1.A30",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die Bausubstanz f\u00fcr die hohen Anforderungen eines RZ (Last, Strom, K\u00fchlung) geeignet ist."
+              },
+              {
+                "uuid": "74bb2175-ae44-48df-baa1-46f187ac0d2a",
+                "control-id": "INF.1.A31",
+                "description": "AI-Begr\u00fcndung: Regelt die sichere Stilllegung eines RZ-Standorts, insbesondere im Hinblick auf zur\u00fcckbleibende Daten und Ger\u00e4te."
+              },
+              {
+                "uuid": "2d0d0b33-c0e0-432c-8331-157bd048ccad",
+                "control-id": "INF.1.A32",
+                "description": "AI-Begr\u00fcndung: Absolut kritisch f\u00fcr RZ, um die Feuerwiderstandsf\u00e4higkeit von W\u00e4nden trotz zahlreicher Kabeldurchf\u00fchrungen zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "39524c13-76b9-450a-9c0a-a317b81c1f28",
+                "control-id": "INF.1.A34",
+                "description": "AI-Begr\u00fcndung: Erm\u00f6glicht die fr\u00fchzeitige Erkennung verschiedenster Gefahren (Einbruch, Wasser, Klima), die den RZ-Betrieb bedrohen."
+              },
+              {
+                "uuid": "bdd7abff-7a69-4d9c-86ff-2b7a934200b6",
+                "control-id": "INF.1.A35",
+                "description": "AI-Begr\u00fcndung: Schafft eine erste Verteidigungslinie f\u00fcr alleinstehende RZ-Geb\u00e4ude und schreckt Angreifer ab."
+              },
+              {
+                "uuid": "5893e9f9-2401-4219-ac10-bb1db6ea9c18",
+                "control-id": "INF.12.A1",
+                "description": "AI-Begr\u00fcndung: Die korrekte Auswahl der Verkabelung ist fundamental f\u00fcr die Leistung, Zuverl\u00e4ssigkeit und Sicherheit des RZ."
+              },
+              {
+                "uuid": "ad77c441-c11e-4ff5-8187-8c0f495ec798",
+                "control-id": "INF.12.A2",
+                "description": "AI-Begr\u00fcndung: Professionelles Kabelmanagement ist im RZ entscheidend f\u00fcr K\u00fchlung, Wartung und Signalintegrit\u00e4t."
+              },
+              {
+                "uuid": "93e8c50c-ea72-4da1-b9f0-3c32627c6e3a",
+                "control-id": "INF.12.A3",
+                "description": "AI-Begr\u00fcndung: Stellt die Qualit\u00e4t und Zuverl\u00e4ssigkeit der Verkabelungsinfrastruktur sicher, die das R\u00fcckgrat des RZ bildet."
+              },
+              {
+                "uuid": "45141f0c-7543-47e3-bd16-2099c1ef31fa",
+                "control-id": "INF.12.A4",
+                "description": "AI-Begr\u00fcndung: Unerl\u00e4sslich in der ger\u00e4tedichten Umgebung eines RZ, um elektromagnetische St\u00f6rungen zu vermeiden, die zu Fehlfunktionen f\u00fchren k\u00f6nnen."
+              },
+              {
+                "uuid": "12ddc6bb-a8b3-45b9-9152-897e3905941a",
+                "control-id": "INF.12.A5",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert ein skalierbares und zukunftssicheres Verkabelungsdesign, das den wachsenden Anforderungen eines RZ gerecht wird."
+              },
+              {
+                "uuid": "3916ba14-4429-406a-b6be-d2107083863d",
+                "control-id": "INF.12.A6",
+                "description": "AI-Begr\u00fcndung: Garantiert durch einen formellen Test- und Abnahmeprozess, dass die kritische Verkabelungsinfrastruktur die Spezifikationen erf\u00fcllt."
+              },
+              {
+                "uuid": "7f807614-8815-41b3-9d09-6def2fecf9a1",
+                "control-id": "INF.12.A7",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt alle angeschlossenen IT-Systeme im RZ vor sch\u00e4dlichen \u00dcberspannungen auf Daten- und Stromleitungen."
+              },
+              {
+                "uuid": "cc66fa13-f818-473a-93bc-6de1caab1a32",
+                "control-id": "INF.12.A8",
+                "description": "AI-Begr\u00fcndung: Eine wichtige betriebliche Disziplin im RZ, um die K\u00fchlung zu optimieren, Brandlasten zu reduzieren und die Verwaltung zu vereinfachen."
+              },
+              {
+                "uuid": "0794d719-5529-448f-9514-db095127b59e",
+                "control-id": "INF.12.A9",
+                "description": "AI-Begr\u00fcndung: Reduziert die Brandgefahr, die von den hochdichten Kabeltrassen in einem RZ ausgehen kann."
+              },
+              {
+                "uuid": "ae5c69c3-d672-4650-b855-62452bdeb473",
+                "control-id": "INF.12.A10",
+                "description": "AI-Begr\u00fcndung: Absolut entscheidend f\u00fcr den Betrieb eines RZ; ohne l\u00fcckenlose Dokumentation und Kennzeichnung sind Fehlersuche und \u00c4nderungen unm\u00f6glich."
+              },
+              {
+                "uuid": "e673bed7-f5b8-47d5-8eae-fe831f981870",
+                "control-id": "INF.12.A11",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Sicherheit, indem sensible Informationen \u00fcber die Funktion von Netzwerkports nicht offen an den Verteilern preisgegeben werden."
+              },
+              {
+                "uuid": "bcbc87d8-4229-4780-a996-3e65a350b8fc",
+                "control-id": "INF.12.A12",
+                "description": "AI-Begr\u00fcndung: Gew\u00e4hrleistet die fortlaufende Sicherheit und Verf\u00fcgbarkeit der Stromversorgung, die f\u00fcr ein RZ lebenswichtig ist."
+              },
+              {
+                "uuid": "c6c5b032-e004-4cd5-9710-d6bd7ba50018",
+                "control-id": "INF.12.A13",
+                "description": "AI-Begr\u00fcndung: Reduziert die Gefahr von elektrisch verursachten Br\u00e4nden durch klare Regeln und professionelle Installation."
+              },
+              {
+                "uuid": "05019952-2333-4982-bbf9-5e2259252320",
+                "control-id": "INF.12.A14",
+                "description": "AI-Begr\u00fcndung: Ein Kernkonzept f\u00fcr Hochverf\u00fcgbarkeit im RZ, das die Resilienz gegen\u00fcber dem Ausfall eines kompletten Strompfades sicherstellt."
+              },
+              {
+                "uuid": "1aa41e31-3fa0-439c-9967-334859dcafdf",
+                "control-id": "INF.12.A15",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die physische Integrit\u00e4t der Verkabelung vor Manipulation und unbeabsichtigter Besch\u00e4digung."
+              },
+              {
+                "uuid": "8dd6d3a0-1296-468f-89f5-65b8b2cb7dc9",
+                "control-id": "INF.12.A16",
+                "description": "AI-Begr\u00fcndung: Ist der De-facto-Standard zur organisierten und sicheren Unterbringung von IT-Ger\u00e4ten im RZ."
+              },
+              {
+                "uuid": "d55e3e38-61da-4ae1-b00d-afb2ea11d98c",
+                "control-id": "INF.12.A17",
+                "description": "AI-Begr\u00fcndung: Ein Kernkonzept f\u00fcr Hochverf\u00fcgbarkeit im RZ, das die Netzwerk-Resilienz durch getrennte Wegef\u00fchrungen sicherstellt."
+              }
+            ]
+          },
+          {
+            "uuid": "a596cdeb-b19e-478f-9a14-ba667dbacb20",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "138241ce-43d2-482d-9521-f99b0d724890",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Reduziert das Missbrauchsrisiko durch die Trennung von z.B. physischen Zugriffs- und logischen Administrationsrechten im RZ-Betrieb."
+              },
+              {
+                "uuid": "0e127b0b-771f-47ea-b4e6-aad44f8104ad",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Der sichere Betrieb eines RZ erfordert hochspezialisiertes Personal; diese Anforderung stellt die notwendige Kompetenz sicher."
+              },
+              {
+                "uuid": "aad6c721-dcb5-4531-84c8-264d9b9a9e42",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Regelt den Lebenszyklus von Berechtigungen f\u00fcr physischen und logischen Zugriff im RZ nach dem Need-to-know-Prinzip."
+              },
+              {
+                "uuid": "bc0638b5-bb93-445b-932d-4a84725c7f30",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Stellt die grundlegende Anforderung sicher, dass der Zugriff auf alle Systeme und Bereiche im RZ eine Authentisierung erfordert."
+              },
+              {
+                "uuid": "aee9a67c-76fe-4cda-9cdb-56feb25fac1e",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Sorgt f\u00fcr einen dem Schutzbedarf des RZ angemessenen, robusten Schutz der Authentisierung, z.B. durch MFA f\u00fcr kritische Systeme."
+              },
+              {
+                "uuid": "861166f1-e721-48ba-8a07-7a973f4af82d",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Schafft Nachvollziehbarkeit und Verantwortlichkeit f\u00fcr administrative Eingriffe in die kritische RZ-Infrastruktur (Klima, Strom, Netzwerk)."
+              },
+              {
+                "uuid": "28274ecc-f86f-4810-ac08-9eb709c4ad4d",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die administrativen Schnittstellen der RZ-Infrastruktur vor unbefugtem Zugriff und Manipulation."
+              },
+              {
+                "uuid": "3fd8ce7d-1662-44c7-afdf-c1463c0aec4e",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass \u00c4nderungen an der RZ-Infrastruktur (z.B. Firmware-Updates f\u00fcr Switches, USV) kontrolliert und sicher durchgef\u00fchrt werden."
+              },
+              {
+                "uuid": "f05eee25-65ff-466b-a5e9-bd163b9481f8",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Nutzt die \u00dcberwachungsfunktionen der RZ-Infrastrukturkomponenten selbst, um Fehler und Sicherheitsprobleme fr\u00fchzeitig zu erkennen."
+              },
+              {
+                "uuid": "bd3125a0-1c00-4984-8110-c1962353a19c",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Erg\u00e4nzt die Basis-\u00dcberwachung um spezialisierte Systeme (z.B. NIDS, Umgebungssensoren) f\u00fcr eine umfassendere Detektion von Vorf\u00e4llen im RZ."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

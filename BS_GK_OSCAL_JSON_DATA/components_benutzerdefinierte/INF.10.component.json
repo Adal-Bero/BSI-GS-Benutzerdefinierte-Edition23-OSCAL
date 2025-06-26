@@ -1,0 +1,183 @@
+{
+  "component-definition": {
+    "uuid": "e96b967d-c79f-4a11-946d-2c599f44e563",
+    "metadata": {
+      "title": "Component for Baustein INF.10: Besprechungs-, Veranstaltungs- und Schulungsr\u00e4ume",
+      "last-modified": "2025-06-26T11:43:12.443306+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.10."
+    },
+    "components": [
+      {
+        "uuid": "7df8aa13-4245-4a3c-84b8-0f8c284b7369",
+        "type": "service",
+        "title": "Besprechungs-, Veranstaltungs- und Schulungsr\u00e4ume",
+        "description": "Implementation of controls for Baustein INF.10.",
+        "control-implementations": [
+          {
+            "uuid": "544c1c8d-2c34-4af9-bc54-b2cf99cc2e05",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.10: Besprechungs-, Veranstaltungs- und Schulungsr\u00e4ume",
+            "implemented-requirements": [
+              {
+                "uuid": "4a40a059-bb6a-4a21-947f-ca0ac3e59deb",
+                "control-id": "INF.10.A1",
+                "description": "Base implementation for control INF.10.A1."
+              },
+              {
+                "uuid": "9c942867-1126-4e43-81a6-53dad2aa95e4",
+                "control-id": "INF.10.A3",
+                "description": "Base implementation for control INF.10.A3."
+              },
+              {
+                "uuid": "6fdfd0c1-e80a-40a1-9bca-709cc452b7df",
+                "control-id": "INF.10.A4",
+                "description": "Base implementation for control INF.10.A4."
+              },
+              {
+                "uuid": "83200709-5fc8-4481-b2c5-95e37d7d5923",
+                "control-id": "INF.10.A5",
+                "description": "Base implementation for control INF.10.A5."
+              },
+              {
+                "uuid": "3823ab94-bde7-4b50-9f9e-8662b7649c03",
+                "control-id": "INF.10.A6",
+                "description": "Base implementation for control INF.10.A6."
+              },
+              {
+                "uuid": "fb95bcfc-ee81-4ade-a1de-e3ea0389a343",
+                "control-id": "INF.10.A7",
+                "description": "Base implementation for control INF.10.A7."
+              },
+              {
+                "uuid": "5f2109c9-f5bb-4951-a4a1-fa06b29379c1",
+                "control-id": "INF.10.A8",
+                "description": "Base implementation for control INF.10.A8."
+              },
+              {
+                "uuid": "70d38af4-7d77-484b-ac48-0f258cdf877b",
+                "control-id": "INF.10.A9",
+                "description": "Base implementation for control INF.10.A9."
+              }
+            ]
+          },
+          {
+            "uuid": "b30e9de7-8ace-4f2b-b6f1-d78c0862069c",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "285cc39a-9442-4a14-92df-f4764f07f9b2",
+                "control-id": "INF.1.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist essenziell, da Besprechungsr\u00e4ume oft unbeaufsichtigt sind und wertvolle IT-Ausstattung sowie potenziell vertrauliche Informationen (z. B. auf Whiteboards) enthalten."
+              },
+              {
+                "uuid": "75e66e54-fb3b-496c-99c6-03e7b9f80ba4",
+                "control-id": "INF.1.A7",
+                "description": "AI-Begr\u00fcndung: Regelt den Zutritt zu den R\u00e4umen, was aufgrund der Nutzung durch wechselnde, auch externe Personenkreise zur Verhinderung von unbefugtem Zugriff auf Technik und Informationen notwendig ist."
+              },
+              {
+                "uuid": "ab0848b6-a3b2-482e-9b28-2af8b7e46621",
+                "control-id": "INF.1.A8",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die in den R\u00e4umen vorhandene IT-Ausstattung (Beamer, Konferenzsysteme) vor Sch\u00e4den durch Rauch und Verschmutzung und reduziert die Brandgefahr."
+              },
+              {
+                "uuid": "5b0773c4-7a4b-4079-a3fa-71fda3861329",
+                "control-id": "INF.1.A12",
+                "description": "AI-Begr\u00fcndung: Eine konsequente Schl\u00fcsselverwaltung ist die notwendige Erg\u00e4nzung zur Zutrittsregelung (INF.1.A7), um nachvollziehen zu k\u00f6nnen, wer Zugang zu den R\u00e4umlichkeiten hat."
+              },
+              {
+                "uuid": "9413a33f-478f-454e-a242-00145cee7427",
+                "control-id": "INF.1.A16",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Vertraulichkeit, indem sensible Besprechungen nicht durch auff\u00e4llige Beschilderung beworben werden, was gezielte Angriffe (z. B. Lauschangriffe) erschwert."
+              },
+              {
+                "uuid": "de5c5d26-af5a-4549-9a01-d2b1b439dab9",
+                "control-id": "INF.1.A22",
+                "description": "AI-Begr\u00fcndung: F\u00fcr Besprechungsr\u00e4ume, in denen hochvertrauliche Themen behandelt werden, ist ein grundlegender baulicher Schutz von T\u00fcren und Fenstern eine wichtige Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "44a3ba6a-3717-4cee-820a-3752e1434e90",
+                "control-id": "INF.1.A27",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt die wertvolle und fest installierte IT-Ausstattung in Besprechungsr\u00e4umen vor Diebstahl und Vandalismus durch die Umsetzung von Einbruchschutzma\u00dfnahmen."
+              },
+              {
+                "uuid": "f13485a3-90ce-4525-8544-e2e273fc84b6",
+                "control-id": "INF.12.A13",
+                "description": "AI-Begr\u00fcndung: Adressiert direkt die hohe Gefahr durch mitgebrachte private Elektroger\u00e4te und unsachgem\u00e4\u00df genutzte Steckdosenleisten, was in Besprechungsr\u00e4umen h\u00e4ufig vorkommt und zu Br\u00e4nden oder Stromausf\u00e4llen f\u00fchren kann."
+              },
+              {
+                "uuid": "37d889a9-eb46-4e48-a21a-f636b399118b",
+                "control-id": "INF.12.A15",
+                "description": "AI-Begr\u00fcndung: Die materielle Sicherung von Netzwerk- und Stromanschl\u00fcssen ist in diesen f\u00fcr viele Personen zug\u00e4nglichen R\u00e4umen entscheidend, um Manipulationen am Netzwerk und unbefugte Anschl\u00fcsse zu verhindern."
+              },
+              {
+                "uuid": "57ed939e-9684-4e6d-b99c-e60d3b7dce12",
+                "control-id": "ORP.1.A3",
+                "description": "AI-Begr\u00fcndung: Obwohl auf ORP.1 verwiesen wird, ist die Begleitung und Beaufsichtigung von Externen eine Kernanforderung f\u00fcr den sicheren Betrieb von Besprechungsr\u00e4umen und muss hier explizit adressiert werden."
+              },
+              {
+                "uuid": "60ecbb62-b1ce-4240-a6c3-12f7bb7c5797",
+                "control-id": "ORP.1.A8",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass die spezifische IT-Ausstattung in Besprechungsr\u00e4umen (Beamer, Konferenzsysteme) inventarisiert und verwaltet wird, was in einem von vielen Personen genutzten Bereich wichtig ist."
+              },
+              {
+                "uuid": "3ce72e9e-8704-4d47-90f5-bf452e5b579c",
+                "control-id": "ORP.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine Richtlinie, die spezifische Verhaltensregeln f\u00fcr die Nutzung von Besprechungsr\u00e4umen (z. B. Whiteboard s\u00e4ubern, sicheres Verbinden von Ger\u00e4ten) festlegt, ist f\u00fcr alle Nutzenden unerl\u00e4sslich."
+              },
+              {
+                "uuid": "e7be4df3-6e3a-49f6-8a37-d4b2a37ac658",
+                "control-id": "ORP.1.A17",
+                "description": "AI-Begr\u00fcndung: Bietet eine konkrete Ma\u00dfnahme zum Schutz der Vertraulichkeit von Gespr\u00e4chen bei besonders schutzbed\u00fcrftigen Besprechungen und ist eine sinnvolle Erg\u00e4nzung f\u00fcr den Hochschutzbedarf."
+              },
+              {
+                "uuid": "e83cb1bc-eebd-4cff-8b93-5a6d25e9c113",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass der Client im Besprechungsraum nach der Nutzung gesperrt wird und sich nachfolgende, potenziell unberechtigte Personen nicht einfach am System anmelden k\u00f6nnen."
+              },
+              {
+                "uuid": "9df590ee-5e28-4047-b7c6-23211391b161",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Aufgrund des Anschlusses von externen Ger\u00e4ten (z. B. USB-Sticks mit Pr\u00e4sentationen) ist ein robuster und nicht manipulierbarer Schutz vor Schadsoftware auf dem Raum-Client zwingend erforderlich."
+              },
+              {
+                "uuid": "e914d735-2fb2-43ac-b5b3-452d6dad21c9",
+                "control-id": "SYS.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Verhindert, dass b\u00f6swillige Akteure den Client im Raum von einem mitgebrachten Medium booten, um Sicherheitsma\u00dfnahmen zu umgehen oder das System zu kompromittieren."
+              },
+              {
+                "uuid": "594e21e1-e753-4183-a0e8-559def3a64b1",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Sch\u00fctzt auf dem Client zwischengespeicherte oder vergessene vertrauliche Daten bei einem Diebstahl des Ger\u00e4tes, was in einem weniger gesicherten Raum eine reale Gefahr darstellt."
+              },
+              {
+                "uuid": "b84e7ff4-7e2b-4cef-bf6b-cf25d7b4a142",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: Verhindert, dass wechselnde Benutzer Cloud-Dienste oder Online-Konten auf dem Raum-Client nutzen und dabei unbeabsichtigt Daten hinterlassen oder nicht genehmigte Dienste verwenden."
+              }
+            ]
+          },
+          {
+            "uuid": "d98376b3-a771-42ed-a352-6404fdd6f84c",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "3c18cd4c-0c10-4ec5-a5ab-32abd4685727",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Stellt die Verf\u00fcgbarkeit von Daten sicher, falls der Client im Besprechungsraum f\u00fcr die dauerhafte Speicherung von Informationen genutzt wird (z. B. bei dedizierten Schulungsrechnern)."
+              },
+              {
+                "uuid": "ad3975b2-55cb-4665-8b26-c8899a963af6",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Sicherheit, indem Detektionsfunktionen des Clients genutzt werden, um verd\u00e4chtige Aktivit\u00e4ten (z. B. durch angeschlossene Fremdger\u00e4te) zu erkennen und darauf reagieren zu k\u00f6nnen."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

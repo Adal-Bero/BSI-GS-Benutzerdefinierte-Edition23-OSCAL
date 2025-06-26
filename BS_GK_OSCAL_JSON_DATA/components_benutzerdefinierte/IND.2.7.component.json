@@ -1,0 +1,328 @@
+{
+  "component-definition": {
+    "uuid": "119d0b22-7176-46ce-bd0e-db64864fb9e7",
+    "metadata": {
+      "title": "Component for Baustein IND.2.7: Safety Instrumented Systems",
+      "last-modified": "2025-06-26T11:24:20.607647+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for IND.2.7."
+    },
+    "components": [
+      {
+        "uuid": "90ba7251-d5e9-4e3b-96ef-f7a31b5dcc36",
+        "type": "service",
+        "title": "Safety Instrumented Systems",
+        "description": "Implementation of controls for Baustein IND.2.7.",
+        "control-implementations": [
+          {
+            "uuid": "0c32e1f6-8e38-41a5-8ee7-771540152fea",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group IND.2.7: Safety Instrumented Systems",
+            "implemented-requirements": [
+              {
+                "uuid": "cd75fe87-9001-4dab-af0e-c9d85091598c",
+                "control-id": "IND.2.7.A1",
+                "description": "Base implementation for control IND.2.7.A1."
+              },
+              {
+                "uuid": "8778952d-6151-42e3-b318-c54eaa767e91",
+                "control-id": "IND.2.7.A2",
+                "description": "Base implementation for control IND.2.7.A2."
+              },
+              {
+                "uuid": "5eda6b02-7e2e-494e-ba65-ad864fb0f436",
+                "control-id": "IND.2.7.A3",
+                "description": "Base implementation for control IND.2.7.A3."
+              },
+              {
+                "uuid": "4361bddf-d919-4785-8513-488e5133c8e2",
+                "control-id": "IND.2.7.A4",
+                "description": "Base implementation for control IND.2.7.A4."
+              },
+              {
+                "uuid": "06ad6249-3244-44d5-91c9-a63ceb6517b8",
+                "control-id": "IND.2.7.A5",
+                "description": "Base implementation for control IND.2.7.A5."
+              },
+              {
+                "uuid": "933f4a7a-8ab4-4b98-b3f3-0cadfcfcd899",
+                "control-id": "IND.2.7.A6",
+                "description": "Base implementation for control IND.2.7.A6."
+              },
+              {
+                "uuid": "6d0f54c8-aa38-4bbf-8691-bfdc9ade3a1c",
+                "control-id": "IND.2.7.A7",
+                "description": "Base implementation for control IND.2.7.A7."
+              },
+              {
+                "uuid": "8e44e159-8719-449e-8879-d3365da2d42e",
+                "control-id": "IND.2.7.A8",
+                "description": "Base implementation for control IND.2.7.A8."
+              },
+              {
+                "uuid": "e71d9269-70e4-4845-8dfe-4499daf06f09",
+                "control-id": "IND.2.7.A9",
+                "description": "Base implementation for control IND.2.7.A9."
+              },
+              {
+                "uuid": "2f7e6e62-9129-4b8d-95de-b04a2320cc72",
+                "control-id": "IND.2.7.A10",
+                "description": "Base implementation for control IND.2.7.A10."
+              },
+              {
+                "uuid": "93a42856-8223-4225-a820-df9fb3382c76",
+                "control-id": "IND.2.7.A11",
+                "description": "Base implementation for control IND.2.7.A11."
+              },
+              {
+                "uuid": "a7a9d022-aa82-4fcf-b8ec-d6061c756179",
+                "control-id": "IND.2.7.A12",
+                "description": "Base implementation for control IND.2.7.A12."
+              }
+            ]
+          },
+          {
+            "uuid": "6953fe6b-35cf-4b93-95ab-4e512ef03ae2",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "fbcb42c0-e71a-4e65-9d1d-9c3e60ee5079",
+                "control-id": "IND.1.A1",
+                "description": "AI-Begr\u00fcndung: Eine klare Verantwortlichkeit f\u00fcr die OT-Sicherheit ist eine grundlegende organisatorische Anforderung, die auch f\u00fcr den spezialisierten Bereich der SIS unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "359378ac-b2b8-44ad-83cd-4c7ad94e488e",
+                "control-id": "IND.1.A3",
+                "description": "AI-Begr\u00fcndung: Schutz vor Schadprogrammen ist f\u00fcr die Integrit\u00e4t von SIS-Komponenten wie Engineering Stations essenziell. Die Anforderung ber\u00fccksichtigt realistisch die Hersteller-Freigaben und fordert alternative Schutzma\u00dfnahmen."
+              },
+              {
+                "uuid": "28c7dafd-c044-48d4-8f0b-e3cd8e650967",
+                "control-id": "IND.1.A18",
+                "description": "AI-Begr\u00fcndung: Aufgrund des hohen Integrit\u00e4tsanspruchs von SIS ist die l\u00fcckenlose Protokollierung von \u00c4nderungen und Zugriffen zur Nachvollziehbarkeit und forensischen Analyse zwingend erforderlich."
+              },
+              {
+                "uuid": "364b2670-1dbb-4ca6-b689-b4c9898d97ec",
+                "control-id": "IND.1.A19",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Datensicherungen sind f\u00fcr die Wiederherstellung der hochintegren SIS-Funktionen nach einem St\u00f6rfall oder einer kompromittierenden \u00c4nderung von entscheidender Bedeutung."
+              },
+              {
+                "uuid": "2c1c00db-425f-4e70-beef-9342dd77fc4e",
+                "control-id": "IND.1.A4",
+                "description": "AI-Begr\u00fcndung: Eine umfassende Dokumentation der SIS-Infrastruktur ist die Grundlage f\u00fcr alle weiteren Sicherheitsma\u00dfnahmen, das \u00c4nderungsmanagement und die St\u00f6rungsbehebung."
+              },
+              {
+                "uuid": "1a18fae5-ed1e-44c0-8987-3e2a0cc0be60",
+                "control-id": "IND.1.A5",
+                "description": "AI-Begr\u00fcndung: Das Zonenkonzept ist die technische Umsetzung des im Bausteinkontext geforderten Kernprinzips der Unabh\u00e4ngigkeit und Trennung von SIS von der restlichen IT/OT-Umgebung."
+              },
+              {
+                "uuid": "e23f6773-ae76-4287-a02c-57ddd5eae5d0",
+                "control-id": "IND.1.A6",
+                "description": "AI-Begr\u00fcndung: \u00c4nderungen an SIS-Komponenten bergen ein hohes Risiko f\u00fcr die funktionale Sicherheit und Integrit\u00e4t. Ein formalisierter \u00c4nderungsprozess ist daher unerl\u00e4sslich."
+              },
+              {
+                "uuid": "12563040-7ac8-4c9a-861b-0e29c51e9b78",
+                "control-id": "IND.1.A7",
+                "description": "AI-Begr\u00fcndung: Eine etablierte Berechtigungsverwaltung nach dem Minimalprinzip ist fundamental, um unbefugte und potenziell gef\u00e4hrliche Zugriffe auf die SIS-Systeme zu verhindern."
+              },
+              {
+                "uuid": "a25c5214-9793-4b88-ba16-77fa45885ed4",
+                "control-id": "IND.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der administrativen Zug\u00e4nge durch sichere Protokolle oder Netze ist entscheidend, um die Konfiguration und damit die Integrit\u00e4t des SIS zu sch\u00fctzen."
+              },
+              {
+                "uuid": "59029760-b724-491a-b67e-51304f34ddf0",
+                "control-id": "IND.1.A9",
+                "description": "AI-Begr\u00fcndung: Wechseldatentr\u00e4ger stellen einen Hauptangriffsvektor f\u00fcr Schadsoftware dar. Ihre Nutzung restriktiv zu regeln, ist f\u00fcr den Schutz der SIS-Umgebung, inkl. Engineering Stations, kritisch."
+              },
+              {
+                "uuid": "a80c0292-4129-4cbd-8b27-6067b6577860",
+                "control-id": "IND.1.A10",
+                "description": "AI-Begr\u00fcndung: Die zeitnahe Erkennung von und Reaktion auf sicherheitsrelevante Ereignisse ist f\u00fcr Systeme mit h\u00f6chsten Integrit\u00e4ts- und Verf\u00fcgbarkeitsanforderungen wie SIS essenziell."
+              },
+              {
+                "uuid": "e90d5ab5-7859-44ed-9542-42e4d0ccaa57",
+                "control-id": "IND.1.A11",
+                "description": "AI-Begr\u00fcndung: Die Verankerung von Sicherheitsanforderungen im Beschaffungs- und Entwicklungsprozess stellt sicher, dass die Informationssicherheit \u00fcber den gesamten Lebenszyklus des SIS ber\u00fccksichtigt wird."
+              },
+              {
+                "uuid": "580cf64a-320e-49f6-b980-6c29d1bfdc1c",
+                "control-id": "IND.1.A12",
+                "description": "AI-Begr\u00fcndung: Ein etabliertes Schwachstellen-Management ist notwendig, um Risiken f\u00fcr SIS proaktiv zu identifizieren und zu bewerten, auch wenn die Umsetzung von Patches besondere Verfahren erfordert."
+              },
+              {
+                "uuid": "d1a93d15-6b69-4db9-866a-b7bacc99489c",
+                "control-id": "IND.1.A14",
+                "description": "AI-Begr\u00fcndung: Die Nutzung personalisierter Konten und komplexer Passw\u00f6rter ist eine grundlegende Ma\u00dfnahme zur Nachvollziehbarkeit von Zugriffen und zur Erh\u00f6hung der H\u00fcrden f\u00fcr unbefugte Zugriffe."
+              },
+              {
+                "uuid": "4b22bbec-5014-4439-a494-9a21b6733480",
+                "control-id": "IND.1.A15",
+                "description": "AI-Begr\u00fcndung: Administrative Berechtigungen auf SIS sind extrem kritisch. Ihre regelm\u00e4\u00dfige \u00dcberwachung ist ein wichtiger Prozess zur Durchsetzung des Minimalprinzips und zur Reduzierung von Risiken."
+              },
+              {
+                "uuid": "73df3afe-88d7-423f-9066-eee10b307208",
+                "control-id": "IND.1.A16",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung beschreibt die konkrete technische Umsetzung des Zonenkonzepts (IND.1.A5) und ist damit eine direkte Ma\u00dfnahme zur Erreichung der geforderten Abschottung des SIS."
+              },
+              {
+                "uuid": "16a57c8f-2201-4795-ac7c-fc823b11aeb3",
+                "control-id": "IND.1.A20",
+                "description": "AI-Begr\u00fcndung: Eine detaillierte Systemdokumentation ist f\u00fcr den sicheren Langzeitbetrieb, die Wartung und die schnelle Fehlerbehebung von sicherheitskritischen SIS-Komponenten unerl\u00e4sslich."
+              },
+              {
+                "uuid": "977f8996-cbeb-4770-bd29-291e9e684b2b",
+                "control-id": "IND.1.A21",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation der Kommunikationsbeziehungen ist eine Voraussetzung, um das Prinzip der Trennung und Unabh\u00e4ngigkeit des SIS \u00fcberpr\u00fcfen und technisch durchsetzen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "f17c6a2e-f936-41c7-afae-1eaad5556409",
+                "control-id": "IND.1.A22",
+                "description": "AI-Begr\u00fcndung: Zentrale Speicherung und automatische Alarmierung bei kritischen Ereignissen erh\u00f6hen die Effektivit\u00e4t der Protokollierung und erm\u00f6glichen eine schnellere Reaktion, was f\u00fcr SIS entscheidend ist."
+              },
+              {
+                "uuid": "976fdee3-ffc7-4f9b-b592-bd63d4ab99fc",
+                "control-id": "IND.1.A23",
+                "description": "AI-Begr\u00fcndung: Die sichere L\u00f6schung von Daten bei der Aussonderung von SIS-Komponenten verhindert, dass sensible Informationen wie Konfigurationen oder Zugangsdaten offengelegt werden."
+              },
+              {
+                "uuid": "b4a9f538-4dc6-4207-bddb-2767f054737a",
+                "control-id": "IND.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Absicherung von Konfigurationsschnittstellen, insbesondere durch den Wechsel von Standardpassw\u00f6rtern, ist eine fundamentale Sicherheitsma\u00dfnahme zum Schutz der Integrit\u00e4t des SIS."
+              },
+              {
+                "uuid": "51e209f4-8a97-4766-b49c-bf420668ea1e",
+                "control-id": "IND.2.1.A2",
+                "description": "AI-Begr\u00fcndung: Der Schutz von Konfigurations- und Wartungsdaten bei der \u00dcbertragung ist zwingend erforderlich, um Manipulationen an den sicherheitskritischen Funktionen des SIS zu verhindern."
+              },
+              {
+                "uuid": "ac9e00aa-a15c-4d5a-9515-3ab0349d1aef",
+                "control-id": "IND.2.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Reduzierung der Angriffsfl\u00e4che durch Deaktivierung nicht ben\u00f6tigter Funktionen ist eine grundlegende H\u00e4rtungsma\u00dfnahme, die f\u00fcr hochsichere SIS-Systeme besonders relevant ist."
+              },
+              {
+                "uuid": "9258f7b3-1b6f-4a40-bd66-8aeccadfb5b3",
+                "control-id": "IND.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung untermauert das Kernprinzip der Trennung des SIS von der Office-IT und anderen Netzen, was explizit im Bausteinkontext gefordert wird."
+              },
+              {
+                "uuid": "b8dfb4e2-4386-4b64-8b27-79ce3a296ad9",
+                "control-id": "IND.2.1.A7",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung formalisiert die Datensicherung als festen Bestandteil des \u00c4nderungsprozesses, was dem hohen Schutzbedarf von SIS gerecht wird und die Wiederherstellbarkeit sicherstellt."
+              },
+              {
+                "uuid": "dc07c356-e507-41b2-a262-9446a6f4a0a2",
+                "control-id": "IND.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung bietet einen realistischen Ansatz zum Schutz vor Schadsoftware, der die speziellen Gegebenheiten von SIS (z.B. keine Herstellerfreigabe f\u00fcr Virenscanner) ber\u00fccksichtigt."
+              },
+              {
+                "uuid": "7ed6bf59-0d52-4c08-b2b7-5dc96b92bcfe",
+                "control-id": "IND.2.1.A11",
+                "description": "AI-Begr\u00fcndung: Das Vorgehen beschreibt ein f\u00fcr SIS geeignetes, vorsichtiges Patch-Management, das Herstellerfreigaben oder Tests zwingend vorsieht, um die Stabilit\u00e4t und Sicherheit nicht zu gef\u00e4hrden."
+              },
+              {
+                "uuid": "73f0647f-091a-4c7e-8c12-50da453bdeb1",
+                "control-id": "IND.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Stellt sicher, dass neue SIS-Komponenten von Anfang an auf einem sicheren Stand und in die Sicherheitsprozesse integriert sind, was f\u00fcr den Lebenszyklus-Ansatz wichtig ist."
+              },
+              {
+                "uuid": "d8e1f955-65f2-485d-9ff7-168abfa990c9",
+                "control-id": "IND.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Der Schutz von physikalischen und logischen Schnittstellen ist ein direkter und wirksamer Schutz gegen unbefugte Zugriffe und die Einbringung von Schadsoftware auf SIS-Komponenten."
+              },
+              {
+                "uuid": "875b3347-c6e9-4b22-8117-359b24ba8745",
+                "control-id": "IND.2.1.A17",
+                "description": "AI-Begr\u00fcndung: Die Integrit\u00e4t von Mess- und Steuerdaten ist die Kernfunktion eines SIS. Der Schutz dieser Daten bei der \u00dcbertragung ist daher von h\u00f6chster Priorit\u00e4t."
+              },
+              {
+                "uuid": "6da8b563-62bd-4f30-aad7-1bb19b705529",
+                "control-id": "IND.2.1.A18",
+                "description": "AI-Begr\u00fcndung: Unabh\u00e4ngige Kommunikationswege sind f\u00fcr den St\u00f6rfall in einer SIS-Umgebung kritisch, um auch bei Ausfall der prim\u00e4ren Systeme handlungs- und reaktionsf\u00e4hig zu bleiben."
+              },
+              {
+                "uuid": "634fa54d-a363-442c-98aa-9963d8669911",
+                "control-id": "IND.2.1.A19",
+                "description": "AI-Begr\u00fcndung: Die Anforderung fordert regelm\u00e4\u00dfige Security-Tests, ber\u00fccksichtigt aber die hohen Verf\u00fcgbarkeitsanforderungen von SIS, indem sie die Durchf\u00fchrung in Wartungsfenstern vorschreibt."
+              },
+              {
+                "uuid": "6cf9c25a-0c9d-4c3e-a2ae-c1e047e7c605",
+                "control-id": "IND.2.1.A20",
+                "description": "AI-Begr\u00fcndung: Die Integrit\u00e4t von Firmware und Steuerungsprogrammen ist f\u00fcr ein SIS absolut entscheidend. Die \u00dcberpr\u00fcfung vor dem Einspielen ist eine nicht verhandelbare Anforderung."
+              }
+            ]
+          },
+          {
+            "uuid": "49764fe6-f57a-44d0-a6a2-80d71b985a60",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5102f4f5-9577-4d51-b855-d487a5f48c55",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung, z.B. zwischen Konfiguration und Pr\u00fcfung, ist eine wesentliche organisatorische Ma\u00dfnahme, um Manipulationen und Fehler in sicherheitskritischen SIS-Systemen zu verhindern."
+              },
+              {
+                "uuid": "d14d4502-7a47-4725-a51e-e3619d8ef0c0",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: SIS sind hochspezialisierte Systeme. Die Anforderung stellt sicher, dass nur entsprechend qualifiziertes und geschultes Personal mit diesen kritischen Systemen arbeitet."
+              },
+              {
+                "uuid": "6b6ea107-c28e-42fd-8963-05788c4918d9",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Setzt das Minimalprinzip f\u00fcr SIS-Berechtigungen konkret um, was entscheidend ist, um das Risiko unbefugter \u00c4nderungen zu minimieren."
+              },
+              {
+                "uuid": "0128f38e-a552-4942-9d1d-f9d956fecd7d",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Ist eine grundlegende Anforderung f\u00fcr die Zugriffssicherheit. Die Pflicht zur \u00c4nderung von Standardpassw\u00f6rtern ist f\u00fcr SIS-Komponenten essenziell."
+              },
+              {
+                "uuid": "f96e788a-dfd2-423c-80a8-16a8c1176942",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Fordert dem hohen Schutzbedarf von SIS angemessene, st\u00e4rkere Authentisierungsmechanismen und Schutz vor Brute-Force-Angriffen."
+              },
+              {
+                "uuid": "fb3c1354-815e-47c7-b16e-8d7c941bc868",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Wenn Kryptografie zum Schutz von SIS-Kommunikation oder -Daten eingesetzt wird, muss sichergestellt sein, dass diese wirksam ist. Diese Anforderung stellt dies sicher."
+              },
+              {
+                "uuid": "289fdffb-1f32-4dbe-bcd0-f6047fa7e797",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein sicheres Schl\u00fcsselmanagement ist die Voraussetzung f\u00fcr den wirksamen Einsatz von Kryptografie, z.B. bei der sicheren Administration von SIS."
+              },
+              {
+                "uuid": "5d70429e-c46f-4777-811e-e808453c30a8",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: F\u00fcr SIS mit h\u00f6chstem Integrit\u00e4tsanspruch ist die l\u00fcckenlose Nachweisbarkeit administrativer T\u00e4tigkeiten (Wer, Was, Wann) f\u00fcr die Revision und Forensik unabdingbar."
+              },
+              {
+                "uuid": "93fa22b7-d853-4330-9744-c9f68fad62e5",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung verst\u00e4rkt die Notwendigkeit der sicheren Authentisierung und Protokollierung f\u00fcr administrative T\u00e4tigkeiten, was ein Kernanliegen beim Schutz von SIS ist."
+              },
+              {
+                "uuid": "b5fc6d15-58c8-48dc-97dc-5ace7e651757",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Formalisiert das Patch- und \u00c4nderungsmanagement durch die Forderung nach einem \u00fcbergreifenden Konzept, was dem hohen Schutzbedarf und den strengen Anforderungen von SIS gerecht wird."
+              },
+              {
+                "uuid": "5b3e9b0a-0015-4570-a2cd-99e40d61ad8c",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Stellt auf pragmatische Weise sicher, dass vorhandene, systemeigene Detektionsfunktionen von SIS-Komponenten auch tats\u00e4chlich zur Erkennung von Vorf\u00e4llen genutzt werden."
+              },
+              {
+                "uuid": "823837cb-3938-4cf6-a9f8-44b946582337",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von netzbasierten Detektionssystemen ist eine wichtige kompensatorische Ma\u00dfnahme f\u00fcr SIS, da Endpoint-Security auf den Ger\u00e4ten selbst oft nicht m\u00f6glich ist."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

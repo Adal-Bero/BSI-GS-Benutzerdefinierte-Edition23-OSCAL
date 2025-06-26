@@ -1,0 +1,318 @@
+{
+  "component-definition": {
+    "uuid": "0b15dc04-3e4b-45cb-8266-61e61c2a7d29",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.11: Benutzerdefiniert: Server unter FreeBSD",
+      "last-modified": "2025-06-26T10:34:45.431595+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.11."
+    },
+    "components": [
+      {
+        "uuid": "7c47e73c-b753-46ce-b059-18744e4eacf4",
+        "type": "service",
+        "title": "Benutzerdefiniert: Server unter FreeBSD",
+        "description": "Implementation of controls for Baustein SYS.1.11.",
+        "control-implementations": [
+          {
+            "uuid": "14f79976-c2da-4c2e-8dbf-27ca3477d3e1",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.11: Benutzerdefiniert: Server unter FreeBSD",
+            "implemented-requirements": [
+              {
+                "uuid": "f42a00cf-bd20-4422-a90f-61b52de13d53",
+                "control-id": "SYS.1.11.A1",
+                "description": "Base implementation for control SYS.1.11.A1."
+              },
+              {
+                "uuid": "29ad0f36-3793-4494-8757-ef7175dba1ab",
+                "control-id": "SYS.1.11.A2",
+                "description": "Base implementation for control SYS.1.11.A2."
+              },
+              {
+                "uuid": "a9901b8c-2ea0-4ba3-b81b-9cf7b50907a7",
+                "control-id": "SYS.1.11.A3",
+                "description": "Base implementation for control SYS.1.11.A3."
+              },
+              {
+                "uuid": "0e7693fa-c3a0-41ce-ada4-80f5d6309d55",
+                "control-id": "SYS.1.11.A4",
+                "description": "Base implementation for control SYS.1.11.A4."
+              },
+              {
+                "uuid": "cc9125f7-6a0c-4403-85d5-eadb8e96799a",
+                "control-id": "SYS.1.11.A5",
+                "description": "Base implementation for control SYS.1.11.A5."
+              },
+              {
+                "uuid": "fdfd30fb-2c80-4880-90e0-d74ac193e34d",
+                "control-id": "SYS.1.11.A6",
+                "description": "Base implementation for control SYS.1.11.A6."
+              },
+              {
+                "uuid": "6085a4aa-29c7-4644-b61d-9746a500e77a",
+                "control-id": "SYS.1.11.A7",
+                "description": "Base implementation for control SYS.1.11.A7."
+              },
+              {
+                "uuid": "b534e6b4-7ce1-472c-b88e-285e188b72c2",
+                "control-id": "SYS.1.11.A8",
+                "description": "Base implementation for control SYS.1.11.A8."
+              },
+              {
+                "uuid": "5f08a7bb-1fff-47bd-83d1-6838cd16ee83",
+                "control-id": "SYS.1.11.A9",
+                "description": "Base implementation for control SYS.1.11.A9."
+              },
+              {
+                "uuid": "786caaaa-369f-4ca9-9f68-a985ab4cb695",
+                "control-id": "SYS.1.11.A10",
+                "description": "Base implementation for control SYS.1.11.A10."
+              },
+              {
+                "uuid": "a79e0292-1ca2-4a51-a786-6bdd70fda267",
+                "control-id": "SYS.1.11.A11",
+                "description": "Base implementation for control SYS.1.11.A11."
+              },
+              {
+                "uuid": "c63481fc-c0c6-4302-bc48-cc0720ccf788",
+                "control-id": "SYS.1.11.A12",
+                "description": "Base implementation for control SYS.1.11.A12."
+              },
+              {
+                "uuid": "af6f366e-e12f-442c-8be8-c8087c3f260b",
+                "control-id": "SYS.1.11.A13",
+                "description": "Base implementation for control SYS.1.11.A13."
+              },
+              {
+                "uuid": "1cb9d6c6-0199-41f4-bf87-c25a986e9a9b",
+                "control-id": "SYS.1.11.A14",
+                "description": "Base implementation for control SYS.1.11.A14."
+              },
+              {
+                "uuid": "4acd2562-9c29-455e-aae9-b2cffb155f4d",
+                "control-id": "SYS.1.11.A15",
+                "description": "Base implementation for control SYS.1.11.A15."
+              }
+            ]
+          },
+          {
+            "uuid": "5c9c4c20-2ba6-4b2a-ab8d-b5571463c8c5",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "95ae2c41-e8b1-4463-ac73-91ee3b7b0a37",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Grundlegende Anforderung an den physischen und logischen Zugriffsschutz, die f\u00fcr jeden Server, einschlie\u00dflich FreeBSD, unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "8fdb6f1d-551f-4147-8d8f-0cc8ffaa2daa",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Generische Anforderung zur Authentisierung, die eine grundlegende Sicherheitsfunktion f\u00fcr jeden FreeBSD-Server darstellt."
+              },
+              {
+                "uuid": "1db37328-44c7-4258-83b9-fa89070142e2",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: Allgemeine Anforderung zur Absicherung von Schnittstellen, die die Angriffsfl\u00e4che eines FreeBSD-Servers reduziert."
+              },
+              {
+                "uuid": "7db3ae05-dedb-45c6-ab2c-980196ececd4",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Fundamentale H\u00e4rtungsma\u00dfnahme, die durch Deaktivierung unn\u00f6tiger Dienste die Sicherheit und Stabilit\u00e4t eines FreeBSD-Systems erh\u00f6ht."
+              },
+              {
+                "uuid": "cae77a08-a6c6-4b8f-8b4f-613a50591823",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Generische Anforderung, die Notwendigkeit von Virenschutz zu pr\u00fcfen, was auch f\u00fcr FreeBSD-Server je nach Einsatzzweck relevant ist."
+              },
+              {
+                "uuid": "de5b67a2-d092-43fe-83fd-941b0dc2343c",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: Grundlegende Anforderung an die Protokollierung, die f\u00fcr die Nachvollziehbarkeit und Erkennung von Sicherheitsvorf\u00e4llen auf FreeBSD-Systemen entscheidend ist."
+              },
+              {
+                "uuid": "169d8ef0-0860-427a-ac68-fc4df1d2de09",
+                "control-id": "SYS.1.1.A11",
+                "description": "AI-Begr\u00fcndung: Organisatorische Anforderung zur Erstellung einer Sicherheitsrichtlinie, die den Rahmen f\u00fcr den sicheren Betrieb von FreeBSD-Servern vorgibt."
+              },
+              {
+                "uuid": "916ad925-9e34-4700-89ed-a0cfc3a5420d",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Generische Planungsanforderung, die sicherstellt, dass der Einsatz von FreeBSD-Servern strukturiert und unter Ber\u00fccksichtigung von Sicherheitsaspekten erfolgt."
+              },
+              {
+                "uuid": "d8ec112d-7efe-4e54-ab38-f01f2cc94970",
+                "control-id": "SYS.1.1.A13",
+                "description": "AI-Begr\u00fcndung: Allgemeine Anforderung f\u00fcr den Beschaffungsprozess, die auch f\u00fcr die Hardware von FreeBSD-Servern relevant ist."
+              },
+              {
+                "uuid": "82a7e194-bc37-4280-a22f-ec7827b252db",
+                "control-id": "SYS.1.1.A15",
+                "description": "AI-Begr\u00fcndung: Grundlegende Anforderung zur Sicherstellung der Verf\u00fcgbarkeit durch eine stabile Stromversorgung, die f\u00fcr alle kritischen Server gilt."
+              },
+              {
+                "uuid": "5b084194-93cf-42aa-9ae4-604ac1fff669",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Wesentliche Anforderung f\u00fcr die sichere Grundinstallation, deren Aspekt der Funktionstrennung gut zum Einsatz von Jails auf FreeBSD passt."
+              },
+              {
+                "uuid": "2965ae88-91fc-46ea-afa4-fb0b27629589",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: Hochrelevante Anforderung, da FreeBSD mit 'pf' und 'ipfw' m\u00e4chtige, integrierte Paketfilter-Werkzeuge zur H\u00e4rtung der Netzwerkschicht bietet."
+              },
+              {
+                "uuid": "b7ea887e-6b1f-43ee-8cfa-b1462ff116f8",
+                "control-id": "SYS.1.1.A21",
+                "description": "AI-Begr\u00fcndung: Wichtige betriebliche Anforderung zur Dokumentation, die die Nachvollziehbarkeit von Konfigurations\u00e4nderungen an einem FreeBSD-Server sicherstellt."
+              },
+              {
+                "uuid": "d9dcd8cf-2291-4c6b-bb7e-f7c7e505ed35",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Grundlegende organisatorische Anforderung, um die Wiederherstellbarkeit von FreeBSD-Servern im Notfall zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "e04aeb15-2c92-43e8-b948-ffc9cc7c6185",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Essenzielle betriebliche Anforderung, um die Verf\u00fcgbarkeit und den Zustand von FreeBSD-Servern und deren Diensten proaktiv zu \u00fcberwachen."
+              },
+              {
+                "uuid": "a669d71d-faf7-4ece-85d7-21a00d5d31e7",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Wichtige prozessuale Anforderung zur regelm\u00e4\u00dfigen \u00dcberpr\u00fcfung der Sicherheitskonfiguration eines FreeBSD-Servers."
+              },
+              {
+                "uuid": "b6136043-5a66-415c-9738-90453c2d2c3f",
+                "control-id": "SYS.1.1.A25",
+                "description": "AI-Begr\u00fcndung: Notwendige Anforderung f\u00fcr das Lebensende eines Servers, um Datenverluste und die Kompromittierung von Restdaten zu verhindern."
+              },
+              {
+                "uuid": "bd73246e-f26a-454a-be30-b5d4181d8a35",
+                "control-id": "SYS.1.1.A35",
+                "description": "AI-Begr\u00fcndung: Wichtige Anforderung zur Dokumentation, um einen geregelten und nachvollziehbaren Betrieb von FreeBSD-Servern zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "d88467c2-fa7c-4e47-aa93-04ea9a2e9c60",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist hochrelevant, da sie direkt die Kernfunktionalit\u00e4t von FreeBSD-Jails zur Isolation von Anwendungen und Diensten adressiert."
+              },
+              {
+                "uuid": "ca5727a3-6d12-4043-972d-2cf7f3235517",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: F\u00f6rdert einen konsistenten und skalierbaren Betrieb, was auch f\u00fcr gr\u00f6\u00dfere Umgebungen mit FreeBSD-Servern von gro\u00dfem Wert ist."
+              },
+              {
+                "uuid": "4d9da742-7fa9-46a1-be9b-c1058024a213",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Relevante H\u00e4rtungsma\u00dfnahme f\u00fcr Server mit hohem Schutzbedarf, die auch auf FreeBSD-Systemen umsetzbar ist."
+              },
+              {
+                "uuid": "8a6165ef-5560-4cc4-b00d-094971569226",
+                "control-id": "SYS.1.1.A28",
+                "description": "AI-Begr\u00fcndung: Allgemeine Anforderung zur Steigerung der Verf\u00fcgbarkeit, die f\u00fcr Hardware unter FreeBSD genauso gilt wie f\u00fcr andere Serversysteme."
+              },
+              {
+                "uuid": "56fac8b6-7441-49bc-ad8f-89f3eb9c3c89",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung unterst\u00fctzt das Sicherheitsprinzip der Trennung und l\u00e4sst sich ideal mit FreeBSD-Jails umsetzen, um Dienste zu isolieren."
+              },
+              {
+                "uuid": "e6624d27-6d5a-451f-86d1-700ffd9e1f8b",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Allgemeine H\u00e4rtungsma\u00dfnahme, die die Ausf\u00fchrung unerw\u00fcnschter Software auf einem FreeBSD-Server unterbinden kann."
+              },
+              {
+                "uuid": "98e77596-66d1-47a9-87b8-d84d43ec7650",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Wichtige Sicherheitsma\u00dfnahme zur Absicherung der Vertrauensanker des Systems, die auf jedem Server, auch FreeBSD, relevant ist."
+              },
+              {
+                "uuid": "1e340c9c-4022-4fa1-9d3d-d0088bea4dd1",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Hochrelevante Anforderung, da sie direkt die im Baustein erw\u00e4hnte F\u00e4higkeit von ZFS zur Verschl\u00fcsselung sowie die Nutzung von GELI unterst\u00fctzt."
+              },
+              {
+                "uuid": "48a7b5bd-3c51-4814-a56d-20d9dee6a9ec",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Grundlegende H\u00e4rtungsma\u00dfnahme zur Absicherung der Integrit\u00e4t des Bootvorgangs, die auf moderner Server-Hardware relevant ist."
+              }
+            ]
+          },
+          {
+            "uuid": "eba705fb-5200-4882-a3ed-01a4587f1d60",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "654821e4-9c33-45c2-a01b-9ec7525b1e28",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Grundlegendes organisatorisches Sicherheitsprinzip, das f\u00fcr die Administration von FreeBSD-Servern ebenso gilt wie f\u00fcr andere Systeme."
+              },
+              {
+                "uuid": "f6387bf1-6bd7-4ac9-a08f-cfc1844e9230",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Eine grundlegende personelle Anforderung, die sicherstellt, dass Administratoren \u00fcber das n\u00f6tige Wissen f\u00fcr den sicheren Betrieb von FreeBSD verf\u00fcgen."
+              },
+              {
+                "uuid": "279f68b9-eef3-4819-80a7-d5092ee8a75b",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Fundamentale Anforderung des Identit\u00e4ts- und Berechtigungsmanagements, die f\u00fcr die Verwaltung von Benutzerkonten auf FreeBSD-Systemen unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "dfd964f1-168f-4b7e-ae74-311585dd8b2d",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Fundamentale Anforderung, die den gesicherten Zugriff auf FreeBSD-Server durch Benutzer und Dienste erst erm\u00f6glicht."
+              },
+              {
+                "uuid": "385f2941-8457-4563-8a06-dbadd28dfcc0",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Eine wichtige Konkretisierung der Authentisierungsanforderungen, die auch f\u00fcr FreeBSD-Server (z.B. bei SSH-Konfiguration) relevant ist."
+              },
+              {
+                "uuid": "cc1147ab-dc72-4284-8372-f1275c5998f5",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Unerl\u00e4ssliche Anforderung, da auf einem FreeBSD-Server zahlreiche kryptografische Verfahren (z.B. in SSH, TLS, ZFS) sicher konfiguriert werden m\u00fcssen."
+              },
+              {
+                "uuid": "fc13842f-19e2-46ab-babe-a77d78b7a528",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Essenzielle Anforderung, die den sicheren Lebenszyklus von Schl\u00fcsseln (z.B. SSH-Keys, ZFS-Keys) auf einem FreeBSD-Server regelt."
+              },
+              {
+                "uuid": "3413b9bd-1395-4506-91d8-f0655502b53e",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Fundamentale Anforderung zur Sicherstellung der Datenverf\u00fcgbarkeit, die sich auf FreeBSD ideal mit den Snapshot-F\u00e4higkeiten von ZFS umsetzen l\u00e4sst."
+              },
+              {
+                "uuid": "6afda542-c6a7-4d50-ae48-37c95d8592e6",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Wichtige Anforderung zur Protokollierung und Nachvollziehbarkeit, um administrative T\u00e4tigkeiten auf einem FreeBSD-Server zu \u00fcberwachen."
+              },
+              {
+                "uuid": "fda50763-c84a-4fb9-b84e-5c4387a4f819",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Grundlegende Sicherheitsanforderung, die den administrativen Zugriff auf einen FreeBSD-Server, z.B. via SSH, absichert."
+              },
+              {
+                "uuid": "2d73e7bd-37bb-4cf0-a0b7-1a63b45f50a8",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Zentrale betriebliche Anforderung, die f\u00fcr die Aktualisierung des FreeBSD-Basissystems (freebsd-update) und der installierten Software (Ports/Packages) von entscheidender Bedeutung ist."
+              },
+              {
+                "uuid": "fa22e6d2-edd6-4bcd-80cd-48b8a248afcb",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Sinnvolle Anforderung, die vorhandenen Bordmittel von FreeBSD, wie das Audit-Framework und Systemprotokolle, zur Erkennung von Vorf\u00e4llen zu nutzen."
+              },
+              {
+                "uuid": "7ef02645-2d17-410f-b17e-4ccb8811fc2f",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Generische, aber wertvolle Anforderung zur Erg\u00e4nzung der Systemsicherheit durch spezialisierte Detektionswerkzeuge (IDS/IPS), die auch f\u00fcr FreeBSD verf\u00fcgbar sind."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

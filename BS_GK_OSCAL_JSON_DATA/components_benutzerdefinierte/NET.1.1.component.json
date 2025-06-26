@@ -1,0 +1,136 @@
+{
+  "component-definition": {
+    "uuid": "92dd067c-26ba-4760-a9a4-e3db654a54ed",
+    "metadata": {
+      "title": "Component for Baustein NET.1.1: NET.1.1 Netzarchitektur und -design",
+      "last-modified": "2025-06-26T11:28:00.894655+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.1.1."
+    },
+    "components": [
+      {
+        "uuid": "778e04df-c80a-4ba6-8e23-2c4eebfd8f59",
+        "type": "service",
+        "title": "NET.1.1 Netzarchitektur und -design",
+        "description": "Implementation of controls for Baustein NET.1.1.",
+        "control-implementations": [
+          {
+            "uuid": "77ed0cf3-659a-466f-8b3a-628c30fd4add",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.1.1: NET.1.1 Netzarchitektur und -design",
+            "implemented-requirements": [
+              {
+                "uuid": "7b6a12ed-14ba-4ed4-93f2-9884a0ded699",
+                "control-id": "NET.1.1.A1",
+                "description": "Base implementation for control NET.1.1.A1."
+              },
+              {
+                "uuid": "79173c1f-6b3e-4595-82a9-e88ecba84aff",
+                "control-id": "NET.1.1.A2",
+                "description": "Base implementation for control NET.1.1.A2."
+              },
+              {
+                "uuid": "17bbc019-8022-41c6-8b54-62d5aeff7ea4",
+                "control-id": "NET.1.1.A3",
+                "description": "Base implementation for control NET.1.1.A3."
+              },
+              {
+                "uuid": "64631269-5415-4cdb-b8b0-9c7004d2837d",
+                "control-id": "NET.1.1.A4",
+                "description": "Base implementation for control NET.1.1.A4."
+              },
+              {
+                "uuid": "ef86cdd9-e22e-4e4d-aead-fd25d79868ad",
+                "control-id": "NET.1.1.A5",
+                "description": "Base implementation for control NET.1.1.A5."
+              },
+              {
+                "uuid": "68894d19-d06c-4306-b49e-5f30b4666760",
+                "control-id": "NET.1.1.A6",
+                "description": "Base implementation for control NET.1.1.A6."
+              },
+              {
+                "uuid": "74a02bfd-9288-4a7d-9a44-081e357f7e37",
+                "control-id": "NET.1.1.A7",
+                "description": "Base implementation for control NET.1.1.A7."
+              },
+              {
+                "uuid": "3ee67d91-fda6-4227-80b7-53550fc30f72",
+                "control-id": "NET.1.1.A8",
+                "description": "Base implementation for control NET.1.1.A8."
+              },
+              {
+                "uuid": "d4f3a5ee-27cf-45b0-9bfa-a39e4f338d83",
+                "control-id": "NET.1.1.A9",
+                "description": "Base implementation for control NET.1.1.A9."
+              }
+            ]
+          },
+          {
+            "uuid": "fb6170bc-aafe-46ef-80d6-96861170deac",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "5435d478-94e6-4792-89c7-b70fc7f2e1cf",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung ist ein grundlegendes organisatorisches Prinzip, das bereits in der Netzarchitektur verankert werden muss, um administrative Prozesse sicher zu gestalten und unzul\u00e4ssige Machtkonzentrationen zu vermeiden."
+              },
+              {
+                "uuid": "aaaef3e4-e16e-45ff-bfbf-b6e5d205b56b",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Eine sichere Netzarchitektur kann nur von qualifiziertem Personal entworfen, umgesetzt und betrieben werden. Diese Anforderung stellt die hierf\u00fcr notwendige personelle Kompetenz als Basis f\u00fcr ein sicheres Netzdesign sicher."
+              },
+              {
+                "uuid": "cf02f7f2-c0a1-44f1-8439-a3c8a30f28ec",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Prinzipien der geringsten Rechtevergabe (Least Privilege) und der Erforderlichkeit (Need-to-know) sind Eckpfeiler eines sicheren Netzdesigns, insbesondere f\u00fcr die Konzeption der Netzzugangskontrolle und der administrativen Zug\u00e4nge."
+              },
+              {
+                "uuid": "3150df89-930b-4bbb-b154-dd6c4082d11b",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine sichere Identifikation und Authentisierung ist die technische Grundlage f\u00fcr die im Baustein geforderte Netzzugangskontrolle. Deren Ausgestaltung muss daher im Architekturkonzept ber\u00fccksichtigt werden."
+              },
+              {
+                "uuid": "d7f32d45-8b20-41b8-9923-7fa2ce32d229",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Die Auswahl angemessen starker Authentisierungsmechanismen ist eine wesentliche Design-Entscheidung, die die Sicherheit des Netzzugangs direkt beeinflusst und daher in der Architekturphase festgelegt werden muss."
+              },
+              {
+                "uuid": "ef789048-97d9-4181-a72a-e571835d8444",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Festlegung auf sichere kryptografische Verfahren ist eine fundamentale Design-Entscheidung, um die Vertraulichkeit und Integrit\u00e4t der Datenkommunikation im Netz (z. B. mittels VPN oder TLS) zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "f3114bdf-a65f-456e-b52d-77971ad44f7d",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Kryptografie in der Netzarchitektur erfordert zwingend ein geplantes Schl\u00fcsselmanagement, das als Teil des \u00fcbergreifenden Sicherheitsdesigns konzipiert werden muss."
+              },
+              {
+                "uuid": "f1ff1bf0-af4c-43af-9414-375e8bd1bf22",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Eine sichere Netzarchitektur muss die Nachweisbarkeit von administrativen T\u00e4tigkeiten erm\u00f6glichen. Dies erfordert Design-Entscheidungen bez\u00fcglich der Protokollierungsinfrastruktur und der Datenerfassung."
+              },
+              {
+                "uuid": "aecb0eda-7e92-4f2d-9f65-0eb0945efdb7",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Zug\u00e4nge und Schnittstellen ist ein zentraler Aspekt der Netzarchitektur, um die Netzwerkinfrastruktur selbst vor unbefugten Zugriffen und Manipulation zu sch\u00fctzen."
+              },
+              {
+                "uuid": "2eb0c354-f6be-4693-adba-e9c2979e5eda",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Architektur sollte den Einsatz von Detektionsfunktionen, die in den Netzkomponenten bereits vorhanden sind, von vornherein einplanen, um die Sicherheits\u00fcberwachung des Netzes zu verbessern."
+              },
+              {
+                "uuid": "148b44d7-939f-404b-9520-3057275117bf",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Die strategische Platzierung von dedizierten Detektionssystemen (z. B. NIDS) an Netz\u00fcberg\u00e4ngen oder in kritischen Segmenten ist eine Kernaufgabe des sicheren Netzdesigns und wird hier explizit adressiert."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

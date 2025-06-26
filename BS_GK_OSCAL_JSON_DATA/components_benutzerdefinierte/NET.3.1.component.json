@@ -1,0 +1,226 @@
+{
+  "component-definition": {
+    "uuid": "61976b0b-bd49-4835-a9b6-3df2b15aac2d",
+    "metadata": {
+      "title": "Component for Baustein NET.3.1: Router und Switches",
+      "last-modified": "2025-06-26T11:32:03.783647+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for NET.3.1."
+    },
+    "components": [
+      {
+        "uuid": "0d4e2c7a-ba82-4005-b778-2c0332d7c536",
+        "type": "service",
+        "title": "Router und Switches",
+        "description": "Implementation of controls for Baustein NET.3.1.",
+        "control-implementations": [
+          {
+            "uuid": "0a3ed08f-68e8-4ddf-a06c-c5420e4a1ada",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group NET.3.1: Router und Switches",
+            "implemented-requirements": [
+              {
+                "uuid": "e19ca85a-333d-44d0-b8cd-48598eb00bb2",
+                "control-id": "NET.3.1.A1",
+                "description": "Base implementation for control NET.3.1.A1."
+              },
+              {
+                "uuid": "39227acf-a66d-4ea6-ab95-c43213d2005a",
+                "control-id": "NET.3.1.A4",
+                "description": "Base implementation for control NET.3.1.A4."
+              },
+              {
+                "uuid": "d7d21fd2-bbab-4ce9-a94b-6ec3ec7c9b57",
+                "control-id": "NET.3.1.A5",
+                "description": "Base implementation for control NET.3.1.A5."
+              },
+              {
+                "uuid": "05c487bb-a08f-4323-99d9-f456bfb62b7b",
+                "control-id": "NET.3.1.A6",
+                "description": "Base implementation for control NET.3.1.A6."
+              },
+              {
+                "uuid": "8c3d8cb8-df97-4a05-bc09-4ffc6fc6ed96",
+                "control-id": "NET.3.1.A7",
+                "description": "Base implementation for control NET.3.1.A7."
+              },
+              {
+                "uuid": "1ec4d4ff-74b5-4323-9782-6decc5805dc2",
+                "control-id": "NET.3.1.A8",
+                "description": "Base implementation for control NET.3.1.A8."
+              },
+              {
+                "uuid": "13b2b06f-80d8-4d7a-9721-874bc13acf45",
+                "control-id": "NET.3.1.A9",
+                "description": "Base implementation for control NET.3.1.A9."
+              },
+              {
+                "uuid": "ffaaed10-3f27-47fb-a970-4a2f4784bd6d",
+                "control-id": "NET.3.1.A10",
+                "description": "Base implementation for control NET.3.1.A10."
+              },
+              {
+                "uuid": "cb6a4b3f-65d5-4b91-8230-ae9acbb584d0",
+                "control-id": "NET.3.1.A11",
+                "description": "Base implementation for control NET.3.1.A11."
+              },
+              {
+                "uuid": "ff3731dc-2363-443f-9663-e5795bfd05f3",
+                "control-id": "NET.3.1.A12",
+                "description": "Base implementation for control NET.3.1.A12."
+              },
+              {
+                "uuid": "552499b3-01bc-40d7-a28b-74987c017940",
+                "control-id": "NET.3.1.A13",
+                "description": "Base implementation for control NET.3.1.A13."
+              },
+              {
+                "uuid": "11982b19-67f3-4531-a4d7-8cec9109dbb9",
+                "control-id": "NET.3.1.A14",
+                "description": "Base implementation for control NET.3.1.A14."
+              },
+              {
+                "uuid": "a1db34ad-299a-450f-bc44-3e38b36384f5",
+                "control-id": "NET.3.1.A15",
+                "description": "Base implementation for control NET.3.1.A15."
+              },
+              {
+                "uuid": "f2d66f74-0742-4454-85c1-c45f66ceee40",
+                "control-id": "NET.3.1.A16",
+                "description": "Base implementation for control NET.3.1.A16."
+              },
+              {
+                "uuid": "189e74cf-8107-42ba-9058-1f710402ab13",
+                "control-id": "NET.3.1.A17",
+                "description": "Base implementation for control NET.3.1.A17."
+              },
+              {
+                "uuid": "67656e6f-c57a-4254-9c09-fa1b72a0eed6",
+                "control-id": "NET.3.1.A18",
+                "description": "Base implementation for control NET.3.1.A18."
+              },
+              {
+                "uuid": "3c9c06f1-c340-413c-8fd0-87a9622364fc",
+                "control-id": "NET.3.1.A19",
+                "description": "Base implementation for control NET.3.1.A19."
+              },
+              {
+                "uuid": "8a158ce7-1a0d-4a70-88d0-a564b7e3b0d7",
+                "control-id": "NET.3.1.A20",
+                "description": "Base implementation for control NET.3.1.A20."
+              },
+              {
+                "uuid": "dc4bed0d-787c-4690-a213-aba1f0444e56",
+                "control-id": "NET.3.1.A21",
+                "description": "Base implementation for control NET.3.1.A21."
+              },
+              {
+                "uuid": "1ad8ce7a-3c88-4a6e-b4b0-dffadb2ac769",
+                "control-id": "NET.3.1.A22",
+                "description": "Base implementation for control NET.3.1.A22."
+              },
+              {
+                "uuid": "3f2b9c8a-c140-4237-b7fa-2cb3bf160b2e",
+                "control-id": "NET.3.1.A23",
+                "description": "Base implementation for control NET.3.1.A23."
+              },
+              {
+                "uuid": "8d5595e5-7ba4-41ba-a4ad-231e10028700",
+                "control-id": "NET.3.1.A24",
+                "description": "Base implementation for control NET.3.1.A24."
+              },
+              {
+                "uuid": "36978258-9598-4da4-a679-5f314ec3dbc9",
+                "control-id": "NET.3.1.A25",
+                "description": "Base implementation for control NET.3.1.A25."
+              },
+              {
+                "uuid": "e466b6a3-fea3-490e-9cff-74dcf06d7d43",
+                "control-id": "NET.3.1.A26",
+                "description": "Base implementation for control NET.3.1.A26."
+              },
+              {
+                "uuid": "ffa158ee-3247-4361-8702-0b95342b3bba",
+                "control-id": "NET.3.1.A27",
+                "description": "Base implementation for control NET.3.1.A27."
+              },
+              {
+                "uuid": "6aaab465-a4a0-4dd4-b4ca-ff0519cce257",
+                "control-id": "NET.3.1.A28",
+                "description": "Base implementation for control NET.3.1.A28."
+              }
+            ]
+          },
+          {
+            "uuid": "86fc81c9-0daa-4b6b-a583-0c25309a95ea",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "19eb7ff0-63fb-494d-85ec-3700f46bcb3a",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung ist bei der Konfiguration kritischer Netzkomponenten wie Routern und Switches essenziell, um Missbrauch zu verhindern und das Vier-Augen-Prinzip bei wichtigen \u00c4nderungen sicherzustellen."
+              },
+              {
+                "uuid": "23642586-e92c-4036-822a-b92cff881459",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die korrekte und sichere Konfiguration von Routern und Switches erfordert spezifisches Fachwissen. Qualifiziertes Personal ist eine Grundvoraussetzung, um Fehlkonfigurationen und daraus resultierende Sicherheitsl\u00fccken zu vermeiden."
+              },
+              {
+                "uuid": "b7cc29cf-023a-478d-9b77-325b8a5d8eef",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Router und Switches verf\u00fcgen \u00fcber administrative Rollen und Berechtigungen. Die Anwendung des Prinzips der geringsten Rechte (Least Privilege) ist f\u00fcr die Absicherung der administrativen Zug\u00e4nge unerl\u00e4sslich."
+              },
+              {
+                "uuid": "79111aa1-c7fe-4f29-9468-759aa34cad19",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Der administrative Zugriff auf Router und Switches muss fundamental durch eine sichere Identifikation und Authentisierung gesch\u00fctzt werden. Das \u00c4ndern von Standardpassw\u00f6rtern ist eine der grundlegendsten Sicherheitsma\u00dfnahmen."
+              },
+              {
+                "uuid": "7bc5d1f1-7a99-432d-ae1a-768d9c3e61a9",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Da Router und Switches zentrale Ziele sind, m\u00fcssen die Authentisierungsmechanismen (z. B. durch Schutz vor Brute-Force-Angriffen) dem hohen Schutzbedarf dieser Komponenten entsprechen."
+              },
+              {
+                "uuid": "b509936b-5bd3-4988-9973-f9ed4806ff34",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Router und Switches nutzen Kryptografie f\u00fcr sichere Verwaltung (SSH) oder VPNs. Die Verwendung starker, aktueller Algorithmen ist entscheidend f\u00fcr die Wirksamkeit dieser Schutzmechanismen."
+              },
+              {
+                "uuid": "e8b88994-5239-4d57-b02d-2fe25c7c119d",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Die auf Routern und Switches verwendeten Schl\u00fcssel und Zertifikate (z.B. SSH-Host-Keys) m\u00fcssen \u00fcber ihren gesamten Lebenszyklus sicher verwaltet werden, um ihre Schutzfunktion aufrechtzuerhalten."
+              },
+              {
+                "uuid": "1c522f6b-e280-4973-950f-263644433ea2",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Konfiguration eines Routers oder Switches ist ein kritischer Datensatz. Eine regelm\u00e4\u00dfige Sicherung ist f\u00fcr eine schnelle Wiederherstellung nach einem Ausfall oder einer Fehlkonfiguration unerl\u00e4sslich."
+              },
+              {
+                "uuid": "5317f993-9384-4d47-9557-b3db7f48faa7",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Administrative \u00c4nderungen an Routern und Switches k\u00f6nnen weitreichende Folgen haben. Eine l\u00fcckenlose Nachweisbarkeit (Logging) ist f\u00fcr die Fehleranalyse und f\u00fcr die Aufkl\u00e4rung von Sicherheitsvorf\u00e4llen zwingend erforderlich."
+              },
+              {
+                "uuid": "5c164ffe-c472-4e95-bfdb-0337d8192975",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz der administrativen Schnittstellen (z. B. durch Nutzung von SSH statt Telnet und Management-VLANs) ist eine Kernanforderung, um die Konfigurationshoheit \u00fcber die Netzinfrastruktur zu wahren."
+              },
+              {
+                "uuid": "4eac2f92-2711-4ba6-b391-0e38c3429813",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Die Firmware von Routern und Switches muss regelm\u00e4\u00dfig aktualisiert werden, um Sicherheitsl\u00fccken zu schlie\u00dfen. Ein etablierter Patch- und \u00c4nderungsprozess minimiert die Risiken bei solchen Eingriffen."
+              },
+              {
+                "uuid": "810a0f95-0534-4983-a180-f08ebab7096a",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Router und Switches bieten systemeigene Funktionen (z. B. Logging von ACL-Verst\u00f6\u00dfen, Port-Security), deren Aktivierung die Detektion von Angriffen und Anomalien direkt auf der Netzinfrastruktur erm\u00f6glicht."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

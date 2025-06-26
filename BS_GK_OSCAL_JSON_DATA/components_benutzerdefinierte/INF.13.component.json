@@ -1,0 +1,358 @@
+{
+  "component-definition": {
+    "uuid": "6a7772a4-761a-4989-9671-87652004a924",
+    "metadata": {
+      "title": "Component for Baustein INF.13: Technisches Geb\u00e4udemanagement",
+      "last-modified": "2025-06-26T11:47:52.731502+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.13."
+    },
+    "components": [
+      {
+        "uuid": "4c77f5a1-089c-4579-90b1-ac2bf12e791e",
+        "type": "service",
+        "title": "Technisches Geb\u00e4udemanagement",
+        "description": "Implementation of controls for Baustein INF.13.",
+        "control-implementations": [
+          {
+            "uuid": "03dda581-03ea-4d24-9cd9-fec34d7b0318",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.13: Technisches Geb\u00e4udemanagement",
+            "implemented-requirements": [
+              {
+                "uuid": "e0717f14-cec2-4f06-98d7-30d019c3e155",
+                "control-id": "INF.13.A1",
+                "description": "Base implementation for control INF.13.A1."
+              },
+              {
+                "uuid": "a5c28475-596e-400a-b153-60ab1af12008",
+                "control-id": "INF.13.A2",
+                "description": "Base implementation for control INF.13.A2."
+              },
+              {
+                "uuid": "e79821d2-61cd-4a70-b180-31007a1fd709",
+                "control-id": "INF.13.A3",
+                "description": "Base implementation for control INF.13.A3."
+              },
+              {
+                "uuid": "0906ce32-449d-4095-ab46-30edaeedbfde",
+                "control-id": "INF.13.A4",
+                "description": "Base implementation for control INF.13.A4."
+              },
+              {
+                "uuid": "5cc2c4b6-6c1c-42c4-acbf-05b75ef0398a",
+                "control-id": "INF.13.A5",
+                "description": "Base implementation for control INF.13.A5."
+              },
+              {
+                "uuid": "b223bec0-1b82-498d-a769-43e924906a65",
+                "control-id": "INF.13.A6",
+                "description": "Base implementation for control INF.13.A6."
+              },
+              {
+                "uuid": "ee103e8e-d433-46a3-9631-a885739df191",
+                "control-id": "INF.13.A7",
+                "description": "Base implementation for control INF.13.A7."
+              },
+              {
+                "uuid": "251b3d75-d2e4-43cb-b8b1-c019beab3eb1",
+                "control-id": "INF.13.A8",
+                "description": "Base implementation for control INF.13.A8."
+              },
+              {
+                "uuid": "c5198727-fe1f-4887-9aa0-edccd44d1fce",
+                "control-id": "INF.13.A9",
+                "description": "Base implementation for control INF.13.A9."
+              },
+              {
+                "uuid": "e1f06fb3-cf66-4bc4-b5da-3e36fae622e0",
+                "control-id": "INF.13.A10",
+                "description": "Base implementation for control INF.13.A10."
+              }
+            ]
+          },
+          {
+            "uuid": "f48423a9-280a-4176-8699-48c686b04c48",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "9bc41cea-bad9-4675-b7fc-a4fcdc1da008",
+                "control-id": "IND.3.2.A1",
+                "description": "AI-Begr\u00fcndung: Da TGM-Systeme oft OT-Charakter haben und Fernwartung \u00fcblich ist, ist ein zentrales Konzept unerl\u00e4sslich, um die Sicherheit und Kontrolle \u00fcber Zugriffe zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "2a9fd3f2-4ee0-4f0f-83cd-b4d10069ea72",
+                "control-id": "IND.3.2.A2",
+                "description": "AI-Begr\u00fcndung: TGM-Systeme haben oft Schnittstellen zur B\u00fcro-IT. Eine gemeinsame, konsistente Dokumentation aller Fernwartungszug\u00e4nge ist entscheidend, um Sicherheitsl\u00fccken an den Schnittstellen zu vermeiden."
+              },
+              {
+                "uuid": "59f64c7c-ed7d-4d9a-b58e-51451ff41b71",
+                "control-id": "IND.3.2.A3",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Pr\u00fcfungen und ein Genehmigungsprozess f\u00fcr Abweichungen stellen sicher, dass das Fernwartungskonzept f\u00fcr das TGM wirksam bleibt und nicht umgangen wird."
+              },
+              {
+                "uuid": "452b741d-4f23-4aa8-aba3-191b0637ec98",
+                "control-id": "IND.3.2.A4",
+                "description": "AI-Begr\u00fcndung: Die Wartung von TGM-Anlagen wird h\u00e4ufig von externen Dienstleistern durchgef\u00fchrt. Vertragliche Regelungen sind daher zwingend erforderlich, um deren Zugriffe abzusichern und die Verantwortung zu kl\u00e4ren."
+              },
+              {
+                "uuid": "df1706c8-fe6a-4625-be1a-06f994257ff1",
+                "control-id": "IND.3.2.A5",
+                "description": "AI-Begr\u00fcndung: Eine klare interne Abstimmung \u00fcber Prozesse und Zust\u00e4ndigkeiten f\u00fcr die Fernwartung von TGM-Systemen ist notwendig, um Kompetenzkonflikte und Sicherheitsl\u00fccken zwischen TGM-Betrieb und IT zu vermeiden."
+              },
+              {
+                "uuid": "1b1381bf-cc8b-42e8-b6c9-6b756a048606",
+                "control-id": "IND.3.2.A6",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt sicher, dass der Betreiber des TGM die Hoheit \u00fcber die Zugriffe auf seine kritischen Systeme beh\u00e4lt und nicht allein von externen Sicherheitskomponenten abh\u00e4ngig ist."
+              },
+              {
+                "uuid": "1272bd52-4459-4675-83b7-27f929b51613",
+                "control-id": "IND.3.2.A7",
+                "description": "AI-Begr\u00fcndung: Die technische Entkopplung mittels Sprungserver ist eine bew\u00e4hrte Methode, um Fernzugriffe auf sensible TGM-Netze abzusichern und die Angriffsfl\u00e4che erheblich zu reduzieren."
+              },
+              {
+                "uuid": "0697a409-1f49-4d11-a93c-11f92f6250b4",
+                "control-id": "IND.3.2.A8",
+                "description": "AI-Begr\u00fcndung: Eine explizite Freigabe jeder Sitzung verhindert unbemerkte oder ungeplante Zugriffe, die den Betrieb von geb\u00e4udetechnischen Anlagen st\u00f6ren oder gef\u00e4hrden k\u00f6nnten."
+              },
+              {
+                "uuid": "9752c89b-af78-4269-934a-f393174294d0",
+                "control-id": "IND.3.2.A9",
+                "description": "AI-Begr\u00fcndung: Der Dateiaustausch ist ein h\u00e4ufiger Angriffsvektor. Ein sicherer Prozess hierf\u00fcr ist im TGM-Umfeld essenziell, um die Einschleusung von Schadsoftware zu verhindern."
+              },
+              {
+                "uuid": "d2dfc543-bed8-4e76-a391-a363787c5a59",
+                "control-id": "IND.3.2.A10",
+                "description": "AI-Begr\u00fcndung: Da Fernwartung im TGM physische Systeme steuert, ist die Beobachtung und die M\u00f6glichkeit zum Eingreifen entscheidend, um Gef\u00e4hrdungen f\u00fcr Personen und Anlagen (Safety-Aspekte) auszuschlie\u00dfen."
+              },
+              {
+                "uuid": "300777c5-6c90-44f3-8f77-9be0455f48c4",
+                "control-id": "IND.3.2.A11",
+                "description": "AI-Begr\u00fcndung: Die zentrale Verwaltung von Fernwartungskonten f\u00fcr TGM-Systeme ist eine grundlegende Anforderung f\u00fcr ein effektives Identit\u00e4ts- und Berechtigungsmanagement und verhindert die unkontrollierte Verbreitung von Zug\u00e4ngen."
+              },
+              {
+                "uuid": "5bab9ea5-be49-4219-8079-cd713b4cd811",
+                "control-id": "IND.3.2.A12",
+                "description": "AI-Begr\u00fcndung: F\u00fcr TGM in Umgebungen mit hohem Schutzbedarf bietet eine dedizierte, von der B\u00fcro-IT getrennte Fernwartungsl\u00f6sung eine st\u00e4rkere Isolation und damit ein h\u00f6heres Sicherheitsniveau."
+              },
+              {
+                "uuid": "dea406ff-f9c3-40cd-bc37-df55abda6a59",
+                "control-id": "IND.3.2.A13",
+                "description": "AI-Begr\u00fcndung: In hochkritischen TGM-Umgebungen erm\u00f6glicht die Protokollierung von Sitzungsinhalten eine l\u00fcckenlose Nachvollziehbarkeit und forensische Analyse bei Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "88d789da-4f1c-4dae-8037-ac213d72eca8",
+                "control-id": "IND.3.2.A14",
+                "description": "AI-Begr\u00fcndung: Die technische Kontrolle von Sitzungen auf Befehlsebene bietet einen proaktiven Schutz vor sch\u00e4dlichen oder fehlerhaften Aktionen w\u00e4hrend der Fernwartung kritischer TGM-Systeme."
+              },
+              {
+                "uuid": "9be8a74a-70fe-4af9-93cb-06a25c536649",
+                "control-id": "OPS.1.2.5.A1",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung stellt die grundlegende und geordnete Planung von Fernwartungszug\u00e4ngen im TGM sicher und ist eine Basis f\u00fcr alle weiteren spezifischen Ma\u00dfnahmen."
+              },
+              {
+                "uuid": "9a11ea55-b6a3-4af3-9b1a-8ef2e20ed9b5",
+                "control-id": "OPS.1.2.5.A2",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist relevant f\u00fcr Bedien- und Engineering-Clients im TGM-Umfeld, um die Zustimmung des Anwenders vor einem Fernzugriff sicherzustellen und so die Kontrolle zu wahren."
+              },
+              {
+                "uuid": "ef93b004-ce6d-46cd-94f9-ec01c9374685",
+                "control-id": "OPS.1.2.5.A3",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der Schnittstellen durch Beschr\u00e4nkung, Verschl\u00fcsselung und bedarfsgerechte Installation ist eine grundlegende Sicherheitsma\u00dfnahme, die f\u00fcr alle Fernwartungszug\u00e4nge im TGM gilt."
+              },
+              {
+                "uuid": "c773ba48-dd77-44e8-9e45-aace8ea2ddf4",
+                "control-id": "OPS.1.2.5.A5",
+                "description": "AI-Begr\u00fcndung: Dienstleister im TGM-Bereich nutzen oft cloudbasierte Fernwartungsdienste. Deren Einsatz muss geregelt werden, um die damit verbundenen Risiken zu kontrollieren."
+              },
+              {
+                "uuid": "f9d6d02c-2c21-40e8-b8f7-c11ad8975bb4",
+                "control-id": "OPS.1.2.5.A6",
+                "description": "AI-Begr\u00fcndung: Eine formale Richtlinie fasst alle Regelungen zur Fernwartung im TGM zusammen und stellt sicher, dass diese allen Beteiligten bekannt und verbindlich sind."
+              },
+              {
+                "uuid": "4bf0d846-4daf-4cd8-b27c-eb8ec82f82ed",
+                "control-id": "ORP.2.A1",
+                "description": "AI-Begr\u00fcndung: Eine geregelte Einarbeitung stellt sicher, dass neue Mitarbeitende im TGM ihre sicherheitsrelevanten Aufgaben und Pflichten von Anfang an kennen und befolgen."
+              },
+              {
+                "uuid": "12dd497f-1e4a-419d-8314-ad24f3d74855",
+                "control-id": "ORP.2.A2",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Offboarding-Prozess ist im TGM kritisch, um sicherzustellen, dass ausscheidende Mitarbeitende keinen Zugriff mehr auf Geb\u00e4ude- und Steuerungssysteme haben."
+              },
+              {
+                "uuid": "4ae3bedd-4e7f-43d3-9cec-da541bb0d0c8",
+                "control-id": "ORP.2.A3",
+                "description": "AI-Begr\u00fcndung: Vertretungsregelungen sind f\u00fcr den kontinuierlichen und sicheren Betrieb von TGM-Anlagen essenziell, um bei Ausf\u00e4llen von Personal handlungsf\u00e4hig zu bleiben."
+              },
+              {
+                "uuid": "38c39ecb-9e0c-4bda-8b03-e200e76ca4a7",
+                "control-id": "ORP.2.A4",
+                "description": "AI-Begr\u00fcndung: Da im TGM h\u00e4ufig Fremdpersonal (Wartung, Bau) eingesetzt wird, ist die Regelung von dessen Einsatz zur Einhaltung der Sicherheitsvorgaben unerl\u00e4sslich."
+              },
+              {
+                "uuid": "e28b515b-19f5-4856-b353-d5f243c7b267",
+                "control-id": "ORP.2.A5",
+                "description": "AI-Begr\u00fcndung: Vertraulichkeitsvereinbarungen sch\u00fctzen sensible TGM-Informationen (z. B. technische Pl\u00e4ne, Schwachstellen) bei der Weitergabe an externe Dienstleister."
+              },
+              {
+                "uuid": "9e6348ab-f279-42f6-86c0-6746e8d5d48a",
+                "control-id": "ORP.2.A14",
+                "description": "AI-Begr\u00fcndung: Die klare Dokumentation von Aufgaben und Zust\u00e4ndigkeiten im TGM ist eine Grundvoraussetzung, um Informationssicherheit effektiv umsetzen und Verantwortlichkeiten zuweisen zu k\u00f6nnen."
+              },
+              {
+                "uuid": "7e820702-0614-45f5-ba18-fe1c00780d1e",
+                "control-id": "ORP.2.A7",
+                "description": "AI-Begr\u00fcndung: F\u00fcr sicherheitskritische Rollen im TGM (z. B. Administration von Leittechnik) ist die \u00dcberpr\u00fcfung der Vertrauensw\u00fcrdigkeit eine wichtige Ma\u00dfnahme gegen Insider-Risiken."
+              },
+              {
+                "uuid": "5b7cdccc-05e5-447b-b1c0-d15cac9c7cce",
+                "control-id": "ORP.2.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung ist relevant f\u00fcr TGM in Hochsicherheitsbereichen oder kritischen Infrastrukturen, wo eine erweiterte \u00dcberpr\u00fcfung des Personals notwendig ist."
+              },
+              {
+                "uuid": "bb1a21db-e79a-41f9-bd6c-74c26dafa583",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregelter Lebenszyklus f\u00fcr Benutzerkonten ist fundamental, um den Zugriff auf kritische TGM-Systeme zu kontrollieren und verwaiste Konten zu vermeiden."
+              },
+              {
+                "uuid": "f0e727b2-7192-4e19-85a4-9bb753953141",
+                "control-id": "ORP.4.A3",
+                "description": "AI-Begr\u00fcndung: Eine aktuelle Dokumentation der Berechtigungen ist f\u00fcr Audits und die regelm\u00e4\u00dfige \u00dcberpr\u00fcfung der Zugriffskontrolle in TGM-Systemen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "f2967d13-1fa1-40f9-b05c-af0fd2e34bbd",
+                "control-id": "ORP.4.A4",
+                "description": "AI-Begr\u00fcndung: Die Funktionstrennung, z. B. zwischen der Administration von TGM-Anwendungen und der Verwaltung von Benutzerkonten, erh\u00f6ht die Sicherheit und verhindert Missbrauch."
+              },
+              {
+                "uuid": "e2ee3583-93ef-4b59-99fb-ad7a208a5c97",
+                "control-id": "ORP.4.A5",
+                "description": "AI-Begr\u00fcndung: Der Prozess zur Vergabe von Zutrittsberechtigungen zu TGM-Technikr\u00e4umen ist ein integraler Bestandteil des Managements und muss sicher gestaltet sein."
+              },
+              {
+                "uuid": "3c6ebbdd-bf8e-4c81-bb91-b193468874b0",
+                "control-id": "ORP.4.A6",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von logischen Zugangsberechtigungen (z.B. VPN) ist direkt relevant f\u00fcr die Absicherung der Fernwartung von TGM-Anlagen."
+              },
+              {
+                "uuid": "9918242b-c79e-465c-a8c3-f3ccb26af607",
+                "control-id": "ORP.4.A7",
+                "description": "AI-Begr\u00fcndung: Die Steuerung der Zugriffsrechte auf TGM-Anwendungen und -Daten ist der Kern der Zugriffskontrolle und sch\u00fctzt vor unberechtigten Manipulationen."
+              },
+              {
+                "uuid": "49a07c32-4399-4a39-910b-01dd2a9176af",
+                "control-id": "ORP.4.A8",
+                "description": "AI-Begr\u00fcndung: Eine verbindliche Passwortregelung ist eine grundlegende Sicherheitsma\u00dfnahme f\u00fcr alle TGM-Systeme, die eine passwortbasierte Authentisierung verwenden."
+              },
+              {
+                "uuid": "caf52959-26aa-419e-9e35-ddb7b06940a7",
+                "control-id": "ORP.4.A10",
+                "description": "AI-Begr\u00fcndung: Administratorenkonten f\u00fcr TGM-Systeme gew\u00e4hren weitreichenden Zugriff und m\u00fcssen daher besonders durch Mehr-Faktor-Authentisierung gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "a5c7dddb-7ace-45b5-a78d-da3e48d84e2c",
+                "control-id": "ORP.4.A11",
+                "description": "AI-Begr\u00fcndung: Ein definierter, sicherer Prozess zum Zur\u00fccksetzen von Passw\u00f6rtern ist ein wichtiger operativer Baustein des Identit\u00e4tsmanagements f\u00fcr TGM-Benutzer."
+              },
+              {
+                "uuid": "212e9615-7ecd-40d9-9cda-4b5428bf5c86",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: Ein Authentisierungskonzept definiert die Sicherheitsanforderungen f\u00fcr TGM-Systeme und stellt eine durchdachte und konsistente Umsetzung der Authentisierung sicher."
+              },
+              {
+                "uuid": "3d404a8b-8b4f-48c0-9f9e-5e3ac93e48a2",
+                "control-id": "ORP.4.A20",
+                "description": "AI-Begr\u00fcndung: Ein Ausfall des IAM-Systems k\u00f6nnte den Betrieb des TGM lahmlegen. Eine entsprechende Notfallvorsorge ist daher f\u00fcr kritische Geb\u00e4ude unerl\u00e4sslich."
+              },
+              {
+                "uuid": "2953dd05-7f4b-445f-83c8-7e03a7a41fae",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: F\u00fcr TGM-Systeme mit hohem Schutzbedarf ist eine durchg\u00e4ngige Mehr-Faktor-Authentisierung ein wirksames Mittel, um die Zugriffssicherheit zu erh\u00f6hen."
+              },
+              {
+                "uuid": "6393fd02-4c4b-40da-9718-02bc0bc25237",
+                "control-id": "ORP.4.A24",
+                "description": "AI-Begr\u00fcndung: F\u00fcr besonders kritische administrative T\u00e4tigkeiten an TGM-Anlagen kann das Vier-Augen-Prinzip das Risiko von Fehlern oder Missbrauch deutlich reduzieren."
+              }
+            ]
+          },
+          {
+            "uuid": "11f65e8f-7761-4e69-9396-a9d780741a7d",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "b80230d7-85a3-479e-b1ca-549a734a6641",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Systeme im TGM werden komplexer. Daher ist die ad\u00e4quate Qualifikation des Personals entscheidend f\u00fcr den sicheren Betrieb."
+              },
+              {
+                "uuid": "cb6e0223-98ec-42c1-957b-9fa1ec54323b",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von Berechtigungen nach dem Need-to-know-Prinzip ist f\u00fcr TGM-Systeme entscheidend, um das Risiko durch Fehlbedienung oder Kompromittierung zu minimieren."
+              },
+              {
+                "uuid": "64cd6379-f2d4-4283-be31-7f46798abbf5",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Jeder Zugriff auf TGM-Systeme muss \u00fcber eine sichere Identifikation und Authentisierung erfolgen, um unautorisierten Zugang zu verhindern."
+              },
+              {
+                "uuid": "828c066c-6787-418b-8150-43d2e16c51e9",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Die Auswahl schutzbedarfsad\u00e4quater Authentisierungsmechanismen stellt sicher, dass der Schutz der TGM-Systeme dem Risiko angemessen ist."
+              },
+              {
+                "uuid": "763b4347-7911-412b-97fa-eb6d23fbfd74",
+                "control-id": "ORP.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Trennung von unvereinbaren Aufgaben, z. B. Planung und Abnahme von TGA-Komponenten, ist ein wichtiges organisatorisches Kontrollprinzip zur Risikominimierung."
+              },
+              {
+                "uuid": "68d37724-5ade-4424-bab8-a0db46080cc2",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Da TGM-Systeme zunehmend vernetzt sind und sensible Daten verarbeiten, ist der Einsatz starker und anerkannter Kryptografieverfahren f\u00fcr die Absicherung der Kommunikation unerl\u00e4sslich."
+              },
+              {
+                "uuid": "519e21df-8499-4d54-ac98-b90e4c78d202",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Kryptografie im TGM erfordert ein durchdachtes Schl\u00fcsselmanagement, um die Sicherheit von Zertifikaten und Schl\u00fcsseln \u00fcber deren gesamten Lebenszyklus zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "3b3ec098-9dc2-450d-b795-8ffa738c9a43",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Konfigurations- und Historiendaten von TGM-Systemen sind f\u00fcr den Betrieb und die Wiederherstellung im Notfall kritisch und m\u00fcssen daher regelm\u00e4\u00dfig gesichert werden."
+              },
+              {
+                "uuid": "40089032-f119-4412-8d51-e7bf111d7483",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit administrativer \u00c4nderungen an TGM-Systemen ist f\u00fcr die Fehlersuche, die Forensik und die Zuweisung von Verantwortung von entscheidender Bedeutung."
+              },
+              {
+                "uuid": "cbbfcd98-4e72-4a2f-a5da-d1c58aa6fe89",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Administrative Schnittstellen von TGM-Komponenten sind privilegierte Zug\u00e4nge und m\u00fcssen besonders gegen unbefugte Nutzung gesch\u00fctzt werden."
+              },
+              {
+                "uuid": "d9a01842-7dc9-431a-a0b7-34122e7fb6bc",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Patch- und \u00c4nderungsmanagement ist f\u00fcr die heterogene TGM-Systemlandschaft essenziell, um Sicherheitsl\u00fccken zu schlie\u00dfen und die Stabilit\u00e4t des Betriebs zu wahren."
+              },
+              {
+                "uuid": "63553e98-6485-4bae-aaaa-88fd1576a9a0",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Aktivierung und Nutzung nativer Detektionsfunktionen von TGM-Komponenten ist eine grundlegende und pragmatische Ma\u00dfnahme zur Erkennung von Sicherheitsvorf\u00e4llen."
+              },
+              {
+                "uuid": "fea3b4b8-0b0d-436d-beb8-aaf33fb919ab",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: F\u00fcr vernetzte TGM-Umgebungen ist der Einsatz zus\u00e4tzlicher Detektionssysteme (z. B. NIDS) wertvoll, um Angriffsversuche zu erkennen, die pr\u00e4ventive Ma\u00dfnahmen umgangen haben."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

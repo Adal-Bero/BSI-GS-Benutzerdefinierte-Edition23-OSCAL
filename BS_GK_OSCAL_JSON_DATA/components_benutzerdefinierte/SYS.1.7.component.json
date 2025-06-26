@@ -1,0 +1,428 @@
+{
+  "component-definition": {
+    "uuid": "143912eb-2d98-469a-88c8-4a050948b13e",
+    "metadata": {
+      "title": "Component for Baustein SYS.1.7: IBM Z",
+      "last-modified": "2025-06-26T10:47:31.141589+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.1.7."
+    },
+    "components": [
+      {
+        "uuid": "d75565b8-4545-4131-b32b-25118facc4e2",
+        "type": "service",
+        "title": "IBM Z",
+        "description": "Implementation of controls for Baustein SYS.1.7.",
+        "control-implementations": [
+          {
+            "uuid": "5abaabc4-53ac-4467-9bcb-261b9c6ca4a8",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.1.7: IBM Z",
+            "implemented-requirements": [
+              {
+                "uuid": "78eb1d10-04ef-4f79-bd68-f0ab398d0112",
+                "control-id": "SYS.1.7.A1",
+                "description": "Base implementation for control SYS.1.7.A1."
+              },
+              {
+                "uuid": "16562cfd-0318-4446-8fce-0ff8c9caa2f2",
+                "control-id": "SYS.1.7.A2",
+                "description": "Base implementation for control SYS.1.7.A2."
+              },
+              {
+                "uuid": "cccabf9e-4fc2-4a73-80f3-e0499a20d0ee",
+                "control-id": "SYS.1.7.A3",
+                "description": "Base implementation for control SYS.1.7.A3."
+              },
+              {
+                "uuid": "e06e616c-5be2-4338-b95b-463e980ef59b",
+                "control-id": "SYS.1.7.A4",
+                "description": "Base implementation for control SYS.1.7.A4."
+              },
+              {
+                "uuid": "8bc51c5d-40d2-4798-b419-0456cee8b015",
+                "control-id": "SYS.1.7.A5",
+                "description": "Base implementation for control SYS.1.7.A5."
+              },
+              {
+                "uuid": "b49fb7da-7342-4f45-9174-6875b5aec600",
+                "control-id": "SYS.1.7.A6",
+                "description": "Base implementation for control SYS.1.7.A6."
+              },
+              {
+                "uuid": "7b9218b3-2130-4c12-a9db-2cec9db6cae1",
+                "control-id": "SYS.1.7.A7",
+                "description": "Base implementation for control SYS.1.7.A7."
+              },
+              {
+                "uuid": "5d56fcb9-688c-4f6b-bd9a-7363b0d79917",
+                "control-id": "SYS.1.7.A8",
+                "description": "Base implementation for control SYS.1.7.A8."
+              },
+              {
+                "uuid": "cae88cc0-35b0-489e-bb97-dd53adecd221",
+                "control-id": "SYS.1.7.A9",
+                "description": "Base implementation for control SYS.1.7.A9."
+              },
+              {
+                "uuid": "2e03e7c4-8014-461f-8858-a076a922fac8",
+                "control-id": "SYS.1.7.A11",
+                "description": "Base implementation for control SYS.1.7.A11."
+              },
+              {
+                "uuid": "0de46b17-c82c-49de-a5a6-f85538f0d603",
+                "control-id": "SYS.1.7.A14",
+                "description": "Base implementation for control SYS.1.7.A14."
+              },
+              {
+                "uuid": "29779510-baa0-4284-a289-9617be503503",
+                "control-id": "SYS.1.7.A16",
+                "description": "Base implementation for control SYS.1.7.A16."
+              },
+              {
+                "uuid": "5b7c6205-3a09-4e7d-b794-fd68325e02dd",
+                "control-id": "SYS.1.7.A17",
+                "description": "Base implementation for control SYS.1.7.A17."
+              },
+              {
+                "uuid": "49293eb8-00c6-49fd-b994-152ce0348565",
+                "control-id": "SYS.1.7.A18",
+                "description": "Base implementation for control SYS.1.7.A18."
+              },
+              {
+                "uuid": "a54f5009-e0c3-4076-804d-4889a9b395d4",
+                "control-id": "SYS.1.7.A19",
+                "description": "Base implementation for control SYS.1.7.A19."
+              },
+              {
+                "uuid": "c764016c-bc47-4a32-8845-698d23ca71e4",
+                "control-id": "SYS.1.7.A20",
+                "description": "Base implementation for control SYS.1.7.A20."
+              },
+              {
+                "uuid": "08d9eb5c-a957-4427-8f6c-05f402bb321d",
+                "control-id": "SYS.1.7.A21",
+                "description": "Base implementation for control SYS.1.7.A21."
+              },
+              {
+                "uuid": "29820829-5ba1-40b0-aeb6-7d9c22863073",
+                "control-id": "SYS.1.7.A22",
+                "description": "Base implementation for control SYS.1.7.A22."
+              },
+              {
+                "uuid": "5b0cdab6-3013-4770-ba0b-7523ab7bd167",
+                "control-id": "SYS.1.7.A23",
+                "description": "Base implementation for control SYS.1.7.A23."
+              },
+              {
+                "uuid": "c6323404-5897-4518-8f34-20d5eca1c465",
+                "control-id": "SYS.1.7.A32",
+                "description": "Base implementation for control SYS.1.7.A32."
+              },
+              {
+                "uuid": "8214827c-667d-40dc-b6da-3a9a751d7d1c",
+                "control-id": "SYS.1.7.A33",
+                "description": "Base implementation for control SYS.1.7.A33."
+              }
+            ]
+          },
+          {
+            "uuid": "fdc5550e-c75c-4921-a2ce-8facbc060121",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "ab88a83b-b378-4b71-8547-20dbc6d88855",
+                "control-id": "OPS.1.2.5.A1",
+                "description": "AI-Begr\u00fcndung: Da Gro\u00dfrechner wie IBM Z h\u00e4ufig, auch durch Hersteller, fern administriert werden, ist eine geplante Vorgehensweise f\u00fcr die Sicherheit und den Betrieb unerl\u00e4sslich."
+              },
+              {
+                "uuid": "3e1911ec-3119-4381-9a64-187a36c4d625",
+                "control-id": "OPS.1.2.5.A3",
+                "description": "AI-Begr\u00fcndung: Die Absicherung der Fernwartungszug\u00e4nge, insbesondere durch Verschl\u00fcsselung und Begrenzung auf das Notwendige, ist f\u00fcr ein hochkritisches System wie einen Mainframe fundamental."
+              },
+              {
+                "uuid": "c94a8451-747e-429e-acb9-c83c85620971",
+                "control-id": "OPS.1.2.5.A5",
+                "description": "AI-Begr\u00fcndung: Die Nutzung von Online-Diensten zur Fernwartung stellt ein relevantes Szenario dar, dessen Risiken (z.B. Verbindung \u00fcber Drittserver) f\u00fcr IBM Z Systeme gesteuert werden m\u00fcssen."
+              },
+              {
+                "uuid": "4546c77e-4a10-449b-9bad-6b7877983734",
+                "control-id": "OPS.1.2.5.A6",
+                "description": "AI-Begr\u00fcndung: Eine formale Richtlinie schafft einen verbindlichen Rahmen f\u00fcr alle Aspekte der Fernwartung und ist f\u00fcr die Absicherung komplexer IBM Z-Umgebungen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "0a282291-7115-4cd8-86c2-0b6203fa7454",
+                "control-id": "ORP.4.A1",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Benutzerkennungen und -gruppen ist eine Kernfunktion von Mainframe-Sicherheitssystemen wie RACF und daher f\u00fcr IBM Z von zentraler Bedeutung."
+              },
+              {
+                "uuid": "7485f363-6080-4e02-8dc4-3ecd0a04a114",
+                "control-id": "ORP.4.A3",
+                "description": "AI-Begr\u00fcndung: Die Dokumentation und regelm\u00e4\u00dfige \u00dcberpr\u00fcfung von Kennungen und Berechtigungen ist f\u00fcr die Auditierbarkeit und Sicherheit von IBM Z-Systemen, die oft Compliance-Anforderungen unterliegen, essenziell."
+              },
+              {
+                "uuid": "b712391c-e2df-410c-9f60-097bcb190b43",
+                "control-id": "ORP.4.A4",
+                "description": "AI-Begr\u00fcndung: Funktionstrennung ist ein klassisches und wichtiges Sicherheitsprinzip in Mainframe-Umgebungen, um Betrug und schwerwiegende Fehler zu verhindern."
+              },
+              {
+                "uuid": "22e56415-b509-4b3a-a339-3ba7c658d7c2",
+                "control-id": "ORP.4.A5",
+                "description": "AI-Begr\u00fcndung: IBM Z-Systeme stehen in hochsicheren Rechenzentren. Ein geregelter Prozess zur Vergabe physischer Zutrittsberechtigungen ist daher f\u00fcr deren Schutz von hoher Relevanz."
+              },
+              {
+                "uuid": "9b1ec881-9f73-47d3-88e4-1b59f1d4f92f",
+                "control-id": "ORP.4.A6",
+                "description": "AI-Begr\u00fcndung: Ein definierter Prozess f\u00fcr die Vergabe von Netzwerk-Zugangsberechtigungen (z. B. VPN) ist entscheidend, um den Zugriff auf das Mainframe-System zu kontrollieren."
+              },
+              {
+                "uuid": "3cf15b87-7b1e-44b3-8a05-5a8acd2361e7",
+                "control-id": "ORP.4.A7",
+                "description": "AI-Begr\u00fcndung: Die Anforderung beschreibt den Kernprozess der Rechtevergabe auf Daten und Anwendungen, der durch Sicherheitssysteme wie RACF auf dem IBM Z umgesetzt wird."
+              },
+              {
+                "uuid": "e07f78e1-e0c2-4a64-8ee1-2d9f4052e1f6",
+                "control-id": "ORP.4.A8",
+                "description": "AI-Begr\u00fcndung: Passw\u00f6rter sind eine g\u00e4ngige Authentisierungsmethode auf IBM Z. Eine verbindliche Regelung f\u00fcr deren Gebrauch ist eine grundlegende Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "2b90b66c-4545-4a19-bbb4-3d8254e5f9b8",
+                "control-id": "ORP.4.A10",
+                "description": "AI-Begr\u00fcndung: Administrative Kennungen auf einem Mainframe verf\u00fcgen \u00fcber weitreichende Rechte. Ihr Schutz durch Mehr-Faktor-Authentisierung (MFA) ist eine entscheidende Sicherheitsverbesserung."
+              },
+              {
+                "uuid": "9f021a1b-2b83-4472-8c72-6e29715937e1",
+                "control-id": "ORP.4.A11",
+                "description": "AI-Begr\u00fcndung: Ein sicherer Prozess zum Zur\u00fccksetzen von Passw\u00f6rtern ist notwendig, um zu verhindern, dass diese Sicherheitsfunktion zur Umgehung von Kontrollen missbraucht wird."
+              },
+              {
+                "uuid": "b638152c-7325-45fa-a21e-34eabd8fc3ea",
+                "control-id": "ORP.4.A12",
+                "description": "AI-Begr\u00fcndung: Ein \u00fcbergreifendes Authentisierungskonzept ist f\u00fcr komplexe IBM Z-Umgebungen mit diversen Anwendungen und Subsystemen notwendig, um konsistente Sicherheit zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "ab3b9612-de6d-4f0d-bfe0-97c783a2bc28",
+                "control-id": "ORP.4.A20",
+                "description": "AI-Begr\u00fcndung: Das Identit\u00e4ts- und Berechtigungsmanagement-System (z. B. RACF) ist auf einem Mainframe \u00fcberlebenswichtig. Notfallvorkehrungen sind daher f\u00fcr die Aufrechterhaltung des Betriebs kritisch."
+              },
+              {
+                "uuid": "f7a1dbd6-c0ce-4566-9efe-46a53a690e97",
+                "control-id": "ORP.4.A21",
+                "description": "AI-Begr\u00fcndung: Der Einsatz von Mehr-Faktor-Authentisierung ist eine der wirksamsten Ma\u00dfnahmen zur Absicherung von Zugriffen auf hochkritische Systeme wie IBM Z."
+              },
+              {
+                "uuid": "256455ae-c3d7-47e4-b7cb-64f7e68e0ba7",
+                "control-id": "ORP.4.A24",
+                "description": "AI-Begr\u00fcndung: F\u00fcr kritische administrative T\u00e4tigkeiten auf einem Mainframe ist das Vier-Augen-Prinzip eine angemessene Ma\u00dfnahme, um Fehler oder Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "01de2b24-fbc1-4213-8ae2-1b901ed04ce0",
+                "control-id": "SYS.1.1.A1",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zum physischen Schutz und zur Zweckbindung des Servers (kein Arbeitsplatzrechner) ist eine grundlegende und relevante Sicherheitsma\u00dfnahme f\u00fcr IBM Z-Systeme."
+              },
+              {
+                "uuid": "4da12ea3-68ff-4929-974d-e7736a1340c6",
+                "control-id": "SYS.1.1.A2",
+                "description": "AI-Begr\u00fcndung: Die Forderung nach angemessener Authentisierung, insbesondere f\u00fcr administrative Zug\u00e4nge, ist eine grundlegende Anforderung, die f\u00fcr IBM Z uneingeschr\u00e4nkt gilt."
+              },
+              {
+                "uuid": "84c547e8-e6fa-4ba7-bc5a-56af2f1aa0ab",
+                "control-id": "SYS.1.1.A5",
+                "description": "AI-Begr\u00fcndung: IBM Z-Systeme besitzen diverse physische Schnittstellen. Nicht ben\u00f6tigte Schnittstellen m\u00fcssen deaktiviert werden, um die Angriffsfl\u00e4che zu reduzieren."
+              },
+              {
+                "uuid": "f8aaf282-7ea2-4932-9425-9fdf23ada04b",
+                "control-id": "SYS.1.1.A6",
+                "description": "AI-Begr\u00fcndung: Ein z/OS-System enth\u00e4lt viele Dienste und Funktionen. Nicht ben\u00f6tigte Komponenten zu deaktivieren (Systemh\u00e4rtung) ist eine wesentliche Sicherheitsma\u00dfnahme."
+              },
+              {
+                "uuid": "20564006-e192-4502-bbb5-1e0d714473e0",
+                "control-id": "SYS.1.1.A9",
+                "description": "AI-Begr\u00fcndung: Auch wenn z/OS nicht das prim\u00e4re Ziel von Viren ist, k\u00f6nnen auf dem Mainframe abgelegte Daten andere Systeme gef\u00e4hrden. Die Pr\u00fcfung zum Einsatz von Virenscannern ist daher sinnvoll."
+              },
+              {
+                "uuid": "00fa023c-125d-4705-9ac2-307f6159ba07",
+                "control-id": "SYS.1.1.A10",
+                "description": "AI-Begr\u00fcndung: IBM Z-Systeme bieten \u00fcber SMF (System Management Facilities) exzellente Protokollierungsf\u00e4higkeiten. Die Protokollierung sicherheitsrelevanter Ereignisse ist eine Kernanforderung."
+              },
+              {
+                "uuid": "5aeecea1-6dbf-4821-8a84-bc38130c268a",
+                "control-id": "SYS.1.1.A11",
+                "description": "AI-Begr\u00fcndung: Aufgrund der Komplexit\u00e4t und Kritikalit\u00e4t von IBM Z-Systemen ist eine spezifische Sicherheitsrichtlinie zur Konkretisierung der allgemeinen Anforderungen sehr wertvoll."
+              },
+              {
+                "uuid": "75dc9c01-eace-4519-a23d-25909123ba83",
+                "control-id": "SYS.1.1.A12",
+                "description": "AI-Begr\u00fcndung: Die Planung des Einsatzes eines IBM Z-Systems ist ein komplexes Vorhaben. Die Ber\u00fccksichtigung der genannten Aspekte von Beginn an ist f\u00fcr die Sicherheit entscheidend."
+              },
+              {
+                "uuid": "2acb899d-9297-49c3-826b-e78b91b87b6e",
+                "control-id": "SYS.1.1.A13",
+                "description": "AI-Begr\u00fcndung: Die Erstellung einer Anforderungsliste vor der Beschaffung eines Gro\u00dfrechners stellt sicher, dass das beschaffte System die Sicherheitsanforderungen erf\u00fcllt."
+              },
+              {
+                "uuid": "c01cb6cb-1158-4c60-9b0e-49655e2b1a77",
+                "control-id": "SYS.1.1.A15",
+                "description": "AI-Begr\u00fcndung: IBM Z-Systeme verarbeiten gesch\u00e4ftskritische Informationen und ben\u00f6tigen zwingend eine stabile und unterbrechungsfreie Stromversorgung zur Sicherstellung der Verf\u00fcgbarkeit."
+              },
+              {
+                "uuid": "c5a2b9c6-2208-466d-8d61-bb398d51b4c0",
+                "control-id": "SYS.1.1.A16",
+                "description": "AI-Begr\u00fcndung: Eine sichere Grundkonfiguration (H\u00e4rtung) des Betriebssystems (z/OS) und der Subsysteme ist ein kritischer Schritt, um eine sichere Basis f\u00fcr den Betrieb zu schaffen."
+              },
+              {
+                "uuid": "7abd7d2d-5536-4a98-b15f-c7e4afc0fcce",
+                "control-id": "SYS.1.1.A19",
+                "description": "AI-Begr\u00fcndung: IBM Z-Systeme sind an TCP/IP-Netze angebunden. Die Nutzung der systemeigenen Paketfilter-Funktionen zur Absicherung der Kommunikation ist eine wichtige Schutzma\u00dfnahme."
+              },
+              {
+                "uuid": "77a21db9-ec74-43d0-a0d1-5d5b4df79c25",
+                "control-id": "SYS.1.1.A21",
+                "description": "AI-Begr\u00fcndung: Eine nachvollziehbare Dokumentation von Konfigurations\u00e4nderungen und administrativen T\u00e4tigkeiten ist f\u00fcr den stabilen und sicheren Betrieb von IBM Z-Systemen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "e330e763-a6c7-4049-8c36-2599f55894c2",
+                "control-id": "SYS.1.1.A22",
+                "description": "AI-Begr\u00fcndung: Als hochkritisches System muss ein IBM Z-Server zwingend in die Notfallplanung der Institution eingebunden sein, um die Gesch\u00e4ftsprozesse abzusichern."
+              },
+              {
+                "uuid": "33087af7-5215-400b-847d-baeef89f24e9",
+                "control-id": "SYS.1.1.A23",
+                "description": "AI-Begr\u00fcndung: Die \u00dcberwachung von Systemzustand und Diensten ist eine Standard-Betriebsaufgabe auf IBM Z-Systemen, um die hohe Verf\u00fcgbarkeit sicherzustellen und Probleme fr\u00fchzeitig zu erkennen."
+              },
+              {
+                "uuid": "d8959d55-1f32-44ff-97a7-6ae07297d9f0",
+                "control-id": "SYS.1.1.A24",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige Sicherheitspr\u00fcfungen und Audits sind f\u00fcr IBM Z-Systeme notwendig, um die Einhaltung der Sicherheitsvorgaben zu verifizieren und Schwachstellen zu identifizieren."
+              },
+              {
+                "uuid": "ac3f3b84-258a-483a-b93a-41f2d559271c",
+                "control-id": "SYS.1.1.A25",
+                "description": "AI-Begr\u00fcndung: Ein geordneter Prozess zur Au\u00dferbetriebnahme stellt sicher, dass bei der Abl\u00f6sung eines IBM Z-Systems keine Daten verloren gehen oder ungesichert zur\u00fcckbleiben."
+              },
+              {
+                "uuid": "0f5f6803-aa30-4191-aa88-1ba2e4d039dd",
+                "control-id": "SYS.1.1.A35",
+                "description": "AI-Begr\u00fcndung: Aufgrund der Komplexit\u00e4t eines IBM Z-Systems ist ein umfassendes Betriebshandbuch f\u00fcr die Administration unerl\u00e4sslich, um einen korrekten und sicheren Betrieb zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "139735cb-79cb-4222-981b-41eddab7b8a8",
+                "control-id": "SYS.1.1.A37",
+                "description": "AI-Begr\u00fcndung: Die Anforderung zur Kapselung ist auf IBM Z durch Technologien wie LPARs oder z/VM-G\u00e4ste direkt und effektiv umsetzbar und stellt eine Kernsicherheitsarchitektur dar."
+              },
+              {
+                "uuid": "7faf54e3-81a2-4b1f-af3c-e2ae4ae00402",
+                "control-id": "SYS.1.1.A39",
+                "description": "AI-Begr\u00fcndung: In IBM Z-Umgebungen mit mehreren Systemen (z.B. in einem Sysplex) ist eine zentrale Verwaltung von Sicherheitsrichtlinien (z.B. \u00fcber eine geteilte RACF-Datenbank) g\u00e4ngige Praxis und erh\u00f6ht die Sicherheit."
+              },
+              {
+                "uuid": "5b7d723e-414a-42cd-a064-3963eb35b935",
+                "control-id": "SYS.1.1.A27",
+                "description": "AI-Begr\u00fcndung: Hostbasierte Angriffserkennung ist auf IBM Z durch spezialisierte Software (z.B. Auswertung von SMF-Daten) umsetzbar und erh\u00f6ht die F\u00e4higkeit, Sicherheitsvorf\u00e4lle zu detektieren."
+              },
+              {
+                "uuid": "1158ec6e-1b1f-433e-a95d-f8f23ec5138d",
+                "control-id": "SYS.1.1.A28",
+                "description": "AI-Begr\u00fcndung: Redundanz ist ein zentrales Designmerkmal der IBM Z-Architektur (redundante Komponenten, Parallel Sysplex) und f\u00fcr die geforderte hohe Verf\u00fcgbarkeit entscheidend."
+              },
+              {
+                "uuid": "b2639011-df72-4f14-a77b-a1aad69fb77c",
+                "control-id": "SYS.1.1.A30",
+                "description": "AI-Begr\u00fcndung: Das Prinzip 'Ein Dienst pro Server' kann auf IBM Z durch logische Trennung mittels LPARs oder z/VM-G\u00e4sten umgesetzt werden, um Dienste sicher voneinander zu isolieren."
+              },
+              {
+                "uuid": "287d266f-0ece-4e19-ab79-56a5919634eb",
+                "control-id": "SYS.1.1.A31",
+                "description": "AI-Begr\u00fcndung: Ausf\u00fchrungskontrolle ist auf IBM Z durch etablierte Mechanismen wie APF-autorisierte Bibliotheken realisierbar und fundamental, um die Ausf\u00fchrung von nicht-autorisiertem Code zu unterbinden."
+              },
+              {
+                "uuid": "87796e0a-10bf-485e-8d7f-dc2246b9322c",
+                "control-id": "SYS.1.1.A33",
+                "description": "AI-Begr\u00fcndung: Da IBM Z-Systeme h\u00e4ufig TLS f\u00fcr die Kommunikation nutzen, ist die aktive Verwaltung der hierf\u00fcr notwendigen Wurzelzertifikate (z.B. in RACF-Keyrings) f\u00fcr die Sicherheit essenziell."
+              },
+              {
+                "uuid": "a8209849-bffc-4442-823d-739db8bf37e6",
+                "control-id": "SYS.1.1.A34",
+                "description": "AI-Begr\u00fcndung: Festplatten- bzw. Dataset-Verschl\u00fcsselung ist eine moderne und wichtige Sicherheitsfunktion von IBM Z, um schutzbed\u00fcrftige Daten im Ruhezustand (at rest) zu sichern."
+              },
+              {
+                "uuid": "84dde20a-2660-4ae7-934b-ae4db0d24737",
+                "control-id": "SYS.1.1.A36",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Boot-Vorgangs (IPL) und der Konfiguration (z.B. auf der HMC/SE) ist ein relevanter Schutzmechanismus, um die Systemintegrit\u00e4t von Anfang an zu gew\u00e4hrleisten."
+              }
+            ]
+          },
+          {
+            "uuid": "c33e9200-7323-41c4-9226-f1cf5808f5c9",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "9fe8e936-634c-4285-9dcd-ded32516c639",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Vergabe von Berechtigungen nach dem Need-to-know-Prinzip ist ein Grundpfeiler der Mainframe-Sicherheit, um die auf IBM Z verarbeiteten kritischen Daten zu sch\u00fctzen."
+              },
+              {
+                "uuid": "39f0f017-5f2d-4016-9016-5a3aad40b30a",
+                "control-id": "ORP.4.A9",
+                "description": "AI-Begr\u00fcndung: Eine angemessene Identifikation und Authentisierung ist die grundlegende Voraussetzung f\u00fcr jeglichen sicheren Zugriff auf ein IBM Z-System."
+              },
+              {
+                "uuid": "15c62d4c-ce80-4dfc-a271-89738b7ea7e9",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: IBM Z unterst\u00fctzt verschiedene Authentisierungsmechanismen. Die schutzbedarfsabh\u00e4ngige Auswahl und sichere Konfiguration (z.B. Sperrung nach Fehlversuchen) ist sehr relevant."
+              },
+              {
+                "uuid": "1d2b88ad-d3df-4578-a865-d3e7ead3d42d",
+                "control-id": "ORP.2.A15",
+                "description": "AI-Begr\u00fcndung: Die Administration von IBM Z-Systemen erfordert hochspezialisiertes Wissen. Eine angemessene Qualifikation des Personals ist daher eine Grundvoraussetzung f\u00fcr den sicheren Betrieb."
+              },
+              {
+                "uuid": "9fbc3594-0d73-4f03-b795-5eb70305eb86",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Kryptografie ist auf IBM Z weit verbreitet (TLS, Datenverschl\u00fcsselung). Die Auswahl starker, etablierter Verfahren und Schl\u00fcssell\u00e4ngen ist fundamental f\u00fcr die Sicherheit."
+              },
+              {
+                "uuid": "5879898b-a7f8-494d-ba27-6a628c83a913",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein durchdachtes Schl\u00fcsselmanagement ist zwingend erforderlich, um die auf IBM Z eingesetzte Kryptografie (z.B. mit Crypto-Hardware) sicher zu betreiben."
+              },
+              {
+                "uuid": "550d3010-103e-4bb3-a722-aea4dfecc797",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Regelm\u00e4\u00dfige und planm\u00e4\u00dfige Datensicherungen sind ein fundamentaler Prozess in jeder IBM Z-Umgebung, um die Verf\u00fcgbarkeit und Integrit\u00e4t der Daten zu gew\u00e4hrleisten."
+              },
+              {
+                "uuid": "9c6addd8-42ca-40e9-80bc-738a1842c75f",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Nachweisbarkeit administrativer T\u00e4tigkeiten, insbesondere die Zuordnung zu einer Person, ist f\u00fcr Audits und die Sicherheit von kritischen IBM Z-Systemen unerl\u00e4sslich."
+              },
+              {
+                "uuid": "b6229242-40c5-476c-8fa5-d9a3d8eb9769",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Administrative Schnittstellen eines IBM Z-Systems m\u00fcssen besonders gesch\u00fctzt und der Zugriff darauf stark authentisiert werden, um Missbrauch zu verhindern."
+              },
+              {
+                "uuid": "1e01c235-1b5e-4681-a561-16901124a76a",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Ein geregeltes Patch- und \u00c4nderungsmanagement ist f\u00fcr die komplexe Software-Landschaft eines IBM Z-Systems (z/OS, PTFs, Subsysteme) zur Wahrung von Sicherheit und Stabilit\u00e4t zwingend erforderlich."
+              },
+              {
+                "uuid": "9e2dc9ab-e11c-4fad-8d53-7efbb2c742ca",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: IBM Z und z/OS bieten umfangreiche systemeigene Protokollierungs- und Audit-Funktionen (z.B. SMF, RACF-Berichte), deren Nutzung zur Detektion von Vorf\u00e4llen eine Basisanforderung darstellt."
+              },
+              {
+                "uuid": "eefe2bd0-2ea8-45d6-9691-c52425c9a37c",
+                "control-id": "DER.1.A9",
+                "description": "AI-Begr\u00fcndung: Zus\u00e4tzlich zu Bordmitteln ist der Einsatz weiterer Detektionssysteme (z.B. SIEM-Anbindung, NIDS) sinnvoll, um die Erkennungsf\u00e4higkeiten f\u00fcr Angriffe auf IBM Z-Systeme zu verbessern."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

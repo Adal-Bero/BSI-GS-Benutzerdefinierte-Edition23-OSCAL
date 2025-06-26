@@ -1,0 +1,161 @@
+{
+  "component-definition": {
+    "uuid": "64e1a077-caae-4ceb-a04f-543d3ea923d1",
+    "metadata": {
+      "title": "Component for Baustein INF.7: B\u00fcroarbeitsplatz",
+      "last-modified": "2025-06-26T11:56:34.121199+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for INF.7."
+    },
+    "components": [
+      {
+        "uuid": "b856c030-2f45-4a3b-8abd-fc0abb065371",
+        "type": "service",
+        "title": "B\u00fcroarbeitsplatz",
+        "description": "Implementation of controls for Baustein INF.7.",
+        "control-implementations": [
+          {
+            "uuid": "5cea56e2-25a5-4427-adbb-e228075a64ae",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group INF.7: B\u00fcroarbeitsplatz",
+            "implemented-requirements": [
+              {
+                "uuid": "d63b4510-349c-4eaf-b326-d3b3a3144957",
+                "control-id": "INF.7.A1",
+                "description": "Base implementation for control INF.7.A1."
+              },
+              {
+                "uuid": "d48b645e-9a67-45cd-9786-1e6efd37785b",
+                "control-id": "INF.7.A2",
+                "description": "Base implementation for control INF.7.A2."
+              },
+              {
+                "uuid": "5d9ce58d-d57d-496a-a27b-7d6602d5c2ed",
+                "control-id": "INF.7.A3",
+                "description": "Base implementation for control INF.7.A3."
+              },
+              {
+                "uuid": "203d9f8e-a1a7-4431-b7aa-abdb2644728f",
+                "control-id": "INF.7.A5",
+                "description": "Base implementation for control INF.7.A5."
+              },
+              {
+                "uuid": "3537b725-be9b-4a73-b7c9-57aab80aca90",
+                "control-id": "INF.7.A6",
+                "description": "Base implementation for control INF.7.A6."
+              },
+              {
+                "uuid": "407dabc9-e28f-4030-9b30-e5a9040b2d12",
+                "control-id": "INF.7.A7",
+                "description": "Base implementation for control INF.7.A7."
+              },
+              {
+                "uuid": "3f92c3f9-ce43-4d92-bc54-ecfb8f4b0c32",
+                "control-id": "INF.7.A8",
+                "description": "Base implementation for control INF.7.A8."
+              }
+            ]
+          },
+          {
+            "uuid": "ac78386c-3a43-4b57-b10a-5d21f5a3e264",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "556dd0d0-94b4-4623-8842-7f12fcf84231",
+                "control-id": "INF.1.A3",
+                "description": "AI-Begr\u00fcndung: Stellt grundlegende Brandschutzanforderungen wie freie Fluchtwege und die Vermeidung von Brandlasten sicher, die direkt auf die Sicherheit im B\u00fcroraum anwendbar sind."
+              },
+              {
+                "uuid": "0c0dfeaf-ba6b-4eaf-bbfe-07f47e09021a",
+                "control-id": "INF.1.A4",
+                "description": "AI-Begr\u00fcndung: Die Ausstattung von B\u00fcror\u00e4umen mit Rauchmeldern ist eine elementare Ma\u00dfnahme zur fr\u00fchzeitigen Branderkennung und zum Schutz von Personen und Sachwerten im Raum."
+              },
+              {
+                "uuid": "e5485ea9-6518-498b-ace2-bed981e13e11",
+                "control-id": "INF.1.A5",
+                "description": "AI-Begr\u00fcndung: Die Verf\u00fcgbarkeit von Handfeuerl\u00f6schern ist entscheidend f\u00fcr die unmittelbare Bek\u00e4mpfung von Entstehungsbr\u00e4nden, die z. B. durch B\u00fcroger\u00e4te verursacht werden k\u00f6nnen."
+              },
+              {
+                "uuid": "014e984f-74ae-4923-afd5-837e8c817458",
+                "control-id": "INF.1.A6",
+                "description": "AI-Begr\u00fcndung: Regelt das Verschlie\u00dfen von Fenstern und T\u00fcren bei Abwesenheit, eine grundlegende Ma\u00dfnahme zum Schutz vor unbefugtem Zutritt und zur Wahrung der Vertraulichkeit im B\u00fcroraum."
+              },
+              {
+                "uuid": "1ab656e8-08d5-4049-8099-4f230b8ba0d4",
+                "control-id": "INF.1.A7",
+                "description": "AI-Begr\u00fcndung: Die Regelung und Kontrolle des Zutritts ist eine Kernanforderung, um sicherzustellen, dass nur berechtigte Personen den B\u00fcroraum betreten und auf die dortigen Informationen zugreifen k\u00f6nnen."
+              },
+              {
+                "uuid": "a4bab919-9936-4f13-8dbe-f81d16c45df9",
+                "control-id": "INF.1.A8",
+                "description": "AI-Begr\u00fcndung: Ein Rauchverbot in B\u00fcror\u00e4umen mit IT-Ger\u00e4ten reduziert die Brandgefahr und sch\u00fctzt die technische Ausstattung vor Verschmutzung und Besch\u00e4digung."
+              },
+              {
+                "uuid": "4c96f9e7-6069-408b-b810-e9e4251951ff",
+                "control-id": "INF.1.A12",
+                "description": "AI-Begr\u00fcndung: Eine geordnete Schl\u00fcsselverwaltung ist die notwendige organisatorische Erg\u00e4nzung zur Zutrittskontrolle (INF.1.A7) und stellt sicher, dass der Zugang zu B\u00fcror\u00e4umen nachvollziehbar bleibt."
+              },
+              {
+                "uuid": "d59f8d41-f547-4430-a9d4-d71196dc3cf3",
+                "control-id": "INF.1.A16",
+                "description": "AI-Begr\u00fcndung: Erh\u00f6ht die Sicherheit, indem sensible B\u00fcror\u00e4ume nicht explizit ausgeschildert werden, was potenzielle Angreifer davon abh\u00e4lt, gezielt sch\u00fctzenswerte Bereiche zu identifizieren."
+              },
+              {
+                "uuid": "4fe44df0-938c-4283-a8e8-6293558c8af9",
+                "control-id": "INF.1.A18",
+                "description": "AI-Begr\u00fcndung: Stellt durch regelm\u00e4\u00dfige Begehungen sicher, dass die Brandschutzma\u00dfnahmen im B\u00fcroraum, wie freie Fluchtwege oder funktionsf\u00e4hige Rauchmelder, dauerhaft wirksam sind."
+              },
+              {
+                "uuid": "e71a36ec-023e-489e-9c20-5bfc9e246b8b",
+                "control-id": "INF.1.A20",
+                "description": "AI-Begr\u00fcndung: Sorgt daf\u00fcr, dass die Mitarbeitenden im B\u00fcroraum wissen, wie sie sich im Brandfall zu verhalten haben, was f\u00fcr den Personen- und Sachschutz unerl\u00e4sslich ist."
+              },
+              {
+                "uuid": "907ac242-4622-47d8-a287-f320d169d1f4",
+                "control-id": "INF.1.A27",
+                "description": "AI-Begr\u00fcndung: Formuliert die grundlegende Anforderung an den Einbruchschutz f\u00fcr den B\u00fcroraum, um diesen vor unbefugtem Eindringen zu sch\u00fctzen."
+              },
+              {
+                "uuid": "2be9c335-5884-40f5-be6d-314f241873b8",
+                "control-id": "INF.1.A22",
+                "description": "AI-Begr\u00fcndung: Konkretisiert den Einbruchschutz durch die Anforderung, T\u00fcren und Fenster mit einer angemessenen Widerstandsklasse auszuw\u00e4hlen, was die physische Sicherheit des B\u00fcroraums direkt erh\u00f6ht."
+              },
+              {
+                "uuid": "ea28f4d5-1b77-4d0d-868e-6d9ae183a36c",
+                "control-id": "INF.1.A26",
+                "description": "AI-Begr\u00fcndung: Ein Pforten- oder Sicherheitsdienst kontrolliert den Zugang zum Geb\u00e4ude oder Stockwerk und bildet somit eine wichtige vorgelagerte Sicherheitsma\u00dfnahme f\u00fcr den B\u00fcroraum."
+              },
+              {
+                "uuid": "f5351dbb-781b-4c60-b4d9-af44ad641b2c",
+                "control-id": "INF.1.A34",
+                "description": "AI-Begr\u00fcndung: Eine Gefahrenmeldeanlage (z. B. Einbruchmeldeanlage) ist eine wichtige technische Ma\u00dfnahme, um unbefugten Zutritt zum B\u00fcroraum zu detektieren und darauf zu reagieren."
+              },
+              {
+                "uuid": "27f5ddcc-04e5-4064-a0fd-175d92956d4b",
+                "control-id": "INF.12.A8",
+                "description": "AI-Begr\u00fcndung: Die Entfernung nicht genutzter Kabel reduziert die Brandlast und verhindert Sicherheitsrisiken durch ungesicherte, aktive Netzwerkanschl\u00fcsse direkt am Arbeitsplatz."
+              },
+              {
+                "uuid": "07a7ccae-f933-413c-8e26-44029c813efb",
+                "control-id": "INF.12.A10",
+                "description": "AI-Begr\u00fcndung: Eine klare und neutrale Kennzeichnung der Netzwerkanschl\u00fcsse im B\u00fcroraum ist f\u00fcr die korrekte und sichere Nutzung durch Mitarbeitende relevant und vermeidet Fehlanschaltungen."
+              },
+              {
+                "uuid": "06d5d69f-f64f-4d17-851b-d41cd788e037",
+                "control-id": "INF.12.A12",
+                "description": "AI-Begr\u00fcndung: Die regelm\u00e4\u00dfige Pr\u00fcfung elektrischer Anlagen und Betriebsmittel im B\u00fcroraum ist eine grundlegende Sicherheitsma\u00dfnahme zur Vermeidung von elektrischen Defekten und Br\u00e4nden."
+              },
+              {
+                "uuid": "97d9230a-9cd2-4dd0-b067-e69eb20e706f",
+                "control-id": "INF.12.A13",
+                "description": "AI-Begr\u00fcndung: Regelt den sicheren Umgang mit elektrischen Ger\u00e4ten und Mehrfachsteckdosen im B\u00fcro und beugt damit aktiv einer der h\u00e4ufigsten Brandursachen vor."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

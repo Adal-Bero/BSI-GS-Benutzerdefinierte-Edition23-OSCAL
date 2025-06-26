@@ -1,0 +1,243 @@
+{
+  "component-definition": {
+    "uuid": "da249934-f618-4b15-88cd-2bbe6bb3cd0e",
+    "metadata": {
+      "title": "Component for Baustein SYS.2.2.3: Clients unter Windows",
+      "last-modified": "2025-06-26T10:53:07.455219+00:00",
+      "version": "1.0.0",
+      "oscal-version": "1.1.2",
+      "remarks": "AI-enriched component for SYS.2.2.3."
+    },
+    "components": [
+      {
+        "uuid": "968f3557-52c0-414f-ac1b-6b688c35d897",
+        "type": "service",
+        "title": "Clients unter Windows",
+        "description": "Implementation of controls for Baustein SYS.2.2.3.",
+        "control-implementations": [
+          {
+            "uuid": "4300b322-0c78-4482-99a4-3eaa64dd2ebc",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Implementation for all controls in group SYS.2.2.3: Clients unter Windows",
+            "implemented-requirements": [
+              {
+                "uuid": "e72a01fc-0bd5-4b33-bf0c-0b24741914b7",
+                "control-id": "SYS.2.2.3.A1",
+                "description": "Base implementation for control SYS.2.2.3.A1."
+              },
+              {
+                "uuid": "8c563ee5-4f8e-4e16-98f2-9069735cc348",
+                "control-id": "SYS.2.2.3.A2",
+                "description": "Base implementation for control SYS.2.2.3.A2."
+              },
+              {
+                "uuid": "044db750-b242-41a8-8779-1ccee50d8266",
+                "control-id": "SYS.2.2.3.A4",
+                "description": "Base implementation for control SYS.2.2.3.A4."
+              },
+              {
+                "uuid": "b40795c4-a15f-4063-83f8-9f8c0a474de6",
+                "control-id": "SYS.2.2.3.A5",
+                "description": "Base implementation for control SYS.2.2.3.A5."
+              },
+              {
+                "uuid": "87a10db0-46c5-44b5-9f9d-06e56d9e4fd6",
+                "control-id": "SYS.2.2.3.A6",
+                "description": "Base implementation for control SYS.2.2.3.A6."
+              },
+              {
+                "uuid": "c1eddff8-aa2a-4a04-bfb6-71198c20f457",
+                "control-id": "SYS.2.2.3.A9",
+                "description": "Base implementation for control SYS.2.2.3.A9."
+              },
+              {
+                "uuid": "c59a3e2a-3384-412f-bf93-8fad0c2936f2",
+                "control-id": "SYS.2.2.3.A12",
+                "description": "Base implementation for control SYS.2.2.3.A12."
+              },
+              {
+                "uuid": "ffb4a9aa-8693-40fa-8215-bd78adb5cc20",
+                "control-id": "SYS.2.2.3.A13",
+                "description": "Base implementation for control SYS.2.2.3.A13."
+              },
+              {
+                "uuid": "b9a2be3a-63aa-4722-8f03-28e8c8523fad",
+                "control-id": "SYS.2.2.3.A14",
+                "description": "Base implementation for control SYS.2.2.3.A14."
+              },
+              {
+                "uuid": "10f9137e-0093-4aab-bc47-5e3fa40de801",
+                "control-id": "SYS.2.2.3.A15",
+                "description": "Base implementation for control SYS.2.2.3.A15."
+              },
+              {
+                "uuid": "bb911542-d78f-4dea-9127-999c05f31de2",
+                "control-id": "SYS.2.2.3.A16",
+                "description": "Base implementation for control SYS.2.2.3.A16."
+              },
+              {
+                "uuid": "a7e3a09f-1ecc-4908-b51a-808de1d63153",
+                "control-id": "SYS.2.2.3.A17",
+                "description": "Base implementation for control SYS.2.2.3.A17."
+              },
+              {
+                "uuid": "f86522dd-d124-4a4e-88e3-798ba82911e7",
+                "control-id": "SYS.2.2.3.A18",
+                "description": "Base implementation for control SYS.2.2.3.A18."
+              },
+              {
+                "uuid": "88f70d23-5263-4238-9762-c714783a64fc",
+                "control-id": "SYS.2.2.3.A19",
+                "description": "Base implementation for control SYS.2.2.3.A19."
+              },
+              {
+                "uuid": "74e99e8b-3e0e-40e8-8bd7-d0472c885423",
+                "control-id": "SYS.2.2.3.A20",
+                "description": "Base implementation for control SYS.2.2.3.A20."
+              },
+              {
+                "uuid": "58237b01-49af-446e-a4f7-57a09ae9694e",
+                "control-id": "SYS.2.2.3.A21",
+                "description": "Base implementation for control SYS.2.2.3.A21."
+              },
+              {
+                "uuid": "3565c7fb-2f88-4279-8d2b-c501f86a6305",
+                "control-id": "SYS.2.2.3.A22",
+                "description": "Base implementation for control SYS.2.2.3.A22."
+              },
+              {
+                "uuid": "740df147-0bea-4e7f-aef5-9c6e5d4c45a8",
+                "control-id": "SYS.2.2.3.A23",
+                "description": "Base implementation for control SYS.2.2.3.A23."
+              },
+              {
+                "uuid": "26156153-c1f9-4234-bcc1-08c759c190d0",
+                "control-id": "SYS.2.2.3.A24",
+                "description": "Base implementation for control SYS.2.2.3.A24."
+              },
+              {
+                "uuid": "5c6a6176-4ecc-4345-8134-6898b65a734c",
+                "control-id": "SYS.2.2.3.A25",
+                "description": "Base implementation for control SYS.2.2.3.A25."
+              },
+              {
+                "uuid": "c186b9c9-c94e-46d0-9cfe-c053cfda9a2b",
+                "control-id": "SYS.2.2.3.A26",
+                "description": "Base implementation for control SYS.2.2.3.A26."
+              }
+            ]
+          },
+          {
+            "uuid": "80e4c7bc-45a1-4105-8afb-e753b8c58727",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "Abh\u00e4ngigkeiten von verwandten Bausteinen",
+            "implemented-requirements": [
+              {
+                "uuid": "09774248-6327-4515-a561-c00f6652e017",
+                "control-id": "SYS.2.1.A1",
+                "description": "AI-Begr\u00fcndung: Die sichere Authentisierung ist eine grundlegende Anforderung f\u00fcr den Schutz von Informationen auf jedem Client-System, einschlie\u00dflich Windows 10/11."
+              },
+              {
+                "uuid": "c034a83f-0122-4d08-88ea-66c4e1dbc70a",
+                "control-id": "SYS.2.1.A3",
+                "description": "AI-Begr\u00fcndung: Angesichts des \"Windows as a Service\"-Modells ist die zeitnahe Installation von Sicherheitspatches von entscheidender Bedeutung. Diese Anforderung stellt sicher, dass die Clients aktuell gehalten werden."
+              },
+              {
+                "uuid": "c8c5ad75-7ffa-474f-96c2-75ee43a3be23",
+                "control-id": "SYS.2.1.A6",
+                "description": "AI-Begr\u00fcndung: Schutz vor Schadsoftware ist ein wesentlicher Bestandteil der Absicherung eines jeden Clients. Windows-Systeme sind ein h\u00e4ufiges Ziel, was diese Anforderung unerl\u00e4sslich macht."
+              },
+              {
+                "uuid": "06399e8c-889e-4dce-82c0-3feac7f57f34",
+                "control-id": "SYS.2.1.A8",
+                "description": "AI-Begr\u00fcndung: Die Absicherung des Bootvorgangs, insbesondere mit UEFI SecureBoot, ist ein zentrales Sicherheitsmerkmal von Windows 10/11 und sch\u00fctzt vor tiefgreifenden Manipulationen des Systems."
+              },
+              {
+                "uuid": "7ad34cc0-5ce0-49d0-8444-e56500e64120",
+                "control-id": "SYS.2.1.A42",
+                "description": "AI-Begr\u00fcndung: Der Baustein hebt explizit die enge Cloud-Anbindung und den Datenaustausch von Windows 10/11 als neue Herausforderung hervor. Diese Anforderung adressiert genau dieses Risiko."
+              },
+              {
+                "uuid": "7afd878e-69cb-4f03-b03b-9251557772a7",
+                "control-id": "SYS.2.1.A9",
+                "description": "AI-Begr\u00fcndung: Eine spezifische Sicherheitsrichtlinie f\u00fcr Windows-Clients ist notwendig, um die zahlreichen Konfigurationsm\u00f6glichkeiten konsistent und nachvollziehbar im Sinne der Sicherheitsziele umzusetzen."
+              },
+              {
+                "uuid": "34f78aed-2789-4f96-bf10-a35c685de707",
+                "control-id": "SYS.2.1.A13",
+                "description": "AI-Begr\u00fcndung: Moderne Windows-Sicherheitsfunktionen wie Virtualization Based Security (VBS) und Credential Guard nutzen abgesicherte Ausf\u00fchrungsumgebungen. Der Schutz dieser Bereiche ist f\u00fcr die Integrit\u00e4t des Gesamtsystems entscheidend."
+              },
+              {
+                "uuid": "e311e497-f149-45d7-a731-3445287a67b9",
+                "control-id": "SYS.2.1.A15",
+                "description": "AI-Begr\u00fcndung: Eine standardisierte und dokumentierte Installation und Grundkonfiguration ist die Basis f\u00fcr den sicheren Betrieb von Windows-Clients und verhindert unsichere Standardeinstellungen."
+              },
+              {
+                "uuid": "ecaf3c11-ea4d-4973-b4bb-769d6d6f65c0",
+                "control-id": "SYS.2.1.A16",
+                "description": "AI-Begr\u00fcndung: Windows-Betriebssysteme enthalten viele Funktionen und Dienste, die nicht immer ben\u00f6tigt werden. Die Deaktivierung dieser Komponenten reduziert die Angriffsfl\u00e4che erheblich."
+              },
+              {
+                "uuid": "af054b83-455d-4a1c-a470-6824ada4510b",
+                "control-id": "SYS.2.1.A28",
+                "description": "AI-Begr\u00fcndung: Der Schutz von Daten bei physischem Verlust des Ger\u00e4tes ist essenziell. Windows bietet mit BitLocker eine native und gut integrierbare L\u00f6sung, deren Einsatz durch diese Anforderung geregelt wird."
+              }
+            ]
+          },
+          {
+            "uuid": "578e5571-165d-442f-8871-b1c390ac2019",
+            "source": "gs://us_rag_storage_1/results/BSI_GS_OSCAL_current_2023_benutzerdefinierte.json",
+            "description": "SYS.0 Allgemeine Kontrollen",
+            "implemented-requirements": [
+              {
+                "uuid": "03187100-925d-4f33-9d87-f10ca5abe14e",
+                "control-id": "ORP.4.A2",
+                "description": "AI-Begr\u00fcndung: Die Verwaltung von Berechtigungen auf dem Client, insbesondere im Dateisystem und f\u00fcr Anwendungen (UAC), ist ein fundamentaler Sicherheitsmechanismus in Windows, um das Prinzip der geringsten Rechte umzusetzen."
+              },
+              {
+                "uuid": "45f8ac6f-08e9-4a5e-86c2-e3f7af05756b",
+                "control-id": "ORP.4.A13",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung konkretisiert die sichere Authentisierung, indem sie Schutzmechanismen wie Kontensperrung nach fehlgeschlagenen Anmeldeversuchen fordert, was eine Standard-Sicherheitsrichtlinie in Windows ist."
+              },
+              {
+                "uuid": "f03e7314-a6ed-43e7-87c0-160ed5a00d96",
+                "control-id": "CON.1.A1",
+                "description": "AI-Begr\u00fcndung: Da Windows an vielen Stellen kryptografische Verfahren einsetzt (z. B. BitLocker, TLS, EFS), ist die Auswahl sicherer und aktueller Algorithmen und Schl\u00fcssell\u00e4ngen f\u00fcr die Gesamtsicherheit des Clients entscheidend."
+              },
+              {
+                "uuid": "dc64f058-0c4c-4b9b-9eaa-0a0f37697d93",
+                "control-id": "CON.1.A4",
+                "description": "AI-Begr\u00fcndung: Ein funktionierendes Schl\u00fcsselmanagement ist f\u00fcr den praktischen Einsatz von Verschl\u00fcsselung (z.B. BitLocker-Wiederherstellungsschl\u00fcssel) und Zertifikaten auf Windows-Clients unerl\u00e4sslich."
+              },
+              {
+                "uuid": "28a964a4-5e97-4d54-89fd-76e8993abbae",
+                "control-id": "CON.3.A5",
+                "description": "AI-Begr\u00fcndung: Die Sicherung von auf dem Client gespeicherten Daten ist entscheidend f\u00fcr deren Verf\u00fcgbarkeit und die Wiederherstellung nach Sicherheitsvorf\u00e4llen wie Ransomware-Angriffen."
+              },
+              {
+                "uuid": "92c1d4e8-7e2c-4b0f-9673-8d8355b69624",
+                "control-id": "OPS.1.1.2.A5",
+                "description": "AI-Begr\u00fcndung: Die Protokollierung administrativer T\u00e4tigkeiten ist f\u00fcr die Nachvollziehbarkeit von Konfigurations\u00e4nderungen und die Analyse von Sicherheitsvorf\u00e4llen auf Windows-Clients unerl\u00e4sslich."
+              },
+              {
+                "uuid": "27ef8609-453c-4a6a-a03e-c0b262f57b59",
+                "control-id": "OPS.1.1.2.A6",
+                "description": "AI-Begr\u00fcndung: Der Schutz administrativer Zug\u00e4nge (z. B. lokale Administratorkonten, RDP) ist entscheidend, um die \u00dcbernahme des Systems durch Unbefugte oder Schadsoftware zu verhindern."
+              },
+              {
+                "uuid": "e2991b6e-3b89-4386-8b24-38f7cded755c",
+                "control-id": "OPS.1.1.3.A1",
+                "description": "AI-Begr\u00fcndung: Diese Anforderung schafft den organisatorischen Rahmen f\u00fcr die Umsetzung von Updates und Konfigurations\u00e4nderungen, was im Kontext von \"Windows as a Service\" mit seinen regelm\u00e4\u00dfigen Funktionsupdates besonders wichtig ist."
+              },
+              {
+                "uuid": "12ca428e-cda2-45f8-ade4-a8bdbcc3e8e8",
+                "control-id": "DER.1.A5",
+                "description": "AI-Begr\u00fcndung: Windows 10/11 verf\u00fcgt \u00fcber umfangreiche, integrierte Detektionsfunktionen (z. B. Windows Defender, Event Logging). Diese Anforderung stellt sicher, dass diese systemeigenen Werkzeuge aktiviert und zur Erkennung von Angriffen genutzt werden."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
