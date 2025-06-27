@@ -17,8 +17,8 @@ from config import GCP_PROJECT_ID
 logger = logging.getLogger(__name__)
 
 # --- Model Configuration ---
-MODEL_NAME = "gemini-1.5-pro-001"
-MAX_OUTPUT_TOKENS = 8192
+MODEL_NAME = "gemini-2.5-pro"
+MAX_OUTPUT_TOKENS = 65536
 RETRY_ATTEMPTS = 5
 MAX_CONCURRENT_REQUESTS = 10
 

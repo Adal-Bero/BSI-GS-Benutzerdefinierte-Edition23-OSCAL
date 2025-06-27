@@ -60,8 +60,7 @@ async def main():
     result_schema = load_json_schema("schemas/catalog.schema.json")
 
     # Load the catalog from GCS
-    bucket_name, blob_name = EXISTING_JSON_GCS_PATH.replace("gs://", "").split("/", 1)
-    catalog_data = await read_json_from_gcs(bucket_name, blob_name)
+    catalog_data = await read_json_from_gcs(BUCKET_NAME, EXISTING_JSON_GCS_PATH)
 
     if not catalog_data:
         logger.critical("Failed to load catalog data from GCS. Aborting process.")
@@ -122,7 +121,7 @@ async def main():
     
     # Save the updated catalog to GCS
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
-    base_filename = os.path.basename(blob_name).replace('.json', '')
+    base_filename = os.path.basename(EXISTING_JSON_GCS_PATH).replace('.json', '')
     output_filename = f"{base_filename}_with_practices_{timestamp}.json"
     output_path = os.path.join(OUTPUT_PREFIX, output_filename)
 
