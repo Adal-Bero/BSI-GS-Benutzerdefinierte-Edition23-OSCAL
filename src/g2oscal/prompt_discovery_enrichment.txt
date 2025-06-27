@@ -7,8 +7,10 @@ Analyze the single Baustein PDF provided. Your output MUST be a single JSON obje
 ---
 **Part 1: Extraction Logic**
 
+**CRUCIAL RULE for Prose Extraction:** You MUST extract the *entire* text for each chapter, even if it spans multiple pages. Do NOT stop at the bottom of a page. Continue reading until you encounter the next chapter heading (e.g., the start of "1.2 Zielsetzung" marks the definitive end of the prose for "1.1 Einleitung").
+
 *   **Top-Level Information:** You MUST extract the Baustein's unique ID (e.g., "OPS.1.1.3"), its FULL title (e.g., "Patch- und Änderungsmanagement"), and its main group prefix (e.g., "OPS").
-*   **Contextual Parts:** Extract the full prose for the chapters "Einleitung", "Zielsetzung", "Abgrenzung und Modellierung", and all "Gefährdungslage" risks.
+*   **Contextual Parts:** Extract the *complete* prose for the following chapters, obeying the rule above: "Einleitung", "Zielsetzung", "Abgrenzung und Modellierung", and all "Gefährdungslage" risks.
 *   **Requirements List:** For EACH requirement (`Anforderung`) in the document, extract its `id`, `title`, and full original `prose`.
 
 ---
@@ -82,4 +84,3 @@ You MUST return ONLY a single, raw JSON object conforming to the schema. The fol
     }
   ]
 }
-´´´
