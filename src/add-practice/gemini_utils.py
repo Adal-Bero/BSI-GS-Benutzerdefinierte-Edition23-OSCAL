@@ -10,7 +10,7 @@ from vertexai.generative_models import (
     GenerationConfig,
     FinishReason,
 )
-from config import GCP_PROJECT_ID
+from config import GCP_PROJECT_ID, TEST_MODE
 
 # Logger setup is handled in the main script, we just get it here.
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ try:
     vertexai.init(project=GCP_PROJECT_ID)
     logger.info("Vertex AI initialized successfully.")
 except Exception as e:
-    logger.critical(f"Failed to initialize Vertex AI: {e}", exc_info=True)
+    logger.critical(f"Failed to initialize Vertex AI: {e}", exc_info=TEST_MODE)
     raise
 
 
@@ -129,10 +129,10 @@ async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) 
             logger.warning(f"Attempt {attempt + 1}/{RETRY_ATTEMPTS}: Failed to decode or process JSON response. Error: {e}")
             await asyncio.sleep(2 ** attempt)
         except ValidationError as e:
-            logger.error(f"Schema validation failed for batch: {e.message}", exc_info=True)
+            logger.error(f"Schema validation failed for batch: {e.message}", exc_info=TEST_MODE)
             await asyncio.sleep(2 ** attempt)
         except Exception as e:
-            logger.error(f"Unexpected error during model generation on attempt {attempt + 1}: {e}", exc_info=True)
+            logger.error(f"Unexpected error during model generation on attempt {attempt + 1}: {e}", exc_info=TEST_MODE)
             await asyncio.sleep(2 ** attempt)
             
     logger.error(f"All {RETRY_ATTEMPTS} retry attempts failed for a batch. Returning failures for this batch.")

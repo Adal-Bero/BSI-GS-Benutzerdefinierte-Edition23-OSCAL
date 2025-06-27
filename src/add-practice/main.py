@@ -29,10 +29,10 @@ def load_json_schema(schema_path: str) -> dict:
         with open(schema_path, "r", encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
-        logger.critical(f"Schema file not found at: {schema_path}", exc_info=True)
+        logger.critical(f"Schema file not found at: {schema_path}", exc_info=TEST_MODE)
         raise
     except json.JSONDecodeError:
-        logger.critical(f"Invalid JSON in schema file: {schema_path}", exc_info=True)
+        logger.critical(f"Invalid JSON in schema file: {schema_path}", exc_info=TEST_MODE)
         raise
 
 
@@ -150,7 +150,7 @@ async def main():
         validate(instance=catalog_data, schema=result_schema)
         logger.info("Final catalog validation successful.")
     except ValidationError as e:
-        logger.error(f"Final catalog validation failed: {e.message}", exc_info=True)
+        logger.error(f"Final catalog validation failed: {e.message}", exc_info=TEST_MODE)
         # We will still save the file but log a clear error.
     
     # Save the updated catalog to GCS
@@ -167,4 +167,4 @@ if __name__ == "__main__":
     try:
         asyncio.run(main())
     except Exception as e:
-        logger.critical(f"An unhandled exception occurred in main: {e}", exc_info=True)
+        logger.critical(f"An unhandled exception occurred in main: {e}", exc_info=TEST_MODE)
