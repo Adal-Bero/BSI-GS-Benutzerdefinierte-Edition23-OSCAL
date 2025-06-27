@@ -16,8 +16,36 @@ Analyze the single Baustein PDF provided. Your output MUST be a single JSON obje
 
 For EACH requirement you extract, you MUST also add the following classifications to it:
 
-1.  **Control `class` Classification**: Assign ONE of the standard NIST control classes: "Technical", "Operational", or "Management".
-2.  **`practice` Classification**: Assign ONE of the practice IDs: GOV, ISGA, DOCS, RISK, REAL, PERF, LAW, ARCH, SENS, REA, NOT, ASST, TEST, PERS, BES, DEV, CON, DLS, GEB, BER, DET, SYS, APP.
+1.  **Control `class` Classification**: Assign ONE of the standard NIST control classes.
+    - `Technical`: The control is primarily implemented and executed by computer systems.
+    - `Operational`: The control is primarily implemented and executed by people.
+    - `Management`: The control focuses on the management of risk and information systems.
+
+2.  **`practice` Classification**: Assign ONE of the following practice IDs based on the descriptions.
+    - GOV: Governance
+    - ISGA: ISMS-Gestaltung und –Änderung (ISMS Design and Change)
+    - DOCS: Dokumente und Ressourcen (Documents and Resources)
+    - RISK: Risikomanagement (Risk Management)
+    - REAL: Realisierung und Verbesserung (Implementation and Improvement)
+    - PERF: Leistungsbewertung (Performance Evaluation)
+    - LAW: Compliance
+    - ARCH: Architektur (Architecture)
+    - SENS: Sensibilisierung (Awareness and Training)
+    - REA: Sicherheitsvorfallsbehandlung (Incident Handling)
+    - NOT: Notfallplanung (Contingency Planning)
+    - ASST: Informationen und Assets (Information and Assets)
+    - TEST: Änderungen und Tests (Changes and Tests)
+    - PERS: Personal
+    - BES: Beschaffungsmanagement (Procurement Management)
+    - DEV: Entwicklung (Development)
+    - CON: Konfiguration (Configuration)
+    - DLS: Dienstleistersteuerung (Service Provider Management)
+    - GEB: Gebäudemanagement (Building Management)
+    - BER: Berechtigung (Authorization)
+    - DET: Detektion (Detection)
+    - SYS: Systemschutz (System Protection)
+    - APP: Anwendungsschutz (Application Protection)
+
 3.  **CIA Tenant Classification**: Determine the impact on Confidentiality, Integrity, and Availability (`effective_on_c`, `effective_on_i`, `effective_on_a`).
 
 ---
@@ -54,4 +82,4 @@ You MUST return ONLY a single, raw JSON object conforming to the schema. The fol
     }
   ]
 }
-```
+´´´
