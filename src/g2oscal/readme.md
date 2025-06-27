@@ -12,70 +12,70 @@ The system is designed to run as a serverless **Google Cloud Run Job** and opera
     *   **A 5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement.
     *   **Practice Classification:** Assigns each control to a functional security practice (e.g., GOV, RISK, ARCH).
     *   **Control Class:** Classifies each control as `Technical`, `Operational`, or `Management`.
-    *   **CIA Tenant Analysis:** Determines if a control impacts Confidentiality, Integrity, or Availability.
+    *   **CIA Tenant Analysis:** Determines if a control primarily impacts Confidentiality, Integrity, or Availability.
 *   **Contextual Information:** Extracts introductory chapters (Einleitung, Zielsetzung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
 *   **Robust & Modular:** The code is logically separated into modules for configuration, GCS interaction, and AI processing, following modern best practices.
 
 ---
 
-## The Multi-Stage AI Architecture
+## The Two-Stage AI Architecture
 
-To maximize reliability and quality, this pipeline avoids a single, monolithic AI request. Instead, it uses a sophisticated multi-stage architecture that delegates tasks based on their complexity.
-
-```
-+------------------+     +------------------------+
-| Baustein PDF     | --> |   STAGE 1: DISCOVERY   |
-| (in GCS)         |     | (Reliable Extraction)  |
-+------------------+     +-----------+------------+
-                                     |
-                                     v
-                  +------------------------------------+
-                  |  Validated Requirements Stub JSON  |
-                  +------------------+-----------------+
-                                     |
-           +-------------------------+-------------------------+
-           |                                                   |
-           v                                                   v
-+------------------------+                        +-------------------------+
-| STAGE 2: GENERATION    |                        | STAGE 3: ENRICHMENT     |
-| (Creative Prose)       |                        | (Analytical AI)         |
-+------------------------+                        +-------------------------+
-           |                                                   |
-           v                                                   v
-  +------------------+                                +-------------------+
-  | Validated Prose  |                                | Validated Class & |
-  |      JSON        |                                |   Practice JSON   |
-  +------------------+                                +-------------------+
-           |                                                   |
-           +---------------------+-----------------------------+
-                                 |
-                                 v
-                 +-------------------------------+
-                 |    PYTHON FINAL ASSEMBLY      |
-                 |  (Deterministic Structuring)  |
-                 +---------------+---------------+
-                                 |
-                                 v
-                   +-----------------------------+
-                   |  Final Validated OSCAL JSON |
-                   +-----------------------------+
+To maximize both reliability and efficiency, this pipeline uses a sophisticated two-stage architecture that delegates tasks based on their complexity. This is a refinement of a previous three-stage model, combining extraction and classification into a single, efficient first step.
 
 ```
++------------------+
+| Baustein PDF     |
+| (in GCS)         |
++--------+---------+
+         |
+         v
++-----------------------------------+
+|   STAGE 1: DISCOVERY & ENRICHMENT |
+| (Extraction + Classification AI)  |
++------------------+----------------+
+                   |
+                   v
++------------------------------------+
+|  Validated & ENRICHED Requirements |
+|           Stub JSON                |
++------------------+-----------------+
+                   |
+                   v
++-----------------------------------+
+|      STAGE 2: GENERATION          |
+|    (Creative Maturity Prose AI)   |
++------------------+----------------+
+                   |
+                   v
+    +--------------------------------+
+    | Validated Prose JSON (for all  |
+    |      5 maturity levels)        |
+    +--------------+-----------------+
+                   |
+                   v
+   +-------------------------------+
+   |    PYTHON FINAL ASSEMBLY      |
+   |  (Deterministic Structuring)  |
+   +---------------+---------------+
+                   |
+                   v
+     +-----------------------------+
+     |  Final Validated OSCAL JSON |
+     +-----------------------------+
 
-### Stage 1: Discovery (Low Complexity, High Reliability)
-The process begins by sending the raw PDF to the AI with a focused prompt (`prompt_discovery.txt`). The AI's only job is to perform a simple, reliable extraction of the high-level structure: the Baustein ID, titles, contextual parts, and a simple list of all requirements with their original text. This output is immediately validated against `discovery_stub_schema.json`.
+```
 
-### Stage 2 & 3: Parallel AI Processing (High Quality, High Efficiency)
-Once the list of requirements is successfully discovered, the script launches two AI tasks *in parallel* to maximize efficiency:
-1.  **Generation Task:** Uses `prompt_generation.txt` to perform the complex, creative work of writing the detailed prose for all 5 maturity levels for the entire batch of requirements. The result is validated against `generation_stub_schema.json`.
-2.  **Enrichment Task:** Uses `prompt_enrichment.txt` to perform the analytical work of classifying each requirement's `practice`, `class`, and CIA impact. The result is validated against `enrichment_stub_schema.json`.
+### Stage 1: Discovery & Enrichment (High Reliability & Efficiency)
+The process begins by sending the raw PDF to the AI with a powerful, combined prompt (`prompt_discovery_enrichment.txt`). The AI's job is to perform both extraction and classification in a single call:
+1.  **Extract:** It reads the Baustein ID, titles, contextual parts, and the list of requirements with their original text.
+2.  **Enrich:** For every requirement it extracts, it *immediately* classifies its `practice`, `class`, and `CIA` impact.
+The combined JSON output is validated against the strict `discovery_enrichment_stub_schema.json`.
+
+### Stage 2: Generation (High Quality, Creative)
+The enriched list of requirements from Stage 1 is then passed to the second AI call. Using the `prompt_generation.txt`, the AI performs the complex, creative work of writing the detailed prose for all 5 maturity levels for the entire batch of requirements. The result is validated against `generation_stub_schema.json`.
 
 ### Final Assembly (Deterministic)
-The Python script (`main.py`) acts as the final, deterministic assembler. It gathers the validated data from all three stages and builds the final, complete OSCAL `control` objects. These are merged into the main catalog, which is then validated one last time against the master `bsi_gk_2023_oscal_schema.json` before being saved.
-
-This architecture is superior because it delegates tasks appropriately:
--   **AI:** Handles creative text generation and complex classification.
--   **Python:** Handles strict data structuring, validation, and final assembly.
+The Python script (`main.py`) acts as the final, deterministic assembler. It gathers the validated data from both stages and builds the final, complete OSCAL `control` objects. These are merged into the main catalog, which is then validated one last time against the master `bsi_gk_2023_oscal_schema.json` before being saved.
 
 ---
 
@@ -85,18 +85,16 @@ This architecture is superior because it delegates tasks appropriately:
 *   **`main.py`:** The main orchestrator. It reads configuration, finds files, manages the `asyncio` event loop for parallel processing, calls the utility modules, and assembles the final OSCAL catalog.
 *   **`config.py`:** A centralized hub for all configuration. It loads environment variables, defines static file paths and retry settings, and sets up the logger.
 *   **`gcs_utils.py`:** A dedicated module for all interactions with Google Cloud Storage (listing, reading, writing files).
-*   **`gemini_utils.py`:** The "AI brain" of the project. It handles initializing the Gemini model and contains the core logic for the multi-stage AI processing pipeline.
+*   **`gemini_utils.py`:** The "AI brain" of the project. It handles initializing the Gemini model and contains the core logic for the two-stage AI processing pipeline, including the self-contained retry loops for each API call.
 
 ### Prompts
-*   **`prompt_discovery.txt`:** Instructs the AI on how to perform the initial, reliable extraction of structure and text from a PDF.
+*   **`prompt_discovery_enrichment.txt`:** This single, powerful prompt instructs the AI to perform both the structural extraction and the detailed classification (practice, class, CIA) in one efficient step.
 *   **`prompt_generation.txt`:** A detailed, expert-level prompt that guides the AI in the creative task of writing the 5-level maturity prose.
-*   **`prompt_enrichment.txt`:** A precise, analytical prompt that instructs the AI to classify each control's practice, class, and CIA impact.
 
 ### Schemas (Quality Gates)
 *   **`bsi_gk_2023_oscal_schema.json`:** The final, strict JSON Schema that defines a valid BSI Grundschutz OSCAL catalog. It is used to validate the final output before saving.
-*   **`discovery_stub_schema.json`:** Validates the output of the Discovery stage.
+*   **`discovery_enrichment_stub_schema.json`:** Validates the combined output of the Discovery & Enrichment stage.
 *   **`generation_stub_schema.json`:** Validates the output of the Generation stage.
-*   **`enrichment_stub_schema.json`:** Validates the output of the Enrichment stage.
 
 ### Other Files
 *   **`requirements.txt`:** Lists all necessary Python libraries.
