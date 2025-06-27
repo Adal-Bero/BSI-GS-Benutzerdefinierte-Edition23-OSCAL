@@ -313,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function () {
         controlContent.className = 'control-content';
         controlContent.appendChild(renderAllProps(control.props));
 
+        // RESTORED: This loop correctly renders the main content of the control.
         (control.parts || []).forEach(part => {
             controlContent.appendChild(renderPartContent(part));
         });
@@ -446,7 +447,6 @@ document.addEventListener('DOMContentLoaded', function () {
         treeViewContainer.classList.toggle('hidden', !useTreeView);
         flatViewContainer.classList.toggle('hidden', useTreeView);
         
-        // This function hides an element if it has no visible children with the specified selector
         const pruneBranch = (parentSelector, childSelector) => {
             treeViewContainer.querySelectorAll(parentSelector).forEach(group => {
                 const hasVisibleChildren = group.querySelector(`${childSelector}:not(.hidden)`);
@@ -455,18 +455,16 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         if (useTreeView) {
-            // First, filter the individual controls
             treeViewContainer.querySelectorAll('.control').forEach(el => {
                 const show = isVisible(el);
                 el.classList.toggle('hidden', !show);
                 if (show) matchCount++;
             });
-            // Then, prune the parent branches that are now empty
             pruneBranch('.baustein-group', '.control');
             pruneBranch('.property-group', '.control');
             pruneBranch('.main-group', '.baustein-group');
 
-        } else { // Flat view (only for structural view)
+        } else {
             flatViewContainer.querySelectorAll('.flat-item').forEach(el => {
                 const show = isVisible(el);
                 el.classList.toggle('hidden', !show);
