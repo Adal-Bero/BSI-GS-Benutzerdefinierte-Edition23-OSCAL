@@ -16,7 +16,8 @@ config.setup_logging()
 logger = logging.getLogger(__name__)
 
 # --- Data Transformation & Assembly Functions ---
-def build_oscal_control(requirement_stub: dict, maturity_prose: dict, enrichment_data: dict) -> dict:
+# SIMPLIFIED: No longer needs a separate enrichment_data argument
+def build_oscal_control(requirement_stub: dict, maturity_prose: dict) -> dict:
     oscal_parts = []
     levels = [("Partial", "partial", "1"), ("Foundational", "foundational", "2"), ("Defined", "defined", "3"), ("Enhanced", "enhanced", "4"), ("Comprehensive", "comprehensive", "5")]
     for title_suffix, class_suffix, level_num in levels:
@@ -31,19 +32,20 @@ def build_oscal_control(requirement_stub: dict, maturity_prose: dict, enrichment
                     {"name": "assessment-method", "prose": maturity_prose.get(f"level_{level_num}_assessment", "")}]})
     
     props_ns = "https://www.bsi.bund.de/ns/grundschutz"
+    # Enrichment data is now part of the requirement_stub
     props = [
         {"name": "level", "value": requirement_stub.get('props', {}).get('level', 'N/A'), "ns": props_ns},
         {"name": "phase", "value": requirement_stub.get('props', {}).get('phase', 'N/A'), "ns": props_ns},
-        {"name": "practice", "value": enrichment_data.get("practice"), "ns": props_ns},
-        {"name": "effective_on_c", "value": str(enrichment_data.get("effective_on_c")).lower(), "ns": props_ns},
-        {"name": "effective_on_i", "value": str(enrichment_data.get("effective_on_i")).lower(), "ns": props_ns},
-        {"name": "effective_on_a", "value": str(enrichment_data.get("effective_on_a")).lower(), "ns": props_ns}
+        {"name": "practice", "value": requirement_stub.get("practice"), "ns": props_ns},
+        {"name": "effective_on_c", "value": str(requirement_stub.get("effective_on_c")).lower(), "ns": props_ns},
+        {"name": "effective_on_i", "value": str(requirement_stub.get("effective_on_i")).lower(), "ns": props_ns},
+        {"name": "effective_on_a", "value": str(requirement_stub.get("effective_on_a")).lower(), "ns": props_ns}
     ]
     
     return {
         "id": requirement_stub['id'], 
         "title": requirement_stub['title'], 
-        "class": enrichment_data.get("class", "Technical"),
+        "class": requirement_stub.get("class", "Technical"),
         "props": props,
         "parts": oscal_parts
     }
@@ -122,7 +124,6 @@ async def main():
     
     final_catalog = merge_results(successful_results, base_catalog)
 
-    # Final validation of the entire catalog before saving
     try:
         logger.info("Validating final merged catalog against OSCAL schema...")
         validate(instance=final_catalog, schema=loaded_oscal_schema)

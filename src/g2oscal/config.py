@@ -11,13 +11,11 @@ EXISTING_JSON_GCS_PATH = os.environ.get("EXISTING_JSON_GCS_PATH")
 
 # --- Static Configuration ---
 FINAL_RESULT_PREFIX = "results/"
-DISCOVERY_PROMPT_FILE = "prompt_discovery.txt"
+DISCOVERY_ENRICHMENT_PROMPT_FILE = "prompt_discovery_enrichment.txt"
 GENERATION_PROMPT_FILE = "prompt_generation.txt"
-ENRICHMENT_PROMPT_FILE = "prompt_enrichment.txt"
 OSCAL_SCHEMA_FILE = "bsi_gk_2023_oscal_schema.json"
-DISCOVERY_STUB_SCHEMA_FILE = "discovery_stub_schema.json"
+DISCOVERY_ENRICHMENT_STUB_SCHEMA_FILE = "discovery_enrichment_stub_schema.json"
 GENERATION_STUB_SCHEMA_FILE = "generation_stub_schema.json"
-ENRICHMENT_STUB_SCHEMA_FILE = "enrichment_stub_schema.json"
 
 # --- Concurrency & Retry Config ---
 CONCURRENT_REQUEST_LIMIT = 5
