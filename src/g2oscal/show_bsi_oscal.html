@@ -14,6 +14,8 @@
             --card-bg: #ffffff;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
             --hover-bg: #f1f3f5;
+            --success-color: #198754;
+            --danger-color: #dc3545;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -31,7 +33,7 @@
             border-radius: 8px;
             box-shadow: var(--shadow);
         }
-        h1, h2 {
+        h1 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
@@ -108,46 +110,54 @@
         .main-group > summary { font-size: 1.2em; font-weight: bold; }
         .baustein-group > summary { font-size: 1.1em; font-weight: 500; }
         .control > summary { font-size: 1.05em; background: #f8f9fa; }
-        .control-path { font-size: 0.8em; color: #6c757d; margin-left: 10px; }
+        .control-path { font-size: 0.8em; color: #6c757d; margin-left: 10px; font-style: italic; }
         
+        /* NEW Beautiful Properties Display */
         .control-content { padding: 10px; }
-        .props-list {
-            list-style: none;
-            padding: 10px;
-            margin: 10px 0;
-            background-color: #f8f9fa;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
+        .props-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
         }
-        .props-list h4 { margin: 0 0 10px; padding-bottom: 5px; border-bottom: 1px solid var(--border-color); }
-        .props-list li { padding: 3px 0; font-size: 0.9em; }
-        .props-list li .prop-name { font-weight: bold; color: #343a40; }
-        
-        /* Contextual Part Group Styling */
-        .contextual-part-group > summary { font-weight: bold; font-size: 1.1em; color: var(--primary-color); }
-        .contextual-part { padding-left: 10px; border-left: 3px solid var(--secondary-color); margin: 10px 0; }
-        .contextual-part h4 { color: #343a40; }
+        .prop-item {
+            background-color: #f1f3f5;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .prop-item .prop-name {
+            font-weight: bold;
+            color: #495057;
+        }
+        .prop-item.practice {
+            background-color: #e7f0fa;
+            border-color: #b3c9e1;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .prop-item.cia .prop-value {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .prop-value.true { color: var(--success-color); }
+        .prop-value.false { color: var(--danger-color); }
 
-        /* Maturity Level Part Styling */
-        .part-maturity-level > summary { background-color: #f1f3f5; padding: 10px 15px; font-weight: bold; }
-        .maturity-content { padding: 15px; }
-        .sub-part h4 { margin: 0 0 5px 0; font-size: 0.9em; color: #6c757d; }
-        
-        /* Flat View Styling */
-        #flat-view-container { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
-        .flat-item { border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow); background-color: var(--card-bg); }
-        .flat-item-header { background-color: #f8f9fa; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
-        .flat-item-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin: 0; }
-        .flat-item-path { font-size: 0.85em; color: #6c757d; margin-top: 5px; }
-        .flat-item-body { padding: 1rem 1.5rem; }
-
+        /* Other Styles */
+        .part { margin-top: 10px; padding: 10px; border-left: 3px solid var(--secondary-color); }
+        .part > summary { font-weight: bold; }
+        .part .prose { padding-top: 5px; }
         #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>BSI Grundschutz OSCAL Viewer (Advanced)</h1>
-        <p>Paste your enhanced OSCAL Catalog JSON below. You can now view the catalog grouped by properties like Practice, Class, etc.</p>
+        <p>Paste your enhanced OSCAL Catalog JSON below. You can now view the catalog by structure or by practice.</p>
         
         <textarea id="json-input">{
   "catalog": {
@@ -163,16 +173,26 @@
               {
                 "id": "CON.1.A1", "title": "Regelungen zur Klassifizierung", "class": "Management",
                 "props": [
-                  { "name": "level", "value": "3", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
-                  { "name": "phase", "value": "Risk Assessment", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
-                  { "name": "practice", "value": "GOV", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
-                  { "name": "effective_on_c", "value": "true", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
-                  { "name": "effective_on_i", "value": "true", "ns": "https://www.bsi.bund.de/ns/grundschutz" },
-                  { "name": "effective_on_a", "value": "false", "ns": "https://www.bsi.bund.de/ns/grundschutz" }
+                  { "name": "level", "value": "3" },
+                  { "name": "phase", "value": "Risk Assessment" },
+                  { "name": "practice", "value": "GOV" },
+                  { "name": "effective_on_c", "value": "true" },
+                  { "name": "effective_on_i", "value": "true" },
+                  { "name": "effective_on_a", "value": "false" }
                 ],
-                "parts": [
-                  { "name": "statement", "prose": "Es MUSS ein einheitliches, nachvollziehbares und an den Schutzzielen orientiertes Schema zur Klassifizierung von Informationen festgelegt werden." }
-                ]
+                "parts": [ { "name": "statement", "prose": "Es MUSS ein einheitliches, nachvollziehbares und an den Schutzzielen orientiertes Schema zur Klassifizierung von Informationen festgelegt werden." } ]
+              },
+               {
+                "id": "CON.1.A2", "title": "Umgang mit schützenswerten Informationen", "class": "Operational",
+                "props": [
+                  { "name": "level", "value": "3" },
+                  { "name": "phase", "value": "Operation" },
+                  { "name": "practice", "value": "GOV" },
+                  { "name": "effective_on_c", "value": "true" },
+                  { "name": "effective_on_i", "value": "false" },
+                  { "name": "effective_on_a", "value": "false" }
+                ],
+                "parts": [ { "name": "statement", "prose": "Informationen MÜSSEN entsprechend ihrer Klassifizierung behandelt werden." } ]
               }
             ]
           }
@@ -191,15 +211,11 @@
                 <select id="view-by-filter">
                     <option value="structure">Structure (Layer -> Baustein)</option>
                     <option value="practice">Practice</option>
-                    <option value="class">Control Class</option>
-                    <option value="level">Level</option>
-                    <option value="phase">ISMS Phase</option>
                 </select>
             </div>
-            <div class="filter-group"><label for="maturity-filter">Filter by Maturity Level</label><select id="maturity-filter"><option value="all">All Maturity Levels</option></select></div>
             <div class="filter-group"><label for="level-filter">Filter by Level</label><select id="level-filter"><option value="all">All Levels</option></select></div>
             <div class="filter-group"><label for="phase-filter">Filter by ISMS Phase</label><select id="phase-filter"><option value="all">All Phases</option></select></div>
-            <div class="view-group"><label>View Mode</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Filtered Tree</label><label><input type="radio" name="view-mode" value="flat"> Flat List</label></div></div>
+            <div class="view-group"><label>View Mode</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Tree</label><label><input type="radio" name="view-mode" value="flat"> Flat List</label></div></div>
             <button id="reset-btn">Reset Filters</button>
         </div>
 
@@ -218,7 +234,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const statusEl = document.getElementById('status');
     
     const viewByFilter = document.getElementById('view-by-filter');
-    const maturityFilter = document.getElementById('maturity-filter');
     const levelFilter = document.getElementById('level-filter');
     const phaseFilter = document.getElementById('phase-filter');
     const viewModeRadios = document.querySelectorAll('input[name="view-mode"]');
@@ -239,54 +254,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const renderAllProps = (props) => {
         if (!props || props.length === 0) return document.createDocumentFragment();
-        const list = document.createElement('ul');
-        list.className = 'props-list';
-        list.innerHTML = '<h4>Properties</h4>';
-        props.forEach(prop => {
-            const item = document.createElement('li');
-            item.innerHTML = `<span class="prop-name">${prop.name}:</span> ${prop.value}`;
-            list.appendChild(item);
+        const grid = document.createElement('div');
+        grid.className = 'props-grid';
+        
+        // Prioritize 'practice' prop
+        const practiceProp = props.find(p => p.name === 'practice');
+        if (practiceProp) {
+            const item = document.createElement('div');
+            item.className = 'prop-item practice';
+            item.innerHTML = `<span class="prop-name">Practice:</span> ${practiceProp.value}`;
+            grid.appendChild(item);
+        }
+
+        props.filter(p => p.name !== 'practice').forEach(prop => {
+            const item = document.createElement('div');
+            item.className = 'prop-item';
+            
+            if (prop.name.startsWith('effective_on_')) {
+                item.classList.add('cia');
+                const valueClass = prop.value === 'true' ? 'true' : 'false';
+                const icon = valueClass === 'true' ? '✔️' : '✖️';
+                item.innerHTML = `<span class="prop-name">${prop.name.replace('effective_on_','').toUpperCase()}:</span> <span class="prop-value ${valueClass}">${icon}</span>`;
+            } else {
+                 item.innerHTML = `<span class="prop-name">${prop.name}:</span> ${prop.value}`;
+            }
+            grid.appendChild(item);
         });
-        return list;
+        return grid;
     };
 
-    const renderMaturityLevelPart = (part) => {
+    const renderAnyPart = (part) => {
         const details = document.createElement('details');
-        details.className = 'part-maturity-level';
-        const maturityValue = part.title || 'Maturity Information';
-        details.dataset.maturityLevel = maturityValue; // For filtering
-        details.innerHTML = `<summary>${maturityValue}</summary>`;
-        
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'maturity-content';
-        
-        // Handle simple prose and nested parts
-        if (part.prose) {
-            const proseDiv = document.createElement('div');
-            proseDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
-            contentDiv.appendChild(proseDiv);
-        }
-        (part.parts || []).forEach(subPart => {
-            const subPartDiv = document.createElement('div');
-            subPartDiv.className = 'sub-part';
-            subPartDiv.innerHTML = `<h4>${subPart.name.replace(/_/g, ' ')}</h4><div>${(subPart.prose || '').replace(/\n/g, '<br>')}</div>`;
-            contentDiv.appendChild(subPartDiv);
-        });
-        
-        details.appendChild(contentDiv);
+        details.className = 'part';
+        details.innerHTML = `<summary>${part.title || part.name}</summary><div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>`;
         return details;
     };
 
     const renderControl = (control, path) => {
-        const level = findPropValue(control.props, 'level');
-        const phase = findPropValue(control.props, 'phase');
-        const practice = findPropValue(control.props, 'practice');
-
         const controlDetails = document.createElement('details');
         controlDetails.className = 'control';
-        controlDetails.dataset.level = level;
-        controlDetails.dataset.phase = phase;
-        controlDetails.dataset.practice = practice;
+        // Set all relevant data attributes for filtering
+        controlDetails.dataset.level = findPropValue(control.props, 'level');
+        controlDetails.dataset.phase = findPropValue(control.props, 'phase');
+        controlDetails.dataset.practice = findPropValue(control.props, 'practice');
         controlDetails.dataset.class = control.class || '';
 
         controlDetails.innerHTML = `<summary>${formatIdTitle(control)} <span class="control-path">${path || ''}</span></summary>`;
@@ -296,8 +306,7 @@ document.addEventListener('DOMContentLoaded', function () {
         controlContent.appendChild(renderAllProps(control.props));
 
         (control.parts || []).forEach(part => {
-             // Simplified rendering for any part
-            controlContent.appendChild(renderMaturityLevelPart(part));
+            controlContent.appendChild(renderAnyPart(part));
         });
         controlDetails.appendChild(controlContent);
         return controlDetails;
@@ -316,11 +325,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const populateFilters = () => {
         const levels = new Set();
         const phases = new Set();
-        const maturities = new Set();
         allControls.forEach(({ control }) => {
             levels.add(findPropValue(control.props, 'level'));
             phases.add(findPropValue(control.props, 'phase'));
-            (control.parts || []).forEach(part => maturities.add(part.title || 'Maturity Information'));
         });
         const populate = (select, set) => {
             select.innerHTML = `<option value="all">All ${select.id.replace('-filter', 's')}</option>`;
@@ -332,7 +339,6 @@ document.addEventListener('DOMContentLoaded', function () {
         };
         populate(levelFilter, levels);
         populate(phaseFilter, phases);
-        populate(maturityFilter, maturities);
     };
 
     const renderByStructure = () => {
@@ -343,39 +349,31 @@ document.addEventListener('DOMContentLoaded', function () {
             mainGroupDetails.innerHTML = `<summary>${mainGroup.title || mainGroup.id}</summary>`;
             (mainGroup.groups || []).forEach(bausteinGroup => {
                 const path = `${mainGroup.title || mainGroup.id}`;
-                const bausteinDetails = renderControlGroup(bausteinGroup, path);
+                const bausteinDetails = document.createElement('details');
+                bausteinDetails.className = 'baustein-group';
+                bausteinDetails.innerHTML = `<summary>${formatIdTitle(bausteinGroup)}</summary>`;
+                 (bausteinGroup.controls || []).forEach(control => {
+                    bausteinDetails.appendChild(renderControl(control, path));
+                });
                 mainGroupDetails.appendChild(bausteinDetails);
             });
             treeViewContainer.appendChild(mainGroupDetails);
         });
     };
-
-    const renderControlGroup = (group, path) => {
-        const groupDetails = document.createElement('details');
-        groupDetails.className = 'baustein-group';
-        groupDetails.innerHTML = `<summary>${formatIdTitle(group)}</summary>`;
-        (group.controls || []).forEach(control => {
-            groupDetails.appendChild(renderControl(control, path));
-        });
-        return groupDetails;
-    };
     
-    const renderByProperty = (propName) => {
+    const renderByPractice = () => {
         viewModeGroup.classList.add('hidden'); // No flat view for property view
-        treeViewContainer.classList.remove('hidden');
-        flatViewContainer.classList.add('hidden');
         const grouped = {};
         allControls.forEach(({ control, path }) => {
-            const value = propName === 'class' ? control.class : findPropValue(control.props, propName);
-            if (!value) return;
-            if (!grouped[value]) grouped[value] = [];
-            grouped[value].push({ control, path });
+            const practice = findPropValue(control.props, 'practice') || 'Unassigned';
+            if (!grouped[practice]) grouped[practice] = [];
+            grouped[practice].push({ control, path });
         });
 
         Object.keys(grouped).sort().forEach(key => {
             const groupDetails = document.createElement('details');
             groupDetails.className = 'property-group';
-            groupDetails.innerHTML = `<summary>${propName.charAt(0).toUpperCase() + propName.slice(1)}: ${key} (${grouped[key].length})</summary>`;
+            groupDetails.innerHTML = `<summary>Practice: ${key} (${grouped[key].length} controls)</summary>`;
             grouped[key].forEach(({ control, path }) => {
                 groupDetails.appendChild(renderControl(control, path));
             });
@@ -394,25 +392,24 @@ document.addEventListener('DOMContentLoaded', function () {
         findAllControlsRecursive(catalogData.catalog.groups, '', allControls);
         
         const selectedView = viewByFilter.value;
-        if (selectedView === 'structure') {
-            renderByStructure();
+        if (selectedView === 'practice') {
+            renderByPractice();
         } else {
-            renderByProperty(selectedView);
+            renderByStructure();
         }
         
-        // This part builds the flat view regardless, but it will be hidden/shown by filters
+        // Build the flat view for when user switches
         allControls.forEach(({ control, path }) => {
              const flatItemDiv = document.createElement('div');
              flatItemDiv.className = 'flat-item';
-             const controlElement = renderControl(control, path);
-             flatItemDiv.dataset.level = controlElement.dataset.level;
-             flatItemDiv.dataset.phase = controlElement.dataset.phase;
-             flatItemDiv.dataset.practice = controlElement.dataset.practice;
-             flatItemDiv.dataset.class = controlElement.dataset.class;
+             const controlElementForData = renderControl(control, path);
+             Object.keys(controlElementForData.dataset).forEach(key => {
+                 flatItemDiv.dataset[key] = controlElementForData.dataset[key];
+             });
              flatItemDiv.innerHTML = `<div class="flat-item-header"><h3 class="flat-item-title">${formatIdTitle(control)}</h3><div class="flat-item-path">${path}</div></div>`;
              const body = document.createElement('div');
              body.className = 'flat-item-body';
-             body.appendChild(controlElement.querySelector('.control-content').cloneNode(true));
+             body.appendChild(controlElementForData.querySelector('.control-content').cloneNode(true));
              flatItemDiv.appendChild(body);
              flatViewContainer.appendChild(flatItemDiv);
         });
@@ -436,11 +433,13 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         const viewMode = document.querySelector('input[name="view-mode"]:checked').value;
-        const currentViewContainer = (viewMode === 'tree' && viewByFilter.value === 'structure') ? treeViewContainer : flatViewContainer;
+        const isStructuralView = viewByFilter.value === 'structure';
+        const useTreeView = isStructuralView || viewMode === 'tree'; // Default to tree for practice view
 
-        if (currentViewContainer === treeViewContainer) {
-            flatViewContainer.classList.add('hidden');
-            treeViewContainer.classList.remove('hidden');
+        treeViewContainer.classList.toggle('hidden', !useTreeView);
+        flatViewContainer.classList.toggle('hidden', useTreeView || !isStructuralView);
+
+        if (useTreeView) {
             const allTreeControls = treeViewContainer.querySelectorAll('.control');
             allTreeControls.forEach(el => {
                 if (isVisible(el)) {
@@ -457,13 +456,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             // Hide parent groups if they have no visible children
             treeViewContainer.querySelectorAll('details').forEach(d => {
-                if (!d.querySelector('details:not(.hidden), .control:not(.hidden)')) {
+                const hasVisibleChildren = d.querySelector('details:not(.hidden), .control:not(.hidden)');
+                if (!hasVisibleChildren) {
                     d.classList.add('hidden');
+                } else {
+                     d.classList.remove('hidden'); // Ensure parents are visible
                 }
             });
         } else { // Flat view
-            treeViewContainer.classList.add('hidden');
-            flatViewContainer.classList.remove('hidden');
             flatViewContainer.querySelectorAll('.flat-item').forEach(el => {
                  if (isVisible(el)) {
                     el.classList.remove('hidden');
@@ -481,9 +481,8 @@ document.addEventListener('DOMContentLoaded', function () {
         viewByFilter.value = 'structure';
         levelFilter.value = 'all'; 
         phaseFilter.value = 'all';
-        maturityFilter.value = 'all';
         document.querySelector('input[name="view-mode"][value="tree"]').checked = true;
-        renderCatalog(); // Re-render to reset structure
+        renderCatalog();
     };
 
     renderBtn.addEventListener('click', renderCatalog);
@@ -491,7 +490,6 @@ document.addEventListener('DOMContentLoaded', function () {
     viewByFilter.addEventListener('change', renderCatalog);
     levelFilter.addEventListener('change', applyFilters);
     phaseFilter.addEventListener('change', applyFilters);
-    maturityFilter.addEventListener('change', applyFilters);
     viewModeRadios.forEach(radio => radio.addEventListener('change', applyFilters));
 });
 </script>
