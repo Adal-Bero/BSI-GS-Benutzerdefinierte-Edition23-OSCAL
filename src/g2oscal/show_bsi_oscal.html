@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSI Grundschutz OSCAL Viewer (Advanced)</title>
+    <title>BSI Grundschutz OSCAL Viewer (Final)</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -16,6 +16,7 @@
             --hover-bg: #f1f3f5;
             --success-color: #198754;
             --danger-color: #dc3545;
+            --grey-color: #6c757d;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -140,6 +141,12 @@
             font-weight: bold;
             color: var(--primary-color);
         }
+        .prop-item.control-class {
+            background-color: #e9ecef;
+            border-color: #ced4da;
+            color: var(--grey-color);
+            font-weight: bold;
+        }
         .prop-item.cia .prop-value {
             font-weight: bold;
             font-size: 1.1em;
@@ -147,7 +154,7 @@
         .prop-value.true { color: var(--success-color); }
         .prop-value.false { color: var(--danger-color); }
 
-        /* NEW Maturity Level & Part Styling */
+        /* Maturity Level & Part Styling */
         .maturity-level-group {
             border: 1px solid var(--border-color);
             border-radius: 4px;
@@ -192,7 +199,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>BSI Grundschutz OSCAL Viewer (Advanced)</h1>
+        <h1>BSI Grundschutz OSCAL Viewer (Final)</h1>
         <p>Paste your enhanced OSCAL Catalog JSON below. You can now view the catalog by structure or by practice.</p>
         
         <textarea id="json-input">{
@@ -223,14 +230,6 @@
                         "parts": [
                             { "name": "statement", "prose": "This is the prose for the statement at maturity level 3." },
                             { "name": "guidance", "prose": "This is the prose for the guidance at maturity level 3." }
-                        ]
-                    },
-                    { 
-                        "name": "maturity-level-description", 
-                        "title": "Maturity Level 1: Partial",
-                        "parts": [
-                            { "name": "statement", "prose": "This is the prose for the statement at maturity level 1." },
-                            { "name": "assessment-method", "prose": "This is the audit guidance for level 1." }
                         ]
                     }
                 ]
@@ -286,6 +285,16 @@ document.addEventListener('DOMContentLoaded', function () {
     let allControls = [];
     let catalogData = null;
 
+    const PRACTICE_NAMES = {
+        "GOV": "Governance", "ISGA": "ISMS-Gestaltung und –Änderung", "DOCS": "Dokumente und Ressourcen",
+        "RISK": "Risikomanagement", "REAL": "Realisierung und Verbesserung", "PERF": "Leistungsbewertung",
+        "LAW": "Compliance", "ARCH": "Architektur", "SENS": "Sensibilisierung", "REA": "Sicherheitsvorfallsbehandlung",
+        "NOT": "Notfallplanung", "ASST": "Informationen und Assets", "TEST": "Änderungen und Tests",
+        "PERS": "Personal", "BES": "Beschaffungsmanagement", "DEV": "Entwicklung", "CON": "Konfiguration",
+        "DLS": "Dienstleistersteuerung", "GEB": "Gebäudemanagement", "BER": "Berechtigung", "DET": "Detektion",
+        "SYS": "Systemschutz", "APP": "Anwendungsschutz"
+    };
+
     const findPropValue = (props, name) => {
         const prop = (props || []).find(p => p.name === name);
         return prop ? prop.value : '';
@@ -293,16 +302,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const formatIdTitle = (item) => `${item.id}: ${item.title}`;
 
-    const renderAllProps = (props) => {
-        if (!props || props.length === 0) return document.createDocumentFragment();
+    const renderAllProps = (control) => {
+        const props = control.props || [];
+        if (props.length === 0 && !control.class) return document.createDocumentFragment();
+
         const grid = document.createElement('div');
         grid.className = 'props-grid';
+
+        if (control.class) {
+             const item = document.createElement('div');
+            item.className = 'prop-item control-class';
+            item.innerHTML = `<span class="prop-name">Class:</span> ${control.class}`;
+            grid.appendChild(item);
+        }
         
         const practiceProp = props.find(p => p.name === 'practice');
         if (practiceProp) {
             const item = document.createElement('div');
             item.className = 'prop-item practice';
-            item.innerHTML = `<span class="prop-name">Practice:</span> ${practiceProp.value}`;
+            item.innerHTML = `<span class="prop-name">Practice:</span> ${PRACTICE_NAMES[practiceProp.value] || practiceProp.value}`;
             grid.appendChild(item);
         }
 
@@ -323,9 +341,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return grid;
     };
 
-    // REWRITTEN: This function now properly handles nested parts.
     const renderPart = (part) => {
-        // Handle nested maturity level descriptions
         if (part.name === 'maturity-level-description' && part.parts) {
             const details = document.createElement('details');
             details.className = 'maturity-level-group';
@@ -339,11 +355,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const safeName = subPart.name.replace(/_/g, '-');
                 subPartDiv.className = `sub-part sub-part-${safeName}`;
                 
-                const titleMap = {
-                    'statement': 'Statement',
-                    'guidance': 'Implementation Guidance',
-                    'assessment-method': 'Audit Guidance'
-                };
+                const titleMap = { 'statement': 'Statement', 'guidance': 'Implementation Guidance', 'assessment-method': 'Audit Guidance' };
                 const displayTitle = titleMap[subPart.name] || subPart.name;
 
                 subPartDiv.innerHTML = `<h4>${displayTitle}</h4><div class="prose">${(subPart.prose || '').replace(/\n/g, '<br>')}</div>`;
@@ -353,17 +365,14 @@ document.addEventListener('DOMContentLoaded', function () {
             return details;
         }
 
-        // Fallback for simple parts with just prose
         if (part.prose) {
             const proseDiv = document.createElement('div');
             proseDiv.className = 'part-prose';
             proseDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
             return proseDiv;
         }
-
         return document.createDocumentFragment();
     };
-
 
     const renderControl = (control, path) => {
         const controlDetails = document.createElement('details');
@@ -377,7 +386,7 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const controlContent = document.createElement('div');
         controlContent.className = 'control-content';
-        controlContent.appendChild(renderAllProps(control.props));
+        controlContent.appendChild(renderAllProps(control));
 
         (control.parts || []).forEach(part => {
             controlContent.appendChild(renderPart(part));
@@ -447,7 +456,8 @@ document.addEventListener('DOMContentLoaded', function () {
         Object.keys(grouped).sort().forEach(key => {
             const groupDetails = document.createElement('details');
             groupDetails.className = 'property-group';
-            groupDetails.innerHTML = `<summary>Practice: ${key} (${grouped[key].length} controls)</summary>`;
+            const practiceName = PRACTICE_NAMES[key] || key;
+            groupDetails.innerHTML = `<summary>${practiceName} (${grouped[key].length} controls)</summary>`;
             grouped[key].forEach(({ control, path }) => {
                 groupDetails.appendChild(renderControl(control, path));
             });
