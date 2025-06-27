@@ -147,7 +147,7 @@
         .prop-value.true { color: var(--success-color); }
         .prop-value.false { color: var(--danger-color); }
 
-        /* FIXED Part/Content Display */
+        /* Part/Content Display */
         .part-prose {
             margin-top: 15px;
             padding-top: 15px;
@@ -291,7 +291,6 @@ document.addEventListener('DOMContentLoaded', function () {
         return grid;
     };
 
-    // FIXED: This function now correctly renders the content part.
     const renderPartContent = (part) => {
         if (!part.prose) return document.createDocumentFragment();
         const contentDiv = document.createElement('div');
@@ -314,7 +313,6 @@ document.addEventListener('DOMContentLoaded', function () {
         controlContent.className = 'control-content';
         controlContent.appendChild(renderAllProps(control.props));
 
-        // FIXED: Loop through parts and render them correctly.
         (control.parts || []).forEach(part => {
             controlContent.appendChild(renderPartContent(part));
         });
@@ -447,38 +445,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
         treeViewContainer.classList.toggle('hidden', !useTreeView);
         flatViewContainer.classList.toggle('hidden', useTreeView);
+        
+        // This function hides an element if it has no visible children with the specified selector
+        const pruneBranch = (parentSelector, childSelector) => {
+            treeViewContainer.querySelectorAll(parentSelector).forEach(group => {
+                const hasVisibleChildren = group.querySelector(`${childSelector}:not(.hidden)`);
+                group.classList.toggle('hidden', !hasVisibleChildren);
+            });
+        };
 
         if (useTreeView) {
-            const allTreeControls = treeViewContainer.querySelectorAll('.control');
-            allTreeControls.forEach(el => {
-                if (isVisible(el)) {
-                    el.classList.remove('hidden');
-                    matchCount++;
-                    let parent = el.parentElement;
-                    while(parent && parent.tagName === 'DETAILS') {
-                        parent.classList.remove('hidden');
-                        parent = parent.parentElement;
-                    }
-                } else {
-                    el.classList.add('hidden');
-                }
+            // First, filter the individual controls
+            treeViewContainer.querySelectorAll('.control').forEach(el => {
+                const show = isVisible(el);
+                el.classList.toggle('hidden', !show);
+                if (show) matchCount++;
             });
-            treeViewContainer.querySelectorAll('details').forEach(d => {
-                const hasVisibleChildren = d.querySelector('details:not(.hidden), .control:not(.hidden)');
-                if (!hasVisibleChildren) {
-                    d.classList.add('hidden');
-                } else {
-                     d.classList.remove('hidden');
-                }
-            });
-        } else { // Flat view is only for structural view
+            // Then, prune the parent branches that are now empty
+            pruneBranch('.baustein-group', '.control');
+            pruneBranch('.property-group', '.control');
+            pruneBranch('.main-group', '.baustein-group');
+
+        } else { // Flat view (only for structural view)
             flatViewContainer.querySelectorAll('.flat-item').forEach(el => {
-                 if (isVisible(el)) {
-                    el.classList.remove('hidden');
-                    matchCount++;
-                } else {
-                    el.classList.add('hidden');
-                }
+                const show = isVisible(el);
+                el.classList.toggle('hidden', !show);
+                if (show) matchCount++;
             });
         }
         statusEl.textContent = `Showing ${matchCount} matching controls.`;
