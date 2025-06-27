@@ -3,6 +3,7 @@ import json
 import logging
 import os
 from datetime import datetime, timezone
+from itertools import chain
 
 from jsonschema import validate, ValidationError
 
@@ -10,11 +11,12 @@ from config import (
     BUCKET_NAME,
     EXISTING_JSON_GCS_PATH,
     OUTPUT_PREFIX,
+    TOKEN_LIMIT_PER_BATCH,
     TEST_MODE,
     setup_logging,
 )
 from gcs_utils import read_json_from_gcs, write_json_to_gcs
-from gemini_utils import generate_practice_for_control, MAX_CONCURRENT_REQUESTS
+from gemini_utils import generate_practices_for_batch, MAX_CONCURRENT_REQUESTS
 
 # Initialize logging as the first step
 setup_logging()
@@ -52,6 +54,36 @@ def find_all_controls(catalog: dict) -> list[dict]:
     return controls
 
 
+def create_control_batches(controls: list[dict]) -> list[list[dict]]:
+    """
+    Groups controls into batches, ensuring each batch is under the token limit.
+
+    Args:
+        controls: A list of all control objects.
+
+    Returns:
+        A list of lists, where each inner list is a batch of controls.
+    """
+    batches = []
+    current_batch = []
+    current_tokens = 0
+    # A rough estimate for prompt overhead (instructions, schema, etc.)
+    prompt_overhead_tokens = 1000
+
+    for control in controls:
+        control_stub = {"id": control.get("id"), "title": control.get("title")}
+        item_tokens = len(json.dumps(control_stub)) // 2  # Rough token estimation
+
+        if current_batch and (current_tokens + item_tokens + prompt_overhead_tokens) > TOKEN_LIMIT_PER_BATCH:
+            batches.append(current_batch)
+            current_batch, current_tokens = [], 0
+        current_batch.append(control)
+        current_tokens += item_tokens
+    if current_batch:
+        batches.append(current_batch)
+    logger.info(f"Created {len(batches)} batches from {len(controls)} controls.")
+    return batches
+
 async def main():
     """Main function to orchestrate the data processing pipeline."""
     logger.info("Starting the practice generation process.")
@@ -59,7 +91,7 @@ async def main():
     # Load the final result schema for final validation
     result_schema = load_json_schema("schemas/catalog.schema.json")
 
-    # Load the catalog from GCS
+    # Load the catalog from GCS using the bucket name and relative path from config
     catalog_data = await read_json_from_gcs(BUCKET_NAME, EXISTING_JSON_GCS_PATH)
 
     if not catalog_data:
@@ -77,18 +109,20 @@ async def main():
         all_controls = all_controls[:limit]
         logger.warning(f"TEST_MODE is active. Processing only the first {len(all_controls)} controls.")
 
-    # Process controls in parallel using a semaphore to limit concurrency
+    # Create batches and process them in parallel
+    control_batches = create_control_batches(all_controls)
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
     tasks = []
-    
-    async def process_with_semaphore(control):
-        async with semaphore:
-            return await generate_practice_for_control(control)
 
-    for control in all_controls:
-        tasks.append(process_with_semaphore(control))
+    async def process_batch_with_semaphore(batch):
+        async with semaphore:
+            return await generate_practices_for_batch(batch)
+
+    for batch in control_batches:
+        tasks.append(process_batch_with_semaphore(batch))
         
-    results = await asyncio.gather(*tasks)
+    batch_results = await asyncio.gather(*tasks)
+    results = list(chain.from_iterable(batch_results)) # Flatten the list of lists
 
     # Update controls with generated practices
     updated_controls_count = 0

@@ -1,7 +1,7 @@
 import asyncio
 import json
 import logging
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 import vertexai
 from jsonschema import validate, ValidationError
@@ -10,7 +10,6 @@ from vertexai.generative_models import (
     GenerationConfig,
     FinishReason,
 )
-
 from config import GCP_PROJECT_ID
 
 # Logger setup is handled in the main script, we just get it here.
@@ -48,103 +47,93 @@ def load_prompt_and_schema(prompt_path: str, schema_path: str) -> tuple[str, dic
 
 
 # Load prompt and schema once on module import
-PRACTICE_PROMPT, PRACTICE_STUB_SCHEMA = load_prompt_and_schema(
-    "prompts/practice_prompt.txt",
-    "schemas/practice_stub.schema.json"
+BATCH_PRACTICE_PROMPT, BATCH_PRACTICE_STUB_SCHEMA = load_prompt_and_schema(
+    "prompts/batch_practice_prompt.txt",
+    "schemas/batch_practice_stub.schema.json"
 )
 
 
-async def generate_with_retry(model: GenerativeModel, prompt: str, generation_config: GenerationConfig) -> Any:
-    """Makes a request to the Gemini model with exponential backoff retry logic."""
+async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) -> List[Dict[str, Any] | None]:
+    """
+    Generates the 'practice' part for a batch of controls in a single API call.
+
+    Args:
+        batch_of_controls: A list of control object dictionaries.
+
+    Returns:
+        A list of generated 'practice' part dictionaries, or None for failures.
+        The list length matches the input batch length.
+    """
+    # Create a list of minimal control stubs to send to the model
+    control_stubs = [
+        {"id": control.get("id", "Unknown ID"), "title": control.get("title")}
+        for control in batch_of_controls
+    ]
+
+    # Prepare the prompt with the batch of stubs and the schema
+    prompt = (f"{BATCH_PRACTICE_PROMPT}\n\n"
+              f"Control Data Array:\n{json.dumps(control_stubs, indent=2)}\n\n"
+              f"Schema for your JSON response array:\n{json.dumps(BATCH_PRACTICE_STUB_SCHEMA, indent=2)}")
+
+    model = GenerativeModel(MODEL_NAME)
+    generation_config = GenerationConfig(
+        max_output_tokens=MAX_OUTPUT_TOKENS,
+        response_mime_type="application/json",
+        temperature=0.1,
+    )
+
+    logger.debug(f"Generating practices for batch of {len(batch_of_controls)} controls.")
+
     for attempt in range(RETRY_ATTEMPTS):
         try:
             response = await model.generate_content_async(
                 contents=prompt,
                 generation_config=generation_config,
             )
-
+            
+            # --- Detailed Gemini Response Validation (inspired by user's example script) ---
             if not response.candidates:
                 finish_reason_str = response.prompt_feedback.block_reason.name if response.prompt_feedback.block_reason else "UNKNOWN"
                 logger.warning(f"Attempt {attempt + 1}: No candidates returned. Finish Reason: {finish_reason_str}")
-                raise ValueError(f"No candidates returned from the model. Reason: {finish_reason_str}")
-
+                await asyncio.sleep(2 ** attempt)
+                continue # Go to the next attempt
+            
             finish_reason = response.candidates[0].finish_reason
-            if finish_reason != FinishReason.OK:
+            if finish_reason not in [FinishReason.OK, FinishReason.STOP]:
                 logger.warning(f"Attempt {attempt + 1}: Model finished with non-OK reason: {finish_reason.name}")
                 if finish_reason in [FinishReason.SAFETY, FinishReason.RECITATION]:
-                     logger.error(f"Generation stopped permanently due to {finish_reason.name}. Cannot retry.")
-                     return None
-                raise ValueError(f"Model returned a non-OK finish reason: {finish_reason.name}")
+                    logger.error(f"Generation stopped permanently due to {finish_reason.name}. Cannot retry batch.")
+                    # Return a list of Nones matching the batch size
+                    return [None] * len(batch_of_controls)
+                await asyncio.sleep(2 ** attempt)
+                continue
 
             raw_text = response.text.strip()
-            if raw_text.startswith("```json"):
-                raw_text = raw_text[7:-4].strip()
-            
-            return json.loads(raw_text)
+            model_output = json.loads(raw_text)
+
+            # Validate the entire array against the batch schema
+            validate(instance=model_output, schema=BATCH_PRACTICE_STUB_SCHEMA)
+
+            # Check if the model returned the correct number of items
+            if len(model_output) != len(batch_of_controls):
+                logger.warning(
+                    f"Attempt {attempt + 1}: Model returned {len(model_output)} items, but batch size was {len(batch_of_controls)}. Retrying."
+                )
+                await asyncio.sleep(2 ** attempt)
+                continue
+
+            logger.info(f"Successfully generated and validated practices for batch of {len(batch_of_controls)} controls.")
+            return model_output
 
         except (json.JSONDecodeError, ValueError) as e:
-            logger.warning(f"Attempt {attempt + 1}/{RETRY_ATTEMPTS}: Failed to process model response. Error: {e}")
-            if attempt + 1 == RETRY_ATTEMPTS:
-                logger.error("All retry attempts failed to get a valid response.")
-                return None
+            logger.warning(f"Attempt {attempt + 1}/{RETRY_ATTEMPTS}: Failed to decode or process JSON response. Error: {e}")
             await asyncio.sleep(2 ** attempt)
-
+        except ValidationError as e:
+            logger.error(f"Schema validation failed for batch: {e.message}", exc_info=True)
+            await asyncio.sleep(2 ** attempt)
         except Exception as e:
             logger.error(f"Unexpected error during model generation on attempt {attempt + 1}: {e}", exc_info=True)
-            if attempt + 1 == RETRY_ATTEMPTS:
-                logger.error("All retry attempts failed due to unexpected errors.")
-                return None
             await asyncio.sleep(2 ** attempt)
-    return None
-
-
-async def generate_practice_for_control(control: Dict[str, Any]) -> Dict[str, Any] | None:
-    """
-    Generates the 'practice' part for a single control by classifying it.
-
-    Args:
-        control: The control object dictionary.
-
-    Returns:
-        The generated and validated 'practice' part as a dictionary, or None on failure.
-    """
-    control_id = control.get("id", "Unknown ID")
-    try:
-        # Pre-filter data to create a minimal input for the model
-        control_stub = {
-            "id": control_id,
-            "title": control.get("title"),
-        }
-        
-        # Prepare the prompt with the stub and the schema
-        prompt = (f"{PRACTICE_PROMPT}\n\n"
-                  f"Control Data:\n{json.dumps(control_stub, indent=2)}\n\n"
-                  f"Schema for your JSON response:\n{json.dumps(PRACTICE_STUB_SCHEMA, indent=2)}")
-
-        # Configure and call the model
-        model = GenerativeModel(MODEL_NAME)
-        generation_config = GenerationConfig(
-            max_output_tokens=MAX_OUTPUT_TOKENS,
-            response_mime_type="application/json",
-            temperature=0.1, # Lower temperature for classification
-        )
-
-        logger.debug(f"Generating practice for control ID: {control_id}")
-        model_output = await generate_with_retry(model, prompt, generation_config)
-
-        if not model_output:
-            logger.error(f"Failed to get a valid response from model for control ID: {control_id}")
-            return None
-
-        # Validate the output against the stub schema
-        validate(instance=model_output, schema=PRACTICE_STUB_SCHEMA)
-        logger.info(f"Successfully generated and validated practice for control ID: {control_id}")
-
-        return model_output
-
-    except ValidationError as e:
-        logger.error(f"Schema validation failed for control ID {control_id}: {e.message}", exc_info=True)
-        return None
-    except Exception as e:
-        logger.error(f"Unexpected error in generate_practice_for_control for ID {control_id}: {e}", exc_info=True)
-        return None
+            
+    logger.error(f"All {RETRY_ATTEMPTS} retry attempts failed for a batch. Returning failures for this batch.")
+    return [None] * len(batch_of_controls)

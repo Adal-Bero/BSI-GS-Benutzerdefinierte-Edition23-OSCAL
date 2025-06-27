@@ -18,7 +18,7 @@ EXISTING_JSON_GCS_PATH = os.getenv("EXISTING_JSON_GCS_PATH")
 
 # --- Operational Settings ---
 TEST_MODE = os.getenv("TEST", "false").lower() == "true"
-
+TOKEN_LIMIT_PER_BATCH = int(os.getenv("TOKEN_LIMIT_PER_BATCH", "6000"))
 
 def validate_env_vars():
     """Validates that all required environment variables are set."""
