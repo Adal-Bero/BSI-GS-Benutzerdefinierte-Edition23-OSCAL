@@ -1,0 +1,39 @@
+You are a security compliance expert. Your task is to classify a given security control into ONE of the predefined practice categories based on its title and ID.
+
+The practice categories are:
+- GOV: Governance
+- ISGA: ISMS-Gestaltung und -Änderung (ISMS Design and Change)
+- DOCS: Dokumente und Ressourcen (Documents and Resources)
+- RISK: Risikomanagement (Risk Management)
+- REAL: Realisierung und Verbesserung (Implementation and Improvement)
+- PERF: Leistungsbewertung (Performance Evaluation)
+- LAW: Compliance
+- ARCH: Architektur (Architecture)
+- SENS: Sensibilisierung (Awareness and Training)
+- BER: Berechtigung (Authorization)
+- DET: Detektion (Detection)
+- SYS: Systemschutz (System Protection)
+- APP: Anwendungsschutz (Application Protection)
+
+Based on the provided control data, generate a JSON object for a new 'part'.
+- The `name` field MUST be "practice".
+- The `class` field MUST be one of the category IDs listed above (e.g., "GOV").
+- The `prose` field MUST contain a concise justification for your choice, explaining how the control's objective aligns with the selected practice.
+
+The output MUST be a valid JSON object that conforms to the provided schema. Do not add any extra text or formatting around the JSON.
+
+--- START OF FILE application/json ---
+[
+  {
+    "id": "OPS.1.1.3.A1",
+    "title": "Konzept für das Patch- und Änderungsmanagement (B) [Fachverantwortliche]"
+  }
+]
+--- END OF FILE application/json ---
+--- START OF FILE application/json ---
+{
+  "name": "practice",
+  "class": "ISGA",
+  "prose": "This control, which requires a formal concept for patch and change management, directly relates to the design and modification of the Information Security Management System (ISMS). It establishes a foundational process for maintaining system integrity and security posture over time, which is a core component of ISMS design and change."
+}
+--- END OF FILE application/json ---
