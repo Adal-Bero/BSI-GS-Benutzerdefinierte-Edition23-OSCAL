@@ -122,6 +122,9 @@ async def main():
 
     for control, generated_data in zip(all_controls, results):
         if generated_data:
+            # Update the control's class directly
+            control["class"] = generated_data["class"]
+            
             if "props" not in control:
                 control["props"] = []
             
@@ -153,9 +156,9 @@ async def main():
             })
             
             updated_controls_count += 1
-            logger.debug(f"Updated control {control.get('id')} with new props.")
+            logger.debug(f"Updated control {control.get('id')} with new class and props.")
 
-    logger.info(f"Successfully generated and added props for {updated_controls_count}/{len(all_controls)} controls.")
+    logger.info(f"Successfully generated and added data for {updated_controls_count}/{len(all_controls)} controls.")
 
     catalog_data["catalog"]["metadata"]["last-modified"] = datetime.now(timezone.utc).isoformat()
     

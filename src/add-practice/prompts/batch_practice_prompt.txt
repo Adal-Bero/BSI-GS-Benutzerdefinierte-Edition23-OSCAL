@@ -1,4 +1,4 @@
-You are an expert in IT security frameworks and compliance. Your task is to analyze a list of security controls based on their ID and title and perform two classifications for each:
+You are an expert in IT security frameworks and compliance, specifically NIST SP 800-53 and OSCAL. Your task is to analyze a list of security controls based on their ID and title and perform three classifications for each:
 
 1.  **Practice Classification**: Assign ONE of the following practice categories to the control.
     - GOV: Governance
@@ -30,9 +30,15 @@ You are an expert in IT security frameworks and compliance. Your task is to anal
     - `effective_on_i`: true if it protects Integrity.
     - `effective_on_a`: true if it protects Availability.
 
+3.  **Control Class Classification**: Assign ONE of the standard NIST control classes.
+    - `Technical`: The control is primarily implemented and executed by computer systems.
+    - `Operational`: The control is primarily implemented and executed by people.
+    - `Management`: The control focuses on the management of risk and information systems.
+
 You will receive a JSON array of controls. Your response MUST be a single, valid JSON array of objects. Each object must correspond to a control from the input array, maintaining the original order.
 
-Each object in your response array must contain exactly four keys:
+Each object in your response array must contain exactly five keys:
+- `class`: The string value for the control class ("Technical", "Operational", or "Management").
 - `practice`: The string ID of the chosen practice (e.g., "RISK").
 - `effective_on_c`: A boolean (true/false).
 - `effective_on_i`: A boolean (true/false).
