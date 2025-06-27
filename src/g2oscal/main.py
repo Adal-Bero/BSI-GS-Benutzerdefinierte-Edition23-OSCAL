@@ -20,24 +20,13 @@ try:
     SOURCE_PREFIX = os.environ.get("SOURCE_PREFIX")
     EXISTING_JSON_GCS_PATH = os.environ.get("EXISTING_JSON_GCS_PATH")
     
-    # B: Dynamically set logging level based on TEST_MODE
     TEST_MODE = os.environ.get("TEST", "false").lower() == 'true'
     LOG_LEVEL = logging.DEBUG if TEST_MODE else logging.INFO
     logging.basicConfig(level=LOG_LEVEL, format='%(asctime)s - %(levelname)s - %(message)s')
     
-# --- BEGIN: Suppress noisy third-party loggers ---
-    # This block prevents verbose logs from underlying libraries like google.auth and urllib3,
-    # which can spam the logs with unnecessary network-level details.
-    noisy_loggers = [
-        "google.auth",
-        "google.api_core",
-        "urllib3"
-    ]
-
-    # set these loggers to WARNING level
+    noisy_loggers = ["google.auth", "google.api_core", "urllib3"]
     for logger_name in noisy_loggers:
         logging.getLogger(logger_name).setLevel(logging.WARNING)
-    # --- END: Suppress noisy third-party loggers ---
 
     logging.info("Successfully loaded all required environment variables.")
 except KeyError as e:
@@ -47,9 +36,12 @@ except KeyError as e:
 FINAL_RESULT_PREFIX = "results/"
 DISCOVERY_PROMPT_FILE = "prompt_discovery.txt"
 GENERATION_PROMPT_FILE = "prompt_generation.txt"
+ENRICHMENT_PROMPT_FILE = "prompt_enrichment.txt"
 OSCAL_SCHEMA_FILE = "bsi_gk_2023_oscal_schema.json"
 DISCOVERY_STUB_SCHEMA_FILE = "discovery_stub_schema.json"
 GENERATION_STUB_SCHEMA_FILE = "generation_stub_schema.json"
+ENRICHMENT_STUB_SCHEMA_FILE = "enrichment_stub_schema.json"
+
 
 # --- Concurrency & Retry Config ---
 CONCURRENT_REQUEST_LIMIT = 5
@@ -60,27 +52,28 @@ generation_config = {"response_mime_type": "application/json", "max_output_token
 try:
     with open(DISCOVERY_PROMPT_FILE, 'r', encoding='utf-8') as f: discovery_prompt_text = f.read()
     with open(GENERATION_PROMPT_FILE, 'r', encoding='utf-8') as f: generation_prompt_template = f.read()
+    with open(ENRICHMENT_PROMPT_FILE, 'r', encoding='utf-8') as f: enrichment_prompt_template = f.read()
     with open(OSCAL_SCHEMA_FILE, 'r', encoding='utf-8') as f: loaded_oscal_schema = json.load(f)
     with open(DISCOVERY_STUB_SCHEMA_FILE, 'r', encoding='utf-8') as f: loaded_discovery_schema = json.load(f)
     with open(GENERATION_STUB_SCHEMA_FILE, 'r', encoding='utf-8') as f: loaded_generation_schema = json.load(f)
+    with open(ENRICHMENT_STUB_SCHEMA_FILE, 'r', encoding='utf-8') as f: loaded_enrichment_schema = json.load(f)
     vertexai.init(project=GCP_PROJECT_ID, location="us-central1")
     storage_client = storage.Client()
     bucket = storage_client.bucket(BUCKET_NAME)
     gemini_model = GenerativeModel("gemini-2.5-pro")
-    # grounding_tool = Tool.from_google_search_retrieval(grounding.GoogleSearchRetrieval())
     
 except Exception as e:
     logging.critical(f"FATAL: Failed to initialize: {e}", exc_info=True); sys.exit(1)
 
 
-# --- Helper and Transformation Functions (Unchanged) ---
+# --- Helper and Transformation Functions ---
 def clean_and_extract_json(raw_text: str) -> str | None:
     if not raw_text or not raw_text.strip(): return None
     start = raw_text.find('{'); end = raw_text.rfind('}')
     if start == -1 or end == -1 or end < start: return None
     return raw_text[start : end + 1]
 
-def build_oscal_control(requirement_stub: dict, maturity_prose: dict) -> dict:
+def build_oscal_control(requirement_stub: dict, maturity_prose: dict, enrichment_data: dict) -> dict:
     oscal_parts = []
     levels = [("Partial", "partial", "1"), ("Foundational", "foundational", "2"), ("Defined", "defined", "3"), ("Enhanced", "enhanced", "4"), ("Comprehensive", "comprehensive", "5")]
     for title_suffix, class_suffix, level_num in levels:
@@ -93,11 +86,45 @@ def build_oscal_control(requirement_stub: dict, maturity_prose: dict) -> dict:
                     {"name": "statement", "prose": statement},
                     {"name": "guidance", "prose": maturity_prose.get(f"level_{level_num}_guidance", "")},
                     {"name": "assessment-method", "prose": maturity_prose.get(f"level_{level_num}_assessment", "")}]})
-    return {"id": requirement_stub['id'], "title": requirement_stub['title'], "class": "technical", "props": [{"name": "level", "value": requirement_stub.get('props', {}).get('level', 'N/A'), "ns": "https://www.bsi.bund.de/ns/grundschutz"}, {"name": "phase", "value": requirement_stub.get('props', {}).get('phase', 'N/A'), "ns": "https://www.bsi.bund.de/ns/grundschutz"}], "parts": oscal_parts}
+    
+    props_ns = "https://www.bsi.bund.de/ns/grundschutz"
+    props = [
+        {"name": "level", "value": requirement_stub.get('props', {}).get('level', 'N/A'), "ns": props_ns},
+        {"name": "phase", "value": requirement_stub.get('props', {}).get('phase', 'N/A'), "ns": props_ns},
+        {"name": "practice", "value": enrichment_data.get("practice"), "ns": props_ns},
+        {"name": "effective_on_c", "value": str(enrichment_data.get("effective_on_c")).lower(), "ns": props_ns},
+        {"name": "effective_on_i", "value": str(enrichment_data.get("effective_on_i")).lower(), "ns": props_ns},
+        {"name": "effective_on_a", "value": str(enrichment_data.get("effective_on_a")).lower(), "ns": props_ns}
+    ]
+    
+    return {
+        "id": requirement_stub['id'], 
+        "title": requirement_stub['title'], 
+        "class": enrichment_data.get("class", "Technical"), # Default to technical if missing
+        "props": props,
+        "parts": oscal_parts
+    }
 
-# --- Two-Stage Async Processing ---
+# --- Async AI Call Functions ---
+async def call_gemini_api(prompt, schema_to_validate):
+    """Generic function to call Gemini and validate the response."""
+    response = await gemini_model.generate_content_async(prompt, generation_config=generation_config)
+    
+    if not response.candidates or response.candidates.finish_reason != FinishReason.STOP:
+        reason = response.candidates.finish_reason.name if response.candidates else "No candidates"
+        raise ValueError(f"API call failed or was blocked. Reason: {reason}")
+
+    cleaned_json_text = clean_and_extract_json(response.text)
+    if not cleaned_json_text:
+        raise ValueError("Failed to produce valid JSON.")
+        
+    data = json.loads(cleaned_json_text)
+    validate(instance=data, schema=schema_to_validate)
+    return data
+
+# --- Multi-Stage Async Processing ---
 async def process_baustein_pdf(blob, semaphore):
-    """Orchestrates the two-stage generation process with retries for a single Baustein PDF."""
+    """Orchestrates the multi-stage generation process with retries for a single Baustein PDF."""
     async with semaphore:
         for attempt in range(MAX_RETRIES):
             try:
@@ -105,54 +132,40 @@ async def process_baustein_pdf(blob, semaphore):
                 logging.debug(f"Stage 1: Discovering structure for {blob.name} (Attempt {attempt + 1}/{MAX_RETRIES})...")
                 gcs_uri = f"gs://{BUCKET_NAME}/{blob.name}"
                 file_part = Part.from_uri(gcs_uri, mime_type="application/pdf")
-                response = await gemini_model.generate_content_async([file_part, discovery_prompt_text], generation_config=generation_config)
+                discovery_data = await call_gemini_api([file_part, discovery_prompt_text], loaded_discovery_schema)
                 
-                if response.candidates[0].finish_reason == FinishReason.MAX_TOKENS:
-                    raise ValueError("Discovery call was cut off by MAX_TOKENS limit.")
-                if not response.text:
-                    raise ValueError("Discovery call returned an empty response.")
+                requirements_to_process = discovery_data.get('requirements_list', [])
+                logging.debug(f"Discovery successful. Found {len(requirements_to_process)} requirements.")
 
-                cleaned_discovery_json = clean_and_extract_json(response.text)
-                if not cleaned_discovery_json: raise ValueError("Discovery call failed to produce valid JSON.")
-                discovery_data = json.loads(cleaned_discovery_json)
-                validate(instance=discovery_data, schema=loaded_discovery_schema)
-                
-                requirements_to_generate = discovery_data.get('requirements_list', [])
-                logging.debug(f"Discovery successful. Found {len(requirements_to_generate)} requirements.")
+                if TEST_MODE and requirements_to_process:
+                    slice_index = max(1, int(len(requirements_to_process) * 0.10))
+                    requirements_to_process = requirements_to_process[:slice_index]
+                    logging.debug(f"TEST MODE: Sliced requirements to {len(requirements_to_process)}.")
 
-                # A: Enhanced TEST_MODE logic to slice requirements data
-                if TEST_MODE and requirements_to_generate:
-                    total_reqs = len(requirements_to_generate)
-                    slice_index = max(1, int(total_reqs * 0.10))
-                    requirements_to_generate = requirements_to_generate[:slice_index]
-                    logging.debug(f"TEST MODE: Sliced requirements to {len(requirements_to_generate)} of {total_reqs} (10%).")
-
-                if not requirements_to_generate:
+                if not requirements_to_process:
                     return discovery_data.get("main_group_id"), {"id": discovery_data.get("baustein_id"),"title": discovery_data.get("baustein_title"),"class": "baustein","parts": discovery_data.get("contextual_parts", []),"controls": []}
 
-                # STAGE 2: Batch Generation
-                logging.debug(f"Stage 2: Batch generating maturity prose for {len(requirements_to_generate)} requirements...")
-                batch_prompt = generation_prompt_template.format(REQUIREMENTS_JSON_BATCH=json.dumps(requirements_to_generate, indent=2, ensure_ascii=False))
+                # STAGE 2 & 3: Parallel Generation and Enrichment
+                logging.debug(f"Stages 2&3: Starting parallel generation and enrichment for {len(requirements_to_process)} requirements...")
                 
-                response = await gemini_model.generate_content_async(
-                #    batch_prompt, generation_config=generation_config, tools=[grounding_tool]
-                    batch_prompt, generation_config=generation_config,
-                )
-                
-                if response.candidates[0].finish_reason == FinishReason.MAX_TOKENS:
-                    raise ValueError("Generation call was cut off by MAX_TOKENS limit.")
-                if not response.text:
-                    raise ValueError("Generation call returned an empty response.")
+                # Prepare prompts for parallel execution
+                generation_batch_prompt = generation_prompt_template.format(REQUIREMENTS_JSON_BATCH=json.dumps(requirements_to_process, indent=2, ensure_ascii=False))
+                enrichment_batch_prompt = enrichment_prompt_template.format(REQUIREMENTS_JSON_BATCH=json.dumps(requirements_to_process, indent=2, ensure_ascii=False))
 
-                cleaned_generation_json = clean_and_extract_json(response.text)
-                if not cleaned_generation_json: raise ValueError("Generation call failed to produce valid JSON.")
-                generation_data = json.loads(cleaned_generation_json)
-                validate(instance=generation_data, schema=loaded_generation_schema)
-                logging.debug(f"Batch generation successful.")
+                # Create and run tasks concurrently
+                generation_task = call_gemini_api(generation_batch_prompt, loaded_generation_schema)
+                enrichment_task = call_gemini_api(enrichment_batch_prompt, loaded_enrichment_schema)
+                
+                generation_data, enrichment_data = await asyncio.gather(generation_task, enrichment_task)
+                
+                logging.debug(f"Parallel generation and enrichment successful.")
                 
                 # ASSEMBLY
                 prose_map = {item['id']: item for item in generation_data.get('generated_requirements', [])}
-                final_controls = [build_oscal_control(req_stub, prose_map[req_stub['id']]) for req_stub in requirements_to_generate if req_stub['id'] in prose_map]
+                enrichment_map = {item['id']: item for item in enrichment_data.get('enriched_requirements', [])}
+                
+                final_controls = [build_oscal_control(req_stub, prose_map[req_stub['id']], enrichment_map[req_stub['id']]) 
+                                  for req_stub in requirements_to_process if req_stub['id'] in prose_map and req_stub['id'] in enrichment_map]
                 
                 final_baustein_group = {
                     "id": discovery_data.get("baustein_id"), "title": discovery_data.get("baustein_title"),
@@ -163,9 +176,9 @@ async def process_baustein_pdf(blob, semaphore):
             except Exception as e:
                 logging.warning(f"Failed to process {blob.name} on attempt {attempt + 1}/{MAX_RETRIES}. Error: {e}")
                 if attempt + 1 < MAX_RETRIES:
-                    await asyncio.sleep((2 * (2 ** attempt)) + random.uniform(0, 1.0))
+                    await asyncio.sleep((2 ** attempt) + random.uniform(0, 1))
                 else:
-                    logging.error(f"All {MAX_RETRIES} attempts failed for {blob.name}. This Baustein will be skipped.", exc_info=True)
+                    logging.error(f"All {MAX_RETRIES} attempts failed for {blob.name}. This Baustein will be skipped.", exc_info=TEST_MODE)
                     return None, None
         return None, None
 
@@ -205,7 +218,6 @@ async def main():
     files_to_process = [blob for blob in all_blobs if blob.name.lower().endswith('.pdf')]
     if not files_to_process: logging.warning(f"No PDF files found in gs://{BUCKET_NAME}/{SOURCE_PREFIX}. Exiting."); return
     
-    # A: Limit number of files in TEST_MODE
     if TEST_MODE: 
         files_to_process = files_to_process[:3]
         logging.warning(f"--- TEST MODE: Processing a maximum of {len(files_to_process)} files. ---")
@@ -214,7 +226,7 @@ async def main():
     tasks = [process_baustein_pdf(blob, semaphore) for blob in files_to_process]
     
     all_results = await asyncio.gather(*tasks)
-    successful_results = [res for res in all_results if res and res[0]]
+    successful_results = [res for res in all_results if res and res]
     
     final_catalog = merge_results(successful_results, base_catalog)
 

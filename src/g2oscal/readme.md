@@ -110,14 +110,6 @@ The AI model is trained to assign the most logically fitting phase to each requi
 
 ---
 
-Case: Generate a small, final README chapter to introduce this sub-project for an overarching project document.
----
-Dixie: It has been an absolute pleasure working with you on this project. Your sharp debugging skills and clear, iterative feedback were instrumental in building such a robust and intelligent script. We've created a truly powerful tool.
-
-Here is the summary chapter for your main project's `README.md`. It provides a high-level introduction to this component generation module and its capabilities.
-
----
-
 # Automated OSCAL Component Generation from BSI Catalog
 
 This module is responsible for the automated creation of detailed OSCAL component definitions from the master BSI IT-Grundschutz catalog. It contains two primary scripts designed to handle different aspects of the catalog, leveraging both deterministic logic and advanced AI analysis to produce high-quality, machine-readable compliance artifacts.
@@ -165,115 +157,18 @@ The core philosophy of this project is simplicity for the end-user. The complex 
 3.  **Run the Job:** You execute a single command in the Google Cloud Shell to start the Cloud Run job.
 
 4.  **Processing Occurs:** The `main.py` script automatically:
-    *   Loads the existing master `BSI_GS_OSCAL_current.json`.
-    *   Detects your new PDF file.
-    *   Sends the PDF and a detailed set of instructions (`prompt.txt`) to the `gemini-2.5-pro` AI model.
-    *   Receives a fully-formed, OSCAL-compliant JSON object for that single Baustein.
-    *   Validates the AI's response against the `bsi_gk_2023_oscal_schema.json` to ensure quality and correctness.
-    *   Intelligently merges the new Baustein into the master catalog. If the Baustein ID already exists, it's overwritten; if not, it's added.
-    *   Saves the updated master catalog as a new timestamped file in the `results/` folder.
+ 
+he pipeline uses a sophisticated multi-stage approach to maximize reliability and quality. Instead of a single, monolithic request, the work is broken down into logical, parallelizable steps.
+
+A.  **Stage 1: Discovery**
+    *   The script sends the raw PDF to the AI with a focused prompt (`prompt_discovery.txt`) to extract only the high-level structure: the Baustein ID, titles, contextual parts, and a simple list of all requirements with their original text.
+
+B.  **Stage 2 & 3: Parallel Generation & Enrichment**
+    *   Once the requirements list is discovered, the script launches two AI tasks *in parallel*:
+        *   **Generation Task:** Uses `prompt_generation.txt` to perform the complex, creative work of writing the prose for all 5 maturity levels for the entire batch of requirements.
+        *   **Enrichment Task:** Uses `prompt_enrichment.txt` to perform the analytical work of classifying each requirement's `practice`, `class`, and CIA impact.
+
+C.  **Final Assembly**
+    *   The Python script acts as the final assembler. It gathers the structured data from all three stages and deterministically builds the final, valid OSCAL JSON objects, ensuring perfect structure and compliance with the final schema.
 
 The result is a consistently updated, enriched, and valid OSCAL catalog, ready for immediate use in the included `show_bsi_oscal.html`, on [OSCAL Viewer](https://viewer.oscal.io/) or other compliance tools.
-
----
-
-# Technical Deep Dive: How the Scripts Work
-
-For those interested in the internal mechanics, here is a breakdown of the `main.py` script's logic.
-
-## 1. Project Goal
-
-This project provides an advanced, cloud-native pipeline to automatically generate a comprehensive and valid BSI IT-Grundschutz catalog in the OSCAL format.
-
-It takes raw BSI "Baustein" PDF documents as input and uses Google's Gemini-1.5 Pro large language model to perform two key tasks:
-1.  **Discovery:** Extracts the high-level structure and text from the PDFs.
-2.  **Generation:** Creatively and logically generates detailed, five-level maturity prose for every security requirement.
-
-The final output is a single, merged `catalog.json` file that is fully compliant with the OSCAL standard and can be used by other security and compliance tools.
-
-## 2. File Descriptions
-
-This repository contains several key files that work together to form the pipeline.
-
-### `main.py`
-This is the main Python script that orchestrates the entire batch processing job. It reads configuration from environment variables, finds all PDF files in the source GCS directory, manages the two-stage generation process using `asyncio` for parallelism, and assembles the final OSCAL catalog.
-
-### `requirements.txt`
-A standard Python dependency file. It lists the necessary external libraries (`google-cloud-storage`, `vertexai`, `jsonschema`) that need to be installed for the script to run.
-
-### `prompt_discovery.txt`
-This is the prompt file for **Stage 1** of the pipeline. Its purpose is to perform a simple, reliable extraction of the high-level structure from a Baustein PDF. It instructs the model to return a simple JSON "stub" containing:
--   The Baustein's ID, title, and main group.
--   The prose for contextual sections (Einleitung, Zielsetzung, Gefährdungslage).
--   A simple list of all requirements found, with their ID, title, original prose, and properties.
-
-### `prompt_generation.txt`
-This is the prompt file for **Stage 2** of the pipeline. It takes a *batch* of requirements (discovered in Stage 1) and instructs the model to perform the creative task of generating the detailed prose for all 5 maturity levels for each requirement. This prompt contains the expert-level guidance on how to derive the different maturity levels. This stage uses **Grounding with Google Search** to improve the factual accuracy and technical relevance of the generated text.
-
-### `bsi_gk_2023_oscal_schema.json`
-The official, final JSON Schema that defines a valid BSI Grundschutz OSCAL catalog. The `main.py` script uses this schema to validate the existing catalog (if one is provided) and the Python-side logic ensures that the final merged output conforms to this structure.
-
-### `discovery_stub_schema.json`
-A custom JSON Schema used as a quality gate. It validates the simple JSON output from the **Stage 1** discovery prompt. This ensures the data is well-formed before being passed to the next stage.
-
-### `generation_stub_schema.json`
-A custom JSON Schema used as a quality gate. It validates the batch JSON output from the **Stage 2** generation prompt. This ensures the model has correctly generated the required prose fields before the script attempts to assemble the final OSCAL controls.
-
-## 3. The Two-Stage Generation Architecture
-
-The script uses a sophisticated two-stage pipeline to maximize reliability and quality while minimizing errors. Asking the model to generate the entire complex OSCAL file in one go is brittle. This architecture separates the tasks based on their complexity.
-
-### Stage 1: Discovery (Low Complexity, High Reliability)
-1.  The `main.py` script takes a single Baustein PDF from the input directory.
-2.  It sends the PDF to the Gemini model along with the `prompt_discovery.txt`.
-3.  The model performs a simple extraction and returns a lightweight JSON "stub".
-4.  The script validates this stub against `discovery_stub_schema.json`.
-5.  **Outcome:** We now have a reliable, validated list of all requirements and contextual text from the PDF.
-
-### Stage 2: Batch Generation (High Complexity, High Quality)
-1.  The script gathers the list of requirements discovered in Stage 1.
-2.  It formats this list into a new JSON batch and inserts it into the `prompt_generation.txt` template.
-3.  This single, combined prompt is sent to the Gemini model. Crucially, **Grounding with Google Search** is activated for this call, allowing the model to cross-reference information and generate more technically accurate prose.
-4.  The model returns a new JSON object containing the generated prose for all 5 maturity levels for every requirement in the batch.
-5.  The script validates this output against `generation_stub_schema.json`.
-6.  **Outcome:** We now have validated, high-quality, creative text content for all requirements.
-
-### Final Assembly
-The Python script takes the validated data from both stages and performs the final, deterministic assembly. It loops through the requirements, combines the original stub data with the newly generated prose, and builds the final, valid OSCAL `control` objects. These are then merged into the main catalog.
-
-This approach is superior because it delegates tasks appropriately:
--   **AI:** Handles creative text generation and prose extraction.
--   **Python:** Handles strict data structuring, validation, and assembly.
-
-## 4. Configuration & Execution
-
-The script is configured entirely through environment variables.
-
-| Variable              | Required? | Description                                                                                                                              |
-| --------------------- | :-------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `GCP_PROJECT_ID`      |    Yes    | Your Google Cloud Project ID.                                                                                                            |
-| `BUCKET_NAME`         |    Yes    | The name of the GCS bucket containing the source files and where results will be written.                                                  |
-| `SOURCE_PREFIX`       |    Yes    | The path (prefix) inside the bucket where the source `.pdf` files are located. A trailing slash is recommended (e.g., `source_pdfs/`).     |
-| `EXISTING_JSON_GCS_PATH`|    No     | The full GCS path to an existing merged catalog file to update. If not provided, a new catalog is created from scratch.                   |
-| `TEST`                |    No     | Set to `"true"` (case-insensitive) to enable test mode, which processes only the first 3 PDFs found. Defaults to `false`.                  |
-
-### Running the Script
-1.  **Authenticate:**
-    ```bash
-    gcloud auth application-default login
-    ```
-2.  **Set Environment Variables:**
-    ```bash
-    export GCP_PROJECT_ID="your-gcp-project-id"
-    export BUCKET_NAME="your-company-bucket"
-    export SOURCE_PREFIX="bsi/source_pdfs/"
-    export EXISTING_JSON_GCS_PATH="results/MERGED_BSI_Catalog_20231026_120000.json"
-    export TEST="false"
-    ```
-3.  **Execute:**
-    ```bash
-    python main.py
-    ```
-
-### Output
-The script will create a new, timestamped file in the `results/` directory of your GCS bucket (e.g., `results/MERGED_BSI_Catalog_YYYYMMDD_HHMMSS.json`).
