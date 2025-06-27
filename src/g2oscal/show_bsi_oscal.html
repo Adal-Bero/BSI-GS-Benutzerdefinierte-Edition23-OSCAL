@@ -147,12 +147,39 @@
         .prop-value.true { color: var(--success-color); }
         .prop-value.false { color: var(--danger-color); }
 
-        /* Part/Content Display */
-        .part-prose {
+        /* NEW Maturity Level & Part Styling */
+        .maturity-level-group {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
             margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--secondary-color);
+            background: var(--card-bg);
         }
+        .maturity-level-group > summary {
+            font-weight: bold;
+            background-color: var(--hover-bg);
+            padding: 8px 12px;
+        }
+        .maturity-level-content {
+            padding: 15px;
+        }
+        .sub-part {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid;
+            border-radius: 2px;
+        }
+        .sub-part:last-child { margin-bottom: 0; }
+        .sub-part h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #495057;
+        }
+        .sub-part-statement { border-color: var(--primary-color); background-color: #e7f0fa; }
+        .sub-part-guidance { border-color: var(--success-color); background-color: #e8f3ee; }
+        .sub-part-assessment-method { border-color: #ffc107; background-color: #fff8e1; }
+        .part-prose { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--secondary-color); }
 
         #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
         #flat-view-container { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
@@ -189,19 +216,24 @@
                   { "name": "effective_on_i", "value": "true" },
                   { "name": "effective_on_a", "value": "false" }
                 ],
-                "parts": [ { "name": "statement", "prose": "Es MUSS ein einheitliches, nachvollziehbares und an den Schutzzielen orientiertes Schema zur Klassifizierung von Informationen festgelegt werden." } ]
-              },
-               {
-                "id": "CON.1.A2", "title": "Umgang mit schützenswerten Informationen", "class": "Operational",
-                "props": [
-                  { "name": "level", "value": "3" },
-                  { "name": "phase", "value": "Operation" },
-                  { "name": "practice", "value": "GOV" },
-                  { "name": "effective_on_c", "value": "true" },
-                  { "name": "effective_on_i", "value": "false" },
-                  { "name": "effective_on_a", "value": "false" }
-                ],
-                "parts": [ { "name": "statement", "prose": "Informationen MÜSSEN entsprechend ihrer Klassifizierung behandelt werden." } ]
+                "parts": [ 
+                    { 
+                        "name": "maturity-level-description", 
+                        "title": "Maturity Level 3: Defined",
+                        "parts": [
+                            { "name": "statement", "prose": "This is the prose for the statement at maturity level 3." },
+                            { "name": "guidance", "prose": "This is the prose for the guidance at maturity level 3." }
+                        ]
+                    },
+                    { 
+                        "name": "maturity-level-description", 
+                        "title": "Maturity Level 1: Partial",
+                        "parts": [
+                            { "name": "statement", "prose": "This is the prose for the statement at maturity level 1." },
+                            { "name": "assessment-method", "prose": "This is the audit guidance for level 1." }
+                        ]
+                    }
+                ]
               }
             ]
           }
@@ -291,13 +323,47 @@ document.addEventListener('DOMContentLoaded', function () {
         return grid;
     };
 
-    const renderPartContent = (part) => {
-        if (!part.prose) return document.createDocumentFragment();
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'part-prose';
-        contentDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
-        return contentDiv;
+    // REWRITTEN: This function now properly handles nested parts.
+    const renderPart = (part) => {
+        // Handle nested maturity level descriptions
+        if (part.name === 'maturity-level-description' && part.parts) {
+            const details = document.createElement('details');
+            details.className = 'maturity-level-group';
+            details.innerHTML = `<summary>${part.title}</summary>`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'maturity-level-content';
+
+            part.parts.forEach(subPart => {
+                const subPartDiv = document.createElement('div');
+                const safeName = subPart.name.replace(/_/g, '-');
+                subPartDiv.className = `sub-part sub-part-${safeName}`;
+                
+                const titleMap = {
+                    'statement': 'Statement',
+                    'guidance': 'Implementation Guidance',
+                    'assessment-method': 'Audit Guidance'
+                };
+                const displayTitle = titleMap[subPart.name] || subPart.name;
+
+                subPartDiv.innerHTML = `<h4>${displayTitle}</h4><div class="prose">${(subPart.prose || '').replace(/\n/g, '<br>')}</div>`;
+                contentDiv.appendChild(subPartDiv);
+            });
+            details.appendChild(contentDiv);
+            return details;
+        }
+
+        // Fallback for simple parts with just prose
+        if (part.prose) {
+            const proseDiv = document.createElement('div');
+            proseDiv.className = 'part-prose';
+            proseDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
+            return proseDiv;
+        }
+
+        return document.createDocumentFragment();
     };
+
 
     const renderControl = (control, path) => {
         const controlDetails = document.createElement('details');
@@ -313,9 +379,8 @@ document.addEventListener('DOMContentLoaded', function () {
         controlContent.className = 'control-content';
         controlContent.appendChild(renderAllProps(control.props));
 
-        // RESTORED: This loop correctly renders the main content of the control.
         (control.parts || []).forEach(part => {
-            controlContent.appendChild(renderPartContent(part));
+            controlContent.appendChild(renderPart(part));
         });
         controlDetails.appendChild(controlContent);
         return controlDetails;
