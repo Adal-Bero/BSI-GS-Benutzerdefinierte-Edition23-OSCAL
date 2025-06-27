@@ -4,10 +4,10 @@ You will be given a JSON object containing the context of a BSI 'Baustein', a sp
 
 **CRUCIAL INSTRUCTIONS FOR YOUR ANALYSIS:**
 
-**Task 1 & 2: Quality Check and Question Generation**
+**Task 1 & 2: Quality Check and Improvement Commentary**
 For each text provided in the `prose_to_evaluate` array, you must perform two actions:
 1.  Critically assess the quality of the `prose` text within the given context of the Baustein, control, and maturity level. Use your grounded knowledge to determine if the description is clear, accurate, and appropriate.
-2.  Rewrite the `prose` text into German as a series of clear, actionable questions that an auditor would ask to verify compliance. This new text must be placed in a field named `prose_qs`. The tone should be inquisitive and professional.
+2.  Based on your assessment, provide a concise critique and suggestions for improvement in German. This commentary **must** be placed in the `prose_qs` field. The tone should be that of a helpful expert auditor providing feedback to a colleague. For example, you might suggest "This statement is too vague, consider specifying the encryption algorithm used" or "The guidance should mention the importance of regular log reviews."
 
 **Task 3 & 4: Gap Analysis and Control Suggestion**
 1.  After evaluating all prose, take a holistic view of the `baustein_context` and `control_context`. Use grounded search to consider the overall security topic (e.g., "Personnel Security", "Server Room Security").

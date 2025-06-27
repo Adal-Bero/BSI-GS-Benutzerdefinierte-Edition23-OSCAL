@@ -1,47 +1,46 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "Gemini Output Stub for BSI Control Enrichment",
-    "description": "The expected output from the Gemini model, containing quality-checked prose and suggested new controls.",
-    "type": "object",
-    "required": ["enriched_prose", "suggested_new_controls"],
-    "properties": {
-      "enriched_prose": {
-        "description": "The list of original prose parts, now enriched with the 'prose_qs' field.",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["part_id", "prose_qs"],
-          "properties": {
-            "part_id": {
-              "type": "string",
-              "description": "The unique ID of the OSCAL 'part', mapping back to the input."
-            },
-            "prose_qs": {
-              "type": "string",
-              "description": "The generated German text, rewriting the original prose as a series of audit questions."
-            }
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Gemini Output Stub for BSI Control Enrichment",
+  "description": "The expected output from the Gemini model, containing quality-checked prose and suggested new controls.",
+  "type": "object",
+  "required": ["enriched_prose", "suggested_new_controls"],
+  "properties": {
+    "enriched_prose": {
+      "description": "The list of original prose parts, now enriched with the 'prose_qs' field.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["part_id", "prose_qs"],
+        "properties": {
+          "part_id": {
+            "type": "string",
+            "description": "The unique ID of the OSCAL 'part', mapping back to the input."
+          },
+          "prose_qs": {
+            "type": "string",
+            "description": "A concise commentary in German from the AI, assessing the quality of the original prose and providing suggestions for improvement."
           }
         }
-      },
-      "suggested_new_controls": {
-        "description": "A list of new controls suggested by the model to cover identified gaps. Can be an empty list.",
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["id", "title", "class", "parts"],
-          "properties": {
-            "id": { "type": "string", "pattern": "^[a-zA-Z0-9.-]+-gap-\\d+$" },
-            "title": { "type": "string" },
-            "class": { "type": "string", "enum": ["technical", "procedural", "organizational"] },
-            "parts": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["name", "prose"],
-                "properties": {
-                  "name": { "type": "string", "const": "statement" },
-                  "prose": { "type": "string" }
-                }
+      }
+    },
+    "suggested_new_controls": {
+      "description": "A list of new controls suggested by the model to cover identified gaps. Can be an empty list.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "class", "parts"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-zA-Z0-9.-]+-gap-\\d+$" },
+          "title": { "type": "string" },
+          "class": { "type": "string", "enum": ["technical", "procedural", "organizational"] },
+          "parts": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["name", "prose"],
+              "properties": {
+                "name": { "type": "string", "const": "statement" },
+                "prose": { "type": "string" }
               }
             }
           }
@@ -49,3 +48,4 @@
       }
     }
   }
+}
