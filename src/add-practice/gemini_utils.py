@@ -100,7 +100,8 @@ async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) 
                 continue
             
             finish_reason = response.candidates[0].finish_reason
-            if finish_reason not in [FinishReason.OK, FinishReason.STOP]:
+            # CORRECTED LINE: The successful finish reason is 'STOP', not 'OK'.
+            if finish_reason != FinishReason.STOP:
                 logger.warning(f"Attempt {attempt + 1}: Model finished with non-OK reason: {finish_reason.name}")
                 if finish_reason in [FinishReason.SAFETY, FinishReason.RECITATION]:
                     logger.error(f"Generation stopped permanently due to {finish_reason.name}. Cannot retry batch.")
