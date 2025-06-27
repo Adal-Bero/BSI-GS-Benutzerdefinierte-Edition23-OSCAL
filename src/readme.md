@@ -14,6 +14,7 @@ The system is designed to run as a serverless **Google Cloud Run Job** and opera
 *   **BSI Level** Each control be get a level based on the BSI GRundschutz Categories Basis, STandard und Erhöht in the new G++ conformant level 1 to 5
 *   **5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement, allowing for granular assessment beyond simple compliance.
 *   **ISMS Phase-Alignment:** Maps each requirement to a phase of the ISMS lifecycle (e.g., Implementation, Operation) for better process integration.
+*   **CIA Tenant Analysis:** Determines if a control impacts Confidentiality, Integrity, or Availability.
 
 ---
 
