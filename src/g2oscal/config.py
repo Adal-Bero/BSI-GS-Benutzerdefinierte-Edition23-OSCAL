@@ -38,12 +38,7 @@ def validate_env_vars():
 def setup_logging():
     """Configures the root logger based on the TEST_MODE setting."""
     log_level = logging.DEBUG if TEST_MODE else logging.INFO
-    # Add logger name to format for better context; direct logs to stdout.
-    logging.basicConfig(
-        level=log_level, 
-        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-        stream=sys.stdout
-    )
+    logging.basicConfig(level=log_level, format='%(asctime)s - %(levelname)s - %(message)s', stream=sys.stdout)
     
     # Unconditionally suppress verbose logs from underlying libraries in all modes.
     # We are interested in our application's logs, not the HTTP connection details.

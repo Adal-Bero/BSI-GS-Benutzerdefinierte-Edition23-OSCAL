@@ -7,7 +7,7 @@ Analyze the single Baustein PDF provided. Your output MUST be a single JSON obje
 ---
 **Part 1: Extraction Logic**
 
-*   **Top-Level Information:** Extract the Baustein's unique ID (e.g., "CON.1.1"), its full title, and its main group prefix (e.g., "CON").
+*   **Top-Level Information:** You MUST extract the Baustein's unique ID (e.g., "OPS.1.1.3"), its FULL title (e.g., "Patch- und Änderungsmanagement"), and its main group prefix (e.g., "OPS").
 *   **Contextual Parts:** Extract the full prose for the chapters "Einleitung", "Zielsetzung", "Abgrenzung und Modellierung", and all "Gefährdungslage" risks.
 *   **Requirements List:** For EACH requirement (`Anforderung`) in the document, extract its `id`, `title`, and full original `prose`.
 
@@ -16,20 +16,42 @@ Analyze the single Baustein PDF provided. Your output MUST be a single JSON obje
 
 For EACH requirement you extract, you MUST also add the following classifications to it:
 
-1.  **Control `class` Classification**: Assign ONE of the standard NIST control classes.
-    - `Technical`: The control is primarily implemented by computer systems.
-    - `Operational`: The control is primarily implemented by people.
-    - `Management`: The control focuses on managing risk and information systems.
-
-2.  **`practice` Classification**: Assign ONE of the following practice IDs.
-    - GOV, ISGA, DOCS, RISK, REAL, PERF, LAW, ARCH, SENS, REA, NOT, ASST, TEST, PERS, BES, DEV, CON, DLS, GEB, BER, DET, SYS, APP
-
-3.  **CIA Tenant Classification**: Determine if the control's primary purpose is effective on Confidentiality, Integrity, or Availability.
-    - `effective_on_c`: true/false.
-    - `effective_on_i`: true/false.
-    - `effective_on_a`: true/false.
+1.  **Control `class` Classification**: Assign ONE of the standard NIST control classes: "Technical", "Operational", or "Management".
+2.  **`practice` Classification**: Assign ONE of the practice IDs: GOV, ISGA, DOCS, RISK, REAL, PERF, LAW, ARCH, SENS, REA, NOT, ASST, TEST, PERS, BES, DEV, CON, DLS, GEB, BER, DET, SYS, APP.
+3.  **CIA Tenant Classification**: Determine the impact on Confidentiality, Integrity, and Availability (`effective_on_c`, `effective_on_i`, `effective_on_a`).
 
 ---
-**Required Output JSON Format:**
+**MANDATORY OUTPUT STRUCTURE & EXAMPLE**
 
-You MUST return ONLY a single, raw JSON object conforming to the schema. The requirements in the `requirements_list` must contain both the extracted text and the classification fields.
+You MUST return ONLY a single, raw JSON object conforming to the schema. The following is an example of a perfect response.
+
+```json
+{
+  "main_group_id": "OPS",
+  "baustein_id": "OPS.1.1.3",
+  "baustein_title": "Patch- und Änderungsmanagement",
+  "contextual_parts": [
+    {
+      "name": "introduction",
+      "title": "Einleitung",
+      "prose": "In diesem Baustein wird beschrieben, wie der Patch- und Änderungsmanagementprozess für IT-Systeme und -Anwendungen gestaltet und umgesetzt werden sollte..."
+    }
+  ],
+  "requirements_list": [
+    {
+      "id": "OPS.1.1.3.A1",
+      "title": "Konzept für das Patch- und Änderungsmanagement (B)",
+      "prose": "Es muss ein Konzept für das Patch- und Änderungsmanagement erstellt werden...",
+      "props": {
+        "level": "1",
+        "phase": "Implementation"
+      },
+      "class": "Management",
+      "practice": "ISGA",
+      "effective_on_c": false,
+      "effective_on_i": true,
+      "effective_on_a": true
+    }
+  ]
+}
+```
