@@ -1,72 +1,71 @@
-# BSI Grundschutz to OSCAL: The Automated Conversion Pipeline
+# BSI-Grundschutz zu OSCAL: Die automatisierte Konvertierungspipeline
 
-This project provides a powerful, automated pipeline for converting BSI Grundschutz "Baustein" PDF documents into a rich, structured, and OSCAL-compliant JSON format. It leverages the advanced capabilities of Google's `gemini-2.5-pro` model to not only translate the content but to enrich it with a multi-level maturity model and contextual information, making the final catalog immediately useful for analysis and compliance management.
+Dieses Projekt stellt eine leistungsstarke, automatisierte Pipeline zur Verfügung, um BSI-Grundschutz-„Baustein“-PDF-Dokumente in ein reichhaltiges, strukturiertes und OSCAL-konformes JSON-Format zu konvertieren. Es nutzt die fortschrittlichen Fähigkeiten des `gemini-2.5-pro`-Modells von Google, um den Inhalt nicht nur zu übersetzen, sondern ihn auch mit einem mehrstufigen Reifegradmodell und kontextbezogenen Informationen anzureichern. Dadurch wird der finale Katalog sofort für Analysen und das Compliance-Management nutzbar.
 
-The system is designed to run as a serverless **Google Cloud Run Job** and operates **incrementally**. It intelligently reads an existing master OSCAL catalog, processes new or updated PDFs, and seamlessly merges the results by adding new "Bausteine" or overwriting existing ones.
+Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet **inkrementell**. Es liest intelligent einen bestehenden Master-OSCAL-Katalog, verarbeitet neue oder aktualisierte PDFs und führt die Ergebnisse nahtlos zusammen, indem es neue „Bausteine“ hinzufügt oder bestehende überschreibt.
 
-### Key Features
+### Hauptmerkmale
 
-*   **Fully Automated Conversion:** Transforms raw PDF content into structured OSCAL JSON with zero manual intervention.
-*   **Incremental Updates:** Intelligently adds new Bausteine or overwrites existing ones in a master catalog file, making the process repeatable and efficient.
-*   **Contextual Enrichment:** Extracts introductory chapters (Einleitung, Zielsetzung, Modellierung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
-*   **G++ conformant Practices** Each control will be sorted into one of the defined practices.
-*   **OSCAL Compliant Controls Classes** Each control will be assigned a class based on the official OSCAL specification.
-*   **BSI Level** Each control be get a level based on the BSI GRundschutz Categories Basis, STandard und Erhöht in the new G++ conformant level 1 to 5
-*   **5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement, allowing for granular assessment beyond simple compliance.
-*   **ISMS Phase-Alignment:** Maps each requirement to a phase of the ISMS lifecycle (e.g., Implementation, Operation) for better process integration.
-*   **CIA Tenant Analysis:** Determines if a control impacts Confidentiality, Integrity, or Availability.
-
----
-
-# Tools provided
-
-## Automated OSCAL Component Generation from BSI Catalog
-
-The `g2oscal` tool is designed to be the **an easy way to convert BSI GRundschutz Bausteine into German OSCAL catalog**. It takes the original German PDFs and produces a high-quality, enriched German JSON file.
+*   **Vollautomatische Konvertierung:** Wandelt rohe PDF-Inhalte ohne manuellen Eingriff in strukturiertes OSCAL-JSON um.
+*   **Inkrementelle Updates:** Fügt intelligent neue Bausteine hinzu oder überschreibt bestehende in einer Master-Katalogdatei, was den Prozess wiederholbar und effizient macht.
+*   **Kontextbezogene Anreicherung:** Extrahiert einleitende Kapitel (Einleitung, Zielsetzung, Modellierung) und die vollständige Gefährdungslage in strukturierte `parts`, um wichtigen Kontext direkt im Katalog bereitzustellen.
+*   **G++-konforme Praktiken:** Jede Anforderung wird in eine der definierten Praktiken einsortiert.
+*   **OSCAL-konforme Anforderungs-Klassen:** Jede Anforderung wird einer Klasse gemäß der offiziellen OSCAL-Spezifikation zugewiesen.
+*   **BSI-Level:** Jede Anforderung erhält ein Level basierend auf den BSI-Grundschutz-Kategorien Basis, Standard und Erhöht in den neuen G++-konformen Stufen 1 bis 5.
+*   **5-stufiges Reifegradmodell:** Erzeugt fünf verschiedene Reifegradstufen für jede einzelne Anforderung und ermöglicht so eine granulare Bewertung, die über einfache Compliance hinausgeht.
+*   **ISMS-Phasen-Zuordnung:** Ordnet jede Anforderung einer Phase des ISMS-Lebenszyklus (z. B. Umsetzung, Betrieb) zu, um eine bessere Prozessintegration zu ermöglichen.
+*   **CIA-Schutzziel-Analyse:** Bestimmt, ob eine Anforderung die Vertraulichkeit, Integrität oder Verfügbarkeit beeinflusst.
 
 ---
 
-## The Translation Workflow: Creating Multilingual Catalogs
+# Bereitgestellte Werkzeuge
 
-To create translated versions (e.g., in English), `translate_oscal` can translate into any language that the genAI offers.
+## Automatisierte OSCAL-Komponentengenerierung aus dem BSI-Katalog
 
-1.  First, run `g2oscal` project to generate a German OSCAL `BSI_Catalog_....json` file.
-2.  Navigate to the sibling directory of this project: `../translate_oscal`.
-3.  The scripts within that directory are specifically designed to take the German OSCAL JSON file as **input** and use an AI model to translate its content into other languages, while carefully preserving the entire OSCAL structure.
-
-This separation of concerns ensures that the core data generation is robust and that translation can be managed as an independent, subsequent step.
+Das `g2oscal`-Tool ist als **einfache Möglichkeit konzipiert, BSI-Grundschutz-Bausteine in einen deutschen OSCAL-Katalog zu konvertieren**. Es verwendet die originalen deutschen PDFs und erzeugt eine qualitativ hochwertige, angereicherte deutsche JSON-Datei.
 
 ---
 
-## Create Component Definitions
+## Der Übersetzungs-Workflow: Erstellung mehrsprachiger Kataloge
 
-Project `oscal_components_from_grundschutz` contains a script designed to automatically generate enriched OSCAL component definitions from a BSI IT-Grundschutz catalog. The script identifies individual "Bausteine" (building blocks) from the source catalog, creates a base component definition for each, and then uses the Google Vertex AI Gemini Pro model to intelligently discover and add relevant controls from other Bausteine. To generate the rather static component for the "Process Modules" / "Prozessbausteine" a smaller script exists as well: `create_prozessbausteine_component.py`. This is run once.
+Um übersetzte Versionen (z. B. auf Englisch) zu erstellen, kann `translate_oscal` in jede Sprache übersetzen, die die GenAI anbietet.
 
-The final output is a set of OSCAL-compliant JSON files, one for each technical Baustein, saved to a Google Cloud Storage (GCS) bucket.
+1.  Führen Sie zuerst das `g2oscal`-Projekt aus, um eine deutsche OSCAL-Datei `BSI_Catalog_....json` zu generieren.
+2.  Navigieren Sie zum Geschwisterverzeichnis dieses Projekts: `../translate_oscal`.
+3.  Die Skripte in diesem Verzeichnis sind speziell dafür konzipiert, die deutsche OSCAL-JSON-Datei als **Eingabe** zu verwenden und deren Inhalt mithilfe eines KI-Modells in andere Sprachen zu übersetzen, wobei die gesamte OSCAL-Struktur sorgfältig beibehalten wird.
 
----
-
-## Quality Assurance
-
-The tool `quality_control` will take a OSCAL component definitions and a catalog and performs a sophisticated, multi-faceted quality control and enrichment cycle on an OSCAL-based security catalog. It goes beyond simple linting or syntax checks by using a large language model (Google Gemini 2.5 Pro) to analyze the semantic meaning, context, and completeness of security controls.
-
-It will add comments to the catalog in a part called "prose_qs" and add new controls when the current set is not complete.
-
+Diese Trennung der Aufgaben (Separation of Concerns) stellt sicher, dass die Kerndatenerzeugung robust ist und die Übersetzung als unabhängiger, nachfolgender Schritt verwaltet werden kann.
 
 ---
 
-# Enriched Data Models
+## Erstellen von Komponentendefinitionen
 
-## 1. Contextual Information (`parts`)
+Das Projekt `oscal_components_from_grundschutz` enthält ein Skript, das darauf ausgelegt ist, automatisch angereicherte OSCAL-Komponentendefinitionen aus einem BSI-IT-Grundschutz-Katalog zu generieren. Das Skript identifiziert einzelne „Bausteine“ aus dem Quellkatalog, erstellt für jeden eine Basis-Komponentendefinition und verwendet anschließend das Google Vertex AI Gemini Pro-Modell, um intelligent relevante Anforderungen aus anderen Bausteinen zu finden und hinzuzufügen. Um die eher statische Komponente für die „Prozess-Module“ / „Prozessbausteine“ zu generieren, existiert ebenfalls ein kleineres Skript: `create_prozessbausteine_component.py`. Dieses wird einmalig ausgeführt.
 
-To increase the utility of the catalog, the pipeline now extracts key introductory and contextual chapters from each Baustein PDF. This information is stored in the `parts` array of each `bausteinGroup`, allowing users to understand the purpose and associated risks without needing to reference the original PDF.
+Die endgültige Ausgabe ist ein Satz OSCAL-konformer JSON-Dateien, eine für jeden technischen Baustein, die in einem Google Cloud Storage (GCS) Bucket gespeichert werden.
 
-*   **1. Einleitung:** A collapsible section containing the prose from chapters 1.1, 1.2, and 1.3.
-*   **2. Gefährdungslage:** A collapsible section listing every relevant threat, with each threat presented with its official title and full description.
+---
 
-## 2. The 5-Level Maturity Model
+## Qualitätssicherung
 
-A core objective of this project is to enrich the OSCAL data with a qualitative assessment layer. To this end, every requirement extracted from the BSI Grundschutz is mapped to a 5-level maturity model. This model enables a granular and differentiated evaluation of the implementation quality of security measures, going far beyond a purely binary (fulfilled/not fulfilled) compliance statement.
+Das Werkzeug `quality_control` nimmt OSCAL-Komponentendefinitionen und einen Katalog entgegen und führt einen anspruchsvollen, vielschichtigen Zyklus zur Qualitätskontrolle und Anreicherung eines OSCAL-basierten Sicherheitskatalogs durch. Es geht über einfache Linting- oder Syntaxprüfungen hinaus, indem es ein großes Sprachmodell (Google Gemini 2.5 Pro) verwendet, um die semantische Bedeutung, den Kontext und die Vollständigkeit von Sicherheitsanforderungen zu analysieren.
+
+Es fügt dem Katalog Kommentare in einem Teil namens „prose_qs“ hinzu und ergänzt neue Anforderungen, wenn der aktuelle Satz nicht vollständig ist.
+
+---
+
+# Angereicherte Datenmodelle
+
+## 1. Kontextbezogene Informationen (`parts`)
+
+Um den Nutzen des Katalogs zu erhöhen, extrahiert die Pipeline nun wichtige einleitende und kontextbezogene Kapitel aus jedem Baustein-PDF. Diese Informationen werden im `parts`-Array jeder `bausteinGroup` gespeichert, sodass Benutzer den Zweck und die damit verbundenen Risiken verstehen können, ohne auf das Original-PDF zurückgreifen zu müssen.
+
+*   **1. Einleitung:** Ein ausklappbarer Abschnitt, der den Prosa-Text aus den Kapiteln 1.1, 1.2 und 1.3 enthält.
+*   **2. Gefährdungslage:** Ein ausklappbarer Abschnitt, der jede relevante Gefährdung auflistet, wobei jede Gefährdung mit ihrem offiziellen Titel und ihrer vollständigen Beschreibung dargestellt wird.
+
+## 2. Das 5-stufige Reifegradmodell
+
+Ein Kernziel dieses Projekts ist es, die OSCAL-Daten mit einer qualitativen Bewertungsebene anzureichern. Zu diesem Zweck wird jede aus dem BSI-Grundschutz extrahierte Anforderung einem 5-stufigen Reifegradmodell zugeordnet. Dieses Modell ermöglicht eine granulare und differenzierte Bewertung der Umsetzungsqualität von Sicherheitsmaßnahmen, die weit über eine rein binäre (erfüllt/nicht erfüllt) Konformitätsaussage hinausgeht.
 
 *   **Stufe 1: Partial (Teilweise umgesetzt)**
 *   **Stufe 2: Foundational (Grundlegend umgesetzt)**
@@ -74,78 +73,76 @@ A core objective of this project is to enrich the OSCAL data with a qualitative 
 *   **Stufe 4: Enhanced (Erweitert umgesetzt)**
 *   **Stufe 5: Comprehensive (Umfassend umgesetzt)**
 
-**Strategic Value of the Model:**
-The model serves as a strategic instrument for Information Security Management Systems (ISMS). It allows organizations to precisely assess their current security posture (as-is analysis) and supports the definition of targeted, risk-based desired states (to-be architecture). By quantifying the quality of implementation, resources can be allocated more efficiently, and areas for improvement can be systematically identified and prioritized in the spirit of a continuous improvement process (CIP).
+**Strategischer Wert des Modells:**
+Das Modell dient als strategisches Instrument für Informationssicherheits-Managementsysteme (ISMS). Es ermöglicht Organisationen, ihre aktuelle Sicherheitsposition präzise zu bewerten (Ist-Analyse) und unterstützt die Definition von zielgerichteten, risikobasierten Soll-Zuständen (Soll-Architektur). Durch die Quantifizierung der Umsetzungsqualität können Ressourcen effizienter zugewiesen und Verbesserungsbereiche im Sinne eines kontinuierlichen Verbesserungsprozesses (KVP) systematisch identifiziert und priorisiert werden.
 
-The AI model has been trained to generate five qualitative variations for each requirement. The normative text from the BSI Compendium for the respective requirement serves as the reference for maturity level 3 ("Defined"). The other levels are derived through logical extrapolation to create a consistent and comprehensible evaluation framework.
+Das KI-Modell wurde trainiert, um für jede Anforderung fünf qualitative Varianten zu generieren. Der normative Text aus dem BSI-Kompendium für die jeweilige Anforderung dient als Referenz für die Reifegradstufe 3 („Defined“). Die anderen Stufen werden durch logische Extrapolation abgeleitet, um ein konsistentes und nachvollziehbares Bewertungsgerüst zu schaffen.
 
-
-### Level 1: Partial
-*   **Description:** The control is implemented only sporadically, on an ad-hoc basis, or in a very limited subset of its intended scope. The implementation is inconsistent, exhibits significant gaps in coverage, and addresses only a fraction of the intended risk. It is often a reactive, isolated measure rather than part of a planned strategy.
-*   **Key Characteristics:** Ad-hoc reactions, inconsistent application, high manual effort for point solutions, high remaining residual risk.
-
----
-
-### Level 2: Foundational
-*   **Description:** The control is implemented across its entire intended scope but relies primarily on standard, out-of-the-box configurations without in-depth customization to specific organizational policies or risks. Although foundational coverage exists, its effectiveness is often only ensured through manual verification and is not yet optimized.
-*   **Key Characteristics:** Full baseline coverage, use of default settings, lack of customization and hardening, consistent but not tailored.
+### Stufe 1: Teilweise (Partial)
+*   **Beschreibung:** Die Anforderung wird nur sporadisch, auf Ad-hoc-Basis oder in einem sehr begrenzten Teil ihres vorgesehenen Geltungsbereichs umgesetzt. Die Umsetzung ist inkonsistent, weist erhebliche Abdeckungslücken auf und adressiert nur einen Bruchteil des beabsichtigten Risikos. Es handelt sich oft um eine reaktive, isolierte Maßnahme statt um einen Teil einer geplanten Strategie.
+*   **Schlüsselmerkmale:** Ad-hoc-Reaktionen, inkonsistente Anwendung, hoher manueller Aufwand für Punktlösungen, hohes verbleibendes Restrisiko.
 
 ---
 
-### Level 3: Defined
-*   **Description:** The implementation of the control follows a documented, standardized, and repeatable process. Configurations are deliberately tailored to the organization-specific security policies and risk analyses. While the process is reliable, it may still be largely manual and is not yet deeply integrated with other security systems. **This level represents the baseline for a properly and demonstrably operated security measure.**
-*   **Key Characteristics:** Documented and repeatable process, configurations are adapted to company policies, verifiability of implementation, fulfillment of the core requirement ("MUST" requirement).
+### Stufe 2: Grundlegend (Foundational)
+*   **Beschreibung:** Die Anforderung ist über ihren gesamten vorgesehenen Geltungsbereich umgesetzt, stützt sich jedoch hauptsächlich auf Standardkonfigurationen (Out-of-the-Box) ohne tiefgreifende Anpassung an spezifische organisatorische Richtlinien oder Risiken. Obwohl eine grundlegende Abdeckung besteht, wird ihre Wirksamkeit oft nur durch manuelle Überprüfung sichergestellt und ist noch nicht optimiert.
+*   **Schlüsselmerkmale:** Vollständige Baseline-Abdeckung, Verwendung von Standardeinstellungen, fehlende Anpassung und Härtung, konsistent, aber nicht maßgeschneidert.
 
 ---
 
-### Level 4: Enhanced
-*   **Description:** Building upon the defined process, additional controls and optimizations that go beyond the basic requirement are implemented. This typically includes the implementation of key "SHOULD" recommendations from the BSI, the use of hardened configurations, the introduction of automation and monitoring techniques to increase effectiveness, and formal integration with adjacent processes. The implementation is demonstrably more resilient than the baseline.
-*   **Key Characteristics:** Implementation of "SHOULD" recommendations, increased effectiveness and resilience, initial automation and proactive monitoring, formalized processes.
+### Stufe 3: Definiert (Defined)
+*   **Beschreibung:** Die Umsetzung der Anforderung folgt einem dokumentierten, standardisierten und wiederholbaren Prozess. Die Konfigurationen sind bewusst auf die unternehmensspezifischen Sicherheitsrichtlinien und Risikoanalysen zugeschnitten. Obwohl der Prozess zuverlässig ist, kann er noch weitgehend manuell sein und ist noch nicht tief in andere Sicherheitssysteme integriert. **Diese Stufe stellt die Baseline für eine ordnungsgemäß und nachweisbar betriebene Sicherheitsmaßnahme dar.**
+*   **Schlüsselmerkmale:** Dokumentierter und wiederholbarer Prozess, Konfigurationen sind an Unternehmensrichtlinien angepasst, Überprüfbarkeit der Umsetzung, Erfüllung der Kernanforderung („MUSS“-Anforderung).
 
 ---
 
-### Level 5: Comprehensive
-*   **Description:** The control is implemented as a best-practice solution and is deeply integrated into the security architecture (defense-in-depth). It is highly effective, often largely automated, and is proactively monitored and continuously optimized. This level reflects a mature, forward-looking security strategy that often combines and refines all relevant "SHOULD" recommendations in a meaningful way.
-*   **Key Characteristics:** Best-practice implementation, highly automated and integrated, continuous monitoring and optimization, proactive security posture.
+### Stufe 4: Erweitert (Enhanced)
+*   **Beschreibung:** Aufbauend auf dem definierten Prozess werden zusätzliche Kontrollen und Optimierungen implementiert, die über die Basisanforderung hinausgehen. Dies umfasst typischerweise die Umsetzung wichtiger „SOLLTE“-Empfehlungen des BSI, die Verwendung gehärteter Konfigurationen, die Einführung von Automatisierungs- und Überwachungstechniken zur Steigerung der Effektivität sowie die formale Integration mit angrenzenden Prozessen. Die Umsetzung ist nachweislich widerstandsfähiger als die Baseline.
+*   **Schlüsselmerkmale:** Umsetzung von „SOLLTE“-Empfehlungen, erhöhte Wirksamkeit und Widerstandsfähigkeit, erste Automatisierung und proaktive Überwachung, formalisierte Prozesse.
 
 ---
 
-## 3. ISMS Phase-Alignment
-
-To enhance the strategic value of the catalog and bridge the gap between technical controls and management processes, every security requirement is mapped to a specific phase of the Information Security Management System (ISMS) lifecycle. This classification is inspired by established frameworks like ISO/IEC 27001 and the Plan-Do-Check-Act (PDCA) cycle, providing a process-oriented context for every control.
-
-**Strategic Value of Phase-Alignment:**
-This mapping allows stakeholders—such as CISOs, security officers, and project managers—to filter and prioritize controls based on their current strategic or operational focus. It helps integrate technical security measures directly into the broader activities of risk management, project planning, and continuous improvement, thereby strengthening governance and the procedural embedding of information security.
-
-The AI model is trained to assign the most logically fitting phase to each requirement, with "Implementation" serving as the default for most technical controls.
-
-### The ISMS Phases in Detail
+### Stufe 5: Umfassend (Comprehensive)
+*   **Beschreibung:** Die Anforderung ist als Best-Practice-Lösung implementiert und tief in die Sicherheitsarchitektur (Defense-in-Depth) integriert. Sie ist hochwirksam, oft weitgehend automatisiert und wird proaktiv überwacht und kontinuierlich optimiert. Diese Stufe spiegelt eine reife, vorausschauende Sicherheitsstrategie wider, die oft alle relevanten „SOLLTE“-Empfehlungen sinnvoll kombiniert und verfeinert.
+*   **Schlüsselmerkmale:** Best-Practice-Implementierung, hochgradig automatisiert und integriert, kontinuierliche Überwachung und Optimierung, proaktives Sicherheitsniveau.
 
 ---
-#### **Initiation**
-*   **Description:** This phase covers the strategic preparation and definition of objectives for security-related initiatives. It involves establishing governance structures, defining the scope of the ISMS, and formulating the core information security policy. Controls in this phase are typically foundational and policy-driven.
+
+## 3. ISMS-Phasen-Zuordnung
+
+Um den strategischen Wert des Katalogs zu erhöhen und die Lücke zwischen technischen Anforderungen und Managementprozessen zu schließen, wird jede Sicherheitsanforderung einer spezifischen Phase des Lebenszyklus eines Informationssicherheits-Managementsystems (ISMS) zugeordnet. Diese Klassifizierung ist von etablierten Frameworks wie ISO/IEC 27001 und dem Plan-Do-Check-Act (PDCA)-Zyklus inspiriert und bietet einen prozessorientierten Kontext für jede Anforderung.
+
+**Strategischer Wert der Phasen-Zuordnung:**
+Diese Zuordnung ermöglicht es Stakeholdern – wie CISOs, Sicherheitsbeauftragten und Projektmanagern – Anforderungen basierend auf ihrem aktuellen strategischen oder operativen Fokus zu filtern und zu priorisieren. Sie hilft, technische Sicherheitsmaßnahmen direkt in die umfassenderen Aktivitäten des Risikomanagements, der Projektplanung und der kontinuierlichen Verbesserung zu integrieren, wodurch die Governance und die prozessuale Verankerung der Informationssicherheit gestärkt werden.
+
+Das KI-Modell ist darauf trainiert, jeder Anforderung die logisch am besten passende Phase zuzuordnen, wobei „Umsetzung“ für die meisten technischen Anforderungen als Standard dient.
+
+### Die ISMS-Phasen im Detail
 
 ---
-#### **Risk Assessment**
-*   **Description:** This involves the systematic identification, analysis, and evaluation of information security risks. This phase is fundamental to determining the necessary level of protection (schutzbedarf) and for deriving appropriate security measures. Controls related to asset identification and threat analysis belong here.
+#### **Initiierung (Initiation)**
+*   **Beschreibung:** Diese Phase umfasst die strategische Vorbereitung und Zieldefinition für sicherheitsrelevante Initiativen. Sie beinhaltet den Aufbau von Governance-Strukturen, die Festlegung des ISMS-Geltungsbereichs und die Formulierung der zentralen Informationssicherheitsleitlinie. Anforderungen in dieser Phase sind typischerweise grundlegend und richtlinienbasiert.
 
 ---
-#### **Risk Treatment**
-*   **Description:** This is the process of selecting and designing measures to address the risks identified in the assessment phase. It includes making strategic decisions on whether to mitigate, avoid, transfer, or accept a given risk. Controls in this phase are often conceptual and related to planning.
+#### **Risikobewertung (Risk Assessment)**
+*   **Beschreibung:** Dies beinhaltet die systematische Identifizierung, Analyse und Bewertung von Informationssicherheitsrisiken. Diese Phase ist fundamental, um den notwendigen Schutzbedarf zu ermitteln und angemessene Sicherheitsmaßnahmen abzuleiten. Anforderungen im Zusammenhang mit der Identifizierung von Assets und der Bedrohungsanalyse gehören hierher.
 
 ---
-#### **Implementation**
-*   **Description:** This phase concerns the technical and organizational deployment of the security controls defined in the risk treatment plan. It is the "build" phase that translates conceptual requirements into an operational state. The majority of the BSI Grundschutz technical controls fall into this category.
+#### **Risikobehandlung (Risk Treatment)**
+*   **Beschreibung:** Dies ist der Prozess der Auswahl und Gestaltung von Maßnahmen, um die in der Bewertungsphase identifizierten Risiken zu adressieren. Er umfasst strategische Entscheidungen darüber, ob ein gegebenes Risiko gemindert, vermieden, transferiert oder akzeptiert wird. Anforderungen in dieser Phase sind oft konzeptionell und planungsbezogen.
 
 ---
-#### **Operation**
-*   **Description:** This phase covers the ongoing execution and maintenance of the implemented security controls. It includes routine processes such as monitoring, patch management, incident handling, and the performance of regular security duties.
+#### **Umsetzung (Implementation)**
+*   **Beschreibung:** Diese Phase betrifft die technische und organisatorische Einführung der im Risikobehandlungsplan definierten Sicherheitsanforderungen. Es ist die „Build“-Phase, die konzeptionelle Anforderungen in einen betriebsbereiten Zustand überführt. Der Großteil der technischen BSI-Grundschutz-Anforderungen fällt in diese Kategorie.
 
 ---
-#### **Audit**
-*   **Description:** This involves the periodic and systematic review of the effectiveness, efficiency, and compliance of the ISMS and its controls. Audits provide the necessary data to evaluate security performance and verify that controls are operating as intended.
+#### **Betrieb (Operation)**
+*   **Beschreibung:** Diese Phase deckt die laufende Ausführung und Wartung der implementierten Sicherheitsanforderungen ab. Sie umfasst Routineprozesse wie Überwachung, Patch-Management, Incident-Handling und die Durchführung regelmäßiger Sicherheitsaufgaben.
 
 ---
-#### **Improvement**
-*   **Description:** This phase focuses on the continuous optimization of the ISMS based on the findings from audits, performance metrics, and the analysis of security incidents. It closes the PDCA loop and drives the ongoing development and maturation of the organization's security posture.
+#### **Audit (Audit)**
+*   **Beschreibung:** Dies beinhaltet die periodische und systematische Überprüfung der Wirksamkeit, Effizienz und Konformität des ISMS und seiner Anforderungen. Audits liefern die notwendigen Daten, um die Sicherheitsleistung zu bewerten und zu verifizieren, dass die Anforderungen wie beabsichtigt funktionieren.
 
+---
+#### **Verbesserung (Improvement)**
+*   **Beschreibung:** Diese Phase konzentriert sich auf die kontinuierliche Optimierung des ISMS auf der Grundlage der Ergebnisse aus Audits, Leistungskennzahlen und der Analyse von Sicherheitsvorfällen. Sie schließt den PDCA-Zyklus und treibt die fortlaufende Entwicklung und Reifung der Sicherheitsposition der Organisation voran.
