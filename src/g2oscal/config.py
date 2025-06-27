@@ -30,23 +30,35 @@ def validate_env_vars():
     }
     missing_vars = [key for key, value in required_vars.items() if not value]
     if missing_vars:
-        logging.basicConfig(level=logging.ERROR)
         error_message = f"FATAL: Missing required environment variables: {', '.join(missing_vars)}."
-        logging.error(error_message)
+        # Use sys.exit with a message for pre-logging startup errors.
+        # This prints to stderr and exits with status 1.
         sys.exit(error_message)
 
 def setup_logging():
     """Configures the root logger based on the TEST_MODE setting."""
     log_level = logging.DEBUG if TEST_MODE else logging.INFO
-    logging.basicConfig(level=log_level, format='%(asctime)s - %(levelname)s - %(message)s')
+    # Add logger name to format for better context; direct logs to stdout.
+    logging.basicConfig(
+        level=log_level, 
+        format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+        stream=sys.stdout
+    )
     
-    # Suppress verbose logs from underlying libraries
-    if not TEST_MODE:
-        noisy_loggers = ["google.auth", "google.api_core", "urllib3"]
-        for logger_name in noisy_loggers:
-            logging.getLogger(logger_name).setLevel(logging.WARNING)
+    # Unconditionally suppress verbose logs from underlying libraries in all modes.
+    # We are interested in our application's logs, not the HTTP connection details.
+    noisy_loggers = [
+        "google.auth", 
+        "google.api_core.bidi",
+        "google.api_core.client_options",
+        "google.api_core.gapic_v1",
+        "urllib3.connectionpool"
+    ]
+    for logger_name in noisy_loggers:
+        logging.getLogger(logger_name).setLevel(logging.WARNING)
     
-    logging.info(f"Logging initialized. TEST_MODE={TEST_MODE}")
+    # Use a logger specific to this module for the initialization message.
+    logging.getLogger(__name__).info(f"Logging initialized. TEST_MODE={TEST_MODE}")
 
 # Validate required environment variables on import
 validate_env_vars()
