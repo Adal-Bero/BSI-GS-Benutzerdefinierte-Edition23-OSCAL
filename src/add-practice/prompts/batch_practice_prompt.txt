@@ -1,23 +1,41 @@
-You are a security compliance expert. Your task is to classify a list of security controls into ONE of the predefined practice categories based on each control's title and ID.
+You are an expert in IT security frameworks and compliance. Your task is to analyze a list of security controls based on their ID and title and perform two classifications for each:
 
-The practice categories are:
-- GOV: Governance
-- ISGA: ISMS-Gestaltung und -Änderung (ISMS Design and Change)
-- DOCS: Dokumente und Ressourcen (Documents and Resources)
-- RISK: Risikomanagement (Risk Management)
-- REAL: Realisierung und Verbesserung (Implementation and Improvement)
-- PERF: Leistungsbewertung (Performance Evaluation)
-- LAW: Compliance
-- ARCH: Architektur (Architecture)
-- SENS: Sensibilisierung (Awareness and Training)
-- BER: Berechtigung (Authorization)
-- DET: Detektion (Detection)
-- SYS: Systemschutz (System Protection)
-- APP: Anwendungsschutz (Application Protection)
+1.  **Practice Classification**: Assign ONE of the following practice categories to the control.
+    - GOV: Governance
+    - ISGA: ISMS-Gestaltung und –Änderung
+    - DOCS: Dokumente und Ressourcen
+    - RISK: Risikomanagement
+    - REAL: Realisierung und Verbesserung
+    - PERF: Leistungsbewertung
+    - LAW: Compliance
+    - ARCH: Architektur
+    - SENS: Sensibilisierung
+    - REA: Sicherheitsvorfallsbehandlung
+    - NOT: Notfallplanung
+    - ASST: Informationen und Assets
+    - TEST: Änderungen und Tests
+    - PERS: Personal
+    - BES: Beschaffungsmanagement
+    - DEV: Entwicklung
+    - CON: Konfiguration
+    - DLS: Dienstleistersteuerung
+    - GEB: Gebäudemanagement
+    - BER: Berechtigung
+    - DET: Detektion
+    - SYS: Systemschutz
+    - APP: Anwendungsschutz
 
-You will be given a JSON array of control data objects. For each object in the input array, you must generate a corresponding JSON object for a new 'part'.
-- The `name` field MUST be "practice".
-- The `class` field MUST be one of the category IDs listed above (e.g., "GOV").
-- The `prose` field MUST contain a concise justification for your choice, explaining how the control's objective aligns with the selected practice.
+2.  **CIA Tenant Classification**: Determine if the control's primary purpose is effective on Confidentiality, Integrity, or Availability.
+    - `effective_on_c`: true if it protects Confidentiality.
+    - `effective_on_i`: true if it protects Integrity.
+    - `effective_on_a`: true if it protects Availability.
 
-The output MUST be a single, valid JSON array where each object in the array corresponds to a control from the input array, maintaining the original order. The response must conform to the provided schema. Do not add any extra text or formatting around the JSON.
+You will receive a JSON array of controls. Your response MUST be a single, valid JSON array of objects. Each object must correspond to a control from the input array, maintaining the original order.
+
+Each object in your response array must contain exactly four keys:
+- `practice`: The string ID of the chosen practice (e.g., "RISK").
+- `effective_on_c`: A boolean (true/false).
+- `effective_on_i`: A boolean (true/false).
+- `effective_on_a`: A boolean (true/false).
+
+Do not add any explanations, comments, or markdown formatting like ```json. Your output must strictly be a JSON array.

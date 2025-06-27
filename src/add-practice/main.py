@@ -67,12 +67,11 @@ def create_control_batches(controls: list[dict]) -> list[list[dict]]:
     batches = []
     current_batch = []
     current_tokens = 0
-    # A rough estimate for prompt overhead (instructions, schema, etc.)
     prompt_overhead_tokens = 1000
 
     for control in controls:
         control_stub = {"id": control.get("id"), "title": control.get("title")}
-        item_tokens = len(json.dumps(control_stub)) // 2  # Rough token estimation
+        item_tokens = len(json.dumps(control_stub)) // 2
 
         if current_batch and (current_tokens + item_tokens + prompt_overhead_tokens) > TOKEN_LIMIT_PER_BATCH:
             batches.append(current_batch)
@@ -88,28 +87,21 @@ async def main():
     """Main function to orchestrate the data processing pipeline."""
     logger.info("Starting the practice generation process.")
 
-    # Load the final result schema for final validation
     result_schema = load_json_schema("schemas/catalog.schema.json")
-
-    # Load the catalog from GCS using the bucket name and relative path from config
     catalog_data = await read_json_from_gcs(BUCKET_NAME, EXISTING_JSON_GCS_PATH)
 
     if not catalog_data:
         logger.critical("Failed to load catalog data from GCS. Aborting process.")
         return
 
-    # Extract all controls from the catalog using the structure from the user's sample
     all_controls = find_all_controls(catalog_data)
-
     logger.info(f"Found {len(all_controls)} total controls to process.")
 
-    # Apply test mode limit if active
     if TEST_MODE:
         limit = 3
         all_controls = all_controls[:limit]
         logger.warning(f"TEST_MODE is active. Processing only the first {len(all_controls)} controls.")
 
-    # Create batches and process them in parallel
     control_batches = create_control_batches(all_controls)
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_REQUESTS)
     tasks = []
@@ -122,38 +114,57 @@ async def main():
         tasks.append(process_batch_with_semaphore(batch))
         
     batch_results = await asyncio.gather(*tasks)
-    results = list(chain.from_iterable(batch_results)) # Flatten the list of lists
+    results = list(chain.from_iterable(batch_results))
 
-    # Update controls with generated practices
     updated_controls_count = 0
-    for control, practice_part in zip(all_controls, results):
-        if practice_part:
-            # Ensure the 'parts' list exists
-            if "parts" not in control:
-                control["parts"] = []
+    props_ns = "https://www.bsi.bund.de/ns/grundschutz"
+    props_to_manage = ["practice", "effective_on_c", "effective_on_i", "effective_on_a"]
+
+    for control, generated_data in zip(all_controls, results):
+        if generated_data:
+            if "props" not in control:
+                control["props"] = []
             
-            # Remove existing practice part to prevent duplicates on re-runs
-            control["parts"] = [p for p in control["parts"] if p.get("name") != "practice"]
+            # Remove existing props to ensure idempotency
+            control["props"] = [p for p in control["props"] if p.get("name") not in props_to_manage]
             
-            # Add the new practice part
-            control["parts"].append(practice_part)
+            # Add the new 'practice' prop
+            control["props"].append({
+                "name": "practice",
+                "value": generated_data["practice"],
+                "ns": props_ns
+            })
+            
+            # Add the new CIA props
+            control["props"].append({
+                "name": "effective_on_c",
+                "value": str(generated_data["effective_on_c"]).lower(),
+                "ns": props_ns
+            })
+            control["props"].append({
+                "name": "effective_on_i",
+                "value": str(generated_data["effective_on_i"]).lower(),
+                "ns": props_ns
+            })
+            control["props"].append({
+                "name": "effective_on_a",
+                "value": str(generated_data["effective_on_a"]).lower(),
+                "ns": props_ns
+            })
+            
             updated_controls_count += 1
-            logger.debug(f"Updated control {control.get('id')} with new practice.")
+            logger.debug(f"Updated control {control.get('id')} with new props.")
 
-    logger.info(f"Successfully generated and added practices for {updated_controls_count}/{len(all_controls)} controls.")
+    logger.info(f"Successfully generated and added props for {updated_controls_count}/{len(all_controls)} controls.")
 
-    # Update metadata
     catalog_data["catalog"]["metadata"]["last-modified"] = datetime.now(timezone.utc).isoformat()
     
-    # Validate the final catalog against the result schema
     try:
         validate(instance=catalog_data, schema=result_schema)
         logger.info("Final catalog validation successful.")
     except ValidationError as e:
         logger.error(f"Final catalog validation failed: {e.message}", exc_info=TEST_MODE)
-        # We will still save the file but log a clear error.
     
-    # Save the updated catalog to GCS
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
     base_filename = os.path.basename(EXISTING_JSON_GCS_PATH).replace('.json', '')
     output_filename = f"{base_filename}_with_practices_{timestamp}.json"

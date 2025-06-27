@@ -23,8 +23,9 @@ MAX_CONCURRENT_REQUESTS = 10
 
 # Initialize Vertex AI
 try:
-    vertexai.init(project=GCP_PROJECT_ID)
-    logger.info("Vertex AI initialized successfully.")
+    # Set the location to "global" as requested
+    vertexai.init(project=GCP_PROJECT_ID, location="global")
+    logger.info("Vertex AI initialized successfully for project %s in location 'global'.", GCP_PROJECT_ID)
 except Exception as e:
     logger.critical(f"Failed to initialize Vertex AI: {e}", exc_info=TEST_MODE)
     raise
@@ -55,13 +56,13 @@ BATCH_PRACTICE_PROMPT, BATCH_PRACTICE_STUB_SCHEMA = load_prompt_and_schema(
 
 async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) -> List[Dict[str, Any] | None]:
     """
-    Generates the 'practice' part for a batch of controls in a single API call.
+    Generates practice and CIA props for a batch of controls in a single API call.
 
     Args:
         batch_of_controls: A list of control object dictionaries.
 
     Returns:
-        A list of generated 'practice' part dictionaries, or None for failures.
+        A list of generated data dictionaries, or None for failures.
         The list length matches the input batch length.
     """
     # Create a list of minimal control stubs to send to the model
@@ -91,19 +92,18 @@ async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) 
                 generation_config=generation_config,
             )
             
-            # --- Detailed Gemini Response Validation (inspired by user's example script) ---
+            # --- Detailed Gemini Response Validation ---
             if not response.candidates:
                 finish_reason_str = response.prompt_feedback.block_reason.name if response.prompt_feedback.block_reason else "UNKNOWN"
                 logger.warning(f"Attempt {attempt + 1}: No candidates returned. Finish Reason: {finish_reason_str}")
                 await asyncio.sleep(2 ** attempt)
-                continue # Go to the next attempt
+                continue
             
             finish_reason = response.candidates[0].finish_reason
             if finish_reason not in [FinishReason.OK, FinishReason.STOP]:
                 logger.warning(f"Attempt {attempt + 1}: Model finished with non-OK reason: {finish_reason.name}")
                 if finish_reason in [FinishReason.SAFETY, FinishReason.RECITATION]:
                     logger.error(f"Generation stopped permanently due to {finish_reason.name}. Cannot retry batch.")
-                    # Return a list of Nones matching the batch size
                     return [None] * len(batch_of_controls)
                 await asyncio.sleep(2 ** attempt)
                 continue
@@ -111,10 +111,8 @@ async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) 
             raw_text = response.text.strip()
             model_output = json.loads(raw_text)
 
-            # Validate the entire array against the batch schema
             validate(instance=model_output, schema=BATCH_PRACTICE_STUB_SCHEMA)
 
-            # Check if the model returned the correct number of items
             if len(model_output) != len(batch_of_controls):
                 logger.warning(
                     f"Attempt {attempt + 1}: Model returned {len(model_output)} items, but batch size was {len(batch_of_controls)}. Retrying."
@@ -122,7 +120,7 @@ async def generate_practices_for_batch(batch_of_controls: List[Dict[str, Any]]) 
                 await asyncio.sleep(2 ** attempt)
                 continue
 
-            logger.info(f"Successfully generated and validated practices for batch of {len(batch_of_controls)} controls.")
+            logger.info(f"Successfully generated and validated data for batch of {len(batch_of_controls)} controls.")
             return model_output
 
         except (json.JSONDecodeError, ValueError) as e:
