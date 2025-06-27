@@ -122,6 +122,14 @@ async def main():
     
     final_catalog = merge_results(successful_results, base_catalog)
 
+    # Final validation of the entire catalog before saving
+    try:
+        logger.info("Validating final merged catalog against OSCAL schema...")
+        validate(instance=final_catalog, schema=loaded_oscal_schema)
+        logger.info("Final catalog validation successful.")
+    except ValidationError as e:
+        logging.critical(f"Final catalog validation FAILED: {e.message}. The output file may be non-compliant.", exc_info=config.TEST_MODE)
+
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
     output_filename = f"{config.FINAL_RESULT_PREFIX}MERGED_BSI_Catalog_{timestamp}.json"
     gcs_utils.write_json_to_gcs(output_filename, final_catalog)
