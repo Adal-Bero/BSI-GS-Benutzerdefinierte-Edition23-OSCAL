@@ -112,7 +112,7 @@
         .control > summary { font-size: 1.05em; background: #f8f9fa; }
         .control-path { font-size: 0.8em; color: #6c757d; margin-left: 10px; font-style: italic; }
         
-        /* NEW Beautiful Properties Display */
+        /* Beautiful Properties Display */
         .control-content { padding: 10px; }
         .props-grid {
             display: flex;
@@ -147,11 +147,20 @@
         .prop-value.true { color: var(--success-color); }
         .prop-value.false { color: var(--danger-color); }
 
-        /* Other Styles */
-        .part { margin-top: 10px; padding: 10px; border-left: 3px solid var(--secondary-color); }
-        .part > summary { font-weight: bold; }
-        .part .prose { padding-top: 5px; }
+        /* FIXED Part/Content Display */
+        .part-prose {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--secondary-color);
+        }
+
         #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
+        #flat-view-container { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        .flat-item { border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--card-bg); }
+        .flat-item-header { background-color: #f8f9fa; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .flat-item-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin: 0; }
+        .flat-item-path { font-size: 0.85em; color: #6c757d; margin-top: 5px; }
+        .flat-item-body { padding: 1rem 1.5rem; }
     </style>
 </head>
 <body>
@@ -257,7 +266,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const grid = document.createElement('div');
         grid.className = 'props-grid';
         
-        // Prioritize 'practice' prop
         const practiceProp = props.find(p => p.name === 'practice');
         if (practiceProp) {
             const item = document.createElement('div');
@@ -283,17 +291,18 @@ document.addEventListener('DOMContentLoaded', function () {
         return grid;
     };
 
-    const renderAnyPart = (part) => {
-        const details = document.createElement('details');
-        details.className = 'part';
-        details.innerHTML = `<summary>${part.title || part.name}</summary><div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>`;
-        return details;
+    // FIXED: This function now correctly renders the content part.
+    const renderPartContent = (part) => {
+        if (!part.prose) return document.createDocumentFragment();
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'part-prose';
+        contentDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
+        return contentDiv;
     };
 
     const renderControl = (control, path) => {
         const controlDetails = document.createElement('details');
         controlDetails.className = 'control';
-        // Set all relevant data attributes for filtering
         controlDetails.dataset.level = findPropValue(control.props, 'level');
         controlDetails.dataset.phase = findPropValue(control.props, 'phase');
         controlDetails.dataset.practice = findPropValue(control.props, 'practice');
@@ -305,8 +314,9 @@ document.addEventListener('DOMContentLoaded', function () {
         controlContent.className = 'control-content';
         controlContent.appendChild(renderAllProps(control.props));
 
+        // FIXED: Loop through parts and render them correctly.
         (control.parts || []).forEach(part => {
-            controlContent.appendChild(renderAnyPart(part));
+            controlContent.appendChild(renderPartContent(part));
         });
         controlDetails.appendChild(controlContent);
         return controlDetails;
@@ -362,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
     
     const renderByPractice = () => {
-        viewModeGroup.classList.add('hidden'); // No flat view for property view
+        viewModeGroup.classList.add('hidden');
         const grouped = {};
         allControls.forEach(({ control, path }) => {
             const practice = findPropValue(control.props, 'practice') || 'Unassigned';
@@ -398,7 +408,6 @@ document.addEventListener('DOMContentLoaded', function () {
             renderByStructure();
         }
         
-        // Build the flat view for when user switches
         allControls.forEach(({ control, path }) => {
              const flatItemDiv = document.createElement('div');
              flatItemDiv.className = 'flat-item';
@@ -434,10 +443,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const viewMode = document.querySelector('input[name="view-mode"]:checked').value;
         const isStructuralView = viewByFilter.value === 'structure';
-        const useTreeView = isStructuralView || viewMode === 'tree'; // Default to tree for practice view
+        const useTreeView = viewMode === 'tree' || !isStructuralView;
 
         treeViewContainer.classList.toggle('hidden', !useTreeView);
-        flatViewContainer.classList.toggle('hidden', useTreeView || !isStructuralView);
+        flatViewContainer.classList.toggle('hidden', useTreeView);
 
         if (useTreeView) {
             const allTreeControls = treeViewContainer.querySelectorAll('.control');
@@ -454,16 +463,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     el.classList.add('hidden');
                 }
             });
-            // Hide parent groups if they have no visible children
             treeViewContainer.querySelectorAll('details').forEach(d => {
                 const hasVisibleChildren = d.querySelector('details:not(.hidden), .control:not(.hidden)');
                 if (!hasVisibleChildren) {
                     d.classList.add('hidden');
                 } else {
-                     d.classList.remove('hidden'); // Ensure parents are visible
+                     d.classList.remove('hidden');
                 }
             });
-        } else { // Flat view
+        } else { // Flat view is only for structural view
             flatViewContainer.querySelectorAll('.flat-item').forEach(el => {
                  if (isVisible(el)) {
                     el.classList.remove('hidden');
@@ -473,7 +481,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         }
-
         statusEl.textContent = `Showing ${matchCount} matching controls.`;
     };
 
