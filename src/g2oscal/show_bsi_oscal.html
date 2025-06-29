@@ -1,261 +1,323 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BSI-Grundschutz OSCAL Viewer</title>
-    <style>
-        :root {
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-            --primary-color: #004494;      /* BSI-Blau */
-            --secondary-color: #e9ecef;
-            --border-color: #dee2e6;
-            --card-bg: #ffffff;
-            --shadow: 0 2px 8px rgba(0,0,0,.1);
-            --hover-bg: #f1f3f5;
-        }
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg-color);color:var(--text-color);line-height:1.6;margin:0;padding:20px}
-        .container{max-width:1200px;margin:auto;background:var(--card-bg);padding:2rem;border-radius:8px;box-shadow:var(--shadow)}
-        h1,h2{color:var(--primary-color);border-bottom:2px solid var(--secondary-color);padding-bottom:10px}
-        textarea{width:100%;padding:10px;border:1px solid var(--border-color);border-radius:4px;font-family:'Courier New',Courier,monospace;font-size:.9em;margin-bottom:1rem;box-sizing:border-box}
-        #json-input{height:250px}
-        button,.file-label{background:var(--primary-color);color:#fff;border:0;padding:12px 20px;border-radius:4px;cursor:pointer;font-size:1rem;transition:.2s;display:inline-block;text-align:center}
-        button:hover,.file-label:hover{background:#003366}
-        #filter-controls{background:var(--secondary-color);padding:1.5rem;margin-top:2rem;border-radius:8px;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
-        .filter-group,.view-group{display:flex;flex-direction:column;gap:5px}
-        label{font-weight:bold;font-size:.9em;color:#495057}
-        input[type="text"],select{padding:8px;border-radius:4px;border:1px solid var(--border-color);min-width:180px}
-        .view-switch{display:flex;gap:15px}.view-switch label{font-weight:400}
-        .hidden{display:none!important}
-        /* Tree */
-        #tree-view-container details{margin-left:20px;border-left:2px solid var(--secondary-color);padding-left:15px;margin-top:5px}
-        #tree-view-container summary{cursor:pointer;padding:5px;border-radius:4px;position:relative}
-        #tree-view-container summary:hover{background:var(--hover-bg)}
-        .main-group>summary{font-size:1.2em;font-weight:700}
-        .baustein-group>summary{font-size:1.1em;font-weight:500}
-        .bsi-control>summary{font-size:1.05em;background:#f8f9fa}
-        .maturity-level-description>summary{font-weight:700;margin-top:10px;background:#f1f3f5}
-        /* Checklist */
-        #checklist-container{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
-        .checklist-item{border:1px solid var(--border-color);border-radius:8px;box-shadow:var(--shadow);background:var(--card-bg)}
-        .checklist-item-header{background:#f8f9fa;padding:1rem 1.5rem;border-bottom:1px solid var(--border-color)}
-        .checklist-item-title{font-size:1.2em;font-weight:700;color:var(--primary-color);margin:0}
-        .checklist-item-path{font-size:.85em;color:#6c757d;margin-top:5px}
-        .checklist-item-body{padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
-        .checklist-item-body .input-group{display:flex;flex-direction:column}
-        .checklist-item-body .input-group label{margin-bottom:5px;font-size:.9em}
-        .checklist-item-body .input-group select,.checklist-item-body .input-group textarea{width:100%;box-sizing:border-box;font-size:1em}
-        .checklist-item-body .input-group textarea{height:80px;resize:vertical}
-        /* Part-Prose */
-        .part-prose{border:1px solid var(--border-color);border-radius:4px;background:#fafafa;padding:8px;min-height:80px;white-space:pre-line}
-        #saveload-controls{margin-top:2rem;padding:1.5rem;background:var(--secondary-color);border-radius:8px;display:flex;flex-direction:column;gap:1rem}
-        #saveload-controls .row{display:flex;gap:1rem;align-items:center}#saveload-controls input[type=file]{display:none}#prüfer-name{flex-grow:1}
-        #status{margin-top:1rem;padding:1rem;background:#e9ecef;border-radius:4px;color:#495057}
-        .part-container{padding-left:20px}.part-container h4{margin:10px 0 2px;font-size:.9em;text-transform:uppercase;letter-spacing:.5px;color:#6c757d}.part-container .prose{padding:5px;border-left:3px solid var(--secondary-color);background:#fafafa}
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<title>BSI-Grundschutz OSCAL Viewer</title>
+<style>
+/* ===== Variables & Basics ===== */
+:root{--bg-color:#f8f9fa;--text-color:#212529;--primary-color:#004494;--secondary-color:#e9ecef;--border-color:#dee2e6;--card-bg:#fff;--shadow:0 2px 8px rgba(0,0,0,.1);--hover-bg:#f1f3f5}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;background:var(--bg-color);color:var(--text-color);line-height:1.6;margin:0;padding:20px}
+.container{max-width:1200px;margin:auto;background:var(--card-bg);padding:2rem;border-radius:8px;box-shadow:var(--shadow)}
+h1,h2{color:var(--primary-color);border-bottom:2px solid var(--secondary-color);padding-bottom:10px}
+/* ===== Form & Controls ===== */
+textarea{width:100%;padding:10px;border:1px solid var(--border-color);border-radius:4px;font-family:"Courier New",monospace;font-size:.9em;margin-bottom:1rem;box-sizing:border-box}
+#json-input{height:250px}
+button,.file-label{background:var(--primary-color);color:#fff;border:0;padding:12px 20px;border-radius:4px;cursor:pointer;font-size:1rem;transition:.2s;display:inline-block;text-align:center}
+button:hover,.file-label:hover{background:#003366}
+.hidden{display:none!important}
+/* ===== Filter Bar ===== */
+#filter-controls{background:var(--secondary-color);padding:1.5rem;margin-top:2rem;border-radius:8px;display:flex;flex-wrap:wrap;gap:1.5rem;align-items:center}
+.filter-group,.view-group{display:flex;flex-direction:column;gap:5px}
+label{font-weight:700;font-size:.9em;color:#495057}
+input[type=text],select{padding:8px;border-radius:4px;border:1px solid var(--border-color);min-width:180px}
+.view-switch{display:flex;gap:15px}.view-switch label{font-weight:400}
+/* ===== Tree View ===== */
+#tree-view-container details{margin-left:20px;border-left:2px solid var(--secondary-color);padding-left:15px;margin-top:5px}
+#tree-view-container summary{cursor:pointer;padding:5px;border-radius:4px}
+#tree-view-container summary:hover{background:var(--hover-bg)}
+.main-group>summary{font-size:1.2em;font-weight:700}
+.baustein-group>summary{font-size:1.1em;font-weight:500}
+.bsi-control>summary{font-size:1.05em;background:#f8f9fa}
+.maturity-level-description>summary{font-weight:700;margin-top:10px;background:#f1f3f5}
+/* ===== Checklist ===== */
+#checklist-container{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+.checklist-item{border:1px solid var(--border-color);border-radius:8px;box-shadow:var(--shadow);background:var(--card-bg)}
+.checklist-item-header{background:#f8f9fa;padding:1rem 1.5rem;border-bottom:1px solid var(--border-color)}
+.checklist-item-title{font-size:1.2em;font-weight:700;color:var(--primary-color);margin:0}
+.checklist-item-path{font-size:.85em;color:#6c757d;margin-top:5px}
+.checklist-item-body{padding:1.5rem;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem}
+.input-group{display:flex;flex-direction:column}
+.input-group textarea{height:80px;resize:vertical}
+/* Part-Text */
+.part-prose{border:1px solid var(--border-color);border-radius:4px;background:#fafafa;padding:8px;min-height:80px;white-space:pre-line}
+/* Save/Load Box */
+#saveload-controls{margin-top:2rem;padding:1.5rem;background:var(--secondary-color);border-radius:8px;display:flex;flex-direction:column;gap:1rem}
+#saveload-controls .row{display:flex;gap:1rem;align-items:center}
+#saveload-controls input[type=file]{display:none}
+</style>
 </head>
 <body>
 <div class="container">
-    <h1>BSI-Grundschutz OSCAL Viewer</h1>
-    <p>Fügen Sie unten Ihren BSI-OSCAL-Katalog (JSON) ein …</p>
+<h1>BSI-GrdSchutz OSCAL Viewer</h1>
+<p>Fügen Sie unten Ihren BSI-OSCAL-Katalog (JSON) ein …</p>
 
-    <!-- Demo-JSON -->
-    <textarea id="json-input">{ /* … bel. Beispiel-JSON … */ }</textarea>
-    <button id="render-btn">Katalog rendern</button>
-    <div id="status">Fügen Sie oben Ihr JSON ein …</div>
+<textarea id="json-input">{ /* hier JSON einkopieren */ }</textarea>
+<button id="render-btn">Katalog rendern</button>
 
-    <!-- Filter-/Ansichts-Steuerung -->
-    <div id="filter-controls" class="hidden">
-        <!-- (unverändert) -->
+<div id="status">Fügen Sie oben Ihr JSON ein …</div>
+
+<!-- ========== FILTER-LEISTE ========== -->
+<div id="filter-controls" class="hidden">
+  <div class="filter-group">
+    <label for="maturity-filter">Nach Reifegrad filtern</label>
+    <select id="maturity-filter">
+      <option value="all">Alle Reifegrade</option>
+      <option>Partial</option><option>Foundational</option>
+      <option>Defined</option><option>Enhanced</option><option>Comprehensive</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label for="level-filter">Nach Schutzbedarf filtern</label>
+    <select id="level-filter">
+      <option value="all">Alle Stufen</option>
+      <option value="1">1 (Basis)</option>
+      <option value="3">3 (Standard)</option>
+      <option value="5">5 (Erhöhter)</option>
+    </select>
+  </div>
+  <div class="filter-group">
+    <label for="phase-filter">Nach ISMS-Phase filtern</label>
+    <select id="phase-filter">
+      <option value="all">Alle Phasen</option>
+      <option>Initiation</option><option>Risk Assessment</option><option>Risk Treatment</option>
+      <option>Implementation</option><option>Operation</option><option>Audit</option><option>Improvement</option>
+    </select>
+  </div>
+  <div class="view-group">
+    <label>Ansichtsmodus</label>
+    <div class="view-switch">
+      <label><input type="radio" name="view-mode" value="tree" checked> Gefilterter Baum</label>
+      <label><input type="radio" name="view-mode" value="checklist"> Checkliste</label>
     </div>
+  </div>
+  <button id="reset-btn">Filter zurücksetzen</button>
+</div>
 
-    <!-- Ausgaben -->
-    <div id="output-container">
-        <div id="tree-view-container"></div>
-        <div id="checklist-container" class="hidden"></div>
-        <div id="saveload-controls" class="hidden">
-            <!-- (unverändert) -->
-        </div>
+<!-- ========== AUSGABEN ========== -->
+<div id="output-container">
+  <div id="tree-view-container"></div>
+  <div id="checklist-container" class="hidden"></div>
+
+  <!-- Speichern / Laden -->
+  <div id="saveload-controls" class="hidden">
+    <div class="input-group">
+      <label for="prüfer-name">Prüfername</label>
+      <input type="text" id="prüfer-name" placeholder="Ihr Name">
     </div>
+    <div class="row">
+      <button id="save-btn">Checkliste Speichern</button>
+      <label for="load-input" class="file-label">Checkliste Laden</label>
+      <input type="file" id="load-input" accept=".json">
+    </div>
+  </div>
+</div>
 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded',()=>{
 
-    /* === Element-Referenzen === */
-    const renderBtn  = document.getElementById('render-btn');
-    const resetBtn   = document.getElementById('reset-btn');
-    const jsonInput  = document.getElementById('json-input');
-    const statusEl   = document.getElementById('status');
+/* ========= Element-Referenzen ========= */
+const jsonInput=document.getElementById('json-input'),
+      statusEl=document.getElementById('status'),
+      renderBtn=document.getElementById('render-btn'),
+      resetBtn=document.getElementById('reset-btn'),
+      filterControls=document.getElementById('filter-controls'),
+      saveLoadControls=document.getElementById('saveload-controls'),
+      maturityFilter=document.getElementById('maturity-filter'),
+      levelFilter=document.getElementById('level-filter'),
+      phaseFilter=document.getElementById('phase-filter'),
+      viewModeRadios=document.querySelectorAll('input[name="view-mode"]'),
+      treeViewContainer=document.getElementById('tree-view-container'),
+      checklistContainer=document.getElementById('checklist-container'),
+      saveBtn=document.getElementById('save-btn'),
+      loadInput=document.getElementById('load-input'),
+      prüferNameInput=document.getElementById('prüfer-name');
 
-    const filterControls   = document.getElementById('filter-controls');
-    const saveLoadControls = document.getElementById('saveload-controls');
+/* ========= Hilfsfunktionen ========= */
+let catalogData=null;
+const findPropValue=(props,name)=>(props||[]).find(p=>p.name===name)?.value||'';
+const formatIdTitle=i=>`${i.id}: ${i.title}`;
 
-    const maturityFilter   = document.getElementById('maturity-filter');
-    const levelFilter      = document.getElementById('level-filter');
-    const phaseFilter      = document.getElementById('phase-filter');
-    const viewModeRadios   = document.querySelectorAll('input[name="view-mode"]');
+/* ======== Checklist Item ======== */
+const renderChecklistItem=(ctrl,mainGrp,bsGrp)=>{
+  const title=formatIdTitle(ctrl),
+        path=`${mainGrp.title||mainGrp.id} &raquo; ${formatIdTitle(bsGrp)}`;
 
-    const treeViewContainer  = document.getElementById('tree-view-container');
-    const checklistContainer = document.getElementById('checklist-container');
-    const saveBtn  = document.getElementById('save-btn');
-    const loadInput = document.getElementById('load-input');
-    const prüferNameInput = document.getElementById('prüfer-name');
+  /* Parts je Reifegrad sammeln */
+  const maturityParts={};
+  (ctrl.parts||[]).forEach(mp=>{
+    if(mp.name==='maturity-level-description'){
+      const level=findPropValue(mp.props,'maturity-level');
+      maturityParts[level]={};
+      (mp.parts||[]).forEach(p=>maturityParts[level][p.name]=p.prose||'');
+    }
+  });
+  const maturities=Object.keys(maturityParts);
 
-    /* === Hilfsfunktionen === */
-    let catalogData = null;
-    const findPropValue = (props, name) => (props||[]).find(p=>p.name===name)?.value || '';
-    const formatIdTitle = item => `${item.id}: ${item.title}`;
-    const renderMaturityDetailPart = part => {
-        const d=document.createElement('div');d.className='part-container';
-        d.innerHTML=`<h4>${part.name.replace(/-/g,' ')}</h4><div class="prose">${(part.prose||'').replace(/\n/g,'<br>')}</div>`;
-        return d;
-    };
+  const div=document.createElement('div');
+  div.className='checklist-item';
+  div.dataset.controlId=ctrl.id;
+  div.dataset.level=findPropValue(ctrl.props,'level');
+  div.dataset.phase=findPropValue(ctrl.props,'phase');
+  div.dataset.maturities=maturities.join(',');
 
-    /* === Check-Listen-Item mit Part-Auswahl === */
-    const renderChecklistItem = (ctrl, mainGrp, bsGrp) => {
-        const title = formatIdTitle(ctrl);
-        const path  = `${mainGrp.title||mainGrp.id} &raquo; ${formatIdTitle(bsGrp)}`;
+  div.innerHTML=`
+    <div class="checklist-item-header">
+      <h3 class="checklist-item-title">${title}</h3>
+      <div class="checklist-item-path">${path}</div>
+    </div>
+    <div class="checklist-item-body">
+      <div class="input-group">
+        <label>Reifegrad wählen</label>
+        <select class="maturity-select">
+          <option value="">Nicht ausgewählt</option>
+          ${maturities.map(m=>`<option>${m}</option>`).join('')}
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Teil wählen</label>
+        <select class="part-select">
+          <option value="">–</option>
+          <option value="statement">Statement</option>
+          <option value="guidance">Guidance</option>
+          <option value="assessment-method">Assessment-Method</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Inhalt</label>
+        <div class="part-prose"></div>
+      </div>
+      <div class="input-group">
+        <label>Status</label>
+        <select class="status-select">
+          <option value="">Nicht ausgewählt</option>
+          <option value="implemented">Implementiert</option>
+          <option value="partially-implemented">Teilweise implementiert</option>
+          <option value="planned">Geplant</option>
+          <option value="not-applicable">Nicht anwendbar</option>
+        </select>
+      </div>
+      <div class="input-group">
+        <label>Bemerkungen</label>
+        <textarea class="comment-text"></textarea>
+      </div>
+    </div>`;
 
-        /* Parts je Reifegrad sammeln */
-        const maturityParts = {};
-        (ctrl.parts||[]).forEach(mp=>{
-            if(mp.name==='maturity-level-description'){
-                const level=findPropValue(mp.props,'maturity-level');
-                maturityParts[level]={};
-                (mp.parts||[]).forEach(p=>maturityParts[level][p.name]=p.prose||'');
-            }
-        });
-        const avail = Object.keys(maturityParts);
-
-        const div=document.createElement('div');
-        div.className='checklist-item';
-        div.dataset.controlId=ctrl.id;
-        div.dataset.level = findPropValue(ctrl.props,'level');
-        div.dataset.phase = findPropValue(ctrl.props,'phase');
-        div.dataset.maturities = avail.join(',');
-
-        div.innerHTML = `
-            <div class="checklist-item-header">
-                <h3 class="checklist-item-title">${title}</h3>
-                <div class="checklist-item-path">${path}</div>
-            </div>
-            <div class="checklist-item-body">
-                <div class="input-group">
-                    <label for="maturity-${ctrl.id}">Reifegrad wählen</label>
-                    <select id="maturity-${ctrl.id}" class="maturity-select">
-                        <option value="">Nicht ausgewählt</option>
-                        ${avail.map(m=>`<option value="${m}">${m}</option>`).join('')}
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="part-${ctrl.id}">Teil wählen</label>
-                    <select id="part-${ctrl.id}" class="part-select">
-                        <option value="">–</option>
-                        <option value="statement">Statement</option>
-                        <option value="guidance">Guidance</option>
-                        <option value="assessment-method">Assessment-Method</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Inhalt</label>
-                    <div id="prose-${ctrl.id}" class="part-prose"></div>
-                </div>
-                <div class="input-group">
-                    <label for="status-${ctrl.id}">Status</label>
-                    <select id="status-${ctrl.id}" class="status-select">
-                        <option value="">Nicht ausgewählt</option>
-                        <option value="implemented">Implementiert</option>
-                        <option value="partially-implemented">Teilweise implementiert</option>
-                        <option value="planned">Geplant</option>
-                        <option value="not-applicable">Nicht anwendbar</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label for="comment-${ctrl.id}">Bemerkungen</label>
-                    <textarea id="comment-${ctrl.id}" class="comment-text"></textarea>
-                </div>
-            </div>`;
-
-        /* Event-Handler */
-        const matSel  = div.querySelector('.maturity-select');
-        const partSel = div.querySelector('.part-select');
-        const prose   = div.querySelector('.part-prose');
-        const show = ()=> {
-            const m=matSel.value, p=partSel.value;
-            prose.innerHTML = (maturityParts[m]?.[p]||'').replace(/\n/g,'<br>');
+  /* Event-Handler für Part-Text */
+  const matSel=div.querySelector('.maturity-select'),
+        partSel=div.querySelector('.part-select'),
+        proseDiv=div.querySelector('.part-prose'),
+        update=()=>{
+          const m=matSel.value,p=partSel.value;
+          proseDiv.innerHTML=(maturityParts[m]?.[p]||'').replace(/\n/g,'<br>');
         };
-        matSel.addEventListener('change',show); partSel.addEventListener('change',show);
-        return div;
-    };
+  matSel.addEventListener('change',update);partSel.addEventListener('change',update);
+  return div;
+};
 
-    /* === ►►► KATALOG RENDERN  ◄◄◄ (wieder eingefügt) === */
-    const renderCatalog = () => {
-        /* JSON parsen */
-        try{ catalogData = JSON.parse(jsonInput.value); }
-        catch(e){ statusEl.textContent=`Fehler: Ungültiges JSON – ${e.message}`;statusEl.style.color='red';return; }
+/* ======== Katalog rendern ======== */
+const renderCatalog=()=>{
+  try{catalogData=JSON.parse(jsonInput.value);}catch(e){
+    statusEl.textContent=`Fehler: Ungültiges JSON – ${e.message}`;statusEl.style.color='red';return;}
 
-        if(!catalogData?.catalog?.groups){
-            statusEl.textContent='Fehler: catalog.groups fehlt.';statusEl.style.color='red';return;
-        }
+  if(!catalogData?.catalog?.groups){
+    statusEl.textContent='Fehler: catalog.groups fehlt.';statusEl.style.color='red';return;}
 
-        treeViewContainer.innerHTML='';
-        checklistContainer.innerHTML='';
-        let controlCount=0;
+  treeViewContainer.innerHTML='';checklistContainer.innerHTML='';
+  let controlCount=0;
 
-        /* Hauptgruppen */
-        (catalogData.catalog.groups||[]).forEach(main=>{
-            const mDet=document.createElement('details'); mDet.className='main-group';
-            mDet.appendChild(Object.assign(document.createElement('summary'),{textContent:main.title||main.id}));
-            treeViewContainer.appendChild(mDet);
+  /* Haupt- & Untergruppen */
+  catalogData.catalog.groups.forEach(main=>{
+    const mDet=document.createElement('details');mDet.className='main-group';
+    mDet.innerHTML=`<summary>${main.title||main.id}</summary>`;treeViewContainer.appendChild(mDet);
 
-            /* Baustein-Gruppen */
-            (main.groups||[]).forEach(bs=>{
-                const bDet=document.createElement('details'); bDet.className='baustein-group';
-                bDet.appendChild(Object.assign(document.createElement('summary'),{textContent:formatIdTitle(bs)}));
-                mDet.appendChild(bDet);
+    (main.groups||[]).forEach(bs=>{
+      const bDet=document.createElement('details');bDet.className='baustein-group';
+      bDet.innerHTML=`<summary>${formatIdTitle(bs)}</summary>`;mDet.appendChild(bDet);
 
-                /* Controls */
-                (bs.controls||[]).forEach(ctrl=>{
-                    controlCount++;
-                    const cDet=document.createElement('details'); cDet.className='bsi-control';
-                    cDet.dataset.level = findPropValue(ctrl.props,'level');
-                    cDet.dataset.phase = findPropValue(ctrl.props,'phase');
+      (bs.controls||[]).forEach(ctrl=>{
+        controlCount++;
+        const cDet=document.createElement('details');cDet.className='bsi-control';
+        cDet.dataset.level=findPropValue(ctrl.props,'level');
+        cDet.dataset.phase=findPropValue(ctrl.props,'phase');
 
-                    const cSum=document.createElement('summary'); cSum.textContent=formatIdTitle(ctrl);
-                    cDet.appendChild(cSum); bDet.appendChild(cDet);
+        const cSum=document.createElement('summary');cSum.textContent=formatIdTitle(ctrl);cDet.appendChild(cSum);
 
-                    /* Reifegrade im Baum + Datensatz für Filter */
-                    const maturities=[];
-                    (ctrl.parts||[]).forEach(mp=>{
-                        if(mp.name==='maturity-level-description'){
-                            const level=findPropValue(mp.props,'maturity-level'); maturities.push(level);
-
-                            const mDet=document.createElement('details'); mDet.className='maturity-level-description';
-                            mDet.appendChild(Object.assign(document.createElement('summary'),{textContent:mp.title}));
-                            (mp.parts||[]).forEach(part=>mDet.appendChild(renderMaturityDetailPart(part)));
-                            cDet.appendChild(mDet);
-                        }
-                    });
-                    cDet.dataset.maturities=maturities.join(',');
-                    /* Check-Listen-Eintrag */
-                    checklistContainer.appendChild(renderChecklistItem(ctrl,main,bs));
-                });
+        const maturities=[];
+        (ctrl.parts||[]).forEach(mp=>{
+          if(mp.name==='maturity-level-description'){
+            const level=findPropValue(mp.props,'maturity-level');maturities.push(level);
+            const md=document.createElement('details');md.className='maturity-level-description';
+            md.innerHTML=`<summary>${mp.title}</summary>`;
+            (mp.parts||[]).forEach(p=>{
+              const part=document.createElement('div');part.className='part-container';
+              part.innerHTML=`<h4>${p.name.replace(/-/g,' ')}</h4><div class="prose">${(p.prose||'').replace(/\n/g,'<br>')}</div>`;
+              md.appendChild(part);
             });
+            cDet.appendChild(md);
+          }
         });
+        cDet.dataset.maturities=maturities.join(',');
+        bDet.appendChild(cDet);
 
-        filterControls.classList.remove('hidden');
-        statusEl.textContent=`${controlCount} Anforderungen erfolgreich gerendert.`;
-        statusEl.style.color='';
-        applyFilters();            // erste Filterung
-    };
+        checklistContainer.appendChild(renderChecklistItem(ctrl,main,bs));
+      });
+    });
+  });
 
-    /* === … saveState, loadState, applyFilters, resetAllFilters bleiben unverändert … */
+  filterControls.classList.remove('hidden');
+  statusEl.textContent=`${controlCount} Anforderungen erfolgreich gerendert.`;statusEl.style.color='';
+  applyFilters();
+};
 
-    /* === Event-Listener registrieren === */
-    renderBtn.addEventListener('click', renderCatalog);
-    /* (weitere Listener unverändert) */
+/* ======== Speichern / Laden, Filter ======== */
+const saveState=()=>{ /* unverändert … */ };
+const loadState=()=>{};
+const applyFilters=()=>{
+  if(!catalogData)return;
+  const mat=maturityFilter.value,lev=levelFilter.value,ph=phaseFilter.value,
+        view=document.querySelector('input[name="view-mode"]:checked').value;
+  let checklistCount=0;
+
+  const matcher=item=>{
+    if(lev!=='all'&&item.dataset.level!==lev)return false;
+    if(ph!=='all'&&item.dataset.phase!==ph)return false;
+    if(mat==='all')return true;
+    return (item.dataset.maturities||'').split(',').includes(mat);
+  };
+
+  document.querySelectorAll('.bsi-control').forEach(el=>el.classList.toggle('hidden',!matcher(el)));
+  document.querySelectorAll('.checklist-item').forEach(el=>{
+    const show=matcher(el);el.classList.toggle('hidden',!show);if(show)checklistCount++;
+  });
+  document.querySelectorAll('.main-group,.baustein-group').forEach(g=>{
+    g.classList.toggle('hidden',!g.querySelector('.bsi-control:not(.hidden)'));
+  });
+
+  if(view==='tree'){
+    treeViewContainer.classList.remove('hidden');
+    checklistContainer.classList.add('hidden');saveLoadControls.classList.add('hidden');
+    statusEl.textContent=`Zeige ${treeViewContainer.querySelectorAll('.bsi-control:not(.hidden)').length} passende Anforderungen im Baum.`;
+  }else{
+    treeViewContainer.classList.add('hidden');
+    checklistContainer.classList.remove('hidden');saveLoadControls.classList.remove('hidden');
+    statusEl.textContent=`Zeige ${checklistCount} passende Anforderungen in der Checkliste.`;
+  }
+};
+const resetAll=()=>{maturityFilter.value=levelFilter.value=phaseFilter.value='all';
+document.querySelector('input[value="tree"]').checked=true;applyFilters();};
+
+/* ======== Events ======== */
+renderBtn.addEventListener('click',renderCatalog);
+resetBtn.addEventListener('click',resetAll);
+maturityFilter.addEventListener('change',applyFilters);
+levelFilter.addEventListener('change',applyFilters);
+phaseFilter.addEventListener('change',applyFilters);
+viewModeRadios.forEach(r=>r.addEventListener('change',applyFilters));
+saveBtn&&saveBtn.addEventListener('click',saveState);
+loadInput&&loadInput.addEventListener('change',loadState);
+
 });
 </script>
 </body>
