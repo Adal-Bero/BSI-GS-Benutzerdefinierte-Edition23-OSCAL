@@ -1,11 +1,9 @@
 # BSI-Grundschutz zu OSCAL: Die automatisierte Konvertierungspipeline
-# BSI-Grundschutz zu OSCAL: Die automatisierte Konvertierungspipeline
 
 Dieses Projekt stellt eine leistungsstarke, automatisierte Pipeline zur Konvertierung von BSI-Grundschutz-„Baustein“-PDF-Dokumenten in ein reichhaltiges, strukturiertes und OSCAL-konformes JSON-Format bereit. Es nutzt die fortschrittlichen Fähigkeiten des `gemini-2.5-pro`-Modells von Google, um den Inhalt nicht nur zu übersetzen, sondern ihn auch mit einem mehrstufigen Reifegradmodell und kontextuellen Informationen anzureichern, sodass der endgültige Katalog sofort für Analysen und das Compliance-Management nützlich ist.
 
 Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet **inkrementell**. Es liest intelligent einen bestehenden Master-OSCAL-Katalog ein, verarbeitet neue oder aktualisierte PDFs und führt die Ergebnisse nahtlos zusammen, indem es neue „Bausteine“ hinzufügt oder bestehende überschreibt.
 
-### Hauptmerkmale
 ### Hauptmerkmale
 
 * **Vollautomatische Konvertierung:** Wandelt rohe PDF-Inhalte ohne manuellen Eingriff in strukturiertes OSCAL-JSON um.
@@ -21,7 +19,6 @@ Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet 
 
 ---
 
-# Bereitgestellte Werkzeuge
 # Bereitgestellte Werkzeuge
 
 ## Automatische Erzeugung von OSCAL-Komponenten aus dem BSI-Katalog
@@ -59,7 +56,6 @@ Es fügt dem Katalog Kommentare in einem Teil namens „prose_qs“ hinzu und er
 
 ---
 
-# Angereicherte Datenmodelle
 # Angereicherte Datenmodelle
 
 ## 1. Kontextinformationen (`parts`)
