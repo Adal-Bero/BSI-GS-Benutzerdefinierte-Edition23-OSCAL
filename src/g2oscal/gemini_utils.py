@@ -40,11 +40,11 @@ async def call_gemini_api(prompt, schema_to_validate):
     """Generic function to call Gemini with retries and validate the response."""
     if not isinstance(prompt, list):
         prompt = [prompt]
-    
+
     for attempt in range(MAX_RETRIES):
         try:
             response = await gemini_model.generate_content_async(prompt, generation_config=generation_config)
-            
+
             if not response.candidates or response.candidates[0].finish_reason != FinishReason.STOP:
                 reason = "Unknown"
                 if response.candidates: reason = response.candidates[0].finish_reason.name
@@ -53,16 +53,23 @@ async def call_gemini_api(prompt, schema_to_validate):
             cleaned_json_text = clean_and_extract_json(response.text)
             if not cleaned_json_text:
                 raise ValueError("Failed to produce valid JSON from response.")
-                
+
             data = json.loads(cleaned_json_text)
             validate(instance=data, schema=schema_to_validate)
+
+            if attempt > 0:
+                logging.info(f"Gemini API call succeeded on attempt {attempt + 1}/{MAX_RETRIES}.")
+
             return data # Success
-            
+
         except Exception as e:
-            logging.warning(f"Gemini API call attempt {attempt + 1}/{MAX_RETRIES} failed. Error: {e}")
-            if attempt + 1 == MAX_RETRIES:
+            if attempt + 1 < MAX_RETRIES:
+                logging.warning(f"Gemini API call attempt {attempt + 1}/{MAX_RETRIES} failed. Retrying... Error: {e}")
+                await asyncio.sleep((2 ** attempt) + random.uniform(0, 1))
+            else:
+                # This is the final attempt that failed
+                logging.error(f"Gemini API call FAILED permanently after {MAX_RETRIES} attempts. Final Error: {e}")
                 raise  # Re-raise the final exception
-            await asyncio.sleep((2 ** attempt) + random.uniform(0, 1))
 
 # --- Main Processing Logic ---
 async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
@@ -75,9 +82,9 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
             gcs_uri = f"gs://{BUCKET_NAME}/{blob.name}"
             file_part = Part.from_uri(gcs_uri, mime_type="application/pdf")
             discovery_enrichment_data = await call_gemini_api([file_part, discovery_enrichment_prompt_text], loaded_discovery_enrichment_schema)
-            
+
             requirements_to_process = discovery_enrichment_data.get('requirements_list', [])
-            logging.info(f"  └─ Discovered {len(requirements_to_process)} requirements.")
+            logging.info(f"  └─ Discovered {len(requirements_to_process)} requirements for {blob.name}.")
 
             if TEST_MODE and requirements_to_process:
                 slice_index = max(1, int(len(requirements_to_process) * 0.10))
@@ -93,10 +100,10 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
             generation_batch_prompt = generation_prompt_template.format(REQUIREMENTS_JSON_BATCH=json.dumps(requirements_to_process, indent=2, ensure_ascii=False))
             generation_data = await call_gemini_api(generation_batch_prompt, loaded_generation_schema)
             logging.debug(f"Maturity prose generation successful.")
-            
+
             # ASSEMBLY
             prose_map = {item['id']: item for item in generation_data.get('generated_requirements', [])}
-            
+
             final_controls = []
             for req_stub in requirements_to_process:
                 req_id = req_stub['id']
@@ -105,7 +112,7 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
                     final_controls.append(build_oscal_control_func(req_stub, prose_map[req_id]))
                 else:
                     logging.warning(f"Skipping control '{req_id}' due to missing data in Generation stage.")
-            
+
             final_baustein_group = {
                 "id": discovery_enrichment_data.get("baustein_id"), "title": discovery_enrichment_data.get("baustein_title"),
                 "class": "baustein", "parts": discovery_enrichment_data.get("contextual_parts", []), "controls": final_controls
