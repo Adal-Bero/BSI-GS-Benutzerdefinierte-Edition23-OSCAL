@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSI Grundschutz OSCAL Viewer (Final)</title>
+    <title>BSI Grundschutz OSCAL Viewer</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -39,18 +39,7 @@
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
         }
-        textarea {
-            width: 100%;
-            height: 250px;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 0.9em;
-            margin-bottom: 1rem;
-            box-sizing: border-box;
-        }
-        button {
+        button, .file-load-button {
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -59,9 +48,19 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background-color 0.2s;
+            display: inline-block;
+            text-align: center;
         }
-        button:hover {
+        button:hover, .file-load-button:hover {
             background-color: #003366;
+        }
+        .file-load-area {
+            margin-bottom: 1.5rem;
+        }
+        #file-name {
+            margin-left: 1rem;
+            color: var(--grey-color);
+            font-style: italic;
         }
         #filter-controls {
             background-color: var(--secondary-color);
@@ -199,64 +198,29 @@
 </head>
 <body>
     <div class="container">
-        <h1>BSI Grundschutz OSCAL Viewer (Final)</h1>
-        <p>Paste your enhanced OSCAL Catalog JSON below. You can now view the catalog by structure or by practice.</p>
+        <h1>BSI Grundschutz OSCAL Viewer</h1>
+        <p>Laden Sie eine OSCAL-Katalog-JSON-Datei, um die interaktive Ansicht zu generieren.</p>
         
-        <textarea id="json-input">{
-  "catalog": {
-    "uuid": "a1b2c3d4-e5f6-4a3b-8c7d-1e2f3a4b5c6d",
-    "metadata": { "title": "BSI IT-Grundschutz Catalog 2023 (Sample)", "last-modified": "2023-10-27T10:00:00Z", "version": "1.0.0", "oscal-version": "1.1.2" },
-    "groups": [
-      {
-        "id": "CON", "title": "CON: Konzeption und Vorgehensweise", "class": "layer",
-        "groups": [
-          {
-            "id": "CON.1", "title": "Informationssicherheitsmanagement", "class": "baustein",
-            "controls": [
-              {
-                "id": "CON.1.A1", "title": "Regelungen zur Klassifizierung", "class": "Management",
-                "props": [
-                  { "name": "level", "value": "3" },
-                  { "name": "phase", "value": "Risk Assessment" },
-                  { "name": "practice", "value": "GOV" },
-                  { "name": "effective_on_c", "value": "true" },
-                  { "name": "effective_on_i", "value": "true" },
-                  { "name": "effective_on_a", "value": "false" }
-                ],
-                "parts": [ 
-                    { 
-                        "name": "maturity-level-description", 
-                        "title": "Maturity Level 3: Defined",
-                        "parts": [
-                            { "name": "statement", "prose": "This is the prose for the statement at maturity level 3." },
-                            { "name": "guidance", "prose": "This is the prose for the guidance at maturity level 3." }
-                        ]
-                    }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}</textarea>
+        <div class="file-load-area">
+             <label for="file-input" class="file-load-button">Lade BSI OSCAL Katalog</label>
+             <input type="file" id="file-input" style="display:none;" accept=".json,application/json">
+             <span id="file-name">Keine Datei ausgewählt.</span>
+        </div>
         
-        <button id="render-btn">Render Catalog</button>
-        <div id="status">Paste your JSON above and click "Render Catalog" to begin.</div>
+        <div id="status">Bitte wählen Sie eine Datei, um zu beginnen.</div>
 
         <div id="filter-controls" class="hidden">
              <div class="filter-group">
-                <label for="view-by-filter">View By</label>
+                <label for="view-by-filter">Ansicht nach</label>
                 <select id="view-by-filter">
-                    <option value="structure">Structure (Layer -> Baustein)</option>
+                    <option value="structure">Struktur (Layer -> Baustein)</option>
                     <option value="practice">Practice</option>
                 </select>
             </div>
-            <div class="filter-group"><label for="level-filter">Filter by Level</label><select id="level-filter"><option value="all">All Levels</option></select></div>
-            <div class="filter-group"><label for="phase-filter">Filter by ISMS Phase</label><select id="phase-filter"><option value="all">All Phases</option></select></div>
-            <div class="view-group"><label>View Mode</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Tree</label><label><input type="radio" name="view-mode" value="flat"> Flat List</label></div></div>
-            <button id="reset-btn">Reset Filters</button>
+            <div class="filter-group"><label for="level-filter">Nach Schutzbedarf filtern</label><select id="level-filter"><option value="all">Alle Stufen</option></select></div>
+            <div class="filter-group"><label for="phase-filter">Nach ISMS-Phase filtern</label><select id="phase-filter"><option value="all">Alle Phasen</option></select></div>
+            <div class="view-group"><label>Ansichtsmodus</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Baumansicht</label><label><input type="radio" name="view-mode" value="flat"> Flache Liste</label></div></div>
+            <button id="reset-btn">Filter zurücksetzen</button>
         </div>
 
         <div id="output-container">
@@ -267,11 +231,11 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const renderBtn = document.getElementById('render-btn');
     const resetBtn = document.getElementById('reset-btn');
-    const jsonInput = document.getElementById('json-input');
     const filterControls = document.getElementById('filter-controls');
     const statusEl = document.getElementById('status');
+    const fileInput = document.getElementById('file-input');
+    const fileNameEl = document.getElementById('file-name');
     
     const viewByFilter = document.getElementById('view-by-filter');
     const levelFilter = document.getElementById('level-filter');
@@ -284,6 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let allControls = [];
     let catalogData = null;
+    let loadedJsonString = null; // Store the loaded JSON content
 
     const PRACTICE_NAMES = {
         "GOV": "Governance", "ISGA": "ISMS-Gestaltung und –Änderung", "DOCS": "Dokumente und Ressourcen",
@@ -312,7 +277,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (control.class) {
              const item = document.createElement('div');
             item.className = 'prop-item control-class';
-            item.innerHTML = `<span class="prop-name">Class:</span> ${control.class}`;
+            item.innerHTML = `<span class="prop-name">Klasse:</span> ${control.class}`;
             grid.appendChild(item);
         }
         
@@ -355,7 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const safeName = subPart.name.replace(/_/g, '-');
                 subPartDiv.className = `sub-part sub-part-${safeName}`;
                 
-                const titleMap = { 'statement': 'Statement', 'guidance': 'Implementation Guidance', 'assessment-method': 'Audit Guidance' };
+                const titleMap = { 'statement': 'Statement', 'guidance': 'Umsetzungshinweis', 'assessment-method': 'Prüfhinweis' };
                 const displayTitle = titleMap[subPart.name] || subPart.name;
 
                 subPartDiv.innerHTML = `<h4>${displayTitle}</h4><div class="prose">${(subPart.prose || '').replace(/\n/g, '<br>')}</div>`;
@@ -412,16 +377,17 @@ document.addEventListener('DOMContentLoaded', function () {
             levels.add(findPropValue(control.props, 'level'));
             phases.add(findPropValue(control.props, 'phase'));
         });
-        const populate = (select, set) => {
-            select.innerHTML = `<option value="all">All ${select.id.replace('-filter', 's')}</option>`;
+        
+        const populateSelect = (select, set, allText) => {
+            select.innerHTML = `<option value="all">${allText}</option>`;
             [...set].filter(Boolean).sort().forEach(val => {
                 const option = document.createElement('option');
                 option.value = option.textContent = val;
                 select.appendChild(option);
             });
         };
-        populate(levelFilter, levels);
-        populate(phaseFilter, phases);
+        populateSelect(levelFilter, levels, "Alle Stufen");
+        populateSelect(phaseFilter, phases, "Alle Phasen");
     };
 
     const renderByStructure = () => {
@@ -457,7 +423,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const groupDetails = document.createElement('details');
             groupDetails.className = 'property-group';
             const practiceName = PRACTICE_NAMES[key] || key;
-            groupDetails.innerHTML = `<summary>${practiceName} (${grouped[key].length} controls)</summary>`;
+            groupDetails.innerHTML = `<summary>${practiceName} (${grouped[key].length} Anforderungen)</summary>`;
             grouped[key].forEach(({ control, path }) => {
                 groupDetails.appendChild(renderControl(control, path));
             });
@@ -465,10 +431,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    const renderCatalog = () => {
-        try { catalogData = JSON.parse(jsonInput.value); }
-        catch (e) { statusEl.textContent = `Error: Invalid JSON format. ${e.message}`; return; }
-        if (!catalogData?.catalog?.groups) { statusEl.textContent = 'Error: JSON does not match expected OSCAL catalog structure.'; return; }
+    const renderCatalog = (jsonString) => {
+        try { 
+            catalogData = JSON.parse(jsonString); 
+            loadedJsonString = jsonString; // Store for re-use
+        }
+        catch (e) { statusEl.textContent = `Fehler: Ungültiges JSON-Format. ${e.message}`; return; }
+        if (!catalogData?.catalog?.groups) { statusEl.textContent = 'Fehler: JSON entspricht nicht der erwarteten OSCAL-Katalogstruktur.'; return; }
 
         treeViewContainer.innerHTML = '';
         flatViewContainer.innerHTML = '';
@@ -499,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         populateFilters();
         filterControls.classList.remove('hidden');
-        statusEl.textContent = `Successfully rendered ${allControls.length} controls.`;
+        statusEl.textContent = `${allControls.length} Anforderungen erfolgreich gerendert.`;
         applyFilters();
     };
 
@@ -546,7 +515,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (show) matchCount++;
             });
         }
-        statusEl.textContent = `Showing ${matchCount} matching controls.`;
+        statusEl.textContent = `Zeige ${matchCount} passende Anforderungen.`;
     };
 
     const resetAllFilters = () => {
@@ -554,12 +523,33 @@ document.addEventListener('DOMContentLoaded', function () {
         levelFilter.value = 'all'; 
         phaseFilter.value = 'all';
         document.querySelector('input[name="view-mode"][value="tree"]').checked = true;
-        renderCatalog();
+        if (loadedJsonString) {
+            renderCatalog(loadedJsonString);
+        }
     };
 
-    renderBtn.addEventListener('click', renderCatalog);
+    fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (!file) {
+            fileNameEl.textContent = 'Keine Datei ausgewählt.';
+            return;
+        }
+        fileNameEl.textContent = `Geladen: ${file.name}`;
+        statusEl.textContent = 'Lade und verarbeite Datei...';
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            renderCatalog(e.target.result);
+        };
+        reader.onerror = () => {
+             statusEl.textContent = 'Fehler beim Lesen der Datei.';
+        };
+        reader.readAsText(file);
+    });
+
     resetBtn.addEventListener('click', resetAllFilters);
-    viewByFilter.addEventListener('change', renderCatalog);
+    viewByFilter.addEventListener('change', () => {
+        if(loadedJsonString) renderCatalog(loadedJsonString);
+    });
     levelFilter.addEventListener('change', applyFilters);
     phaseFilter.addEventListener('change', applyFilters);
     viewModeRadios.forEach(radio => radio.addEventListener('change', applyFilters));
