@@ -13,6 +13,16 @@
             --border-color: #dee2e6;
             --card-bg: #ffffff;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            
+            /* Neue Farben für die Tabelle */
+            --pastel-blue: #89cff0;
+            --pastel-green: #98d7c2;
+            --pastel-yellow: #fdfd96;
+            --maturity-partial-bg: #ffebee;       /* Light Red/Pink */
+            --maturity-foundational-bg: #fff8e1;   /* Light Yellow/Orange */
+            --maturity-defined-bg: #e8f5e9;         /* Light Green */
+            --maturity-enhanced-bg: #dcedc8;        /* Medium Green */
+            --maturity-comprehensive-bg: #c8e6c9;  /* Strong Green */
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -97,11 +107,53 @@
         .checklist-item-form { background-color: #f8f9fa; border-top: 1px solid var(--border-color); }
         .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
         
-        .maturity-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .maturity-table th, .maturity-table td { border: 1px solid var(--border-color); padding: 0.75rem; text-align: left; vertical-align: top; }
-        .maturity-table th { background-color: var(--secondary-color); font-size: 0.9em; }
-        .maturity-table td { font-size: 0.95em; }
-        .maturity-table td:first-child { font-weight: bold; width: 15%; }
+        /* --- NEU: Überarbeitetes Tabellen-Styling --- */
+        .maturity-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 1rem; 
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .maturity-table th, .maturity-table td { 
+            padding: 0.85rem 1rem; 
+            text-align: left; 
+            vertical-align: top; 
+            border-bottom: 1px solid var(--border-color);
+        }
+        .maturity-table th { 
+            background-color: var(--secondary-color); 
+            font-size: 0.9em; 
+        }
+        .maturity-table td { 
+            font-size: 0.95em; 
+            border-left: 5px solid transparent; /* Platzhalter für farbigen Rand */
+            transition: background-color 0.2s;
+        }
+        .maturity-table tr:last-child td {
+            border-bottom: none;
+        }
+        .maturity-table tr:hover td {
+            background-color: rgba(0, 68, 148, 0.05); /* Leichter Hover-Effekt in BSI-Blau */
+        }
+        .maturity-table td:first-child { 
+            font-weight: bold; 
+            width: 15%;
+            border-left: none; /* Keine Farbe für die erste Spalte */
+        }
+        
+        /* Farbige Spalten-Ränder */
+        .maturity-table td:nth-child(2) { border-left-color: var(--pastel-blue); } /* Statement */
+        .maturity-table td:nth-child(3) { border-left-color: var(--pastel-green); } /* Guidance */
+        .maturity-table td:nth-child(4) { border-left-color: var(--pastel-yellow); } /* Assessment */
+        
+        /* Farbige Zeilen-Hintergründe basierend auf Reifegrad */
+        .maturity-row-partial { background-color: var(--maturity-partial-bg); }
+        .maturity-row-foundational { background-color: var(--maturity-foundational-bg); }
+        .maturity-row-defined { background-color: var(--maturity-defined-bg); }
+        .maturity-row-enhanced { background-color: var(--maturity-enhanced-bg); }
+        .maturity-row-comprehensive { background-color: var(--maturity-comprehensive-bg); }
 
         #saveload-controls { margin-top: 2rem; padding: 1.5rem; background-color: var(--secondary-color); border-radius: 8px; display: flex; flex-direction: column; gap: 1rem; }
         #saveload-controls .row { display: flex; gap: 1rem; align-items: center; }
@@ -203,21 +255,18 @@
         const findPartProse = (parts, name) => (parts || []).find(p => p.name === name)?.prose || '';
         const formatIdTitle = (item) => `${item.id}: ${item.title}`;
         
-        // --- NEUE HELFERFUNKTION ---
-        // Extrahiert den Reifegrad-Wert. Priorisiert 'props', nutzt aber Titel als Fallback.
         const getMaturityValue = (maturityPart) => {
             let value = findPropValue(maturityPart.props, 'maturity-level');
             if (value) {
                 return value;
             }
-            // Fallback: Parse aus dem Titel, z.B. aus "Maturity Level 1: Partial"
             if (maturityPart.title && maturityPart.title.includes(':')) {
                 const parts = maturityPart.title.split(':');
                 if (parts.length > 1) {
-                    return parts[parts.length - 1].trim(); // Nimm den letzten Teil nach ':'
+                    return parts[parts.length - 1].trim(); 
                 }
             }
-            return ''; // Standard, falls nichts funktioniert
+            return '';
         };
 
         const renderCatalog = (jsonString) => {
@@ -245,19 +294,17 @@
                         const itemDiv = document.createElement('div');
                         itemDiv.className = 'checklist-item';
 
-                        // --- Store data for filtering ---
                         const level = findPropValue(bsiControl.props, 'level');
                         const phase = findPropValue(bsiControl.props, 'phase');
                         const availableMaturities = (bsiControl.parts || [])
                             .filter(p => p.name === 'maturity-level-description')
-                            .map(p => getMaturityValue(p)); // Benutze neue Helferfunktion
+                            .map(p => getMaturityValue(p)); 
                         
                         itemDiv.dataset.controlId = bsiControl.id;
                         itemDiv.dataset.level = level;
                         itemDiv.dataset.phase = phase;
                         itemDiv.dataset.maturities = availableMaturities.join(',');
                         
-                        // --- Header ---
                         const path = `${mainGroup.title || mainGroup.id} » ${formatIdTitle(bausteinGroup)}`;
                         itemDiv.innerHTML = `
                             <div class="checklist-item-header">
@@ -265,16 +312,19 @@
                                 <div class="checklist-item-path">${path}</div>
                             </div>
                         `;
-
-                        // --- Details Table ---
+                        
+                        // --- ÄNDERUNG: CSS-Klasse für die Tabellenzeile hinzufügen ---
                         const tableRows = (bsiControl.parts || [])
                             .filter(p => p.name === 'maturity-level-description')
                             .map(maturityPart => {
                                 const statement = findPartProse(maturityPart.parts, 'statement');
                                 const guidance = findPartProse(maturityPart.parts, 'guidance');
                                 const assessment = findPartProse(maturityPart.parts, 'assessment-method');
+                                const maturityValue = getMaturityValue(maturityPart).toLowerCase();
+                                const rowClass = maturityValue ? `maturity-row-${maturityValue}` : '';
+
                                 return `
-                                    <tr>
+                                    <tr class="${rowClass}">
                                         <td>${maturityPart.title}</td>
                                         <td>${statement}</td>
                                         <td>${guidance}</td>
@@ -293,7 +343,6 @@
                             </div>
                         `;
 
-                        // --- Form ---
                         itemDiv.innerHTML += `
                              <div class="checklist-item-form">
                                 <div class="form-grid">
