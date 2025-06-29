@@ -68,6 +68,7 @@ async def call_gemini_api(prompt, schema_to_validate):
 async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
     """Orchestrates the new two-stage generation process for a single Baustein PDF."""
     async with semaphore:
+        logging.info(f"Processing file: {blob.name}")
         try:
             # STAGE 1: Combined Discovery & Enrichment
             logging.debug(f"Stage 1: Discovering & Enriching structure for {blob.name}...")
@@ -76,7 +77,7 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
             discovery_enrichment_data = await call_gemini_api([file_part, discovery_enrichment_prompt_text], loaded_discovery_enrichment_schema)
             
             requirements_to_process = discovery_enrichment_data.get('requirements_list', [])
-            logging.debug(f"Discovery & Enrichment successful. Found {len(requirements_to_process)} requirements.")
+            logging.info(f"  └─ Discovered {len(requirements_to_process)} requirements.")
 
             if TEST_MODE and requirements_to_process:
                 slice_index = max(1, int(len(requirements_to_process) * 0.10))
@@ -84,6 +85,7 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
                 logging.debug(f"TEST MODE: Sliced requirements to {len(requirements_to_process)}.")
 
             if not requirements_to_process:
+                logging.info(f"  └─ Successfully finished processing {blob.name} (no requirements for generation stage).")
                 return discovery_enrichment_data.get("main_group_id"), {"id": discovery_enrichment_data.get("baustein_id"),"title": discovery_enrichment_data.get("baustein_title"),"class": "baustein","parts": discovery_enrichment_data.get("contextual_parts", []),"controls": []}
 
             # STAGE 2: Generation of Maturity Prose
@@ -108,8 +110,9 @@ async def process_baustein_pdf(blob, semaphore, build_oscal_control_func):
                 "id": discovery_enrichment_data.get("baustein_id"), "title": discovery_enrichment_data.get("baustein_title"),
                 "class": "baustein", "parts": discovery_enrichment_data.get("contextual_parts", []), "controls": final_controls
             }
+            logging.info(f"  └─ Successfully finished processing {blob.name}.")
             return discovery_enrichment_data.get("main_group_id"), final_baustein_group
 
         except Exception as e:
-            logging.error(f"Processing failed permanently for {blob.name} after all retries. Error: {e}", exc_info=TEST_MODE)
+            logging.error(f"  └─ FAILED to process {blob.name}. Error: {e}", exc_info=TEST_MODE)
             return None, None
