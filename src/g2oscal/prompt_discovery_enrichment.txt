@@ -11,7 +11,7 @@ Analyze the single Baustein PDF provided. Your output MUST be a single JSON obje
 
 *   **Top-Level Information:** You MUST extract the Baustein's unique ID (e.g., "OPS.1.1.3"), its FULL title (e.g., "Patch- und Änderungsmanagement"), and its main group prefix (e.g., "OPS").
 *   **Contextual Parts:** Extract the *complete* prose for the following chapters, obeying the rule above: "Einleitung", "Zielsetzung", "Abgrenzung und Modellierung", and all "Gefährdungslage" risks.
-*   **Requirements List:** For EACH requirement (`Anforderung`) in the document, extract its `id`, `title`, and full original `prose`.
+*   **Requirements List:** For EACH requirement (`Anforderung`) in the document, extract its `id`, `title`, and full original `prose`. For EACH requirement, you MUST determine its level based on the chapter it belongs to and set `props.level` accordingly: Chapter "3.1. Basis-Anforderung" means level "1". Chapter "3.2. Standard-Anforderungen" means level "3". Chapter "3.3. Anforderungen bei erhöhtem Schutzbedarf" means level "5".
 
 ---
 **Part 2: Classification Logic (For EACH Requirement)**
@@ -49,6 +49,15 @@ For EACH requirement you extract, you MUST also add the following classification
     - APP: Anwendungsschutz (Application Protection)
 
 3.  **CIA Tenant Classification**: Determine the impact on Confidentiality, Integrity, and Availability (`effective_on_c`, `effective_on_i`, `effective_on_a`).
+
+4.  **ISMS `phase` Classification**: Inside the `props` object, assign ONE of the following ISMS lifecycle phases to the `phase` field. This classification indicates when the control is most relevant.
+    - `Initiation`
+    - `Risk Assessment`
+    - `Risk Treatment`
+    - `Implementation`
+    - `Operation`
+    - `Audit`
+    - `Improvement`
 
 ---
 **MANDATORY OUTPUT STRUCTURE & EXAMPLE**
