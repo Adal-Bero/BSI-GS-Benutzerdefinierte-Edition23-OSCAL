@@ -101,7 +101,7 @@
         .baustein-group > summary { font-size: 1.1em; font-weight: 500; }
         .bsi-control > summary { font-size: 1.05em; background: #f8f9fa; }
         .maturity-level-description > summary { font-weight: bold; margin-top: 10px; background-color: #f1f3f5;}
-
+        
         /* Checklist Styling */
         #checklist-container { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
         .checklist-item { border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow); background-color: var(--card-bg); }
@@ -284,7 +284,7 @@
 
         const formatIdTitle = (item) => `${item.id}: ${item.title}`;
 
-        const renderMaturityLevelPart = (part) => {
+        const renderMaturityDetailPart = (part) => {
             const container = document.createElement('div');
             container.className = 'part-container';
             container.innerHTML = `
@@ -325,11 +325,10 @@
                         <label for="status-select-${bsiControl.id}">Status</label>
                         <select id="status-select-${bsiControl.id}" class="status-select">
                             <option value="">Nicht ausgewählt</option>
-                            <option value="satisfied">Erfüllt</option>
-                            <option value="not-satisfied">Nicht erfüllt</option>
                             <option value="implemented">Implementiert</option>
                             <option value="partially-implemented">Teilweise implementiert</option>
-                            <option value="not-implemented">Nicht implementiert</option>
+                            <option value="planned">Geplant</option>
+                            <option value="alternative">Alternativ</option>
                             <option value="not-applicable">Nicht anwendbar</option>
                         </select>
                     </div>
@@ -388,7 +387,7 @@
                         bsiControlDetails.appendChild(bsiControlSummary);
                         bausteinGroupDetails.appendChild(bsiControlDetails);
                         
-                        // Correctly render maturity levels from the `parts` array
+                        // FIX: Correctly render maturity levels from the `parts` array
                         (bsiControl.parts || []).forEach(maturityLevelPart => {
                             if (maturityLevelPart.name === 'maturity-level-description') {
                                 const maturityLevel = findPropValue(maturityLevelPart.props, 'maturity-level');
@@ -401,7 +400,7 @@
                                 maturityDetails.appendChild(maturitySummary);
 
                                 (maturityLevelPart.parts || []).forEach(part => {
-                                    maturityDetails.appendChild(renderMaturityLevelPart(part));
+                                    maturityDetails.appendChild(renderMaturityDetailPart(part));
                                 });
                                 bsiControlDetails.appendChild(maturityDetails);
                             }
@@ -520,19 +519,17 @@
             // Filter both tree and checklist
             document.querySelectorAll('.bsi-control').forEach(control => {
                 if (filterBsiControl(control)) {
-                    // Unhide tree element and parents
-                    let current = control;
-                     while (current && current !== treeViewContainer) {
-                        current.classList.remove('hidden');
-                        current = current.parentElement;
-                    }
+                    control.classList.remove('hidden');
                 } else {
                     control.classList.add('hidden');
                 }
             });
 
             document.querySelectorAll('.checklist-item').forEach(item => {
-                const bsiControl = treeViewContainer.querySelector(`.bsi-control[data-level="${item.dataset.level}"][data-phase="${item.dataset.phase}"]`);
+                 const controlId = item.dataset.controlId;
+                 const correspondingTreeControl = treeViewContainer.querySelector(`.bsi-control[data-level="${item.dataset.level}"][data-phase="${item.dataset.phase}"]`);
+                 const bsiControl = Array.from(treeViewContainer.querySelectorAll('.bsi-control')).find(c => c.querySelector('summary').textContent.startsWith(controlId));
+                 
                 if (bsiControl && filterBsiControl(bsiControl)) {
                     item.classList.remove('hidden');
                     matchCount++;
@@ -542,11 +539,11 @@
             });
 
             // Hide empty parent groups in tree view
-            document.querySelectorAll('.baustein-group, .main-group').forEach(group => {
-                if (!group.querySelector('.bsi-control:not(.hidden)')) {
-                    group.classList.add('hidden');
-                } else {
+            document.querySelectorAll('.main-group, .baustein-group').forEach(group => {
+                if (group.querySelector('.bsi-control:not(.hidden)')) {
                     group.classList.remove('hidden');
+                } else {
+                    group.classList.add('hidden');
                 }
             });
 
