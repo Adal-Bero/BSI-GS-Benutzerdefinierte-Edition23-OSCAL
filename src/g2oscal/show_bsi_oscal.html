@@ -1,18 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BSI-Grundschutz OSCAL Viewer</title>
+    <title>BSI Grundschutz OSCAL Viewer (Final)</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
             --text-color: #212529;
-            --primary-color: #004494;
+            --primary-color: #004494; /* BSI Blue */
             --secondary-color: #e9ecef;
             --border-color: #dee2e6;
             --card-bg: #ffffff;
             --shadow: 0 2px 8px rgba(0,0,0,0.1);
+            --hover-bg: #f1f3f5;
+            --success-color: #198754;
+            --danger-color: #dc3545;
+            --grey-color: #6c757d;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -30,13 +34,14 @@
             border-radius: 8px;
             box-shadow: var(--shadow);
         }
-        h1, h2, h3 {
+        h1 {
             color: var(--primary-color);
             border-bottom: 2px solid var(--secondary-color);
             padding-bottom: 10px;
         }
         textarea {
             width: 100%;
+            height: 250px;
             padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
@@ -44,9 +49,8 @@
             font-size: 0.9em;
             margin-bottom: 1rem;
             box-sizing: border-box;
-            height: 250px;
         }
-        button, .file-label {
+        button {
             background-color: var(--primary-color);
             color: white;
             border: none;
@@ -55,10 +59,8 @@
             cursor: pointer;
             font-size: 1rem;
             transition: background-color 0.2s;
-            display: inline-block;
-            text-align: center;
         }
-        button:hover, .file-label:hover {
+        button:hover {
             background-color: #003366;
         }
         #filter-controls {
@@ -71,7 +73,7 @@
             gap: 1.5rem;
             align-items: center;
         }
-        .filter-group {
+        .filter-group, .view-group {
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -81,88 +83,155 @@
             font-size: 0.9em;
             color: #495057;
         }
-        input[type="text"], select {
+        select {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid var(--border-color);
             min-width: 180px;
         }
+        .view-switch { display: flex; gap: 15px; }
+        .view-switch label { font-weight: normal; }
         .hidden { display: none !important; }
 
-        /* Checklist Styling */
-        #results-container { display: flex; flex-direction: column; gap: 2rem; margin-top: 2rem; }
-        .checklist-item { border: 1px solid var(--border-color); border-radius: 8px; box-shadow: var(--shadow); background-color: var(--card-bg); overflow: hidden; }
-        .checklist-item-header { background-color: #f8f9fa; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
-        .checklist-item-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin: 0; }
-        .checklist-item-path { font-size: 0.85em; color: #6c757d; margin-top: 5px; }
+        /* Tree View Styling */
+        #tree-view-container details {
+            margin-left: 20px;
+            border-left: 2px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-top: 5px;
+        }
+        #tree-view-container summary {
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+            position: relative;
+        }
+        #tree-view-container summary:hover { background-color: var(--hover-bg); }
+        .property-group > summary { font-size: 1.3em; font-weight: bold; color: var(--primary-color); }
+        .main-group > summary { font-size: 1.2em; font-weight: bold; }
+        .baustein-group > summary { font-size: 1.1em; font-weight: 500; }
+        .control > summary { font-size: 1.05em; background: #f8f9fa; }
+        .control-path { font-size: 0.8em; color: #6c757d; margin-left: 10px; font-style: italic; }
         
-        .checklist-item-details, .checklist-item-form { padding: 1.5rem; }
-        .checklist-item-form { background-color: #f8f9fa; border-top: 1px solid var(--border-color); }
-        .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
-        
-        .maturity-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-        .maturity-table th, .maturity-table td { border: 1px solid var(--border-color); padding: 0.75rem; text-align: left; vertical-align: top; }
-        .maturity-table th { background-color: var(--secondary-color); font-size: 0.9em; }
-        .maturity-table td { font-size: 0.95em; }
-        .maturity-table td:first-child { font-weight: bold; width: 15%; }
+        /* Beautiful Properties Display */
+        .control-content { padding: 10px; }
+        .props-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 10px 0;
+        }
+        .prop-item {
+            background-color: #f1f3f5;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 5px 12px;
+            font-size: 0.9em;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .prop-item .prop-name {
+            font-weight: bold;
+            color: #495057;
+        }
+        .prop-item.practice {
+            background-color: #e7f0fa;
+            border-color: #b3c9e1;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        .prop-item.control-class {
+            background-color: #e9ecef;
+            border-color: #ced4da;
+            color: var(--grey-color);
+            font-weight: bold;
+        }
+        .prop-item.cia .prop-value {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+        .prop-value.true { color: var(--success-color); }
+        .prop-value.false { color: var(--danger-color); }
 
-        #saveload-controls { margin-top: 2rem; padding: 1.5rem; background-color: var(--secondary-color); border-radius: 8px; display: flex; flex-direction: column; gap: 1rem; }
-        #saveload-controls .row { display: flex; gap: 1rem; align-items: center; }
-        #saveload-controls input[type="file"] { display: none; }
-        #prüfer-name { flex-grow: 1; }
+        /* Maturity Level & Part Styling */
+        .maturity-level-group {
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-top: 15px;
+            background: var(--card-bg);
+        }
+        .maturity-level-group > summary {
+            font-weight: bold;
+            background-color: var(--hover-bg);
+            padding: 8px 12px;
+        }
+        .maturity-level-content {
+            padding: 15px;
+        }
+        .sub-part {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 4px solid;
+            border-radius: 2px;
+        }
+        .sub-part:last-child { margin-bottom: 0; }
+        .sub-part h4 {
+            margin: 0 0 5px 0;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #495057;
+        }
+        .sub-part-statement { border-color: var(--primary-color); background-color: #e7f0fa; }
+        .sub-part-guidance { border-color: var(--success-color); background-color: #e8f3ee; }
+        .sub-part-assessment-method { border-color: #ffc107; background-color: #fff8e1; }
+        .part-prose { margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--secondary-color); }
 
         #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
+        #flat-view-container { display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem; }
+        .flat-item { border: 1px solid var(--border-color); border-radius: 8px; background-color: var(--card-bg); }
+        .flat-item-header { background-color: #f8f9fa; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+        .flat-item-title { font-size: 1.2em; font-weight: bold; color: var(--primary-color); margin: 0; }
+        .flat-item-path { font-size: 0.85em; color: #6c757d; margin-top: 5px; }
+        .flat-item-body { padding: 1rem 1.5rem; }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>BSI-Grundschutz OSCAL Viewer</h1>
-        <p>Fügen Sie unten Ihren BSI OSCAL-Katalog im JSON-Format ein. Der Viewer rendert daraus eine interaktive Checkliste, die Sie filtern und bearbeiten können.</p>
+        <h1>BSI Grundschutz OSCAL Viewer (Final)</h1>
+        <p>Paste your enhanced OSCAL Catalog JSON below. You can now view the catalog by structure or by practice.</p>
         
         <textarea id="json-input">{
   "catalog": {
     "uuid": "a1b2c3d4-e5f6-4a3b-8c7d-1e2f3a4b5c6d",
-    "metadata": { "title": "BSI IT-Grundschutz Catalog 2023 (Sample)" },
+    "metadata": { "title": "BSI IT-Grundschutz Catalog 2023 (Sample)", "last-modified": "2023-10-27T10:00:00Z", "version": "1.0.0", "oscal-version": "1.1.2" },
     "groups": [
       {
-        "id": "OPS",
-        "title": "Operation",
+        "id": "CON", "title": "CON: Konzeption und Vorgehensweise", "class": "layer",
         "groups": [
           {
-            "id": "OPS.1.1.3",
-            "title": "Patch and Change Management",
+            "id": "CON.1", "title": "Informationssicherheitsmanagement", "class": "baustein",
             "controls": [
               {
-                "id": "OPS.1.1.3.A1",
-                "title": "Konzept für das Patch- und Änderungsmanagement",
+                "id": "CON.1.A1", "title": "Regelungen zur Klassifizierung", "class": "Management",
                 "props": [
-                  { "name": "level", "value": "1" },
-                  { "name": "phase", "value": "Risk Treatment" }
+                  { "name": "level", "value": "3" },
+                  { "name": "phase", "value": "Risk Assessment" },
+                  { "name": "practice", "value": "GOV" },
+                  { "name": "effective_on_c", "value": "true" },
+                  { "name": "effective_on_i", "value": "true" },
+                  { "name": "effective_on_a", "value": "false" }
                 ],
-                "parts": [
-                  {
-                    "id": "OPS.1.1.3.A1-m1",
-                    "name": "maturity-level-description",
-                    "title": "Maturity Level 1: Partial",
-                    "props": [ { "name": "maturity-level", "value": "Partial" } ],
-                    "parts": [
-                      { "name": "statement", "prose": "Änderungen an IT-Systemen werden sporadisch und ad-hoc durchgeführt." },
-                      { "name": "guidance", "prose": "In diesem Reifegrad gibt es keine etablierten Prozesse." },
-                      { "name": "assessment-method", "prose": "Prüfen Sie, ob es vereinzelte Dokumentationen von Änderungen gibt." }
-                    ]
-                  },
-                  {
-                    "id": "OPS.1.1.3.A1-m2",
-                    "name": "maturity-level-description",
-                    "title": "Maturity Level 2: Foundational",
-                    "props": [ { "name": "maturity-level", "value": "Foundational" } ],
-                    "parts": [
-                       { "name": "statement", "prose": "Ein grundlegender, aber informeller Prozess für Änderungen existiert." },
-                       { "name": "guidance", "prose": "Hier gibt es Ansätze eines Prozesses, die aber nicht formalisiert sind." },
-                       { "name": "assessment-method", "prose": "Sichten Sie das Ticketsystem oder andere Protokollierungssysteme." }
-                    ]
-                  }
+                "parts": [ 
+                    { 
+                        "name": "maturity-level-description", 
+                        "title": "Maturity Level 3: Defined",
+                        "parts": [
+                            { "name": "statement", "prose": "This is the prose for the statement at maturity level 3." },
+                            { "name": "guidance", "prose": "This is the prose for the guidance at maturity level 3." }
+                        ]
+                    }
                 ]
               }
             ]
@@ -173,307 +242,328 @@
   }
 }</textarea>
         
-        <button id="render-btn">Katalog rendern & Checkliste erstellen</button>
-
-        <div id="status">Fügen Sie oben Ihr JSON ein und klicken Sie auf "Katalog rendern", um zu beginnen.</div>
+        <button id="render-btn">Render Catalog</button>
+        <div id="status">Paste your JSON above and click "Render Catalog" to begin.</div>
 
         <div id="filter-controls" class="hidden">
-            <div class="filter-group">
-                <label for="maturity-filter">Nach Reifegrad filtern</label>
-                <select id="maturity-filter">
-                    <option value="all">Alle Reifegrade</option>
-                    <option value="Partial">Partial</option>
-                    <option value="Foundational">Foundational</option>
-                    <option value="Defined">Defined</option>
-                    <option value="Enhanced">Enhanced</option>
-                    <option value="Comprehensive">Comprehensive</option>
+             <div class="filter-group">
+                <label for="view-by-filter">View By</label>
+                <select id="view-by-filter">
+                    <option value="structure">Structure (Layer -> Baustein)</option>
+                    <option value="practice">Practice</option>
                 </select>
             </div>
-            <div class="filter-group">
-                <label for="level-filter">Nach Schutzbedarf filtern</label>
-                <select id="level-filter">
-                    <option value="all">Alle Stufen</option>
-                    <option value="1">1 (Basis)</option>
-                    <option value="3">3 (Standard)</option>
-                    <option value="5">5 (Erhöhter)</option>
-                </select>
-            </div>
-            <div class="filter-group">
-                <label for="phase-filter">Nach ISMS-Phase filtern</label>
-                <select id="phase-filter">
-                    <option value="all">Alle Phasen</option>
-                    <option value="Initiation">Initiation</option>
-                    <option value="Risk Assessment">Risk Assessment</option>
-                    <option value="Risk Treatment">Risk Treatment</option>
-                    <option value="Implementation">Implementation</option>
-                    <option value="Operation">Operation</option>
-                    <option value="Audit">Audit</option>
-                    <option value="Improvement">Improvement</option>
-                </select>
-            </div>
-            <button id="reset-btn">Filter zurücksetzen</button>
+            <div class="filter-group"><label for="level-filter">Filter by Level</label><select id="level-filter"><option value="all">All Levels</option></select></div>
+            <div class="filter-group"><label for="phase-filter">Filter by ISMS Phase</label><select id="phase-filter"><option value="all">All Phases</option></select></div>
+            <div class="view-group"><label>View Mode</label><div class="view-switch"><label><input type="radio" name="view-mode" value="tree" checked> Tree</label><label><input type="radio" name="view-mode" value="flat"> Flat List</label></div></div>
+            <button id="reset-btn">Reset Filters</button>
         </div>
 
-        <div id="results-container"></div>
-        
-        <div id="saveload-controls" class="hidden">
-            <div class="input-group">
-               <label for="prüfer-name">Prüfername</label>
-               <input type="text" id="prüfer-name" placeholder="Ihr Name">
-            </div>
-            <div class="row">
-               <button id="save-btn">Checkliste Speichern</button>
-               <label for="load-input" class="file-label">Checkliste Laden</label>
-               <input type="file" id="load-input" accept=".json">
-            </div>
-       </div>
-
+        <div id="output-container">
+            <div id="tree-view-container"></div>
+            <div id="flat-view-container" class="hidden"></div>
+        </div>
     </div>
 
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const renderBtn = document.getElementById('render-btn');
-        const resetBtn = document.getElementById('reset-btn');
-        const jsonInput = document.getElementById('json-input');
-        const filterControls = document.getElementById('filter-controls');
-        const saveLoadControls = document.getElementById('saveload-controls');
-        const statusEl = document.getElementById('status');
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const renderBtn = document.getElementById('render-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const jsonInput = document.getElementById('json-input');
+    const filterControls = document.getElementById('filter-controls');
+    const statusEl = document.getElementById('status');
+    
+    const viewByFilter = document.getElementById('view-by-filter');
+    const levelFilter = document.getElementById('level-filter');
+    const phaseFilter = document.getElementById('phase-filter');
+    const viewModeRadios = document.querySelectorAll('input[name="view-mode"]');
+    const viewModeGroup = document.querySelector('.view-group');
+
+    const treeViewContainer = document.getElementById('tree-view-container');
+    const flatViewContainer = document.getElementById('flat-view-container');
+
+    let allControls = [];
+    let catalogData = null;
+
+    const PRACTICE_NAMES = {
+        "GOV": "Governance", "ISGA": "ISMS-Gestaltung und –Änderung", "DOCS": "Dokumente und Ressourcen",
+        "RISK": "Risikomanagement", "REAL": "Realisierung und Verbesserung", "PERF": "Leistungsbewertung",
+        "LAW": "Compliance", "ARCH": "Architektur", "SENS": "Sensibilisierung", "REA": "Sicherheitsvorfallsbehandlung",
+        "NOT": "Notfallplanung", "ASST": "Informationen und Assets", "TEST": "Änderungen und Tests",
+        "PERS": "Personal", "BES": "Beschaffungsmanagement", "DEV": "Entwicklung", "CON": "Konfiguration",
+        "DLS": "Dienstleistersteuerung", "GEB": "Gebäudemanagement", "BER": "Berechtigung", "DET": "Detektion",
+        "SYS": "Systemschutz", "APP": "Anwendungsschutz"
+    };
+
+    const findPropValue = (props, name) => {
+        const prop = (props || []).find(p => p.name === name);
+        return prop ? prop.value : '';
+    };
+
+    const formatIdTitle = (item) => `${item.id}: ${item.title}`;
+
+    const renderAllProps = (control) => {
+        const props = control.props || [];
+        if (props.length === 0 && !control.class) return document.createDocumentFragment();
+
+        const grid = document.createElement('div');
+        grid.className = 'props-grid';
+
+        if (control.class) {
+             const item = document.createElement('div');
+            item.className = 'prop-item control-class';
+            item.innerHTML = `<span class="prop-name">Class:</span> ${control.class}`;
+            grid.appendChild(item);
+        }
         
-        const maturityFilter = document.getElementById('maturity-filter');
-        const levelFilter = document.getElementById('level-filter');
-        const phaseFilter = document.getElementById('phase-filter');
+        const practiceProp = props.find(p => p.name === 'practice');
+        if (practiceProp) {
+            const item = document.createElement('div');
+            item.className = 'prop-item practice';
+            item.innerHTML = `<span class="prop-name">Practice:</span> ${PRACTICE_NAMES[practiceProp.value] || practiceProp.value}`;
+            grid.appendChild(item);
+        }
 
-        const resultsContainer = document.getElementById('results-container');
-        
-        const saveBtn = document.getElementById('save-btn');
-        const loadInput = document.getElementById('load-input');
-        const prüferNameInput = document.getElementById('prüfer-name');
-
-        let catalogData = null;
-
-        const findPropValue = (props, name) => (props || []).find(p => p.name === name)?.value || '';
-        const findPartProse = (parts, name) => (parts || []).find(p => p.name === name)?.prose || '';
-        const formatIdTitle = (item) => `${item.id}: ${item.title}`;
-        
-        const renderCatalog = () => {
-            try {
-                catalogData = JSON.parse(jsonInput.value);
-            } catch (e) {
-                statusEl.textContent = `Fehler: Ungültiges JSON-Format. ${e.message}`;
-                statusEl.style.color = 'red';
-                return;
-            }
-
-            if (!catalogData || !catalogData.catalog || !catalogData.catalog.groups) {
-                statusEl.textContent = 'Fehler: JSON entspricht nicht der erwarteten OSCAL-Katalogstruktur.';
-                statusEl.style.color = 'red';
-                return;
-            }
+        props.filter(p => p.name !== 'practice').forEach(prop => {
+            const item = document.createElement('div');
+            item.className = 'prop-item';
             
-            resultsContainer.innerHTML = '';
-            let controlCount = 0;
+            if (prop.name.startsWith('effective_on_')) {
+                item.classList.add('cia');
+                const valueClass = prop.value === 'true' ? 'true' : 'false';
+                const icon = valueClass === 'true' ? '✔️' : '✖️';
+                item.innerHTML = `<span class="prop-name">${prop.name.replace('effective_on_','').toUpperCase()}:</span> <span class="prop-value ${valueClass}">${icon}</span>`;
+            } else {
+                 item.innerHTML = `<span class="prop-name">${prop.name}:</span> ${prop.value}`;
+            }
+            grid.appendChild(item);
+        });
+        return grid;
+    };
 
-            (catalogData.catalog.groups || []).forEach(mainGroup => {
-                (mainGroup.groups || []).forEach(bausteinGroup => {
-                    (bausteinGroup.controls || []).forEach(bsiControl => {
-                        controlCount++;
-                        const itemDiv = document.createElement('div');
-                        itemDiv.className = 'checklist-item';
+    const renderPart = (part) => {
+        if (part.name === 'maturity-level-description' && part.parts) {
+            const details = document.createElement('details');
+            details.className = 'maturity-level-group';
+            details.innerHTML = `<summary>${part.title}</summary>`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'maturity-level-content';
 
-                        // --- Store data for filtering ---
-                        const level = findPropValue(bsiControl.props, 'level');
-                        const phase = findPropValue(bsiControl.props, 'phase');
-                        const availableMaturities = (bsiControl.parts || [])
-                            .filter(p => p.name === 'maturity-level-description')
-                            .map(p => findPropValue(p.props, 'maturity-level'));
-                        
-                        itemDiv.dataset.controlId = bsiControl.id;
-                        itemDiv.dataset.level = level;
-                        itemDiv.dataset.phase = phase;
-                        itemDiv.dataset.maturities = availableMaturities.join(',');
-                        
-                        // --- Header ---
-                        const path = `${mainGroup.title || mainGroup.id} » ${formatIdTitle(bausteinGroup)}`;
-                        itemDiv.innerHTML = `
-                            <div class="checklist-item-header">
-                                <h3 class="checklist-item-title">${formatIdTitle(bsiControl)}</h3>
-                                <div class="checklist-item-path">${path}</div>
-                            </div>
-                        `;
+            part.parts.forEach(subPart => {
+                const subPartDiv = document.createElement('div');
+                const safeName = subPart.name.replace(/_/g, '-');
+                subPartDiv.className = `sub-part sub-part-${safeName}`;
+                
+                const titleMap = { 'statement': 'Statement', 'guidance': 'Implementation Guidance', 'assessment-method': 'Audit Guidance' };
+                const displayTitle = titleMap[subPart.name] || subPart.name;
 
-                        // --- Details Table ---
-                        const tableRows = (bsiControl.parts || [])
-                            .filter(p => p.name === 'maturity-level-description')
-                            .map(maturityPart => {
-                                const statement = findPartProse(maturityPart.parts, 'statement');
-                                const guidance = findPartProse(maturityPart.parts, 'guidance');
-                                const assessment = findPartProse(maturityPart.parts, 'assessment-method');
-                                return `
-                                    <tr>
-                                        <td>${maturityPart.title}</td>
-                                        <td>${statement}</td>
-                                        <td>${guidance}</td>
-                                        <td>${assessment}</td>
-                                    </tr>
-                                `;
-                            }).join('');
-                        
-                        itemDiv.innerHTML += `
-                            <div class="checklist-item-details">
-                                <h3>Reifegrad-Details</h3>
-                                <table class="maturity-table">
-                                    <thead><tr><th>Reifegrad</th><th>Statement</th><th>Guidance</th><th>Assessment Method</th></tr></thead>
-                                    <tbody>${tableRows}</tbody>
-                                </table>
-                            </div>
-                        `;
+                subPartDiv.innerHTML = `<h4>${displayTitle}</h4><div class="prose">${(subPart.prose || '').replace(/\n/g, '<br>')}</div>`;
+                contentDiv.appendChild(subPartDiv);
+            });
+            details.appendChild(contentDiv);
+            return details;
+        }
 
-                        // --- Form ---
-                        itemDiv.innerHTML += `
-                             <div class="checklist-item-form">
-                                <div class="form-grid">
-                                    <div class="input-group">
-                                        <label for="maturity-select-${bsiControl.id}">Reifegrad auswählen</label>
-                                        <select id="maturity-select-${bsiControl.id}" class="maturity-select">
-                                            <option value="">Nicht ausgewählt</option>
-                                            ${(bsiControl.parts || []).filter(p => p.name === 'maturity-level-description').map(p => `<option value="${findPropValue(p.props, 'maturity-level')}">${p.title}</option>`).join('')}
-                                        </select>
-                                    </div>
-                                    <div class="input-group">
-                                        <label for="status-select-${bsiControl.id}">Status</label>
-                                        <select id="status-select-${bsiControl.id}" class="status-select">
-                                            <option value="">Nicht ausgewählt</option>
-                                            <option value="implemented">Implementiert</option>
-                                            <option value="partially-implemented">Teilweise implementiert</option>
-                                            <option value="planned">Geplant</option>
-                                            <option value="not-applicable">Nicht anwendbar</option>
-                                        </select>
-                                    </div>
-                                    <div class="input-group">
-                                        <label for="comment-text-${bsiControl.id}">Bemerkungen</label>
-                                        <textarea id="comment-text-${bsiControl.id}" class="comment-text"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        `;
-                        resultsContainer.appendChild(itemDiv);
-                    });
+        if (part.prose) {
+            const proseDiv = document.createElement('div');
+            proseDiv.className = 'part-prose';
+            proseDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
+            return proseDiv;
+        }
+        return document.createDocumentFragment();
+    };
+
+    const renderControl = (control, path) => {
+        const controlDetails = document.createElement('details');
+        controlDetails.className = 'control';
+        controlDetails.dataset.level = findPropValue(control.props, 'level');
+        controlDetails.dataset.phase = findPropValue(control.props, 'phase');
+        controlDetails.dataset.practice = findPropValue(control.props, 'practice');
+        controlDetails.dataset.class = control.class || '';
+
+        controlDetails.innerHTML = `<summary>${formatIdTitle(control)} <span class="control-path">${path || ''}</span></summary>`;
+        
+        const controlContent = document.createElement('div');
+        controlContent.className = 'control-content';
+        controlContent.appendChild(renderAllProps(control));
+
+        (control.parts || []).forEach(part => {
+            controlContent.appendChild(renderPart(part));
+        });
+        controlDetails.appendChild(controlContent);
+        return controlDetails;
+    };
+    
+    const findAllControlsRecursive = (groups, path, result) => {
+        (groups || []).forEach(group => {
+            const newPath = path ? `${path} » ${group.title || group.id}` : (group.title || group.id);
+            (group.controls || []).forEach(control => {
+                result.push({ control, path: newPath });
+            });
+            findAllControlsRecursive(group.groups, newPath, result);
+        });
+    };
+
+    const populateFilters = () => {
+        const levels = new Set();
+        const phases = new Set();
+        allControls.forEach(({ control }) => {
+            levels.add(findPropValue(control.props, 'level'));
+            phases.add(findPropValue(control.props, 'phase'));
+        });
+        const populate = (select, set) => {
+            select.innerHTML = `<option value="all">All ${select.id.replace('-filter', 's')}</option>`;
+            [...set].filter(Boolean).sort().forEach(val => {
+                const option = document.createElement('option');
+                option.value = option.textContent = val;
+                select.appendChild(option);
+            });
+        };
+        populate(levelFilter, levels);
+        populate(phaseFilter, phases);
+    };
+
+    const renderByStructure = () => {
+        viewModeGroup.classList.remove('hidden');
+        (catalogData.catalog.groups || []).forEach(mainGroup => {
+            const mainGroupDetails = document.createElement('details');
+            mainGroupDetails.className = 'main-group';
+            mainGroupDetails.innerHTML = `<summary>${mainGroup.title || mainGroup.id}</summary>`;
+            (mainGroup.groups || []).forEach(bausteinGroup => {
+                const path = `${mainGroup.title || mainGroup.id}`;
+                const bausteinDetails = document.createElement('details');
+                bausteinDetails.className = 'baustein-group';
+                bausteinDetails.innerHTML = `<summary>${formatIdTitle(bausteinGroup)}</summary>`;
+                 (bausteinGroup.controls || []).forEach(control => {
+                    bausteinDetails.appendChild(renderControl(control, path));
                 });
+                mainGroupDetails.appendChild(bausteinDetails);
             });
+            treeViewContainer.appendChild(mainGroupDetails);
+        });
+    };
+    
+    const renderByPractice = () => {
+        viewModeGroup.classList.add('hidden');
+        const grouped = {};
+        allControls.forEach(({ control, path }) => {
+            const practice = findPropValue(control.props, 'practice') || 'Unassigned';
+            if (!grouped[practice]) grouped[practice] = [];
+            grouped[practice].push({ control, path });
+        });
 
-            filterControls.classList.remove('hidden');
-            saveLoadControls.classList.remove('hidden');
-            statusEl.textContent = `Erfolgreich ${controlCount} Anforderungen gerendert. Sie können nun filtern und die Checkliste bearbeiten.`;
-            statusEl.style.color = 'initial';
-            applyFilters();
-        };
+        Object.keys(grouped).sort().forEach(key => {
+            const groupDetails = document.createElement('details');
+            groupDetails.className = 'property-group';
+            const practiceName = PRACTICE_NAMES[key] || key;
+            groupDetails.innerHTML = `<summary>${practiceName} (${grouped[key].length} controls)</summary>`;
+            grouped[key].forEach(({ control, path }) => {
+                groupDetails.appendChild(renderControl(control, path));
+            });
+            treeViewContainer.appendChild(groupDetails);
+        });
+    };
+
+    const renderCatalog = () => {
+        try { catalogData = JSON.parse(jsonInput.value); }
+        catch (e) { statusEl.textContent = `Error: Invalid JSON format. ${e.message}`; return; }
+        if (!catalogData?.catalog?.groups) { statusEl.textContent = 'Error: JSON does not match expected OSCAL catalog structure.'; return; }
+
+        treeViewContainer.innerHTML = '';
+        flatViewContainer.innerHTML = '';
+        allControls = [];
+        findAllControlsRecursive(catalogData.catalog.groups, '', allControls);
         
-        const saveState = () => {
-            const prüfer = prüferNameInput.value.trim();
-            if (!prüfer) {
-                alert("Bitte geben Sie einen Prüfernamen ein.");
-                prüferNameInput.focus();
-                return;
-            }
-
-            const ergebnisse = {};
-            resultsContainer.querySelectorAll('.checklist-item').forEach(item => {
-                const controlId = item.dataset.controlId;
-                const maturity = item.querySelector('.maturity-select').value;
-                const status = item.querySelector('.status-select').value;
-                const comment = item.querySelector('.comment-text').value;
-
-                if (maturity || status || comment) {
-                    ergebnisse[controlId] = { maturity, status, comment };
-                }
-            });
-
-            if (Object.keys(ergebnisse).length === 0) {
-                alert("Keine Daten zum Speichern. Füllen Sie bitte zuerst die Checkliste aus.");
-                return;
-            }
-            
-            const saveData = {
-                meta: {
-                    prüfer: prüfer,
-                    zeitstempel: new Date().toISOString()
-                },
-                ergebnisse: ergebnisse
-            };
-
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(saveData, null, 2));
-            const downloadAnchorNode = document.createElement('a');
-            const date = new Date().toISOString().slice(0, 10);
-            downloadAnchorNode.setAttribute("download", `checklist-status-${date}.json`);
-            downloadAnchorNode.setAttribute("href", dataStr);
-            document.body.appendChild(downloadAnchorNode);
-            downloadAnchorNode.click();
-            downloadAnchorNode.remove();
-        };
-
-        const loadState = (event) => {
-            const file = event.target.files[0];
-            if (!file) return;
-            const reader = new FileReader();
-            reader.onload = (e) => {
-                try {
-                    const loadedData = JSON.parse(e.target.result);
-                    if (!loadedData.meta || !loadedData.ergebnisse) throw new Error("Die Datei hat nicht das erwartete Format (meta/ergebnisse fehlt).");
-                    prüferNameInput.value = loadedData.meta.prüfer || '';
-                    Object.keys(loadedData.ergebnisse).forEach(controlId => {
-                        const item = resultsContainer.querySelector(`.checklist-item[data-control-id="${controlId}"]`);
-                        if (item) {
-                            const data = loadedData.ergebnisse[controlId];
-                            item.querySelector('.maturity-select').value = data.maturity || '';
-                            item.querySelector('.status-select').value = data.status || '';
-                            item.querySelector('.comment-text').value = data.comment || '';
-                        }
-                    });
-                    alert("Checkliste erfolgreich geladen.");
-                } catch (err) {
-                    alert(`Fehler beim Laden der Datei: ${err.message}`);
-                }
-            };
-            reader.readAsText(file);
-            event.target.value = '';
-        };
-
-        const applyFilters = () => {
-            const selectedMaturity = maturityFilter.value;
-            const selectedLevel = levelFilter.value;
-            const selectedPhase = phaseFilter.value;
-            let matchCount = 0;
-
-            resultsContainer.querySelectorAll('.checklist-item').forEach(item => {
-                const levelMatch = selectedLevel === 'all' || item.dataset.level === selectedLevel;
-                const phaseMatch = selectedPhase === 'all' || item.dataset.phase === selectedPhase;
-                const maturities = (item.dataset.maturities || '').split(',');
-                const maturityMatch = selectedMaturity === 'all' || maturities.includes(selectedMaturity);
-
-                const shouldShow = levelMatch && phaseMatch && maturityMatch;
-                item.classList.toggle('hidden', !shouldShow);
-                if(shouldShow) matchCount++;
-            });
-
-            statusEl.textContent = `Zeige ${matchCount} passende Anforderungen in der Checkliste.`;
-        };
-
-        const resetAllFilters = () => {
-            maturityFilter.value = 'all';
-            levelFilter.value = 'all';
-            phaseFilter.value = 'all';
-            applyFilters();
-        };
-
-        renderBtn.addEventListener('click', renderCatalog);
-        resetBtn.addEventListener('click', resetAllFilters);
-        saveBtn.addEventListener('click', saveState);
-        loadInput.addEventListener('change', loadState);
+        const selectedView = viewByFilter.value;
+        if (selectedView === 'practice') {
+            renderByPractice();
+        } else {
+            renderByStructure();
+        }
         
-        maturityFilter.addEventListener('change', applyFilters);
-        levelFilter.addEventListener('change', applyFilters);
-        phaseFilter.addEventListener('change', applyFilters);
-    });
-    </script>
+        allControls.forEach(({ control, path }) => {
+             const flatItemDiv = document.createElement('div');
+             flatItemDiv.className = 'flat-item';
+             const controlElementForData = renderControl(control, path);
+             Object.keys(controlElementForData.dataset).forEach(key => {
+                 flatItemDiv.dataset[key] = controlElementForData.dataset[key];
+             });
+             flatItemDiv.innerHTML = `<div class="flat-item-header"><h3 class="flat-item-title">${formatIdTitle(control)}</h3><div class="flat-item-path">${path}</div></div>`;
+             const body = document.createElement('div');
+             body.className = 'flat-item-body';
+             body.appendChild(controlElementForData.querySelector('.control-content').cloneNode(true));
+             flatItemDiv.appendChild(body);
+             flatViewContainer.appendChild(flatItemDiv);
+        });
+
+        populateFilters();
+        filterControls.classList.remove('hidden');
+        statusEl.textContent = `Successfully rendered ${allControls.length} controls.`;
+        applyFilters();
+    };
+
+    const applyFilters = () => {
+        if (!catalogData) return;
+        const selectedLevel = levelFilter.value;
+        const selectedPhase = phaseFilter.value;
+        let matchCount = 0;
+        
+        const isVisible = (el) => {
+            const levelMatch = selectedLevel === 'all' || el.dataset.level === selectedLevel;
+            const phaseMatch = selectedPhase === 'all' || el.dataset.phase === selectedPhase;
+            return levelMatch && phaseMatch;
+        };
+
+        const viewMode = document.querySelector('input[name="view-mode"]:checked').value;
+        const isStructuralView = viewByFilter.value === 'structure';
+        const useTreeView = viewMode === 'tree' || !isStructuralView;
+
+        treeViewContainer.classList.toggle('hidden', !useTreeView);
+        flatViewContainer.classList.toggle('hidden', useTreeView);
+        
+        const pruneBranch = (parentSelector, childSelector) => {
+            treeViewContainer.querySelectorAll(parentSelector).forEach(group => {
+                const hasVisibleChildren = group.querySelector(`${childSelector}:not(.hidden)`);
+                group.classList.toggle('hidden', !hasVisibleChildren);
+            });
+        };
+
+        if (useTreeView) {
+            treeViewContainer.querySelectorAll('.control').forEach(el => {
+                const show = isVisible(el);
+                el.classList.toggle('hidden', !show);
+                if (show) matchCount++;
+            });
+            pruneBranch('.baustein-group', '.control');
+            pruneBranch('.property-group', '.control');
+            pruneBranch('.main-group', '.baustein-group');
+
+        } else {
+            flatViewContainer.querySelectorAll('.flat-item').forEach(el => {
+                const show = isVisible(el);
+                el.classList.toggle('hidden', !show);
+                if (show) matchCount++;
+            });
+        }
+        statusEl.textContent = `Showing ${matchCount} matching controls.`;
+    };
+
+    const resetAllFilters = () => {
+        viewByFilter.value = 'structure';
+        levelFilter.value = 'all'; 
+        phaseFilter.value = 'all';
+        document.querySelector('input[name="view-mode"][value="tree"]').checked = true;
+        renderCatalog();
+    };
+
+    renderBtn.addEventListener('click', renderCatalog);
+    resetBtn.addEventListener('click', resetAllFilters);
+    viewByFilter.addEventListener('change', renderCatalog);
+    levelFilter.addEventListener('change', applyFilters);
+    phaseFilter.addEventListener('change', applyFilters);
+    viewModeRadios.forEach(radio => radio.addEventListener('change', applyFilters));
+});
+</script>
 </body>
-</html> 
+</html>
