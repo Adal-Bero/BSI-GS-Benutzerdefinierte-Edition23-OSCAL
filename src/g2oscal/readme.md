@@ -13,6 +13,7 @@ The system is designed to run as a serverless **Google Cloud Run Job** and opera
     *   **Practice Classification:** Assigns each control to a functional security practice (e.g., GOV, RISK, ARCH).
     *   **Control Class:** Classifies each control as `Technical`, `Operational`, or `Management`.
     *   **CIA Tenant Analysis:** Determines if a control primarily impacts Confidentiality, Integrity, or Availability.
+    *   **ISMS Phases:** 
 *   **Contextual Information:** Extracts introductory chapters (Einleitung, Zielsetzung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
 *   **Robust & Modular:** The code is logically separated into modules for configuration, GCS interaction, and AI processing, following modern best practices.
 
