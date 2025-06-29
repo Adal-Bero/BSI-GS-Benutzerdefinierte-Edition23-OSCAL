@@ -10,6 +10,7 @@ The system is designed to run as a serverless **Google Cloud Run Job** and opera
 *   **Incremental Updates:** Intelligently adds new Bausteine or overwrites existing ones in a master catalog file, making the process repeatable and efficient.
 *   **Contextual Enrichment:** Extracts introductory chapters (Einleitung, Zielsetzung, Modellierung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
 *   **G++ conformant Practices** Each control will be sorted into one of the defined practices.
+*   **WiBA compliant checklists** The viewer supports checklists like WiBA. They can be saved and loaded as JSON files. Filter work on them, so a user can for example do the checklist for all basis controls in the implementation ISMS phase.
 *   **OSCAL Compliant Controls Classes** Each control will be assigned a class based on the official OSCAL specification.
 *   **BSI Level** Each control be get a level based on the BSI GRundschutz Categories Basis, STandard und Erhöht in the new G++ conformant level 1 to 5
 *   **5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement, allowing for granular assessment beyond simple compliance.
