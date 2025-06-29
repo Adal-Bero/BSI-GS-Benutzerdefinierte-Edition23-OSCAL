@@ -6,7 +6,6 @@ Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet 
 
 ### Hauptmerkmale
 
-<<<<<<< HEAD
 * **Vollautomatische Konvertierung:** Wandelt rohe PDF-Inhalte ohne manuellen Eingriff in strukturiertes OSCAL-JSON um.
 * **Inkrementelle Updates:** Fügt intelligent neue Bausteine hinzu oder überschreibt bestehende in einer Master-Katalogdatei, was den Prozess wiederholbar und effizient macht.
 * **Kontextuelle Anreicherung:** Extrahiert einleitende Kapitel (Einleitung, Zielsetzung, Modellierung) und die vollständige Gefährdungslage in strukturierte `parts` und liefert so wichtigen Kontext direkt im Katalog.
@@ -17,20 +16,6 @@ Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet 
 * **5-stufiges Reifegradmodell:** Erzeugt fünf verschiedene Reifegradstufen für jede einzelne Anforderung und ermöglicht so eine granulare Bewertung über die einfache Einhaltung hinaus.
 * **ISMS-Phasen-Zuordnung:** Ordnet jede Anforderung einer Phase des ISMS-Lebenszyklus zu (z. B. Umsetzung, Betrieb) zur besseren Prozessintegration.
 * **Analyse der Schutzziele (CIA):** Stellt fest, ob ein Control die Vertraulichkeit, Integrität oder Verfügbarkeit beeinflusst.
-=======
-*   **Fully Automated Conversion:** Transforms raw PDF content into structured OSCAL JSON with zero manual intervention.
-*   **Incremental Updates:** Intelligently adds new Bausteine or overwrites existing ones in a master catalog file, making the process repeatable and efficient.
-*   **Contextual Enrichment:** Extracts introductory chapters (Einleitung, Zielsetzung, Modellierung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
-*   **G++ conformant Practices** Each control will be sorted into one of the defined practices.
-*   **WiBA compliant checklists** The viewer supports checklists like WiBA. They can be saved and loaded as JSON files. Filter work on them, so a user can for example do the checklist for all basis controls in the implementation ISMS phase.
-*   **OSCAL Compliant Controls Classes** Each control will be assigned a class based on the official OSCAL specification.
-*   **BSI Level** Each control be get a level based on the BSI GRundschutz Categories Basis, STandard und Erhöht in the new G++ conformant level 1 to 5
-*   **5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement, allowing for granular assessment beyond simple compliance.
-*   **ISMS Phase-Alignment:** Maps each requirement to a phase of the ISMS lifecycle (e.g., Implementation, Operation) for better process integration.
-*   **CIA Tenant Analysis:** Determines if a control impacts Confidentiality, Integrity, or Availability.
->>>>>>> dev-wiba-checklists
-
----
 
 # Bereitgestellte Werkzeuge
 
