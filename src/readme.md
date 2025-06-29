@@ -1,9 +1,11 @@
 # BSI-Grundschutz zu OSCAL: Die automatisierte Konvertierungspipeline
+# BSI-Grundschutz zu OSCAL: Die automatisierte Konvertierungspipeline
 
 Dieses Projekt stellt eine leistungsstarke, automatisierte Pipeline zur Konvertierung von BSI-Grundschutz-„Baustein“-PDF-Dokumenten in ein reichhaltiges, strukturiertes und OSCAL-konformes JSON-Format bereit. Es nutzt die fortschrittlichen Fähigkeiten des `gemini-2.5-pro`-Modells von Google, um den Inhalt nicht nur zu übersetzen, sondern ihn auch mit einem mehrstufigen Reifegradmodell und kontextuellen Informationen anzureichern, sodass der endgültige Katalog sofort für Analysen und das Compliance-Management nützlich ist.
 
 Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet **inkrementell**. Es liest intelligent einen bestehenden Master-OSCAL-Katalog ein, verarbeitet neue oder aktualisierte PDFs und führt die Ergebnisse nahtlos zusammen, indem es neue „Bausteine“ hinzufügt oder bestehende überschreibt.
 
+### Hauptmerkmale
 ### Hauptmerkmale
 
 * **Vollautomatische Konvertierung:** Wandelt rohe PDF-Inhalte ohne manuellen Eingriff in strukturiertes OSCAL-JSON um.
@@ -19,6 +21,7 @@ Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet 
 
 ---
 
+# Bereitgestellte Werkzeuge
 # Bereitgestellte Werkzeuge
 
 ## Automatische Erzeugung von OSCAL-Komponenten aus dem BSI-Katalog
@@ -44,6 +47,7 @@ Diese Trennung der Aufgaben stellt sicher, dass die Kerndatenerzeugung robust is
 Das Projekt `oscal_components_from_grundschutz` enthält ein Skript, das darauf ausgelegt ist, automatisch angereicherte OSCAL-Komponentendefinitionen aus einem BSI-IT-Grundschutz-Katalog zu erstellen. Das Skript identifiziert einzelne „Bausteine“ aus dem Quellkatalog, erstellt für jeden eine Basis-Komponentendefinition und verwendet dann das Google Vertex AI Gemini Pro-Modell, um intelligent relevante Controls aus anderen Bausteinen zu entdecken und hinzuzufügen. Um die eher statische Komponente für die „Prozessbausteine“ zu erzeugen, existiert ebenfalls ein kleineres Skript: `create_prozessbausteine_component.py`. Dieses wird einmalig ausgeführt.
 
 Die endgültige Ausgabe ist ein Satz OSCAL-konformer JSON-Dateien, eine für jeden technischen Baustein, die in einem Google Cloud Storage (GCS) Bucket gespeichert werden.
+Die endgültige Ausgabe ist ein Satz OSCAL-konformer JSON-Dateien, eine für jeden technischen Baustein, die in einem Google Cloud Storage (GCS) Bucket gespeichert werden.
 
 ---
 
@@ -55,6 +59,7 @@ Es fügt dem Katalog Kommentare in einem Teil namens „prose_qs“ hinzu und er
 
 ---
 
+# Angereicherte Datenmodelle
 # Angereicherte Datenmodelle
 
 ## 1. Kontextinformationen (`parts`)
@@ -74,6 +79,8 @@ Ein Kernziel dieses Projekts ist es, die OSCAL-Daten um eine qualitative Bewertu
 * **Stufe 4: Enhanced (Erweitert umgesetzt)**
 * **Stufe 5: Comprehensive (Umfassend umgesetzt)**
 
+**Strategischer Wert des Modells:**
+Das Modell dient als strategisches Instrument für Informationssicherheits-Managementsysteme (ISMS). Es ermöglicht Organisationen, ihre aktuelle Sicherheitsposition präzise zu bewerten (Ist-Analyse) und unterstützt die Definition von zielgerichteten, risikobasierten Soll-Zuständen (Soll-Architektur). Durch die Quantifizierung der Umsetzungsqualität können Ressourcen effizienter zugewiesen und Verbesserungsbereiche im Sinne eines kontinuierlichen Verbesserungsprozesses (KVP) systematisch identifiziert und priorisiert werden.
 **Strategischer Wert des Modells:**
 Das Modell dient als strategisches Instrument für Informationssicherheits-Managementsysteme (ISMS). Es ermöglicht Organisationen, ihre aktuelle Sicherheitsposition präzise zu bewerten (Ist-Analyse) und unterstützt die Definition von zielgerichteten, risikobasierten Soll-Zuständen (Soll-Architektur). Durch die Quantifizierung der Umsetzungsqualität können Ressourcen effizienter zugewiesen und Verbesserungsbereiche im Sinne eines kontinuierlichen Verbesserungsprozesses (KVP) systematisch identifiziert und priorisiert werden.
 
@@ -118,6 +125,7 @@ Diese Zuordnung ermöglicht es Stakeholdern – wie CISOs, Sicherheitsbeauftragt
 
 Das KI-Modell ist darauf trainiert, jeder Anforderung die logisch am besten passende Phase zuzuordnen, wobei „Umsetzung“ für die meisten technischen Controls als Standard dient.
 
+### Die ISMS-Phasen im Detail
 ### Die ISMS-Phasen im Detail
 
 ---
