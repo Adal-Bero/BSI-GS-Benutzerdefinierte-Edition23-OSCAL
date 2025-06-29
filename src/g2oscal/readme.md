@@ -1,145 +1,182 @@
-# BSI Grundschutz to Enriched OSCAL: The Automated Conversion Pipeline
 
-This project provides a powerful, automated pipeline for converting BSI Grundschutz "Baustein" PDF documents into a rich, structured, and OSCAL-compliant JSON format. It leverages the advanced capabilities of Google's `gemini-2.5-pro` model to not only extract the content but to deeply enrich it with a multi-level maturity model, practice classifications, and other critical metadata, making the final catalog immediately useful for analysis and compliance management.
+# BSI-Grundschutz zu angereichertem OSCAL: Die automatische Konvertierungs-Pipeline
 
-The system is designed to run as a serverless **Google Cloud Run Job** and operates **incrementally**. It intelligently reads an existing master OSCAL catalog, processes new or updated PDFs, and seamlessly merges the results by adding new "Bausteine" or overwriting existing ones.
+Dieses Projekt stellt eine leistungsstarke, automatisierte Pipeline zur Verfügung, um "Baustein"-PDF-Dokumente des BSI-Grundschutzes in ein reichhaltiges, strukturiertes und OSCAL-konformes JSON-Format zu konvertieren. Es nutzt die fortschrittlichen Fähigkeiten des `gemini-2.5-pro`-Modells von Google, um Inhalte nicht nur zu extrahieren, sondern sie auch tiefgehend mit einem mehrstufigen Reifegradmodell, Praxis-Klassifizierungen und anderen wichtigen Metadaten anzureichern. Dadurch wird der finale Katalog sofort für Analysen und das Compliance-Management nutzbar.
 
-### Key Features
+Das System ist für den Betrieb als serverloser **Google Cloud Run Job** konzipiert und arbeitet **inkrementell**. Es liest intelligent einen bestehenden OSCAL-Gesamtkatalog, verarbeitet neue oder aktualisierte PDFs und fügt die Ergebnisse nahtlos zusammen, indem es neue "Bausteine" hinzufügt oder bestehende überschreibt.
 
-*   **Fully Automated Conversion:** Transforms raw PDF content into structured OSCAL JSON with zero manual intervention.
-*   **Incremental Updates:** Intelligently adds new Bausteine or overwrites existing ones in a master catalog file, making the process repeatable and efficient.
-*   **Deep Enrichment:** The pipeline doesn't just extract text; it enriches every control with:
-    *   **A 5-Level Maturity Model:** Generates five distinct maturity levels for every single requirement.
-    *   **Practice Classification:** Assigns each control to a functional security practice (e.g., GOV, RISK, ARCH).
-    *   **Control Class:** Classifies each control as `Technical`, `Operational`, or `Management`.
-    *   **CIA Tenant Analysis:** Determines if a control primarily impacts Confidentiality, Integrity, or Availability.
-    *   **ISMS Phases:** 
-*   **Contextual Information:** Extracts introductory chapters (Einleitung, Zielsetzung) and the complete threat landscape (Gefährdungslage) into structured `parts`, providing vital context directly within the catalog.
-*   **Robust & Modular:** The code is logically separated into modules for configuration, GCS interaction, and AI processing, following modern best practices.
+### Hauptfunktionen
+
+*   **Vollautomatische Konvertierung:** Wandelt rohe PDF-Inhalte ohne manuellen Eingriff in strukturiertes OSCAL-JSON um.
+*   **Inkrementelle Updates:** Fügt neue Bausteine intelligent hinzu oder überschreibt bestehende in einer zentralen Katalogdatei, was den Prozess wiederholbar und effizient macht.
+*   **Tiefgehende Anreicherung:** Die Pipeline extrahiert nicht nur Text, sondern reichert jedes Control an mit:
+    *   **Einem 5-stufigen Reifegradmodell:** Generiert fünf unterschiedliche Reifegrade für jede einzelne Anforderung.
+    *   **Praxis-Klassifizierung:** Ordnet jedes Control einer funktionalen Sicherheitspraxis zu (z. B. GOV, RISK, ARCH).
+    *   **Control-Klasse:** Klassifiziert jedes Control als `Technical`, `Operational` oder `Management`.
+    *   **CIA-Schutzbedarfsanalyse:** Stellt fest, ob ein Control primär die Vertraulichkeit, Integrität oder Verfügbarkeit betrifft.
+    *   **ISMS-Phasen-Klassifizierung:** Ordnet jedes Control einer relevanten Phase des ISMS-Lebenszyklus zu (z. B. Implementation, Operation, Audit).
+    *   **Anforderungsebene:** Extrahiert die BSI-eigene Anforderungsebene (Basis, Standard oder Erhöht) und bildet sie auf eine strukturierte Eigenschaft ab.
+*   **Kontextinformationen:** Extrahiert einleitende Kapitel (Einleitung, Zielsetzung) und die gesamte Gefährdungslage in strukturierte `parts`, um wichtigen Kontext direkt im Katalog bereitzustellen.
+*   **Robust & Modular:** Der Code ist logisch in Module für Konfiguration, GCS-Interaktion und KI-Verarbeitung getrennt und folgt modernen Best Practices.
+
+## Projekt-Werkzeuge
+
+Dieses Projekt enthält zwei eigenständige HTML-basierte Werkzeuge zur Verarbeitung von BSI-Grundschutz-Katalogen im OSCAL-Format. Jedes Werkzeug hat einen spezifischen Anwendungszweck.
+
+### 1. BSI Grundschutz OSCAL Viewer (`show_bsi_oscal (10).html`)
+
+Dieses Werkzeug dient der reinen Visualisierung und Analyse eines BSI-Grundschutz-Katalogs im OSCAL-Format. Es ist ein reines Lesewerkzeug zur Exploration der Katalogdaten.
+
+**Hauptmerkmale:**
+-   **Zwei Ansichtsmodi:**
+    1.  **Strukturansicht:** Zeigt den Katalog hierarchisch nach *Layer → Baustein → Anforderung* an.
+    2.  **Practice-Ansicht:** Gruppiert alle Anforderungen nach ihrer zugeordneten "Practice" (z.B. Governance, Risikomanagement).
+-   **Interaktive Filter:** Ermöglicht das Filtern der Anforderungen nach Schutzbedarf und ISMS-Phase.
+-   **Darstellungsoptionen:** Bietet eine erweiterbare Baumansicht für die Struktur sowie eine flache Liste aller Anforderungen.
+
+**Anwendungsfall:** Nutzen Sie diesen Viewer, wenn Sie einen OSCAL-Katalog explorieren, dessen Struktur verstehen oder schnell bestimmte Anforderungen anhand von Kriterien wie "Practice" oder Schutzbedarf finden möchten.
+
+### 2. BSI Grundschutz OSCAL Checkliste (`WiBa_Checklisten_bsi_oscal (1).html`)
+
+Dieses Werkzeug wandelt einen OSCAL-Katalog in eine interaktive Checkliste um, mit der der Umsetzungsstand von Anforderungen erfasst und gespeichert werden kann. Es ist für die aktive Bearbeitung und Dokumentation konzipiert.
+
+**Hauptmerkmale:**
+-   **Interaktive Formulare:** Rendert jede Anforderung als bearbeitbaren Checklisteneintrag.
+-   **Dateneingabe:** Bietet Eingabefelder für Reifegrad, Umsetzungsstatus (z.B. implementiert, geplant) und individuelle Bemerkungen.
+-   **Speichern & Laden:**
+    -   Ermöglicht das **Speichern** der ausgefüllten Checkliste (inkl. Prüfername und Zeitstempel) als separate JSON-Ergebnisdatei.
+    -   Ermöglicht das **Laden** einer zuvor gespeicherten Ergebnisdatei, um die Arbeit fortzusetzen.
+-   **Visuelle Unterstützung:** Stellt die Reifegrade in einer farbkodierten Tabelle (von Rot nach Grün) dar, um eine schnelle visuelle Erfassung zu ermöglichen.
+
+**Anwendungsfall:** Ideal für Audits, Gap-Analysen oder Selbstbewertungen. Nutzen Sie dieses Werkzeug, um den Status jeder Anforderung systematisch zu dokumentieren und Ihre Ergebnisse für die weitere Verwendung oder spätere Bearbeitung zu sichern.
 
 ---
 
-## The Two-Stage AI Architecture
+## Die Zwei-Stufen-KI-Architektur
 
-To maximize both reliability and efficiency, this pipeline uses a sophisticated two-stage architecture that delegates tasks based on their complexity. This is a refinement of a previous three-stage model, combining extraction and classification into a single, efficient first step.
+Um sowohl Zuverlässigkeit als auch Effizienz zu maximieren, verwendet diese Pipeline eine ausgeklügelte Zwei-Stufen-Architektur, die Aufgaben nach ihrer Komplexität delegiert. Dies ist eine Weiterentwicklung eines früheren Drei-Stufen-Modells, bei dem Extraktion und Klassifizierung in einem einzigen, effizienten ersten Schritt kombiniert werden.
 
 ```
 +------------------+
-| Baustein PDF     |
+| Baustein-PDF     |
 | (in GCS)         |
 +--------+---------+
          |
          v
-+-----------------------------------+
-|   STAGE 1: DISCOVERY & ENRICHMENT |
-| (Extraction + Classification AI)  |
-+------------------+----------------+
++------------------------------------------+
+|  STUFE 1: ERKENNUNG & ANREICHERUNG         |
+| (Extraktions- + Klassifizierungs-KI)     |
++------------------+-----------------------+
                    |
                    v
-+------------------------------------+
-|  Validated & ENRICHED Requirements |
-|           Stub JSON                |
-+------------------+-----------------+
++------------------------------------------+
+| Validiertes & ANGEREICHERTES             |
+|       Anforderungs-Stub-JSON             |
++------------------+-----------------------+
                    |
                    v
-+-----------------------------------+
-|      STAGE 2: GENERATION          |
-|    (Creative Maturity Prose AI)   |
-+------------------+----------------+
++------------------------------------------+
+|      STUFE 2: GENERIERUNG                |
+|    (Kreative Reifegrad-Prosa-KI)         |
++------------------+-----------------------+
                    |
                    v
-    +--------------------------------+
-    | Validated Prose JSON (for all  |
-    |      5 maturity levels)        |
-    +--------------+-----------------+
+    +--------------------------------------+
+    | Validiertes Prosa-JSON (für alle     |
+    |      5 Reifegrade)                   |
+    +--------------+-----------------------+
                    |
                    v
-   +-------------------------------+
-   |    PYTHON FINAL ASSEMBLY      |
-   |  (Deterministic Structuring)  |
-   +---------------+---------------+
+   +---------------------------------------+
+   |    PYTHON FINALE ASSEMBLIERUNG        |
+   |  (Deterministische Strukturierung)   |
+   +---------------+-----------------------+
                    |
                    v
-     +-----------------------------+
-     |  Final Validated OSCAL JSON |
-     +-----------------------------+
+     +-----------------------------------+
+     |  Finales validiertes OSCAL-JSON   |
+     +-----------------------------------+
 
 ```
 
-### Stage 1: Discovery & Enrichment (High Reliability & Efficiency)
-The process begins by sending the raw PDF to the AI with a powerful, combined prompt (`prompt_discovery_enrichment.txt`). The AI's job is to perform both extraction and classification in a single call:
-1.  **Extract:** It reads the Baustein ID, titles, contextual parts, and the list of requirements with their original text.
-2.  **Enrich:** For every requirement it extracts, it *immediately* classifies its `practice`, `class`, and `CIA` impact.
-The combined JSON output is validated against the strict `discovery_enrichment_stub_schema.json`.
+### Stufe 1: Erkennung & Anreicherung (Hohe Zuverlässigkeit & Effizienz)
+Der Prozess beginnt, indem das rohe PDF mit einem leistungsstarken, kombinierten Prompt (`prompt_discovery_enrichment.txt`) an die KI gesendet wird. Die Aufgabe der KI ist es, sowohl die Extraktion als auch die Klassifizierung in einem einzigen Aufruf durchzuführen:
+1.  **Extrahieren:** Sie liest die Baustein-ID, Titel, kontextbezogene Teile und die Liste der Anforderungen mit ihrem Originaltext.
+2.  **Anreichern:** Für jede extrahierte Anforderung klassifiziert sie *sofort* deren `practice`, `class`, `CIA`-Auswirkung, ISMS-`phase` und `level`.
+Die kombinierte JSON-Ausgabe wird gegen das strikte `discovery_enrichment_stub_schema.json` validiert.
 
-### Stage 2: Generation (High Quality, Creative)
-The enriched list of requirements from Stage 1 is then passed to the second AI call. Using the `prompt_generation.txt`, the AI performs the complex, creative work of writing the detailed prose for all 5 maturity levels for the entire batch of requirements. The result is validated against `generation_stub_schema.json`.
+### Stufe 2: Generierung (Hohe Qualität, Kreativ)
+Die angereicherte Liste der Anforderungen aus Stufe 1 wird dann an den zweiten KI-Aufruf übergeben. Mithilfe des `prompt_generation.txt` übernimmt die KI die komplexe, kreative Arbeit, die detaillierte Prosa für alle 5 Reifegrade für den gesamten Stapel von Anforderungen zu schreiben. Das Ergebnis wird gegen `generation_stub_schema.json` validiert.
 
-### Final Assembly (Deterministic)
-The Python script (`main.py`) acts as the final, deterministic assembler. It gathers the validated data from both stages and builds the final, complete OSCAL `control` objects. These are merged into the main catalog, which is then validated one last time against the master `bsi_gk_2023_oscal_schema.json` before being saved.
+### Finale Assemblierung (Deterministisch)
+Das Python-Skript (`main.py`) fungiert als finaler, deterministischer Assemblierer. Es sammelt die validierten Daten aus beiden Stufen und erstellt die endgültigen, vollständigen OSCAL-`control`-Objekte. Diese werden in den Hauptkatalog zusammengeführt, der dann ein letztes Mal gegen das Master-Schema `bsi_gk_2023_oscal_schema.json` validiert wird, bevor er gespeichert wird.
 
 ---
 
-## File Descriptions
+## Dateibeschreibungen
 
-### Core Logic
-*   **`main.py`:** The main orchestrator. It reads configuration, finds files, manages the `asyncio` event loop for parallel processing, calls the utility modules, and assembles the final OSCAL catalog.
-*   **`config.py`:** A centralized hub for all configuration. It loads environment variables, defines static file paths and retry settings, and sets up the logger.
-*   **`gcs_utils.py`:** A dedicated module for all interactions with Google Cloud Storage (listing, reading, writing files).
-*   **`gemini_utils.py`:** The "AI brain" of the project. It handles initializing the Gemini model and contains the core logic for the two-stage AI processing pipeline, including the self-contained retry loops for each API call.
+### Kernlogik
+*   **`main.py`:** Der Haupt-Orchestrator. Er liest die Konfiguration, findet Dateien, verwaltet die `asyncio`-Event-Loop für die parallele Verarbeitung, ruft die Utility-Module auf und stellt den finalen OSCAL-Katalog zusammen.
+*   **`config.py`:** Ein zentraler Hub für die gesamte Konfiguration. Er lädt Umgebungsvariablen, definiert statische Dateipfade und Wiederholungseinstellungen und richtet den Logger ein.
+*   **`gcs_utils.py`:** Ein dediziertes Modul für alle Interaktionen mit Google Cloud Storage (Auflisten, Lesen, Schreiben von Dateien).
+*   **`gemini_utils.py`:** Das "KI-Gehirn" des Projekts. Es initialisiert das Gemini-Modell und enthält die Kernlogik für die Zwei-Stufen-KI-Verarbeitungspipeline, einschließlich der in sich geschlossenen Wiederholungsschleifen für jeden API-Aufruf.
 
 ### Prompts
-*   **`prompt_discovery_enrichment.txt`:** This single, powerful prompt instructs the AI to perform both the structural extraction and the detailed classification (practice, class, CIA) in one efficient step.
-*   **`prompt_generation.txt`:** A detailed, expert-level prompt that guides the AI in the creative task of writing the 5-level maturity prose.
+*   **`prompt_discovery_enrichment.txt`:** Dieser einzelne, leistungsstarke Prompt weist die KI an, sowohl die strukturelle Extraktion als auch die detaillierte Klassifizierung (practice, class, CIA, phase, level) in einem effizienten Schritt durchzuführen.
+*   **`prompt_generation.txt`:** Ein detaillierter Experten-Prompt, der die KI bei der kreativen Aufgabe anleitet, die Prosa für die 5 Reifegrade zu schreiben.
 
-### Schemas (Quality Gates)
-*   **`bsi_gk_2023_oscal_schema.json`:** The final, strict JSON Schema that defines a valid BSI Grundschutz OSCAL catalog. It is used to validate the final output before saving.
-*   **`discovery_enrichment_stub_schema.json`:** Validates the combined output of the Discovery & Enrichment stage.
-*   **`generation_stub_schema.json`:** Validates the output of the Generation stage.
+### Schemas (Qualitäts-Gates)
+*   **`bsi_gk_2023_oscal_schema.json`:** Das finale, strikte JSON-Schema, das einen gültigen BSI-Grundschutz-OSCAL-Katalog definiert. Es wird verwendet, um die endgültige Ausgabe vor dem Speichern zu validieren.
+*   **`discovery_enrichment_stub_schema.json`:** Validiert die kombinierte Ausgabe der Erkennungs- & Anreicherungs-Stufe.
+*   **`generation_stub_schema.json`:** Validiert die Ausgabe der Generierungs-Stufe.
 
-### Other Files
-*   **`requirements.txt`:** Lists all necessary Python libraries.
-*   **`Dockerfile`:** Defines the container image for deployment on Google Cloud Run.
+### Andere Dateien
+*   **`requirements.txt`:** Listet alle notwendigen Python-Bibliotheken auf.
+*   **`Dockerfile`:** Definiert das Container-Image für das Deployment auf Google Cloud Run.
 
 ---
-## Enriched Data Models
+## Angereicherte Datenmodelle
 
-### 1. The 5-Level Maturity Model
-Every requirement extracted from the BSI Grundschutz is mapped to a 5-level maturity model, enabling a granular evaluation of implementation quality.
+### 1. Das 5-stufige Reifegradmodell
+Jede aus dem BSI-Grundschutz extrahierte Anforderung wird einem 5-stufigen Reifegradmodell zugeordnet, was eine granulare Bewertung der Umsetzungsqualität ermöglicht.
 *   **Stufe 1: Partial (Teilweise umgesetzt)**
 *   **Stufe 2: Foundational (Grundlegend umgesetzt)**
-*   **Stufe 3: Defined (Definiert umgesetzt)** - **Baseline**
+*   **Stufe 3: Defined (Definiert umgesetzt)** - **Basislinie**
 *   **Stufe 4: Enhanced (Erweitert umgesetzt)**
 *   **Stufe 5: Comprehensive (Umfassend umgesetzt)**
 
-### 2. Practice Classification
-Each control is assigned to a functional practice domain, such as `GOV` (Governance), `RISK` (Risk Management), or `SYS` (System Protection). This allows for a role-based or function-based view of the security controls.
+### 2. Praxis-Klassifizierung
+Jedes Control wird einer funktionalen Praxis-Domäne zugeordnet, wie z.B. `GOV` (Governance), `RISK` (Risikomanagement) oder `SYS` (Systemschutz). Dies ermöglicht eine rollen- oder funktionsbasierte Sicht auf die Sicherheitsmaßnahmen.
 
-### 3. Control Class & CIA Tenants
-*   **Class:** Every control is classified as `Technical`, `Operational`, or `Management` based on the NIST standard, clarifying how the control is implemented.
-*   **CIA:** Each control is tagged with booleans (`effective_on_c`, `effective_on_i`, `effective_on_a`) to show its primary impact on Confidentiality, Integrity, and Availability.
+### 3. Control-Klasse & CIA-Schutzziele
+*   **Klasse:** Jedes Control wird gemäß dem NIST-Standard als `Technical`, `Operational` oder `Management` klassifiziert, was die Art der Implementierung verdeutlicht.
+*   **CIA:** Jedes Control wird mit Booleans (`effective_on_c`, `effective_on_i`, `effective_on_a`) versehen, um seine primäre Auswirkung auf Vertraulichkeit (Confidentiality), Integrität (Integrity) und Verfügbarkeit (Availability) zu zeigen.
+
+### 4. ISMS-Phase & Anforderungsebene
+*   **ISMS-Phase:** Jedes Control wird mit seiner relevantesten ISMS-Lebenszyklusphase (z. B. `Implementation`, `Operation`, `Audit`) versehen, um Kontext zu liefern, wann die Maßnahme zu berücksichtigen ist.
+*   **Anforderungsebene:** Die ursprüngliche BSI-Ebene – `Basis-Anforderung` (Level 1), `Standard-Anforderung` (Level 3) oder `Anforderung bei erhöhtem Schutzbedarf` (Level 5) – wird extrahiert und als separate Eigenschaft gespeichert. Dies bewahrt die BSI-eigene Klassifizierung, getrennt vom generierten 5-stufigen Reifegradmodell.
 
 ---
 
-## Configuration & Local Execution
+## Konfiguration & Lokale Ausführung
 
-The script is configured entirely through environment variables.
+Das Skript wird vollständig über Umgebungsvariablen konfiguriert.
 
-| Variable                 | Required? | Description                                                                                                                              |
-| ------------------------ | :-------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| `GCP_PROJECT_ID`         |    Yes    | Your Google Cloud Project ID.                                                                                                            |
-| `BUCKET_NAME`            |    Yes    | The name of the GCS bucket containing the source files and where results will be written.                                                  |
-| `SOURCE_PREFIX`          |    Yes    | The path (prefix) inside the bucket where the source `.pdf` files are located. A trailing slash is recommended (e.g., `source_pdfs/`).     |
-| `EXISTING_JSON_GCS_PATH` |    No     | The full GCS path to an existing merged catalog file to update. If not provided, a new catalog is created from scratch.                   |
-| `TEST`                   |    No     | Set to `"true"` (case-insensitive) to enable test mode. This processes only the first 3 PDFs and only 10% of the requirements within each. |
+| Variable                 | Erforderlich? | Beschreibung                                                                                                                             |
+| ------------------------ | :-----------: | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| `GCP_PROJECT_ID`         |      Ja       | Ihre Google Cloud Projekt-ID.                                                                                                            |
+| `BUCKET_NAME`            |      Ja       | Der Name des GCS-Buckets, der die Quelldateien enthält und in den die Ergebnisse geschrieben werden.                                     |
+| `SOURCE_PREFIX`          |      Ja       | Der Pfad (Präfix) innerhalb des Buckets, in dem sich die `.pdf`-Quelldateien befinden. Ein abschließender Schrägstrich wird empfohlen (z. B. `source_pdfs/`). |
+| `EXISTING_JSON_GCS_PATH` |      Nein     | Der vollständige GCS-Pfad zu einer bestehenden Katalogdatei, die aktualisiert werden soll. Wenn nicht angegeben, wird ein neuer Katalog erstellt. |
+| `TEST`                   |      Nein     | Setzen Sie dies auf `"true"`, um den Testmodus zu aktivieren (Groß- und Kleinschreibung wird nicht beachtet). Dieser verarbeitet nur die ersten 3 PDFs und nur 10 % der Anforderungen in jeder Datei. |
 
 
-### Running Locally
-1.  **Authenticate with Google Cloud:**
+### Lokale Ausführung
+1.  **Authentifizieren Sie sich bei Google Cloud:**
     ```bash
     gcloud auth application-default login
     ```
-2.  **Set Environment Variables (example):**
+2.  **Setzen Sie die Umgebungsvariablen (Beispiel):**
     ```bash
     export GCP_PROJECT_ID="your-gcp-project-id"
     export BUCKET_NAME="your-company-bucket"
@@ -147,7 +184,7 @@ The script is configured entirely through environment variables.
     export EXISTING_JSON_GCS_PATH="results/MERGED_BSI_Catalog_latest.json"
     export TEST="false"
     ```
-3.  **Install Dependencies and Run:**
+3.  **Installieren Sie die Abhängigkeiten und führen Sie das Skript aus:**
     ```bash
     pip install -r requirements.txt
     python main.py
@@ -155,19 +192,19 @@ The script is configured entirely through environment variables.
 
 ---
 
-## Deployment on Google Cloud Run Jobs
+## Deployment auf Google Cloud Run Jobs
 
-This application is designed to run as a serverless batch job.
+Diese Anwendung ist für den Betrieb als serverloser Batch-Job konzipiert.
 
-### Step 1: Build the Container Image
-Use Google Cloud Build to create a container image from the `Dockerfile` and push it to the Artifact Registry.
+### Schritt 1: Erstellen Sie das Container-Image
+Verwenden Sie Google Cloud Build, um ein Container-Image aus dem `Dockerfile` zu erstellen und es in die Artifact Registry zu pushen.
 
 ```bash
 gcloud builds submit --tag gcr.io/[YOUR_PROJECT_ID]/g2oscal-pipeline .
 ```
 
-### Step 2: Create the Cloud Run Job
-Create a job that uses the container image and passes the necessary environment variables.
+### Schritt 2: Erstellen Sie den Cloud Run Job
+Erstellen Sie einen Job, der das Container-Image verwendet und die notwendigen Umgebungsvariablen übergibt.
 
 ```bash
 gcloud run jobs create g2oscal-job \
@@ -180,12 +217,13 @@ gcloud run jobs create g2oscal-job \
   --set-env-vars="EXISTING_JSON_GCS_PATH=results/MERGED_BSI_Catalog_latest.json" \
   --set-env-vars="TEST=false"
 ```
-> **Note:** Ensure the service account used by the job has "Vertex AI User" and "Storage Object Admin" roles.
+> **Hinweis:** Stellen Sie sicher, dass das vom Job verwendete Servicekonto die Rollen "Vertex AI User" und "Storage Object Admin" besitzt.
 
-### Step 3: Execute the Job
-You can run the job manually from the console or trigger it via the command line.
+### Schritt 3: Führen Sie den Job aus
+Sie können den Job manuell über die Konsole oder über die Kommandozeile ausführen.
 
 ```bash
 gcloud run jobs execute g2oscal-job --region [YOUR_GCP_REGION]
 ```
-The job will run, process all new PDFs, merge them into the catalog, and save the new version to Google Cloud Storage.
+Der Job wird ausgeführt, verarbeitet alle neuen PDFs, fügt sie dem Katalog hinzu und speichert die neue Version in Google Cloud Storage.
+```
