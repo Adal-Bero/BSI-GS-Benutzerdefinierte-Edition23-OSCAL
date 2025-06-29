@@ -82,7 +82,7 @@
             font-size: 0.9em;
             color: #495057;
         }
-        select {
+        input[type="text"], select {
             padding: 8px;
             border-radius: 4px;
             border: 1px solid var(--border-color);
@@ -100,6 +100,7 @@
         .main-group > summary { font-size: 1.2em; font-weight: bold; }
         .baustein-group > summary { font-size: 1.1em; font-weight: 500; }
         .bsi-control > summary { font-size: 1.05em; background: #f8f9fa; }
+        .maturity-level-description > summary { font-weight: bold; margin-top: 10px; background-color: #f1f3f5;}
 
         /* Checklist Styling */
         #checklist-container { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 2rem; }
@@ -113,10 +114,15 @@
         .checklist-item-body .input-group select, .checklist-item-body .input-group textarea { width: 100%; box-sizing: border-box; font-size: 1em; }
         .checklist-item-body .input-group textarea { height: 80px; resize: vertical; }
 
-        #saveload-controls { margin-top: 2rem; padding: 1.5rem; background-color: var(--secondary-color); border-radius: 8px; display: flex; gap: 1rem; }
+        #saveload-controls { margin-top: 2rem; padding: 1.5rem; background-color: var(--secondary-color); border-radius: 8px; display: flex; flex-direction: column; gap: 1rem; }
+        #saveload-controls .row { display: flex; gap: 1rem; align-items: center; }
         #saveload-controls input[type="file"] { display: none; }
+        #prüfer-name { flex-grow: 1; }
 
         #status { margin-top: 1rem; padding: 1rem; background-color: #e9ecef; border-radius: 4px; color: #495057; }
+        .part-container { padding-left: 20px; }
+        .part-container h4 { margin: 10px 0 2px 0; font-size: 0.9em; text-transform: uppercase; letter-spacing: 0.5px; color: #6c757d;}
+        .part-container .prose { padding: 5px; border-left: 3px solid var(--secondary-color); background-color: #fafafa;}
     </style>
 </head>
 <body>
@@ -136,56 +142,48 @@
     },
     "groups": [
       {
-        "id": "INF",
-        "title": "Infrastructure",
+        "id": "OPS",
+        "title": "Operation",
         "groups": [
           {
-            "id": "INF.1",
-            "title": "General Building",
+            "id": "OPS.1.1.3",
+            "title": "Patch and Change Management",
             "controls": [
               {
-                "id": "INF.1.A1",
-                "title": "Secure Planning for Buildings",
+                "id": "OPS.1.1.3.A1",
+                "title": "Patch and Change Management Concept",
                 "props": [
                   { "name": "level", "value": "1" },
-                  { "name": "phase", "value": "Initiation" }
+                  { "name": "phase", "value": "Risk Treatment" }
                 ],
-                "controls": [
+                "parts": [
                   {
-                    "id": "INF.1.A1.M1",
+                    "id": "OPS.1.1.3.A1-m1",
+                    "name": "maturity-level-description",
                     "title": "Maturity Level 1: Partial",
-                    "props": [ { "name": "maturity-level", "value": "Partial" } ]
+                    "props": [ { "name": "maturity-level", "value": "Partial" } ],
+                    "parts": [
+                      { "name": "statement", "prose": "Changes to IT systems are made sporadically and ad-hoc. A formal concept does not exist." },
+                      { "name": "guidance", "prose": "At this level, there are no established processes. Changes are typically reactive." },
+                      { "name": "assessment-method", "prose": "Check for isolated documentation of changes (e.g., in emails). Interview administrators to understand the typical process of a change." }
+                    ]
                   },
                   {
-                    "id": "INF.1.A1.M2",
+                    "id": "OPS.1.1.3.A1-m2",
+                    "name": "maturity-level-description",
                     "title": "Maturity Level 2: Foundational",
-                    "props": [ { "name": "maturity-level", "value": "Foundational" } ]
-                  }
-                ]
-              },
-              {
-                "id": "INF.1.A2",
-                "title": "Adapted circuit distribution",
-                "props": [
-                  { "name": "level", "value": "1" },
-                  { "name": "phase", "value": "Implementation" }
-                ],
-                "controls": [
-                   {
-                    "id": "INF.1.A2.M3",
-                    "title": "Maturity Level 3: Defined",
-                    "props": [ { "name": "maturity-level", "value": "Defined" } ]
+                    "props": [ { "name": "maturity-level", "value": "Foundational" } ],
+                    "parts": [
+                       { "name": "statement", "prose": "A basic, documented process for managing changes exists, but it is not consistently followed." },
+                       { "name": "guidance", "prose": "A simple change request form might be used, but approvals are informal." },
+                       { "name": "assessment-method", "prose": "Review the change management process documentation. Check a sample of recent changes for compliance with the documented process." }
+                    ]
                   }
                 ]
               }
             ]
           }
         ]
-      },
-      {
-        "id": "DER",
-        "title": "Detection and Reaction",
-        "groups": []
       }
     ]
   }
@@ -243,9 +241,15 @@
             <div id="tree-view-container"></div>
             <div id="checklist-container" class="hidden"></div>
              <div id="saveload-controls" class="hidden">
-                <button id="save-btn">Checkliste Speichern</button>
-                <label for="load-input" class="file-label">Checkliste Laden</label>
-                <input type="file" id="load-input" accept=".json">
+                 <div class="input-group">
+                    <label for="prüfer-name">Prüfername</label>
+                    <input type="text" id="prüfer-name" placeholder="Ihr Name">
+                 </div>
+                 <div class="row">
+                    <button id="save-btn">Checkliste Speichern</button>
+                    <label for="load-input" class="file-label">Checkliste Laden</label>
+                    <input type="file" id="load-input" accept=".json">
+                 </div>
             </div>
         </div>
     </div>
@@ -269,6 +273,7 @@
         
         const saveBtn = document.getElementById('save-btn');
         const loadInput = document.getElementById('load-input');
+        const prüferNameInput = document.getElementById('prüfer-name');
 
         let catalogData = null;
 
@@ -279,19 +284,29 @@
 
         const formatIdTitle = (item) => `${item.id}: ${item.title}`;
 
+        const renderMaturityLevelPart = (part) => {
+            const container = document.createElement('div');
+            container.className = 'part-container';
+            container.innerHTML = `
+                <h4>${part.name.replace(/-/g, ' ')}</h4>
+                <div class="prose">${(part.prose || '').replace(/\n/g, '<br>')}</div>
+            `;
+            return container;
+        };
+
         const renderChecklistItem = (bsiControl, mainGroup, bausteinGroup) => {
-            const level = findPropValue(bsiControl.props, 'level');
-            const phase = findPropValue(bsiControl.props, 'phase');
             const bsiControlTitle = formatIdTitle(bsiControl);
             const path = `${mainGroup.title || mainGroup.id} » ${formatIdTitle(bausteinGroup)}`;
-
-            const availableMaturities = (bsiControl.controls || []).map(mc => findPropValue(mc.props, 'maturity-level'));
+            
+            const availableMaturities = (bsiControl.parts || [])
+                .filter(p => p.name === 'maturity-level-description')
+                .map(p => findPropValue(p.props, 'maturity-level'));
 
             const itemDiv = document.createElement('div');
             itemDiv.className = 'checklist-item';
             itemDiv.dataset.controlId = bsiControl.id;
-            itemDiv.dataset.level = level;
-            itemDiv.dataset.phase = phase;
+            itemDiv.dataset.level = findPropValue(bsiControl.props, 'level');
+            itemDiv.dataset.phase = findPropValue(bsiControl.props, 'phase');
 
             itemDiv.innerHTML = `
                 <div class="checklist-item-header">
@@ -310,9 +325,11 @@
                         <label for="status-select-${bsiControl.id}">Status</label>
                         <select id="status-select-${bsiControl.id}" class="status-select">
                             <option value="">Nicht ausgewählt</option>
-                            <option value="passed">Erfüllt</option>
-                            <option value="failed">Nicht erfüllt</option>
-                            <option value="other">Andere</option>
+                            <option value="satisfied">Erfüllt</option>
+                            <option value="not-satisfied">Nicht erfüllt</option>
+                            <option value="implemented">Implementiert</option>
+                            <option value="partially-implemented">Teilweise implementiert</option>
+                            <option value="not-implemented">Nicht implementiert</option>
                             <option value="not-applicable">Nicht anwendbar</option>
                         </select>
                     </div>
@@ -324,7 +341,7 @@
             `;
             return itemDiv;
         };
-
+        
         const renderCatalog = () => {
             try {
                 catalogData = JSON.parse(jsonInput.value);
@@ -371,12 +388,25 @@
                         bsiControlDetails.appendChild(bsiControlSummary);
                         bausteinGroupDetails.appendChild(bsiControlDetails);
                         
-                        (bsiControl.controls || []).forEach(mc => {
-                             const maturityLevel = findPropValue(mc.props, 'maturity-level');
-                             bsiControlDetails.innerHTML += `<div class="maturity-control-wrapper" data-maturity-level="${maturityLevel}"><div class="control-content" style="padding:5px 15px;"><b>${maturityLevel}:</b> ${(mc.parts || []).find(p=>p.name ==='control')?.prose || ''}</div></div>`;
+                        // Correctly render maturity levels from the `parts` array
+                        (bsiControl.parts || []).forEach(maturityLevelPart => {
+                            if (maturityLevelPart.name === 'maturity-level-description') {
+                                const maturityLevel = findPropValue(maturityLevelPart.props, 'maturity-level');
+                                bsiControlDetails.dataset.maturities = (bsiControlDetails.dataset.maturities || '') + maturityLevel + ',';
+                                
+                                const maturityDetails = document.createElement('details');
+                                maturityDetails.className = 'maturity-level-description';
+                                const maturitySummary = document.createElement('summary');
+                                maturitySummary.textContent = maturityLevelPart.title;
+                                maturityDetails.appendChild(maturitySummary);
+
+                                (maturityLevelPart.parts || []).forEach(part => {
+                                    maturityDetails.appendChild(renderMaturityLevelPart(part));
+                                });
+                                bsiControlDetails.appendChild(maturityDetails);
+                            }
                         });
                         
-                        // Render checklist item
                         checklistContainer.appendChild(renderChecklistItem(bsiControl, mainGroup, bausteinGroup));
                     });
                 });
@@ -390,7 +420,14 @@
         };
         
         const saveState = () => {
-            const state = {};
+            const prüfer = prüferNameInput.value.trim();
+            if (!prüfer) {
+                alert("Bitte geben Sie einen Prüfernamen ein.");
+                prüferNameInput.focus();
+                return;
+            }
+
+            const ergebnisse = {};
             const items = checklistContainer.querySelectorAll('.checklist-item');
             items.forEach(item => {
                 const controlId = item.dataset.controlId;
@@ -399,16 +436,24 @@
                 const comment = item.querySelector('.comment-text').value;
 
                 if (maturity || status || comment) {
-                    state[controlId] = { maturity, status, comment };
+                    ergebnisse[controlId] = { maturity, status, comment };
                 }
             });
 
-            if (Object.keys(state).length === 0) {
+            if (Object.keys(ergebnisse).length === 0) {
                 alert("Keine Daten zum Speichern. Füllen Sie bitte zuerst die Checkliste aus.");
                 return;
             }
+            
+            const saveData = {
+                meta: {
+                    prüfer: prüfer,
+                    zeitstempel: new Date().toISOString()
+                },
+                ergebnisse: ergebnisse
+            };
 
-            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(state, null, 2));
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(saveData, null, 2));
             const downloadAnchorNode = document.createElement('a');
             downloadAnchorNode.setAttribute("href", dataStr);
             const date = new Date().toISOString().slice(0, 10);
@@ -420,17 +465,22 @@
 
         const loadState = (event) => {
             const file = event.target.files[0];
-            if (!file) {
-                return;
-            }
+            if (!file) return;
             const reader = new FileReader();
             reader.onload = (e) => {
                 try {
-                    const state = JSON.parse(e.target.result);
-                    Object.keys(state).forEach(controlId => {
+                    const loadedData = JSON.parse(e.target.result);
+                    
+                    if (!loadedData.meta || !loadedData.ergebnisse) {
+                         throw new Error("Die Datei hat nicht das erwartete Format (meta/ergebnisse fehlt).");
+                    }
+
+                    prüferNameInput.value = loadedData.meta.prüfer || '';
+                    
+                    Object.keys(loadedData.ergebnisse).forEach(controlId => {
                         const item = checklistContainer.querySelector(`.checklist-item[data-control-id="${controlId}"]`);
                         if (item) {
-                            const data = state[controlId];
+                            const data = loadedData.ergebnisse[controlId];
                             item.querySelector('.maturity-select').value = data.maturity || '';
                             item.querySelector('.status-select').value = data.status || '';
                             item.querySelector('.comment-text').value = data.comment || '';
@@ -438,12 +488,11 @@
                     });
                     alert("Checkliste erfolgreich geladen.");
                 } catch (err) {
-                    alert("Fehler beim Laden der Datei. Ist es eine gültige JSON-Datei?");
+                    alert(`Fehler beim Laden der Datei: ${err.message}`);
                     console.error(err);
                 }
             };
             reader.readAsText(file);
-            // Reset file input to allow loading the same file again
             event.target.value = '';
         };
 
@@ -455,8 +504,7 @@
             const selectedPhase = phaseFilter.value;
             const selectedView = document.querySelector('input[name="view-mode"]:checked').value;
             
-            let treeMatchCount = 0;
-            let checklistMatchCount = 0;
+            let matchCount = 0;
 
             const filterBsiControl = (item) => {
                 const levelMatch = selectedLevel === 'all' || item.dataset.level === selectedLevel;
@@ -465,36 +513,40 @@
 
                 if (selectedMaturity === 'all') return true;
                 
-                const maturityControls = item.querySelectorAll('.maturity-control-wrapper');
-                return Array.from(maturityControls).some(mc => mc.dataset.maturityLevel === selectedMaturity);
+                const maturities = (item.dataset.maturities || '').split(',');
+                return maturities.includes(selectedMaturity);
             };
 
-            // Tree View Filtering
-            const allTreeControls = treeViewContainer.querySelectorAll('.bsi-control');
-            const allParentGroups = treeViewContainer.querySelectorAll('.main-group, .baustein-group');
-            allParentGroups.forEach(el => el.classList.add('hidden'));
-            allTreeControls.forEach(el => el.classList.add('hidden'));
-            allTreeControls.forEach(control => {
+            // Filter both tree and checklist
+            document.querySelectorAll('.bsi-control').forEach(control => {
                 if (filterBsiControl(control)) {
-                    treeMatchCount++;
+                    // Unhide tree element and parents
                     let current = control;
-                    while (current && current !== treeViewContainer) {
+                     while (current && current !== treeViewContainer) {
                         current.classList.remove('hidden');
                         current = current.parentElement;
                     }
+                } else {
+                    control.classList.add('hidden');
                 }
             });
 
-            // Checklist View Filtering
-            const allChecklistItems = checklistContainer.querySelectorAll('.checklist-item');
-            allChecklistItems.forEach(item => {
-                // We need to re-query the tree for the corresponding control to check against its maturity levels
-                const treeControl = treeViewContainer.querySelector(`.bsi-control[data-level="${item.dataset.level}"][data-phase="${item.dataset.phase}"]`);
-                if(treeControl && filterBsiControl(treeControl)) {
+            document.querySelectorAll('.checklist-item').forEach(item => {
+                const bsiControl = treeViewContainer.querySelector(`.bsi-control[data-level="${item.dataset.level}"][data-phase="${item.dataset.phase}"]`);
+                if (bsiControl && filterBsiControl(bsiControl)) {
                     item.classList.remove('hidden');
-                    checklistMatchCount++;
+                    matchCount++;
                 } else {
                     item.classList.add('hidden');
+                }
+            });
+
+            // Hide empty parent groups in tree view
+            document.querySelectorAll('.baustein-group, .main-group').forEach(group => {
+                if (!group.querySelector('.bsi-control:not(.hidden)')) {
+                    group.classList.add('hidden');
+                } else {
+                    group.classList.remove('hidden');
                 }
             });
 
@@ -502,12 +554,13 @@
                 treeViewContainer.classList.remove('hidden');
                 checklistContainer.classList.add('hidden');
                 saveLoadControls.classList.add('hidden');
-                statusEl.textContent = `Zeige ${treeMatchCount} passende Anforderungen im Baum.`;
+                const visibleControls = treeViewContainer.querySelectorAll('.bsi-control:not(.hidden)').length;
+                statusEl.textContent = `Zeige ${visibleControls} passende Anforderungen im Baum.`;
             } else { // Checklist view
                 treeViewContainer.classList.add('hidden');
                 checklistContainer.classList.remove('hidden');
                 saveLoadControls.classList.remove('hidden');
-                statusEl.textContent = `Zeige ${checklistMatchCount} passende Anforderungen in der Checkliste.`;
+                statusEl.textContent = `Zeige ${matchCount} passende Anforderungen in der Checkliste.`;
             }
         };
 
