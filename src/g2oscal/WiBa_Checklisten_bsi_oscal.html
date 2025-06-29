@@ -125,6 +125,18 @@
         
         <div id="status">Bitte wählen Sie eine Datei, um zu beginnen.</div>
 
+        <div id="saveload-controls" class="hidden">
+            <div class="input-group">
+               <label for="prüfer-name">Prüfername</label>
+               <input type="text" id="prüfer-name" placeholder="Ihr Name">
+            </div>
+            <div class="row">
+               <button id="save-btn">Checkliste Speichern</button>
+               <label for="load-input" class="file-label">Checkliste Laden</label>
+               <input type="file" id="load-input" accept=".json">
+            </div>
+        </div>
+
         <div id="filter-controls" class="hidden">
             <div class="filter-group">
                 <label for="maturity-filter">Nach Reifegrad filtern</label>
@@ -163,18 +175,6 @@
         </div>
 
         <div id="results-container"></div>
-        
-        <div id="saveload-controls" class="hidden">
-            <div class="input-group">
-               <label for="prüfer-name">Prüfername</label>
-               <input type="text" id="prüfer-name" placeholder="Ihr Name">
-            </div>
-            <div class="row">
-               <button id="save-btn">Checkliste Speichern</button>
-               <label for="load-input" class="file-label">Checkliste Laden</label>
-               <input type="file" id="load-input" accept=".json">
-            </div>
-       </div>
 
     </div>
 
@@ -203,6 +203,23 @@
         const findPartProse = (parts, name) => (parts || []).find(p => p.name === name)?.prose || '';
         const formatIdTitle = (item) => `${item.id}: ${item.title}`;
         
+        // --- NEUE HELFERFUNKTION ---
+        // Extrahiert den Reifegrad-Wert. Priorisiert 'props', nutzt aber Titel als Fallback.
+        const getMaturityValue = (maturityPart) => {
+            let value = findPropValue(maturityPart.props, 'maturity-level');
+            if (value) {
+                return value;
+            }
+            // Fallback: Parse aus dem Titel, z.B. aus "Maturity Level 1: Partial"
+            if (maturityPart.title && maturityPart.title.includes(':')) {
+                const parts = maturityPart.title.split(':');
+                if (parts.length > 1) {
+                    return parts[parts.length - 1].trim(); // Nimm den letzten Teil nach ':'
+                }
+            }
+            return ''; // Standard, falls nichts funktioniert
+        };
+
         const renderCatalog = (jsonString) => {
             try {
                 catalogData = JSON.parse(jsonString);
@@ -233,7 +250,7 @@
                         const phase = findPropValue(bsiControl.props, 'phase');
                         const availableMaturities = (bsiControl.parts || [])
                             .filter(p => p.name === 'maturity-level-description')
-                            .map(p => findPropValue(p.props, 'maturity-level'));
+                            .map(p => getMaturityValue(p)); // Benutze neue Helferfunktion
                         
                         itemDiv.dataset.controlId = bsiControl.id;
                         itemDiv.dataset.level = level;
@@ -284,7 +301,7 @@
                                         <label for="maturity-select-${bsiControl.id}">Reifegrad auswählen</label>
                                         <select id="maturity-select-${bsiControl.id}" class="maturity-select">
                                             <option value="">Nicht ausgewählt</option>
-                                            ${(bsiControl.parts || []).filter(p => p.name === 'maturity-level-description').map(p => `<option value="${findPropValue(p.props, 'maturity-level')}">${p.title}</option>`).join('')}
+                                            ${(bsiControl.parts || []).filter(p => p.name === 'maturity-level-description').map(p => `<option value="${getMaturityValue(p)}">${p.title}</option>`).join('')}
                                         </select>
                                     </div>
                                     <div class="input-group">
