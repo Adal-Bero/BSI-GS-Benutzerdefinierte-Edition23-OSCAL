@@ -135,6 +135,8 @@ async def main():
     output_filename = f"{config.FINAL_RESULT_PREFIX}MERGED_BSI_Catalog_{timestamp}.json"
     gcs_utils.write_json_to_gcs(output_filename, final_catalog)
     
+    logger.info(f"Final catalog successfully written to: gs://{config.BUCKET_NAME}/{output_filename}")
+    
     logger.info("--- Batch Job Summary ---")
     logger.info(f"Successfully processed: {len(successful_results)} file(s).")
     logger.info(f"Failed to process: {len(files_to_process) - len(successful_results)} file(s).")
