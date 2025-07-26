@@ -37,7 +37,8 @@ def validate_env_vars():
 
 def setup_logging():
     """Configures the root logger based on the TEST_MODE setting."""
-    log_level = logging.DEBUG if TEST_MODE else logging.INFO
+    # log_level = logging.DEBUG if TEST_MODE else logging.INFO
+    log_level = logging.DEBUG
     logging.basicConfig(level=log_level, format='%(asctime)s - %(levelname)s - %(message)s', stream=sys.stdout)
     
     # Unconditionally suppress verbose logs from underlying libraries in all modes.
