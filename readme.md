@@ -10,7 +10,7 @@ Das System ist als serverloser **Google Cloud Run Job** konzipiert und arbeitet 
 * **Inkrementelle Updates:** Fügt intelligent neue Bausteine hinzu oder überschreibt bestehende in einer Master-Katalogdatei, was den Prozess wiederholbar und effizient macht.
 * **Kontextuelle Anreicherung:** Extrahiert einleitende Kapitel (Einleitung, Zielsetzung, Modellierung) und die vollständige Gefährdungslage in strukturierte `parts` und liefert so wichtigen Kontext direkt im Katalog.
 * **G++ konforme Praktiken:** Jedes Control wird in eine der definierten Praktiken einsortiert.
-* **WiBA-konforme Checklisten:** Der Viewer unterstützt Checklisten wie WiBA. Sie können als JSON-Dateien gespeichert und geladen werden. Filter funktionieren darauf, sodass ein Benutzer beispielsweise die Checkliste für alle Basis-Controls in der ISMS-Umsetzungsphase durchführen kann.
+* **WiBA-konforme Checklisten:** Der [Viewer unterstützt Checklisten wie WiBA](https://github.com/NTTDATA-DACH/BSI-GS-Benutzerdefinierte-Edition23-OSCAL/blob/main/src/g2oscal/WiBa_Checklisten_bsi_oscal.html). Sie können als JSON-Dateien gespeichert und geladen werden. Filter funktionieren darauf, sodass ein Benutzer beispielsweise die Checkliste für alle Basis-Controls in der ISMS-Umsetzungsphase durchführen kann.
 * **OSCAL-konforme Control-Klassen:** Jedem Control wird eine Klasse basierend auf der offiziellen OSCAL-Spezifikation zugewiesen.
 * **BSI-Stufe:** Jedes Control erhält eine Stufe basierend auf den BSI-Grundschutz-Kategorien Basis, Standard und Erhöht in den neuen G++ konformen Stufen 1 bis 5.
 * **5-stufiges Reifegradmodell:** Erzeugt fünf verschiedene Reifegradstufen für jede einzelne Anforderung und ermöglicht so eine granulare Bewertung über die einfache Einhaltung hinaus.
