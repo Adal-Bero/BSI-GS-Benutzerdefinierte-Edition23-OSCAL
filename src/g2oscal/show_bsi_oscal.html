@@ -306,7 +306,8 @@ document.addEventListener('DOMContentLoaded', function () {
         return grid;
     };
 
-    const renderPart = (part) => {
+	const renderPart = (part) => {
+        // Handles the 'Maturity Levels' correctly as before
         if (part.name === 'maturity-level-description' && part.parts) {
             const details = document.createElement('details');
             details.className = 'maturity-level-group';
@@ -330,12 +331,31 @@ document.addEventListener('DOMContentLoaded', function () {
             return details;
         }
 
+        // FEATURE UPDATE: This now renders all other descriptive parts as collapsible sections
         if (part.prose) {
-            const proseDiv = document.createElement('div');
-            proseDiv.className = 'part-prose';
-            proseDiv.innerHTML = part.prose.replace(/\n/g, '<br>');
-            return proseDiv;
+            const details = document.createElement('details');
+            // We can reuse existing classes for a consistent look
+            details.className = 'maturity-level-group'; 
+            details.style.marginTop = '10px';
+
+            const summary = document.createElement('summary');
+            // Reusing summary styling from maturity-level-group > summary
+            summary.style.fontWeight = 'bold';
+            summary.style.backgroundColor = 'var(--hover-bg)';
+            summary.style.padding = '8px 12px';
+            summary.textContent = part.title || part.name.charAt(0).toUpperCase() + part.name.slice(1);
+            
+            const contentDiv = document.createElement('div');
+            // Reusing content styling
+            contentDiv.className = 'maturity-level-content'; 
+            contentDiv.innerHTML = `<div class="prose">${part.prose.replace(/\n/g, '<br>')}</div>`;
+
+            details.appendChild(summary);
+            details.appendChild(contentDiv);
+            
+            return details;
         }
+
         return document.createDocumentFragment();
     };
 
@@ -390,26 +410,69 @@ document.addEventListener('DOMContentLoaded', function () {
         populateSelect(phaseFilter, phases, "Alle Phasen");
     };
 
-    const renderByStructure = () => {
+const renderByStructure = () => {
         viewModeGroup.classList.remove('hidden');
         (catalogData.catalog.groups || []).forEach(mainGroup => {
             const mainGroupDetails = document.createElement('details');
             mainGroupDetails.className = 'main-group';
             mainGroupDetails.innerHTML = `<summary>${mainGroup.title || mainGroup.id}</summary>`;
+            
             (mainGroup.groups || []).forEach(bausteinGroup => {
                 const path = `${mainGroup.title || mainGroup.id}`;
                 const bausteinDetails = document.createElement('details');
                 bausteinDetails.className = 'baustein-group';
                 bausteinDetails.innerHTML = `<summary>${formatIdTitle(bausteinGroup)}</summary>`;
-                 (bausteinGroup.controls || []).forEach(control => {
+
+                // --- FEATURE UPDATE: Group all risks under one collapsible section ---
+                const allParts = bausteinGroup.parts || [];
+                const riskParts = allParts.filter(p => p.name === 'risk');
+                const otherParts = allParts.filter(p => p.name !== 'risk');
+
+                // 1. Render all non-risk parts as individual collapsible sections
+                otherParts.forEach(part => {
+                    bausteinDetails.appendChild(renderPart(part));
+                });
+
+                // 2. If risks exist, create a single container for all of them
+                if (riskParts.length > 0) {
+                    const riskContainer = document.createElement('details');
+                    riskContainer.className = 'maturity-level-group';
+                    riskContainer.style.marginTop = '10px';
+
+                    const summary = document.createElement('summary');
+                    summary.style.fontWeight = 'bold';
+                    summary.style.backgroundColor = '#fff0f1'; // Light red background for summary
+                    summary.style.border = '1px solid var(--danger-color)';
+                    summary.style.padding = '8px 12px';
+                    summary.textContent = `Gefährdungen (${riskParts.length})`;
+                    
+                    const riskContent = document.createElement('div');
+                    riskContent.className = 'maturity-level-content';
+
+                    riskParts.forEach(riskPart => {
+                        const riskDiv = document.createElement('div');
+                        // Reuse styling for a consistent look
+                        riskDiv.className = 'sub-part sub-part-assessment-method'; 
+                        riskDiv.innerHTML = `<h4>${riskPart.title}</h4><div class="prose">${(riskPart.prose || '').replace(/\n/g, '<br>')}</div>`;
+                        riskContent.appendChild(riskDiv);
+                    });
+
+                    riskContainer.appendChild(summary);
+                    riskContainer.appendChild(riskContent);
+                    bausteinDetails.appendChild(riskContainer);
+                }
+                // --- End of feature update ---
+
+                // 3. Render all controls as before
+                (bausteinGroup.controls || []).forEach(control => {
                     bausteinDetails.appendChild(renderControl(control, path));
                 });
+                
                 mainGroupDetails.appendChild(bausteinDetails);
             });
             treeViewContainer.appendChild(mainGroupDetails);
         });
-    };
-    
+    };    
     const renderByPractice = () => {
         viewModeGroup.classList.add('hidden');
         const grouped = {};
